@@ -1,0 +1,115 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Access to field 'children' results in a dereference of a null pointer (loaded from field 'extra')",
+    "warning_func": "",
+    "line_number": 9,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "_elementtree_Element___getstate___impl"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-EeIDeQ1/_elementtree_end.c",
+            "line": 5,
+            "col": 27,
+            "line2": 5,
+            "col2": 37,
+            "function": "_elementtree_Element___getstate___impl",
+            "var": [
+                "children",
+                "PyList_New",
+                "extra",
+                "self",
+                "length"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-EeIDeQ1/_elementtree_end.c",
+            "line": 6,
+            "col": 9,
+            "line2": 6,
+            "col2": 17,
+            "function": "_elementtree_Element___getstate___impl",
+            "var": [
+                "children"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-EeIDeQ1/_elementtree_end.c",
+            "line": 8,
+            "col": 17,
+            "line2": 8,
+            "col2": 92,
+            "function": "_elementtree_Element___getstate___impl",
+            "var": [
+                "i",
+                "ob_size",
+                "children",
+                "extra",
+                "self",
+                "_Py_INCREF",
+                "child",
+                "ob_item"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-EeIDeQ1/_elementtree_end.c",
+            "line": 8,
+            "col": 17,
+            "line2": 8,
+            "col2": 92,
+            "function": "_elementtree_Element___getstate___impl",
+            "var": [
+                "i",
+                "ob_size",
+                "children",
+                "extra",
+                "self",
+                "_Py_INCREF",
+                "child",
+                "ob_item"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-EeIDeQ1/_elementtree_end.c",
+            "line": 9,
+            "col": 33,
+            "line2": 9,
+            "col2": 37,
+            "function": "_elementtree_Element___getstate___impl",
+            "var": [
+                "children",
+                "extra",
+                "self",
+                "i"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-EeIDeQ1/defect_info.json",
+    "files": [
+        "_elementtree_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件_elementtree_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | static PyObject * _elementtree_Element___getstate___impl (ElementObject *self){\n   3              | Py_ssize_t i;\n   4              | PyObject *children, *attrib;\n---→ 函数: _elementtree_Element___getstate___impl\n   5 [TRACE-1]    | children = PyList_New(self->extra ? self->extra->length : 0);\n   6 [TRACE-2]    | if (!children)\n   8 [TRACE-3,4]  | for (i = 0; i < (((PyVarObject *)((((void)(0)) , (PyListObject *)(children))))->ob_size); i++) {\n   9 [TRACE-5]    | PyObject *child = self->extra->children[i];\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-EeIDeQ1/_elementtree_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "域敏感度缺失",
+        "流敏感度不足"
+    ]
+}

@@ -1,0 +1,79 @@
+{
+    "bug_type": "Branch condition evaluates to a garbage value",
+    "checker": "Clang Static Analyzer",
+    "description": "Branch condition evaluates to a garbage value",
+    "warning_func": "",
+    "line_number": 211,
+    "directory": "path/tests/libevent-2.1.12-stable",
+    "entry_function": "getaddrinfo_race_gotresolve_test",
+    "functions": [
+        "getaddrinfo_race_gotresolve_test"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-IlJZ0Y2/regress_dns_end.c",
+            "line": 14,
+            "col": 13,
+            "line2": 14,
+            "col2": 24,
+            "function": "getaddrinfo_race_gotresolve_test",
+            "var": [
+                "base",
+                "rp",
+                "tinytest_set_test_failed_",
+                "printf",
+                "tinytest_get_verbosity_"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-IlJZ0Y2/regress_dns_end.c",
+            "line": 211,
+            "col": 9,
+            "line2": 211,
+            "col2": 17,
+            "function": "getaddrinfo_race_gotresolve_test",
+            "var": [
+                "locked",
+                "rp",
+                "lock",
+                "unlock",
+                "evthread_lock_fns_"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/libevent-2.1.12/report-IlJZ0Y2/defect_info.json",
+    "files": [
+        "regress_dns_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件regress_dns_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | static void getaddrinfo_race_gotresolve_test (void *arg){\n   3              | struct race_param rp;\n   4              | struct evdns_server_port *dns_port = ((void *)0);\n   5              | uint16_t portnum = 0;\n   6              | char buf[64];\n   7              | int i;\n   8              | int n_reqs = 16384;\n   9              | int n_threads = sysconf(_SC_NPROCESSORS_ONLN) + 1;\n  10              | pthread_t thread[n_threads];\n  11              | struct timeval tv;\n  12              | rp.base = event_base_new();\n---→ 函数: getaddrinfo_race_gotresolve_test\n  14 [TRACE-1]    | if (!((rp.base))) {\n  15              | tinytest_set_test_failed_();\n  16              | do {\n  17              | printf(\"\\n  %s %s:%d: \", \"FAIL\", \"test/regress_dns_InstSlice.c\", 465);\n  18              | printf(\"%s\", \"assert(rp.base)\");\n  19              | } while (0);\n  21              | goto end;\n 211 [TRACE-2]    | if (rp.locked)\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/libevent-2.1.12/report-IlJZ0Y2/regress_dns_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            21,
+            211
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "流敏感度不足"
+    ]
+}

@@ -1,0 +1,264 @@
+{
+    "bug_type": "Dereference of undefined pointer value",
+    "checker": "Clang Static Analyzer",
+    "description": "Array access (from variable 'space') results in an undefined pointer dereference",
+    "warning_func": "",
+    "line_number": 73,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "closure_fcn",
+        "_CallPythonObject"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BYY2lJ1/callbacks_end.c",
+            "line": 97,
+            "col": 5,
+            "line2": 97,
+            "col2": 99,
+            "function": "closure_fcn",
+            "var": [
+                "_CallPythonObject()",
+                "_CallPythonObject",
+                "resp",
+                "ffi_restype",
+                "p",
+                "setfunc",
+                "callable",
+                "converters",
+                "flags",
+                "args"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BYY2lJ1/callbacks_end.c",
+            "line": 2,
+            "col": 1,
+            "line2": 2,
+            "col2": 1,
+            "function": "_CallPythonObject",
+            "var": [
+                "PyGILState_Ensure",
+                "nArgs",
+                "PySequence_Size",
+                "converters",
+                "arglist",
+                "PyTuple_New",
+                "i",
+                "PySequence_GetItem",
+                "cnv",
+                "dict",
+                "PyType_stgdict",
+                "getfunc",
+                "_ctypes_simple_instance",
+                "pArgs",
+                "size",
+                "v",
+                "_Py_DECREF",
+                "ob_item",
+                "_PyObject_CallNoArg",
+                "obj",
+                "_PyObject_TypeCheck",
+                "PyCData_Type",
+                "flags",
+                "error_object",
+                "_ctypes_get_errobj",
+                "space",
+                "__errno_location",
+                "temp",
+                "result",
+                "PyObject_CallObject",
+                "callable",
+                "_Py_XDECREF",
+                "restype",
+                "ffi_type_void",
+                "setfunc",
+                "mem",
+                "keep",
+                "_ctypes_get_fielddesc",
+                "_Py_NoneStruct"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BYY2lJ1/callbacks_end.c",
+            "line": 8,
+            "col": 5,
+            "line2": 8,
+            "col2": 14,
+            "function": "_CallPythonObject",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BYY2lJ1/callbacks_end.c",
+            "line": 11,
+            "col": 9,
+            "line2": 11,
+            "col2": 17,
+            "function": "_CallPythonObject",
+            "var": [
+                "nArgs"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BYY2lJ1/callbacks_end.c",
+            "line": 16,
+            "col": 9,
+            "line2": 16,
+            "col2": 16,
+            "function": "_CallPythonObject",
+            "var": [
+                "arglist"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BYY2lJ1/callbacks_end.c",
+            "line": 20,
+            "col": 17,
+            "line2": 20,
+            "col2": 25,
+            "function": "_CallPythonObject",
+            "var": [
+                "i",
+                "nArgs",
+                "PySequence_GetItem",
+                "converters",
+                "cnv",
+                "dict",
+                "PyType_stgdict",
+                "getfunc",
+                "_ctypes_simple_instance",
+                "pArgs",
+                "size",
+                "v",
+                "_Py_DECREF",
+                "ob_item",
+                "arglist",
+                "_PyObject_CallNoArg",
+                "obj",
+                "_PyObject_TypeCheck",
+                "PyCData_Type"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BYY2lJ1/callbacks_end.c",
+            "line": 20,
+            "col": 17,
+            "line2": 20,
+            "col2": 25,
+            "function": "_CallPythonObject",
+            "var": [
+                "i",
+                "nArgs",
+                "PySequence_GetItem",
+                "converters",
+                "cnv",
+                "dict",
+                "PyType_stgdict",
+                "getfunc",
+                "_ctypes_simple_instance",
+                "pArgs",
+                "size",
+                "v",
+                "_Py_DECREF",
+                "ob_item",
+                "arglist",
+                "_PyObject_CallNoArg",
+                "obj",
+                "_PyObject_TypeCheck",
+                "PyCData_Type"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BYY2lJ1/callbacks_end.c",
+            "line": 58,
+            "col": 9,
+            "line2": 58,
+            "col2": 24,
+            "function": "_CallPythonObject",
+            "var": [
+                "flags",
+                "error_object",
+                "_ctypes_get_errobj",
+                "space",
+                "__errno_location",
+                "temp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BYY2lJ1/callbacks_end.c",
+            "line": 69,
+            "col": 9,
+            "line2": 69,
+            "col2": 29,
+            "function": "_CallPythonObject",
+            "var": [
+                "result"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BYY2lJ1/callbacks_end.c",
+            "line": 72,
+            "col": 9,
+            "line2": 72,
+            "col2": 17,
+            "function": "_CallPythonObject",
+            "var": [
+                "flags",
+                "space",
+                "__errno_location",
+                "temp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BYY2lJ1/callbacks_end.c",
+            "line": 73,
+            "col": 20,
+            "line2": 73,
+            "col2": 24,
+            "function": "_CallPythonObject",
+            "var": [
+                "space"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-BYY2lJ1/defect_info.json",
+    "files": [
+        "callbacks_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件callbacks_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: _CallPythonObject\n   2 [TRACE-2]    | static void _CallPythonObject (void *mem, ffi_type *restype, SETFUNC setfunc, PyObject *callable, PyObject *converters, int flags, void **pArgs){\n   3              | Py_ssize_t i;\n   4              | PyObject *result;\n   5              | PyObject *arglist = ((void *)0);\n   6              | Py_ssize_t nArgs;\n   7              | PyObject *error_object = ((void *)0);\n   8 [TRACE-3]    | int *space;\n   9              | PyGILState_STATE state = PyGILState_Ensure();\n  10              | nArgs = PySequence_Size(converters);\n  11 [TRACE-4]    | if (nArgs < 0) {\n  15              | arglist = PyTuple_New(nArgs);\n  16 [TRACE-5]    | if (!arglist) {\n  20 [TRACE-6,7]  | for (i = 0; i < nArgs; ++i) {\n  58 [TRACE-8]    | if (flags & (8 | 16)) {\n  68              | result = PyObject_CallObject(callable, arglist);\n  69 [TRACE-9]    | if (result == ((void *)0)) {\n  72 [TRACE-10]   | if (flags & 8) {\n  73 [TRACE-11]   | int temp = space[0];\n  95              | static void closure_fcn (ffi_cif *cif, void *resp, void **args, void *userdata){\n  96              | CThunkObject *p = (CThunkObject *)userdata;\n---→ 函数: closure_fcn\n  97 [TRACE-1]    | _CallPythonObject(resp, p->ffi_restype, p->setfunc, p->callable, p->converters, p->flags, args);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-BYY2lJ1/callbacks_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            15,
+            16,
+            20,
+            58,
+            68,
+            69,
+            72,
+            73,
+            95,
+            96,
+            97
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "流敏感度不足",
+        "路径可行性判定失效",
+        "过程间数据流断裂"
+    ]
+}

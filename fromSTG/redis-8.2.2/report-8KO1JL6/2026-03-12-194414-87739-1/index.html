@@ -1,0 +1,121 @@
+<html>
+<head>
+<title>report-8KO1JL6 - scan-build results</title>
+<link type="text/css" rel="stylesheet" href="scanview.css"/>
+<script src="sorttable.js"></script>
+<script language='javascript' type="text/javascript">
+function SetDisplay(RowClass, DisplayVal)
+{
+  var Rows = document.getElementsByTagName("tr");
+  for ( var i = 0 ; i < Rows.length; ++i ) {
+    if (Rows[i].className == RowClass) {
+      Rows[i].style.display = DisplayVal;
+    }
+  }
+}
+
+function CopyCheckedStateToCheckButtons(SummaryCheckButton) {
+  var Inputs = document.getElementsByTagName("input");
+  for ( var i = 0 ; i < Inputs.length; ++i ) {
+    if (Inputs[i].type == "checkbox") {
+      if(Inputs[i] != SummaryCheckButton) {
+        Inputs[i].checked = SummaryCheckButton.checked;
+        Inputs[i].onclick();
+      }
+    }
+  }
+}
+
+function returnObjById( id ) {
+    if (document.getElementById)
+        var returnVar = document.getElementById(id);
+    else if (document.all)
+        var returnVar = document.all[id];
+    else if (document.layers)
+        var returnVar = document.layers[id];
+    return returnVar;
+}
+
+var NumUnchecked = 0;
+
+function ToggleDisplay(CheckButton, ClassName) {
+  if (CheckButton.checked) {
+    SetDisplay(ClassName, "");
+    if (--NumUnchecked == 0) {
+      returnObjById("AllBugsCheck").checked = true;
+    }
+  }
+  else {
+    SetDisplay(ClassName, "none");
+    NumUnchecked++;
+    returnObjById("AllBugsCheck").checked = false;
+  }
+}
+</script>
+<!-- SUMMARYENDHEAD -->
+</head>
+<body>
+<h1>report-8KO1JL6 - scan-build results</h1>
+
+<table>
+<tr><th>User:</th><td>root@AAA-426-NJUCS</td></tr>
+<tr><th>Working Directory:</th><td>Datasets/fromDGS/redis-8.2.2/report-8KO1JL6</td></tr>
+<tr><th>Command Line:</th><td>clang -c -emit-llvm t_zset_end.c</td></tr>
+<tr><th>Clang Version:</th><td>Ubuntu clang version 18.1.8 (11~20.04.2)
+</td></tr>
+<tr><th>Date:</th><td>Thu Mar 12 19:44:14 2026</td></tr>
+</table>
+<h2>Bug Summary</h2><table>
+<thead><tr><td>Bug Type</td><td>Quantity</td><td class="sorttable_nosort">Display?</td></tr></thead>
+<tr style="font-weight:bold"><td class="SUMM_DESC">All Bugs</td><td class="Q">9</td><td><center><input type="checkbox" id="AllBugsCheck" onClick="CopyCheckedStateToCheckButtons(this);" checked/></center></td></tr>
+<tr><th>Logic error</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Assigned value is garbage or undefined</td><td class="Q">1</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_assigned_value_is_garbage_or_undefined');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Dereference of null pointer</td><td class="Q">5</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_dereference_of_null_pointer');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Dereference of undefined pointer value</td><td class="Q">1</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_dereference_of_undefined_pointer_value');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Result of operation is garbage or undefined</td><td class="Q">2</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_result_of_operation_is_garbage_or_undefined');" checked/></center></td></tr>
+</table>
+<h2>Reports</h2>
+
+<table class="sortable" style="table-layout:automatic">
+<thead><tr>
+  <td>Bug Group</td>
+  <td class="sorttable_sorted">Bug Type<span id="sorttable_sortfwdind">&nbsp;&#x25BE;</span></td>
+  <td>File</td>
+  <td>Function/Method</td>
+  <td class="Q">Line</td>
+  <td class="Q">Path Length</td>
+  <td class="sorttable_nosort"></td>
+  <!-- REPORTBUGCOL -->
+</tr></thead>
+<tbody>
+<tr class="bt_logic_error_assigned_value_is_garbage_or_undefined"><td class="DESC">Logic error</td><td class="DESC">Assigned value is garbage or undefined</td><td>t_zset_end.c</td><td class="DESC">zunionInterDiffGenericCommand</td><td class="Q">711</td><td class="Q">47</td><td><a href="report-729cde.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-729cde.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>t_zset_end.c</td><td class="DESC">zunionInterDiffGenericCommand</td><td class="Q">776</td><td class="Q">28</td><td><a href="report-17f023.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-17f023.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>t_zset_end.c</td><td class="DESC">zdiffAlgorithm1</td><td class="Q">535</td><td class="Q">41</td><td><a href="report-2f874d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2f874d.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>t_zset_end.c</td><td class="DESC">zdiffAlgorithm2</td><td class="Q">574</td><td class="Q">44</td><td><a href="report-8ed2dd.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-8ed2dd.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>t_zset_end.c</td><td class="DESC">zunionInterDiffGenericCommand</td><td class="Q">738</td><td class="Q">26</td><td><a href="report-e7af0f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e7af0f.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>t_zset_end.c</td><td class="DESC">zdiffAlgorithm2</td><td class="Q">557</td><td class="Q">44</td><td><a href="report-ea1256.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ea1256.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_undefined_pointer_value"><td class="DESC">Logic error</td><td class="DESC">Dereference of undefined pointer value</td><td>t_zset_end.c</td><td class="DESC">zslInsert</td><td class="Q">56</td><td class="Q">41</td><td><a href="report-82c066.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-82c066.html" -->
+</tr>
+<tr class="bt_logic_error_result_of_operation_is_garbage_or_undefined"><td class="DESC">Logic error</td><td class="DESC">Result of operation is garbage or undefined</td><td>t_zset_end.c</td><td class="DESC">zslInsert</td><td class="Q">64</td><td class="Q">41</td><td><a href="report-c054cc.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c054cc.html" -->
+</tr>
+<tr class="bt_logic_error_result_of_operation_is_garbage_or_undefined"><td class="DESC">Logic error</td><td class="DESC">Result of operation is garbage or undefined</td><td>t_zset_end.c</td><td class="DESC">zuiDiscardDirtyValue</td><td class="Q">353</td><td class="Q">35</td><td><a href="report-c532c1.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c532c1.html" -->
+</tr>
+</tbody>
+</table>
+
+</body></html>

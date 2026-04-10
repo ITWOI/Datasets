@@ -1,0 +1,30 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from regress_dns_end.c:1:
+./header_func.h:9:13: warning: function 'nil_accept_cb' has internal linkage but is not defined [-Wundefined-internal]
+    9 | static void nil_accept_cb(struct evconnlistener *l, int fd, struct sockaddr *s, int socklen, void *arg) ;
+      |             ^
+regress_dns_end.c:23:52: note: used here
+   23 |     listener = evconnlistener_new_bind(data->base, nil_accept_cb, &n_accept, (1U << 3) | (1U << 2), -1, (struct sockaddr *)&sin, sizeof (sin));
+      |                                                    ^
+In file included from regress_dns_end.c:1:
+./header_func.h:26:13: warning: function 'be_getaddrinfo_server_cb' has internal linkage but is not defined [-Wundefined-internal]
+   26 | static void be_getaddrinfo_server_cb(struct evdns_server_request *req, void *data) ;
+      |             ^
+regress_dns_end.c:45:70: note: used here
+   45 |     port = regress_get_dnsserver(data->base, &dns_port, ((void *)0), be_getaddrinfo_server_cb, &n_dns);
+      |                                                                      ^
+2 warnings generated.
+regress_dns_end.c:917:13: warning: Branch condition evaluates to a garbage value [core.uninitialized.Branch]
+  917 |         if (be[i]) {
+      |             ^~~~~
+regress_dns_end.c:917:13: warning: Branch condition evaluates to a garbage value [core.uninitialized.Branch]
+  917 |         if (be[i]) {
+      |             ^~~~~
+regress_dns_end.c:917:13: warning: Branch condition evaluates to a garbage value [core.uninitialized.Branch]
+  917 |         if (be[i]) {
+      |             ^~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/libevent-2.1.12/report-IlJZ0Y1/2026-03-12-203834-120424-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/libevent-2.1.12/report-IlJZ0Y1/2026-03-12-203834-120424-1' to examine bug reports.

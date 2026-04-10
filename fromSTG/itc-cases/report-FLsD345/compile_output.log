@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+invalid_memory_access_end.c:11:9: warning: Use of memory after it is freed [unix.Malloc]
+   11 |         p->s1->a[0] = 1;
+      |         ^~~~~
+invalid_memory_access_end.c:11:9: warning: Use of memory after it is freed [unix.Malloc]
+   11 |         p->s1->a[0] = 1;
+      |         ^~~~~
+invalid_memory_access_end.c:11:9: warning: Use of memory after it is freed [unix.Malloc]
+   11 |         p->s1->a[0] = 1;
+      |         ^~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/itc-cases/report-FLsD345/2026-03-15-181649-872906-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/itc-cases/report-FLsD345/2026-03-15-181649-872906-1' to examine bug reports.

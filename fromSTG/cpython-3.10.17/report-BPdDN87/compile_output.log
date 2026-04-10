@@ -1,0 +1,50 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from posixmodule_end.c:1:
+./header_func.h:18:25: warning: function '_Py_NewRef' has internal linkage but is not defined [-Wundefined-internal]
+   18 | static inline PyObject *_Py_NewRef(PyObject *obj) ;
+      |                         ^
+posixmodule_end.c:26:12: note: used here
+   26 |     return _Py_NewRef(((PyObject *)((&_Py_NoneStruct))));
+      |            ^
+1 warning generated.
+posixmodule_end.c:17:26: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+   17 |                 result = symlinkat(src->narrow, dir_fd, dst->narrow);
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+posixmodule_end.c:17:26: warning: Null pointer passed to 3rd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   17 |                 result = symlinkat(src->narrow, dir_fd, dst->narrow);
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+posixmodule_end.c:22:22: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+   22 |             result = symlink(src->narrow, dst->narrow);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+posixmodule_end.c:22:22: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   22 |             result = symlink(src->narrow, dst->narrow);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+posixmodule_end.c:17:26: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+   17 |                 result = symlinkat(src->narrow, dir_fd, dst->narrow);
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+posixmodule_end.c:17:26: warning: Null pointer passed to 3rd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   17 |                 result = symlinkat(src->narrow, dir_fd, dst->narrow);
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+posixmodule_end.c:22:22: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+   22 |             result = symlink(src->narrow, dst->narrow);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+posixmodule_end.c:22:22: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   22 |             result = symlink(src->narrow, dst->narrow);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+posixmodule_end.c:17:26: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+   17 |                 result = symlinkat(src->narrow, dir_fd, dst->narrow);
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+posixmodule_end.c:17:26: warning: Null pointer passed to 3rd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   17 |                 result = symlinkat(src->narrow, dir_fd, dst->narrow);
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+posixmodule_end.c:22:22: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+   22 |             result = symlink(src->narrow, dst->narrow);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+posixmodule_end.c:22:22: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   22 |             result = symlink(src->narrow, dst->narrow);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+12 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-BPdDN87/2026-03-12-195743-97133-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-BPdDN87/2026-03-12-195743-97133-1' to examine bug reports.

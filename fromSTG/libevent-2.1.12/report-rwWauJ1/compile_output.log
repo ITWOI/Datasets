@@ -1,0 +1,37 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from event_end.c:1:
+./header_func.h:22:41: warning: function 'event_debug_map_HT_REMOVE' has internal linkage but is not defined [-Wundefined-internal]
+   22 | static inline struct event_debug_entry *event_debug_map_HT_REMOVE(struct event_debug_map *head, struct event_debug_entry *elm) ;
+      |                                         ^
+event_end.c:18:12: note: used here
+   18 |     dent = event_debug_map_HT_REMOVE((&global_debug_map), (&find));
+      |            ^
+In file included from event_end.c:1:
+./header_func.h:28:41: warning: function 'event_debug_map_HT_FIND' has internal linkage but is not defined [-Wundefined-internal]
+   28 | static inline struct event_debug_entry *event_debug_map_HT_FIND(const struct event_debug_map *head, struct event_debug_entry *elm) ;
+      |                                         ^
+event_end.c:37:12: note: used here
+   37 |     dent = event_debug_map_HT_FIND((&global_debug_map), (&find));
+      |            ^
+In file included from event_end.c:1:
+./header_func.h:4:19: warning: function 'min_heap_reserve_' has internal linkage but is not defined [-Wundefined-internal]
+    4 | static inline int min_heap_reserve_(min_heap_t *s, unsigned int n);
+      |                   ^
+event_end.c:491:13: note: used here
+  491 |         if (min_heap_reserve_(&base->timeheap, 1 + min_heap_size_(&base->timeheap)) == -1)
+      |             ^
+3 warnings generated.
+event_end.c:281:13: warning: Use of memory after it is freed [unix.Malloc]
+  281 |         if (evcb->evcb_flags & 128) {
+      |             ^~~~~~~~~~~~~~~~
+event_end.c:281:13: warning: Use of memory after it is freed [unix.Malloc]
+  281 |         if (evcb->evcb_flags & 128) {
+      |             ^~~~~~~~~~~~~~~~
+event_end.c:281:13: warning: Use of memory after it is freed [unix.Malloc]
+  281 |         if (evcb->evcb_flags & 128) {
+      |             ^~~~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/libevent-2.1.12/report-rwWauJ1/2026-03-12-203743-120038-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/libevent-2.1.12/report-rwWauJ1/2026-03-12-203743-120038-1' to examine bug reports.

@@ -1,0 +1,175 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Access to field 'b_startdepth' results in a dereference of a null pointer (loaded from variable 'b')",
+    "warning_func": "",
+    "line_number": 233,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "stackdepth",
+        "stackdepth_push"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-gkTxxX6/compile_end.c",
+            "line": 240,
+            "col": 21,
+            "line2": 240,
+            "col2": 30,
+            "function": "stackdepth",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-gkTxxX6/compile_end.c",
+            "line": 243,
+            "col": 30,
+            "line2": 243,
+            "col2": 45,
+            "function": "stackdepth",
+            "var": [
+                "b",
+                "u_blocks",
+                "u",
+                "c",
+                "b_list",
+                "b_startdepth",
+                "entryblock",
+                "nblocks"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-gkTxxX6/compile_end.c",
+            "line": 243,
+            "col": 30,
+            "line2": 243,
+            "col2": 45,
+            "function": "stackdepth",
+            "var": [
+                "b",
+                "u_blocks",
+                "u",
+                "c",
+                "b_list",
+                "b_startdepth",
+                "entryblock",
+                "nblocks"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-gkTxxX6/compile_end.c",
+            "line": 250,
+            "col": 9,
+            "line2": 250,
+            "col2": 14,
+            "function": "stackdepth",
+            "var": [
+                "stack"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-gkTxxX6/compile_end.c",
+            "line": 255,
+            "col": 9,
+            "line2": 255,
+            "col2": 34,
+            "function": "stackdepth",
+            "var": [
+                "ste_generator",
+                "u_ste",
+                "u",
+                "c",
+                "ste_coroutine",
+                "stackdepth_push",
+                "sp",
+                "entryblock"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-gkTxxX6/compile_end.c",
+            "line": 256,
+            "col": 30,
+            "line2": 256,
+            "col2": 39,
+            "function": "stackdepth",
+            "var": [
+                "stackdepth_push()",
+                "stackdepth_push",
+                "sp",
+                "entryblock"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-gkTxxX6/compile_end.c",
+            "line": 256,
+            "col": 9,
+            "line2": 256,
+            "col2": 43,
+            "function": "stackdepth",
+            "var": [
+                "stackdepth_push()",
+                "stackdepth_push",
+                "sp",
+                "entryblock"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-gkTxxX6/compile_end.c",
+            "line": 231,
+            "col": 1,
+            "line2": 231,
+            "col2": 1,
+            "function": "stackdepth_push",
+            "var": [
+                "b_startdepth",
+                "b",
+                "depth",
+                "sp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-gkTxxX6/compile_end.c",
+            "line": 233,
+            "col": 9,
+            "line2": 233,
+            "col2": 9,
+            "function": "stackdepth_push",
+            "var": [
+                "b_startdepth",
+                "b",
+                "depth",
+                "sp"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-gkTxxX6/defect_info.json",
+    "files": [
+        "compile_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件compile_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: stackdepth_push\n 231 [TRACE-8]    | static inline void stackdepth_push (basicblock ***sp, basicblock *b, int depth){\n 233 [TRACE-9]    | if (b->b_startdepth < depth && b->b_startdepth < 100) {\n 239              | static int stackdepth (struct compiler *c){\n---→ 函数: stackdepth\n 240 [TRACE-1]    | basicblock *b, *entryblock = ((void *)0);\n 241              | basicblock **stack, **sp;\n 242              | int nblocks = 0, maxdepth = 0;\n 243 [TRACE-2,3]  | for (b = c->u->u_blocks; b != ((void *)0); b = b->b_list) {\n 249              | stack = (basicblock **)PyObject_Malloc(sizeof(basicblock *) * nblocks);\n 250 [TRACE-4]    | if (!stack) {\n 254              | sp = stack;\n 255 [TRACE-5]    | if (c->u->u_ste->ste_generator || c->u->u_ste->ste_coroutine) {\n 256 [TRACE-6,7]  | stackdepth_push(&sp, entryblock, 1);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-gkTxxX6/compile_end.c": [
+            231,
+            233,
+            239,
+            240,
+            241,
+            242,
+            243,
+            249,
+            250,
+            254,
+            255,
+            256
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "路径可行性判定失效",
+        "过程间数据流断裂",
+        "指针分析能力不足"
+    ]
+}

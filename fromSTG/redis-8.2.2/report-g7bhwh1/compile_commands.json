@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1",
+        "arguments": [
+            "clang",
+            "-c",
+            "rax_end.c"
+        ],
+        "file": "rax_end.c"
+    }
+]

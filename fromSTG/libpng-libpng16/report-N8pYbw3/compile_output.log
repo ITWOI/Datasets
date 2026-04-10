@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+pngimage_end.c:120:13: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+  120 |             memcpy(last->buffer + end_count, data, avail);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pngimage_end.c:120:13: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+  120 |             memcpy(last->buffer + end_count, data, avail);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pngimage_end.c:120:13: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+  120 |             memcpy(last->buffer + end_count, data, avail);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/libpng-libpng16/report-N8pYbw3/2026-03-12-204550-125839-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/libpng-libpng16/report-N8pYbw3/2026-03-12-204550-125839-1' to examine bug reports.

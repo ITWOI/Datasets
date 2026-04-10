@@ -1,0 +1,23 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from libbz3_end.c:1:
+./header_func.h:62:12: warning: function 'libsais_unbwt' has internal linkage but is not defined [-Wundefined-internal]
+   62 | static s32 libsais_unbwt(const u8 *T, u8 *U, s32 *A, s32 n, const s32 *freq, s32 i) ;
+      |            ^
+libbz3_end.c:246:9: note: used here
+  246 |     if (libsais_unbwt(b1, b2, state->sais_array, size_src, ((void *)0), bwt_idx) < 0) {
+      |         ^
+1 warning generated.
+libbz3_end.c:352:5: warning: Potential leak of memory pointed to by 'compression_buf' [unix.Malloc]
+  352 |     bz3_free(state);
+      |     ^~~~~~~~
+libbz3_end.c:352:5: warning: Potential leak of memory pointed to by 'compression_buf' [unix.Malloc]
+  352 |     bz3_free(state);
+      |     ^~~~~~~~
+libbz3_end.c:352:5: warning: Potential leak of memory pointed to by 'compression_buf' [unix.Malloc]
+  352 |     bz3_free(state);
+      |     ^~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1/2026-03-12-204311-123506-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1/2026-03-12-204311-123506-1' to examine bug reports.

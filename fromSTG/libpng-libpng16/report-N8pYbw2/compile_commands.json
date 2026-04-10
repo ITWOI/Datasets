@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw2",
+        "arguments": [
+            "clang",
+            "-c",
+            "pngimage_end.c"
+        ],
+        "file": "pngimage_end.c"
+    }
+]

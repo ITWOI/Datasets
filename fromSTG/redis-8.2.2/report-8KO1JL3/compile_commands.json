@@ -1,0 +1,34 @@
+[
+    {
+        "arguments": [
+            "clang-18",
+            "-c",
+            "-emit-llvm",
+            "-DREDIS_STATIC=",
+            "-Wno-c11-extensions",
+            "-Wall",
+            "-W",
+            "-Wno-missing-field-initializers",
+            "-Werror=deprecated-declarations",
+            "-Wstrict-prototypes",
+            "-g",
+            "-ggdb",
+            "-Ipath/tests/redis-8.2.2/src/../deps/hiredis",
+            "-Ipath/tests/redis-8.2.2/src/../deps/linenoise",
+            "-Ipath/tests/redis-8.2.2/src/../deps/lua/src",
+            "-Ipath/tests/redis-8.2.2/src/../deps/hdr_histogram",
+            "-Ipath/tests/redis-8.2.2/src/../deps/fpconv",
+            "-Ipath/tests/redis-8.2.2/src/../deps/fast_float",
+            "-DUSE_JEMALLOC",
+            "-Ipath/tests/redis-8.2.2/src/../deps/jemalloc/include",
+            "-DUSE_OPENSSL=1",
+            "-DBUILD_TLS_MODULE=0",
+            "-DINCLUDE_VEC_SETS=1",
+            "-o",
+            "t_zset.o",
+            "t_zset_InstSlice.c"
+        ],
+        "directory": "path/tests/redis-8.2.2/src",
+        "file": "t_zset_InstSlice.c"
+    }
+]

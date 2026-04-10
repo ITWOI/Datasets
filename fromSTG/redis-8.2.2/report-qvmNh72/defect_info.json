@@ -1,0 +1,648 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Array access (via field 'lines') results in a null pointer dereference",
+    "warning_func": "",
+    "line_number": 172,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "",
+    "functions": [
+        "rewriteConfig",
+        "rewriteConfigCreateState",
+        "rewriteConfigLoadmoduleOption",
+        "rewriteConfigReadOldFile",
+        "configRewriteCommand",
+        "rewriteConfigRemoveOrphaned",
+        "rewriteConfigUserOption"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 228,
+            "col": 9,
+            "line2": 228,
+            "col2": 40,
+            "function": "configRewriteCommand",
+            "var": [
+                "configfile",
+                "server"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 232,
+            "col": 9,
+            "line2": 232,
+            "col2": 43,
+            "function": "configRewriteCommand",
+            "var": [
+                "rewriteConfig",
+                "configfile",
+                "server"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 210,
+            "col": 1,
+            "line2": 210,
+            "col2": 1,
+            "function": "rewriteConfig",
+            "var": [
+                "state",
+                "rewriteConfigReadOldFile",
+                "path",
+                "force_write",
+                "rewriteConfigUserOption",
+                "rewriteConfigLoadmoduleOption",
+                "rewriteConfigRemoveOrphaned",
+                "newcontent",
+                "rewriteConfigGetContentFromState",
+                "retval",
+                "rewriteConfigOverwriteFile",
+                "configfile",
+                "server"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 214,
+            "col": 18,
+            "line2": 214,
+            "col2": 47,
+            "function": "rewriteConfig",
+            "var": [
+                "state",
+                "rewriteConfigReadOldFile",
+                "path"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 21,
+            "col": 1,
+            "line2": 21,
+            "col2": 1,
+            "function": "rewriteConfigReadOldFile",
+            "var": [
+                "fopen",
+                "path",
+                "fp",
+                "__errno_location",
+                "fstat",
+                "fileno",
+                "sb",
+                "rewriteConfigCreateState",
+                "state",
+                "st_size",
+                "sdsnewlen",
+                "SDS_NOINIT",
+                "fread",
+                "config",
+                "sdssplitlen",
+                "sdslen",
+                "totlines",
+                "i",
+                "sdstrim",
+                "lines",
+                "linenum",
+                "line",
+                "needs_signature",
+                "strcmp",
+                "rewriteConfigAppendLine",
+                "argv",
+                "sdssplitargs",
+                "argc",
+                "lookupConfig",
+                "strcasecmp",
+                "sdsnew",
+                "aux",
+                "sdscatsds",
+                "s_conf",
+                "flags",
+                "alias",
+                "sentinel_mode",
+                "server",
+                "sdsempty",
+                "sentinelOption",
+                "sdscatfmt"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 23,
+            "col": 9,
+            "line2": 23,
+            "col2": 25,
+            "function": "rewriteConfigReadOldFile",
+            "var": [
+                "fp",
+                "__errno_location"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 23,
+            "col": 30,
+            "line2": 23,
+            "col2": 55,
+            "function": "rewriteConfigReadOldFile",
+            "var": [
+                "fp",
+                "__errno_location"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 31,
+            "col": 40,
+            "line2": 31,
+            "col2": 65,
+            "function": "rewriteConfigReadOldFile",
+            "var": [
+                "rewriteConfigCreateState"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 7,
+            "col": 1,
+            "line2": 7,
+            "col2": 1,
+            "function": "rewriteConfigCreateState",
+            "var": [
+                "zmalloc",
+                "state",
+                "option_to_line",
+                "dictCreate",
+                "optionToLineDictType",
+                "rewritten",
+                "optionSetDictType",
+                "numlines",
+                "lines",
+                "needs_signature",
+                "force_write"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 12,
+            "col": 5,
+            "line2": 12,
+            "col2": 30,
+            "function": "rewriteConfigCreateState",
+            "var": [
+                "lines",
+                "state"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 31,
+            "col": 40,
+            "line2": 31,
+            "col2": 65,
+            "function": "rewriteConfigReadOldFile",
+            "var": [
+                "rewriteConfigCreateState"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 214,
+            "col": 18,
+            "line2": 214,
+            "col2": 47,
+            "function": "rewriteConfig",
+            "var": [
+                "state",
+                "rewriteConfigReadOldFile",
+                "path"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 220,
+            "col": 5,
+            "line2": 220,
+            "col2": 34,
+            "function": "rewriteConfig",
+            "var": [
+                "rewriteConfigUserOption()",
+                "rewriteConfigUserOption",
+                "state"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 104,
+            "col": 1,
+            "line2": 104,
+            "col2": 1,
+            "function": "rewriteConfigUserOption",
+            "var": [
+                "acl_filename",
+                "server",
+                "raxNext",
+                "ri",
+                "data",
+                "sdsnew",
+                "line",
+                "sdscatsds",
+                "name",
+                "u",
+                "sdscatlen",
+                "ACLDescribeUser",
+                "ptr",
+                "descr",
+                "rewriteConfigRewriteLine",
+                "state"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 105,
+            "col": 9,
+            "line2": 105,
+            "col2": 40,
+            "function": "rewriteConfigUserOption",
+            "var": [
+                "acl_filename",
+                "server"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 107,
+            "col": 9,
+            "line2": 107,
+            "col2": 9,
+            "function": "rewriteConfigUserOption",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 220,
+            "col": 5,
+            "line2": 220,
+            "col2": 34,
+            "function": "rewriteConfig",
+            "var": [
+                "rewriteConfigUserOption()",
+                "rewriteConfigUserOption",
+                "state"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 221,
+            "col": 5,
+            "line2": 221,
+            "col2": 40,
+            "function": "rewriteConfig",
+            "var": [
+                "rewriteConfigLoadmoduleOption()",
+                "rewriteConfigLoadmoduleOption",
+                "state"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 122,
+            "col": 1,
+            "line2": 122,
+            "col2": 1,
+            "function": "rewriteConfigLoadmoduleOption",
+            "var": [
+                "de",
+                "dictNext",
+                "di",
+                "dictGetVal",
+                "sdslen",
+                "path",
+                "loadmod",
+                "module",
+                "line",
+                "sdsnew",
+                "sdscatsds",
+                "i",
+                "argc",
+                "sdscatlen",
+                "ptr",
+                "argv",
+                "rewriteConfigRewriteLine",
+                "state"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 126,
+            "col": 12,
+            "line2": 126,
+            "col2": 46,
+            "function": "rewriteConfigLoadmoduleOption",
+            "var": [
+                "de",
+                "dictNext",
+                "di",
+                "dictGetVal",
+                "sdslen",
+                "path",
+                "loadmod",
+                "module",
+                "line",
+                "sdsnew",
+                "sdscatsds",
+                "i",
+                "argc",
+                "sdscatlen",
+                "ptr",
+                "argv",
+                "rewriteConfigRewriteLine",
+                "state"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 126,
+            "col": 12,
+            "line2": 126,
+            "col2": 46,
+            "function": "rewriteConfigLoadmoduleOption",
+            "var": [
+                "de",
+                "dictNext",
+                "di",
+                "dictGetVal",
+                "sdslen",
+                "path",
+                "loadmod",
+                "module",
+                "line",
+                "sdsnew",
+                "sdscatsds",
+                "i",
+                "argc",
+                "sdscatlen",
+                "ptr",
+                "argv",
+                "rewriteConfigRewriteLine",
+                "state"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 140,
+            "col": 1,
+            "line2": 140,
+            "col2": 1,
+            "function": "rewriteConfigLoadmoduleOption",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 221,
+            "col": 5,
+            "line2": 221,
+            "col2": 40,
+            "function": "rewriteConfig",
+            "var": [
+                "rewriteConfigLoadmoduleOption()",
+                "rewriteConfigLoadmoduleOption",
+                "state"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 222,
+            "col": 5,
+            "line2": 222,
+            "col2": 38,
+            "function": "rewriteConfig",
+            "var": [
+                "rewriteConfigRemoveOrphaned()",
+                "rewriteConfigRemoveOrphaned",
+                "state"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 157,
+            "col": 1,
+            "line2": 157,
+            "col2": 1,
+            "function": "rewriteConfigRemoveOrphaned",
+            "var": [
+                "de",
+                "dictNext",
+                "di",
+                "dictGetVal",
+                "dictGetKey",
+                "dictFind",
+                "rewritten",
+                "state",
+                "option",
+                "len",
+                "l",
+                "head",
+                "value",
+                "ln",
+                "sdsfree",
+                "lines",
+                "linenum",
+                "sdsempty"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 160,
+            "col": 12,
+            "line2": 160,
+            "col2": 46,
+            "function": "rewriteConfigRemoveOrphaned",
+            "var": [
+                "de",
+                "dictNext",
+                "di",
+                "dictGetVal",
+                "dictGetKey",
+                "dictFind",
+                "rewritten",
+                "state",
+                "option",
+                "len",
+                "l",
+                "head",
+                "value",
+                "ln",
+                "sdsfree",
+                "lines",
+                "linenum",
+                "sdsempty"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 160,
+            "col": 12,
+            "line2": 160,
+            "col2": 46,
+            "function": "rewriteConfigRemoveOrphaned",
+            "var": [
+                "de",
+                "dictNext",
+                "di",
+                "dictGetVal",
+                "dictGetKey",
+                "dictFind",
+                "rewritten",
+                "state",
+                "option",
+                "len",
+                "l",
+                "head",
+                "value",
+                "ln",
+                "sdsfree",
+                "lines",
+                "linenum",
+                "sdsempty"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 164,
+            "col": 17,
+            "line2": 164,
+            "col2": 65,
+            "function": "rewriteConfigRemoveOrphaned",
+            "var": [
+                "dictFind",
+                "rewritten",
+                "state",
+                "option"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 168,
+            "col": 20,
+            "line2": 168,
+            "col2": 29,
+            "function": "rewriteConfigRemoveOrphaned",
+            "var": [
+                "len",
+                "l",
+                "head",
+                "value",
+                "ln",
+                "sdsfree",
+                "lines",
+                "state",
+                "linenum",
+                "sdsempty"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c",
+            "line": 172,
+            "col": 36,
+            "line2": 172,
+            "col2": 40,
+            "function": "rewriteConfigRemoveOrphaned",
+            "var": [
+                "sdsfree()",
+                "sdsfree",
+                "lines",
+                "state",
+                "linenum"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/defect_info.json",
+    "files": [
+        "config_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件config_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: rewriteConfigCreateState\n   7 [TRACE-9]    | extern struct rewriteConfigState * rewriteConfigCreateState (){\n   8              | struct rewriteConfigState *state = zmalloc(sizeof (*state));\n   9              | state->option_to_line = dictCreate(&optionToLineDictType);\n  10              | state->rewritten = dictCreate(&optionSetDictType);\n  11              | state->numlines = 0;\n  12 [TRACE-10]   | state->lines = ((void *)0);\n  13              | state->needs_signature = 1;\n  14              | state->force_write = 0;\n  15              | return state;\n---→ 函数: rewriteConfigReadOldFile\n  21 [TRACE-5]    | extern struct rewriteConfigState * rewriteConfigReadOldFile (char *path){\n  22              | FILE *fp = fopen(path, \"r\");\n  23 [TRACE-6,7]  | if (fp == ((void *)0) && (*__errno_location()) != 2)\n  25              | struct stat sb;\n  26              | if (fp && fstat(fileno(fp), &sb) == -1) {\n  30              | int linenum = -1;\n  31 [TRACE-8,11] | struct rewriteConfigState *state = rewriteConfigCreateState();\n  32              | if (fp == ((void *)0)) {\n  35              | if (sb.st_size == 0) {\n  39              | sds config = sdsnewlen(SDS_NOINIT, sb.st_size);\n  40              | if (fread(config, 1, sb.st_size, fp) == 0) {\n  44              | int i, totlines;\n  45              | sds *lines = sdssplitlen(config, sdslen(config), \"\\n\", 1, &totlines);\n  46              | for (i = 0; i < totlines; i++) {\n  81              | return state;\n---→ 函数: rewriteConfigUserOption\n 104 [TRACE-14]   | extern void rewriteConfigUserOption (struct rewriteConfigState *state){\n 105 [TRACE-15]   | if (server.acl_filename[0] != '\\x00') {\n 107 [TRACE-16]   | return;\n 109              | raxIterator ri;\n 110              | while (raxNext(&ri))\n---→ 函数: rewriteConfigLoadmoduleOption\n 122 [TRACE-19]   | extern void rewriteConfigLoadmoduleOption (struct rewriteConfigState *state){\n 123              | sds line;\n 124              | dictIterator di;\n 125              | dictEntry *de;\n 126 [TRACE-20,21] | while ((de = dictNext(&di)) != ((void *)0))\n 140 [TRACE-22]   | }\n---→ 函数: rewriteConfigRemoveOrphaned\n 157 [TRACE-25]   | extern void rewriteConfigRemoveOrphaned (struct rewriteConfigState *state){\n 158              | dictIterator di;\n 159              | dictEntry *de;\n 160 [TRACE-26,27] | while ((de = dictNext(&di)) != ((void *)0))\n 162              | list *l = dictGetVal(de);\n 163              | sds option = dictGetKey(de);\n 164 [TRACE-28]   | if (dictFind(state->rewritten, option) == ((void *)0)) {\n 168 [TRACE-29]   | while (((l)->len))\n 170              | listNode *ln = ((l)->head);\n 171              | int linenum = (long)ln->value;\n 172 [TRACE-30]   | sdsfree(state->lines[linenum]);\n---→ 函数: rewriteConfig\n 210 [TRACE-3]    | extern int rewriteConfig (char *path, int force_write){\n 211              | struct rewriteConfigState *state;\n 212              | sds newcontent;\n 213              | int retval;\n 214 [TRACE-4,12] | if ((state = rewriteConfigReadOldFile(path)) == ((void *)0))\n 216              | if (force_write)\n 218              | dictIterator di;\n 219              | dictEntry *de;\n 220 [TRACE-13,17] | rewriteConfigUserOption(state);\n 221 [TRACE-18,23] | rewriteConfigLoadmoduleOption(state);\n 222 [TRACE-24]   | rewriteConfigRemoveOrphaned(state);\n 227              | extern void configRewriteCommand (client *c){\n---→ 函数: configRewriteCommand\n 228 [TRACE-1]    | if (server.configfile == ((void *)0)) {\n 232 [TRACE-2]    | if (rewriteConfig(server.configfile, 0) == -1) {\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/config_end.c": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            21,
+            22,
+            23,
+            25,
+            26,
+            30,
+            31,
+            32,
+            35,
+            39,
+            40,
+            44,
+            45,
+            46,
+            81,
+            104,
+            105,
+            107,
+            109,
+            110,
+            122,
+            123,
+            124,
+            125,
+            126,
+            140,
+            157,
+            158,
+            159,
+            160,
+            162,
+            163,
+            164,
+            168,
+            170,
+            171,
+            172,
+            210,
+            211,
+            212,
+            213,
+            214,
+            216,
+            218,
+            219,
+            220,
+            221,
+            222,
+            227,
+            228,
+            232
+        ],
+        "Datasets/fromDGS/redis-8.2.2/report-qvmNh72/./sds.h": [
+            2,
+            3,
+            4,
+            6,
+            7,
+            19
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "域敏感度缺失",
+        "过程间数据流断裂",
+        "指针分析能力不足"
+    ]
+}

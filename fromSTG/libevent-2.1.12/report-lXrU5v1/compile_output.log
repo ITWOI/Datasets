@@ -1,0 +1,166 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+regress_http_end.c:179:39: warning: cast to smaller integer type 'enum http_cancel_test_type' from 'void *' [-Wvoid-pointer-to-enum-cast]
+  179 |     enum http_cancel_test_type type = (enum http_cancel_test_type)data->setup_data;
+      |                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from regress_http_end.c:1:
+./header_func.h:27:28: warning: function 'https_bev' has internal linkage but is not defined [-Wundefined-internal]
+   27 | static struct bufferevent *https_bev(struct event_base *base, void *arg) ;
+      |                            ^
+regress_http_end.c:30:34: note: used here
+   30 |         evhttp_set_bevcb(myhttp, https_bev, ((void *)0));
+      |                                  ^
+In file included from regress_http_end.c:1:
+./header_func.h:35:13: warning: function 'http_basic_cb' has internal linkage but is not defined [-Wundefined-internal]
+   35 | static void http_basic_cb(struct evhttp_request *req, void *arg);
+      |             ^
+regress_http_end.c:33:36: note: used here
+   33 |     evhttp_set_cb(myhttp, "/test", http_basic_cb, myhttp);
+      |                                    ^
+In file included from regress_http_end.c:1:
+./header_func.h:37:13: warning: function 'http_timeout_cb' has internal linkage but is not defined [-Wundefined-internal]
+   37 | static void http_timeout_cb(struct evhttp_request *req, void *arg);
+      |             ^
+regress_http_end.c:35:39: note: used here
+   35 |     evhttp_set_cb(myhttp, "/timeout", http_timeout_cb, myhttp);
+      |                                       ^
+In file included from regress_http_end.c:1:
+./header_func.h:39:13: warning: function 'http_large_cb' has internal linkage but is not defined [-Wundefined-internal]
+   39 | static void http_large_cb(struct evhttp_request *req, void *arg);
+      |             ^
+regress_http_end.c:36:37: note: used here
+   36 |     evhttp_set_cb(myhttp, "/large", http_large_cb, base);
+      |                                     ^
+In file included from regress_http_end.c:1:
+./header_func.h:41:13: warning: function 'http_chunked_cb' has internal linkage but is not defined [-Wundefined-internal]
+   41 | static void http_chunked_cb(struct evhttp_request *req, void *arg);
+      |             ^
+regress_http_end.c:37:39: note: used here
+   37 |     evhttp_set_cb(myhttp, "/chunked", http_chunked_cb, base);
+      |                                       ^
+In file included from regress_http_end.c:1:
+./header_func.h:43:13: warning: function 'http_post_cb' has internal linkage but is not defined [-Wundefined-internal]
+   43 | static void http_post_cb(struct evhttp_request *req, void *arg);
+      |             ^
+regress_http_end.c:39:38: note: used here
+   39 |     evhttp_set_cb(myhttp, "/postit", http_post_cb, base);
+      |                                      ^
+In file included from regress_http_end.c:1:
+./header_func.h:45:13: warning: function 'http_put_cb' has internal linkage but is not defined [-Wundefined-internal]
+   45 | static void http_put_cb(struct evhttp_request *req, void *arg);
+      |             ^
+regress_http_end.c:40:37: note: used here
+   40 |     evhttp_set_cb(myhttp, "/putit", http_put_cb, base);
+      |                                     ^
+In file included from regress_http_end.c:1:
+./header_func.h:47:13: warning: function 'http_delete_cb' has internal linkage but is not defined [-Wundefined-internal]
+   47 | static void http_delete_cb(struct evhttp_request *req, void *arg);
+      |             ^
+regress_http_end.c:41:40: note: used here
+   41 |     evhttp_set_cb(myhttp, "/deleteit", http_delete_cb, base);
+      |                                        ^
+In file included from regress_http_end.c:1:
+./header_func.h:49:13: warning: function 'http_delay_cb' has internal linkage but is not defined [-Wundefined-internal]
+   49 | static void http_delay_cb(struct evhttp_request *req, void *arg);
+      |             ^
+regress_http_end.c:42:37: note: used here
+   42 |     evhttp_set_cb(myhttp, "/delay", http_delay_cb, base);
+      |                                     ^
+In file included from regress_http_end.c:1:
+./header_func.h:51:13: warning: function 'http_large_delay_cb' has internal linkage but is not defined [-Wundefined-internal]
+   51 | static void http_large_delay_cb(struct evhttp_request *req, void *arg);
+      |             ^
+regress_http_end.c:43:42: note: used here
+   43 |     evhttp_set_cb(myhttp, "/largedelay", http_large_delay_cb, base);
+      |                                          ^
+In file included from regress_http_end.c:1:
+./header_func.h:53:13: warning: function 'http_badreq_cb' has internal linkage but is not defined [-Wundefined-internal]
+   53 | static void http_badreq_cb(struct evhttp_request *req, void *arg);
+      |             ^
+regress_http_end.c:44:42: note: used here
+   44 |     evhttp_set_cb(myhttp, "/badrequest", http_badreq_cb, base);
+      |                                          ^
+In file included from regress_http_end.c:1:
+./header_func.h:55:13: warning: function 'http_on_complete_cb' has internal linkage but is not defined [-Wundefined-internal]
+   55 | static void http_on_complete_cb(struct evhttp_request *req, void *arg);
+      |             ^
+regress_http_end.c:45:42: note: used here
+   45 |     evhttp_set_cb(myhttp, "/oncomplete", http_on_complete_cb, base);
+      |                                          ^
+In file included from regress_http_end.c:1:
+./header_func.h:57:13: warning: function 'http_dispatcher_cb' has internal linkage but is not defined [-Wundefined-internal]
+   57 | static void http_dispatcher_cb(struct evhttp_request *req, void *arg);
+      |             ^
+regress_http_end.c:46:32: note: used here
+   46 |     evhttp_set_cb(myhttp, "/", http_dispatcher_cb, base);
+      |                                ^
+In file included from regress_http_end.c:1:
+./header_func.h:79:13: warning: function 'http_request_never_call' has internal linkage but is not defined [-Wundefined-internal]
+   79 | static void http_request_never_call(struct evhttp_request *req, void *arg) ;
+      |             ^
+regress_http_end.c:89:34: note: used here
+   89 |         req = evhttp_request_new(http_request_never_call, ((void *)0));
+      |                                  ^
+In file included from regress_http_end.c:1:
+./header_func.h:86:13: warning: function 'http_timed_out_request_done' has internal linkage but is not defined [-Wundefined-internal]
+   86 | static void http_timed_out_request_done(struct evhttp_request *req, void *arg) ;
+      |             ^
+regress_http_end.c:159:35: note: used here
+  159 |         return evhttp_request_new(http_timed_out_request_done, base);
+      |                                   ^
+In file included from regress_http_end.c:1:
+./header_func.h:88:13: warning: function 'http_failed_request_done' has internal linkage but is not defined [-Wundefined-internal]
+   88 | static void http_failed_request_done(struct evhttp_request *req, void *arg) ;
+      |             ^
+regress_http_end.c:161:35: note: used here
+  161 |         return evhttp_request_new(http_failed_request_done, base);
+      |                                   ^
+In file included from regress_http_end.c:1:
+./header_func.h:127:13: warning: function 'http_no_write' has internal linkage but is not defined [-Wundefined-internal]
+  127 | static void http_no_write(struct evbuffer *buffer, const struct evbuffer_cb_info *info, void *arg) ;
+      |             ^
+regress_http_end.c:267:56: note: used here
+  267 |         evbuffer_add_cb(bufferevent_get_output(bufev), http_no_write, ((void *)0));
+      |                                                        ^
+In file included from regress_http_end.c:1:
+./header_func.h:132:13: warning: function 'http_request_error_cb_with_cancel' has internal linkage but is not defined [-Wundefined-internal]
+  132 | static void http_request_error_cb_with_cancel(enum evhttp_request_error error, void *arg) ;
+      |             ^
+regress_http_end.c:269:38: note: used here
+  269 |     evhttp_request_set_error_cb(req, http_request_error_cb_with_cancel);
+      |                                      ^
+In file included from regress_http_end.c:1:
+./header_func.h:143:13: warning: function 'http_do_cancel' has internal linkage but is not defined [-Wundefined-internal]
+  143 | static void http_do_cancel(int fd, short what, void *arg) ;
+      |             ^
+regress_http_end.c:314:40: note: used here
+  314 |     event_base_once(data->base, -1, 1, http_do_cancel, req, &tv);
+      |                                        ^
+In file included from regress_http_end.c:1:
+./header_func.h:152:13: warning: function 'http_request_done' has internal linkage but is not defined [-Wundefined-internal]
+  152 | static void http_request_done(struct evhttp_request *, void *);
+      |             ^
+regress_http_end.c:404:34: note: used here
+  404 |         req = evhttp_request_new(http_request_done, (void *)BASIC_REQUEST_BODY);
+      |                                  ^
+In file included from regress_http_end.c:1:
+./header_func.h:156:13: warning: function 'http_request_empty_done' has internal linkage but is not defined [-Wundefined-internal]
+  156 | static void http_request_empty_done(struct evhttp_request *, void *);
+      |             ^
+regress_http_end.c:453:34: note: used here
+  453 |         req = evhttp_request_new(http_request_empty_done, data->base);
+      |                                  ^
+22 warnings generated.
+regress_http_end.c:143:21: warning: Potential leak of memory pointed to by 'evcon' [unix.Malloc]
+  143 |                     tinytest_set_test_failed_();
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+regress_http_end.c:143:21: warning: Potential leak of memory pointed to by 'evcon' [unix.Malloc]
+  143 |                     tinytest_set_test_failed_();
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+regress_http_end.c:143:21: warning: Potential leak of memory pointed to by 'evcon' [unix.Malloc]
+  143 |                     tinytest_set_test_failed_();
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/libevent-2.1.12/report-lXrU5v1/2026-03-12-172052-50556-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/libevent-2.1.12/report-lXrU5v1/2026-03-12-172052-50556-1' to examine bug reports.

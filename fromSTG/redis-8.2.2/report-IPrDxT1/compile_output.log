@@ -1,0 +1,37 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+redis-check-aof_end.c:351:1: warning: non-void function does not return a value [-Wreturn-type]
+  351 | }
+      | ^
+1 warning generated.
+redis-check-aof_end.c:209:24: warning: The 4th argument to 'fread' is NULL but should not be NULL [unix.StdCLibraryFunctions]
+  209 |         int rdb_file = fread(sig, sizeof (sig), 1, fp) == 1 && memcmp(sig, "REDIS", sizeof (sig)) == 0;
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+redis-check-aof_end.c:278:9: warning: Access to field 'len' results in a dereference of a null pointer (loaded from field 'incr_aof_list') [core.NullDereference]
+  278 |     if (((am->incr_aof_list)->len)) {
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+redis-check-aof_end.c:330:9: warning: 1st function call argument is an uninitialized value [core.CallAndMessage]
+  330 |     if (strlen(filepath) > 4096) {
+      |         ^~~~~~~~~~~~~~~~
+redis-check-aof_end.c:209:24: warning: The 4th argument to 'fread' is NULL but should not be NULL [unix.StdCLibraryFunctions]
+  209 |         int rdb_file = fread(sig, sizeof (sig), 1, fp) == 1 && memcmp(sig, "REDIS", sizeof (sig)) == 0;
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+redis-check-aof_end.c:278:9: warning: Access to field 'len' results in a dereference of a null pointer (loaded from field 'incr_aof_list') [core.NullDereference]
+  278 |     if (((am->incr_aof_list)->len)) {
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+redis-check-aof_end.c:330:9: warning: 1st function call argument is an uninitialized value [core.CallAndMessage]
+  330 |     if (strlen(filepath) > 4096) {
+      |         ^~~~~~~~~~~~~~~~
+redis-check-aof_end.c:209:24: warning: The 4th argument to 'fread' is NULL but should not be NULL [unix.StdCLibraryFunctions]
+  209 |         int rdb_file = fread(sig, sizeof (sig), 1, fp) == 1 && memcmp(sig, "REDIS", sizeof (sig)) == 0;
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+redis-check-aof_end.c:278:9: warning: Access to field 'len' results in a dereference of a null pointer (loaded from field 'incr_aof_list') [core.NullDereference]
+  278 |     if (((am->incr_aof_list)->len)) {
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+redis-check-aof_end.c:330:9: warning: 1st function call argument is an uninitialized value [core.CallAndMessage]
+  330 |     if (strlen(filepath) > 4096) {
+      |         ^~~~~~~~~~~~~~~~
+9 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-IPrDxT1/2026-03-12-194545-88540-1'
+scan-build: 3 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-IPrDxT1/2026-03-12-194545-88540-1' to examine bug reports.

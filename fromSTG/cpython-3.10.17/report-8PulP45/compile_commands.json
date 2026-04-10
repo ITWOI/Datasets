@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-8PulP45",
+        "arguments": [
+            "clang",
+            "-c",
+            "unicodeobject_end.c"
+        ],
+        "file": "unicodeobject_end.c"
+    }
+]

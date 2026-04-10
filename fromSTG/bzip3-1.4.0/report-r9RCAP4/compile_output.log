@@ -1,0 +1,24 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+main_end.c:112:25: warning: Potential leak of memory pointed to by 'output' [unix.Malloc]
+  112 |                         fprintf(stderr, "Warning: file %s has an unknown extension, skipping.\n", f1);
+      |                         ^~~~~~~
+main_end.c:123:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+  123 |     return r;
+      |     ^~~~~~~~
+main_end.c:112:25: warning: Potential leak of memory pointed to by 'output' [unix.Malloc]
+  112 |                         fprintf(stderr, "Warning: file %s has an unknown extension, skipping.\n", f1);
+      |                         ^~~~~~~
+main_end.c:123:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+  123 |     return r;
+      |     ^~~~~~~~
+main_end.c:112:25: warning: Potential leak of memory pointed to by 'output' [unix.Malloc]
+  112 |                         fprintf(stderr, "Warning: file %s has an unknown extension, skipping.\n", f1);
+      |                         ^~~~~~~
+main_end.c:123:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+  123 |     return r;
+      |     ^~~~~~~~
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/2026-03-12-204357-124334-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/2026-03-12-204357-124334-1' to examine bug reports.

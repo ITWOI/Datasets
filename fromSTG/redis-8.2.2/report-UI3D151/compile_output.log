@@ -1,0 +1,23 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from ae_end.c:1:
+./header_func.h:14:12: warning: function 'aeApiPoll' has internal linkage but is not defined [-Wundefined-internal]
+   14 | static int aeApiPoll(aeEventLoop *eventLoop, struct timeval *tvp) ;
+      |            ^
+ae_end.c:87:21: note: used here
+   87 |         numevents = aeApiPoll(eventLoop, tvp);
+      |                     ^
+1 warning generated.
+ae_end.c:14:20: warning: Access to field 'when' results in a dereference of a null pointer (loaded from variable 'earliest') [core.NullDereference]
+   14 |     return (now >= earliest->when) ? 0 : earliest->when - now;
+      |                    ^~~~~~~~~~~~~~
+ae_end.c:14:20: warning: Access to field 'when' results in a dereference of a null pointer (loaded from variable 'earliest') [core.NullDereference]
+   14 |     return (now >= earliest->when) ? 0 : earliest->when - now;
+      |                    ^~~~~~~~~~~~~~
+ae_end.c:14:20: warning: Access to field 'when' results in a dereference of a null pointer (loaded from variable 'earliest') [core.NullDereference]
+   14 |     return (now >= earliest->when) ? 0 : earliest->when - now;
+      |                    ^~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-UI3D151/2026-03-12-191816-76450-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-UI3D151/2026-03-12-191816-76450-1' to examine bug reports.

@@ -1,0 +1,78 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+obmalloc_end.c:182:24: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  182 |     if ((usable_arenas == ((void *)0))) {
+      |          ~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+obmalloc_end.c:182:24: note: remove extraneous parentheses around the comparison to silence this warning
+  182 |     if ((usable_arenas == ((void *)0))) {
+      |         ~              ^             ~
+obmalloc_end.c:182:24: note: use '=' to turn this equality comparison into an assignment
+  182 |     if ((usable_arenas == ((void *)0))) {
+      |                        ^~
+      |                        =
+obmalloc_end.c:202:40: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  202 |         if ((usable_arenas->nfreepools == 0)) {
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+obmalloc_end.c:202:40: note: remove extraneous parentheses around the comparison to silence this warning
+  202 |         if ((usable_arenas->nfreepools == 0)) {
+      |             ~                          ^   ~
+obmalloc_end.c:202:40: note: use '=' to turn this equality comparison into an assignment
+  202 |         if ((usable_arenas->nfreepools == 0)) {
+      |                                        ^~
+      |                                        =
+obmalloc_end.c:248:17: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  248 |     if ((nbytes == 0)) {
+      |          ~~~~~~~^~~~
+obmalloc_end.c:248:17: note: remove extraneous parentheses around the comparison to silence this warning
+  248 |     if ((nbytes == 0)) {
+      |         ~       ^   ~
+obmalloc_end.c:248:17: note: use '=' to turn this equality comparison into an assignment
+  248 |     if ((nbytes == 0)) {
+      |                 ^~
+      |                 =
+obmalloc_end.c:367:19: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  367 |     if ((lastfree == ((void *)0))) {
+      |          ~~~~~~~~~^~~~~~~~~~~~~~
+obmalloc_end.c:367:19: note: remove extraneous parentheses around the comparison to silence this warning
+  367 |     if ((lastfree == ((void *)0))) {
+      |         ~         ^             ~
+obmalloc_end.c:367:19: note: use '=' to turn this equality comparison into an assignment
+  367 |     if ((lastfree == ((void *)0))) {
+      |                   ^~
+      |                   =
+In file included from obmalloc_end.c:1:
+./header_func.h:10:13: warning: function '_PyMem_RawFree' has internal linkage but is not defined [-Wundefined-internal]
+   10 | static void _PyMem_RawFree(void *ctx, void *ptr) ;
+      |             ^
+./header_func.h:12:107: note: used here
+   12 | static PyMemAllocatorEx _PyMem_Raw = {((void *)0), _PyMem_RawMalloc, _PyMem_RawCalloc, _PyMem_RawRealloc, _PyMem_RawFree};
+      |                                                                                                           ^
+./header_func.h:36:13: warning: function '_PyObject_ArenaMunmap' has internal linkage but is not defined [-Wundefined-internal]
+   36 | static void _PyObject_ArenaMunmap(void *ctx, void *ptr, size_t size) ;
+      |             ^
+./header_func.h:38:84: note: used here
+   38 | static PyObjectArenaAllocator _PyObject_Arena = {((void *)0), _PyObject_ArenaMmap, _PyObject_ArenaMunmap};
+      |                                                                                    ^
+6 warnings generated.
+obmalloc_end.c:348:30: warning: Access to field 'prevarena' results in a dereference of a null pointer (loaded from field 'nextarena') [core.NullDereference]
+  348 |     ao->nextarena->prevarena = ao->prevarena;
+      |         ~~~~~~~~~            ^
+obmalloc_end.c:416:9: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+  416 |         return ptr2;
+      |         ^~~~~~~~~~~
+obmalloc_end.c:348:30: warning: Access to field 'prevarena' results in a dereference of a null pointer (loaded from field 'nextarena') [core.NullDereference]
+  348 |     ao->nextarena->prevarena = ao->prevarena;
+      |         ~~~~~~~~~            ^
+obmalloc_end.c:416:9: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+  416 |         return ptr2;
+      |         ^~~~~~~~~~~
+obmalloc_end.c:348:30: warning: Access to field 'prevarena' results in a dereference of a null pointer (loaded from field 'nextarena') [core.NullDereference]
+  348 |     ao->nextarena->prevarena = ao->prevarena;
+      |         ~~~~~~~~~            ^
+obmalloc_end.c:416:9: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+  416 |         return ptr2;
+      |         ^~~~~~~~~~~
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/2026-03-12-170248-44899-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/2026-03-12-170248-44899-1' to examine bug reports.

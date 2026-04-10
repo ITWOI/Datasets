@@ -1,0 +1,333 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Access to field 'tp_repr' results in a dereference of a null pointer (loaded from field 'ob_type')",
+    "warning_func": "",
+    "line_number": 101,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "_PyObject_AssertFailed",
+        "_PyObject_Dump",
+        "PyObject_Repr",
+        "PyObject_CallFinalizerFromDealloc",
+        "PyObject_Print"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/object_end.c",
+            "line": 16,
+            "col": 9,
+            "line2": 16,
+            "col2": 51,
+            "function": "PyObject_CallFinalizerFromDealloc",
+            "var": [
+                "_Py_REFCNT",
+                "self",
+                "_PyObject_AssertFailed"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/object_end.c",
+            "line": 17,
+            "col": 9,
+            "line2": 17,
+            "col2": 177,
+            "function": "PyObject_CallFinalizerFromDealloc",
+            "var": [
+                "_PyObject_AssertFailed()",
+                "_PyObject_AssertFailed",
+                "self"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/object_end.c",
+            "line": 159,
+            "col": 1,
+            "line2": 159,
+            "col2": 1,
+            "function": "_PyObject_AssertFailed",
+            "var": [
+                "_PyObject_IsFreed",
+                "obj",
+                "ob_type",
+                "_PyType_HasFeature",
+                "type",
+                "_PyObject_Dump"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/object_end.c",
+            "line": 172,
+            "col": 9,
+            "line2": 172,
+            "col2": 27,
+            "function": "_PyObject_AssertFailed",
+            "var": [
+                "_PyObject_Dump()",
+                "_PyObject_Dump",
+                "obj"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/object_end.c",
+            "line": 82,
+            "col": 1,
+            "line2": 82,
+            "col2": 1,
+            "function": "_PyObject_Dump",
+            "var": [
+                "_PyObject_IsFreed",
+                "op",
+                "fprintf",
+                "stderr",
+                "_Py_REFCNT",
+                "ob_type",
+                "type",
+                "tp_name",
+                "PyGILState_Ensure",
+                "PyObject_Print"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/object_end.c",
+            "line": 87,
+            "col": 5,
+            "line2": 87,
+            "col2": 57,
+            "function": "_PyObject_Dump",
+            "var": [
+                "fprintf()",
+                "fprintf",
+                "stderr",
+                "op"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/object_end.c",
+            "line": 90,
+            "col": 47,
+            "line2": 90,
+            "col2": 65,
+            "function": "_PyObject_Dump",
+            "var": [
+                "fprintf()",
+                "fprintf",
+                "stderr",
+                "type",
+                "tp_name"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/object_end.c",
+            "line": 93,
+            "col": 11,
+            "line2": 93,
+            "col2": 39,
+            "function": "_PyObject_Dump",
+            "var": [
+                "PyObject_Print",
+                "op",
+                "stderr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/object_end.c",
+            "line": 30,
+            "col": 1,
+            "line2": 30,
+            "col2": 1,
+            "function": "PyObject_Print",
+            "var": [
+                "PyErr_CheckSignals",
+                "op",
+                "_save",
+                "PyEval_SaveThread",
+                "fprintf",
+                "fp",
+                "PyEval_RestoreThread",
+                "_Py_REFCNT",
+                "flags",
+                "s",
+                "PyObject_Str",
+                "PyObject_Repr",
+                "PyType_HasFeature",
+                "ob_type",
+                "t",
+                "PyUnicode_AsEncodedString",
+                "_Py_DECREF",
+                "_Py_XDECREF",
+                "ret"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/object_end.c",
+            "line": 32,
+            "col": 9,
+            "line2": 32,
+            "col2": 28,
+            "function": "PyObject_Print",
+            "var": [
+                "PyErr_CheckSignals"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/object_end.c",
+            "line": 42,
+            "col": 13,
+            "line2": 42,
+            "col2": 53,
+            "function": "PyObject_Print",
+            "var": [
+                "_Py_REFCNT",
+                "op",
+                "_save",
+                "PyEval_SaveThread",
+                "fprintf",
+                "fp",
+                "PyEval_RestoreThread",
+                "flags",
+                "s",
+                "PyObject_Str",
+                "PyObject_Repr",
+                "PyType_HasFeature",
+                "ob_type",
+                "t",
+                "PyUnicode_AsEncodedString",
+                "_Py_DECREF",
+                "_Py_XDECREF"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/object_end.c",
+            "line": 54,
+            "col": 21,
+            "line2": 54,
+            "col2": 37,
+            "function": "PyObject_Print",
+            "var": [
+                "s",
+                "PyObject_Repr",
+                "op"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/object_end.c",
+            "line": 95,
+            "col": 1,
+            "line2": 95,
+            "col2": 1,
+            "function": "PyObject_Repr",
+            "var": [
+                "PyErr_CheckSignals",
+                "v",
+                "PyUnicode_FromString",
+                "tp_repr",
+                "ob_type",
+                "PyUnicode_FromFormat",
+                "tp_name",
+                "_PyThreadState_GET",
+                "_Py_EnterRecursiveCall",
+                "tstate",
+                "res",
+                "_Py_LeaveRecursiveCall",
+                "PyType_HasFeature",
+                "_Py_DECREF",
+                "ready",
+                "state",
+                "_PyUnicode_Ready"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/object_end.c",
+            "line": 97,
+            "col": 9,
+            "line2": 97,
+            "col2": 28,
+            "function": "PyObject_Repr",
+            "var": [
+                "PyErr_CheckSignals"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/object_end.c",
+            "line": 101,
+            "col": 29,
+            "line2": 101,
+            "col2": 35,
+            "function": "PyObject_Repr",
+            "var": [
+                "tp_repr",
+                "ob_type",
+                "v",
+                "PyUnicode_FromFormat",
+                "tp_name"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/defect_info.json",
+    "files": [
+        "object_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件object_end.c  缺陷代码片段===\n------------------------------------------------------------\n  15              | extern  __attribute__((visibility(\"default\"))) int PyObject_CallFinalizerFromDealloc (PyObject *self){\n---→ 函数: PyObject_CallFinalizerFromDealloc\n  16 [TRACE-1]    | if (_Py_REFCNT(((const PyObject *)(self))) != 0) {\n  17 [TRACE-2]    | _PyObject_AssertFailed((self), ((void *)0), (\"PyObject_CallFinalizerFromDealloc called on object with a non-zero refcount\"), \"Objects/object_InstSlice.c\", 171, __func__);\n---→ 函数: PyObject_Print\n  30 [TRACE-9]    | extern  __attribute__((visibility(\"default\"))) int PyObject_Print (PyObject *op, FILE *fp, int flags){\n  31              | int ret = 0;\n  32 [TRACE-10]   | if (PyErr_CheckSignals())\n  34              | if (op == ((void *)0)) {\n  42 [TRACE-11]   | if (_Py_REFCNT(((const PyObject *)(op))) <= 0) {\n  50              | PyObject *s;\n  51              | if (flags & 1) {\n  54 [TRACE-12]   | s = PyObject_Repr(op);\n  76              | extern  __attribute__((visibility(\"default\"))) int _PyObject_IsFreed (PyObject *op){\n  77              | if (_PyMem_IsPtrFreed(op) || _PyMem_IsPtrFreed((((PyObject *)(op))->ob_type))) {\n  80              | return 0;\n---→ 函数: _PyObject_Dump\n  82 [TRACE-5]    | extern  __attribute__((visibility(\"default\"))) void _PyObject_Dump (PyObject *op){\n  83              | if (_PyObject_IsFreed(op)) {\n  87 [TRACE-6]    | fprintf(stderr, \"object address  : %p\\n\", (void *)op);\n  88              | fprintf(stderr, \"object refcount : %ld\\n\", (long)_Py_REFCNT(((const PyObject *)(op))));\n  89              | PyTypeObject *type = (((PyObject *)(op))->ob_type);\n  90 [TRACE-7]    | fprintf(stderr, \"object type name: %s\\n\", type == ((void *)0) ? \"NULL\" : type->tp_name);\n  91              | PyGILState_STATE gil = PyGILState_Ensure();\n  92              | PyObject *error_type, *error_value, *error_traceback;\n  93 [TRACE-8]    | (void)PyObject_Print(op, stderr, 0);\n---→ 函数: PyObject_Repr\n  95 [TRACE-13]   | extern  __attribute__((visibility(\"default\"))) PyObject * PyObject_Repr (PyObject *v){\n  96              | PyObject *res;\n  97 [TRACE-14]   | if (PyErr_CheckSignals())\n  99              | if (v == ((void *)0))\n 101 [TRACE-15]   | if ((((PyObject *)(v))->ob_type)->tp_repr == ((void *)0))\n---→ 函数: _PyObject_AssertFailed\n 159 [TRACE-3]    | extern  __attribute__((visibility(\"default\"))) void _PyObject_AssertFailed (PyObject *obj, const char *expr, const char *msg, const char *file, int line, const char *function){\n 161              | if (_PyObject_IsFreed(obj)) {\n 164              | void *ptr;\n 165              | PyTypeObject *type = (((PyObject *)(obj))->ob_type);\n 166              | if (_PyType_HasFeature((type), (1UL << 14))) {\n 172 [TRACE-4]    | _PyObject_Dump(obj);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/object_end.c": [
+            15,
+            16,
+            17,
+            30,
+            31,
+            32,
+            34,
+            42,
+            50,
+            51,
+            54,
+            76,
+            77,
+            80,
+            82,
+            83,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            95,
+            96,
+            97,
+            99,
+            101,
+            159,
+            161,
+            164,
+            165,
+            166,
+            172
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/./pycore_object.h": [
+            2,
+            3
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/./pycore_pymem.h": [
+            2,
+            3,
+            4
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-Y8FQto1/./object.h": [
+            2,
+            3
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "域敏感度缺失",
+        "过程间数据流断裂",
+        "外部库/API逻辑建模缺失"
+    ]
+}

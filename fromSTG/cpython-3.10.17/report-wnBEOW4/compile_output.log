@@ -1,0 +1,65 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from arraymodule_end.c:1:
+./header_func.h:43:18: warning: function 'array__array_reconstructor' has internal linkage but is not defined [-Wundefined-internal]
+   43 | static PyObject *array__array_reconstructor(PyObject *module, PyObject *const *args, Py_ssize_t nargs) ;
+      |                  ^
+./header_func.h:46:89: note: used here
+   46 | static PyMethodDef a_methods[] = {{"_array_reconstructor", (PyCFunction)(void (*)(void))array__array_reconstructor, 128, array__array_reconstructor__doc__}, {((void *)0), ((void *)0), 0, ((void *)0)}};
+      |                                                                                         ^
+./header_func.h:47:12: warning: function 'array_modexec' has internal linkage but is not defined [-Wundefined-internal]
+   47 | static int array_modexec(PyObject *m) ;
+      |            ^
+./header_func.h:49:45: note: used here
+   49 | static PyModuleDef_Slot arrayslots[] = {{2, array_modexec}, {0, ((void *)0)}};
+      |                                             ^
+./header_func.h:36:12: warning: function 'array_traverse' has internal linkage but is not defined [-Wundefined-internal]
+   36 | static int array_traverse(PyObject *module, visitproc visit, void *arg) ;
+      |            ^
+./header_func.h:50:233: note: used here
+   50 | static struct PyModuleDef arraymodule = {.m_base = {{1, ((void *)0)}, ((void *)0), 0, ((void *)0)}, .m_name = "array", .m_size = sizeof(array_state), .m_doc = module_doc, .m_methods = a_methods, .m_slots = arrayslots, .m_traverse = array_traverse, .m_clear = array_clear, .m_free = array_free};
+      |                                                                                                                                                                                                                                         ^
+./header_func.h:38:12: warning: function 'array_clear' has internal linkage but is not defined [-Wundefined-internal]
+   38 | static int array_clear(PyObject *module) ;
+      |            ^
+./header_func.h:50:260: note: used here
+   50 | static struct PyModuleDef arraymodule = {.m_base = {{1, ((void *)0)}, ((void *)0), 0, ((void *)0)}, .m_name = "array", .m_size = sizeof(array_state), .m_doc = module_doc, .m_methods = a_methods, .m_slots = arrayslots, .m_traverse = array_traverse, .m_clear = array_clear, .m_free = array_free};
+      |                                                                                                                                                                                                                                                                    ^
+./header_func.h:40:13: warning: function 'array_free' has internal linkage but is not defined [-Wundefined-internal]
+   40 | static void array_free(void *module) ;
+      |             ^
+./header_func.h:50:283: note: used here
+   50 | static struct PyModuleDef arraymodule = {.m_base = {{1, ((void *)0)}, ((void *)0), 0, ((void *)0)}, .m_name = "array", .m_size = sizeof(array_state), .m_doc = module_doc, .m_methods = a_methods, .m_slots = arrayslots, .m_traverse = array_traverse, .m_clear = array_clear, .m_free = array_free};
+      |                                                                                                                                                                                                                                                                                           ^
+5 warnings generated.
+arraymodule_end.c:143:15: warning: The left operand of '>' is a garbage value [core.UndefinedBinaryOperatorResult]
+  143 |     if ((step > 0 && stop < start) || (step < 0 && stop > start))
+      |          ~~~~ ^
+arraymodule_end.c:145:17: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+  145 |     if ((needed == 0 || slicelength != needed) && self->ob_exports > 0) {
+      |          ~~~~~~ ^
+arraymodule_end.c:159:13: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+  159 |             memcpy(self->ob_item + start * itemsize, other->ob_item, needed * itemsize);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arraymodule_end.c:143:15: warning: The left operand of '>' is a garbage value [core.UndefinedBinaryOperatorResult]
+  143 |     if ((step > 0 && stop < start) || (step < 0 && stop > start))
+      |          ~~~~ ^
+arraymodule_end.c:145:17: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+  145 |     if ((needed == 0 || slicelength != needed) && self->ob_exports > 0) {
+      |          ~~~~~~ ^
+arraymodule_end.c:159:13: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+  159 |             memcpy(self->ob_item + start * itemsize, other->ob_item, needed * itemsize);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arraymodule_end.c:143:15: warning: The left operand of '>' is a garbage value [core.UndefinedBinaryOperatorResult]
+  143 |     if ((step > 0 && stop < start) || (step < 0 && stop > start))
+      |          ~~~~ ^
+arraymodule_end.c:145:17: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+  145 |     if ((needed == 0 || slicelength != needed) && self->ob_exports > 0) {
+      |          ~~~~~~ ^
+arraymodule_end.c:159:13: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+  159 |             memcpy(self->ob_item + start * itemsize, other->ob_item, needed * itemsize);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-wnBEOW4/2026-03-12-195024-91956-1'
+scan-build: 3 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-wnBEOW4/2026-03-12-195024-91956-1' to examine bug reports.

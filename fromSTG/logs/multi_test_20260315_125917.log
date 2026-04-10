@@ -1,0 +1,96 @@
+2026-03-15 12:59:18,462 - root - WARNING - start process redis-8.2.2
+2026-03-15 12:59:18,462 - root - INFO - slicer run, tools in /home/nishikino/new_version_benchmarks
+2026-03-15 12:59:18,462 - root - WARNING - Totally process 0 diagnostics, 0 success. 
+
+2026-03-15 12:59:18,467 - __main__ - INFO - Removed compile info directory: /home/nishikino/new_version_benchmarks/compile_info
+2026-03-15 12:59:19,203 - root - WARNING - start process cpython-3.10.17
+2026-03-15 12:59:19,203 - root - INFO - slicer run, tools in /home/nishikino/new_version_benchmarks
+2026-03-15 12:59:19,204 - root - WARNING - Totally process 0 diagnostics, 0 success. 
+
+2026-03-15 12:59:19,205 - __main__ - INFO - Removed compile info directory: /home/nishikino/new_version_benchmarks/compile_info
+2026-03-15 12:59:19,803 - root - WARNING - start process jq-1.8.1
+2026-03-15 12:59:19,803 - root - INFO - slicer run, tools in /home/nishikino/new_version_benchmarks
+2026-03-15 12:59:19,803 - root - WARNING - Totally process 0 diagnostics, 0 success. 
+
+2026-03-15 12:59:19,804 - __main__ - INFO - Removed compile info directory: /home/nishikino/new_version_benchmarks/compile_info
+2026-03-15 12:59:19,873 - root - WARNING - start process libevent-2.1.12
+2026-03-15 12:59:19,873 - root - INFO - slicer run, tools in /home/nishikino/new_version_benchmarks
+2026-03-15 12:59:19,873 - root - WARNING - Totally process 0 diagnostics, 0 success. 
+
+2026-03-15 12:59:19,874 - __main__ - INFO - Removed compile info directory: /home/nishikino/new_version_benchmarks/compile_info
+2026-03-15 12:59:19,917 - root - WARNING - start process libuv-1.51.0
+2026-03-15 12:59:19,917 - root - INFO - slicer run, tools in /home/nishikino/new_version_benchmarks
+2026-03-15 12:59:19,917 - root - WARNING - Totally process 0 diagnostics, 0 success. 
+
+2026-03-15 12:59:19,918 - __main__ - INFO - Removed compile info directory: /home/nishikino/new_version_benchmarks/compile_info
+2026-03-15 12:59:19,960 - root - WARNING - start process bzip3-1.4.0
+2026-03-15 12:59:19,960 - root - INFO - slicer run, tools in /home/nishikino/new_version_benchmarks
+2026-03-15 12:59:19,960 - root - WARNING - Totally process 0 diagnostics, 0 success. 
+
+2026-03-15 12:59:19,961 - __main__ - INFO - Removed compile info directory: /home/nishikino/new_version_benchmarks/compile_info
+2026-03-15 12:59:20,053 - root - WARNING - start process libpng-libpng16
+2026-03-15 12:59:20,053 - root - INFO - slicer run, tools in /home/nishikino/new_version_benchmarks
+2026-03-15 12:59:20,053 - root - WARNING - Processing /home/nishikino/new_version_benchmarks/tests/scan-results/libpng-libpng16_tests/report-CfuRPd.plist
+2026-03-15 12:59:20,053 - root - INFO - Processing /home/nishikino/new_version_benchmarks/tests/scan-results/libpng-libpng16_tests/report-CfuRPd.plist
+2026-03-15 12:59:20,066 - process_compile_commands - INFO - >>>><class 'list'>
+2026-03-15 12:59:20,067 - process_compile_commands - INFO - find cc>> ['/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c']
+2026-03-15 12:59:20,067 - process_compile_commands - INFO - Writing sliced compile commands to /home/nishikino/new_version_benchmarks/compile_info/compile_commands.json
+2026-03-15 12:59:27,417 - DefectInfoCreator - INFO - Defect info created at Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/defect_info_original.json
+2026-03-15 12:59:28,560 - Plist - INFO - Point[1]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1742
+2026-03-15 12:59:28,955 - Plist - INFO - Point[2]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1750
+2026-03-15 12:59:29,349 - Plist - INFO - Point[3]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1760
+2026-03-15 12:59:29,742 - Plist - INFO - Point[4]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1768
+2026-03-15 12:59:30,199 - Plist - INFO - Point[5]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1775
+2026-03-15 12:59:30,642 - Plist - INFO - Point[6]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1779
+2026-03-15 12:59:31,077 - Plist - INFO - Point[7]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1790
+2026-03-15 12:59:31,487 - Plist - INFO - Point[8]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1822
+2026-03-15 12:59:31,896 - Plist - INFO - Point[9]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1826
+2026-03-15 12:59:32,293 - Plist - INFO - Point[10]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1833
+2026-03-15 12:59:32,683 - Plist - INFO - Point[11]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1833
+2026-03-15 12:59:33,074 - Plist - INFO - Point[12]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1839
+2026-03-15 12:59:33,465 - Plist - INFO - Point[13]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1839
+2026-03-15 12:59:33,854 - Plist - INFO - Point[14]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1840
+2026-03-15 12:59:34,254 - Plist - INFO - Point[15]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1840
+2026-03-15 12:59:34,655 - Plist - INFO - Point[16]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1840
+2026-03-15 12:59:35,045 - Plist - INFO - Point[17]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1843
+2026-03-15 12:59:35,440 - Plist - INFO - Point[18]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1849
+2026-03-15 12:59:35,828 - Plist - INFO - Point[19]:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c : 1850
+2026-03-15 12:59:36,100 - process_compile_commands - INFO - ###compile files to bc, base compile /usr/bin/
+2026-03-15 12:59:36,100 - process_compile_commands - INFO - /usr/bin/clang-18 -c -emit-llvm -DHAVE_CONFIG_H -I/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/. -g -o /home/nishikino/new_version_benchmarks/inputs/temp1.bc /home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c
+2026-03-15 12:59:36,247 - process_compile_commands - INFO - cp /home/nishikino/new_version_benchmarks/inputs/temp1.bc /home/nishikino/new_version_benchmarks/inputs/input.bc
+2026-03-15 12:59:36,247 - Diagnostic - INFO - Exported slicing criterion to Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/report-CfuRPd1_slicing_criterion.txt
+2026-03-15 12:59:36,247 - Plist - WARNING - Slicing Criterion for Diagnostic:report-CfuRPd1: 'tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1750#display_clean_read, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1775#png_set_check_for_invalid_index, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1779#APP_FAIL, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1779#png_destroy_info_struct, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1826#h, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1826#png_error, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1826#rb, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1833#ct, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1833#options, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1833#png_get_palette_max, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1839#LIBPNG_ERROR, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1839#display_log, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1839#png_get_PLTE, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1843#blue, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1843#dp, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1843#green, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1843#ip, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1843#max, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1843#png_set_PLTE, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1843#read_pp, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1843#red, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1849#num, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1850#i, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1850#newpal, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1850#palette'
+2026-03-15 12:59:36,248 - Diagnostic - INFO - Slicing entry is main
+2026-03-15 12:59:36,248 - Diagnostic - INFO - /home/nishikino/new_version_benchmarks/dg-master/build/tools/llvm-slicer -sc 'tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1750#display_clean_read, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1775#png_set_check_for_invalid_index, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1779#APP_FAIL, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1779#png_destroy_info_struct, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1826#h, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1826#png_error, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1826#rb, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1833#ct, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1833#options, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1833#png_get_palette_max, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1839#LIBPNG_ERROR, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1839#display_log, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1839#png_get_PLTE, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1843#blue, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1843#dp, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1843#green, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1843#ip, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1843#max, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1843#png_set_PLTE, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1843#read_pp, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1843#red, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1849#num, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1850#i, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1850#newpal, tests/libpng-libpng16/contrib/tools/pngcp.c#read_png#1850#palette' -entry main  /home/nishikino/new_version_benchmarks/inputs/input.bc
+2026-03-15 12:59:36,983 - Diagnostic - INFO - reset:/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c /home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp_InstSlice.c /home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp_InstSlice_output.c
+2026-03-15 12:59:36,983 - Tool - INFO - mv /home/nishikino/new_version_benchmarks/inputs/input-instsInfo.txt Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/input-instsInfo.txt
+2026-03-15 12:59:36,986 - Diagnostic - INFO - /home/nishikino/new_version_benchmarks/astslicer/build/astslicer  /home/nishikino/new_version_benchmarks/inputs/compile_commands.json inst Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/input-instsInfo.txt Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/header_func.h  Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/header_type.h >Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/log.txt
+2026-03-15 12:59:37,172 - Diagnostic - INFO - file_paths:{'/home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c'}
+2026-03-15 12:59:37,172 - Diagnostic - INFO - /home/nishikino/new_version_benchmarks/delSpace/build/delSpace  /home/nishikino/new_version_benchmarks/compile_info/compile_commands.json Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/input-instsInfo.txt >Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/log2.txt
+2026-03-15 12:59:37,220 - Diagnostic - INFO - clean: /home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp.c
+2026-03-15 12:59:37,226 - Diagnostic - INFO - mv /home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp_InstSlice_output.c Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/pngcp.c
+2026-03-15 12:59:37,226 - Diagnostic - INFO - rm /home/nishikino/new_version_benchmarks/tests/libpng-libpng16/contrib/tools/pngcp_InstSlice.c
+2026-03-15 12:59:37,228 - Tool - INFO - clean:pngcp.c
+2026-03-15 12:59:37,228 - Tool - INFO - code_trans in_path:Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/pngcp.c out_path:Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/pngcp_end.c
+2026-03-15 12:59:37,231 - Tool - INFO - headers:[]
+2026-03-15 12:59:37,241 - Tool - INFO - cp /home/nishikino/new_version_benchmarks/compile_info/compile_commands.json Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/compile_commands.json
+2026-03-15 12:59:37,242 - Tool - INFO - cd Datasets/fromDGS/libpng-libpng16/report-CfuRPd1 && scan-build -plist-html -disable-checker deadcode.DeadStores -o Datasets/fromDGS/libpng-libpng16/report-CfuRPd1 clang -c -emit-llvm *_end.c > Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/compile_output.log 2>&1
+2026-03-15 12:59:39,527 - Tool - WARNING - 判断依据（目标缺陷取值）：
+2026-03-15 12:59:39,527 - Tool - WARNING -   description: "Array access (from variable 'palette') results in a null pointer dereference"
+2026-03-15 12:59:39,527 - Tool - WARNING -   category: 'Logic error'
+2026-03-15 12:59:39,527 - Tool - WARNING -   type: 'Dereference of null pointer'
+2026-03-15 12:59:39,527 - Tool - WARNING -   check_name: 'core.NullDereference'
+2026-03-15 12:59:39,527 - Tool - WARNING -   issue_context: 'read_png'
+2026-03-15 12:59:39,538 - Tool - WARNING - 在文件 Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/2026-03-15-125937-812889-1/report-rCcFyW.plist 中引入新的缺陷（索引：0, 1）
+2026-03-15 12:59:39,538 - Tool - WARNING - 在文件 Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/2026-03-15-125937-812889-1/report-rCcFyW.plist 中找到匹配缺陷（索引：2）
+2026-03-15 12:59:48,722 - DefectInfoCreator - INFO - Defect info created at Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/defect_info.json
+2026-03-15 12:59:48,723 - root - WARNING - Process 1 diagnostics, 1 success.
+
+2026-03-15 12:59:53,731 - root - WARNING - Totally process 1 diagnostics, 1 success. 
+
+2026-03-15 12:59:53,734 - __main__ - INFO - Removed compile info directory: /home/nishikino/new_version_benchmarks/compile_info
+2026-03-15 12:59:53,772 - root - WARNING - start process libusb-1.0.27
+2026-03-15 12:59:53,772 - root - INFO - slicer run, tools in /home/nishikino/new_version_benchmarks
+2026-03-15 12:59:53,772 - root - WARNING - Totally process 0 diagnostics, 0 success. 
+
+2026-03-15 12:59:53,773 - __main__ - INFO - Removed compile info directory: /home/nishikino/new_version_benchmarks/compile_info

@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/redis-8.2.2/report-8KO1JL4",
+        "arguments": [
+            "clang",
+            "-c",
+            "t_zset_end.c"
+        ],
+        "file": "t_zset_end.c"
+    }
+]

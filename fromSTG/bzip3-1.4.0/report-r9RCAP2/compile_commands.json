@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2",
+        "arguments": [
+            "clang",
+            "-c",
+            "main_end.c"
+        ],
+        "file": "main_end.c"
+    }
+]

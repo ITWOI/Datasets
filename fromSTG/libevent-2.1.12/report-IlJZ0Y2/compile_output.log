@@ -1,0 +1,23 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from regress_dns_end.c:1:
+./header_func.h:42:13: warning: function 'race_gai_cb' has internal linkage but is not defined [-Wundefined-internal]
+   42 | static void race_gai_cb(int result, struct addrinfo *res, void *arg) ;
+      |             ^
+regress_dns_end.c:162:85: note: used here
+  162 |             if (!((evdns_getaddrinfo(rp.dns, "foof.example.com", "80", ((void *)0), race_gai_cb, &rp)))) {
+      |                                                                                     ^
+1 warning generated.
+regress_dns_end.c:211:9: warning: Branch condition evaluates to a garbage value [core.uninitialized.Branch]
+  211 |     if (rp.locked)
+      |         ^~~~~~~~~
+regress_dns_end.c:211:9: warning: Branch condition evaluates to a garbage value [core.uninitialized.Branch]
+  211 |     if (rp.locked)
+      |         ^~~~~~~~~
+regress_dns_end.c:211:9: warning: Branch condition evaluates to a garbage value [core.uninitialized.Branch]
+  211 |     if (rp.locked)
+      |         ^~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/libevent-2.1.12/report-IlJZ0Y2/2026-03-12-203842-120526-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/libevent-2.1.12/report-IlJZ0Y2/2026-03-12-203842-120526-1' to examine bug reports.

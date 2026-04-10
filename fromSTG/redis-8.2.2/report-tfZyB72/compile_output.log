@@ -1,0 +1,42 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+t_stream_end.c:15:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+   15 |     return ret;
+      |     ^~~~~~~~~~
+t_stream_end.c:19:17: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   19 |     if (id->seq == 0) {
+      |         ~~~~~~~ ^
+t_stream_end.c:58:15: warning: The left operand of '>' is a garbage value [core.UndefinedBinaryOperatorResult]
+   58 |     if (a->ms > b->ms) {
+      |         ~~~~~ ^
+t_stream_end.c:58:15: warning: The right operand of '>' is a garbage value [core.UndefinedBinaryOperatorResult]
+   58 |     if (a->ms > b->ms) {
+      |               ^ ~~~~~
+t_stream_end.c:15:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+   15 |     return ret;
+      |     ^~~~~~~~~~
+t_stream_end.c:19:17: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   19 |     if (id->seq == 0) {
+      |         ~~~~~~~ ^
+t_stream_end.c:58:15: warning: The left operand of '>' is a garbage value [core.UndefinedBinaryOperatorResult]
+   58 |     if (a->ms > b->ms) {
+      |         ~~~~~ ^
+t_stream_end.c:58:15: warning: The right operand of '>' is a garbage value [core.UndefinedBinaryOperatorResult]
+   58 |     if (a->ms > b->ms) {
+      |               ^ ~~~~~
+t_stream_end.c:15:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+   15 |     return ret;
+      |     ^~~~~~~~~~
+t_stream_end.c:19:17: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   19 |     if (id->seq == 0) {
+      |         ~~~~~~~ ^
+t_stream_end.c:58:15: warning: The left operand of '>' is a garbage value [core.UndefinedBinaryOperatorResult]
+   58 |     if (a->ms > b->ms) {
+      |         ~~~~~ ^
+t_stream_end.c:58:15: warning: The right operand of '>' is a garbage value [core.UndefinedBinaryOperatorResult]
+   58 |     if (a->ms > b->ms) {
+      |               ^ ~~~~~
+12 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-tfZyB72/2026-03-12-191358-74049-1'
+scan-build: 3 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-tfZyB72/2026-03-12-191358-74049-1' to examine bug reports.

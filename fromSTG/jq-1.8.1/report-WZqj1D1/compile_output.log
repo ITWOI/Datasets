@@ -1,0 +1,23 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from compile_end.c:1:
+./header_func.h:44:12: warning: function 'jv_is_valid' has internal linkage but is not defined [-Wundefined-internal]
+   44 | static int jv_is_valid(jv x) ;
+      |            ^
+compile_end.c:170:9: note: used here
+  170 |     if (jv_is_valid(env))
+      |         ^
+1 warning generated.
+compile_end.c:142:31: warning: Access to field 'op' results in a dereference of a null pointer (loaded from field 'first') [core.NullDereference]
+  142 |     if (block_is_single(a) && a.first->op == LOADK) {
+      |                               ^~~~~~~~~~~
+compile_end.c:142:31: warning: Access to field 'op' results in a dereference of a null pointer (loaded from field 'first') [core.NullDereference]
+  142 |     if (block_is_single(a) && a.first->op == LOADK) {
+      |                               ^~~~~~~~~~~
+compile_end.c:142:31: warning: Access to field 'op' results in a dereference of a null pointer (loaded from field 'first') [core.NullDereference]
+  142 |     if (block_is_single(a) && a.first->op == LOADK) {
+      |                               ^~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/jq-1.8.1/report-WZqj1D1/2026-03-12-202452-111591-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/jq-1.8.1/report-WZqj1D1/2026-03-12-202452-111591-1' to examine bug reports.

@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1",
+        "arguments": [
+            "clang",
+            "-c",
+            "libbz3_end.c"
+        ],
+        "file": "libbz3_end.c"
+    }
+]

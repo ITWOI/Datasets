@@ -1,0 +1,20 @@
+[
+    {
+        "directory": "Datasets/fromDGS/libusb-1.0.27/report-LiJ9OP1",
+        "arguments": [
+            "clang",
+            "-c",
+            "sync_end.c"
+        ],
+        "file": "sync_end.c"
+    },
+    {
+        "directory": "Datasets/fromDGS/libusb-1.0.27/report-LiJ9OP1",
+        "arguments": [
+            "clang",
+            "-c",
+            "./libusbi.h"
+        ],
+        "file": "./libusbi.h"
+    }
+]

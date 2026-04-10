@@ -1,0 +1,603 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Access to field 'next' results in a dereference of a null pointer (loaded from variable 'forward')",
+    "warning_func": "",
+    "line_number": 69,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "",
+    "functions": [
+        "__quicklistInsertNode",
+        "quicklistPush",
+        "__quicklistCompress",
+        "quicklistPushHead",
+        "__quicklistInsertPlainNode"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 248,
+            "col": 9,
+            "line2": 248,
+            "col2": 23,
+            "function": "quicklistPush",
+            "var": [
+                "head",
+                "quicklist",
+                "__builtin_expect",
+                "encoding",
+                "_serverAssert",
+                "abort"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 250,
+            "col": 9,
+            "line2": 250,
+            "col2": 23,
+            "function": "quicklistPush",
+            "var": [
+                "tail",
+                "quicklist",
+                "__builtin_expect",
+                "encoding",
+                "_serverAssert",
+                "abort"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 251,
+            "col": 31,
+            "line2": 251,
+            "col2": 60,
+            "function": "quicklistPush",
+            "var": [
+                "__builtin_expect",
+                "encoding",
+                "tail",
+                "quicklist",
+                "_serverAssert",
+                "abort"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 252,
+            "col": 9,
+            "line2": 252,
+            "col2": 18,
+            "function": "quicklistPush",
+            "var": [
+                "where",
+                "quicklistPushHead",
+                "quicklist",
+                "value",
+                "sz",
+                "quicklistPushTail"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 253,
+            "col": 9,
+            "line2": 253,
+            "col2": 47,
+            "function": "quicklistPush",
+            "var": [
+                "quicklistPushHead()",
+                "quicklistPushHead",
+                "quicklist",
+                "value",
+                "sz"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 209,
+            "col": 1,
+            "line2": 209,
+            "col2": 1,
+            "function": "quicklistPushHead",
+            "var": [
+                "head",
+                "quicklist",
+                "__builtin_expect",
+                "isLargeElement",
+                "sz",
+                "fill",
+                "__quicklistInsertPlainNode",
+                "value",
+                "_quicklistNodeAllowInsert",
+                "quicklistCreateNode",
+                "entry",
+                "node",
+                "lpPrepend",
+                "lpNew",
+                "lpBytes",
+                "_quicklistInsertNodeBefore",
+                "orig_head"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 212,
+            "col": 47,
+            "line2": 212,
+            "col2": 61,
+            "function": "quicklistPushHead",
+            "var": [
+                "__quicklistInsertPlainNode()",
+                "__quicklistInsertPlainNode",
+                "quicklist",
+                "head",
+                "value",
+                "sz"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 212,
+            "col": 9,
+            "line2": 212,
+            "col2": 76,
+            "function": "quicklistPushHead",
+            "var": [
+                "__quicklistInsertPlainNode()",
+                "__quicklistInsertPlainNode",
+                "quicklist",
+                "head",
+                "value",
+                "sz"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 205,
+            "col": 1,
+            "line2": 205,
+            "col2": 1,
+            "function": "__quicklistInsertPlainNode",
+            "var": [
+                "__quicklistCreateNode",
+                "value",
+                "sz",
+                "__quicklistInsertNode",
+                "quicklist",
+                "old_node",
+                "new_node",
+                "after"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 207,
+            "col": 38,
+            "line2": 207,
+            "col2": 45,
+            "function": "__quicklistInsertPlainNode",
+            "var": [
+                "__quicklistInsertNode()",
+                "__quicklistInsertNode",
+                "quicklist",
+                "old_node",
+                "new_node",
+                "after"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 207,
+            "col": 5,
+            "line2": 207,
+            "col2": 63,
+            "function": "__quicklistInsertPlainNode",
+            "var": [
+                "__quicklistInsertNode()",
+                "__quicklistInsertNode",
+                "quicklist",
+                "old_node",
+                "new_node",
+                "after"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 91,
+            "col": 1,
+            "line2": 91,
+            "col2": 1,
+            "function": "__quicklistInsertNode",
+            "var": [
+                "after",
+                "prev",
+                "new_node",
+                "old_node",
+                "next",
+                "tail",
+                "quicklist",
+                "head",
+                "len",
+                "recompress",
+                "encoding",
+                "__quicklistCompressNode",
+                "__quicklistCompress"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 103,
+            "col": 9,
+            "line2": 103,
+            "col2": 33,
+            "function": "__quicklistInsertNode",
+            "var": [
+                "next",
+                "new_node",
+                "old_node"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 113,
+            "col": 9,
+            "line2": 113,
+            "col2": 27,
+            "function": "__quicklistInsertNode",
+            "var": [
+                "len",
+                "quicklist",
+                "head",
+                "tail",
+                "new_node"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 136,
+            "col": 13,
+            "line2": 136,
+            "col2": 56,
+            "function": "__quicklistInsertNode",
+            "var": [
+                "__quicklistCompress()",
+                "__quicklistCompress",
+                "quicklist",
+                "new_node"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 45,
+            "col": 1,
+            "line2": 45,
+            "col2": 1,
+            "function": "__quicklistCompress",
+            "var": [
+                "len",
+                "quicklist",
+                "__builtin_expect",
+                "recompress",
+                "head",
+                "tail",
+                "_serverAssert",
+                "abort",
+                "compress",
+                "depth",
+                "forward",
+                "encoding",
+                "__quicklistDecompressNode",
+                "reverse",
+                "node",
+                "in_depth",
+                "next",
+                "prev",
+                "__quicklistCompressNode"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 46,
+            "col": 9,
+            "line2": 46,
+            "col2": 27,
+            "function": "__quicklistCompress",
+            "var": [
+                "len",
+                "quicklist"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 48,
+            "col": 63,
+            "line2": 48,
+            "col2": 94,
+            "function": "__quicklistCompress",
+            "var": [
+                "__builtin_expect",
+                "recompress",
+                "head",
+                "quicklist",
+                "tail",
+                "_serverAssert",
+                "abort"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 49,
+            "col": 11,
+            "line2": 49,
+            "col2": 36,
+            "function": "__quicklistCompress",
+            "var": [
+                "compress",
+                "quicklist",
+                "len"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 49,
+            "col": 42,
+            "line2": 49,
+            "col2": 97,
+            "function": "__quicklistCompress",
+            "var": [
+                "compress",
+                "quicklist",
+                "len"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 55,
+            "col": 12,
+            "line2": 55,
+            "col2": 40,
+            "function": "__quicklistCompress",
+            "var": [
+                "depth",
+                "compress",
+                "quicklist",
+                "forward",
+                "encoding",
+                "__quicklistDecompressNode",
+                "reverse",
+                "node",
+                "in_depth",
+                "next",
+                "prev"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 69,
+            "col": 17,
+            "line2": 69,
+            "col2": 34,
+            "function": "__quicklistCompress",
+            "var": [
+                "forward",
+                "reverse",
+                "next"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 71,
+            "col": 13,
+            "line2": 71,
+            "col2": 35,
+            "function": "__quicklistCompress",
+            "var": [
+                "forward",
+                "next"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 55,
+            "col": 5,
+            "line2": 55,
+            "col2": 9,
+            "function": "__quicklistCompress",
+            "var": [
+                "depth",
+                "compress",
+                "quicklist",
+                "forward",
+                "encoding",
+                "__quicklistDecompressNode",
+                "reverse",
+                "node",
+                "in_depth",
+                "next",
+                "prev"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 55,
+            "col": 12,
+            "line2": 55,
+            "col2": 40,
+            "function": "__quicklistCompress",
+            "var": [
+                "depth",
+                "compress",
+                "quicklist",
+                "forward",
+                "encoding",
+                "__quicklistDecompressNode",
+                "reverse",
+                "node",
+                "in_depth",
+                "next",
+                "prev"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 55,
+            "col": 12,
+            "line2": 55,
+            "col2": 40,
+            "function": "__quicklistCompress",
+            "var": [
+                "depth",
+                "compress",
+                "quicklist",
+                "forward",
+                "encoding",
+                "__quicklistDecompressNode",
+                "reverse",
+                "node",
+                "in_depth",
+                "next",
+                "prev"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 63,
+            "col": 21,
+            "line2": 63,
+            "col2": 29,
+            "function": "__quicklistCompress",
+            "var": [
+                "reverse",
+                "encoding",
+                "__quicklistDecompressNode"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 63,
+            "col": 34,
+            "line2": 63,
+            "col2": 57,
+            "function": "__quicklistCompress",
+            "var": [
+                "reverse",
+                "encoding",
+                "__quicklistDecompressNode"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 67,
+            "col": 36,
+            "line2": 67,
+            "col2": 50,
+            "function": "__quicklistCompress",
+            "var": [
+                "forward",
+                "node",
+                "reverse",
+                "in_depth"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c",
+            "line": 69,
+            "col": 39,
+            "line2": 69,
+            "col2": 45,
+            "function": "__quicklistCompress",
+            "var": [
+                "forward",
+                "reverse",
+                "next"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/defect_info.json",
+    "files": [
+        "quicklist_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件quicklist_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | extern quicklistNode * quicklistCreateNode (){\n   3              | quicklistNode *node;\n   4              | node = zmalloc(sizeof (*node));\n   5              | node->entry = ((void *)0);\n   6              | node->count = 0;\n   7              | node->sz = 0;\n   8              | node->next = node->prev = ((void *)0);\n   9              | node->encoding = 1;\n  10              | node->container = 2;\n  11              | node->recompress = 0;\n  12              | node->dont_compress = 0;\n  13              | return node;\n---→ 函数: __quicklistCompress\n  45 [TRACE-16]   | extern void __quicklistCompress (const quicklist *quicklist, quicklistNode *node){\n  46 [TRACE-17]   | if (quicklist->len == 0)\n  48 [TRACE-18]   | (__builtin_expect(!!((quicklist->head->recompress == 0 && quicklist->tail->recompress == 0)), 1) ? (void)0 : (_serverAssert(\"quicklist->head->recompress == 0 && quicklist->tail->recompress == 0\", \"quicklist_InstSlice.c\", 248) , abort()));\n  49 [TRACE-19,20] | if (!((quicklist)->compress != 0) || quicklist->len < (unsigned int)(quicklist->compress * 2))\n  51              | quicklistNode *forward = quicklist->head;\n  52              | quicklistNode *reverse = quicklist->tail;\n  53              | int depth = 0;\n  54              | int in_depth = 0;\n  55 [TRACE-21,24,25,26] | while (depth++ < quicklist->compress)\n  57              | do {\n  58              | if ((forward) && (forward)->encoding == 2) {\n  61              | } while (0);\n  62              | do {\n  63 [TRACE-27,28] | if ((reverse) && (reverse)->encoding == 2) {\n  66              | } while (0);\n  67 [TRACE-29]   | if (forward == node || reverse == node)\n  68              | in_depth = 1;\n  69 [TRACE-22,30] | if (forward == reverse || forward->next == reverse)\n  71 [TRACE-23]   | forward = forward->next;\n  72              | reverse = reverse->prev;\n  73              | }\n---→ 函数: __quicklistInsertNode\n  91 [TRACE-12]   | extern void __quicklistInsertNode (quicklist *quicklist, quicklistNode *old_node, quicklistNode *new_node, int after){\n  92              | if (after) {\n 103 [TRACE-13]   | new_node->next = old_node;\n 104              | if (old_node) {\n 110              | if (quicklist->head == old_node)\n 111              | quicklist->head = new_node;\n 113 [TRACE-14]   | if (quicklist->len == 0) {\n 116              | quicklist->len++;\n 117              | if (old_node)\n 129              | if ((new_node)->recompress)\n 136 [TRACE-15]   | __quicklistCompress((quicklist), (new_node));\n 175              | static int isLargeElement (size_t sz, int fill){\n 176              | if (__builtin_expect(!!(packed_threshold != 0), 0))\n 177              | return sz >= packed_threshold;\n 193              | static quicklistNode * __quicklistCreateNode (int container, void *value, size_t sz){\n 194              | quicklistNode *new_node = quicklistCreateNode();\n 195              | new_node->container = container;\n 196              | if (container == 1) {\n 197              | new_node->entry = zmalloc(sz);\n 201              | new_node->sz = sz;\n 202              | new_node->count++;\n 203              | return new_node;\n---→ 函数: __quicklistInsertPlainNode\n 205 [TRACE-9]    | static void __quicklistInsertPlainNode (quicklist *quicklist, quicklistNode *old_node, void *value, size_t sz, int after){\n 206              | quicklistNode *new_node = __quicklistCreateNode(1, value, sz);\n 207 [TRACE-10,11] | __quicklistInsertNode(quicklist, old_node, new_node, after);\n---→ 函数: quicklistPushHead\n 209 [TRACE-6]    | extern int quicklistPushHead (quicklist *quicklist, void *value, size_t sz){\n 210              | quicklistNode *orig_head = quicklist->head;\n 211              | if (__builtin_expect(!!(isLargeElement(sz, quicklist->fill)), 0)) {\n 212 [TRACE-7,8]  | __quicklistInsertPlainNode(quicklist, quicklist->head, value, sz, 0);\n 247              | extern void quicklistPush (quicklist *quicklist, void *value, const size_t sz, int where){\n---→ 函数: quicklistPush\n 248 [TRACE-1]    | if (quicklist->head)\n 250 [TRACE-2]    | if (quicklist->tail)\n 251 [TRACE-3]    | (__builtin_expect(!!((quicklist->tail->encoding != 2)), 1) ? (void)0 : (_serverAssert(\"quicklist->tail->encoding != QUICKLIST_NODE_ENCODING_LZF\", \"quicklist_InstSlice.c\", 798) , abort()));\n 252 [TRACE-4]    | if (where == 0) {\n 253 [TRACE-5]    | quicklistPushHead(quicklist, value, sz);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-ddoAFy3/quicklist_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            45,
+            46,
+            48,
+            49,
+            51,
+            52,
+            53,
+            54,
+            55,
+            57,
+            58,
+            61,
+            62,
+            63,
+            66,
+            67,
+            68,
+            69,
+            71,
+            72,
+            73,
+            91,
+            92,
+            103,
+            104,
+            110,
+            111,
+            113,
+            116,
+            117,
+            129,
+            136,
+            175,
+            176,
+            177,
+            193,
+            194,
+            195,
+            196,
+            197,
+            201,
+            202,
+            203,
+            205,
+            206,
+            207,
+            209,
+            210,
+            211,
+            212,
+            247,
+            248,
+            250,
+            251,
+            252,
+            253
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "循环次数/递归深度受限",
+        "路径可行性判定失效"
+    ]
+}

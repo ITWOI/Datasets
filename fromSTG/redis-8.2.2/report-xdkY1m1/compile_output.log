@@ -1,0 +1,24 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+module_end.c:67:182: warning: Access to field 'name' results in a dereference of a null pointer (loaded from field 'module') [core.NullDereference]
+   67 |             _serverLog(3, "API misuse detected in module %s: RedisModule_ReplyWith*(REDISMODULE_POSTPONED_LEN) not matched by the same number of RedisModule_SetReply*Len() calls.", ctx->module->name);
+      |                                                                                                                                                                                      ^~~~~~~~~~~~~~~~~
+module_end.c:158:15: warning: Assigned value is garbage or undefined [core.uninitialized.Assign]
+  158 |     ci1->port = port;
+      |               ^ ~~~~
+module_end.c:67:182: warning: Access to field 'name' results in a dereference of a null pointer (loaded from field 'module') [core.NullDereference]
+   67 |             _serverLog(3, "API misuse detected in module %s: RedisModule_ReplyWith*(REDISMODULE_POSTPONED_LEN) not matched by the same number of RedisModule_SetReply*Len() calls.", ctx->module->name);
+      |                                                                                                                                                                                      ^~~~~~~~~~~~~~~~~
+module_end.c:158:15: warning: Assigned value is garbage or undefined [core.uninitialized.Assign]
+  158 |     ci1->port = port;
+      |               ^ ~~~~
+module_end.c:67:182: warning: Access to field 'name' results in a dereference of a null pointer (loaded from field 'module') [core.NullDereference]
+   67 |             _serverLog(3, "API misuse detected in module %s: RedisModule_ReplyWith*(REDISMODULE_POSTPONED_LEN) not matched by the same number of RedisModule_SetReply*Len() calls.", ctx->module->name);
+      |                                                                                                                                                                                      ^~~~~~~~~~~~~~~~~
+module_end.c:158:15: warning: Assigned value is garbage or undefined [core.uninitialized.Assign]
+  158 |     ci1->port = port;
+      |               ^ ~~~~
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-xdkY1m1/2026-03-12-192136-78862-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-xdkY1m1/2026-03-12-192136-78862-1' to examine bug reports.

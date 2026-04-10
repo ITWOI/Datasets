@@ -1,0 +1,543 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Dereference of null pointer (loaded from variable 'errmsg')",
+    "warning_func": "",
+    "line_number": 519,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "",
+    "functions": [
+        "moduleCommand",
+        "moduleLoad",
+        "moduleOnLoad",
+        "moduleUnload"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 569,
+            "col": 9,
+            "line2": 569,
+            "col2": 20,
+            "function": "moduleCommand",
+            "var": [
+                "argc",
+                "c",
+                "strcasecmp",
+                "subcmd",
+                "argv",
+                "moduleLoad",
+                "ptr",
+                "parseLoadexArguments",
+                "moduleUnload",
+                "errmsg",
+                "addReplyLoadedModules"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 571,
+            "col": 47,
+            "line2": 571,
+            "col2": 58,
+            "function": "moduleCommand",
+            "var": [
+                "strcasecmp",
+                "subcmd",
+                "argc",
+                "c",
+                "argv",
+                "moduleLoad",
+                "ptr",
+                "parseLoadexArguments",
+                "moduleUnload",
+                "errmsg",
+                "addReplyLoadedModules"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 574,
+            "col": 13,
+            "line2": 574,
+            "col2": 23,
+            "function": "moduleCommand",
+            "var": [
+                "argc",
+                "c",
+                "argv"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 578,
+            "col": 13,
+            "line2": 578,
+            "col2": 63,
+            "function": "moduleCommand",
+            "var": [
+                "moduleLoad",
+                "ptr",
+                "argv",
+                "c",
+                "argc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 438,
+            "col": 1,
+            "line2": 438,
+            "col2": 1,
+            "function": "moduleLoad",
+            "var": [
+                "stat",
+                "path",
+                "st",
+                "st_mode",
+                "handle",
+                "dlopen",
+                "onload",
+                "dlsym",
+                "moduleOnLoad",
+                "module_argv",
+                "module_argc",
+                "is_loadex"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 442,
+            "col": 9,
+            "line2": 442,
+            "col2": 28,
+            "function": "moduleLoad",
+            "var": [
+                "stat",
+                "path",
+                "st",
+                "st_mode"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 449,
+            "col": 9,
+            "line2": 449,
+            "col2": 29,
+            "function": "moduleLoad",
+            "var": [
+                "handle"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 454,
+            "col": 9,
+            "line2": 454,
+            "col2": 29,
+            "function": "moduleLoad",
+            "var": [
+                "onload"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 458,
+            "col": 12,
+            "line2": 458,
+            "col2": 82,
+            "function": "moduleLoad",
+            "var": [
+                "moduleOnLoad",
+                "onload",
+                "path",
+                "handle",
+                "module_argv",
+                "module_argc",
+                "is_loadex"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 460,
+            "col": 1,
+            "line2": 460,
+            "col2": 1,
+            "function": "moduleOnLoad",
+            "var": [
+                "moduleCreateContext",
+                "ctx",
+                "onload",
+                "module_argv",
+                "module_argc",
+                "module",
+                "moduleUnregisterCleanup",
+                "moduleFreeContext",
+                "blocked_clients",
+                "handle",
+                "loadmod",
+                "zmalloc",
+                "path",
+                "sdsnew",
+                "argv",
+                "argc",
+                "i",
+                "len",
+                "module_configs",
+                "configs_initialized",
+                "MODULE_CONFIGS_USER_VALS",
+                "post_load_err",
+                "is_loadex",
+                "ht_used",
+                "module_configs_queue",
+                "server",
+                "__builtin_expect",
+                "moduleUnload",
+                "name",
+                "_serverAssert",
+                "abort",
+                "moduleFireServerEvent"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 463,
+            "col": 9,
+            "line2": 463,
+            "col2": 59,
+            "function": "moduleOnLoad",
+            "var": [
+                "onload",
+                "ctx",
+                "module_argv",
+                "module_argc",
+                "module",
+                "moduleUnregisterCleanup",
+                "moduleFreeContext"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 478,
+            "col": 21,
+            "line2": 478,
+            "col2": 35,
+            "function": "moduleOnLoad",
+            "var": [
+                "i",
+                "module_argc",
+                "argv",
+                "loadmod",
+                "module",
+                "ctx",
+                "module_argv"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 484,
+            "col": 9,
+            "line2": 484,
+            "col2": 43,
+            "function": "moduleOnLoad",
+            "var": [
+                "len",
+                "module_configs",
+                "module",
+                "ctx",
+                "configs_initialized",
+                "MODULE_CONFIGS_USER_VALS",
+                "post_load_err"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 484,
+            "col": 48,
+            "line2": 484,
+            "col2": 108,
+            "function": "moduleOnLoad",
+            "var": [
+                "len",
+                "module_configs",
+                "module",
+                "ctx",
+                "configs_initialized",
+                "MODULE_CONFIGS_USER_VALS",
+                "post_load_err"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 493,
+            "col": 61,
+            "line2": 493,
+            "col2": 71,
+            "function": "moduleOnLoad",
+            "var": [
+                "__builtin_expect",
+                "moduleUnload",
+                "name",
+                "module",
+                "ctx",
+                "_serverAssert",
+                "abort"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 493,
+            "col": 30,
+            "line2": 493,
+            "col2": 75,
+            "function": "moduleOnLoad",
+            "var": [
+                "__builtin_expect",
+                "moduleUnload",
+                "name",
+                "module",
+                "ctx",
+                "_serverAssert",
+                "abort"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 501,
+            "col": 1,
+            "line2": 501,
+            "col2": 1,
+            "function": "moduleUnload",
+            "var": [
+                "dictFetchValue",
+                "modules",
+                "name",
+                "module",
+                "sdslen",
+                "path",
+                "loadmod",
+                "len",
+                "types",
+                "forced_unload",
+                "usedby",
+                "blocked_clients",
+                "moduleHoldsTimer",
+                "errmsg",
+                "onunload",
+                "dlsym",
+                "handle",
+                "moduleCreateContext",
+                "ctx",
+                "moduleFreeContext",
+                "unload_status",
+                "__errno_location",
+                "moduleUnregisterCleanup",
+                "dlclose",
+                "dlerror",
+                "moduleFireServerEvent"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 503,
+            "col": 9,
+            "line2": 503,
+            "col2": 29,
+            "function": "moduleUnload",
+            "var": [
+                "module",
+                "sdslen",
+                "path",
+                "loadmod",
+                "len",
+                "types",
+                "forced_unload",
+                "usedby",
+                "blocked_clients",
+                "moduleHoldsTimer",
+                "errmsg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 506,
+            "col": 16,
+            "line2": 506,
+            "col2": 49,
+            "function": "moduleUnload",
+            "var": [
+                "sdslen",
+                "path",
+                "loadmod",
+                "module",
+                "len",
+                "types",
+                "forced_unload",
+                "usedby",
+                "blocked_clients",
+                "moduleHoldsTimer",
+                "errmsg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 509,
+            "col": 16,
+            "line2": 509,
+            "col2": 37,
+            "function": "moduleUnload",
+            "var": [
+                "len",
+                "types",
+                "module",
+                "forced_unload",
+                "usedby",
+                "blocked_clients",
+                "moduleHoldsTimer",
+                "errmsg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 512,
+            "col": 16,
+            "line2": 512,
+            "col2": 38,
+            "function": "moduleUnload",
+            "var": [
+                "len",
+                "usedby",
+                "module",
+                "blocked_clients",
+                "moduleHoldsTimer",
+                "errmsg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 515,
+            "col": 16,
+            "line2": 515,
+            "col2": 38,
+            "function": "moduleUnload",
+            "var": [
+                "blocked_clients",
+                "module",
+                "moduleHoldsTimer",
+                "errmsg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 518,
+            "col": 16,
+            "line2": 518,
+            "col2": 39,
+            "function": "moduleUnload",
+            "var": [
+                "moduleHoldsTimer",
+                "module",
+                "errmsg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c",
+            "line": 519,
+            "col": 10,
+            "line2": 519,
+            "col2": 15,
+            "function": "moduleUnload",
+            "var": [
+                "errmsg"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/defect_info.json",
+    "files": [
+        "module_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件module_end.c  缺陷代码片段===\n------------------------------------------------------------\n   7              | extern client * moduleAllocTempClient (){\n   8              | client *c = ((void *)0);\n   9              | if (moduleTempClientCount > 0) {\n  10              | c = moduleTempClients[--moduleTempClientCount];\n  11              | if (moduleTempClientCount < moduleTempClientMinCount)\n  18              | return c;\n  71              | extern void moduleCreateContext (RedisModuleCtx *out_ctx, RedisModule *module, int ctx_flags){\n  72              | memset(out_ctx, 0, sizeof(RedisModuleCtx));\n  73              | out_ctx->getapifuncptr = (void *)(unsigned long)&RM_GetApi;\n  74              | out_ctx->module = module;\n  75              | out_ctx->flags = ctx_flags;\n  76              | if (ctx_flags & (1 << 6)) {\n  77              | out_ctx->client = moduleAllocTempClient();\n  80              | if (server.loading) {\n  83              | out_ctx->next_yield_time = getMonotonicUs() + server.busy_reply_threshold * 1000;\n---→ 函数: moduleLoad\n 438 [TRACE-5]    | extern int moduleLoad (const char *path, void **module_argv, int module_argc, int is_loadex){\n 439              | int (*onload)(void *, void **, int);\n 440              | void *handle;\n 441              | struct stat st;\n 442 [TRACE-6]    | if (stat(path, &st) == 0) {\n 448              | handle = dlopen(path, 2 | 0);\n 449 [TRACE-7]    | if (handle == ((void *)0)) {\n 453              | onload = (int (*)(void *, void **, int))(unsigned long)dlsym(handle, \"RedisModule_OnLoad\");\n 454 [TRACE-8]    | if (onload == ((void *)0)) {\n 458 [TRACE-9]    | return moduleOnLoad(onload, path, handle, module_argv, module_argc, is_loadex);\n---→ 函数: moduleOnLoad\n 460 [TRACE-10]   | extern int moduleOnLoad (int (*onload)(void *, void **, int), const char *path, void *handle, void **module_argv, int module_argc, int is_loadex){\n 461              | RedisModuleCtx ctx;\n 462              | moduleCreateContext(&ctx, ((void *)0), (1 << 6));\n 463 [TRACE-11]   | if (onload((void *)&ctx, module_argv, module_argc) == 1) {\n 472              | ctx.module->blocked_clients = 0;\n 473              | ctx.module->handle = handle;\n 474              | ctx.module->loadmod = zmalloc(sizeof(struct moduleLoadQueueEntry));\n 475              | ctx.module->loadmod->path = sdsnew(path);\n 476              | ctx.module->loadmod->argv = module_argc ? zmalloc(sizeof(robj *) * module_argc) : ((void *)0);\n 477              | ctx.module->loadmod->argc = module_argc;\n 478 [TRACE-12]   | for (int i = 0; i < module_argc; i++) {\n 482              | ctx.module->onload = 0;\n 483              | int post_load_err = 0;\n 484 [TRACE-13,14] | if (((ctx.module->module_configs)->len) && !(ctx.module->configs_initialized & MODULE_CONFIGS_USER_VALS)) {\n 486              | post_load_err = 1;\n 488              | if (is_loadex && ((server.module_configs_queue)->ht_used[0] + (server.module_configs_queue)->ht_used[1])) {\n 492              | if (post_load_err) {\n 493 [TRACE-15,16] | (__builtin_expect(!!(moduleUnload(ctx.module->name, ((void *)0), 1) == 0), 1) ? (void)0 : (_serverAssert(\"moduleUnload(ctx.module->name, NULL, 1) == C_OK\", \"module_InstSlice.c\", 6717) , abort()));\n---→ 函数: moduleUnload\n 501 [TRACE-17]   | extern int moduleUnload (sds name, const char **errmsg, int forced_unload){\n 502              | struct RedisModule *module = dictFetchValue(modules, name);\n 503 [TRACE-18]   | if (module == ((void *)0)) {\n 506 [TRACE-19]   | } else if (sdslen(module->loadmod->path) == 0) {\n 509 [TRACE-20]   | } else if (((module->types)->len) && !forced_unload) {\n 512 [TRACE-21]   | } else if (((module->usedby)->len)) {\n 515 [TRACE-22]   | } else if (module->blocked_clients) {\n 518 [TRACE-23]   | } else if (moduleHoldsTimer(module)) {\n 519 [TRACE-24]   | *errmsg = \"the module holds timer that is not fired. Please stop the timer or wait until it fires.\";\n 567              | extern void moduleCommand (client *c){\n 568              | char *subcmd = c->argv[1]->ptr;\n---→ 函数: moduleCommand\n 569 [TRACE-1]    | if (c->argc == 2 && !strcasecmp(subcmd, \"help\")) {\n 571 [TRACE-2]    | } else if (!strcasecmp(subcmd, \"load\") && c->argc >= 3) {\n 572              | robj **argv = ((void *)0);\n 573              | int argc = 0;\n 574 [TRACE-3]    | if (c->argc > 3) {\n 578 [TRACE-4]    | if (moduleLoad(c->argv[2]->ptr, (void **)argv, argc, 0) == 0) {\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/module_end.c": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            18,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            80,
+            83,
+            438,
+            439,
+            440,
+            441,
+            442,
+            448,
+            449,
+            453,
+            454,
+            458,
+            460,
+            461,
+            462,
+            463,
+            472,
+            473,
+            474,
+            475,
+            476,
+            477,
+            478,
+            482,
+            483,
+            484,
+            486,
+            488,
+            492,
+            493,
+            501,
+            502,
+            503,
+            506,
+            509,
+            512,
+            515,
+            518,
+            519,
+            567,
+            568,
+            569,
+            571,
+            572,
+            573,
+            574,
+            578
+        ],
+        "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8/./sds.h": [
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "路径可行性判定失效",
+        "外部库/API 逻辑建模缺失"
+    ]
+}

@@ -1,0 +1,20 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-8PulP44",
+        "arguments": [
+            "clang",
+            "-c",
+            "./codecs.h"
+        ],
+        "file": "./codecs.h"
+    },
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-8PulP44",
+        "arguments": [
+            "clang",
+            "-c",
+            "unicodeobject_end.c"
+        ],
+        "file": "unicodeobject_end.c"
+    }
+]

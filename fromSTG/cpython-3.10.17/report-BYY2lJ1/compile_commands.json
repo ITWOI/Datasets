@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-BYY2lJ1",
+        "arguments": [
+            "clang",
+            "-c",
+            "callbacks_end.c"
+        ],
+        "file": "callbacks_end.c"
+    }
+]

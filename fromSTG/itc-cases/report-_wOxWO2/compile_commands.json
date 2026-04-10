@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/itc-cases/report-_wOxWO2",
+        "arguments": [
+            "clang",
+            "-c",
+            "free_nondynamic_allocated_memory_end.c"
+        ],
+        "file": "free_nondynamic_allocated_memory_end.c"
+    }
+]

@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/jq-1.8.1/report-EUsc6b1",
+        "arguments": [
+            "clang",
+            "-c",
+            "jv_dtoa_end.c"
+        ],
+        "file": "jv_dtoa_end.c"
+    }
+]

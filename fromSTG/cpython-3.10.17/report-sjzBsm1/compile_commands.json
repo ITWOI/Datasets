@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-sjzBsm1",
+        "arguments": [
+            "clang",
+            "-c",
+            "marshal_end.c"
+        ],
+        "file": "marshal_end.c"
+    }
+]

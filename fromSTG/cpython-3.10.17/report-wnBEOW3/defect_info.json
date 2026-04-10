@@ -1,0 +1,422 @@
+{
+    "bug_type": "Argument with 'nonnull' attribute passed null",
+    "checker": "Clang Static Analyzer",
+    "description": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "warning_func": "",
+    "line_number": 157,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "_Py_SET_SIZE",
+        "array_resize",
+        "array_ass_subscr"
+    ],
+    "is_single_file": false,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 94,
+            "col": 9,
+            "line2": 94,
+            "col2": 27,
+            "function": "array_ass_subscr",
+            "var": [
+                "PyIndex_Check",
+                "item",
+                "PyNumber_AsSsize_t",
+                "PyExc_IndexError",
+                "i",
+                "PyErr_Occurred",
+                "ob_size",
+                "self",
+                "value",
+                "start",
+                "stop",
+                "step",
+                "slicelength",
+                "_Py_IS_TYPE",
+                "PySlice_Type",
+                "PySlice_Unpack",
+                "PySlice_AdjustIndices"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 112,
+            "col": 16,
+            "line2": 112,
+            "col2": 69,
+            "function": "array_ass_subscr",
+            "var": [
+                "_Py_IS_TYPE",
+                "item",
+                "PySlice_Type",
+                "PySlice_Unpack",
+                "start",
+                "stop",
+                "step",
+                "slicelength",
+                "PySlice_AdjustIndices",
+                "ob_size",
+                "self"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 113,
+            "col": 13,
+            "line2": 113,
+            "col2": 58,
+            "function": "array_ass_subscr",
+            "var": [
+                "PySlice_Unpack",
+                "item",
+                "start",
+                "stop",
+                "step"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 120,
+            "col": 9,
+            "line2": 120,
+            "col2": 28,
+            "function": "array_ass_subscr",
+            "var": [
+                "value",
+                "other",
+                "needed",
+                "_PyObject_TypeCheck",
+                "ArrayType",
+                "state",
+                "ob_size",
+                "self",
+                "array_slice",
+                "ret",
+                "array_ass_subscr",
+                "item",
+                "_Py_DECREF",
+                "ob_descr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 143,
+            "col": 10,
+            "line2": 143,
+            "col2": 17,
+            "function": "array_ass_subscr",
+            "var": [
+                "step",
+                "stop",
+                "start"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 143,
+            "col": 22,
+            "line2": 143,
+            "col2": 33,
+            "function": "array_ass_subscr",
+            "var": [
+                "step",
+                "stop",
+                "start"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 145,
+            "col": 51,
+            "line2": 145,
+            "col2": 70,
+            "function": "array_ass_subscr",
+            "var": [
+                "needed",
+                "slicelength",
+                "ob_exports",
+                "self"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 149,
+            "col": 9,
+            "line2": 149,
+            "col2": 17,
+            "function": "array_ass_subscr",
+            "var": [
+                "step",
+                "slicelength",
+                "needed",
+                "array_resize",
+                "self",
+                "ob_size",
+                "memmove",
+                "ob_item",
+                "start",
+                "itemsize",
+                "stop",
+                "cur",
+                "i",
+                "lim"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 150,
+            "col": 13,
+            "line2": 150,
+            "col2": 32,
+            "function": "array_ass_subscr",
+            "var": [
+                "slicelength",
+                "needed",
+                "array_resize",
+                "self",
+                "ob_size",
+                "memmove",
+                "ob_item",
+                "start",
+                "itemsize",
+                "stop"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 154,
+            "col": 20,
+            "line2": 154,
+            "col2": 39,
+            "function": "array_ass_subscr",
+            "var": [
+                "slicelength",
+                "needed",
+                "array_resize",
+                "self",
+                "ob_size",
+                "memmove",
+                "ob_item",
+                "start",
+                "itemsize",
+                "stop"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 155,
+            "col": 17,
+            "line2": 155,
+            "col2": 93,
+            "function": "array_ass_subscr",
+            "var": [
+                "array_resize",
+                "self",
+                "ob_size",
+                "needed",
+                "slicelength"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 7,
+            "col": 1,
+            "line2": 7,
+            "col2": 1,
+            "function": "array_resize",
+            "var": [
+                "ob_exports",
+                "self",
+                "newsize",
+                "ob_size",
+                "allocated",
+                "ob_item",
+                "_Py_SET_SIZE",
+                "_new_size",
+                "items",
+                "itemsize",
+                "ob_descr",
+                "PyMem_Realloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 14,
+            "col": 9,
+            "line2": 14,
+            "col2": 34,
+            "function": "array_resize",
+            "var": [
+                "allocated",
+                "self",
+                "newsize",
+                "ob_size",
+                "ob_item",
+                "_Py_SET_SIZE"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 18,
+            "col": 9,
+            "line2": 18,
+            "col2": 20,
+            "function": "array_resize",
+            "var": [
+                "newsize",
+                "ob_item",
+                "self",
+                "_Py_SET_SIZE",
+                "allocated"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 20,
+            "col": 9,
+            "line2": 20,
+            "col2": 35,
+            "function": "array_resize",
+            "var": [
+                "ob_item",
+                "self"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 21,
+            "col": 9,
+            "line2": 21,
+            "col2": 48,
+            "function": "array_resize",
+            "var": [
+                "_Py_SET_SIZE()",
+                "_Py_SET_SIZE",
+                "self"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/./object.h",
+            "line": 5,
+            "col": 1,
+            "line2": 5,
+            "col2": 1,
+            "function": "_Py_SET_SIZE",
+            "var": [
+                "ob_size",
+                "ob",
+                "size"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 21,
+            "col": 9,
+            "line2": 21,
+            "col2": 48,
+            "function": "array_resize",
+            "var": [
+                "_Py_SET_SIZE()",
+                "_Py_SET_SIZE",
+                "self"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 155,
+            "col": 17,
+            "line2": 155,
+            "col2": 93,
+            "function": "array_ass_subscr",
+            "var": [
+                "array_resize",
+                "self",
+                "ob_size",
+                "needed",
+                "slicelength"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c",
+            "line": 157,
+            "col": 21,
+            "line2": 157,
+            "col2": 63,
+            "function": "array_ass_subscr",
+            "var": [
+                "memmove()",
+                "memmove",
+                "ob_item",
+                "self",
+                "start",
+                "needed",
+                "itemsize",
+                "stop",
+                "ob_size"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/defect_info.json",
+    "files": [
+        "./object.h",
+        "arraymodule_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件arraymodule_end.c  缺陷代码片段===\n------------------------------------------------------------\n   4              | static array_state * get_array_state (PyObject *module){\n   5              | return (array_state *)_PyModule_GetState(module);\n---→ 函数: array_resize\n   7 [TRACE-12]   | static int array_resize (arrayobject *self, Py_ssize_t newsize){\n   8              | char *items;\n   9              | size_t _new_size;\n  10              | if (self->ob_exports > 0 && newsize != (((PyVarObject *)(self))->ob_size)) {\n  14 [TRACE-13]   | if (self->allocated >= newsize && (((PyVarObject *)(self))->ob_size) < newsize + 16 && self->ob_item != ((void *)0)) {\n  18 [TRACE-14]   | if (newsize == 0) {\n  20 [TRACE-15]   | self->ob_item = ((void *)0);\n  21 [TRACE-16,18] | _Py_SET_SIZE(((PyVarObject *)(self)), 0);\n  22              | self->allocated = 0;\n  23              | return 0;\n  89              | static int array_ass_subscr (arrayobject *self, PyObject *item, PyObject *value){\n  90              | Py_ssize_t start, stop, step, slicelength, needed;\n  91              | array_state *state = (get_array_state(_PyType_GetModuleByDef((((PyObject *)(self))->ob_type), &arraymodule)));\n  92              | arrayobject *other;\n  93              | int itemsize;\n---→ 函数: array_ass_subscr\n  94 [TRACE-1]    | if (PyIndex_Check(item)) {\n 112 [TRACE-2]    | } else if (_Py_IS_TYPE(((const PyObject *)(item)), &PySlice_Type)) {\n 113 [TRACE-3]    | if (PySlice_Unpack(item, &start, &stop, &step) < 0) {\n 116              | slicelength = PySlice_AdjustIndices((((PyVarObject *)(self))->ob_size), &start, &stop, step);\n 120 [TRACE-4]    | if (value == ((void *)0)) {\n 121              | other = ((void *)0);\n 122              | needed = 0;\n 142              | itemsize = self->ob_descr->itemsize;\n 143 [TRACE-5,6]  | if ((step > 0 && stop < start) || (step < 0 && stop > start))\n 144              | stop = start;\n 145 [TRACE-7]    | if ((needed == 0 || slicelength != needed) && self->ob_exports > 0) {\n 149 [TRACE-8]    | if (step == 1) {\n 150 [TRACE-9]    | if (slicelength > needed) {\n 154 [TRACE-10]   | } else if (slicelength < needed) {\n 155 [TRACE-11,19] | if (array_resize(self, (((PyVarObject *)(self))->ob_size) + needed - slicelength) < 0)\n 157 [TRACE-20]   | memmove(self->ob_item + (start + needed) * itemsize, self->ob_item + stop * itemsize, ((((PyVarObject *)(self))->ob_size) - start - needed) * itemsize);\n------------------------------------------------------------\n\n=== 文件object.h  缺陷代码片段===\n------------------------------------------------------------\n   2              | static inline int _Py_IS_TYPE (const PyObject *ob, const PyTypeObject *type){\n   3              | return ob->ob_type == type;\n---→ 函数: _Py_SET_SIZE\n   5 [TRACE-17]   | static inline void _Py_SET_SIZE (PyVarObject *ob, Py_ssize_t size){\n   6              | ob->ob_size = size;\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/arraymodule_end.c": [
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            14,
+            18,
+            20,
+            21,
+            22,
+            23,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            112,
+            113,
+            116,
+            120,
+            121,
+            122,
+            142,
+            143,
+            144,
+            145,
+            149,
+            150,
+            154,
+            155,
+            157
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/./pycore_moduleobject.h": [
+            2,
+            4
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3/./object.h": [
+            2,
+            3,
+            5,
+            6
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "外部库/API 逻辑建模缺失",
+        "指针分析能力不足",
+        "路径可行性判定失效"
+    ]
+}

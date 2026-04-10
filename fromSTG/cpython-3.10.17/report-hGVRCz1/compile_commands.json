@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1",
+        "arguments": [
+            "clang",
+            "-c",
+            "io_end.c"
+        ],
+        "file": "io_end.c"
+    }
+]

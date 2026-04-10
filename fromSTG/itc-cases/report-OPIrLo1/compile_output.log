@@ -1,0 +1,19 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+zero_division_end.c:5:14: warning: division by zero is undefined [-Wdivision-by-zero]
+    5 |     dividend /= 0;
+      |              ^  ~
+1 warning generated.
+zero_division_end.c:5:14: warning: Division by zero [core.DivideZero]
+    5 |     dividend /= 0;
+      |     ~~~~~~~~~^~~~
+zero_division_end.c:5:14: warning: Division by zero [core.DivideZero]
+    5 |     dividend /= 0;
+      |     ~~~~~~~~~^~~~
+zero_division_end.c:5:14: warning: Division by zero [core.DivideZero]
+    5 |     dividend /= 0;
+      |     ~~~~~~~~~^~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/itc-cases/report-OPIrLo1/2026-03-15-181713-873469-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/itc-cases/report-OPIrLo1/2026-03-15-181713-873469-1' to examine bug reports.

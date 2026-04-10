@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1",
+        "arguments": [
+            "clang",
+            "-c",
+            "getargs_end.c"
+        ],
+        "file": "getargs_end.c"
+    }
+]

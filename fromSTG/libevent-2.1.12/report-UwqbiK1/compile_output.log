@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+evdns_end.c:169:9: warning: Dereference of null pointer [core.NullDereference]
+  169 |     if (server_req->base.questions) {
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+evdns_end.c:169:9: warning: Dereference of null pointer [core.NullDereference]
+  169 |     if (server_req->base.questions) {
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+evdns_end.c:169:9: warning: Dereference of null pointer [core.NullDereference]
+  169 |     if (server_req->base.questions) {
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/libevent-2.1.12/report-UwqbiK1/2026-03-12-204040-121611-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/libevent-2.1.12/report-UwqbiK1/2026-03-12-204040-121611-1' to examine bug reports.

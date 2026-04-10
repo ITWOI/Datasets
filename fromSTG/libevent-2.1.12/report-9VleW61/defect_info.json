@@ -1,0 +1,196 @@
+{
+    "bug_type": "Result of operation is garbage or undefined",
+    "checker": "Clang Static Analyzer",
+    "description": "The left operand of '==' is a garbage value",
+    "warning_func": "",
+    "line_number": 7,
+    "directory": "path/tests/libevent-2.1.12-stable",
+    "entry_function": "regress_get_socket_port",
+    "functions": [
+        "regress_get_socket_port",
+        "regress_get_dnsserver",
+        "regress_dnsserver"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-9VleW61/regress_testutils_end.c",
+            "line": 37,
+            "col": 16,
+            "line2": 37,
+            "col2": 96,
+            "function": "regress_dnsserver",
+            "var": [
+                "dns_port",
+                "regress_get_dnsserver",
+                "base",
+                "port",
+                "dns_sock",
+                "regress_dns_server_cb",
+                "search_table"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-9VleW61/regress_testutils_end.c",
+            "line": 13,
+            "col": 1,
+            "line2": 13,
+            "col2": 1,
+            "function": "regress_get_dnsserver",
+            "var": [
+                "sock",
+                "socket",
+                "SOCK_DGRAM",
+                "memset",
+                "my_addr",
+                "sin_family",
+                "sin_port",
+                "htons",
+                "portnum",
+                "s_addr",
+                "sin_addr",
+                "inet_addr",
+                "bind",
+                "port",
+                "evdns_add_server_port_with_base",
+                "base",
+                "cb",
+                "arg",
+                "regress_get_socket_port"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-9VleW61/regress_testutils_end.c",
+            "line": 18,
+            "col": 9,
+            "line2": 18,
+            "col2": 16,
+            "function": "regress_get_dnsserver",
+            "var": [
+                "sock"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-9VleW61/regress_testutils_end.c",
+            "line": 26,
+            "col": 9,
+            "line2": 26,
+            "col2": 93,
+            "function": "regress_get_dnsserver",
+            "var": [
+                "bind",
+                "sock",
+                "my_addr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-9VleW61/regress_testutils_end.c",
+            "line": 30,
+            "col": 9,
+            "line2": 30,
+            "col2": 17,
+            "function": "regress_get_dnsserver",
+            "var": [
+                "portnum",
+                "regress_get_socket_port",
+                "sock"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-9VleW61/regress_testutils_end.c",
+            "line": 31,
+            "col": 20,
+            "line2": 31,
+            "col2": 48,
+            "function": "regress_get_dnsserver",
+            "var": [
+                "portnum",
+                "regress_get_socket_port",
+                "sock"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-9VleW61/regress_testutils_end.c",
+            "line": 2,
+            "col": 1,
+            "line2": 2,
+            "col2": 1,
+            "function": "regress_get_socket_port",
+            "var": [
+                "ss",
+                "getsockname",
+                "fd",
+                "socklen",
+                "ss_family",
+                "ntohs",
+                "sin_port"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-9VleW61/regress_testutils_end.c",
+            "line": 5,
+            "col": 9,
+            "line2": 5,
+            "col2": 80,
+            "function": "regress_get_socket_port",
+            "var": [
+                "getsockname",
+                "fd",
+                "ss",
+                "socklen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-9VleW61/regress_testutils_end.c",
+            "line": 7,
+            "col": 9,
+            "line2": 7,
+            "col2": 20,
+            "function": "regress_get_socket_port",
+            "var": [
+                "ss_family",
+                "ss",
+                "ntohs",
+                "sin_port"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/libevent-2.1.12/report-9VleW61/defect_info.json",
+    "files": [
+        "regress_testutils_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件regress_testutils_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: regress_get_socket_port\n   2 [TRACE-7]    | extern int regress_get_socket_port (int fd){\n   3              | struct sockaddr_storage ss;\n   4              | socklen_t socklen = sizeof (ss);\n   5 [TRACE-8]    | if (getsockname(fd, (__SOCKADDR_ARG){(struct sockaddr *)&ss}, &socklen) != 0)\n   7 [TRACE-9]    | if (ss.ss_family == 2) {\n---→ 函数: regress_get_dnsserver\n  13 [TRACE-2]    | extern struct evdns_server_port * regress_get_dnsserver (struct event_base *base, uint16_t *portnum, int *psock, evdns_request_callback_fn_type cb, void *arg){\n  14              | struct evdns_server_port *port = ((void *)0);\n  15              | int sock;\n  16              | struct sockaddr_in my_addr;\n  17              | sock = socket(2, SOCK_DGRAM, 0);\n  18 [TRACE-3]    | if (sock < 0) {\n  22              | memset(&my_addr, 0, sizeof (my_addr));\n  23              | my_addr.sin_family = 2;\n  24              | my_addr.sin_port = htons(*portnum);\n  25              | my_addr.sin_addr.s_addr = inet_addr(\"127.0.0.1\");\n  26 [TRACE-4]    | if (bind(sock, (__CONST_SOCKADDR_ARG){(struct sockaddr *)&my_addr}, sizeof (my_addr)) < 0) {\n  29              | port = evdns_add_server_port_with_base(base, sock, 0, cb, arg);\n  30 [TRACE-5]    | if (!*portnum)\n  31 [TRACE-6]    | *portnum = regress_get_socket_port(sock);\n  36              | extern int regress_dnsserver (struct event_base *base, uint16_t *port, struct regress_dns_server_table *search_table){\n---→ 函数: regress_dnsserver\n  37 [TRACE-1]    | dns_port = regress_get_dnsserver(base, port, &dns_sock, regress_dns_server_cb, search_table);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/libevent-2.1.12/report-9VleW61/regress_testutils_end.c": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            22,
+            23,
+            24,
+            25,
+            26,
+            29,
+            30,
+            31,
+            36,
+            37
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "外部库/API逻辑建模缺失",
+        "路径可行性判定失效",
+        "流敏感度不足"
+    ]
+}

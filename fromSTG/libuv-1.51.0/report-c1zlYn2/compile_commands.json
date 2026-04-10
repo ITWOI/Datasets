@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2",
+        "arguments": [
+            "clang",
+            "-c",
+            "tty_end.c"
+        ],
+        "file": "tty_end.c"
+    }
+]

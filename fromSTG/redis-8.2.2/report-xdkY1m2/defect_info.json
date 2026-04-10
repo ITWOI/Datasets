@@ -1,0 +1,374 @@
+{
+    "bug_type": "Assigned value is garbage or undefined",
+    "checker": "Clang Static Analyzer",
+    "description": "Assigned value is garbage or undefined",
+    "warning_func": "",
+    "line_number": 23,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "modulePopulateClientInfoStructure",
+    "functions": [
+        "RM_GetClientInfoById",
+        "modulePopulateClientInfoStructure",
+        "connAddrPeerName",
+        "connAddr"
+    ],
+    "is_single_file": false,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/module_end.c",
+            "line": 30,
+            "col": 9,
+            "line2": 30,
+            "col2": 29,
+            "function": "RM_GetClientInfoById",
+            "var": [
+                "client"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/module_end.c",
+            "line": 32,
+            "col": 9,
+            "line2": 32,
+            "col2": 25,
+            "function": "RM_GetClientInfoById",
+            "var": [
+                "ci"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/module_end.c",
+            "line": 35,
+            "col": 12,
+            "line2": 35,
+            "col2": 67,
+            "function": "RM_GetClientInfoById",
+            "var": [
+                "modulePopulateClientInfoStructure",
+                "ci",
+                "client",
+                "structver"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/module_end.c",
+            "line": 3,
+            "col": 1,
+            "line2": 3,
+            "col2": 1,
+            "function": "modulePopulateClientInfoStructure",
+            "var": [
+                "structver",
+                "ci",
+                "memset",
+                "ci1",
+                "version",
+                "flags",
+                "client",
+                "type",
+                "conn",
+                "connectionTypeTls",
+                "connAddrPeerName",
+                "addr",
+                "port",
+                "db",
+                "id"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/module_end.c",
+            "line": 4,
+            "col": 9,
+            "line2": 4,
+            "col2": 22,
+            "function": "modulePopulateClientInfoStructure",
+            "var": [
+                "structver"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/module_end.c",
+            "line": 9,
+            "col": 9,
+            "line2": 9,
+            "col2": 32,
+            "function": "modulePopulateClientInfoStructure",
+            "var": [
+                "flags",
+                "client",
+                "ci1"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/module_end.c",
+            "line": 11,
+            "col": 9,
+            "line2": 11,
+            "col2": 33,
+            "function": "modulePopulateClientInfoStructure",
+            "var": [
+                "flags",
+                "client",
+                "ci1"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/module_end.c",
+            "line": 13,
+            "col": 9,
+            "line2": 13,
+            "col2": 33,
+            "function": "modulePopulateClientInfoStructure",
+            "var": [
+                "flags",
+                "client",
+                "ci1"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/module_end.c",
+            "line": 15,
+            "col": 9,
+            "line2": 15,
+            "col2": 36,
+            "function": "modulePopulateClientInfoStructure",
+            "var": [
+                "flags",
+                "client",
+                "ci1"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/module_end.c",
+            "line": 17,
+            "col": 9,
+            "line2": 17,
+            "col2": 32,
+            "function": "modulePopulateClientInfoStructure",
+            "var": [
+                "flags",
+                "client",
+                "ci1"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/module_end.c",
+            "line": 19,
+            "col": 9,
+            "line2": 19,
+            "col2": 49,
+            "function": "modulePopulateClientInfoStructure",
+            "var": [
+                "type",
+                "conn",
+                "client",
+                "connectionTypeTls",
+                "flags",
+                "ci1"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/module_end.c",
+            "line": 21,
+            "col": 5,
+            "line2": 21,
+            "col2": 12,
+            "function": "modulePopulateClientInfoStructure",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/module_end.c",
+            "line": 22,
+            "col": 5,
+            "line2": 22,
+            "col2": 72,
+            "function": "modulePopulateClientInfoStructure",
+            "var": [
+                "connAddrPeerName()",
+                "connAddrPeerName",
+                "conn",
+                "client",
+                "addr",
+                "ci1",
+                "port"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/./connection.h",
+            "line": 8,
+            "col": 1,
+            "line2": 8,
+            "col2": 1,
+            "function": "connAddrPeerName",
+            "var": [
+                "connAddr",
+                "conn",
+                "ip",
+                "ip_len",
+                "port"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/./connection.h",
+            "line": 9,
+            "col": 12,
+            "line2": 9,
+            "col2": 46,
+            "function": "connAddrPeerName",
+            "var": [
+                "connAddr",
+                "conn",
+                "ip",
+                "ip_len",
+                "port"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/./connection.h",
+            "line": 2,
+            "col": 1,
+            "line2": 2,
+            "col2": 1,
+            "function": "connAddr",
+            "var": [
+                "conn",
+                "addr",
+                "type",
+                "ip",
+                "ip_len",
+                "port",
+                "remote"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/./connection.h",
+            "line": 3,
+            "col": 17,
+            "line2": 3,
+            "col2": 32,
+            "function": "connAddr",
+            "var": [
+                "conn",
+                "addr",
+                "type",
+                "ip",
+                "ip_len",
+                "port",
+                "remote"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/./connection.h",
+            "line": 6,
+            "col": 5,
+            "line2": 6,
+            "col2": 5,
+            "function": "connAddr",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/./connection.h",
+            "line": 9,
+            "col": 12,
+            "line2": 9,
+            "col2": 46,
+            "function": "connAddrPeerName",
+            "var": [
+                "connAddr",
+                "conn",
+                "ip",
+                "ip_len",
+                "port"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/./connection.h",
+            "line": 9,
+            "col": 5,
+            "line2": 9,
+            "col2": 5,
+            "function": "connAddrPeerName",
+            "var": [
+                "connAddr",
+                "conn",
+                "ip",
+                "ip_len",
+                "port"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/module_end.c",
+            "line": 22,
+            "col": 5,
+            "line2": 22,
+            "col2": 72,
+            "function": "modulePopulateClientInfoStructure",
+            "var": [
+                "connAddrPeerName()",
+                "connAddrPeerName",
+                "conn",
+                "client",
+                "addr",
+                "ci1",
+                "port"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/module_end.c",
+            "line": 23,
+            "col": 17,
+            "line2": 23,
+            "col2": 20,
+            "function": "modulePopulateClientInfoStructure",
+            "var": [
+                "port",
+                "ci1"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/defect_info.json",
+    "files": [
+        "module_end.c",
+        "./connection.h"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件module_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: modulePopulateClientInfoStructure\n   3 [TRACE-4]    | extern int modulePopulateClientInfoStructure (void *ci, client *client, int structver){\n   4 [TRACE-5]    | if (structver != 1)\n   6              | RedisModuleClientInfoV1 *ci1 = ci;\n   7              | memset(ci1, 0, sizeof (*ci1));\n   8              | ci1->version = structver;\n   9 [TRACE-6]    | if (client->flags & (1 << 3))\n  11 [TRACE-7]    | if (client->flags & (1 << 18))\n  13 [TRACE-8]    | if (client->flags & (1 << 11))\n  15 [TRACE-9]    | if (client->flags & (1ULL << 31))\n  17 [TRACE-10]   | if (client->flags & (1 << 4))\n  19 [TRACE-11]   | if (client->conn->type == connectionTypeTls())\n  21 [TRACE-12]   | int port;\n  22 [TRACE-13,21] | connAddrPeerName(client->conn, ci1->addr, sizeof (ci1->addr), &port);\n  23 [TRACE-22]   | ci1->port = port;\n  28              | extern int RM_GetClientInfoById (void *ci, uint64_t id){\n  29              | client *client = lookupClientByID(id);\n---→ 函数: RM_GetClientInfoById\n  30 [TRACE-1]    | if (client == ((void *)0))\n  32 [TRACE-2]    | if (ci == ((void *)0))\n  34              | uint64_t structver = ((uint64_t *)ci)[0];\n  35 [TRACE-3]    | return modulePopulateClientInfoStructure(ci, client, structver);\n------------------------------------------------------------\n\n=== 文件connection.h  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: connAddr\n   2 [TRACE-16]   | static inline int connAddr (connection *conn, char *ip, size_t ip_len, int *port, int remote){\n   3 [TRACE-17]   | if (conn && conn->type->addr) {\n   6 [TRACE-18]   | return -1;\n---→ 函数: connAddrPeerName\n   8 [TRACE-14]   | static inline int connAddrPeerName (connection *conn, char *ip, size_t ip_len, int *port){\n   9 [TRACE-15,19,20] | return connAddr(conn, ip, ip_len, port, 1);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/module_end.c": [
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            22,
+            23,
+            28,
+            29,
+            30,
+            32,
+            34,
+            35
+        ],
+        "Datasets/fromDGS/redis-8.2.2/report-xdkY1m2/./connection.h": [
+            2,
+            3,
+            6,
+            8,
+            9
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "指针分析能力不足",
+        "路径可行性判定失效"
+    ]
+}

@@ -1,0 +1,280 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Dereference of null pointer",
+    "warning_func": "",
+    "line_number": 169,
+    "directory": "path/tests/libevent-2.1.12-stable",
+    "entry_function": "",
+    "functions": [
+        "server_port_ready_callback",
+        "request_parse",
+        "server_port_read"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-CpmFql1/evdns_end.c",
+            "line": 239,
+            "col": 9,
+            "line2": 239,
+            "col2": 18,
+            "function": "server_port_ready_callback",
+            "var": [
+                "events",
+                "choked",
+                "port",
+                "server_port_flush"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-CpmFql1/evdns_end.c",
+            "line": 243,
+            "col": 9,
+            "line2": 243,
+            "col2": 18,
+            "function": "server_port_ready_callback",
+            "var": [
+                "events",
+                "server_port_read",
+                "port"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-CpmFql1/evdns_end.c",
+            "line": 244,
+            "col": 9,
+            "line2": 244,
+            "col2": 30,
+            "function": "server_port_ready_callback",
+            "var": [
+                "server_port_read()",
+                "server_port_read",
+                "port"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-CpmFql1/evdns_end.c",
+            "line": 175,
+            "col": 1,
+            "line2": 175,
+            "col2": 1,
+            "function": "server_port_read",
+            "var": [
+                "lock",
+                "s",
+                "evthread_lock_debugging_enabled_",
+                "__builtin_expect",
+                "evthread_is_debug_lock_held_",
+                "event_errx",
+                "fprintf",
+                "stderr",
+                "abort",
+                "addrlen",
+                "r",
+                "recvfrom",
+                "socket",
+                "packet",
+                "addr",
+                "__errno_location",
+                "request_parse"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-CpmFql1/evdns_end.c",
+            "line": 181,
+            "col": 13,
+            "line2": 181,
+            "col2": 23,
+            "function": "server_port_read",
+            "var": [
+                "lock",
+                "s",
+                "evthread_lock_debugging_enabled_",
+                "__builtin_expect",
+                "evthread_is_debug_lock_held_",
+                "event_errx",
+                "fprintf",
+                "stderr",
+                "abort"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-CpmFql1/evdns_end.c",
+            "line": 191,
+            "col": 5,
+            "line2": 191,
+            "col2": 7,
+            "function": "server_port_read",
+            "var": [
+                "addrlen",
+                "r",
+                "recvfrom",
+                "socket",
+                "s",
+                "packet",
+                "addr",
+                "__errno_location",
+                "request_parse"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-CpmFql1/evdns_end.c",
+            "line": 194,
+            "col": 13,
+            "line2": 194,
+            "col2": 17,
+            "function": "server_port_read",
+            "var": [
+                "r",
+                "__errno_location"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-CpmFql1/evdns_end.c",
+            "line": 198,
+            "col": 9,
+            "line2": 198,
+            "col2": 70,
+            "function": "server_port_read",
+            "var": [
+                "request_parse()",
+                "request_parse",
+                "packet",
+                "r",
+                "s",
+                "addr",
+                "addrlen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-CpmFql1/evdns_end.c",
+            "line": 59,
+            "col": 1,
+            "line2": 59,
+            "col2": 1,
+            "function": "request_parse",
+            "var": [
+                "lock",
+                "port",
+                "evthread_lock_debugging_enabled_",
+                "__builtin_expect",
+                "evthread_is_debug_lock_held_",
+                "event_errx",
+                "fprintf",
+                "stderr",
+                "abort",
+                "j",
+                "length",
+                "memcpy",
+                "t_",
+                "packet",
+                "trans_id",
+                "ntohs",
+                "flags",
+                "questions",
+                "answers",
+                "authority",
+                "additional",
+                "server_req",
+                "event_mm_malloc_",
+                "addrlen",
+                "base",
+                "nquestions",
+                "event_mm_calloc_",
+                "i",
+                "name_parse",
+                "tmp_name",
+                "type",
+                "class",
+                "namelen",
+                "strlen",
+                "q",
+                "refcnt",
+                "evdns_server_request_respond"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-CpmFql1/evdns_end.c",
+            "line": 65,
+            "col": 5,
+            "line2": 65,
+            "col2": 37,
+            "function": "request_parse",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-CpmFql1/evdns_end.c",
+            "line": 78,
+            "col": 13,
+            "line2": 78,
+            "col2": 26,
+            "function": "request_parse",
+            "var": [
+                "j",
+                "length"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-CpmFql1/evdns_end.c",
+            "line": 169,
+            "col": 9,
+            "line2": 169,
+            "col2": 34,
+            "function": "request_parse",
+            "var": [
+                "questions",
+                "base",
+                "server_req"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/libevent-2.1.12/report-CpmFql1/defect_info.json",
+    "files": [
+        "evdns_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件evdns_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: request_parse\n  59 [TRACE-9]    | static int request_parse (uint8_t *packet, int length, struct evdns_server_port *port, struct sockaddr *addr, socklen_t addrlen){\n  60              | int j = 0;\n  61              | uint16_t t_;\n  62              | char tmp_name[256];\n  63              | int i;\n  64              | uint16_t trans_id, flags, questions, answers, authority, additional;\n  65 [TRACE-10]   | struct server_request *server_req = ((void *)0);\n  66              | do {\n  67              | if (((port)->lock) && evthread_lock_debugging_enabled_) {\n  76              | } while (0);\n  78 [TRACE-11]   | if (j + 2 > length)\n  79              | goto err;\n 169 [TRACE-12]   | if (server_req->base.questions) {\n---→ 函数: server_port_read\n 175 [TRACE-4]    | static void server_port_read (struct evdns_server_port *s){\n 176              | uint8_t packet[1500];\n 177              | struct sockaddr_storage addr;\n 178              | socklen_t addrlen;\n 179              | int r;\n 180              | do {\n 181 [TRACE-5]    | if (((s)->lock) && evthread_lock_debugging_enabled_) {\n 190              | } while (0);\n 191 [TRACE-6]    | for (;;) {\n 192              | addrlen = sizeof(struct sockaddr_storage);\n 193              | r = recvfrom(s->socket, (void *)packet, sizeof (packet), 0, (__SOCKADDR_ARG){(struct sockaddr *)&addr}, &addrlen);\n 194 [TRACE-7]    | if (r < 0) {\n 198 [TRACE-8]    | request_parse(packet, r, s, (struct sockaddr *)&addr, addrlen);\n 237              | static void server_port_ready_callback (int fd, short events, void *arg){\n 238              | struct evdns_server_port *port = (struct evdns_server_port *)arg;\n---→ 函数: server_port_ready_callback\n 239 [TRACE-1]    | if (events & 4) {\n 243 [TRACE-2]    | if (events & 2) {\n 244 [TRACE-3]    | server_port_read(port);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/libevent-2.1.12/report-CpmFql1/evdns_end.c": [
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            76,
+            78,
+            79,
+            169,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            190,
+            191,
+            192,
+            193,
+            194,
+            198,
+            237,
+            238,
+            239,
+            243,
+            244
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "流敏感度不足",
+        "路径可行性判定失效"
+    ]
+}

@@ -1,0 +1,377 @@
+{
+    "bug_type": "Uninitialized argument value",
+    "checker": "Clang Static Analyzer",
+    "description": "17th function call argument is an uninitialized value",
+    "warning_func": "",
+    "line_number": 221,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "subprocess_fork_exec"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c",
+            "line": 49,
+            "col": 11,
+            "line2": 49,
+            "col2": 13,
+            "function": "subprocess_fork_exec",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c",
+            "line": 59,
+            "col": 9,
+            "line2": 59,
+            "col2": 358,
+            "function": "subprocess_fork_exec",
+            "var": [
+                "PyArg_ParseTuple",
+                "args",
+                "process_args",
+                "executable_list",
+                "close_fds",
+                "PyTuple_Type",
+                "py_fds_to_keep",
+                "cwd_obj",
+                "env_list",
+                "p2cread",
+                "p2cwrite",
+                "c2pread",
+                "c2pwrite",
+                "errread",
+                "errwrite",
+                "errpipe_read",
+                "errpipe_write",
+                "restore_signals",
+                "call_setsid",
+                "gid_object",
+                "groups_list",
+                "uid_object",
+                "child_umask",
+                "preexec_fn"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c",
+            "line": 61,
+            "col": 10,
+            "line2": 61,
+            "col2": 40,
+            "function": "subprocess_fork_exec",
+            "var": [
+                "preexec_fn",
+                "_Py_NoneStruct",
+                "PyInterpreterState_Get",
+                "PyInterpreterState_Main"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c",
+            "line": 65,
+            "col": 9,
+            "line2": 65,
+            "col2": 17,
+            "function": "subprocess_fork_exec",
+            "var": [
+                "close_fds",
+                "errpipe_write"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c",
+            "line": 75,
+            "col": 9,
+            "line2": 75,
+            "col2": 37,
+            "function": "subprocess_fork_exec",
+            "var": [
+                "_isolated_interpreter",
+                "config"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c",
+            "line": 79,
+            "col": 9,
+            "line2": 79,
+            "col2": 39,
+            "function": "subprocess_fork_exec",
+            "var": [
+                "preexec_fn",
+                "_Py_NoneStruct",
+                "need_to_reenable_gc",
+                "PyGC_Disable"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c",
+            "line": 83,
+            "col": 9,
+            "line2": 83,
+            "col2": 19,
+            "function": "subprocess_fork_exec",
+            "var": [
+                "exec_array"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c",
+            "line": 85,
+            "col": 9,
+            "line2": 85,
+            "col2": 41,
+            "function": "subprocess_fork_exec",
+            "var": [
+                "process_args",
+                "_Py_NoneStruct",
+                "fast_args",
+                "PySequence_Fast",
+                "num_args",
+                "PyType_HasFeature",
+                "ob_type",
+                "ob_size",
+                "converted_args",
+                "PyTuple_New",
+                "arg_num",
+                "borrowed_arg",
+                "ob_item",
+                "PyUnicode_FSConverter",
+                "converted_arg",
+                "argv",
+                "_PySequence_BytesToCharpArray",
+                "_py_tmp",
+                "_Py_DECREF"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c",
+            "line": 123,
+            "col": 9,
+            "line2": 123,
+            "col2": 37,
+            "function": "subprocess_fork_exec",
+            "var": [
+                "env_list",
+                "_Py_NoneStruct",
+                "envp",
+                "_PySequence_BytesToCharpArray"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c",
+            "line": 128,
+            "col": 9,
+            "line2": 128,
+            "col2": 36,
+            "function": "subprocess_fork_exec",
+            "var": [
+                "cwd_obj",
+                "_Py_NoneStruct",
+                "PyUnicode_FSConverter",
+                "cwd_obj2",
+                "cwd",
+                "PyBytes_AsString"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c",
+            "line": 135,
+            "col": 9,
+            "line2": 135,
+            "col2": 40,
+            "function": "subprocess_fork_exec",
+            "var": [
+                "groups_list",
+                "_Py_NoneStruct",
+                "PyType_HasFeature",
+                "ob_type",
+                "num_groups",
+                "PySequence_Size",
+                "groups",
+                "PyMem_RawMalloc",
+                "i",
+                "elem",
+                "PySequence_GetItem",
+                "_Py_DECREF",
+                "_Py_Gid_Converter",
+                "gid",
+                "call_setgroups"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c",
+            "line": 173,
+            "col": 9,
+            "line2": 173,
+            "col2": 39,
+            "function": "subprocess_fork_exec",
+            "var": [
+                "gid_object",
+                "_Py_NoneStruct",
+                "_Py_Gid_Converter",
+                "gid",
+                "call_setgid"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c",
+            "line": 178,
+            "col": 9,
+            "line2": 178,
+            "col2": 39,
+            "function": "subprocess_fork_exec",
+            "var": [
+                "uid_object",
+                "_Py_NoneStruct",
+                "_Py_Uid_Converter",
+                "uid",
+                "call_setuid"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c",
+            "line": 183,
+            "col": 9,
+            "line2": 183,
+            "col2": 39,
+            "function": "subprocess_fork_exec",
+            "var": [
+                "preexec_fn",
+                "_Py_NoneStruct",
+                "preexec_fn_args_tuple",
+                "PyTuple_New",
+                "need_after_fork"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c",
+            "line": 192,
+            "col": 9,
+            "line2": 192,
+            "col2": 39,
+            "function": "subprocess_fork_exec",
+            "var": [
+                "preexec_fn",
+                "_Py_NoneStruct",
+                "allow_vfork",
+                "PyImport_ImportModule",
+                "subprocess_module",
+                "PyObject_GetAttrString",
+                "_Py_DECREF",
+                "allow_vfork_obj"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c",
+            "line": 221,
+            "col": 193,
+            "line2": 221,
+            "col2": 195,
+            "function": "subprocess_fork_exec",
+            "var": [
+                "pid",
+                "do_fork_exec",
+                "exec_array",
+                "argv",
+                "envp",
+                "cwd",
+                "p2cread",
+                "p2cwrite",
+                "c2pread",
+                "c2pwrite",
+                "errread",
+                "errwrite",
+                "errpipe_read",
+                "errpipe_write",
+                "close_fds",
+                "restore_signals",
+                "call_setsid",
+                "call_setgid",
+                "gid",
+                "call_setgroups",
+                "num_groups",
+                "groups",
+                "call_setuid",
+                "uid",
+                "child_umask",
+                "old_sigmask",
+                "py_fds_to_keep",
+                "preexec_fn",
+                "preexec_fn_args_tuple"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/defect_info.json",
+    "files": [
+        "_posixsubprocess_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件_posixsubprocess_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | static int _sanity_check_python_fd_sequence (PyObject *fd_sequence){\n   3              | Py_ssize_t seq_idx;\n   4              | long prev_fd = -1;\n   5              | for (seq_idx = 0; seq_idx < (((PyVarObject *)((((void)(0)) , (PyTupleObject *)(fd_sequence))))->ob_size); ++seq_idx) {\n  17              | return 0;\n  36              | static PyObject * subprocess_fork_exec (PyObject *module, PyObject *args){\n  37              | PyObject *gc_module = ((void *)0);\n  38              | PyObject *executable_list, *py_fds_to_keep;\n  39              | PyObject *env_list, *preexec_fn;\n  40              | PyObject *process_args, *converted_args = ((void *)0), *fast_args = ((void *)0);\n  41              | PyObject *preexec_fn_args_tuple = ((void *)0);\n  42              | PyObject *groups_list;\n  43              | PyObject *uid_object, *gid_object;\n  44              | int p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite;\n  45              | int errpipe_read, errpipe_write, close_fds, restore_signals;\n  46              | int call_setsid;\n  47              | int call_setgid = 0, call_setgroups = 0, call_setuid = 0;\n  48              | uid_t uid;\n---→ 函数: subprocess_fork_exec\n  49 [TRACE-1]    | gid_t gid, *groups = ((void *)0);\n  50              | int child_umask;\n  51              | PyObject *cwd_obj, *cwd_obj2 = ((void *)0);\n  52              | const char *cwd;\n  53              | pid_t pid = -1;\n  54              | int need_to_reenable_gc = 0;\n  55              | char *const *exec_array, *const *argv = ((void *)0), *const *envp = ((void *)0);\n  56              | Py_ssize_t arg_num, num_groups = 0;\n  57              | int need_after_fork = 0;\n  58              | int saved_errno = 0;\n  59 [TRACE-2]    | if (!PyArg_ParseTuple(args, \"OOpO!OOiiiiiiiiiiOOOiO:fork_exec\", &process_args, &executable_list, &close_fds, &PyTuple_Type, &py_fds_to_keep, &cwd_obj, &env_list, &p2cread, &p2cwrite, &c2pread, &c2pwrite, &errread, &errwrite, &errpipe_read, &errpipe_write, &restore_signals, &call_setsid, &gid_object, &groups_list, &uid_object, &child_umask, &preexec_fn))\n  61 [TRACE-3]    | if ((preexec_fn != (&_Py_NoneStruct)) && (PyInterpreterState_Get() != PyInterpreterState_Main())) {\n  65 [TRACE-4]    | if (close_fds && errpipe_write < 3) {\n  69              | if (_sanity_check_python_fd_sequence(py_fds_to_keep)) {\n  73              | PyInterpreterState *interp = PyInterpreterState_Get();\n  74              | const PyConfig *config = _PyInterpreterState_GetConfig(interp);\n  75 [TRACE-5]    | if (config->_isolated_interpreter) {\n  79 [TRACE-6]    | if (preexec_fn != (&_Py_NoneStruct)) {\n  82              | exec_array = _PySequence_BytesToCharpArray(executable_list);\n  83 [TRACE-7]    | if (!exec_array)\n  85 [TRACE-8]    | if (process_args != (&_Py_NoneStruct)) {\n 123 [TRACE-9]    | if (env_list != (&_Py_NoneStruct)) {\n 128 [TRACE-10]   | if (cwd_obj != (&_Py_NoneStruct)) {\n 133              | cwd = ((void *)0);\n 135 [TRACE-11]   | if (groups_list != (&_Py_NoneStruct)) {\n 173 [TRACE-12]   | if (gid_object != (&_Py_NoneStruct)) {\n 178 [TRACE-13]   | if (uid_object != (&_Py_NoneStruct)) {\n 183 [TRACE-14]   | if (preexec_fn != (&_Py_NoneStruct)) {\n 189              | const void *old_sigmask = ((void *)0);\n 190              | sigset_t old_sigs;\n 191              | int allow_vfork;\n 192 [TRACE-15]   | if (preexec_fn == (&_Py_NoneStruct)) {\n 212              | allow_vfork = 0;\n 214              | if (allow_vfork && !call_setuid && !call_setgid && !call_setgroups) {\n 221 [TRACE-16]   | pid = do_fork_exec(exec_array, argv, envp, cwd, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, errpipe_read, errpipe_write, close_fds, restore_signals, call_setsid, call_setgid, gid, call_setgroups, num_groups, groups, call_setuid, uid, child_umask, old_sigmask, py_fds_to_keep, preexec_fn, preexec_fn_args_tuple);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/_posixsubprocess_end.c": [
+            2,
+            3,
+            4,
+            5,
+            17,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            61,
+            65,
+            69,
+            73,
+            74,
+            75,
+            79,
+            82,
+            83,
+            85,
+            123,
+            128,
+            133,
+            135,
+            173,
+            178,
+            183,
+            189,
+            190,
+            191,
+            192,
+            212,
+            214,
+            221
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "流敏感度不足",
+        "路径可行性判定失效",
+        "外部库/API 逻辑建模缺失"
+    ]
+}

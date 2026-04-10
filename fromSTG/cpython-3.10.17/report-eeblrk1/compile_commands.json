@@ -1,0 +1,29 @@
+[
+    {
+        "arguments": [
+            "clang-18",
+            "-c",
+            "-emit-llvm",
+            "-Wno-unused-result",
+            "-Wsign-compare",
+            "-Wunreachable-code",
+            "-DNDEBUG",
+            "-g",
+            "-Wall",
+            "-Wextra",
+            "-Wno-unused-result",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Werror=implicit-function-declaration",
+            "-Ipath/tests/cpython-3.10.17/./Include/internal",
+            "-Ipath/tests/cpython-3.10.17/.",
+            "-Ipath/tests/cpython-3.10.17/./Include",
+            "-DPy_BUILD_CORE",
+            "-o",
+            "Objects/longobject.o",
+            "Objects/longobject_InstSlice.c"
+        ],
+        "directory": "path/tests/cpython-3.10.17",
+        "file": "Objects/longobject_InstSlice.c"
+    }
+]

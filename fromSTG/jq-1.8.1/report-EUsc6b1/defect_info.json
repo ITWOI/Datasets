@@ -1,0 +1,178 @@
+{
+    "bug_type": "Bitwise shift",
+    "checker": "Clang Static Analyzer",
+    "description": "Right shift by '32' overflows the capacity of 'ULong'",
+    "warning_func": "",
+    "line_number": 427,
+    "directory": "path/tests/jq-1.8.1",
+    "entry_function": "",
+    "functions": [
+        "jvp_dtoa"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-EUsc6b1/jv_dtoa_end.c",
+            "line": 403,
+            "col": 9,
+            "line2": 403,
+            "col2": 32,
+            "function": "jvp_dtoa",
+            "var": [
+                "L",
+                "u",
+                "sign"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-EUsc6b1/jv_dtoa_end.c",
+            "line": 408,
+            "col": 9,
+            "line2": 408,
+            "col2": 47,
+            "function": "jvp_dtoa",
+            "var": [
+                "L",
+                "u",
+                "decpt",
+                "nrv_alloc",
+                "C",
+                "rve"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-EUsc6b1/jv_dtoa_end.c",
+            "line": 414,
+            "col": 9,
+            "line2": 414,
+            "col2": 16,
+            "function": "jvp_dtoa",
+            "var": [
+                "d",
+                "u",
+                "decpt",
+                "nrv_alloc",
+                "C",
+                "rve"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-EUsc6b1/jv_dtoa_end.c",
+            "line": 419,
+            "col": 10,
+            "line2": 419,
+            "col2": 10,
+            "function": "jvp_dtoa",
+            "var": [
+                "i",
+                "L",
+                "u",
+                "d",
+                "d2",
+                "denorm",
+                "bbits",
+                "be",
+                "x"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-EUsc6b1/jv_dtoa_end.c",
+            "line": 427,
+            "col": 47,
+            "line2": 427,
+            "col2": 68,
+            "function": "jvp_dtoa",
+            "var": [
+                "x",
+                "i",
+                "L",
+                "u"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/jq-1.8.1/report-EUsc6b1/defect_info.json",
+    "files": [
+        "jv_dtoa_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件jv_dtoa_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | static Bigint * Balloc (struct dtoa_context *C, int k){\n   3              | int x;\n   4              | Bigint *rv;\n   5              | if (k <= 7 && (rv = C->freelist[k])) {\n   8              | x = 1 << k;\n   9              | rv = (Bigint *)jv_mem_alloc(sizeof(Bigint) + (x - 1) * sizeof(ULong));\n  10              | rv->k = k;\n  11              | rv->maxwds = x;\n  13              | rv->sign = rv->wds = 0;\n  14              | return rv;\n  49              | static int hi0bits (struct dtoa_context *C, ULong x){\n  50              | int k = 0;\n  51              | if (!(x & 4294901760U)) {\n  55              | if (!(x & 4278190080U)) {\n  59              | if (!(x & 4026531840U)) {\n  63              | if (!(x & 3221225472U)) {\n  67              | if (!(x & 2147483648U)) {\n  72              | return k;\n  74              | static int lo0bits (struct dtoa_context *C, ULong *y){\n  75              | int k;\n  76              | ULong x = *y;\n  77              | if (x & 7) {\n  87              | k = 0;\n  88              | if (!(x & 65535)) {\n  92              | if (!(x & 255)) {\n  96              | if (!(x & 15)) {\n 100              | if (!(x & 3)) {\n 104              | if (!(x & 1)) {\n 110              | *y = x;\n 111              | return k;\n 287              | static Bigint * d2b (struct dtoa_context *C, U *d, int *e, int *bits){\n 288              | Bigint *b;\n 289              | int de, k;\n 290              | ULong *x, y, z;\n 291              | int i;\n 292              | b = Balloc(C, 1);\n 293              | x = b->x;\n 294              | z = (d)->L[1] & 1048575;\n 295              | (d)->L[1] &= 2147483647;\n 296              | if ((de = (int)((d)->L[1] >> 20)))\n 298              | if ((y = (d)->L[0])) {\n 306              | k = lo0bits(C, &z);\n 307              | x[0] = z;\n 308              | i = b->wds = 1;\n 309              | k += 32;\n 311              | if (de) {\n 315              | *e = de - 1023 - (53 - 1) + 1 + k;\n 316              | *bits = 32 * i - hi0bits(C, x[i - 1]);\n 318              | return b;\n 392              | extern char * jvp_dtoa (struct dtoa_context *C, double dd, int mode, int ndigits, int *decpt, int *sign, char **rve){\n 393              | int bbits, b2, b5, be, dig, i, ieps, ilim, ilim0, ilim1, j, j1 = 0, k, k0, k_check, leftright, m2, m5, s2, s5, spec_case, try_quick;\n 394              | int L;\n 395              | int denorm;\n 396              | ULong x;\n 397              | Bigint *b, *b1, *delta, *mlo, *mhi, *S;\n 398              | U d2, eps, u;\n 399              | double ds;\n 400              | char *s, *s0;\n 401              | U eps1;\n 402              | u.d = dd;\n---→ 函数: jvp_dtoa\n 403 [TRACE-1]    | if ((&u)->L[1] & 2147483648U) {\n 407              | *sign = 0;\n 408 [TRACE-2]    | if (((&u)->L[1] & 2146435072) == 2146435072) {\n 414 [TRACE-3]    | if (!(&u)->d) {\n 418              | b = d2b(C, &u, &be, &bbits);\n 419 [TRACE-4]    | if ((i = (int)((&u)->L[1] >> 20 & (2146435072 >> 20)))) {\n 426              | i = bbits + be + (1023 + (53 - 1) - 1);\n 427 [TRACE-5]    | x = i > 32 ? (&u)->L[1] << (64 - i) | (&u)->L[0] >> (i - 32) : (&u)->L[0] << (32 - i);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/jq-1.8.1/report-EUsc6b1/jv_dtoa_end.c": [
+            2,
+            3,
+            4,
+            5,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            49,
+            50,
+            51,
+            55,
+            59,
+            63,
+            67,
+            72,
+            74,
+            75,
+            76,
+            77,
+            87,
+            88,
+            92,
+            96,
+            100,
+            104,
+            110,
+            111,
+            287,
+            288,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            298,
+            306,
+            307,
+            308,
+            309,
+            311,
+            315,
+            316,
+            318,
+            392,
+            393,
+            394,
+            395,
+            396,
+            397,
+            398,
+            399,
+            400,
+            401,
+            402,
+            403,
+            407,
+            408,
+            414,
+            418,
+            419,
+            426,
+            427
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "未定义行为",
+    "qwen3.5-122b-a10b_labels": [
+        "基础类型建模不准确",
+        "符号表达式求解失效",
+        "过程间数据流断裂"
+    ]
+}

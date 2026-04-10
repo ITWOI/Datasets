@@ -1,0 +1,20 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3",
+        "arguments": [
+            "clang",
+            "-c",
+            "arraymodule_end.c"
+        ],
+        "file": "arraymodule_end.c"
+    },
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW3",
+        "arguments": [
+            "clang",
+            "-c",
+            "./object.h"
+        ],
+        "file": "./object.h"
+    }
+]

@@ -1,0 +1,79 @@
+{
+    "bug_type": "Memory leak",
+    "checker": "Clang Static Analyzer",
+    "description": "Potential leak of memory pointed to by 'dptr'",
+    "warning_func": "",
+    "line_number": 19,
+    "directory": "path/tests/itc-cases",
+    "entry_function": "",
+    "functions": [
+        "memory_leak_002"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-HvdUBU2/memory_leak_end.c",
+            "line": 14,
+            "col": 26,
+            "line2": 14,
+            "col2": 51,
+            "function": "memory_leak_002",
+            "var": [
+                "dptr",
+                "malloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-HvdUBU2/memory_leak_end.c",
+            "line": 15,
+            "col": 13,
+            "line2": 15,
+            "col2": 31,
+            "function": "memory_leak_002",
+            "var": [
+                "dptr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-HvdUBU2/memory_leak_end.c",
+            "line": 19,
+            "col": 9,
+            "line2": 19,
+            "col2": 9,
+            "function": "memory_leak_002",
+            "var": [
+                "memory_leak_002_func_001",
+                "flag"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/itc-cases/report-HvdUBU2/defect_info.json",
+    "files": [
+        "memory_leak_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件memory_leak_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | extern int memory_leak_002_func_001 (int flag){\n   3              | int ret;\n   4              | if (flag == 0) {\n   5              | ret = 0;\n   8              | return ret;\n  10              | extern void memory_leak_002 (){\n  11              | double *dptr;\n  12              | int flag = 0;\n  13              | if (memory_leak_002_func_001(flag) == 0) {\n---→ 函数: memory_leak_002\n  14 [TRACE-1]    | dptr = (double *)malloc(5 * sizeof(double));\n  15 [TRACE-2]    | if (dptr != ((void *)0)) {\n  16              | *(dptr + 1) = 10.5;\n  19 [TRACE-3]    | if (memory_leak_002_func_001(flag) != 0) {\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/itc-cases/report-HvdUBU2/memory_leak_end.c": [
+            2,
+            3,
+            4,
+            5,
+            8,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            19
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "堆对象抽象过粗"
+    ]
+}

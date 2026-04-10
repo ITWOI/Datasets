@@ -1,0 +1,35 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from sync_end.c:1:
+./header_func.h:4:21: warning: function 'usbi_tls_key_get' has internal linkage but is not defined [-Wundefined-internal]
+    4 | static inline void *usbi_tls_key_get(usbi_tls_key_t key) ;
+      |                     ^
+./libusbi.h:3:12: note: used here
+    3 |     return usbi_tls_key_get(ctx->event_handling_key) != ((void *)0);
+      |            ^
+1 warning generated.
+In file included from sync_end.c:2:
+./libusbi.h:3:29: warning: Access to field 'event_handling_key' results in a dereference of a null pointer (loaded from variable 'ctx') [core.NullDereference]
+    3 |     return usbi_tls_key_get(ctx->event_handling_key) != ((void *)0);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~
+sync_end.c:10:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+   10 |     return r;
+      |     ^~~~~~~~
+In file included from sync_end.c:2:
+./libusbi.h:3:29: warning: Access to field 'event_handling_key' results in a dereference of a null pointer (loaded from variable 'ctx') [core.NullDereference]
+    3 |     return usbi_tls_key_get(ctx->event_handling_key) != ((void *)0);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~
+sync_end.c:10:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+   10 |     return r;
+      |     ^~~~~~~~
+In file included from sync_end.c:2:
+./libusbi.h:3:29: warning: Access to field 'event_handling_key' results in a dereference of a null pointer (loaded from variable 'ctx') [core.NullDereference]
+    3 |     return usbi_tls_key_get(ctx->event_handling_key) != ((void *)0);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~
+sync_end.c:10:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+   10 |     return r;
+      |     ^~~~~~~~
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/libusb-1.0.27/report-OhVSG_1/2026-03-12-204754-127719-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/libusb-1.0.27/report-OhVSG_1/2026-03-12-204754-127719-1' to examine bug reports.

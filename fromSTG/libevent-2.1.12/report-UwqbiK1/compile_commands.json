@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/libevent-2.1.12/report-UwqbiK1",
+        "arguments": [
+            "clang",
+            "-c",
+            "evdns_end.c"
+        ],
+        "file": "evdns_end.c"
+    }
+]

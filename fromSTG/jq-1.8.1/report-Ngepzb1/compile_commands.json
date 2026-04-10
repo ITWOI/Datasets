@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/jq-1.8.1/report-Ngepzb1",
+        "arguments": [
+            "clang",
+            "-c",
+            "jv_aux_end.c"
+        ],
+        "file": "jv_aux_end.c"
+    }
+]

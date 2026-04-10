@@ -1,0 +1,20 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1",
+        "arguments": [
+            "clang",
+            "-c",
+            "./object.h"
+        ],
+        "file": "./object.h"
+    },
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1",
+        "arguments": [
+            "clang",
+            "-c",
+            "errors_end.c"
+        ],
+        "file": "errors_end.c"
+    }
+]

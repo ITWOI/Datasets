@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+udp_end.c:49:25: warning: 1st function call argument is an uninitialized value [core.CallAndMessage]
+   49 |             chunk_buf = uv_buf_init(iov[k].iov_base, iov[k].iov_len);
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+udp_end.c:49:25: warning: 1st function call argument is an uninitialized value [core.CallAndMessage]
+   49 |             chunk_buf = uv_buf_init(iov[k].iov_base, iov[k].iov_len);
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+udp_end.c:49:25: warning: 1st function call argument is an uninitialized value [core.CallAndMessage]
+   49 |             chunk_buf = uv_buf_init(iov[k].iov_base, iov[k].iov_len);
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/libuv-1.51.0/report-MCPu6x1/2026-03-12-204226-122874-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/libuv-1.51.0/report-MCPu6x1/2026-03-12-204226-122874-1' to examine bug reports.

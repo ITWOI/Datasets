@@ -1,0 +1,45 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from object_end.c:2:
+./sds.h:3:27: warning: Array access (from variable 's') results in a null pointer dereference [core.NullDereference]
+    3 |     unsigned char flags = s[-1];
+      |                           ^~~~~
+object_end.c:13:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+   13 |     return o;
+      |     ^~~~~~~~
+object_end.c:26:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+   26 |     return o;
+      |     ^~~~~~~~
+object_end.c:76:17: warning: 3rd function call argument is an uninitialized value [core.CallAndMessage]
+   76 |     robj *new = kvobjCreate(val->type, key, valptr, hasExpire);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from object_end.c:2:
+./sds.h:3:27: warning: Array access (from variable 's') results in a null pointer dereference [core.NullDereference]
+    3 |     unsigned char flags = s[-1];
+      |                           ^~~~~
+object_end.c:13:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+   13 |     return o;
+      |     ^~~~~~~~
+object_end.c:26:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+   26 |     return o;
+      |     ^~~~~~~~
+object_end.c:76:17: warning: 3rd function call argument is an uninitialized value [core.CallAndMessage]
+   76 |     robj *new = kvobjCreate(val->type, key, valptr, hasExpire);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from object_end.c:2:
+./sds.h:3:27: warning: Array access (from variable 's') results in a null pointer dereference [core.NullDereference]
+    3 |     unsigned char flags = s[-1];
+      |                           ^~~~~
+object_end.c:13:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+   13 |     return o;
+      |     ^~~~~~~~
+object_end.c:26:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+   26 |     return o;
+      |     ^~~~~~~~
+object_end.c:76:17: warning: 3rd function call argument is an uninitialized value [core.CallAndMessage]
+   76 |     robj *new = kvobjCreate(val->type, key, valptr, hasExpire);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+12 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-4tIyvn1/2026-03-12-191803-76272-1'
+scan-build: 4 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-4tIyvn1/2026-03-12-191803-76272-1' to examine bug reports.

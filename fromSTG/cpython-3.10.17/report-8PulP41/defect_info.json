@@ -1,0 +1,683 @@
+{
+    "bug_type": "Division by zero",
+    "checker": "Clang Static Analyzer",
+    "description": "Division by zero",
+    "warning_func": "",
+    "line_number": 88,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "unicode_resize",
+        "_PyUnicode_FormatLong",
+        "resize_inplace",
+        "PyUnicode_Resize"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 562,
+            "col": 9,
+            "line2": 562,
+            "col2": 29,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "prec"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 584,
+            "col": 9,
+            "line2": 584,
+            "col2": 15,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "result"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 586,
+            "col": 9,
+            "line2": 586,
+            "col2": 53,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "_Py_REFCNT",
+                "result",
+                "_Py_DECREF"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 590,
+            "col": 26,
+            "line2": 590,
+            "col2": 69,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "buf",
+                "compact",
+                "state",
+                "result",
+                "ascii",
+                "any",
+                "data"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 592,
+            "col": 9,
+            "line2": 592,
+            "col2": 25,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "llen",
+                "_Py_DECREF",
+                "result"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 597,
+            "col": 12,
+            "line2": 597,
+            "col2": 24,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "sign",
+                "buf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 600,
+            "col": 10,
+            "line2": 600,
+            "col2": 19,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "alt",
+                "type",
+                "numnondigits",
+                "buf",
+                "len",
+                "sign"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 608,
+            "col": 9,
+            "line2": 608,
+            "col2": 24,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "prec",
+                "numdigits",
+                "PyBytes_FromStringAndSize",
+                "numnondigits",
+                "r1",
+                "_Py_DECREF",
+                "result",
+                "b1",
+                "ob_sval",
+                "i",
+                "buf",
+                "len"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 611,
+            "col": 13,
+            "line2": 611,
+            "col2": 15,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "r1",
+                "_Py_DECREF",
+                "result"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 616,
+            "col": 21,
+            "line2": 616,
+            "col2": 36,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "i",
+                "numnondigits",
+                "b1",
+                "buf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 618,
+            "col": 21,
+            "line2": 618,
+            "col2": 40,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "i",
+                "prec",
+                "numdigits",
+                "b1"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 618,
+            "col": 21,
+            "line2": 618,
+            "col2": 40,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "i",
+                "prec",
+                "numdigits",
+                "b1"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 620,
+            "col": 21,
+            "line2": 620,
+            "col2": 33,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "i",
+                "numdigits",
+                "b1",
+                "buf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 620,
+            "col": 21,
+            "line2": 620,
+            "col2": 33,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "i",
+                "numdigits",
+                "b1",
+                "buf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 633,
+            "col": 101,
+            "line2": 633,
+            "col2": 144,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "PyType_HasFeature",
+                "ob_type",
+                "result",
+                "buf",
+                "compact",
+                "state",
+                "ascii",
+                "any",
+                "data",
+                "unicode",
+                "_PyUnicode_FromASCII",
+                "len",
+                "_Py_DECREF",
+                "length",
+                "PyUnicode_Resize",
+                "_py_tmp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 633,
+            "col": 79,
+            "line2": 633,
+            "col2": 377,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "PyType_HasFeature",
+                "ob_type",
+                "result",
+                "buf",
+                "compact",
+                "state",
+                "ascii",
+                "any",
+                "data",
+                "unicode",
+                "_PyUnicode_FromASCII",
+                "len",
+                "_Py_DECREF",
+                "length",
+                "PyUnicode_Resize",
+                "_py_tmp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 637,
+            "col": 16,
+            "line2": 637,
+            "col2": 87,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "len",
+                "length",
+                "result",
+                "PyUnicode_Resize",
+                "_py_tmp",
+                "_Py_DECREF"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 638,
+            "col": 13,
+            "line2": 638,
+            "col2": 42,
+            "function": "_PyUnicode_FormatLong",
+            "var": [
+                "PyUnicode_Resize",
+                "result",
+                "len",
+                "_py_tmp",
+                "_Py_DECREF"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 515,
+            "col": 1,
+            "line2": 515,
+            "col2": 1,
+            "function": "PyUnicode_Resize",
+            "var": [
+                "p_unicode",
+                "unicode",
+                "PyType_HasFeature",
+                "ob_type",
+                "length",
+                "unicode_resize"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 522,
+            "col": 106,
+            "line2": 522,
+            "col2": 115,
+            "function": "PyUnicode_Resize",
+            "var": [
+                "unicode",
+                "PyType_HasFeature",
+                "ob_type",
+                "length"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 526,
+            "col": 12,
+            "line2": 526,
+            "col2": 44,
+            "function": "PyUnicode_Resize",
+            "var": [
+                "unicode_resize",
+                "p_unicode",
+                "length"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 476,
+            "col": 1,
+            "line2": 476,
+            "col2": 1,
+            "function": "unicode_resize",
+            "var": [
+                "unicode",
+                "p_unicode",
+                "kind",
+                "state",
+                "PyUnicode_WCHAR_KIND",
+                "old_length",
+                "ascii",
+                "compact",
+                "length",
+                "wstr_length",
+                "unicode_new_empty",
+                "empty",
+                "_Py_DECREF",
+                "_py_tmp",
+                "unicode_modifiable",
+                "resize_copy",
+                "copy",
+                "resize_compact",
+                "new_unicode",
+                "resize_inplace"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 480,
+            "col": 9,
+            "line2": 480,
+            "col2": 88,
+            "function": "unicode_resize",
+            "var": [
+                "kind",
+                "state",
+                "unicode",
+                "PyUnicode_WCHAR_KIND",
+                "old_length",
+                "ascii",
+                "compact",
+                "length",
+                "wstr_length"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 481,
+            "col": 24,
+            "line2": 481,
+            "col2": 62,
+            "function": "unicode_resize",
+            "var": [
+                "old_length",
+                "ascii",
+                "state",
+                "unicode",
+                "compact",
+                "length",
+                "wstr_length"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 484,
+            "col": 9,
+            "line2": 484,
+            "col2": 28,
+            "function": "unicode_resize",
+            "var": [
+                "old_length",
+                "length"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 486,
+            "col": 9,
+            "line2": 486,
+            "col2": 19,
+            "function": "unicode_resize",
+            "var": [
+                "length",
+                "unicode_new_empty",
+                "p_unicode",
+                "empty",
+                "_Py_DECREF",
+                "_py_tmp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 513,
+            "col": 12,
+            "line2": 513,
+            "col2": 42,
+            "function": "unicode_resize",
+            "var": [
+                "resize_inplace",
+                "unicode",
+                "length"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 77,
+            "col": 1,
+            "line2": 77,
+            "col2": 1,
+            "function": "resize_inplace",
+            "var": [
+                "ready",
+                "state",
+                "unicode",
+                "data",
+                "any",
+                "char_size",
+                "kind",
+                "share_wstr",
+                "wstr",
+                "compact",
+                "ascii",
+                "share_utf8",
+                "utf8",
+                "length",
+                "new_size",
+                "utf8_length",
+                "PyObject_Realloc",
+                "wstr_length",
+                "PyUnicode_1BYTE_KIND",
+                "PyUnicode_2BYTE_KIND"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 80,
+            "col": 9,
+            "line2": 80,
+            "col2": 49,
+            "function": "resize_inplace",
+            "var": [
+                "ready",
+                "state",
+                "unicode",
+                "data",
+                "any",
+                "char_size",
+                "kind",
+                "share_wstr",
+                "wstr",
+                "compact",
+                "ascii",
+                "share_utf8",
+                "utf8",
+                "length",
+                "new_size",
+                "utf8_length",
+                "PyObject_Realloc",
+                "wstr_length",
+                "PyUnicode_1BYTE_KIND",
+                "PyUnicode_2BYTE_KIND"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 85,
+            "col": 9,
+            "line2": 85,
+            "col2": 90,
+            "function": "resize_inplace",
+            "var": [
+                "char_size",
+                "kind",
+                "state",
+                "unicode"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 86,
+            "col": 38,
+            "line2": 86,
+            "col2": 374,
+            "function": "resize_inplace",
+            "var": [
+                "share_wstr",
+                "wstr",
+                "unicode",
+                "compact",
+                "state",
+                "ascii",
+                "any",
+                "data"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 87,
+            "col": 52,
+            "line2": 87,
+            "col2": 397,
+            "function": "resize_inplace",
+            "var": [
+                "share_utf8",
+                "utf8",
+                "unicode",
+                "compact",
+                "state",
+                "ascii",
+                "any",
+                "data"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c",
+            "line": 88,
+            "col": 23,
+            "line2": 88,
+            "col2": 67,
+            "function": "resize_inplace",
+            "var": [
+                "length",
+                "char_size"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/defect_info.json",
+    "files": [
+        "unicodeobject_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件unicodeobject_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: resize_inplace\n  77 [TRACE-28]   | static int resize_inplace (PyObject *unicode, Py_ssize_t length){\n  78              | wchar_t *wstr;\n  79              | Py_ssize_t new_size;\n  80 [TRACE-29]   | if ((((PyASCIIObject *)unicode)->state.ready)) {\n  81              | Py_ssize_t char_size;\n  82              | int share_wstr, share_utf8;\n  83              | void *data;\n  84              | data = (((PyUnicodeObject *)(unicode))->data.any);\n  85 [TRACE-30]   | char_size = (((void)(0)) , ((void)(0)) , ((PyASCIIObject *)(unicode))->state.kind);\n  86 [TRACE-31]   | share_wstr = (((void)(0)) , ((((PyASCIIObject *)(unicode))->wstr) == (((void)(0)) , (((PyASCIIObject *)(unicode))->state.compact) ? ((((void)(0)) , ((void)(0)) , ((PyASCIIObject *)unicode)->state.ascii) ? ((void *)((PyASCIIObject *)(unicode) + 1)) : ((void *)((PyCompactUnicodeObject *)(unicode) + 1))) : (((void)(0)) , ((((PyUnicodeObject *)(unicode))->data.any))))));\n  87 [TRACE-32]   | share_utf8 = (((void)(0)) , ((void)(0)) , ((((PyCompactUnicodeObject *)(unicode))->utf8) == (((void)(0)) , (((PyASCIIObject *)(unicode))->state.compact) ? ((((void)(0)) , ((void)(0)) , ((PyASCIIObject *)unicode)->state.ascii) ? ((void *)((PyASCIIObject *)(unicode) + 1)) : ((void *)((PyCompactUnicodeObject *)(unicode) + 1))) : (((void)(0)) , ((((PyUnicodeObject *)(unicode))->data.any))))));\n  88 [TRACE-33]   | if (length > (((Py_ssize_t)(((size_t)-1) >> 1)) / char_size - 1)) {\n 464              | static int unicode_modifiable (PyObject *unicode){\n 466              | if (_Py_REFCNT(((const PyObject *)(unicode))) != 1)\n 468              | if ((((PyASCIIObject *)(unicode))->hash) != -1)\n 470              | if ((((PyASCIIObject *)(unicode))->state.interned))\n 472              | if (!_Py_IS_TYPE(((const PyObject *)(unicode)), &PyUnicode_Type))\n 474              | return 1;\n---→ 函数: unicode_resize\n 476 [TRACE-22]   | static int unicode_resize (PyObject **p_unicode, Py_ssize_t length){\n 477              | PyObject *unicode;\n 478              | Py_ssize_t old_length;\n 479              | unicode = *p_unicode;\n 480 [TRACE-23]   | if ((((void)(0)) , ((PyASCIIObject *)(unicode))->state.kind) == PyUnicode_WCHAR_KIND)\n 481 [TRACE-24]   | old_length = ((((PyASCIIObject *)unicode)->state.ascii && (((PyASCIIObject *)(unicode))->state.compact)) ? ((PyASCIIObject *)unicode)->length : ((PyCompactUnicodeObject *)unicode)->wstr_length);\n 484 [TRACE-25]   | if (old_length == length)\n 486 [TRACE-26]   | if (length == 0) {\n 495              | if (!unicode_modifiable(unicode)) {\n 506              | if ((((PyASCIIObject *)(unicode))->state.compact)) {\n 513 [TRACE-27]   | return resize_inplace(unicode, length);\n---→ 函数: PyUnicode_Resize\n 515 [TRACE-19]   | extern  __attribute__((visibility(\"default\"))) int PyUnicode_Resize (PyObject **p_unicode, Py_ssize_t length){\n 516              | PyObject *unicode;\n 517              | if (p_unicode == ((void *)0)) {\n 521              | unicode = *p_unicode;\n 522 [TRACE-20]   | if (unicode == ((void *)0) || !PyType_HasFeature((((PyObject *)(unicode))->ob_type), (1UL << 28)) || length < 0) {\n 526 [TRACE-21]   | return unicode_resize(p_unicode, length);\n 553              | extern  __attribute__((visibility(\"default\"))) PyObject * _PyUnicode_FormatLong (PyObject *val, int alt, int prec, int type){\n 554              | PyObject *result = ((void *)0);\n 555              | char *buf;\n 556              | Py_ssize_t i;\n 557              | int sign;\n 558              | int len;\n 559              | Py_ssize_t llen;\n 560              | int numdigits;\n 561              | int numnondigits = 0;\n---→ 函数: _PyUnicode_FormatLong\n 562 [TRACE-1]    | if (prec > 2147483647 - 3) {\n 567              | switch (type) {\n 572              | result = PyNumber_ToBase(val, 10);\n 573              | break;\n 579              | case 'X':\n 580              | numnondigits = 2;\n 581              | result = PyNumber_ToBase(val, 16);\n 582              | break;\n 584 [TRACE-2]    | if (!result)\n 586 [TRACE-3]    | if (_Py_REFCNT(((const PyObject *)(result))) != 1) {\n 590 [TRACE-4]    | buf = (((void)(0)) , (((PyASCIIObject *)(result))->state.compact) ? ((((void)(0)) , ((void)(0)) , ((PyASCIIObject *)result)->state.ascii) ? ((void *)((PyASCIIObject *)(result) + 1)) : ((void *)((PyCompactUnicodeObject *)(result) + 1))) : (((void)(0)) , ((((PyUnicodeObject *)(result))->data.any))));\n 591              | llen = (((void)(0)) , ((void)(0)) , ((PyASCIIObject *)(result))->length);\n 592 [TRACE-5]    | if (llen > 2147483647) {\n 596              | len = (int)llen;\n 597 [TRACE-6]    | sign = buf[0] == '-';\n 598              | numnondigits += sign;\n 599              | numdigits = len - numnondigits;\n 600 [TRACE-7]    | if (((alt) == 0 && (type == 'o' || type == 'x' || type == 'X'))) {\n 602              | numnondigits -= 2;\n 603              | buf += 2;\n 604              | len -= 2;\n 605              | if (sign)\n 608 [TRACE-8]    | if (prec > numdigits) {\n 609              | PyObject *r1 = PyBytes_FromStringAndSize(((void *)0), numnondigits + prec);\n 610              | char *b1;\n 611 [TRACE-9]    | if (!r1) {\n 615              | b1 = (((void)(0)) , (((PyBytesObject *)(r1))->ob_sval));\n 616 [TRACE-10]   | for (i = 0; i < numnondigits; ++i)\n 618 [TRACE-11,12] | for (i = 0; i < prec - numdigits; i++)\n 620 [TRACE-13,14] | for (i = 0; i < numdigits; i++)\n 622              | *b1 = '\\x00';\n 623              | _Py_DECREF(((PyObject *)(result)));\n 624              | result = r1;\n 625              | buf = (((void)(0)) , (((PyBytesObject *)(result))->ob_sval));\n 626              | len = numnondigits + prec;\n 628              | if (type == 'X') {\n 633 [TRACE-15,16] | if (!PyType_HasFeature((((PyObject *)(result))->ob_type), (1UL << 28)) || buf != (((void)(0)) , (((PyASCIIObject *)(result))->state.compact) ? ((((void)(0)) , ((void)(0)) , ((PyASCIIObject *)result)->state.ascii) ? ((void *)((PyASCIIObject *)(result) + 1)) : ((void *)((PyCompactUnicodeObject *)(result) + 1))) : (((void)(0)) , ((((PyUnicodeObject *)(result))->data.any))))) {\n 637 [TRACE-17]   | } else if (len != (((void)(0)) , ((void)(0)) , ((PyASCIIObject *)(result))->length)) {\n 638 [TRACE-18]   | if (PyUnicode_Resize(&result, len) < 0)\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/unicodeobject_end.c": [
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            464,
+            466,
+            468,
+            470,
+            472,
+            474,
+            476,
+            477,
+            478,
+            479,
+            480,
+            481,
+            484,
+            486,
+            495,
+            506,
+            513,
+            515,
+            516,
+            517,
+            521,
+            522,
+            526,
+            553,
+            554,
+            555,
+            556,
+            557,
+            558,
+            559,
+            560,
+            561,
+            562,
+            567,
+            572,
+            573,
+            579,
+            580,
+            581,
+            582,
+            584,
+            586,
+            590,
+            591,
+            592,
+            596,
+            597,
+            598,
+            599,
+            600,
+            602,
+            603,
+            604,
+            605,
+            608,
+            609,
+            610,
+            611,
+            615,
+            616,
+            618,
+            620,
+            622,
+            623,
+            624,
+            625,
+            626,
+            628,
+            633,
+            637,
+            638
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-8PulP41/./object.h": [
+            2,
+            3,
+            5,
+            6,
+            14,
+            15,
+            20,
+            21,
+            22,
+            23
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "计算逻辑",
+    "qwen3.5-122b-a10b_labels": [
+        "外部库/API 逻辑建模缺失",
+        "符号表达式求解失效",
+        "指针分析能力不足"
+    ]
+}

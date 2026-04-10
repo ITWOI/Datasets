@@ -1,0 +1,66 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from pngimage_end.c:1:
+./header_func.h:33:13: warning: function 'display_error' has internal linkage but is not defined [-Wundefined-internal]
+   33 | static void display_error(png_structp pp, png_const_charp error) ;
+      |             ^
+pngimage_end.c:159:65: note: used here
+  159 |     dp->read_pp = pp = png_create_read_struct("1.6.45.git", dp, display_error, display_warning);
+      |                                                                 ^
+In file included from pngimage_end.c:1:
+./header_func.h:35:13: warning: function 'display_warning' has internal linkage but is not defined [-Wundefined-internal]
+   35 | static void display_warning(png_structp pp, png_const_charp warning) ;
+      |             ^
+pngimage_end.c:159:80: note: used here
+  159 |     dp->read_pp = pp = png_create_read_struct("1.6.45.git", dp, display_error, display_warning);
+      |                                                                                ^
+2 warnings generated.
+pngimage_end.c:66:20: warning: The 4th argument to 'fread' is NULL but should not be NULL [unix.StdCLibraryFunctions]
+   66 |         size_t r = fread(last->buffer + count, 1, (sizeof last->buffer) - count, fp);
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pngimage_end.c:248:33: warning: Array access (from variable 'rows') results in a null pointer dereference [core.NullDereference]
+  248 |                 png_bytep row = rows[y];
+      |                                 ^~~~~~~
+pngimage_end.c:298:37: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+  298 |                     if (sig_bits[b] == 0 || sig_bits[b] > bit_depth)
+      |                         ~~~~~~~~~~~ ^
+pngimage_end.c:343:33: warning: Array access (from variable 'rows') results in a null pointer dereference [core.NullDereference]
+  343 |                 png_bytep row = rows[y];
+      |                                 ^~~~~~~
+pngimage_end.c:349:37: warning: The right operand of '&' is a garbage value [core.UndefinedBinaryOperatorResult]
+  349 |                         if ((*row++ & sig_bits[b]) != (*orig++ & sig_bits[b])) {
+      |                                     ^ ~~~~~~~~~~~
+pngimage_end.c:66:20: warning: The 4th argument to 'fread' is NULL but should not be NULL [unix.StdCLibraryFunctions]
+   66 |         size_t r = fread(last->buffer + count, 1, (sizeof last->buffer) - count, fp);
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pngimage_end.c:248:33: warning: Array access (from variable 'rows') results in a null pointer dereference [core.NullDereference]
+  248 |                 png_bytep row = rows[y];
+      |                                 ^~~~~~~
+pngimage_end.c:298:37: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+  298 |                     if (sig_bits[b] == 0 || sig_bits[b] > bit_depth)
+      |                         ~~~~~~~~~~~ ^
+pngimage_end.c:343:33: warning: Array access (from variable 'rows') results in a null pointer dereference [core.NullDereference]
+  343 |                 png_bytep row = rows[y];
+      |                                 ^~~~~~~
+pngimage_end.c:349:37: warning: The right operand of '&' is a garbage value [core.UndefinedBinaryOperatorResult]
+  349 |                         if ((*row++ & sig_bits[b]) != (*orig++ & sig_bits[b])) {
+      |                                     ^ ~~~~~~~~~~~
+pngimage_end.c:66:20: warning: The 4th argument to 'fread' is NULL but should not be NULL [unix.StdCLibraryFunctions]
+   66 |         size_t r = fread(last->buffer + count, 1, (sizeof last->buffer) - count, fp);
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pngimage_end.c:248:33: warning: Array access (from variable 'rows') results in a null pointer dereference [core.NullDereference]
+  248 |                 png_bytep row = rows[y];
+      |                                 ^~~~~~~
+pngimage_end.c:298:37: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+  298 |                     if (sig_bits[b] == 0 || sig_bits[b] > bit_depth)
+      |                         ~~~~~~~~~~~ ^
+pngimage_end.c:343:33: warning: Array access (from variable 'rows') results in a null pointer dereference [core.NullDereference]
+  343 |                 png_bytep row = rows[y];
+      |                                 ^~~~~~~
+pngimage_end.c:349:37: warning: The right operand of '&' is a garbage value [core.UndefinedBinaryOperatorResult]
+  349 |                         if ((*row++ & sig_bits[b]) != (*orig++ & sig_bits[b])) {
+      |                                     ^ ~~~~~~~~~~~
+15 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/libpng-libpng16/report-N8pYbw2/2026-03-12-204537-125647-1'
+scan-build: 4 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/libpng-libpng16/report-N8pYbw2/2026-03-12-204537-125647-1' to examine bug reports.

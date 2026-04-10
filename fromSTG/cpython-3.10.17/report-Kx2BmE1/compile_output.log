@@ -1,0 +1,41 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from mpdecimal_end.c:1:
+./header_func.h:27:19: warning: function 'mpd_bsr' has internal linkage but is not defined [-Wundefined-internal]
+   27 | static inline int mpd_bsr(mpd_size_t a) ;
+      |                   ^
+mpdecimal_end.c:71:17: note: used here
+   71 |     log2rsize = mpd_bsr(rsize);
+      |                 ^
+1 warning generated.
+mpdecimal_end.c:6:17: warning: Array access (from variable 'dest') results in a null pointer dereference [core.NullDereference]
+    6 |         dest[i] = 0;
+      |         ~~~~    ^
+mpdecimal_end.c:160:13: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+  160 |             memcpy(c, result, (la + lb) * (sizeof *result));
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mpdecimal_end.c:189:5: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+  189 |     memcpy(w, a, m * sizeof *w);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+mpdecimal_end.c:6:17: warning: Array access (from variable 'dest') results in a null pointer dereference [core.NullDereference]
+    6 |         dest[i] = 0;
+      |         ~~~~    ^
+mpdecimal_end.c:160:13: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+  160 |             memcpy(c, result, (la + lb) * (sizeof *result));
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mpdecimal_end.c:189:5: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+  189 |     memcpy(w, a, m * sizeof *w);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+mpdecimal_end.c:6:17: warning: Array access (from variable 'dest') results in a null pointer dereference [core.NullDereference]
+    6 |         dest[i] = 0;
+      |         ~~~~    ^
+mpdecimal_end.c:160:13: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+  160 |             memcpy(c, result, (la + lb) * (sizeof *result));
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mpdecimal_end.c:189:5: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+  189 |     memcpy(w, a, m * sizeof *w);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+9 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE1/2026-03-12-195101-92502-1'
+scan-build: 3 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE1/2026-03-12-195101-92502-1' to examine bug reports.

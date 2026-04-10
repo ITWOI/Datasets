@@ -1,0 +1,39 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from regress_main_end.c:1:
+./header_func.h:33:13: warning: function 'dnslogcb' has internal linkage but is not defined [-Wundefined-internal]
+   33 | static void dnslogcb(int w, const char *m) ;
+      |             ^
+regress_main_end.c:46:26: note: used here
+   46 |         evdns_set_log_fn(dnslogcb);
+      |                          ^
+In file included from regress_main_end.c:1:
+./header_func.h:41:13: warning: function 'ignore_log_cb' has internal linkage but is not defined [-Wundefined-internal]
+   41 | static void ignore_log_cb(int s, const char *msg) ;
+      |             ^
+regress_main_end.c:51:32: note: used here
+   51 |         event_set_log_callback(ignore_log_cb);
+      |                                ^
+2 warnings generated.
+regress_main_end.c:56:16: warning: Access to field 'base' results in a dereference of a null pointer (loaded from variable 'data') [core.NullDereference]
+   56 |     data->base = base;
+      |     ~~~~       ^
+regress_main_end.c:65:9: warning: Potential leak of memory pointed to by 'data' [unix.Malloc]
+   65 |         return data;
+      |         ^~~~~~~~~~~
+regress_main_end.c:56:16: warning: Access to field 'base' results in a dereference of a null pointer (loaded from variable 'data') [core.NullDereference]
+   56 |     data->base = base;
+      |     ~~~~       ^
+regress_main_end.c:65:9: warning: Potential leak of memory pointed to by 'data' [unix.Malloc]
+   65 |         return data;
+      |         ^~~~~~~~~~~
+regress_main_end.c:56:16: warning: Access to field 'base' results in a dereference of a null pointer (loaded from variable 'data') [core.NullDereference]
+   56 |     data->base = base;
+      |     ~~~~       ^
+regress_main_end.c:65:9: warning: Potential leak of memory pointed to by 'data' [unix.Malloc]
+   65 |         return data;
+      |         ^~~~~~~~~~~
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/libevent-2.1.12/report-kH079T1/2026-03-12-204059-121815-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/libevent-2.1.12/report-kH079T1/2026-03-12-204059-121815-1' to examine bug reports.

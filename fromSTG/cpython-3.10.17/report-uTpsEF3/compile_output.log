@@ -1,0 +1,27 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+faulthandler_end.c:6:9: warning: Address of stack memory associated with local variable 'buffer' returned to caller [core.StackAddressEscape]
+    3 |     volatile unsigned char buffer[4096];
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    4 |     uintptr_t sp = (uintptr_t)&buffer;
+    5 |     if (sp < min_sp || max_sp < sp)
+    6 |         return sp;
+      |         ^~~~~~~~~
+faulthandler_end.c:6:9: warning: Address of stack memory associated with local variable 'buffer' returned to caller [core.StackAddressEscape]
+    3 |     volatile unsigned char buffer[4096];
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    4 |     uintptr_t sp = (uintptr_t)&buffer;
+    5 |     if (sp < min_sp || max_sp < sp)
+    6 |         return sp;
+      |         ^~~~~~~~~
+faulthandler_end.c:6:9: warning: Address of stack memory associated with local variable 'buffer' returned to caller [core.StackAddressEscape]
+    3 |     volatile unsigned char buffer[4096];
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    4 |     uintptr_t sp = (uintptr_t)&buffer;
+    5 |     if (sp < min_sp || max_sp < sp)
+    6 |         return sp;
+      |         ^~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-uTpsEF3/2026-03-12-195953-99233-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-uTpsEF3/2026-03-12-195953-99233-1' to examine bug reports.

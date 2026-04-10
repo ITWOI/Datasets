@@ -1,0 +1,41 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from marshal_end.c:1:
+./header_func.h:30:38: warning: function '_Py_hashtable_get_entry' has internal linkage but is not defined [-Wundefined-internal]
+   30 | static inline _Py_hashtable_entry_t *_Py_hashtable_get_entry(_Py_hashtable_t *ht, const void *key) ;
+      |                                      ^
+marshal_end.c:166:13: note: used here
+  166 |     entry = _Py_hashtable_get_entry(p->hashtable, v);
+      |             ^
+1 warning generated.
+marshal_end.c:70:25: warning: Dereference of null pointer [core.NullDereference]
+   70 |             *(p)->ptr++ = ((char)(x & 255));
+      |             ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+marshal_end.c:74:25: warning: Dereference of null pointer [core.NullDereference]
+   74 |             *(p)->ptr++ = ((char)((x >> 8) & 255));
+      |             ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+marshal_end.c:99:25: warning: Dereference of null pointer [core.NullDereference]
+   99 |             *(p)->ptr++ = ((unsigned char)(n));
+      |             ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+marshal_end.c:70:25: warning: Dereference of null pointer [core.NullDereference]
+   70 |             *(p)->ptr++ = ((char)(x & 255));
+      |             ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+marshal_end.c:74:25: warning: Dereference of null pointer [core.NullDereference]
+   74 |             *(p)->ptr++ = ((char)((x >> 8) & 255));
+      |             ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+marshal_end.c:99:25: warning: Dereference of null pointer [core.NullDereference]
+   99 |             *(p)->ptr++ = ((unsigned char)(n));
+      |             ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+marshal_end.c:70:25: warning: Dereference of null pointer [core.NullDereference]
+   70 |             *(p)->ptr++ = ((char)(x & 255));
+      |             ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+marshal_end.c:74:25: warning: Dereference of null pointer [core.NullDereference]
+   74 |             *(p)->ptr++ = ((char)((x >> 8) & 255));
+      |             ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+marshal_end.c:99:25: warning: Dereference of null pointer [core.NullDereference]
+   99 |             *(p)->ptr++ = ((unsigned char)(n));
+      |             ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+9 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-sjzBsm1/2026-03-12-194722-89877-1'
+scan-build: 3 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-sjzBsm1/2026-03-12-194722-89877-1' to examine bug reports.

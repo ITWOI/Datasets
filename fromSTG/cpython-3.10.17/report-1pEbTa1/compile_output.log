@@ -1,0 +1,39 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from unicodedata_end.c:1:
+./header_func.h:19:19: warning: function '_PyObject_TypeCheck' has internal linkage but is not defined [-Wundefined-internal]
+   19 | static inline int _PyObject_TypeCheck(PyObject *ob, PyTypeObject *type) ;
+      |                   ^
+unicodedata_end.c:26:34: note: used here
+   26 |     if ((self != ((void *)0) && !_PyObject_TypeCheck(((PyObject *)(self)), &PyModule_Type))) {
+      |                                  ^
+In file included from unicodedata_end.c:1:
+./header_func.h:47:12: warning: function '_check_alias_and_seq' has internal linkage but is not defined [-Wundefined-internal]
+   47 | static int _check_alias_and_seq(unsigned int cp, Py_UCS4 *code, int with_named_seq) ;
+      |            ^
+unicodedata_end.c:138:16: note: used here
+  138 |         return _check_alias_and_seq(v, code, with_named_seq);
+      |                ^
+2 warnings generated.
+unicodedata_end.c:96:69: warning: The right operand of '!=' is a garbage value [core.UndefinedBinaryOperatorResult]
+   96 |         if ((_Py_ctype_toupper[((unsigned char)((name[i]) & 255))]) != buffer[i])
+      |                                                                     ^  ~~~~~~~~~
+unicodedata_end.c:99:28: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   99 |     return buffer[namelen] == '\x00';
+      |            ~~~~~~~~~~~~~~~ ^
+unicodedata_end.c:96:69: warning: The right operand of '!=' is a garbage value [core.UndefinedBinaryOperatorResult]
+   96 |         if ((_Py_ctype_toupper[((unsigned char)((name[i]) & 255))]) != buffer[i])
+      |                                                                     ^  ~~~~~~~~~
+unicodedata_end.c:99:28: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   99 |     return buffer[namelen] == '\x00';
+      |            ~~~~~~~~~~~~~~~ ^
+unicodedata_end.c:96:69: warning: The right operand of '!=' is a garbage value [core.UndefinedBinaryOperatorResult]
+   96 |         if ((_Py_ctype_toupper[((unsigned char)((name[i]) & 255))]) != buffer[i])
+      |                                                                     ^  ~~~~~~~~~
+unicodedata_end.c:99:28: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   99 |     return buffer[namelen] == '\x00';
+      |            ~~~~~~~~~~~~~~~ ^
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-1pEbTa1/2026-03-12-200200-100635-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-1pEbTa1/2026-03-12-200200-100635-1' to examine bug reports.

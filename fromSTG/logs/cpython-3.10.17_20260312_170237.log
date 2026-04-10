@@ -1,0 +1,72 @@
+2026-03-12 17:02:37,604 - __main__ - INFO - cp /home/nishikino/new_version_benchmarks/astslicer/scripts/common.h Datasets/fromDGS/cpython-3.10.17/common.h
+2026-03-12 17:02:38,339 - root - WARNING - start process cpython-3.10.17
+2026-03-12 17:02:38,340 - root - INFO - slicer run, tools in /home/nishikino/new_version_benchmarks
+2026-03-12 17:02:38,340 - root - WARNING - Processing /home/nishikino/new_version_benchmarks/tests/scan-results/cpython-3.10.17_tests/report-qIYRzw.plist
+2026-03-12 17:02:38,340 - root - INFO - Processing /home/nishikino/new_version_benchmarks/tests/scan-results/cpython-3.10.17_tests/report-qIYRzw.plist
+2026-03-12 17:02:38,356 - process_compile_commands - INFO - >>>><class 'list'>
+2026-03-12 17:02:38,356 - process_compile_commands - INFO - find cc>> ['/home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c']
+2026-03-12 17:02:38,357 - process_compile_commands - INFO - Writing sliced compile commands to /home/nishikino/new_version_benchmarks/compile_info/compile_commands.json
+2026-03-12 17:02:38,559 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:38,599 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:38,638 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:38,675 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:38,725 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:38,771 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:38,809 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:38,846 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:38,884 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:38,920 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:38,957 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:38,996 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:39,037 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:39,076 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:39,112 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:39,147 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:39,191 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:39,226 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:39,264 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:39,306 - parse_ast - INFO - Error when parse: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c:1:10: fatal error: 'Python.h' file not found
+2026-03-12 17:02:39,326 - DefectInfoCreator - INFO - Defect info created at Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/defect_info_original.json
+2026-03-12 17:02:42,119 - Plist - INFO - Point[1]:/home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c : 2010
+2026-03-12 17:02:42,820 - Plist - INFO - Point[2]:/home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c : 2036
+2026-03-12 17:02:43,527 - Plist - INFO - Point[3]:/home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c : 2059
+2026-03-12 17:02:44,218 - Plist - INFO - Point[4]:/home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c : 2059
+2026-03-12 17:02:44,937 - Plist - INFO - Point[5]:/home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c : 2106
+2026-03-12 17:02:45,629 - Plist - INFO - Point[6]:/home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c : 2133
+2026-03-12 17:02:46,333 - Plist - INFO - Point[7]:/home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c : 2137
+2026-03-12 17:02:47,026 - Plist - INFO - Point[8]:/home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c : 2151
+2026-03-12 17:02:47,707 - Plist - INFO - Point[9]:/home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c : 2161
+2026-03-12 17:02:48,166 - process_compile_commands - INFO - ###compile files to bc, base compile /usr/bin/
+2026-03-12 17:02:48,166 - process_compile_commands - INFO - /usr/bin/clang-18 -c -emit-llvm -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -Wall -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Werror=implicit-function-declaration -I/home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/./Include/internal -I/home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/. -I/home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/./Include -DPy_BUILD_CORE -o /home/nishikino/new_version_benchmarks/inputs/temp1.bc /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c
+2026-03-12 17:02:48,334 - process_compile_commands - INFO - cp /home/nishikino/new_version_benchmarks/inputs/temp1.bc /home/nishikino/new_version_benchmarks/inputs/input.bc
+2026-03-12 17:02:48,335 - Diagnostic - INFO - Exported slicing criterion to Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/report-qIYRzw1_slicing_criterion.txt
+2026-03-12 17:02:48,335 - Plist - WARNING - Slicing Criterion for Diagnostic:report-qIYRzw1: 'tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2036#nfreepools, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2036#p, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2059#_PyObject_Arena, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2059#address, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2059#arena_map_mark_used, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2059#ctx, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2059#free, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2059#narenas_currently_allocated, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2059#ntotalpools, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2059#unused_arena_objects, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2133#nf, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2133#nfp2lasta, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2137#lastnf, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2151#usable_arenas, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2161#ao, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2161#nextarena, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2161#prevarena'
+2026-03-12 17:02:48,335 - Diagnostic - INFO - Slicing entry is _PyObject_Realloc
+2026-03-12 17:02:48,335 - Diagnostic - INFO - /home/nishikino/new_version_benchmarks/dg-master/build/tools/llvm-slicer -sc 'tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2036#nfreepools, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2036#p, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2059#_PyObject_Arena, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2059#address, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2059#arena_map_mark_used, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2059#ctx, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2059#free, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2059#narenas_currently_allocated, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2059#ntotalpools, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2059#unused_arena_objects, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2133#nf, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2133#nfp2lasta, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2137#lastnf, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2151#usable_arenas, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2161#ao, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2161#nextarena, tests/cpython-3.10.17/Objects/obmalloc.c#insert_to_freepool#2161#prevarena' -entry _PyObject_Realloc  /home/nishikino/new_version_benchmarks/inputs/input.bc
+2026-03-12 17:02:48,481 - Diagnostic - INFO - reset:/home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc_InstSlice.c /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc_InstSlice_output.c
+2026-03-12 17:02:48,481 - Tool - INFO - mv /home/nishikino/new_version_benchmarks/inputs/input-instsInfo.txt Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/input-instsInfo.txt
+2026-03-12 17:02:48,484 - Diagnostic - INFO - /home/nishikino/new_version_benchmarks/astslicer/build/astslicer  /home/nishikino/new_version_benchmarks/inputs/compile_commands.json inst Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/input-instsInfo.txt Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/header_func.h  Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/header_type.h >Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/log.txt
+2026-03-12 17:02:48,680 - Diagnostic - INFO - file_paths:{'/home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c'}
+2026-03-12 17:02:48,680 - Diagnostic - INFO - /home/nishikino/new_version_benchmarks/delSpace/build/delSpace  /home/nishikino/new_version_benchmarks/compile_info/compile_commands.json Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/input-instsInfo.txt >Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/log2.txt
+2026-03-12 17:02:48,762 - Diagnostic - INFO - clean: /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc.c
+2026-03-12 17:02:48,764 - Diagnostic - INFO - mv /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc_InstSlice_output.c Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc.c
+2026-03-12 17:02:48,764 - Diagnostic - INFO - rm /home/nishikino/new_version_benchmarks/tests/cpython-3.10.17/Objects/obmalloc_InstSlice.c
+2026-03-12 17:02:48,767 - Tool - INFO - clean:obmalloc.c
+2026-03-12 17:02:48,767 - Tool - INFO - code_trans in_path:Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc.c out_path:Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c
+2026-03-12 17:02:48,768 - Tool - INFO - headers:[]
+2026-03-12 17:02:48,773 - Tool - INFO - cp /home/nishikino/new_version_benchmarks/compile_info/compile_commands.json Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/compile_commands.json
+2026-03-12 17:02:48,774 - Tool - INFO - cd Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1 && scan-build -plist-html -disable-checker deadcode.DeadStores -o Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1 clang -c -emit-llvm *_end.c > Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/compile_output.log 2>&1
+2026-03-12 17:02:49,805 - Tool - WARNING - 判断依据（目标缺陷取值）：
+2026-03-12 17:02:49,805 - Tool - WARNING -   description: "Access to field 'prevarena' results in a dereference of a null pointer (loaded from field 'nextarena')"
+2026-03-12 17:02:49,805 - Tool - WARNING -   category: 'Logic error'
+2026-03-12 17:02:49,805 - Tool - WARNING -   type: 'Dereference of null pointer'
+2026-03-12 17:02:49,805 - Tool - WARNING -   check_name: 'core.NullDereference'
+2026-03-12 17:02:49,806 - Tool - WARNING -   issue_context: 'insert_to_freepool'
+2026-03-12 17:02:49,811 - Tool - WARNING - 在文件 Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/2026-03-12-170248-44899-1/report-V86fNJ.plist 中引入新的缺陷（索引：1）
+2026-03-12 17:02:49,811 - Tool - WARNING - 在文件 Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/2026-03-12-170248-44899-1/report-V86fNJ.plist 中找到匹配缺陷（索引：0）
+2026-03-12 17:02:56,257 - DefectInfoCreator - INFO - Defect info created at Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/defect_info.json
+2026-03-12 17:02:56,258 - root - WARNING - Process 1 diagnostics, 1 success.
+
+2026-03-12 17:03:01,263 - root - WARNING - Totally process 1 diagnostics, 1 success. 
+
+2026-03-12 17:03:01,267 - __main__ - INFO - Removed compile info directory: /home/nishikino/new_version_benchmarks/compile_info

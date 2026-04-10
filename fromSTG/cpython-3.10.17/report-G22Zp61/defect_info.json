@@ -1,0 +1,257 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Access to field 'ob_refcnt' results in a dereference of a null pointer (loaded from variable 'op')",
+    "warning_func": "",
+    "line_number": 15,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "PyObject_ClearWeakRefs",
+        "_Py_DECREF"
+    ],
+    "is_single_file": false,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/weakrefobject_end.c",
+            "line": 315,
+            "col": 9,
+            "line2": 315,
+            "col2": 29,
+            "function": "PyObject_ClearWeakRefs",
+            "var": [
+                "object",
+                "tp_weaklistoffset",
+                "ob_type",
+                "_Py_REFCNT",
+                "_PyErr_BadInternalCall"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/weakrefobject_end.c",
+            "line": 315,
+            "col": 36,
+            "line2": 315,
+            "col2": 93,
+            "function": "PyObject_ClearWeakRefs",
+            "var": [
+                "object",
+                "tp_weaklistoffset",
+                "ob_type",
+                "_Py_REFCNT",
+                "_PyErr_BadInternalCall"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/weakrefobject_end.c",
+            "line": 315,
+            "col": 99,
+            "line2": 315,
+            "col2": 143,
+            "function": "PyObject_ClearWeakRefs",
+            "var": [
+                "object",
+                "tp_weaklistoffset",
+                "ob_type",
+                "_Py_REFCNT",
+                "_PyErr_BadInternalCall"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/weakrefobject_end.c",
+            "line": 320,
+            "col": 9,
+            "line2": 320,
+            "col2": 28,
+            "function": "PyObject_ClearWeakRefs",
+            "var": [
+                "list",
+                "wr_callback",
+                "clear_weakref"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/weakrefobject_end.c",
+            "line": 320,
+            "col": 33,
+            "line2": 320,
+            "col2": 67,
+            "function": "PyObject_ClearWeakRefs",
+            "var": [
+                "list",
+                "wr_callback",
+                "clear_weakref"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/weakrefobject_end.c",
+            "line": 344,
+            "col": 17,
+            "line2": 344,
+            "col2": 36,
+            "function": "PyObject_ClearWeakRefs",
+            "var": [
+                "tuple",
+                "_PyErr_ChainExceptions",
+                "err_type",
+                "err_value",
+                "err_tb"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/weakrefobject_end.c",
+            "line": 348,
+            "col": 25,
+            "line2": 348,
+            "col2": 33,
+            "function": "PyObject_ClearWeakRefs",
+            "var": [
+                "i",
+                "count",
+                "wr_next",
+                "current",
+                "_Py_REFCNT",
+                "_Py_INCREF",
+                "ob_item",
+                "tuple",
+                "wr_callback",
+                "_Py_DECREF",
+                "clear_weakref",
+                "next"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/weakrefobject_end.c",
+            "line": 350,
+            "col": 21,
+            "line2": 350,
+            "col2": 77,
+            "function": "PyObject_ClearWeakRefs",
+            "var": [
+                "_Py_REFCNT",
+                "current",
+                "_Py_INCREF",
+                "ob_item",
+                "tuple",
+                "i",
+                "wr_callback",
+                "_Py_DECREF"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/weakrefobject_end.c",
+            "line": 355,
+            "col": 32,
+            "line2": 355,
+            "col2": 67,
+            "function": "PyObject_ClearWeakRefs",
+            "var": [
+                "_Py_DECREF()",
+                "_Py_DECREF",
+                "wr_callback",
+                "current"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/weakrefobject_end.c",
+            "line": 355,
+            "col": 21,
+            "line2": 355,
+            "col2": 68,
+            "function": "PyObject_ClearWeakRefs",
+            "var": [
+                "_Py_DECREF()",
+                "_Py_DECREF",
+                "wr_callback",
+                "current"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/./object.h",
+            "line": 14,
+            "col": 1,
+            "line2": 14,
+            "col2": 1,
+            "function": "_Py_DECREF",
+            "var": [
+                "ob_refcnt",
+                "op",
+                "_Py_Dealloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/./object.h",
+            "line": 15,
+            "col": 11,
+            "line2": 15,
+            "col2": 12,
+            "function": "_Py_DECREF",
+            "var": [
+                "ob_refcnt",
+                "op",
+                "_Py_Dealloc"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/defect_info.json",
+    "files": [
+        "./object.h",
+        "weakrefobject_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件weakrefobject_end.c  缺陷代码片段===\n------------------------------------------------------------\n   4              | extern  __attribute__((visibility(\"default\"))) Py_ssize_t _PyWeakref_GetWeakrefCount (PyWeakReference *head){\n   5              | Py_ssize_t count = 0;\n   6              | while (head != ((void *)0))\n   8              | ++count;\n   9              | head = head->wr_next;\n  11              | return count;\n  21              | static void clear_weakref (PyWeakReference *self){\n  22              | PyObject *callback = self->wr_callback;\n  23              | if (self->wr_object != (&_Py_NoneStruct)) {\n  35              | if (callback != ((void *)0)) {\n 313              | extern  __attribute__((visibility(\"default\"))) void PyObject_ClearWeakRefs (PyObject *object){\n 314              | PyWeakReference **list;\n---→ 函数: PyObject_ClearWeakRefs\n 315 [TRACE-1,2,3] | if (object == ((void *)0) || !(((((PyObject *)(object))->ob_type))->tp_weaklistoffset > 0) || _Py_REFCNT(((const PyObject *)(object))) != 0) {\n 319              | list = ((PyWeakReference **)_PyObject_GET_WEAKREFS_LISTPTR(object));\n 320 [TRACE-4,5]  | if (*list != ((void *)0) && (*list)->wr_callback == ((void *)0)) {\n 321              | clear_weakref(*list);\n 322              | if (*list != ((void *)0) && (*list)->wr_callback == ((void *)0))\n 323              | clear_weakref(*list);\n 325              | if (*list != ((void *)0)) {\n 326              | PyWeakReference *current = *list;\n 327              | Py_ssize_t count = _PyWeakref_GetWeakrefCount(current);\n 328              | PyObject *err_type, *err_value, *err_tb;\n 329              | PyErr_Fetch(&err_type, &err_value, &err_tb);\n 330              | if (count == 1) {\n 341              | PyObject *tuple;\n 342              | Py_ssize_t i = 0;\n 343              | tuple = PyTuple_New(count * 2);\n 344 [TRACE-6]    | if (tuple == ((void *)0)) {\n 348 [TRACE-7]    | for (i = 0; i < count; ++i) {\n 349              | PyWeakReference *next = current->wr_next;\n 350 [TRACE-8]    | if (_Py_REFCNT(((const PyObject *)((PyObject *)current))) > 0) {\n 355 [TRACE-9,10] | _Py_DECREF(((PyObject *)(current->wr_callback)));\n------------------------------------------------------------\n\n=== 文件object.h  缺陷代码片段===\n------------------------------------------------------------\n   2              | static inline Py_ssize_t _Py_REFCNT (const PyObject *ob){\n   3              | return ob->ob_refcnt;\n---→ 函数: _Py_DECREF\n  14 [TRACE-11]   | static inline void _Py_DECREF (PyObject *op){\n  15 [TRACE-12]   | if (--op->ob_refcnt != 0) {\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/weakrefobject_end.c": [
+            4,
+            5,
+            6,
+            8,
+            9,
+            11,
+            21,
+            22,
+            23,
+            35,
+            313,
+            314,
+            315,
+            319,
+            320,
+            321,
+            322,
+            323,
+            325,
+            326,
+            327,
+            328,
+            329,
+            330,
+            341,
+            342,
+            343,
+            344,
+            348,
+            349,
+            350,
+            355
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/./pycore_object.h": [
+            2,
+            3,
+            4
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/./object.h": [
+            2,
+            3,
+            14,
+            15
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "域敏感度缺失",
+        "过程间数据流断裂"
+    ]
+}

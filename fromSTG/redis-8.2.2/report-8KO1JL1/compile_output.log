@@ -1,0 +1,32 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from t_zset_end.c:1:
+./header_func.h:46:22: warning: function 'sdslen' has internal linkage but is not defined [-Wundefined-internal]
+   46 | static inline size_t sdslen(const sds s) ;
+      |                      ^
+t_zset_end.c:171:51: note: used here
+  171 |     eptr = lpFind(lp, eptr, (unsigned char *)ele, sdslen(ele), 1);
+      |                                                   ^
+1 warning generated.
+t_zset_end.c:56:31: warning: Dereference of undefined pointer value [core.NullDereference]
+   56 |         x->level[i].forward = update[i]->level[i].forward;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+t_zset_end.c:64:30: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   64 |     x->backward = (update[0] == zsl->header) ? ((void *)0) : update[0];
+      |                    ~~~~~~~~~ ^
+t_zset_end.c:56:31: warning: Dereference of undefined pointer value [core.NullDereference]
+   56 |         x->level[i].forward = update[i]->level[i].forward;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+t_zset_end.c:64:30: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   64 |     x->backward = (update[0] == zsl->header) ? ((void *)0) : update[0];
+      |                    ~~~~~~~~~ ^
+t_zset_end.c:56:31: warning: Dereference of undefined pointer value [core.NullDereference]
+   56 |         x->level[i].forward = update[i]->level[i].forward;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+t_zset_end.c:64:30: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   64 |     x->backward = (update[0] == zsl->header) ? ((void *)0) : update[0];
+      |                    ~~~~~~~~~ ^
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-8KO1JL1/2026-03-12-194014-85725-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-8KO1JL1/2026-03-12-194014-85725-1' to examine bug reports.

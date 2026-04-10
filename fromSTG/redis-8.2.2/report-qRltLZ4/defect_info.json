@@ -1,0 +1,706 @@
+{
+    "bug_type": "Function call with invalid argument",
+    "checker": "Clang Static Analyzer",
+    "description": "The 1st argument to 'fwrite' is a buffer with size 21 but should be a buffer with size equal to or greater than the value of the 2nd argument (which is 40) times the 3rd argument (which is 1)",
+    "warning_func": "",
+    "line_number": 228,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "lpRepr",
+    "functions": [
+        "lpRepr",
+        "lpGetWithBuf",
+        "lpValidateNext",
+        "lpFirst",
+        "lpGet",
+        "lpAssertValidEntry"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 213,
+            "col": 5,
+            "line2": 213,
+            "col2": 24,
+            "function": "lpRepr",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 216,
+            "col": 9,
+            "line2": 216,
+            "col2": 19,
+            "function": "lpRepr",
+            "var": [
+                "p",
+                "lpFirst",
+                "lp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 89,
+            "col": 1,
+            "line2": 89,
+            "col2": 1,
+            "function": "lpFirst",
+            "var": [
+                "lp",
+                "p",
+                "lpAssertValidEntry",
+                "lpBytes"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 91,
+            "col": 9,
+            "line2": 91,
+            "col2": 19,
+            "function": "lpFirst",
+            "var": [
+                "p"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 93,
+            "col": 5,
+            "line2": 93,
+            "col2": 42,
+            "function": "lpFirst",
+            "var": [
+                "lpAssertValidEntry()",
+                "lpAssertValidEntry",
+                "lp",
+                "lpBytes",
+                "p"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 207,
+            "col": 1,
+            "line2": 207,
+            "col2": 1,
+            "function": "lpAssertValidEntry",
+            "var": [
+                "__builtin_expect",
+                "lpValidateNext",
+                "lp",
+                "p",
+                "lpbytes",
+                "_serverAssert",
+                "abort"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 208,
+            "col": 27,
+            "line2": 208,
+            "col2": 57,
+            "function": "lpAssertValidEntry",
+            "var": [
+                "__builtin_expect",
+                "lpValidateNext",
+                "lp",
+                "p",
+                "lpbytes",
+                "_serverAssert",
+                "abort"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 181,
+            "col": 1,
+            "line2": 181,
+            "col2": 1,
+            "function": "lpValidateNext",
+            "var": [
+                "pp",
+                "p",
+                "lp",
+                "lpbytes",
+                "lpCurrentEncodedSizeBytes",
+                "lenbytes",
+                "lpCurrentEncodedSizeUnsafe",
+                "lpEncodeBacklenBytes",
+                "entrylen",
+                "encodedBacklen",
+                "lpDecodeBacklen",
+                "prevlen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 185,
+            "col": 26,
+            "line2": 185,
+            "col2": 47,
+            "function": "lpValidateNext",
+            "var": [
+                "p",
+                "lp",
+                "lpbytes"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 194,
+            "col": 37,
+            "line2": 194,
+            "col2": 69,
+            "function": "lpValidateNext",
+            "var": [
+                "p",
+                "lenbytes",
+                "lp",
+                "lpbytes"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 199,
+            "col": 37,
+            "line2": 199,
+            "col2": 69,
+            "function": "lpValidateNext",
+            "var": [
+                "p",
+                "entrylen",
+                "lp",
+                "lpbytes"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 202,
+            "col": 24,
+            "line2": 202,
+            "col2": 45,
+            "function": "lpValidateNext",
+            "var": [
+                "lpDecodeBacklen",
+                "p"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 203,
+            "col": 9,
+            "line2": 203,
+            "col2": 44,
+            "function": "lpValidateNext",
+            "var": [
+                "prevlen",
+                "encodedBacklen",
+                "entrylen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 208,
+            "col": 27,
+            "line2": 208,
+            "col2": 57,
+            "function": "lpAssertValidEntry",
+            "var": [
+                "__builtin_expect",
+                "lpValidateNext",
+                "lp",
+                "p",
+                "lpbytes",
+                "_serverAssert",
+                "abort"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 93,
+            "col": 5,
+            "line2": 93,
+            "col2": 42,
+            "function": "lpFirst",
+            "var": [
+                "lpAssertValidEntry()",
+                "lpAssertValidEntry",
+                "lp",
+                "lpBytes",
+                "p"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 94,
+            "col": 5,
+            "line2": 94,
+            "col2": 12,
+            "function": "lpFirst",
+            "var": [
+                "p"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 216,
+            "col": 9,
+            "line2": 216,
+            "col2": 19,
+            "function": "lpRepr",
+            "var": [
+                "p",
+                "lpFirst",
+                "lp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 217,
+            "col": 12,
+            "line2": 217,
+            "col2": 12,
+            "function": "lpRepr",
+            "var": [
+                "p",
+                "lpCurrentEncodedSizeBytes",
+                "lpCurrentEncodedSizeUnsafe",
+                "lpEncodeBacklenBytes",
+                "encoded_size",
+                "i",
+                "back_len",
+                "vstr",
+                "lpGet",
+                "vlen",
+                "intbuf",
+                "fwrite",
+                "stdout",
+                "perror",
+                "lpNext",
+                "lp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 222,
+            "col": 38,
+            "line2": 222,
+            "col2": 66,
+            "function": "lpRepr",
+            "var": [
+                "i",
+                "encoded_size",
+                "back_len"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 222,
+            "col": 13,
+            "line2": 222,
+            "col2": 15,
+            "function": "lpRepr",
+            "var": [
+                "i",
+                "encoded_size",
+                "back_len"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 222,
+            "col": 38,
+            "line2": 222,
+            "col2": 66,
+            "function": "lpRepr",
+            "var": [
+                "i",
+                "encoded_size",
+                "back_len"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 226,
+            "col": 36,
+            "line2": 226,
+            "col2": 41,
+            "function": "lpRepr",
+            "var": [
+                "vstr",
+                "lpGet",
+                "p",
+                "vlen",
+                "intbuf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 226,
+            "col": 20,
+            "line2": 226,
+            "col2": 42,
+            "function": "lpRepr",
+            "var": [
+                "vstr",
+                "lpGet",
+                "p",
+                "vlen",
+                "intbuf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 175,
+            "col": 1,
+            "line2": 175,
+            "col2": 1,
+            "function": "lpGet",
+            "var": [
+                "lpGetWithBuf",
+                "p",
+                "count",
+                "intbuf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 176,
+            "col": 35,
+            "line2": 176,
+            "col2": 40,
+            "function": "lpGet",
+            "var": [
+                "lpGetWithBuf",
+                "p",
+                "count",
+                "intbuf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 176,
+            "col": 12,
+            "line2": 176,
+            "col2": 41,
+            "function": "lpGet",
+            "var": [
+                "lpGetWithBuf",
+                "p",
+                "count",
+                "intbuf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 114,
+            "col": 1,
+            "line2": 114,
+            "col2": 1,
+            "function": "lpGetWithBuf",
+            "var": [
+                "__builtin_expect",
+                "p",
+                "_serverAssert",
+                "abort",
+                "encoding",
+                "count",
+                "negstart",
+                "negmax",
+                "uval",
+                "val",
+                "intbuf",
+                "ll2string"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 119,
+            "col": 10,
+            "line2": 119,
+            "col2": 34,
+            "function": "lpGetWithBuf",
+            "var": [
+                "encoding",
+                "count",
+                "p"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 123,
+            "col": 10,
+            "line2": 123,
+            "col2": 34,
+            "function": "lpGetWithBuf",
+            "var": [
+                "encoding",
+                "count",
+                "p"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 127,
+            "col": 10,
+            "line2": 127,
+            "col2": 34,
+            "function": "lpGetWithBuf",
+            "var": [
+                "encoding",
+                "count",
+                "p"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 131,
+            "col": 10,
+            "line2": 131,
+            "col2": 32,
+            "function": "lpGetWithBuf",
+            "var": [
+                "encoding",
+                "negstart",
+                "negmax",
+                "uval",
+                "p"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 160,
+            "col": 9,
+            "line2": 160,
+            "col2": 24,
+            "function": "lpGetWithBuf",
+            "var": [
+                "uval",
+                "negstart",
+                "negmax",
+                "val"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 168,
+            "col": 18,
+            "line2": 168,
+            "col2": 62,
+            "function": "lpGetWithBuf",
+            "var": [
+                "count",
+                "ll2string",
+                "intbuf",
+                "val"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 169,
+            "col": 9,
+            "line2": 169,
+            "col2": 21,
+            "function": "lpGetWithBuf",
+            "var": [
+                "intbuf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 176,
+            "col": 12,
+            "line2": 176,
+            "col2": 41,
+            "function": "lpGet",
+            "var": [
+                "lpGetWithBuf",
+                "p",
+                "count",
+                "intbuf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 176,
+            "col": 5,
+            "line2": 176,
+            "col2": 41,
+            "function": "lpGet",
+            "var": [
+                "lpGetWithBuf",
+                "p",
+                "count",
+                "intbuf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 226,
+            "col": 20,
+            "line2": 226,
+            "col2": 42,
+            "function": "lpRepr",
+            "var": [
+                "vstr",
+                "lpGet",
+                "p",
+                "vlen",
+                "intbuf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 226,
+            "col": 13,
+            "line2": 226,
+            "col2": 42,
+            "function": "lpRepr",
+            "var": [
+                "vstr",
+                "lpGet",
+                "p",
+                "vlen",
+                "intbuf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 227,
+            "col": 17,
+            "line2": 227,
+            "col2": 25,
+            "function": "lpRepr",
+            "var": [
+                "vlen",
+                "fwrite",
+                "vstr",
+                "stdout",
+                "perror"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c",
+            "line": 228,
+            "col": 28,
+            "line2": 228,
+            "col2": 31,
+            "function": "lpRepr",
+            "var": [
+                "fwrite",
+                "vstr",
+                "stdout",
+                "perror"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/defect_info.json",
+    "files": [
+        "listpack_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件listpack_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | static inline unsigned long lpEncodeBacklenBytes (uint64_t l){\n   3              | if (l <= 127) {\n   4              | return 1;\n   5              | } else if (l < 16383) {\n   6              | return 2;\n  29              | static inline uint32_t lpCurrentEncodedSizeUnsafe (unsigned char *p){\n  30              | if ((((p[0]) & 128) == 0))\n  32              | if ((((p[0]) & 192) == 128))\n  34              | if ((((p[0]) & 224) == 192))\n  36              | if ((((p[0]) & 255) == 241))\n  38              | if ((((p[0]) & 255) == 242))\n  40              | if ((((p[0]) & 255) == 243))\n  42              | if ((((p[0]) & 255) == 244))\n  44              | if ((((p[0]) & 240) == 224))\n  45              | return 2 + ((((p)[0] & 15) << 8) | (p)[1]);\n  52              | static inline uint32_t lpCurrentEncodedSizeBytes (const unsigned char encoding){\n  53              | if ((((encoding) & 128) == 0))\n  54              | return 1;\n  55              | if ((((encoding) & 192) == 128))\n  57              | if ((((encoding) & 224) == 192))\n  59              | if ((((encoding) & 255) == 241))\n  61              | if ((((encoding) & 255) == 242))\n  63              | if ((((encoding) & 255) == 243))\n  65              | if ((((encoding) & 255) == 244))\n  67              | if ((((encoding) & 240) == 224))\n  68              | return 2;\n---→ 函数: lpFirst\n  89 [TRACE-3]    | extern unsigned char * lpFirst (unsigned char *lp){\n  90              | unsigned char *p = lp + 6;\n  91 [TRACE-4]    | if (p[0] == 255)\n  93 [TRACE-5,15] | lpAssertValidEntry(lp, lpBytes(lp), p);\n  94 [TRACE-16]   | return p;\n  96              | extern unsigned long lpLength (unsigned char *lp){\n  97              | uint32_t numele = (((uint32_t)(lp)[4] << 0) | ((uint32_t)(lp)[5] << 8));\n  98              | if (numele != (65535))\n  99              | return numele;\n---→ 函数: lpGetWithBuf\n 114 [TRACE-27]   | static inline unsigned char * lpGetWithBuf (unsigned char *p, int64_t *count, unsigned char *intbuf){\n 115              | int64_t val;\n 116              | uint64_t uval, negstart, negmax;\n 117              | (__builtin_expect(!!((p)), 1) ? (void)0 : (_serverAssert(\"p\", \"listpack_InstSlice.c\", 381) , abort()));\n 118              | const unsigned char encoding = p[0];\n 119 [TRACE-28]   | if ((((encoding) & 192) == 128)) {\n 123 [TRACE-29]   | if ((((encoding) & 240) == 224)) {\n 127 [TRACE-30]   | if ((((encoding) & 255) == 240)) {\n 131 [TRACE-31]   | if ((((encoding) & 128) == 0)) {\n 132              | negstart = (18446744073709551615UL);\n 133              | negmax = 0;\n 134              | uval = encoding & 127;\n 160 [TRACE-32]   | if (uval >= negstart) {\n 165              | val = uval;\n 167              | if (intbuf) {\n 168 [TRACE-33]   | *count = ll2string((char *)intbuf, 21, (long long)val);\n 169 [TRACE-34]   | return intbuf;\n---→ 函数: lpGet\n 175 [TRACE-24]   | extern unsigned char * lpGet (unsigned char *p, int64_t *count, unsigned char *intbuf){\n 176 [TRACE-25,26,35,36] | return lpGetWithBuf(p, count, intbuf);\n 178              | extern size_t lpBytes (unsigned char *lp){\n 179              | return (((uint32_t)(lp)[0] << 0) | ((uint32_t)(lp)[1] << 8) | ((uint32_t)(lp)[2] << 16) | ((uint32_t)(lp)[3] << 24));\n---→ 函数: lpValidateNext\n 181 [TRACE-8]    | extern int lpValidateNext (unsigned char *lp, unsigned char **pp, size_t lpbytes){\n 182              | unsigned char *p = *pp;\n 183              | if (!p)\n 185 [TRACE-9]    | if (((p) < lp + 6 || (p) > lp + lpbytes - 1))\n 187              | if (*p == 255) {\n 191              | uint32_t lenbytes = lpCurrentEncodedSizeBytes(p[0]);\n 192              | if (!lenbytes)\n 194 [TRACE-10]   | if (((p + lenbytes) < lp + 6 || (p + lenbytes) > lp + lpbytes - 1))\n 196              | unsigned long entrylen = lpCurrentEncodedSizeUnsafe(p);\n 197              | unsigned long encodedBacklen = lpEncodeBacklenBytes(entrylen);\n 198              | entrylen += encodedBacklen;\n 199 [TRACE-11]   | if (((p + entrylen) < lp + 6 || (p + entrylen) > lp + lpbytes - 1))\n 201              | p += entrylen;\n 202 [TRACE-12]   | uint64_t prevlen = lpDecodeBacklen(p - 1);\n 203 [TRACE-13]   | if (prevlen + encodedBacklen != entrylen)\n 205              | return 1;\n---→ 函数: lpAssertValidEntry\n 207 [TRACE-6]    | static inline void lpAssertValidEntry (unsigned char *lp, size_t lpbytes, unsigned char *p){\n 208 [TRACE-7,14] | (__builtin_expect(!!((lpValidateNext(lp, &p, lpbytes))), 1) ? (void)0 : (_serverAssert(\"lpValidateNext(lp, &p, lpbytes)\", \"listpack_InstSlice.c\", 714) , abort()));\n 210              | extern void lpRepr (unsigned char *lp){\n 211              | unsigned char *p, *vstr;\n 212              | int64_t vlen;\n---→ 函数: lpRepr\n 213 [TRACE-1]    | unsigned char intbuf[21];\n 214              | int index;\n 215              | printf(\"{total bytes %zu} {num entries %lu}\\n\", lpBytes(lp), lpLength(lp));\n 216 [TRACE-2,17] | p = lpFirst(lp);\n 217 [TRACE-18]   | while (p)\n 219              | uint32_t encoded_size_bytes = lpCurrentEncodedSizeBytes(p[0]);\n 220              | uint32_t encoded_size = lpCurrentEncodedSizeUnsafe(p);\n 221              | unsigned long back_len = lpEncodeBacklenBytes(encoded_size);\n 222 [TRACE-19,20,21] | for (unsigned int i = 0; i < (encoded_size + back_len); i++) {\n 224              | }\n 226 [TRACE-22,23,37,38] | vstr = lpGet(p, &vlen, intbuf);\n 227 [TRACE-39]   | if (vlen > 40) {\n 228 [TRACE-40]   | if (fwrite(vstr, 40, 1, stdout) == 0)\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-qRltLZ4/listpack_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            29,
+            30,
+            32,
+            34,
+            36,
+            38,
+            40,
+            42,
+            44,
+            45,
+            52,
+            53,
+            54,
+            55,
+            57,
+            59,
+            61,
+            63,
+            65,
+            67,
+            68,
+            89,
+            90,
+            91,
+            93,
+            94,
+            96,
+            97,
+            98,
+            99,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            123,
+            127,
+            131,
+            132,
+            133,
+            134,
+            160,
+            165,
+            167,
+            168,
+            169,
+            175,
+            176,
+            178,
+            179,
+            181,
+            182,
+            183,
+            185,
+            187,
+            191,
+            192,
+            194,
+            196,
+            197,
+            198,
+            199,
+            201,
+            202,
+            203,
+            205,
+            207,
+            208,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            219,
+            220,
+            221,
+            222,
+            224,
+            226,
+            227,
+            228
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "指针分析能力不足",
+        "基础类型建模不准确"
+    ]
+}

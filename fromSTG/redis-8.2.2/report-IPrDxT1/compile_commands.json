@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/redis-8.2.2/report-IPrDxT1",
+        "arguments": [
+            "clang",
+            "-c",
+            "redis-check-aof_end.c"
+        ],
+        "file": "redis-check-aof_end.c"
+    }
+]

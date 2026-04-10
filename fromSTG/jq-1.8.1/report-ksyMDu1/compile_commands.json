@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/jq-1.8.1/report-ksyMDu1",
+        "arguments": [
+            "clang",
+            "-c",
+            "jv_dtoa_end.c"
+        ],
+        "file": "jv_dtoa_end.c"
+    }
+]

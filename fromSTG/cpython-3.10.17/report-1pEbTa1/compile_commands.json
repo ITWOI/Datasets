@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa1",
+        "arguments": [
+            "clang",
+            "-c",
+            "unicodedata_end.c"
+        ],
+        "file": "unicodedata_end.c"
+    }
+]

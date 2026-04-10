@@ -1,0 +1,290 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Dereference of null pointer",
+    "warning_func": "",
+    "line_number": 1203,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "PyUnicode_DecodeUTF32Stateful",
+        "PyUnicode_DecodeUTF32",
+        "_PyUnicodeWriter_Init"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP45/unicodeobject_end.c",
+            "line": 1160,
+            "col": 12,
+            "line2": 1160,
+            "col2": 81,
+            "function": "PyUnicode_DecodeUTF32",
+            "var": [
+                "PyUnicode_DecodeUTF32Stateful",
+                "s",
+                "size",
+                "errors",
+                "byteorder"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP45/unicodeobject_end.c",
+            "line": 1162,
+            "col": 1,
+            "line2": 1162,
+            "col2": 1,
+            "function": "PyUnicode_DecodeUTF32Stateful",
+            "var": [
+                "s",
+                "q",
+                "e",
+                "size",
+                "byteorder",
+                "bo",
+                "bom",
+                "unicode_new_empty",
+                "le",
+                "encoding",
+                "_PyUnicodeWriter_Init",
+                "writer",
+                "min_length",
+                "maxchar",
+                "pos",
+                "_PyUnicodeWriter_PrepareInternal",
+                "ascii",
+                "state",
+                "buffer",
+                "kind",
+                "PyUnicode_1BYTE_KIND",
+                "PyUnicode_2BYTE_KIND",
+                "data",
+                "ch",
+                "maxch",
+                "last",
+                "errmsg",
+                "startinpos",
+                "starts",
+                "endinpos",
+                "consumed",
+                "_PyUnicodeWriter_WriteCharInline",
+                "unicode_decode_call_errorhandler_writer",
+                "errors",
+                "errorHandler",
+                "exc",
+                "_Py_XDECREF",
+                "_PyUnicodeWriter_Finish",
+                "_PyUnicodeWriter_Dealloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP45/unicodeobject_end.c",
+            "line": 1175,
+            "col": 9,
+            "line2": 1175,
+            "col2": 17,
+            "function": "PyUnicode_DecodeUTF32Stateful",
+            "var": [
+                "byteorder",
+                "bo"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP45/unicodeobject_end.c",
+            "line": 1177,
+            "col": 20,
+            "line2": 1177,
+            "col2": 28,
+            "function": "PyUnicode_DecodeUTF32Stateful",
+            "var": [
+                "bo",
+                "size",
+                "q",
+                "bom"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP45/unicodeobject_end.c",
+            "line": 1188,
+            "col": 9,
+            "line2": 1188,
+            "col2": 14,
+            "function": "PyUnicode_DecodeUTF32Stateful",
+            "var": [
+                "q",
+                "e",
+                "unicode_new_empty"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP45/unicodeobject_end.c",
+            "line": 1196,
+            "col": 5,
+            "line2": 1196,
+            "col2": 34,
+            "function": "PyUnicode_DecodeUTF32Stateful",
+            "var": [
+                "_PyUnicodeWriter_Init()",
+                "_PyUnicodeWriter_Init",
+                "writer"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP45/unicodeobject_end.c",
+            "line": 1547,
+            "col": 1,
+            "line2": 1547,
+            "col2": 1,
+            "function": "_PyUnicodeWriter_Init",
+            "var": [
+                "memset",
+                "writer",
+                "min_char",
+                "kind",
+                "PyUnicode_WCHAR_KIND"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP45/unicodeobject_end.c",
+            "line": 1548,
+            "col": 5,
+            "line2": 1548,
+            "col2": 39,
+            "function": "_PyUnicodeWriter_Init",
+            "var": [
+                "memset()",
+                "memset",
+                "writer"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP45/unicodeobject_end.c",
+            "line": 1196,
+            "col": 5,
+            "line2": 1196,
+            "col2": 34,
+            "function": "PyUnicode_DecodeUTF32Stateful",
+            "var": [
+                "_PyUnicodeWriter_Init()",
+                "_PyUnicodeWriter_Init",
+                "writer"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP45/unicodeobject_end.c",
+            "line": 1198,
+            "col": 107,
+            "line2": 1198,
+            "col2": 130,
+            "function": "PyUnicode_DecodeUTF32Stateful",
+            "var": [
+                "maxchar",
+                "writer",
+                "min_length",
+                "size",
+                "pos",
+                "_PyUnicodeWriter_PrepareInternal"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP45/unicodeobject_end.c",
+            "line": 1200,
+            "col": 12,
+            "line2": 1200,
+            "col2": 12,
+            "function": "PyUnicode_DecodeUTF32Stateful",
+            "var": [
+                "ascii",
+                "state",
+                "buffer",
+                "writer",
+                "kind",
+                "PyUnicode_1BYTE_KIND",
+                "PyUnicode_2BYTE_KIND",
+                "e",
+                "q",
+                "data",
+                "pos",
+                "le",
+                "ch",
+                "maxch",
+                "last",
+                "errmsg",
+                "startinpos",
+                "starts",
+                "endinpos",
+                "consumed",
+                "_PyUnicodeWriter_WriteCharInline",
+                "unicode_decode_call_errorhandler_writer",
+                "errors",
+                "errorHandler",
+                "encoding",
+                "exc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP45/unicodeobject_end.c",
+            "line": 1203,
+            "col": 74,
+            "line2": 1203,
+            "col2": 118,
+            "function": "PyUnicode_DecodeUTF32Stateful",
+            "var": [
+                "ascii",
+                "state",
+                "buffer",
+                "writer",
+                "kind",
+                "PyUnicode_1BYTE_KIND",
+                "PyUnicode_2BYTE_KIND"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-8PulP45/defect_info.json",
+    "files": [
+        "unicodeobject_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件unicodeobject_end.c  缺陷代码片段===\n------------------------------------------------------------\n1159              | extern  __attribute__((visibility(\"default\"))) PyObject * PyUnicode_DecodeUTF32 (const char *s, Py_ssize_t size, const char *errors, int *byteorder){\n---→ 函数: PyUnicode_DecodeUTF32\n1160 [TRACE-1]    | return PyUnicode_DecodeUTF32Stateful(s, size, errors, byteorder, ((void *)0));\n---→ 函数: PyUnicode_DecodeUTF32Stateful\n1162 [TRACE-2]    | extern  __attribute__((visibility(\"default\"))) PyObject * PyUnicode_DecodeUTF32Stateful (const char *s, Py_ssize_t size, const char *errors, int *byteorder, Py_ssize_t *consumed){\n1163              | const char *starts = s;\n1164              | Py_ssize_t startinpos;\n1165              | Py_ssize_t endinpos;\n1166              | _PyUnicodeWriter writer;\n1167              | const unsigned char *q, *e;\n1168              | int le, bo = 0;\n1169              | const char *encoding;\n1170              | const char *errmsg = \"\";\n1171              | PyObject *errorHandler = ((void *)0);\n1172              | PyObject *exc = ((void *)0);\n1173              | q = (const unsigned char *)s;\n1174              | e = q + size;\n1175 [TRACE-3]    | if (byteorder)\n1177 [TRACE-4]    | if (bo == 0 && size >= 4) {\n1188 [TRACE-5]    | if (q == e) {\n1194              | le = bo <= 0;\n1195              | encoding = le ? \"utf-32-le\" : \"utf-32-be\";\n1196 [TRACE-6,9]  | _PyUnicodeWriter_Init(&writer);\n1197              | writer.min_length = (e - q + 3) / 4;\n1198 [TRACE-10]   | if ((((127) <= (&writer)->maxchar && (writer.min_length) <= (&writer)->size - (&writer)->pos) ? 0 : (((writer.min_length) == 0) ? 0 : _PyUnicodeWriter_PrepareInternal((&writer), (writer.min_length), (127)))) == -1)\n1200 [TRACE-11]   | while (1)\n1202              | Py_UCS4 ch = 0;\n1203 [TRACE-12]   | Py_UCS4 maxch = (((void)(0)) , ((((void)(0)) , ((void)(0)) , ((PyASCIIObject *)writer.buffer)->state.ascii) ? (127) : ((((void)(0)) , ((void)(0)) , ((PyASCIIObject *)(writer.buffer))->state.kind) == PyUnicode_1BYTE_KIND ? (255U) : ((((void)(0)) , ((void)(0)) , ((PyASCIIObject *)(writer.buffer))->state.kind) == PyUnicode_2BYTE_KIND ? (65535U) : (1114111U)))));\n---→ 函数: _PyUnicodeWriter_Init\n1547 [TRACE-7]    | extern  __attribute__((visibility(\"default\"))) void _PyUnicodeWriter_Init (_PyUnicodeWriter *writer){\n1548 [TRACE-8]    | memset(writer, 0, sizeof (*writer));\n1549              | writer->min_char = 127;\n1550              | writer->kind = PyUnicode_WCHAR_KIND;\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-8PulP45/unicodeobject_end.c": [
+            1159,
+            1160,
+            1162,
+            1163,
+            1164,
+            1165,
+            1166,
+            1167,
+            1168,
+            1169,
+            1170,
+            1171,
+            1172,
+            1173,
+            1174,
+            1175,
+            1177,
+            1188,
+            1194,
+            1195,
+            1196,
+            1197,
+            1198,
+            1200,
+            1202,
+            1203,
+            1547,
+            1548,
+            1549,
+            1550
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "域敏感度缺失",
+        "指针分析能力不足"
+    ]
+}

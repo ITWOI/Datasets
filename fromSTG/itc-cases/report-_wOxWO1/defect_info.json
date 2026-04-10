@@ -1,0 +1,44 @@
+{
+    "bug_type": "Bad free",
+    "checker": "Clang Static Analyzer",
+    "description": "Argument to free() is the address of a global variable, which is not memory allocated by malloc()",
+    "warning_func": "free_nondynamic_allocated_memory_001",
+    "line_number": 6,
+    "directory": "path/tests/itc-cases",
+    "entry_function": "free_nondynamic_allocated_memory_001",
+    "functions": [
+        "free_nondynamic_allocated_memory_001"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-_wOxWO1/free_nondynamic_allocated_memory_end.c",
+            "line": 6,
+            "col": 14,
+            "line2": 6,
+            "col2": 16,
+            "function": "free_nondynamic_allocated_memory_001",
+            "var": [
+                "free()",
+                "free",
+                "ptr"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/itc-cases/report-_wOxWO1/defect_info.json",
+    "files": [
+        "free_nondynamic_allocated_memory_end.c"
+    ],
+    "labels": [],
+    "codes": "",
+    "executed_lines": {
+        "Datasets/fromDGS/itc-cases/report-_wOxWO1/free_nondynamic_allocated_memory_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6
+        ]
+    }
+}

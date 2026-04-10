@@ -1,0 +1,58 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from getargs_end.c:1:
+./header_func.h:27:20: warning: function '_Py_DECREF' has internal linkage but is not defined [-Wundefined-internal]
+   27 | static inline void _Py_DECREF(PyObject *op) ;
+      |                    ^
+getargs_end.c:68:17: note: used here
+   68 |                 _Py_DECREF(((PyObject *)(iobj)));
+      |                 ^
+In file included from getargs_end.c:1:
+./header_func.h:29:19: warning: function 'PyType_HasFeature' has internal linkage but is not defined [-Wundefined-internal]
+   29 | static inline int PyType_HasFeature(PyTypeObject *type, unsigned long feature) ;
+      |                   ^
+getargs_end.c:83:17: note: used here
+   83 |             if (PyType_HasFeature((((PyObject *)(arg))->ob_type), (1UL << 24))) {
+      |                 ^
+In file included from getargs_end.c:1:
+./header_func.h:45:19: warning: function '_PyObject_TypeCheck' has internal linkage but is not defined [-Wundefined-internal]
+   45 | static inline int _PyObject_TypeCheck(PyObject *ob, PyTypeObject *type) ;
+      |                   ^
+getargs_end.c:128:24: note: used here
+  128 |             } else if (_PyObject_TypeCheck(((PyObject *)(arg)), &PyByteArray_Type) && PyByteArray_Size(arg) == 1) {
+      |                        ^
+In file included from getargs_end.c:1:
+./header_func.h:57:12: warning: function 'cleanup_buffer' has internal linkage but is not defined [-Wundefined-internal]
+   57 | static int cleanup_buffer(PyObject *self, void *ptr) ;
+      |            ^
+getargs_end.c:161:45: note: used here
+  161 |                 if (addcleanup(p, freelist, cleanup_buffer)) {
+      |                                             ^
+In file included from getargs_end.c:1:
+./header_func.h:76:20: warning: function '_Py_INCREF' has internal linkage but is not defined [-Wundefined-internal]
+   76 | static inline void _Py_INCREF(PyObject *op) ;
+      |                    ^
+getargs_end.c:292:17: note: used here
+  292 |                 _Py_INCREF(((PyObject *)(s)));
+      |                 ^
+In file included from getargs_end.c:1:
+./header_func.h:87:12: warning: function 'cleanup_ptr' has internal linkage but is not defined [-Wundefined-internal]
+   87 | static int cleanup_ptr(PyObject *self, void *ptr) ;
+      |            ^
+getargs_end.c:329:54: note: used here
+  329 |                     if (addcleanup(buffer, freelist, cleanup_ptr)) {
+      |                                                      ^
+6 warnings generated.
+getargs_end.c:12:9: warning: Array access (from variable 'expected') results in a null pointer dereference [core.NullDereference]
+   12 |     if (expected[0] == '(') {
+      |         ^~~~~~~~~~~
+getargs_end.c:12:9: warning: Array access (from variable 'expected') results in a null pointer dereference [core.NullDereference]
+   12 |     if (expected[0] == '(') {
+      |         ^~~~~~~~~~~
+getargs_end.c:12:9: warning: Array access (from variable 'expected') results in a null pointer dereference [core.NullDereference]
+   12 |     if (expected[0] == '(') {
+      |         ^~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/2026-03-12-201422-105915-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/2026-03-12-201422-105915-1' to examine bug reports.

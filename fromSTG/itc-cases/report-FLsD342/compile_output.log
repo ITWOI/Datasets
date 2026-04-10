@@ -1,0 +1,28 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+invalid_memory_access_end.c:5:18: warning: pointer/integer type mismatch in conditional expression ('int *' and 'int') [-Wconditional-type-mismatch]
+    5 |     (flag == 10) ? (ptr = (int *)malloc(10 * sizeof(int))) : (a = 5);
+      |                  ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   ~~~~~~~
+1 warning generated.
+invalid_memory_access_end.c:13:13: warning: Dereference of null pointer [core.NullDereference]
+   13 |         a = *(ptr + 1);
+      |             ^~~~~~~~~~
+invalid_memory_access_end.c:13:13: warning: Use of memory after it is freed [unix.Malloc]
+   13 |         a = *(ptr + 1);
+      |             ^~~~~~~~~~
+invalid_memory_access_end.c:13:13: warning: Dereference of null pointer [core.NullDereference]
+   13 |         a = *(ptr + 1);
+      |             ^~~~~~~~~~
+invalid_memory_access_end.c:13:13: warning: Use of memory after it is freed [unix.Malloc]
+   13 |         a = *(ptr + 1);
+      |             ^~~~~~~~~~
+invalid_memory_access_end.c:13:13: warning: Dereference of null pointer [core.NullDereference]
+   13 |         a = *(ptr + 1);
+      |             ^~~~~~~~~~
+invalid_memory_access_end.c:13:13: warning: Use of memory after it is freed [unix.Malloc]
+   13 |         a = *(ptr + 1);
+      |             ^~~~~~~~~~
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/itc-cases/report-FLsD342/2026-03-15-181641-872681-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/itc-cases/report-FLsD342/2026-03-15-181641-872681-1' to examine bug reports.

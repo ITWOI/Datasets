@@ -1,0 +1,267 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Access to field 'when' results in a dereference of a null pointer (loaded from variable 'earliest')",
+    "warning_func": "",
+    "line_number": 14,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "",
+    "functions": [
+        "aeProcessEvents",
+        "aeMain",
+        "usUntilEarliestTimer"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-UI3D151/ae_end.c",
+            "line": 106,
+            "col": 12,
+            "line2": 106,
+            "col2": 27,
+            "function": "aeMain",
+            "var": [
+                "stop",
+                "eventLoop",
+                "aeProcessEvents"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-UI3D151/ae_end.c",
+            "line": 108,
+            "col": 13,
+            "line2": 108,
+            "col2": 83,
+            "function": "aeMain",
+            "var": [
+                "aeProcessEvents()",
+                "aeProcessEvents",
+                "eventLoop"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-UI3D151/ae_end.c",
+            "line": 68,
+            "col": 1,
+            "line2": 68,
+            "col2": 1,
+            "function": "aeProcessEvents",
+            "var": [
+                "flags",
+                "maxfd",
+                "eventLoop",
+                "tv_sec",
+                "tv",
+                "tv_usec",
+                "tvp",
+                "usUntilTimer",
+                "usUntilEarliestTimer",
+                "numevents",
+                "aeApiPoll",
+                "j",
+                "fd",
+                "fired",
+                "events",
+                "mask",
+                "fe",
+                "processed",
+                "processTimeEvents"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-UI3D151/ae_end.c",
+            "line": 72,
+            "col": 9,
+            "line2": 72,
+            "col2": 30,
+            "function": "aeProcessEvents",
+            "var": [
+                "maxfd",
+                "eventLoop",
+                "flags",
+                "tv_sec",
+                "tv",
+                "tv_usec",
+                "tvp",
+                "usUntilTimer",
+                "usUntilEarliestTimer",
+                "numevents",
+                "aeApiPoll",
+                "j",
+                "fd",
+                "fired",
+                "events",
+                "mask",
+                "fe"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-UI3D151/ae_end.c",
+            "line": 76,
+            "col": 36,
+            "line2": 76,
+            "col2": 62,
+            "function": "aeProcessEvents",
+            "var": [
+                "flags",
+                "eventLoop",
+                "tv_sec",
+                "tv",
+                "tv_usec",
+                "tvp",
+                "usUntilTimer",
+                "usUntilEarliestTimer"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-UI3D151/ae_end.c",
+            "line": 80,
+            "col": 28,
+            "line2": 80,
+            "col2": 58,
+            "function": "aeProcessEvents",
+            "var": [
+                "usUntilTimer",
+                "usUntilEarliestTimer",
+                "eventLoop"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-UI3D151/ae_end.c",
+            "line": 2,
+            "col": 1,
+            "line2": 2,
+            "col2": 1,
+            "function": "usUntilEarliestTimer",
+            "var": [
+                "timeEventHead",
+                "eventLoop",
+                "te",
+                "earliest",
+                "when",
+                "id",
+                "next",
+                "getMonotonicUs",
+                "now"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-UI3D151/ae_end.c",
+            "line": 4,
+            "col": 9,
+            "line2": 4,
+            "col2": 25,
+            "function": "usUntilEarliestTimer",
+            "var": [
+                "te"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-UI3D151/ae_end.c",
+            "line": 6,
+            "col": 5,
+            "line2": 6,
+            "col2": 25,
+            "function": "usUntilEarliestTimer",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-UI3D151/ae_end.c",
+            "line": 7,
+            "col": 12,
+            "line2": 7,
+            "col2": 13,
+            "function": "usUntilEarliestTimer",
+            "var": [
+                "te",
+                "earliest",
+                "when",
+                "id",
+                "next"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-UI3D151/ae_end.c",
+            "line": 9,
+            "col": 61,
+            "line2": 9,
+            "col2": 72,
+            "function": "usUntilEarliestTimer",
+            "var": [
+                "earliest",
+                "when",
+                "te",
+                "id"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-UI3D151/ae_end.c",
+            "line": 7,
+            "col": 5,
+            "line2": 7,
+            "col2": 9,
+            "function": "usUntilEarliestTimer",
+            "var": [
+                "te",
+                "earliest",
+                "when",
+                "id",
+                "next"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-UI3D151/ae_end.c",
+            "line": 14,
+            "col": 20,
+            "line2": 14,
+            "col2": 27,
+            "function": "usUntilEarliestTimer",
+            "var": [
+                "now",
+                "when",
+                "earliest"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-UI3D151/defect_info.json",
+    "files": [
+        "ae_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件ae_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: usUntilEarliestTimer\n   2 [TRACE-7]    | static int64_t usUntilEarliestTimer (aeEventLoop *eventLoop){\n   3              | aeTimeEvent *te = eventLoop->timeEventHead;\n   4 [TRACE-8]    | if (te == ((void *)0))\n   6 [TRACE-9]    | aeTimeEvent *earliest = ((void *)0);\n   7 [TRACE-10,12] | while (te)\n   9 [TRACE-11]   | if ((!earliest || te->when < earliest->when) && te->id != -1)\n  11              | te = te->next;\n  12              | }\n  13              | monotime now = getMonotonicUs();\n  14 [TRACE-13]   | return (now >= earliest->when) ? 0 : earliest->when - now;\n---→ 函数: aeProcessEvents\n  68 [TRACE-3]    | extern int aeProcessEvents (aeEventLoop *eventLoop, int flags){\n  69              | int processed = 0, numevents;\n  70              | if (!(flags & (1 << 1)) && !(flags & (1 << 0)))\n  72 [TRACE-4]    | if (eventLoop->maxfd != -1 || ((flags & (1 << 1)) && !(flags & (1 << 2)))) {\n  73              | int j;\n  74              | struct timeval tv, *tvp = ((void *)0);\n  75              | int64_t usUntilTimer;\n  76 [TRACE-5]    | if ((flags & (1 << 2)) || (eventLoop->flags & (1 << 2))) {\n  79              | } else if (flags & (1 << 1)) {\n  80 [TRACE-6]    | usUntilTimer = usUntilEarliestTimer(eventLoop);\n 104              | extern void aeMain (aeEventLoop *eventLoop){\n 105              | eventLoop->stop = 0;\n---→ 函数: aeMain\n 106 [TRACE-1]    | while (!eventLoop->stop)\n 108 [TRACE-2]    | aeProcessEvents(eventLoop, ((1 << 0) | (1 << 1)) | (1 << 3) | (1 << 4));\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-UI3D151/ae_end.c": [
+            2,
+            3,
+            4,
+            6,
+            7,
+            9,
+            11,
+            12,
+            13,
+            14,
+            68,
+            69,
+            70,
+            72,
+            73,
+            74,
+            75,
+            76,
+            79,
+            80,
+            104,
+            105,
+            106,
+            108
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "路径可行性判定失效",
+        "循环次数/递归深度受限",
+        "符号表达式求解失效"
+    ]
+}

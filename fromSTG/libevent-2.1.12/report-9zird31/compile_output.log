@@ -1,0 +1,32 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from regress_listener_end.c:1:
+./header_func.h:7:13: warning: function 'acceptcb' has internal linkage but is not defined [-Wundefined-internal]
+    7 | static void acceptcb(struct evconnlistener *listener, int fd, struct sockaddr *addr, int socklen, void *arg) ;
+      |             ^
+regress_listener_end.c:21:47: note: used here
+   21 |     listener1 = evconnlistener_new_bind(base, acceptcb, &count1, flags, -1, (struct sockaddr *)&sin, sizeof (sin));
+      |                                               ^
+1 warning generated.
+regress_listener_end.c:15:15: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+   15 |         flags |= (1U << 4);
+      |         ~~~~~ ^
+regress_listener_end.c:21:17: warning: 4th function call argument is an uninitialized value [core.CallAndMessage]
+   21 |     listener1 = evconnlistener_new_bind(base, acceptcb, &count1, flags, -1, (struct sockaddr *)&sin, sizeof (sin));
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+regress_listener_end.c:15:15: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+   15 |         flags |= (1U << 4);
+      |         ~~~~~ ^
+regress_listener_end.c:21:17: warning: 4th function call argument is an uninitialized value [core.CallAndMessage]
+   21 |     listener1 = evconnlistener_new_bind(base, acceptcb, &count1, flags, -1, (struct sockaddr *)&sin, sizeof (sin));
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+regress_listener_end.c:15:15: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+   15 |         flags |= (1U << 4);
+      |         ~~~~~ ^
+regress_listener_end.c:21:17: warning: 4th function call argument is an uninitialized value [core.CallAndMessage]
+   21 |     listener1 = evconnlistener_new_bind(base, acceptcb, &count1, flags, -1, (struct sockaddr *)&sin, sizeof (sin));
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/libevent-2.1.12/report-9zird31/2026-03-12-204026-121459-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/libevent-2.1.12/report-9zird31/2026-03-12-204026-121459-1' to examine bug reports.

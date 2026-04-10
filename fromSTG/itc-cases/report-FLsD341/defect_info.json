@@ -1,0 +1,78 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Dereference of null pointer",
+    "warning_func": "",
+    "line_number": 10,
+    "directory": "path/tests/itc-cases",
+    "entry_function": "",
+    "functions": [
+        "invalid_memory_access_001"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD341/invalid_memory_access_end.c",
+            "line": 5,
+            "col": 21,
+            "line2": 5,
+            "col2": 57,
+            "function": "invalid_memory_access_001",
+            "var": [
+                "flag",
+                "ptr",
+                "malloc",
+                "a"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD341/invalid_memory_access_end.c",
+            "line": 6,
+            "col": 9,
+            "line2": 6,
+            "col2": 26,
+            "function": "invalid_memory_access_001",
+            "var": [
+                "ptr",
+                "flag",
+                "a"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD341/invalid_memory_access_end.c",
+            "line": 10,
+            "col": 13,
+            "line2": 10,
+            "col2": 22,
+            "function": "invalid_memory_access_001",
+            "var": [
+                "a",
+                "ptr"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/itc-cases/report-FLsD341/defect_info.json",
+    "files": [
+        "invalid_memory_access_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件invalid_memory_access_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | extern void invalid_memory_access_001 (){\n   3              | int *ptr, a;\n   4              | int flag = 10;\n---→ 函数: invalid_memory_access_001\n   5 [TRACE-1]    | (flag == 10) ? (ptr = (int *)malloc(10 * sizeof(int))) : (a = 5);\n   6 [TRACE-2]    | if (ptr != ((void *)0)) {\n   9              | if (flag == 10)\n  10 [TRACE-3]    | a = *(ptr + 1);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/itc-cases/report-FLsD341/invalid_memory_access_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            9,
+            10
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "常量识别和传播失效",
+        "路径可行性判定失效",
+        "流敏感度不足"
+    ]
+}

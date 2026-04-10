@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/redis-8.2.2/report-qRltLZ2",
+        "arguments": [
+            "clang",
+            "-c",
+            "listpack_end.c"
+        ],
+        "file": "listpack_end.c"
+    }
+]

@@ -1,0 +1,261 @@
+{
+    "bug_type": "Memory leak",
+    "checker": "Clang Static Analyzer",
+    "description": "Potential leak of memory pointed to by 'evcon'",
+    "warning_func": "",
+    "line_number": 70,
+    "directory": "path/tests/libevent-2.1.12-stable",
+    "entry_function": "",
+    "functions": [
+        "http_cancel_test",
+        "http_fill_backlog"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-lXrU5v1/regress_http_end.c",
+            "line": 181,
+            "col": 9,
+            "line2": 181,
+            "col2": 22,
+            "function": "http_cancel_test",
+            "var": [
+                "type",
+                "BY_HOST",
+                "NS_TIMEOUT",
+                "regress_dnsserver",
+                "base",
+                "data",
+                "portnum",
+                "search_table",
+                "tinytest_set_test_failed_",
+                "printf",
+                "tinytest_get_verbosity_",
+                "dns_base",
+                "evdns_base_new",
+                "NO_NS",
+                "evutil_snprintf",
+                "address",
+                "evdns_base_nameserver_ip_add",
+                "evdns_base_set_option",
+                "timeout"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-lXrU5v1/regress_http_end.c",
+            "line": 234,
+            "col": 9,
+            "line2": 234,
+            "col2": 30,
+            "function": "http_cancel_test",
+            "var": [
+                "type",
+                "INACTIVE_SERVER",
+                "port",
+                "inactive_base",
+                "event_base_new",
+                "inactive_http",
+                "http_setup",
+                "base_to_fill"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-lXrU5v1/regress_http_end.c",
+            "line": 240,
+            "col": 9,
+            "line2": 240,
+            "col2": 29,
+            "function": "http_cancel_test",
+            "var": [
+                "type",
+                "SERVER_TIMEOUT",
+                "evcons",
+                "http_fill_backlog",
+                "base_to_fill",
+                "port"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-lXrU5v1/regress_http_end.c",
+            "line": 241,
+            "col": 18,
+            "line2": 241,
+            "col2": 54,
+            "function": "http_cancel_test",
+            "var": [
+                "evcons",
+                "http_fill_backlog",
+                "base_to_fill",
+                "port"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-lXrU5v1/regress_http_end.c",
+            "line": 62,
+            "col": 1,
+            "line2": 62,
+            "col2": 1,
+            "function": "http_fill_backlog",
+            "var": [
+                "malloc",
+                "evcon",
+                "i",
+                "evhttp_connection_base_new",
+                "base",
+                "port",
+                "tinytest_set_test_failed_",
+                "printf",
+                "tinytest_get_verbosity_",
+                "evhttp_connection_set_timeout",
+                "req",
+                "evhttp_request_new",
+                "http_request_never_call",
+                "evhttp_make_request",
+                "EVHTTP_REQ_GET",
+                "val1_",
+                "val2_",
+                "tt_status_",
+                "print_",
+                "value_",
+                "print1_",
+                "print2_",
+                "fprintf",
+                "stderr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-lXrU5v1/regress_http_end.c",
+            "line": 63,
+            "col": 40,
+            "line2": 63,
+            "col2": 74,
+            "function": "http_fill_backlog",
+            "var": [
+                "malloc",
+                "evcon"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-lXrU5v1/regress_http_end.c",
+            "line": 65,
+            "col": 17,
+            "line2": 65,
+            "col2": 23,
+            "function": "http_fill_backlog",
+            "var": [
+                "i",
+                "evcon",
+                "evhttp_connection_base_new",
+                "base",
+                "port",
+                "tinytest_set_test_failed_",
+                "printf",
+                "tinytest_get_verbosity_",
+                "evhttp_connection_set_timeout",
+                "req",
+                "evhttp_request_new",
+                "http_request_never_call",
+                "evhttp_make_request",
+                "EVHTTP_REQ_GET",
+                "val1_",
+                "val2_",
+                "tt_status_",
+                "print_",
+                "value_",
+                "print1_",
+                "print2_"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-lXrU5v1/regress_http_end.c",
+            "line": 69,
+            "col": 17,
+            "line2": 69,
+            "col2": 29,
+            "function": "http_fill_backlog",
+            "var": [
+                "evcon",
+                "i",
+                "tinytest_set_test_failed_",
+                "printf",
+                "tinytest_get_verbosity_"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-lXrU5v1/regress_http_end.c",
+            "line": 70,
+            "col": 17,
+            "line2": 70,
+            "col2": 17,
+            "function": "http_fill_backlog",
+            "var": [
+                "tinytest_set_test_failed_()",
+                "tinytest_set_test_failed_"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/libevent-2.1.12/report-lXrU5v1/defect_info.json",
+    "files": [
+        "regress_http_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件regress_http_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | static int http_bind (struct evhttp *myhttp, uint16_t *pport, int mask){\n   3              | int port;\n   4              | struct evhttp_bound_socket *sock;\n   5              | int ipv6 = mask & 1;\n   6              | if (ipv6) {\n   9              | sock = evhttp_bind_socket_with_handle(myhttp, \"127.0.0.1\", *pport);\n  10              | if (sock == ((void *)0)) {\n  17              | port = regress_get_socket_port(evhttp_bound_socket_get_fd(sock));\n  18              | if (port < 0)\n  19              | return -1;\n  23              | static struct evhttp * http_setup_gencb (uint16_t *pport, struct event_base *base, int mask, void (*cb)(struct evhttp_request *, void *), void *cbarg){\n  24              | struct evhttp *myhttp;\n  25              | myhttp = evhttp_new(base);\n  26              | if (http_bind(myhttp, pport, mask) < 0)\n  27              | return ((void *)0);\n  49              | static struct evhttp * http_setup (uint16_t *pport, struct event_base *base, int mask){\n  50              | return http_setup_gencb(pport, base, mask, ((void *)0), ((void *)0));\n---→ 函数: http_fill_backlog\n  62 [TRACE-5]    | static struct evhttp_connection ** http_fill_backlog (struct event_base *base, int port){\n  63 [TRACE-6]    | struct evhttp_connection **evcon = malloc(sizeof (*evcon) * (256 + 1));\n  64              | int i;\n  65 [TRACE-7]    | for (i = 0; i < 256; ++i) {\n  66              | struct evhttp_request *req;\n  67              | evcon[i] = evhttp_connection_base_new(base, ((void *)0), \"127.0.0.1\", port);\n  69 [TRACE-8]    | if (!((evcon[i]))) {\n  70 [TRACE-9]    | tinytest_set_test_failed_();\n 165              | static void http_cancel_test (void *arg){\n 166              | struct basic_test_data *data = arg;\n 167              | uint16_t port = 0;\n 168              | struct evhttp_connection *evcon = ((void *)0);\n 169              | struct evhttp_request *req = ((void *)0);\n 170              | struct bufferevent *bufev = ((void *)0);\n 171              | struct timeval tv;\n 172              | struct evdns_base *dns_base = ((void *)0);\n 173              | uint16_t portnum = 0;\n 174              | char address[64];\n 175              | struct evhttp *inactive_http = ((void *)0);\n 176              | struct event_base *inactive_base = ((void *)0);\n 177              | struct evhttp_connection **evcons = ((void *)0);\n 178              | struct event_base *base_to_fill = data->base;\n 179              | enum http_cancel_test_type type = (enum http_cancel_test_type)data->setup_data;\n 180              | struct evhttp *http = http_setup(&port, data->base, 0);\n---→ 函数: http_cancel_test\n 181 [TRACE-1]    | if (type & BY_HOST) {\n 232              | exit_base = data->base;\n 233              | test_ok = 0;\n 234 [TRACE-2]    | if (type & INACTIVE_SERVER) {\n 240 [TRACE-3]    | if (type & SERVER_TIMEOUT)\n 241 [TRACE-4]    | evcons = http_fill_backlog(base_to_fill, port);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/libevent-2.1.12/report-lXrU5v1/regress_http_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            9,
+            10,
+            17,
+            18,
+            19,
+            23,
+            24,
+            25,
+            26,
+            27,
+            49,
+            50,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            69,
+            70,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            232,
+            233,
+            234,
+            240,
+            241
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "指针分析能力不足",
+        "堆对象抽象过粗"
+    ]
+}

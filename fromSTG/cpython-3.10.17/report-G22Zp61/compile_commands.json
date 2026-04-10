@@ -1,0 +1,20 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61",
+        "arguments": [
+            "clang",
+            "-c",
+            "./object.h"
+        ],
+        "file": "./object.h"
+    },
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-G22Zp61",
+        "arguments": [
+            "clang",
+            "-c",
+            "weakrefobject_end.c"
+        ],
+        "file": "weakrefobject_end.c"
+    }
+]

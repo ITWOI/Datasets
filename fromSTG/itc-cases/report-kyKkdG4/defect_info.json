@@ -1,0 +1,113 @@
+{
+    "bug_type": "Double free",
+    "checker": "Clang Static Analyzer",
+    "description": "Attempt to free released memory",
+    "warning_func": "",
+    "line_number": 8,
+    "directory": "path/tests/itc-cases",
+    "entry_function": "",
+    "functions": [
+        "double_free_function_004",
+        "double_free_004"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-kyKkdG4/double_free_end.c",
+            "line": 6,
+            "col": 48,
+            "line2": 6,
+            "col2": 67,
+            "function": "double_free_004",
+            "var": [
+                "double_free_function_004_gbl_ptr",
+                "malloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-kyKkdG4/double_free_end.c",
+            "line": 7,
+            "col": 5,
+            "line2": 7,
+            "col2": 30,
+            "function": "double_free_004",
+            "var": [
+                "double_free_function_004()",
+                "double_free_function_004"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-kyKkdG4/double_free_end.c",
+            "line": 2,
+            "col": 1,
+            "line2": 2,
+            "col2": 1,
+            "function": "double_free_function_004",
+            "var": [
+                "free",
+                "double_free_function_004_gbl_ptr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-kyKkdG4/double_free_end.c",
+            "line": 3,
+            "col": 5,
+            "line2": 3,
+            "col2": 42,
+            "function": "double_free_function_004",
+            "var": [
+                "free()",
+                "free",
+                "double_free_function_004_gbl_ptr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-kyKkdG4/double_free_end.c",
+            "line": 7,
+            "col": 5,
+            "line2": 7,
+            "col2": 30,
+            "function": "double_free_004",
+            "var": [
+                "double_free_function_004()",
+                "double_free_function_004"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-kyKkdG4/double_free_end.c",
+            "line": 8,
+            "col": 5,
+            "line2": 8,
+            "col2": 42,
+            "function": "double_free_004",
+            "var": [
+                "free()",
+                "free",
+                "double_free_function_004_gbl_ptr"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/itc-cases/report-kyKkdG4/defect_info.json",
+    "files": [
+        "double_free_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件double_free_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: double_free_function_004\n   2 [TRACE-3]    | extern void double_free_function_004 (){\n   3 [TRACE-4]    | free(double_free_function_004_gbl_ptr);\n   5              | extern void double_free_004 (){\n---→ 函数: double_free_004\n   6 [TRACE-1]    | double_free_function_004_gbl_ptr = (char *)malloc(sizeof(char));\n   7 [TRACE-2,5]  | double_free_function_004();\n   8 [TRACE-6]    | free(double_free_function_004_gbl_ptr);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/itc-cases/report-kyKkdG4/double_free_end.c": [
+            2,
+            3,
+            5,
+            6,
+            7,
+            8
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "指针分析能力不足",
+        "堆对象抽象过粗"
+    ]
+}

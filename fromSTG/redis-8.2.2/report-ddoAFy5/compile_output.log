@@ -1,0 +1,77 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+quicklist_end.c:168:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+  168 | }
+      | ^
+quicklist_end.c:273:42: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  273 |     } else if (((entry->node)->container == 1)) {
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+quicklist_end.c:273:42: note: remove extraneous parentheses around the comparison to silence this warning
+  273 |     } else if (((entry->node)->container == 1)) {
+      |                ~                         ^   ~
+quicklist_end.c:273:42: note: use '=' to turn this equality comparison into an assignment
+  273 |     } else if (((entry->node)->container == 1)) {
+      |                                          ^~
+      |                                          =
+quicklist_end.c:357:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+  357 | }
+      | ^
+3 warnings generated.
+quicklist_end.c:48:27: warning: Access to field 'recompress' results in a dereference of a null pointer (loaded from field 'head') [core.NullDereference]
+   48 |     (__builtin_expect(!!((quicklist->head->recompress == 0 && quicklist->tail->recompress == 0)), 1) ? (void)0 : (_serverAssert("quicklist->head->recompress == 0 && quicklist->tail->recompress == 0", "quicklist_InstSlice.c", 248) , abort()));
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+quicklist_end.c:48:63: warning: Access to field 'recompress' results in a dereference of a null pointer (loaded from field 'tail') [core.NullDereference]
+   48 |     (__builtin_expect(!!((quicklist->head->recompress == 0 && quicklist->tail->recompress == 0)), 1) ? (void)0 : (_serverAssert("quicklist->head->recompress == 0 && quicklist->tail->recompress == 0", "quicklist_InstSlice.c", 248) , abort()));
+      |                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+quicklist_end.c:69:39: warning: Access to field 'next' results in a dereference of a null pointer (loaded from variable 'forward') [core.NullDereference]
+   69 |             if (forward == reverse || forward->next == reverse)
+      |                                       ^~~~~~~~~~~~~
+quicklist_end.c:72:23: warning: Access to field 'prev' results in a dereference of a null pointer (loaded from variable 'reverse') [core.NullDereference]
+   72 |             reverse = reverse->prev;
+      |                       ^~~~~~~~~~~~~
+quicklist_end.c:379:32: warning: Access to field 'entry' results in a dereference of a null pointer (loaded from variable 'keep') [core.NullDereference]
+  379 |         keep->count = lpLength(keep->entry);
+      |                                ^~~~~~~~~~~
+quicklist_end.c:764:20: warning: Called function pointer is null (null dereference) [core.CallAndMessage]
+  764 |         iter->zi = nextFn(iter->current->entry, iter->zi);
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quicklist_end.c:48:27: warning: Access to field 'recompress' results in a dereference of a null pointer (loaded from field 'head') [core.NullDereference]
+   48 |     (__builtin_expect(!!((quicklist->head->recompress == 0 && quicklist->tail->recompress == 0)), 1) ? (void)0 : (_serverAssert("quicklist->head->recompress == 0 && quicklist->tail->recompress == 0", "quicklist_InstSlice.c", 248) , abort()));
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+quicklist_end.c:48:63: warning: Access to field 'recompress' results in a dereference of a null pointer (loaded from field 'tail') [core.NullDereference]
+   48 |     (__builtin_expect(!!((quicklist->head->recompress == 0 && quicklist->tail->recompress == 0)), 1) ? (void)0 : (_serverAssert("quicklist->head->recompress == 0 && quicklist->tail->recompress == 0", "quicklist_InstSlice.c", 248) , abort()));
+      |                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+quicklist_end.c:69:39: warning: Access to field 'next' results in a dereference of a null pointer (loaded from variable 'forward') [core.NullDereference]
+   69 |             if (forward == reverse || forward->next == reverse)
+      |                                       ^~~~~~~~~~~~~
+quicklist_end.c:72:23: warning: Access to field 'prev' results in a dereference of a null pointer (loaded from variable 'reverse') [core.NullDereference]
+   72 |             reverse = reverse->prev;
+      |                       ^~~~~~~~~~~~~
+quicklist_end.c:379:32: warning: Access to field 'entry' results in a dereference of a null pointer (loaded from variable 'keep') [core.NullDereference]
+  379 |         keep->count = lpLength(keep->entry);
+      |                                ^~~~~~~~~~~
+quicklist_end.c:764:20: warning: Called function pointer is null (null dereference) [core.CallAndMessage]
+  764 |         iter->zi = nextFn(iter->current->entry, iter->zi);
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+quicklist_end.c:48:27: warning: Access to field 'recompress' results in a dereference of a null pointer (loaded from field 'head') [core.NullDereference]
+   48 |     (__builtin_expect(!!((quicklist->head->recompress == 0 && quicklist->tail->recompress == 0)), 1) ? (void)0 : (_serverAssert("quicklist->head->recompress == 0 && quicklist->tail->recompress == 0", "quicklist_InstSlice.c", 248) , abort()));
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+quicklist_end.c:48:63: warning: Access to field 'recompress' results in a dereference of a null pointer (loaded from field 'tail') [core.NullDereference]
+   48 |     (__builtin_expect(!!((quicklist->head->recompress == 0 && quicklist->tail->recompress == 0)), 1) ? (void)0 : (_serverAssert("quicklist->head->recompress == 0 && quicklist->tail->recompress == 0", "quicklist_InstSlice.c", 248) , abort()));
+      |                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+quicklist_end.c:69:39: warning: Access to field 'next' results in a dereference of a null pointer (loaded from variable 'forward') [core.NullDereference]
+   69 |             if (forward == reverse || forward->next == reverse)
+      |                                       ^~~~~~~~~~~~~
+quicklist_end.c:72:23: warning: Access to field 'prev' results in a dereference of a null pointer (loaded from variable 'reverse') [core.NullDereference]
+   72 |             reverse = reverse->prev;
+      |                       ^~~~~~~~~~~~~
+quicklist_end.c:379:32: warning: Access to field 'entry' results in a dereference of a null pointer (loaded from variable 'keep') [core.NullDereference]
+  379 |         keep->count = lpLength(keep->entry);
+      |                                ^~~~~~~~~~~
+quicklist_end.c:764:20: warning: Called function pointer is null (null dereference) [core.CallAndMessage]
+  764 |         iter->zi = nextFn(iter->current->entry, iter->zi);
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+18 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-ddoAFy5/2026-03-12-194658-89598-1'
+scan-build: 6 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-ddoAFy5/2026-03-12-194658-89598-1' to examine bug reports.

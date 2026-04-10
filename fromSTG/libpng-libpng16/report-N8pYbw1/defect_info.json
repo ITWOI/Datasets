@@ -1,0 +1,304 @@
+{
+    "bug_type": "Function call with invalid argument",
+    "checker": "Clang Static Analyzer",
+    "description": "The 4th argument to 'fread' is NULL but should not be NULL",
+    "warning_func": "",
+    "line_number": 66,
+    "directory": "path/tests/libpng-libpng16",
+    "entry_function": "buffer_from_file",
+    "functions": [
+        "test_one_file",
+        "do_test",
+        "buffer_from_file",
+        "display_cache_file"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw1/pngimage_end.c",
+            "line": 457,
+            "col": 9,
+            "line2": 457,
+            "col2": 16,
+            "function": "do_test",
+            "var": [
+                "ret",
+                "test_one_file",
+                "dp",
+                "file",
+                "ERRORS",
+                "display_log",
+                "INTERNAL_ERROR"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw1/pngimage_end.c",
+            "line": 458,
+            "col": 9,
+            "line2": 458,
+            "col2": 31,
+            "function": "do_test",
+            "var": [
+                "test_one_file()",
+                "test_one_file",
+                "dp",
+                "file"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw1/pngimage_end.c",
+            "line": 389,
+            "col": 1,
+            "line2": 389,
+            "col2": 1,
+            "function": "test_one_file",
+            "var": [
+                "operation",
+                "dp",
+                "transforms",
+                "display_cache_file",
+                "filename",
+                "update_display",
+                "ignored_transforms",
+                "read_png",
+                "original_file",
+                "compare_read",
+                "write_png",
+                "original_ip",
+                "written_file",
+                "active_transforms",
+                "options",
+                "first_transform",
+                "active",
+                "current",
+                "write_transforms",
+                "read_ip",
+                "is_combo",
+                "bad_combo",
+                "bad_combo_list",
+                "bad_transforms",
+                "exhaustive",
+                "next",
+                "read_transforms",
+                "skip_transform",
+                "__assert_fail",
+                "printf",
+                "rw_transforms"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw1/pngimage_end.c",
+            "line": 392,
+            "col": 5,
+            "line2": 392,
+            "col2": 36,
+            "function": "test_one_file",
+            "var": [
+                "display_cache_file()",
+                "display_cache_file",
+                "dp",
+                "filename"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw1/pngimage_end.c",
+            "line": 138,
+            "col": 1,
+            "line2": 138,
+            "col2": 1,
+            "function": "display_cache_file",
+            "var": [
+                "filename",
+                "dp",
+                "fp",
+                "fopen",
+                "display_log",
+                "USER_ERROR",
+                "strerror",
+                "__errno_location",
+                "stdin",
+                "ret",
+                "buffer_from_file",
+                "original_file",
+                "APP_ERROR"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw1/pngimage_end.c",
+            "line": 142,
+            "col": 9,
+            "line2": 142,
+            "col2": 31,
+            "function": "display_cache_file",
+            "var": [
+                "filename",
+                "fp",
+                "fopen",
+                "display_log",
+                "dp",
+                "USER_ERROR",
+                "strerror",
+                "__errno_location",
+                "stdin"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw1/pngimage_end.c",
+            "line": 143,
+            "col": 9,
+            "line2": 143,
+            "col2": 34,
+            "function": "display_cache_file",
+            "var": [
+                "fp",
+                "fopen",
+                "filename"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw1/pngimage_end.c",
+            "line": 144,
+            "col": 13,
+            "line2": 144,
+            "col2": 29,
+            "function": "display_cache_file",
+            "var": [
+                "fp",
+                "display_log",
+                "dp",
+                "USER_ERROR",
+                "strerror",
+                "__errno_location"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw1/pngimage_end.c",
+            "line": 148,
+            "col": 48,
+            "line2": 148,
+            "col2": 49,
+            "function": "display_cache_file",
+            "var": [
+                "ret",
+                "buffer_from_file",
+                "original_file",
+                "dp",
+                "fp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw1/pngimage_end.c",
+            "line": 148,
+            "col": 11,
+            "line2": 148,
+            "col2": 50,
+            "function": "display_cache_file",
+            "var": [
+                "ret",
+                "buffer_from_file",
+                "original_file",
+                "dp",
+                "fp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw1/pngimage_end.c",
+            "line": 62,
+            "col": 1,
+            "line2": 62,
+            "col2": 1,
+            "function": "buffer_from_file",
+            "var": [
+                "first",
+                "buffer",
+                "fread",
+                "last",
+                "count",
+                "fp",
+                "r",
+                "__assert_fail",
+                "next",
+                "buffer_extend",
+                "feof",
+                "end_count",
+                "__errno_location"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw1/pngimage_end.c",
+            "line": 65,
+            "col": 5,
+            "line2": 65,
+            "col2": 7,
+            "function": "buffer_from_file",
+            "var": [
+                "fread",
+                "buffer",
+                "last",
+                "count",
+                "fp",
+                "r",
+                "__assert_fail",
+                "next",
+                "buffer_extend",
+                "feof",
+                "end_count",
+                "__errno_location"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw1/pngimage_end.c",
+            "line": 66,
+            "col": 82,
+            "line2": 66,
+            "col2": 83,
+            "function": "buffer_from_file",
+            "var": [
+                "fread",
+                "buffer",
+                "last",
+                "count",
+                "fp"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw1/defect_info.json",
+    "files": [
+        "pngimage_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件pngimage_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: buffer_from_file\n  62 [TRACE-11]   | static int buffer_from_file (struct buffer *buffer, FILE *fp){\n  63              | struct buffer_list *last = &buffer->first;\n  64              | size_t count = 0;\n  65 [TRACE-12]   | for (;;) {\n  66 [TRACE-13]   | size_t r = fread(last->buffer + count, 1, (sizeof last->buffer) - count, fp);\n---→ 函数: display_cache_file\n 138 [TRACE-5]    | static void display_cache_file (struct display *dp, const char *filename){\n 139              | FILE *fp;\n 140              | int ret;\n 141              | dp->filename = filename;\n 142 [TRACE-6]    | if (filename != ((void *)0)) {\n 143 [TRACE-7]    | fp = fopen(filename, \"rb\");\n 144 [TRACE-8]    | if (fp == ((void *)0))\n 145              | display_log(dp, USER_ERROR, \"open failed: %s\", strerror((*__errno_location())));\n 148 [TRACE-9,10] | ret = buffer_from_file(&dp->original_file, fp);\n---→ 函数: test_one_file\n 389 [TRACE-3]    | static void test_one_file (struct display *dp, const char *filename){\n 390              | dp->operation = \"cache file\";\n 391              | dp->transforms = 0;\n 392 [TRACE-4]    | display_cache_file(dp, filename);\n 455              | static int do_test (struct display *dp, const char *file){\n 456              | int ret = _setjmp(dp->error_return);\n---→ 函数: do_test\n 457 [TRACE-1]    | if (ret == 0) {\n 458 [TRACE-2]    | test_one_file(dp, file);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/libpng-libpng16/report-N8pYbw1/pngimage_end.c": [
+            62,
+            63,
+            64,
+            65,
+            66,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            148,
+            389,
+            390,
+            391,
+            392,
+            455,
+            456,
+            457,
+            458
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "路径可行性判定失效",
+        "流敏感度不足"
+    ]
+}

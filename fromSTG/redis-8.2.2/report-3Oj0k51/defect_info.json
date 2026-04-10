@@ -1,0 +1,125 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Dereference of null pointer",
+    "warning_func": "",
+    "line_number": 169,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "",
+    "functions": [
+        "setKeyByLink",
+        "setKey"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-3Oj0k51/db_end.c",
+            "line": 161,
+            "col": 5,
+            "line2": 161,
+            "col2": 56,
+            "function": "setKey",
+            "var": [
+                "setKeyByLink()",
+                "setKeyByLink",
+                "c",
+                "db",
+                "key",
+                "valref",
+                "flags"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-3Oj0k51/db_end.c",
+            "line": 163,
+            "col": 1,
+            "line2": 163,
+            "col2": 1,
+            "function": "setKeyByLink",
+            "var": [
+                "plink",
+                "dummy",
+                "flags",
+                "oldval",
+                "dictGetKV",
+                "link",
+                "exists",
+                "lookupKeyWriteWithLink",
+                "db",
+                "key",
+                "type",
+                "valref",
+                "dbSetValue",
+                "dbAddByLink"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-3Oj0k51/db_end.c",
+            "line": 164,
+            "col": 19,
+            "line2": 164,
+            "col2": 23,
+            "function": "setKeyByLink",
+            "var": [
+                "plink",
+                "dummy"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-3Oj0k51/db_end.c",
+            "line": 167,
+            "col": 9,
+            "line2": 167,
+            "col2": 17,
+            "function": "setKeyByLink",
+            "var": [
+                "flags",
+                "oldval",
+                "dictGetKV",
+                "link",
+                "exists",
+                "lookupKeyWriteWithLink",
+                "db",
+                "key"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-3Oj0k51/db_end.c",
+            "line": 169,
+            "col": 28,
+            "line2": 169,
+            "col2": 33,
+            "function": "setKeyByLink",
+            "var": [
+                "oldval",
+                "dictGetKV",
+                "link"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-3Oj0k51/defect_info.json",
+    "files": [
+        "db_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件db_end.c  缺陷代码片段===\n------------------------------------------------------------\n 160              | extern void setKey (client *c, redisDb *db, robj *key, robj **valref, int flags){\n---→ 函数: setKey\n 161 [TRACE-1]    | setKeyByLink(c, db, key, valref, flags, ((void *)0));\n---→ 函数: setKeyByLink\n 163 [TRACE-2]    | extern void setKeyByLink (client *c, redisDb *db, robj *key, robj **valref, int flags, dictEntryLink *plink){\n 164 [TRACE-3]    | dictEntryLink dummy = ((void *)0), *link = plink ? plink : &dummy;\n 165              | int exists;\n 166              | kvobj *oldval = ((void *)0);\n 167 [TRACE-4]    | if (flags & 4) {\n 169 [TRACE-5]    | oldval = dictGetKV(**link);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-3Oj0k51/db_end.c": [
+            160,
+            161,
+            163,
+            164,
+            165,
+            166,
+            167,
+            169
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "过程间数据流断裂",
+        "路径可行性判定失效"
+    ]
+}

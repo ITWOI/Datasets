@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+invalid_memory_access_end.c:24:12: warning: Access to field 'a' results in a dereference of a null pointer (loaded from variable 'invalid_memory_access_004_s_001_s_gbl') [core.NullDereference]
+   24 |     return invalid_memory_access_004_s_001_s_gbl->a;
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+invalid_memory_access_end.c:24:12: warning: Access to field 'a' results in a dereference of a null pointer (loaded from variable 'invalid_memory_access_004_s_001_s_gbl') [core.NullDereference]
+   24 |     return invalid_memory_access_004_s_001_s_gbl->a;
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+invalid_memory_access_end.c:24:12: warning: Access to field 'a' results in a dereference of a null pointer (loaded from variable 'invalid_memory_access_004_s_001_s_gbl') [core.NullDereference]
+   24 |     return invalid_memory_access_004_s_001_s_gbl->a;
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/itc-cases/report-FLsD346/2026-03-15-181653-873001-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/itc-cases/report-FLsD346/2026-03-15-181653-873001-1' to examine bug reports.

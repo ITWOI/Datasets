@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+traceback_end.c:41:18: warning: Array access (from variable 'str') results in a null pointer dereference [core.NullDereference]
+   41 |             ch = str[i];
+      |                  ^~~~~~
+traceback_end.c:41:18: warning: Array access (from variable 'str') results in a null pointer dereference [core.NullDereference]
+   41 |             ch = str[i];
+      |                  ^~~~~~
+traceback_end.c:41:18: warning: Array access (from variable 'str') results in a null pointer dereference [core.NullDereference]
+   41 |             ch = str[i];
+      |                  ^~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/2026-03-12-195315-94007-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/2026-03-12-195315-94007-1' to examine bug reports.

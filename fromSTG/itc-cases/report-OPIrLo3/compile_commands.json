@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/itc-cases/report-OPIrLo3",
+        "arguments": [
+            "clang",
+            "-c",
+            "zero_division_end.c"
+        ],
+        "file": "zero_division_end.c"
+    }
+]

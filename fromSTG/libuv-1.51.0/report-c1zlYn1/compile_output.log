@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+tty_end.c:44:26: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   44 |         if (ss.ss_family == 2 || ss.ss_family == 10)
+      |             ~~~~~~~~~~~~ ^
+tty_end.c:44:26: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   44 |         if (ss.ss_family == 2 || ss.ss_family == 10)
+      |             ~~~~~~~~~~~~ ^
+tty_end.c:44:26: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   44 |         if (ss.ss_family == 2 || ss.ss_family == 10)
+      |             ~~~~~~~~~~~~ ^
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/libuv-1.51.0/report-c1zlYn1/2026-03-12-204137-122230-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/libuv-1.51.0/report-c1zlYn1/2026-03-12-204137-122230-1' to examine bug reports.

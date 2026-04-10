@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+listpack_end.c:196:9: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+  196 |         memcpy(buf + 5, s, len);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~
+listpack_end.c:196:9: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+  196 |         memcpy(buf + 5, s, len);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~
+listpack_end.c:196:9: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+  196 |         memcpy(buf + 5, s, len);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-qRltLZ3/2026-03-12-191930-77323-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-qRltLZ3/2026-03-12-191930-77323-1' to examine bug reports.

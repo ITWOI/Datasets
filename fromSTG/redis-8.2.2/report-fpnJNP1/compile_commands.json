@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/redis-8.2.2/report-fpnJNP1",
+        "arguments": [
+            "clang",
+            "-c",
+            "aof_end.c"
+        ],
+        "file": "aof_end.c"
+    }
+]

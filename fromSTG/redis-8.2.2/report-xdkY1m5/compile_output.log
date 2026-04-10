@@ -1,0 +1,24 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+module_end.c:153:15: warning: Assigned value is garbage or undefined [core.uninitialized.Assign]
+  153 |     ci1->port = port;
+      |               ^ ~~~~
+module_end.c:507:17: warning: Dereference of null pointer (loaded from variable 'errmsg') [core.NullDereference]
+  507 |         *errmsg = "the module can't be unloaded";
+      |          ~~~~~~ ^
+module_end.c:153:15: warning: Assigned value is garbage or undefined [core.uninitialized.Assign]
+  153 |     ci1->port = port;
+      |               ^ ~~~~
+module_end.c:507:17: warning: Dereference of null pointer (loaded from variable 'errmsg') [core.NullDereference]
+  507 |         *errmsg = "the module can't be unloaded";
+      |          ~~~~~~ ^
+module_end.c:153:15: warning: Assigned value is garbage or undefined [core.uninitialized.Assign]
+  153 |     ci1->port = port;
+      |               ^ ~~~~
+module_end.c:507:17: warning: Dereference of null pointer (loaded from variable 'errmsg') [core.NullDereference]
+  507 |         *errmsg = "the module can't be unloaded";
+      |          ~~~~~~ ^
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-xdkY1m5/2026-03-12-192421-80167-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-xdkY1m5/2026-03-12-192421-80167-1' to examine bug reports.

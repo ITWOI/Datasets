@@ -1,0 +1,112 @@
+{
+    "bug_type": "Memory leak",
+    "checker": "Clang Static Analyzer",
+    "description": "Potential leak of memory pointed to by 'str1'",
+    "warning_func": "",
+    "line_number": 12,
+    "directory": "path/tests/itc-cases",
+    "entry_function": "",
+    "functions": [
+        "memory_leak_006_func_001",
+        "memory_leak_006"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-HvdUBU6/memory_leak_end.c",
+            "line": 8,
+            "col": 18,
+            "line2": 8,
+            "col2": 54,
+            "function": "memory_leak_006",
+            "var": [
+                "memory_leak_006_func_001",
+                "strlen",
+                "str"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-HvdUBU6/memory_leak_end.c",
+            "line": 2,
+            "col": 1,
+            "line2": 2,
+            "col2": 1,
+            "function": "memory_leak_006_func_001",
+            "var": [
+                "malloc",
+                "len",
+                "stringPtr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-HvdUBU6/memory_leak_end.c",
+            "line": 3,
+            "col": 23,
+            "line2": 3,
+            "col2": 54,
+            "function": "memory_leak_006_func_001",
+            "var": [
+                "malloc",
+                "len"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-HvdUBU6/memory_leak_end.c",
+            "line": 8,
+            "col": 18,
+            "line2": 8,
+            "col2": 54,
+            "function": "memory_leak_006",
+            "var": [
+                "memory_leak_006_func_001",
+                "strlen",
+                "str"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-HvdUBU6/memory_leak_end.c",
+            "line": 9,
+            "col": 9,
+            "line2": 9,
+            "col2": 27,
+            "function": "memory_leak_006",
+            "var": [
+                "str1"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-HvdUBU6/memory_leak_end.c",
+            "line": 12,
+            "col": 1,
+            "line2": 12,
+            "col2": 1,
+            "function": "memory_leak_006",
+            "var": []
+        }
+    ],
+    "info_path": "Datasets/fromDGS/itc-cases/report-HvdUBU6/defect_info.json",
+    "files": [
+        "memory_leak_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件memory_leak_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: memory_leak_006_func_001\n   2 [TRACE-2]    | extern char * memory_leak_006_func_001 (int len){\n   3 [TRACE-3]    | char *stringPtr = malloc(sizeof(char) * (len + 1));\n   4              | return stringPtr;\n   6              | extern void memory_leak_006 (){\n   7              | char *str = \"This is a string\";\n---→ 函数: memory_leak_006\n   8 [TRACE-1,4]  | char *str1 = memory_leak_006_func_001(strlen(str));\n   9 [TRACE-5]    | if (str1 != ((void *)0)) {\n  12 [TRACE-6]    | }\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/itc-cases/report-HvdUBU6/memory_leak_end.c": [
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            12
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "指针分析能力不足",
+        "堆对象抽象过粗"
+    ]
+}

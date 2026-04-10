@@ -1,0 +1,19 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+regress_testutils_end.c:12:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   12 | }
+      | ^
+1 warning generated.
+regress_testutils_end.c:7:22: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+    7 |     if (ss.ss_family == 2) {
+      |         ~~~~~~~~~~~~ ^
+regress_testutils_end.c:7:22: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+    7 |     if (ss.ss_family == 2) {
+      |         ~~~~~~~~~~~~ ^
+regress_testutils_end.c:7:22: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+    7 |     if (ss.ss_family == 2) {
+      |         ~~~~~~~~~~~~ ^
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/libevent-2.1.12/report-9VleW61/2026-03-12-203815-120269-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/libevent-2.1.12/report-9VleW61/2026-03-12-203815-120269-1' to examine bug reports.

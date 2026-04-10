@@ -1,0 +1,206 @@
+{
+    "bug_type": "Uninitialized argument value",
+    "checker": "Clang Static Analyzer",
+    "description": "4th function call argument is an uninitialized value",
+    "warning_func": "",
+    "line_number": 76,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "_mpd_basedivmod",
+        "_mpd_shortmul"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_1/basearith_end.c",
+            "line": 61,
+            "col": 9,
+            "line2": 61,
+            "col2": 20,
+            "function": "_mpd_basedivmod",
+            "var": [
+                "nplusm",
+                "u",
+                "mpd_alloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_1/basearith_end.c",
+            "line": 66,
+            "col": 9,
+            "line2": 66,
+            "col2": 15,
+            "function": "_mpd_basedivmod",
+            "var": [
+                "n",
+                "v",
+                "mpd_alloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_1/basearith_end.c",
+            "line": 73,
+            "col": 5,
+            "line2": 73,
+            "col2": 34,
+            "function": "_mpd_basedivmod",
+            "var": [
+                "_mpd_shortmul()",
+                "_mpd_shortmul",
+                "v",
+                "vconst",
+                "n",
+                "d"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_1/basearith_end.c",
+            "line": 23,
+            "col": 1,
+            "line2": 23,
+            "col2": 1,
+            "function": "_mpd_shortmul",
+            "var": [
+                "i",
+                "n",
+                "_mpd_mul_words",
+                "hi",
+                "lo",
+                "u",
+                "v",
+                "carry",
+                "_mpd_div_words_r",
+                "w"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_1/basearith_end.c",
+            "line": 27,
+            "col": 17,
+            "line2": 27,
+            "col2": 21,
+            "function": "_mpd_shortmul",
+            "var": [
+                "i",
+                "n",
+                "_mpd_mul_words",
+                "hi",
+                "lo",
+                "u",
+                "v",
+                "carry",
+                "_mpd_div_words_r",
+                "w"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_1/basearith_end.c",
+            "line": 73,
+            "col": 5,
+            "line2": 73,
+            "col2": 34,
+            "function": "_mpd_basedivmod",
+            "var": [
+                "_mpd_shortmul()",
+                "_mpd_shortmul",
+                "v",
+                "vconst",
+                "n",
+                "d"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_1/basearith_end.c",
+            "line": 74,
+            "col": 17,
+            "line2": 74,
+            "col2": 45,
+            "function": "_mpd_basedivmod",
+            "var": [
+                "j",
+                "m",
+                "rhat",
+                "_mpd_shortdiv",
+                "w2",
+                "u",
+                "n",
+                "v",
+                "qhat",
+                "_mpd_singlemul",
+                "carry",
+                "i",
+                "_mpd_mul_words",
+                "hi",
+                "lo",
+                "_mpd_div_words_r",
+                "x",
+                "q",
+                "_mpd_baseadd"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_1/basearith_end.c",
+            "line": 76,
+            "col": 52,
+            "line2": 76,
+            "col2": 59,
+            "function": "_mpd_basedivmod",
+            "var": [
+                "rhat",
+                "_mpd_shortdiv",
+                "w2",
+                "u",
+                "j",
+                "n",
+                "v"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_1/defect_info.json",
+    "files": [
+        "basearith_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件basearith_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: _mpd_shortmul\n  23 [TRACE-4]    | extern  __attribute__((visibility(\"hidden\"))) void _mpd_shortmul (mpd_uint_t *w, const mpd_uint_t *u, mpd_size_t n, mpd_uint_t v){\n  24              | mpd_uint_t hi, lo;\n  25              | mpd_uint_t carry = 0;\n  26              | mpd_size_t i;\n  27 [TRACE-5]    | for (i = 0; i < n; i++) {\n  34              | w[i] = carry;\n  49              | extern  __attribute__((visibility(\"hidden\"))) int _mpd_basedivmod (mpd_uint_t *q, mpd_uint_t *r, const mpd_uint_t *uconst, const mpd_uint_t *vconst, mpd_size_t nplusm, mpd_size_t n){\n  50              | mpd_uint_t ustatic[64];\n  51              | mpd_uint_t vstatic[64];\n  52              | mpd_uint_t *u = ustatic;\n  53              | mpd_uint_t *v = vstatic;\n  54              | mpd_uint_t d, qhat, rhat, w2[2];\n  55              | mpd_uint_t hi, lo, x;\n  56              | mpd_uint_t carry;\n  57              | mpd_size_t i, j, m;\n  58              | int retval = 0;\n  59              | m = sub_size_t(nplusm, n);\n  60              | d = 10000000000000000000ULL / (vconst[n - 1] + 1);\n---→ 函数: _mpd_basedivmod\n  61 [TRACE-1]    | if (nplusm >= 64) {\n  66 [TRACE-2]    | if (n >= 64) {\n  72              | _mpd_shortmul(u, uconst, nplusm, d);\n  73 [TRACE-3,6]  | _mpd_shortmul(v, vconst, n, d);\n  74 [TRACE-7]    | for (j = m; j != (18446744073709551615UL); j--) {\n  76 [TRACE-8]    | rhat = _mpd_shortdiv(w2, u + j + n - 1, 2, v[n - 1]);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_1/basearith_end.c": [
+            23,
+            24,
+            25,
+            26,
+            27,
+            34,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            66,
+            72,
+            73,
+            74,
+            76
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_1/./typearith.h": [
+            14,
+            15,
+            18
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "循环次数/递归深度受限",
+        "符号表达式求解失效"
+    ]
+}

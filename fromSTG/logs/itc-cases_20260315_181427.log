@@ -1,0 +1,8 @@
+2026-03-15 18:14:27,619 - __main__ - INFO - cp /home/nishikino/new_version_benchmarks/astslicer/scripts/common.h Datasets/fromDGS/itc-cases/common.h
+2026-03-15 18:14:27,684 - root - WARNING - start process itc-cases
+2026-03-15 18:14:27,684 - root - INFO - slicer run, tools in /home/nishikino/new_version_benchmarks
+2026-03-15 18:14:27,684 - root - WARNING - Processing /home/nishikino/new_version_benchmarks/tests/scan-results/itc-cases_tests/report-HvdUBU.plist
+2026-03-15 18:14:27,684 - root - INFO - Processing /home/nishikino/new_version_benchmarks/tests/scan-results/itc-cases_tests/report-HvdUBU.plist
+2026-03-15 18:14:27,695 - process_compile_commands - INFO - >>>><class 'list'>
+2026-03-15 18:14:27,695 - process_compile_commands - INFO - find cc>> ['/home/nishikino/new_version_benchmarks/tests/itc-cases/memory_leak.c']
+2026-03-15 18:14:27,696 - process_compile_commands - INFO - Writing sliced compile commands to /home/nishikino/new_version_benchmarks/compile_info/compile_commands.json

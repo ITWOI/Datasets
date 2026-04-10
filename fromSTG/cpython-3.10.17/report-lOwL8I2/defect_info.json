@@ -1,0 +1,151 @@
+{
+    "bug_type": "Uninitialized argument value",
+    "checker": "Clang Static Analyzer",
+    "description": "4th function call argument is an uninitialized value",
+    "warning_func": "",
+    "line_number": 11,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "signaldict_repr"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-lOwL8I2/_decimal_end.c",
+            "line": 7,
+            "col": 35,
+            "line2": 7,
+            "col2": 57,
+            "function": "signaldict_repr",
+            "var": [
+                "cm",
+                "signal_map",
+                "i",
+                "name",
+                "n",
+                "fqname",
+                "b",
+                "flags",
+                "self",
+                "flag"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-lOwL8I2/_decimal_end.c",
+            "line": 7,
+            "col": 35,
+            "line2": 7,
+            "col2": 57,
+            "function": "signaldict_repr",
+            "var": [
+                "cm",
+                "signal_map",
+                "i",
+                "name",
+                "n",
+                "fqname",
+                "b",
+                "flags",
+                "self",
+                "flag"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-lOwL8I2/_decimal_end.c",
+            "line": 9,
+            "col": 16,
+            "line2": 9,
+            "col2": 67,
+            "function": "signaldict_repr",
+            "var": [
+                "b",
+                "i",
+                "flags",
+                "self",
+                "flag",
+                "cm"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-lOwL8I2/_decimal_end.c",
+            "line": 7,
+            "col": 5,
+            "line2": 7,
+            "col2": 7,
+            "function": "signaldict_repr",
+            "var": [
+                "cm",
+                "signal_map",
+                "i",
+                "name",
+                "n",
+                "fqname",
+                "b",
+                "flags",
+                "self",
+                "flag"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-lOwL8I2/_decimal_end.c",
+            "line": 7,
+            "col": 35,
+            "line2": 7,
+            "col2": 57,
+            "function": "signaldict_repr",
+            "var": [
+                "cm",
+                "signal_map",
+                "i",
+                "name",
+                "n",
+                "fqname",
+                "b",
+                "flags",
+                "self",
+                "flag"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-lOwL8I2/_decimal_end.c",
+            "line": 11,
+            "col": 202,
+            "line2": 11,
+            "col2": 205,
+            "function": "signaldict_repr",
+            "var": [
+                "PyUnicode_FromFormat",
+                "n",
+                "b"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-lOwL8I2/defect_info.json",
+    "files": [
+        "_decimal_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件_decimal_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | static PyObject * signaldict_repr (PyObject *self){\n   3              | DecCondMap *cm;\n   4              | const char *n[9];\n   5              | const char *b[9];\n   6              | int i;\n---→ 函数: signaldict_repr\n   7 [TRACE-1,2,4,5] | for (cm = signal_map , i = 0; cm->name != ((void *)0); cm++ , i++) {\n   8              | n[i] = cm->fqname;\n   9 [TRACE-3]    | b[i] = (*((PyDecSignalDictObject *)self)->flags) & cm->flag ? \"True\" : \"False\";\n  10              | }\n  11 [TRACE-6]    | return PyUnicode_FromFormat(\"{<class '%s'>:%s, <class '%s'>:%s, <class '%s'>:%s, <class '%s'>:%s, <class '%s'>:%s, <class '%s'>:%s, <class '%s'>:%s, <class '%s'>:%s, <class '%s'>:%s}\", n[0], b[0], n[1], b[1], n[2], b[2], n[3], b[3], n[4], b[4], n[5], b[5], n[6], b[6], n[7], b[7], n[8], b[8]);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-lOwL8I2/_decimal_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "循环次数/递归深度受限",
+        "域敏感度缺失",
+        "流敏感度不足"
+    ]
+}

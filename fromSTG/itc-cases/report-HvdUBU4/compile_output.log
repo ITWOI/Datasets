@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+memory_leak_end.c:7:8: warning: Potential leak of memory pointed to by 'p1' [unix.Malloc]
+    7 |     p2 = p1;
+      |     ~~~^~~~
+memory_leak_end.c:7:8: warning: Potential leak of memory pointed to by 'p1' [unix.Malloc]
+    7 |     p2 = p1;
+      |     ~~~^~~~
+memory_leak_end.c:7:8: warning: Potential leak of memory pointed to by 'p1' [unix.Malloc]
+    7 |     p2 = p1;
+      |     ~~~^~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/itc-cases/report-HvdUBU4/2026-03-15-181541-871111-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/itc-cases/report-HvdUBU4/2026-03-15-181541-871111-1' to examine bug reports.

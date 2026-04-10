@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-EeIDeQ1",
+        "arguments": [
+            "clang",
+            "-c",
+            "_elementtree_end.c"
+        ],
+        "file": "_elementtree_end.c"
+    }
+]

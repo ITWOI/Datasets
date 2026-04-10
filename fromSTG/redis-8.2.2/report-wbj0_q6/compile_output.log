@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+redis-cli_end.c:13:10: warning: Dereference of null pointer (loaded from variable 'err') [core.NullDereference]
+   13 |     *err = ((void *)0);
+      |      ~~~ ^
+redis-cli_end.c:13:10: warning: Dereference of null pointer (loaded from variable 'err') [core.NullDereference]
+   13 |     *err = ((void *)0);
+      |      ~~~ ^
+redis-cli_end.c:13:10: warning: Dereference of null pointer (loaded from variable 'err') [core.NullDereference]
+   13 |     *err = ((void *)0);
+      |      ~~~ ^
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-wbj0_q6/2026-03-12-193902-85106-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-wbj0_q6/2026-03-12-193902-85106-1' to examine bug reports.

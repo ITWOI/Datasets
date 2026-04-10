@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/jq-1.8.1/report-llLZHN2",
+        "arguments": [
+            "clang",
+            "-c",
+            "execute_end.c"
+        ],
+        "file": "execute_end.c"
+    }
+]

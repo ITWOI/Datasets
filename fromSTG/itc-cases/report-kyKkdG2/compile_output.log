@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+double_free_end.c:6:5: warning: Attempt to free released memory [unix.Malloc]
+    6 |     free(ptr);
+      |     ^~~~~~~~~
+double_free_end.c:6:5: warning: Attempt to free released memory [unix.Malloc]
+    6 |     free(ptr);
+      |     ^~~~~~~~~
+double_free_end.c:6:5: warning: Attempt to free released memory [unix.Malloc]
+    6 |     free(ptr);
+      |     ^~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/itc-cases/report-kyKkdG2/2026-03-15-181731-874010-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/itc-cases/report-kyKkdG2/2026-03-15-181731-874010-1' to examine bug reports.

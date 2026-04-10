@@ -1,0 +1,162 @@
+{
+    "bug_type": "Use-after-free",
+    "checker": "Clang Static Analyzer",
+    "description": "Use of memory after it is freed",
+    "warning_func": "invalid_memory_access_004_func_002",
+    "line_number": 27,
+    "directory": "path/tests/itc-cases",
+    "entry_function": "invalid_memory_access_004",
+    "functions": [
+        "invalid_memory_access_004_func_002",
+        "invalid_memory_access_004",
+        "invalid_memory_access_004_func_001"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD347/invalid_memory_access_end.c",
+            "line": 31,
+            "col": 5,
+            "line2": 31,
+            "col2": 41,
+            "function": "invalid_memory_access_004",
+            "var": [
+                "invalid_memory_access_004_func_001()",
+                "invalid_memory_access_004_func_001"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD347/invalid_memory_access_end.c",
+            "line": 2,
+            "col": 1,
+            "line2": 2,
+            "col2": 1,
+            "function": "invalid_memory_access_004_func_001",
+            "var": [
+                "flag",
+                "invalid_memory_access_004_s_001_s_gbl",
+                "calloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD347/invalid_memory_access_end.c",
+            "line": 4,
+            "col": 84,
+            "line2": 4,
+            "col2": 133,
+            "function": "invalid_memory_access_004_func_001",
+            "var": [
+                "invalid_memory_access_004_s_001_s_gbl",
+                "calloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD347/invalid_memory_access_end.c",
+            "line": 31,
+            "col": 5,
+            "line2": 31,
+            "col2": 41,
+            "function": "invalid_memory_access_004",
+            "var": [
+                "invalid_memory_access_004_func_001()",
+                "invalid_memory_access_004_func_001"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD347/invalid_memory_access_end.c",
+            "line": 32,
+            "col": 11,
+            "line2": 32,
+            "col2": 47,
+            "function": "invalid_memory_access_004",
+            "var": [
+                "ret",
+                "invalid_memory_access_004_func_002"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD347/invalid_memory_access_end.c",
+            "line": 6,
+            "col": 1,
+            "line2": 6,
+            "col2": 1,
+            "function": "invalid_memory_access_004_func_002",
+            "var": [
+                "flag",
+                "invalid_memory_access_004_s_001_s_gbl",
+                "a",
+                "b",
+                "uninit",
+                "free"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD347/invalid_memory_access_end.c",
+            "line": 11,
+            "col": 17,
+            "line2": 11,
+            "col2": 68,
+            "function": "invalid_memory_access_004_func_002",
+            "var": [
+                "invalid_memory_access_004_s_001_s_gbl",
+                "a",
+                "b",
+                "uninit",
+                "free"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD347/invalid_memory_access_end.c",
+            "line": 15,
+            "col": 17,
+            "line2": 15,
+            "col2": 59,
+            "function": "invalid_memory_access_004_func_002",
+            "var": [
+                "free()",
+                "free",
+                "invalid_memory_access_004_s_001_s_gbl"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD347/invalid_memory_access_end.c",
+            "line": 27,
+            "col": 12,
+            "line2": 27,
+            "col2": 51,
+            "function": "invalid_memory_access_004_func_002",
+            "var": [
+                "a",
+                "invalid_memory_access_004_s_001_s_gbl"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/itc-cases/report-FLsD347/defect_info.json",
+    "files": [
+        "invalid_memory_access_end.c"
+    ],
+    "labels": [],
+    "codes": "",
+    "executed_lines": {
+        "Datasets/fromDGS/itc-cases/report-FLsD347/invalid_memory_access_end.c": [
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            11,
+            12,
+            13,
+            14,
+            15,
+            17,
+            27,
+            29,
+            30,
+            31,
+            32
+        ]
+    }
+}

@@ -1,0 +1,157 @@
+{
+    "bug_type": "Double free",
+    "checker": "Clang Static Analyzer",
+    "description": "Attempt to free released memory",
+    "warning_func": "",
+    "line_number": 1602,
+    "directory": "path/tests/libevent-2.1.12-stable",
+    "entry_function": "",
+    "functions": [
+        "test_evbuffer_readln"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-lmMCNf1/regress_buffer_end.c",
+            "line": 303,
+            "col": 13,
+            "line2": 303,
+            "col2": 36,
+            "function": "test_evbuffer_readln",
+            "var": [
+                "evbuffer_validate_",
+                "evb",
+                "tinytest_set_test_failed_",
+                "printf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-lmMCNf1/regress_buffer_end.c",
+            "line": 317,
+            "col": 13,
+            "line2": 317,
+            "col2": 15,
+            "function": "test_evbuffer_readln",
+            "var": [
+                "cp",
+                "sz",
+                "strlen",
+                "strcmp",
+                "tinytest_set_test_failed_",
+                "printf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-lmMCNf1/regress_buffer_end.c",
+            "line": 317,
+            "col": 20,
+            "line2": 317,
+            "col2": 56,
+            "function": "test_evbuffer_readln",
+            "var": [
+                "cp",
+                "sz",
+                "strlen",
+                "strcmp",
+                "tinytest_set_test_failed_",
+                "printf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-lmMCNf1/regress_buffer_end.c",
+            "line": 317,
+            "col": 61,
+            "line2": 317,
+            "col2": 95,
+            "function": "test_evbuffer_readln",
+            "var": [
+                "cp",
+                "sz",
+                "strlen",
+                "strcmp",
+                "tinytest_set_test_failed_",
+                "printf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-lmMCNf1/regress_buffer_end.c",
+            "line": 330,
+            "col": 5,
+            "line2": 330,
+            "col2": 12,
+            "function": "test_evbuffer_readln",
+            "var": [
+                "free()",
+                "free",
+                "cp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-lmMCNf1/regress_buffer_end.c",
+            "line": 332,
+            "col": 13,
+            "line2": 332,
+            "col2": 36,
+            "function": "test_evbuffer_readln",
+            "var": [
+                "evbuffer_validate_",
+                "evb",
+                "tinytest_set_test_failed_",
+                "printf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-lmMCNf1/regress_buffer_end.c",
+            "line": 1602,
+            "col": 9,
+            "line2": 1602,
+            "col2": 16,
+            "function": "test_evbuffer_readln",
+            "var": [
+                "free()",
+                "free",
+                "cp"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/libevent-2.1.12/report-lmMCNf1/defect_info.json",
+    "files": [
+        "regress_buffer_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件regress_buffer_end.c  缺陷代码片段===\n------------------------------------------------------------\n 296              | static void test_evbuffer_readln (void *ptr){\n 297              | struct evbuffer *evb = evbuffer_new();\n 298              | struct evbuffer *evb_tmp;\n 299              | const char *s;\n 300              | char *cp = ((void *)0);\n 301              | size_t sz;\n 302              | do {\n---→ 函数: test_evbuffer_readln\n 303 [TRACE-1]    | if (!evbuffer_validate_(evb))\n 314              | } while (0);\n 315              | cp = evbuffer_readln(evb, &sz, EVBUFFER_EOL_ANY);\n 316              | do {\n 317 [TRACE-2,3,4] | if (!cp || sz != strlen(\"complex silly newline\") || strcmp(cp, \"complex silly newline\")) {\n 329              | } while (0);\n 330 [TRACE-5]    | free(cp);\n 332 [TRACE-6]    | if (!evbuffer_validate_(evb))\n 334              | tinytest_set_test_failed_();\n 335              | do {\n 336              | printf(\"\\n  %s %s:%d: \", \"FAIL\", \"test/regress_buffer_InstSlice.c\", 289);\n 337              | printf(\"Buffer format invalid\");\n 338              | } while (0);\n 340              | goto end;\n1601              | if (cp)\n1602 [TRACE-7]    | free(cp);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/libevent-2.1.12/report-lmMCNf1/regress_buffer_end.c": [
+            296,
+            297,
+            298,
+            299,
+            300,
+            301,
+            302,
+            303,
+            314,
+            315,
+            316,
+            317,
+            329,
+            330,
+            332,
+            334,
+            335,
+            336,
+            337,
+            338,
+            340,
+            1601,
+            1602
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "外部库/API 逻辑建模缺失",
+        "流敏感度不足",
+        "隐式控制流构建不全"
+    ]
+}

@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/redis-8.2.2/report-1SCkJJ2",
+        "arguments": [
+            "clang",
+            "-c",
+            "cluster_legacy_end.c"
+        ],
+        "file": "cluster_legacy_end.c"
+    }
+]

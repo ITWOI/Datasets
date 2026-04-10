@@ -1,0 +1,423 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Array access (from variable 'str') results in a null pointer dereference",
+    "warning_func": "",
+    "line_number": 41,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "dump_frame",
+        "_Py_DumpTracebackThreads",
+        "dump_traceback",
+        "_Py_DumpASCII"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 113,
+            "col": 9,
+            "line2": 113,
+            "col2": 37,
+            "function": "_Py_DumpTracebackThreads",
+            "var": [
+                "current_tstate",
+                "PyGILState_GetThisThreadState"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 116,
+            "col": 9,
+            "line2": 116,
+            "col2": 29,
+            "function": "_Py_DumpTracebackThreads",
+            "var": [
+                "interp",
+                "current_tstate",
+                "_PyGILState_GetInterpreterStateUnsafe"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 128,
+            "col": 9,
+            "line2": 128,
+            "col2": 29,
+            "function": "_Py_DumpTracebackThreads",
+            "var": [
+                "tstate"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 139,
+            "col": 9,
+            "line2": 139,
+            "col2": 37,
+            "function": "_Py_DumpTracebackThreads",
+            "var": [
+                "dump_traceback()",
+                "dump_traceback",
+                "fd",
+                "tstate"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 83,
+            "col": 1,
+            "line2": 83,
+            "col2": 1,
+            "function": "dump_traceback",
+            "var": [
+                "frame",
+                "tstate",
+                "depth",
+                "_Py_IS_TYPE",
+                "PyFrame_Type",
+                "dump_frame",
+                "fd",
+                "f_back",
+                "back"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 87,
+            "col": 9,
+            "line2": 87,
+            "col2": 28,
+            "function": "dump_traceback",
+            "var": [
+                "frame"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 92,
+            "col": 12,
+            "line2": 92,
+            "col2": 12,
+            "function": "dump_traceback",
+            "var": [
+                "depth",
+                "_Py_IS_TYPE",
+                "frame",
+                "PyFrame_Type",
+                "dump_frame",
+                "fd",
+                "f_back",
+                "back"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 98,
+            "col": 17,
+            "line2": 98,
+            "col2": 72,
+            "function": "dump_traceback",
+            "var": [
+                "_Py_IS_TYPE",
+                "frame",
+                "PyFrame_Type"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 101,
+            "col": 13,
+            "line2": 101,
+            "col2": 33,
+            "function": "dump_traceback",
+            "var": [
+                "dump_frame()",
+                "dump_frame",
+                "fd",
+                "frame"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 66,
+            "col": 1,
+            "line2": 66,
+            "col2": 1,
+            "function": "dump_frame",
+            "var": [
+                "PyFrame_GetCode",
+                "frame",
+                "co_filename",
+                "code",
+                "PyType_HasFeature",
+                "ob_type",
+                "_Py_DumpASCII",
+                "fd",
+                "PyFrame_GetLineNumber",
+                "co_name",
+                "_Py_DECREF"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 68,
+            "col": 9,
+            "line2": 68,
+            "col2": 40,
+            "function": "dump_frame",
+            "var": [
+                "co_filename",
+                "code",
+                "PyType_HasFeature",
+                "ob_type",
+                "_Py_DumpASCII",
+                "fd"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 70,
+            "col": 9,
+            "line2": 70,
+            "col2": 44,
+            "function": "dump_frame",
+            "var": [
+                "_Py_DumpASCII()",
+                "_Py_DumpASCII",
+                "fd",
+                "co_filename",
+                "code"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 3,
+            "col": 1,
+            "line2": 3,
+            "col2": 1,
+            "function": "_Py_DumpASCII",
+            "var": [
+                "text",
+                "PyType_HasFeature",
+                "ob_type",
+                "size",
+                "length",
+                "ascii",
+                "kind",
+                "state",
+                "PyUnicode_WCHAR_KIND",
+                "wstr",
+                "wstr_length",
+                "compact",
+                "data",
+                "any",
+                "truncated",
+                "i",
+                "ch",
+                "str",
+                "need_escape",
+                "PyUnicode_1BYTE_KIND",
+                "PyUnicode_2BYTE_KIND"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 8,
+            "col": 5,
+            "line2": 8,
+            "col2": 14,
+            "function": "_Py_DumpASCII",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 15,
+            "col": 9,
+            "line2": 15,
+            "col2": 36,
+            "function": "_Py_DumpASCII",
+            "var": [
+                "kind",
+                "PyUnicode_WCHAR_KIND",
+                "wstr",
+                "text",
+                "size",
+                "wstr_length",
+                "compact",
+                "state",
+                "ascii",
+                "data",
+                "any"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 17,
+            "col": 13,
+            "line2": 17,
+            "col2": 31,
+            "function": "_Py_DumpASCII",
+            "var": [
+                "wstr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 30,
+            "col": 9,
+            "line2": 30,
+            "col2": 18,
+            "function": "_Py_DumpASCII",
+            "var": [
+                "size",
+                "truncated"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 36,
+            "col": 9,
+            "line2": 36,
+            "col2": 26,
+            "function": "_Py_DumpASCII",
+            "var": [
+                "ascii",
+                "state",
+                "data",
+                "i",
+                "size",
+                "ch",
+                "str",
+                "need_escape"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 38,
+            "col": 9,
+            "line2": 38,
+            "col2": 17,
+            "function": "_Py_DumpASCII",
+            "var": [
+                "data"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 40,
+            "col": 21,
+            "line2": 40,
+            "col2": 28,
+            "function": "_Py_DumpASCII",
+            "var": [
+                "i",
+                "size",
+                "ch",
+                "str",
+                "need_escape"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 40,
+            "col": 21,
+            "line2": 40,
+            "col2": 28,
+            "function": "_Py_DumpASCII",
+            "var": [
+                "i",
+                "size",
+                "ch",
+                "str",
+                "need_escape"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c",
+            "line": 41,
+            "col": 18,
+            "line2": 41,
+            "col2": 20,
+            "function": "_Py_DumpASCII",
+            "var": [
+                "ch",
+                "str",
+                "i"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/defect_info.json",
+    "files": [
+        "traceback_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件traceback_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: _Py_DumpASCII\n   3 [TRACE-13]   | extern void _Py_DumpASCII (int fd, PyObject *text){\n   4              | PyASCIIObject *ascii = (PyASCIIObject *)text;\n   5              | Py_ssize_t i, size;\n   6              | int truncated;\n   7              | int kind;\n   8 [TRACE-14]   | void *data = ((void *)0);\n   9              | wchar_t *wstr = ((void *)0);\n  10              | Py_UCS4 ch;\n  11              | if (!PyType_HasFeature((((PyObject *)(text))->ob_type), (1UL << 28)))\n  13              | size = ascii->length;\n  14              | kind = ascii->state.kind;\n  15 [TRACE-15]   | if (kind == PyUnicode_WCHAR_KIND) {\n  16              | wstr = ((PyASCIIObject *)text)->wstr;\n  17 [TRACE-16]   | if (wstr == ((void *)0))\n  19              | size = ((PyCompactUnicodeObject *)text)->wstr_length;\n  30 [TRACE-17]   | if (500 < size) {\n  34              | truncated = 0;\n  36 [TRACE-18]   | if (ascii->state.ascii) {\n  38 [TRACE-19]   | char *str = data;\n  39              | int need_escape = 0;\n  40 [TRACE-20,21] | for (i = 0; i < size; i++) {\n  41 [TRACE-22]   | ch = str[i];\n---→ 函数: dump_frame\n  66 [TRACE-10]   | static void dump_frame (int fd, PyFrameObject *frame){\n  67              | PyCodeObject *code = PyFrame_GetCode(frame);\n  68 [TRACE-11]   | if (code->co_filename != ((void *)0) && PyType_HasFeature((((PyObject *)(code->co_filename))->ob_type), (1UL << 28))) {\n  70 [TRACE-12]   | _Py_DumpASCII(fd, code->co_filename);\n---→ 函数: dump_traceback\n  83 [TRACE-5]    | static void dump_traceback (int fd, PyThreadState *tstate, int write_header){\n  84              | PyFrameObject *frame;\n  85              | unsigned int depth;\n  86              | frame = tstate->frame;\n  87 [TRACE-6]    | if (frame == ((void *)0)) {\n  91              | depth = 0;\n  92 [TRACE-7]    | while (1)\n  94              | if (100 <= depth) {\n  98 [TRACE-8]    | if (!_Py_IS_TYPE(((const PyObject *)(frame)), &PyFrame_Type)) {\n 101 [TRACE-9]    | dump_frame(fd, frame);\n 110              | extern const char * _Py_DumpTracebackThreads (int fd, PyInterpreterState *interp, PyThreadState *current_tstate){\n 111              | PyThreadState *tstate;\n 112              | unsigned int nthreads;\n---→ 函数: _Py_DumpTracebackThreads\n 113 [TRACE-1]    | if (current_tstate == ((void *)0)) {\n 116 [TRACE-2]    | if (interp == ((void *)0)) {\n 127              | tstate = PyInterpreterState_ThreadHead(interp);\n 128 [TRACE-3]    | if (tstate == ((void *)0))\n 130              | tstate = PyInterpreterState_ThreadHead(interp);\n 131              | nthreads = 0;\n 134              | if (nthreads >= 100) {\n 139 [TRACE-4]    | dump_traceback(fd, tstate, 0);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/traceback_end.c": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15,
+            16,
+            17,
+            19,
+            30,
+            34,
+            36,
+            38,
+            39,
+            40,
+            41,
+            66,
+            67,
+            68,
+            70,
+            83,
+            84,
+            85,
+            86,
+            87,
+            91,
+            92,
+            94,
+            98,
+            101,
+            110,
+            111,
+            112,
+            113,
+            116,
+            127,
+            128,
+            130,
+            131,
+            134,
+            139
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL1/./object.h": [
+            2,
+            3,
+            11,
+            12,
+            13,
+            14
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "域敏感度缺失",
+        "外部库/API 逻辑建模缺失"
+    ]
+}

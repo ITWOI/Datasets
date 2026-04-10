@@ -1,0 +1,349 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Access to field 'size' results in a dereference of a null pointer (loaded from variable 'h')",
+    "warning_func": "",
+    "line_number": 340,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "",
+    "functions": [
+        "raxGenericInsert",
+        "raxLowWalk"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/rax_end.c",
+            "line": 190,
+            "col": 9,
+            "line2": 190,
+            "col2": 65,
+            "function": "raxGenericInsert",
+            "var": [
+                "i",
+                "raxLowWalk",
+                "rax",
+                "s",
+                "len",
+                "h",
+                "parentlink",
+                "j"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/rax_end.c",
+            "line": 143,
+            "col": 1,
+            "line2": 143,
+            "col2": 1,
+            "function": "raxLowWalk",
+            "var": [
+                "head",
+                "rax",
+                "size",
+                "h",
+                "i",
+                "len",
+                "data",
+                "iscompr",
+                "j",
+                "v",
+                "s",
+                "ts",
+                "raxStackPush",
+                "memcpy",
+                "children",
+                "parentlink",
+                "stopnode",
+                "plink",
+                "splitpos"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/rax_end.c",
+            "line": 148,
+            "col": 12,
+            "line2": 148,
+            "col2": 18,
+            "function": "raxLowWalk",
+            "var": [
+                "size",
+                "h",
+                "i",
+                "len",
+                "data",
+                "iscompr",
+                "j",
+                "v",
+                "s",
+                "ts",
+                "raxStackPush",
+                "memcpy",
+                "children",
+                "parentlink"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/rax_end.c",
+            "line": 182,
+            "col": 21,
+            "line2": 182,
+            "col2": 30,
+            "function": "raxLowWalk",
+            "var": [
+                "splitpos",
+                "iscompr",
+                "h",
+                "j"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/rax_end.c",
+            "line": 190,
+            "col": 9,
+            "line2": 190,
+            "col2": 65,
+            "function": "raxGenericInsert",
+            "var": [
+                "i",
+                "raxLowWalk",
+                "rax",
+                "s",
+                "len",
+                "h",
+                "parentlink",
+                "j"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/rax_end.c",
+            "line": 191,
+            "col": 9,
+            "line2": 191,
+            "col2": 16,
+            "function": "raxGenericInsert",
+            "var": [
+                "i",
+                "len",
+                "iscompr",
+                "h",
+                "j",
+                "iskey",
+                "isnull",
+                "overwrite",
+                "raxReallocForData",
+                "data",
+                "old",
+                "raxGetData",
+                "raxSetData"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/rax_end.c",
+            "line": 304,
+            "col": 12,
+            "line2": 304,
+            "col2": 18,
+            "function": "raxGenericInsert",
+            "var": [
+                "i",
+                "len",
+                "size",
+                "h",
+                "comprsize",
+                "raxCompressNode",
+                "s",
+                "child",
+                "newh",
+                "parentlink",
+                "iscompr",
+                "iskey",
+                "isnull",
+                "raxAddChild",
+                "new_parentlink",
+                "numnodes",
+                "rax"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/rax_end.c",
+            "line": 307,
+            "col": 33,
+            "line2": 307,
+            "col2": 43,
+            "function": "raxGenericInsert",
+            "var": [
+                "size",
+                "h",
+                "len",
+                "i",
+                "comprsize",
+                "raxCompressNode",
+                "s",
+                "child",
+                "newh",
+                "parentlink",
+                "iscompr",
+                "iskey",
+                "isnull",
+                "raxAddChild",
+                "new_parentlink"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/rax_end.c",
+            "line": 321,
+            "col": 33,
+            "line2": 321,
+            "col2": 77,
+            "function": "raxGenericInsert",
+            "var": [
+                "raxAddChild",
+                "h",
+                "s",
+                "i",
+                "child",
+                "new_parentlink"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/rax_end.c",
+            "line": 322,
+            "col": 21,
+            "line2": 322,
+            "col2": 39,
+            "function": "raxGenericInsert",
+            "var": [
+                "newh"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/rax_end.c",
+            "line": 329,
+            "col": 13,
+            "line2": 329,
+            "col2": 21,
+            "function": "raxGenericInsert",
+            "var": [
+                "h",
+                "child"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/rax_end.c",
+            "line": 304,
+            "col": 5,
+            "line2": 304,
+            "col2": 9,
+            "function": "raxGenericInsert",
+            "var": [
+                "i",
+                "len",
+                "size",
+                "h",
+                "comprsize",
+                "raxCompressNode",
+                "s",
+                "child",
+                "newh",
+                "parentlink",
+                "iscompr",
+                "iskey",
+                "isnull",
+                "raxAddChild",
+                "new_parentlink",
+                "numnodes",
+                "rax"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/rax_end.c",
+            "line": 332,
+            "col": 9,
+            "line2": 332,
+            "col2": 27,
+            "function": "raxGenericInsert",
+            "var": [
+                "newh"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/rax_end.c",
+            "line": 340,
+            "col": 9,
+            "line2": 340,
+            "col2": 9,
+            "function": "raxGenericInsert",
+            "var": [
+                "size",
+                "h",
+                "isnull",
+                "iskey",
+                "numele",
+                "rax",
+                "__builtin_expect",
+                "raxRemove",
+                "s",
+                "i",
+                "_serverAssert",
+                "abort"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/defect_info.json",
+    "files": [
+        "rax_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件rax_end.c  缺陷代码片段===\n------------------------------------------------------------\n  58              | extern raxNode * raxReallocForData (raxNode *n, void *data){\n  59              | if (data == ((void *)0))\n  60              | return n;\n---→ 函数: raxLowWalk\n 143 [TRACE-2]    | static inline size_t raxLowWalk (rax *rax, unsigned char *s, size_t len, raxNode **stopnode, raxNode ***plink, int *splitpos, raxStack *ts){\n 144              | raxNode *h = rax->head;\n 145              | raxNode **parentlink = &rax->head;\n 146              | size_t i = 0;\n 147              | size_t j = 0;\n 148 [TRACE-3]    | while (h->size && i < len)\n 178              | if (stopnode)\n 179              | *stopnode = h;\n 180              | if (plink)\n 181              | *plink = parentlink;\n 182 [TRACE-4]    | if (splitpos && h->iscompr)\n 184              | return i;\n 186              | extern int raxGenericInsert (rax *rax, unsigned char *s, size_t len, void *data, void **old, int overwrite){\n 187              | size_t i;\n 188              | int j = 0;\n 189              | raxNode *h, **parentlink;\n---→ 函数: raxGenericInsert\n 190 [TRACE-1,5]  | i = raxLowWalk(rax, s, len, &h, &parentlink, &j, ((void *)0));\n 191 [TRACE-6]    | if (i == len && (!h->iscompr || j == 0)) {\n 210              | if (h->iscompr && i != len) {\n 268              | } else if (h->iscompr && i == len) {\n 304 [TRACE-7,12] | while (i < len)\n 306              | raxNode *child;\n 307 [TRACE-8]    | if (h->size == 0 && len - i > 1) {\n 320              | raxNode **new_parentlink;\n 321 [TRACE-9]    | raxNode *newh = raxAddChild(h, s[i], &child, &new_parentlink);\n 322 [TRACE-10]   | if (newh == ((void *)0))\n 324              | h = newh;\n 325              | parentlink = new_parentlink;\n 326              | i++;\n 328              | rax->numnodes++;\n 329 [TRACE-11]   | h = child;\n 330              | }\n 331              | raxNode *newh = raxReallocForData(h, data);\n 332 [TRACE-13]   | if (newh == ((void *)0))\n 333              | goto oom;\n 340 [TRACE-14]   | if (h->size == 0) {\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/rax_end.c": [
+            58,
+            59,
+            60,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            178,
+            179,
+            180,
+            181,
+            182,
+            184,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            210,
+            268,
+            304,
+            306,
+            307,
+            320,
+            321,
+            322,
+            324,
+            325,
+            326,
+            328,
+            329,
+            330,
+            331,
+            332,
+            333,
+            340
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "过程间数据流断裂",
+        "循环次数/递归深度受限"
+    ]
+}

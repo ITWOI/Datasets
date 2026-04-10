@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+dict_end.c:237:12: warning: Dereference of null pointer [core.NullDereference]
+  237 |     return de->v.val;
+      |            ^~~~~~~~~
+dict_end.c:237:12: warning: Dereference of null pointer [core.NullDereference]
+  237 |     return de->v.val;
+      |            ^~~~~~~~~
+dict_end.c:237:12: warning: Dereference of null pointer [core.NullDereference]
+  237 |     return de->v.val;
+      |            ^~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/2026-03-12-191549-75055-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/2026-03-12-191549-75055-1' to examine bug reports.

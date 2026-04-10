@@ -1,0 +1,127 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+compile_end.c:1791:13: warning: 23 enumeration values not handled in switch: 'NamedExpr_kind', 'BinOp_kind', 'Lambda_kind'... [-Wswitch]
+ 1791 |     switch (e->kind) {
+      |             ^~~~~~~
+compile_end.c:2981:13: warning: enumeration values 'Global_kind' and 'Nonlocal_kind' not handled in switch [-Wswitch]
+ 2981 |     switch (s->kind) {
+      |             ^~~~~~~
+compile_end.c:5386:13: warning: 24 enumeration values not handled in switch: 'BoolOp_kind', 'NamedExpr_kind', 'BinOp_kind'... [-Wswitch]
+ 5386 |     switch (e->kind) {
+      |             ^~~~~~~
+In file included from compile_end.c:1:
+./header_func.h:91:25: warning: function '_PyLong_GetZero' has internal linkage but is not defined [-Wundefined-internal]
+   91 | static inline PyObject *_PyLong_GetZero(void) ;
+      |                         ^
+compile_end.c:245:51: note: used here
+  245 |         res = PyDict_SetItem(u->u_cellvars, name, _PyLong_GetZero());
+      |                                                   ^
+In file included from compile_end.c:1:
+./header_func.h:557:12: warning: function 'instrsize' has internal linkage but is not defined [-Wundefined-internal]
+  557 | static int instrsize(unsigned int oparg) ;
+      |            ^
+compile_end.c:6749:17: note: used here
+ 6749 |         size += instrsize(b->b_instr[i].i_oparg);
+      |                 ^
+In file included from compile_end.c:1:
+./header_func.h:568:13: warning: function 'write_op_arg' has internal linkage but is not defined [-Wundefined-internal]
+  568 | static void write_op_arg(_Py_CODEUNIT *codestr, unsigned char opcode, unsigned int oparg, int ilen) ;
+      |             ^
+compile_end.c:6846:5: note: used here
+ 6846 |     write_op_arg(code, i->i_opcode, arg, size);
+      |     ^
+6 warnings generated.
+compile_end.c:682:43: warning: Access to field 'u_lineno' results in a dereference of a null pointer (loaded from field 'u') [core.NullDereference]
+  682 |     return compiler_addop_line(c, opcode, c->u->u_lineno);
+      |                                           ^~~~~~~~~~~~~~
+compile_end.c:836:52: warning: Access to field 'u_lineno' results in a dereference of a null pointer (loaded from field 'u') [core.NullDereference]
+  836 |     return compiler_addop_i_line(c, opcode, oparg, c->u->u_lineno);
+      |                                                    ^~~~~~~~~~~~~~
+compile_end.c:1187:9: warning: Access to field 'u_scope_type' results in a dereference of a null pointer (loaded from field 'u') [core.NullDereference]
+ 1187 |     if (c->u->u_scope_type == COMPILER_SCOPE_CLASS && _PyUnicode_EqualToASCIIString(name, "__class__"))
+      |         ^~~~~~~~~~~~~~~~~~
+compile_end.c:3316:49: warning: Array access (via field 'typed_elements') results in a null pointer dereference [core.NullDereference]
+ 3316 |         if (!compiler_visit_expr((c), ((expr_ty)(s)->typed_elements[(n)])))
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~
+compile_end.c:6312:26: warning: Access to field 'ob_size' results in a dereference of a null pointer [core.NullDereference]
+ 6312 |     Py_ssize_t nstores = (((PyVarObject *)((((void)(0)) , (PyListObject *)(control))))->ob_size);
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compile_end.c:6532:23: warning: Array access (via field 'typed_elements') results in a null pointer dereference [core.NullDereference]
+ 6532 |     match_case_ty m = (s->v.Match.cases)->typed_elements[(cases - 1)];
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compile_end.c:6656:9: warning: Access to field 'b_startdepth' results in a dereference of a null pointer (loaded from variable 'b') [core.NullDereference]
+ 6656 |     if (b->b_startdepth < depth && b->b_startdepth < 100) {
+      |         ^~~~~~~~~~~~~~~
+compile_end.c:7057:5: warning: Access to field 'b_instr' results in a dereference of a null pointer (loaded from variable 'entryblock') [core.NullDereference]
+ 7057 |     entryblock->b_instr[0].i_opcode = 129;
+      |     ^~~~~~~~~~~~~~~~~~~
+compile_end.c:7123:13: warning: Access to field 'b_instr' results in a dereference of a null pointer (loaded from variable 'entryblock') [core.NullDereference]
+ 7123 |         if (entryblock->b_instr && entryblock->b_instr->i_lineno) {
+      |             ^~~~~~~~~~~~~~~~~~~
+compile_end.c:7526:17: warning: Access to field 'b_next' results in a dereference of a null pointer (loaded from variable 'b') [core.NullDereference]
+ 7526 |             if (b->b_next && !b->b_nofallthrough) {
+      |                 ^~~~~~~~~
+compile_end.c:682:43: warning: Access to field 'u_lineno' results in a dereference of a null pointer (loaded from field 'u') [core.NullDereference]
+  682 |     return compiler_addop_line(c, opcode, c->u->u_lineno);
+      |                                           ^~~~~~~~~~~~~~
+compile_end.c:836:52: warning: Access to field 'u_lineno' results in a dereference of a null pointer (loaded from field 'u') [core.NullDereference]
+  836 |     return compiler_addop_i_line(c, opcode, oparg, c->u->u_lineno);
+      |                                                    ^~~~~~~~~~~~~~
+compile_end.c:1187:9: warning: Access to field 'u_scope_type' results in a dereference of a null pointer (loaded from field 'u') [core.NullDereference]
+ 1187 |     if (c->u->u_scope_type == COMPILER_SCOPE_CLASS && _PyUnicode_EqualToASCIIString(name, "__class__"))
+      |         ^~~~~~~~~~~~~~~~~~
+compile_end.c:3316:49: warning: Array access (via field 'typed_elements') results in a null pointer dereference [core.NullDereference]
+ 3316 |         if (!compiler_visit_expr((c), ((expr_ty)(s)->typed_elements[(n)])))
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~
+compile_end.c:6312:26: warning: Access to field 'ob_size' results in a dereference of a null pointer [core.NullDereference]
+ 6312 |     Py_ssize_t nstores = (((PyVarObject *)((((void)(0)) , (PyListObject *)(control))))->ob_size);
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compile_end.c:6532:23: warning: Array access (via field 'typed_elements') results in a null pointer dereference [core.NullDereference]
+ 6532 |     match_case_ty m = (s->v.Match.cases)->typed_elements[(cases - 1)];
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compile_end.c:6656:9: warning: Access to field 'b_startdepth' results in a dereference of a null pointer (loaded from variable 'b') [core.NullDereference]
+ 6656 |     if (b->b_startdepth < depth && b->b_startdepth < 100) {
+      |         ^~~~~~~~~~~~~~~
+compile_end.c:7057:5: warning: Access to field 'b_instr' results in a dereference of a null pointer (loaded from variable 'entryblock') [core.NullDereference]
+ 7057 |     entryblock->b_instr[0].i_opcode = 129;
+      |     ^~~~~~~~~~~~~~~~~~~
+compile_end.c:7123:13: warning: Access to field 'b_instr' results in a dereference of a null pointer (loaded from variable 'entryblock') [core.NullDereference]
+ 7123 |         if (entryblock->b_instr && entryblock->b_instr->i_lineno) {
+      |             ^~~~~~~~~~~~~~~~~~~
+compile_end.c:7526:17: warning: Access to field 'b_next' results in a dereference of a null pointer (loaded from variable 'b') [core.NullDereference]
+ 7526 |             if (b->b_next && !b->b_nofallthrough) {
+      |                 ^~~~~~~~~
+compile_end.c:682:43: warning: Access to field 'u_lineno' results in a dereference of a null pointer (loaded from field 'u') [core.NullDereference]
+  682 |     return compiler_addop_line(c, opcode, c->u->u_lineno);
+      |                                           ^~~~~~~~~~~~~~
+compile_end.c:836:52: warning: Access to field 'u_lineno' results in a dereference of a null pointer (loaded from field 'u') [core.NullDereference]
+  836 |     return compiler_addop_i_line(c, opcode, oparg, c->u->u_lineno);
+      |                                                    ^~~~~~~~~~~~~~
+compile_end.c:1187:9: warning: Access to field 'u_scope_type' results in a dereference of a null pointer (loaded from field 'u') [core.NullDereference]
+ 1187 |     if (c->u->u_scope_type == COMPILER_SCOPE_CLASS && _PyUnicode_EqualToASCIIString(name, "__class__"))
+      |         ^~~~~~~~~~~~~~~~~~
+compile_end.c:3316:49: warning: Array access (via field 'typed_elements') results in a null pointer dereference [core.NullDereference]
+ 3316 |         if (!compiler_visit_expr((c), ((expr_ty)(s)->typed_elements[(n)])))
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~
+compile_end.c:6312:26: warning: Access to field 'ob_size' results in a dereference of a null pointer [core.NullDereference]
+ 6312 |     Py_ssize_t nstores = (((PyVarObject *)((((void)(0)) , (PyListObject *)(control))))->ob_size);
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compile_end.c:6532:23: warning: Array access (via field 'typed_elements') results in a null pointer dereference [core.NullDereference]
+ 6532 |     match_case_ty m = (s->v.Match.cases)->typed_elements[(cases - 1)];
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compile_end.c:6656:9: warning: Access to field 'b_startdepth' results in a dereference of a null pointer (loaded from variable 'b') [core.NullDereference]
+ 6656 |     if (b->b_startdepth < depth && b->b_startdepth < 100) {
+      |         ^~~~~~~~~~~~~~~
+compile_end.c:7057:5: warning: Access to field 'b_instr' results in a dereference of a null pointer (loaded from variable 'entryblock') [core.NullDereference]
+ 7057 |     entryblock->b_instr[0].i_opcode = 129;
+      |     ^~~~~~~~~~~~~~~~~~~
+compile_end.c:7123:13: warning: Access to field 'b_instr' results in a dereference of a null pointer (loaded from variable 'entryblock') [core.NullDereference]
+ 7123 |         if (entryblock->b_instr && entryblock->b_instr->i_lineno) {
+      |             ^~~~~~~~~~~~~~~~~~~
+compile_end.c:7526:17: warning: Access to field 'b_next' results in a dereference of a null pointer (loaded from variable 'b') [core.NullDereference]
+ 7526 |             if (b->b_next && !b->b_nofallthrough) {
+      |                 ^~~~~~~~~
+30 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-gkTxxX2/2026-03-12-201828-108297-1'
+scan-build: 10 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-gkTxxX2/2026-03-12-201828-108297-1' to examine bug reports.

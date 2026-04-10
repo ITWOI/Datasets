@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/libevent-2.1.12/report-rwWauJ1",
+        "arguments": [
+            "clang",
+            "-c",
+            "event_end.c"
+        ],
+        "file": "event_end.c"
+    }
+]

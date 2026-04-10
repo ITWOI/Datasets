@@ -1,0 +1,35 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from redis-cli_end.c:1:
+./header_func.h:45:17: warning: function 'dictSdsHash' has internal linkage but is not defined [-Wundefined-internal]
+   45 | static uint64_t dictSdsHash(const void *key) ;
+      |                 ^
+./header_func.h:51:43: note: used here
+   51 | static dictType clusterManagerDictType = {dictSdsHash, ((void *)0), ((void *)0), dictSdsKeyCompare, ((void *)0), dictSdsDestructor, ((void *)0)};
+      |                                           ^
+./header_func.h:47:12: warning: function 'dictSdsKeyCompare' has internal linkage but is not defined [-Wundefined-internal]
+   47 | static int dictSdsKeyCompare(dictCmpCache *cache, const void *key1, const void *key2) ;
+      |            ^
+./header_func.h:51:82: note: used here
+   51 | static dictType clusterManagerDictType = {dictSdsHash, ((void *)0), ((void *)0), dictSdsKeyCompare, ((void *)0), dictSdsDestructor, ((void *)0)};
+      |                                                                                  ^
+./header_func.h:49:13: warning: function 'dictSdsDestructor' has internal linkage but is not defined [-Wundefined-internal]
+   49 | static void dictSdsDestructor(dict *d, void *val) ;
+      |             ^
+./header_func.h:51:114: note: used here
+   51 | static dictType clusterManagerDictType = {dictSdsHash, ((void *)0), ((void *)0), dictSdsKeyCompare, ((void *)0), dictSdsDestructor, ((void *)0)};
+      |                                                                                                                  ^
+3 warnings generated.
+redis-cli_end.c:64:61: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   64 |                         if (!strcmp(n->replicate, name) && !strcmp(n->ip, ip)) {
+      |                                                             ^~~~~~~~~~~~~~~~~
+redis-cli_end.c:64:61: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   64 |                         if (!strcmp(n->replicate, name) && !strcmp(n->ip, ip)) {
+      |                                                             ^~~~~~~~~~~~~~~~~
+redis-cli_end.c:64:61: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   64 |                         if (!strcmp(n->replicate, name) && !strcmp(n->ip, ip)) {
+      |                                                             ^~~~~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-wbj0_q5/2026-03-12-193840-84913-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-wbj0_q5/2026-03-12-193840-84913-1' to examine bug reports.

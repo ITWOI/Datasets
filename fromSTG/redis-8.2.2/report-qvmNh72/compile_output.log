@@ -1,0 +1,24 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+config_end.c:93:31: warning: Array access (via field 'lines') results in a null pointer dereference [core.NullDereference]
+   93 |         state->lines[linenum] = line;
+      |                ~~~~~          ^
+config_end.c:172:29: warning: Array access (via field 'lines') results in a null pointer dereference [core.NullDereference]
+  172 |                     sdsfree(state->lines[linenum]);
+      |                             ^~~~~~~~~~~~~~~~~~~~~
+config_end.c:93:31: warning: Array access (via field 'lines') results in a null pointer dereference [core.NullDereference]
+   93 |         state->lines[linenum] = line;
+      |                ~~~~~          ^
+config_end.c:172:29: warning: Array access (via field 'lines') results in a null pointer dereference [core.NullDereference]
+  172 |                     sdsfree(state->lines[linenum]);
+      |                             ^~~~~~~~~~~~~~~~~~~~~
+config_end.c:93:31: warning: Array access (via field 'lines') results in a null pointer dereference [core.NullDereference]
+   93 |         state->lines[linenum] = line;
+      |                ~~~~~          ^
+config_end.c:172:29: warning: Array access (via field 'lines') results in a null pointer dereference [core.NullDereference]
+  172 |                     sdsfree(state->lines[linenum]);
+      |                             ^~~~~~~~~~~~~~~~~~~~~
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-qvmNh72/2026-03-12-191734-75924-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-qvmNh72/2026-03-12-191734-75924-1' to examine bug reports.

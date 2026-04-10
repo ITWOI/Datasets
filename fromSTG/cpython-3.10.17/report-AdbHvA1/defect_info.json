@@ -1,0 +1,463 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Array access (via field 'ob_item') results in a null pointer dereference",
+    "warning_func": "",
+    "line_number": 138,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "list_vectorcall",
+        "list_extend",
+        "list___init___impl"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 171,
+            "col": 11,
+            "line2": 171,
+            "col2": 34,
+            "function": "list_vectorcall",
+            "var": [
+                "kwnames",
+                "_PyArg_NoKwnames"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 175,
+            "col": 12,
+            "line2": 175,
+            "col2": 25,
+            "function": "list_vectorcall",
+            "var": [
+                "nargs",
+                "_PyArg_CheckPositional"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 175,
+            "col": 30,
+            "line2": 175,
+            "col2": 43,
+            "function": "list_vectorcall",
+            "var": [
+                "nargs",
+                "_PyArg_CheckPositional"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 180,
+            "col": 9,
+            "line2": 180,
+            "col2": 27,
+            "function": "list_vectorcall",
+            "var": [
+                "list"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 183,
+            "col": 9,
+            "line2": 183,
+            "col2": 13,
+            "function": "list_vectorcall",
+            "var": [
+                "nargs",
+                "list___init___impl",
+                "list",
+                "args",
+                "_Py_DECREF"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 184,
+            "col": 13,
+            "line2": 184,
+            "col2": 61,
+            "function": "list_vectorcall",
+            "var": [
+                "list___init___impl",
+                "list",
+                "args",
+                "_Py_DECREF"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 157,
+            "col": 1,
+            "line2": 157,
+            "col2": 1,
+            "function": "list___init___impl",
+            "var": [
+                "ob_item",
+                "self",
+                "_list_clear",
+                "iterable",
+                "list_extend",
+                "rv",
+                "_Py_DECREF"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 159,
+            "col": 9,
+            "line2": 159,
+            "col2": 36,
+            "function": "list___init___impl",
+            "var": [
+                "ob_item",
+                "self",
+                "_list_clear"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 162,
+            "col": 9,
+            "line2": 162,
+            "col2": 31,
+            "function": "list___init___impl",
+            "var": [
+                "iterable",
+                "list_extend",
+                "self",
+                "rv",
+                "_Py_DECREF"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 163,
+            "col": 24,
+            "line2": 163,
+            "col2": 50,
+            "function": "list___init___impl",
+            "var": [
+                "list_extend",
+                "self",
+                "iterable"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 69,
+            "col": 1,
+            "line2": 69,
+            "col2": 1,
+            "function": "list_extend",
+            "var": [
+                "_Py_IS_TYPE",
+                "iterable",
+                "PyList_Type",
+                "PyTuple_Type",
+                "self",
+                "PySequence_Fast",
+                "n",
+                "PyType_HasFeature",
+                "ob_type",
+                "ob_size",
+                "_Py_DECREF",
+                "_Py_NewRef",
+                "_Py_NoneStruct",
+                "m",
+                "ob_item",
+                "list_preallocate_exact",
+                "_Py_SET_SIZE",
+                "list_resize",
+                "src",
+                "dest",
+                "i",
+                "_Py_INCREF",
+                "o",
+                "it",
+                "PyObject_GetIter",
+                "iternext",
+                "tp_iternext",
+                "PyObject_LengthHint",
+                "item",
+                "PyErr_Occurred",
+                "PyErr_ExceptionMatches",
+                "PyExc_StopIteration",
+                "allocated",
+                "app1",
+                "status"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 75,
+            "col": 9,
+            "line2": 75,
+            "col2": 65,
+            "function": "list_extend",
+            "var": [
+                "_Py_IS_TYPE",
+                "iterable",
+                "PyList_Type",
+                "PyTuple_Type",
+                "self",
+                "PySequence_Fast",
+                "n",
+                "PyType_HasFeature",
+                "ob_type",
+                "ob_size",
+                "_Py_DECREF",
+                "_Py_NewRef",
+                "_Py_NoneStruct",
+                "m",
+                "ob_item",
+                "list_preallocate_exact",
+                "_Py_SET_SIZE",
+                "list_resize",
+                "src",
+                "dest",
+                "i",
+                "_Py_INCREF",
+                "o"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 75,
+            "col": 70,
+            "line2": 75,
+            "col2": 127,
+            "function": "list_extend",
+            "var": [
+                "_Py_IS_TYPE",
+                "iterable",
+                "PyList_Type",
+                "PyTuple_Type",
+                "self",
+                "PySequence_Fast",
+                "n",
+                "PyType_HasFeature",
+                "ob_type",
+                "ob_size",
+                "_Py_DECREF",
+                "_Py_NewRef",
+                "_Py_NoneStruct",
+                "m",
+                "ob_item",
+                "list_preallocate_exact",
+                "_Py_SET_SIZE",
+                "list_resize",
+                "src",
+                "dest",
+                "i",
+                "_Py_INCREF",
+                "o"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 75,
+            "col": 132,
+            "line2": 75,
+            "col2": 159,
+            "function": "list_extend",
+            "var": [
+                "_Py_IS_TYPE",
+                "iterable",
+                "PyList_Type",
+                "PyTuple_Type",
+                "self",
+                "PySequence_Fast",
+                "n",
+                "PyType_HasFeature",
+                "ob_type",
+                "ob_size",
+                "_Py_DECREF",
+                "_Py_NewRef",
+                "_Py_NoneStruct",
+                "m",
+                "ob_item",
+                "list_preallocate_exact",
+                "_Py_SET_SIZE",
+                "list_resize",
+                "src",
+                "dest",
+                "i",
+                "_Py_INCREF",
+                "o"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 106,
+            "col": 9,
+            "line2": 106,
+            "col2": 25,
+            "function": "list_extend",
+            "var": [
+                "it"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 110,
+            "col": 9,
+            "line2": 110,
+            "col2": 13,
+            "function": "list_extend",
+            "var": [
+                "n",
+                "_Py_DECREF",
+                "it"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 115,
+            "col": 9,
+            "line2": 115,
+            "col2": 49,
+            "function": "list_extend",
+            "var": [
+                "m",
+                "n",
+                "ob_item",
+                "self",
+                "list_preallocate_exact",
+                "list_resize",
+                "_Py_SET_SIZE"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 124,
+            "col": 5,
+            "line2": 124,
+            "col2": 7,
+            "function": "list_extend",
+            "var": [
+                "iternext",
+                "it",
+                "item",
+                "PyErr_Occurred",
+                "PyErr_ExceptionMatches",
+                "PyExc_StopIteration",
+                "ob_size",
+                "self",
+                "allocated",
+                "ob_item",
+                "_Py_SET_SIZE",
+                "app1",
+                "_Py_DECREF",
+                "status"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 126,
+            "col": 13,
+            "line2": 126,
+            "col2": 31,
+            "function": "list_extend",
+            "var": [
+                "item",
+                "PyErr_Occurred",
+                "PyErr_ExceptionMatches",
+                "PyExc_StopIteration"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 137,
+            "col": 13,
+            "line2": 137,
+            "col2": 64,
+            "function": "list_extend",
+            "var": [
+                "ob_size",
+                "self",
+                "allocated",
+                "ob_item",
+                "item",
+                "_Py_SET_SIZE",
+                "app1",
+                "_Py_DECREF",
+                "status"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c",
+            "line": 138,
+            "col": 61,
+            "line2": 138,
+            "col2": 67,
+            "function": "list_extend",
+            "var": [
+                "ob_item",
+                "self",
+                "ob_size",
+                "item"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/defect_info.json",
+    "files": [
+        "listobject_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件listobject_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: list_extend\n  69 [TRACE-11]   | static PyObject * list_extend (PyListObject *self, PyObject *iterable){\n  70              | PyObject *it;\n  71              | Py_ssize_t m;\n  72              | Py_ssize_t n;\n  73              | Py_ssize_t i;\n  74              | PyObject *(*iternext)(PyObject *);\n  75 [TRACE-12,13,14] | if (_Py_IS_TYPE(((const PyObject *)(iterable)), &PyList_Type) || _Py_IS_TYPE(((const PyObject *)(iterable)), &PyTuple_Type) || (PyObject *)self == iterable) {\n 105              | it = PyObject_GetIter(iterable);\n 106 [TRACE-15]   | if (it == ((void *)0))\n 108              | iternext = *(((PyObject *)(it))->ob_type)->tp_iternext;\n 109              | n = PyObject_LengthHint(iterable, 8);\n 110 [TRACE-16]   | if (n < 0) {\n 114              | m = (((PyVarObject *)(self))->ob_size);\n 115 [TRACE-17]   | if (m > ((Py_ssize_t)(((size_t)-1) >> 1)) - n) {\n 124 [TRACE-18]   | for (;;) {\n 125              | PyObject *item = iternext(it);\n 126 [TRACE-19]   | if (item == ((void *)0)) {\n 137 [TRACE-20]   | if ((((PyVarObject *)(self))->ob_size) < self->allocated) {\n 138 [TRACE-21]   | ((void)((((void)(0)) , (PyListObject *)(self))->ob_item[(((PyVarObject *)(self))->ob_size)] = (item)));\n---→ 函数: list___init___impl\n 157 [TRACE-7]    | static int list___init___impl (PyListObject *self, PyObject *iterable){\n 159 [TRACE-8]    | if (self->ob_item != ((void *)0)) {\n 162 [TRACE-9]    | if (iterable != ((void *)0)) {\n 163 [TRACE-10]   | PyObject *rv = list_extend(self, iterable);\n 170              | static PyObject * list_vectorcall (PyObject *type, PyObject *const *args, size_t nargsf, PyObject *kwnames){\n---→ 函数: list_vectorcall\n 171 [TRACE-1]    | if (!((kwnames) == ((void *)0) || _PyArg_NoKwnames((\"list\"), (kwnames)))) {\n 174              | Py_ssize_t nargs = PyVectorcall_NARGS(nargsf);\n 175 [TRACE-2,3]  | if (!(((0) <= (nargs) && (nargs) <= (1)) || _PyArg_CheckPositional((\"list\"), (nargs), (0), (1)))) {\n 179              | PyObject *list = PyType_GenericAlloc((PyTypeObject *)type, 0);\n 180 [TRACE-4]    | if (list == ((void *)0)) {\n 183 [TRACE-5]    | if (nargs) {\n 184 [TRACE-6]    | if (list___init___impl((PyListObject *)list, args[0])) {\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/listobject_end.c": [
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            105,
+            106,
+            108,
+            109,
+            110,
+            114,
+            115,
+            124,
+            125,
+            126,
+            137,
+            138,
+            157,
+            159,
+            162,
+            163,
+            170,
+            171,
+            174,
+            175,
+            179,
+            180,
+            183,
+            184
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/./abstract.h": [
+            2,
+            3
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA1/./object.h": [
+            2,
+            3
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "域敏感度缺失",
+        "过程间数据流断裂",
+        "指针分析能力不足"
+    ]
+}

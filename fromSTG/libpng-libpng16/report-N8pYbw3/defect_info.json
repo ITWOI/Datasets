@@ -1,0 +1,209 @@
+{
+    "bug_type": "Argument with 'nonnull' attribute passed null",
+    "checker": "Clang Static Analyzer",
+    "description": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "warning_func": "",
+    "line_number": 120,
+    "directory": "path/tests/libpng-libpng16",
+    "entry_function": "buffer_write",
+    "functions": [
+        "buffer_write",
+        "write_function"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw3/pngimage_end.c",
+            "line": 128,
+            "col": 5,
+            "line2": 128,
+            "col2": 56,
+            "function": "write_function",
+            "var": [
+                "buffer_write()",
+                "buffer_write",
+                "get_dp",
+                "pp",
+                "get_buffer",
+                "data",
+                "size"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw3/pngimage_end.c",
+            "line": 101,
+            "col": 1,
+            "line2": 101,
+            "col2": 1,
+            "function": "buffer_write",
+            "var": [
+                "last",
+                "buffer",
+                "end_count",
+                "size",
+                "next",
+                "buffer_extend",
+                "display_log",
+                "dp",
+                "APP_ERROR",
+                "avail",
+                "memcpy",
+                "data"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw3/pngimage_end.c",
+            "line": 104,
+            "col": 12,
+            "line2": 104,
+            "col2": 19,
+            "function": "buffer_write",
+            "var": [
+                "size",
+                "end_count",
+                "buffer",
+                "last",
+                "next",
+                "buffer_extend",
+                "display_log",
+                "dp",
+                "APP_ERROR",
+                "avail",
+                "memcpy",
+                "data"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw3/pngimage_end.c",
+            "line": 104,
+            "col": 12,
+            "line2": 104,
+            "col2": 19,
+            "function": "buffer_write",
+            "var": [
+                "size",
+                "end_count",
+                "buffer",
+                "last",
+                "next",
+                "buffer_extend",
+                "display_log",
+                "dp",
+                "APP_ERROR",
+                "avail",
+                "memcpy",
+                "data"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw3/pngimage_end.c",
+            "line": 107,
+            "col": 17,
+            "line2": 107,
+            "col2": 48,
+            "function": "buffer_write",
+            "var": [
+                "end_count",
+                "buffer",
+                "last",
+                "next",
+                "buffer_extend",
+                "display_log",
+                "dp",
+                "APP_ERROR"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw3/pngimage_end.c",
+            "line": 108,
+            "col": 21,
+            "line2": 108,
+            "col2": 45,
+            "function": "buffer_write",
+            "var": [
+                "next",
+                "last",
+                "buffer_extend",
+                "display_log",
+                "dp",
+                "APP_ERROR"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw3/pngimage_end.c",
+            "line": 118,
+            "col": 17,
+            "line2": 118,
+            "col2": 28,
+            "function": "buffer_write",
+            "var": [
+                "avail",
+                "size"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw3/pngimage_end.c",
+            "line": 120,
+            "col": 20,
+            "line2": 120,
+            "col2": 43,
+            "function": "buffer_write",
+            "var": [
+                "memcpy()",
+                "memcpy",
+                "buffer",
+                "last",
+                "end_count",
+                "data",
+                "avail"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/libpng-libpng16/report-N8pYbw3/defect_info.json",
+    "files": [
+        "pngimage_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件pngimage_end.c  缺陷代码片段===\n------------------------------------------------------------\n   5              | static struct buffer * get_buffer (png_structp pp){\n   6              | return (struct buffer *)png_get_io_ptr(pp);\n   8              | static struct buffer_list * buffer_extend (struct buffer_list *current){\n   9              | struct buffer_list *add;\n  10              | ((void)sizeof ((current->next == ((void *)0)) ? 1 : 0) , __extension__ ({\n  11              | if (current->next == ((void *)0))\n  16              | add = ((struct buffer_list *)malloc(sizeof(struct buffer_list)));\n  17              | if (add == ((void *)0))\n  18              | return ((void *)0);\n  23              | static struct display * get_dp (png_structp pp){\n  24              | struct display *dp = (struct display *)png_get_error_ptr(pp);\n  25              | if (dp == ((void *)0)) {\n  28              | return dp;\n---→ 函数: buffer_write\n 101 [TRACE-2]    | static void buffer_write (struct display *dp, struct buffer *buffer, png_bytep data, size_t size){\n 102              | struct buffer_list *last = buffer->last;\n 103              | size_t end_count = buffer->end_count;\n 104 [TRACE-3,4]  | while (size > 0)\n 106              | size_t avail;\n 107 [TRACE-5]    | if (end_count >= sizeof last->buffer) {\n 108 [TRACE-6]    | if (last->next == ((void *)0)) {\n 109              | last = buffer_extend(last);\n 110              | if (last == ((void *)0))\n 111              | display_log(dp, APP_ERROR, \"out of memory saving file\");\n 114              | buffer->last = last;\n 115              | end_count = 0;\n 117              | avail = (sizeof last->buffer) - end_count;\n 118 [TRACE-7]    | if (avail > size)\n 120 [TRACE-8]    | memcpy(last->buffer + end_count, data, avail);\n 127              | static void write_function (png_structp pp, png_bytep data, size_t size){\n---→ 函数: write_function\n 128 [TRACE-1]    | buffer_write(get_dp(pp), get_buffer(pp), data, size);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/libpng-libpng16/report-N8pYbw3/pngimage_end.c": [
+            5,
+            6,
+            8,
+            9,
+            10,
+            11,
+            16,
+            17,
+            18,
+            23,
+            24,
+            25,
+            28,
+            101,
+            102,
+            103,
+            104,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            114,
+            115,
+            117,
+            118,
+            120,
+            127,
+            128
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "外部库/API逻辑建模缺失",
+        "过程间数据流断裂",
+        "指针分析能力不足"
+    ]
+}

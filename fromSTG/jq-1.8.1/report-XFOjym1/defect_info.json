@@ -1,0 +1,512 @@
+{
+    "bug_type": "Result of operation is garbage or undefined",
+    "checker": "Clang Static Analyzer",
+    "description": "The left operand of '==' is a garbage value",
+    "warning_func": "",
+    "line_number": 245,
+    "directory": "path/tests/jq-1.8.1",
+    "entry_function": "",
+    "functions": [
+        "decDivideOp"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 59,
+            "col": 14,
+            "line2": 59,
+            "col2": 53,
+            "function": "decDivideOp",
+            "var": [
+                "bits",
+                "lhs",
+                "rhs",
+                "decNaNs",
+                "res",
+                "set",
+                "status",
+                "op",
+                "decNumberZero",
+                "residue",
+                "decCopyFit",
+                "exponent",
+                "emin",
+                "digits",
+                "decFinalize"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 87,
+            "col": 14,
+            "line2": 87,
+            "col2": 29,
+            "function": "decDivideOp",
+            "var": [
+                "lsu",
+                "rhs",
+                "digits",
+                "bits",
+                "lhs",
+                "decNumberZero",
+                "res"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 95,
+            "col": 14,
+            "line2": 95,
+            "col2": 29,
+            "function": "decDivideOp",
+            "var": [
+                "lsu",
+                "lhs",
+                "digits",
+                "bits",
+                "op",
+                "residue",
+                "exponent",
+                "rhs",
+                "decNumberCopy",
+                "res",
+                "decFinalize",
+                "set",
+                "status",
+                "decNumberZero"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 112,
+            "col": 13,
+            "line2": 112,
+            "col2": 24,
+            "function": "decDivideOp",
+            "var": [
+                "exponent",
+                "op",
+                "decNumberZero",
+                "res",
+                "lhs",
+                "rhs",
+                "residue",
+                "decCopyFit",
+                "set",
+                "status",
+                "decFinalize"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 126,
+            "col": 22,
+            "line2": 126,
+            "col2": 42,
+            "function": "decDivideOp",
+            "var": [
+                "acclength",
+                "reqdigits",
+                "d2utable"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 127,
+            "col": 13,
+            "line2": 127,
+            "col2": 59,
+            "function": "decDivideOp",
+            "var": [
+                "acclength",
+                "accbuff",
+                "allocacc",
+                "malloc",
+                "acc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 136,
+            "col": 13,
+            "line2": 136,
+            "col2": 35,
+            "function": "decDivideOp",
+            "var": [
+                "digits",
+                "lhs",
+                "maxdigits"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 138,
+            "col": 22,
+            "line2": 138,
+            "col2": 38,
+            "function": "decDivideOp",
+            "var": [
+                "var1units",
+                "maxdigits",
+                "d2utable"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 139,
+            "col": 13,
+            "line2": 139,
+            "col2": 23,
+            "function": "decDivideOp",
+            "var": [
+                "op",
+                "var1units"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 141,
+            "col": 13,
+            "line2": 141,
+            "col2": 65,
+            "function": "decDivideOp",
+            "var": [
+                "var1units",
+                "varbuff",
+                "varalloc",
+                "malloc",
+                "var1"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 150,
+            "col": 30,
+            "line2": 150,
+            "col2": 48,
+            "function": "decDivideOp",
+            "var": [
+                "source",
+                "lsu",
+                "lhs",
+                "digits",
+                "d2utable"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 151,
+            "col": 29,
+            "line2": 151,
+            "col2": 46,
+            "function": "decDivideOp",
+            "var": [
+                "target",
+                "msu1",
+                "source",
+                "lsu",
+                "lhs"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 151,
+            "col": 29,
+            "line2": 151,
+            "col2": 46,
+            "function": "decDivideOp",
+            "var": [
+                "target",
+                "msu1",
+                "source",
+                "lsu",
+                "lhs"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 153,
+            "col": 16,
+            "line2": 153,
+            "col2": 29,
+            "function": "decDivideOp",
+            "var": [
+                "target",
+                "var1"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 153,
+            "col": 16,
+            "line2": 153,
+            "col2": 29,
+            "function": "decDivideOp",
+            "var": [
+                "target",
+                "var1"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 156,
+            "col": 22,
+            "line2": 156,
+            "col2": 40,
+            "function": "decDivideOp",
+            "var": [
+                "var2units",
+                "digits",
+                "rhs",
+                "d2utable"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 160,
+            "col": 13,
+            "line2": 160,
+            "col2": 25,
+            "function": "decDivideOp",
+            "var": [
+                "var2units",
+                "msu2plus"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 168,
+            "col": 35,
+            "line2": 168,
+            "col2": 47,
+            "function": "decDivideOp",
+            "var": [
+                "pow",
+                "DECPOWERS",
+                "msu1",
+                "exponent"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 170,
+            "col": 35,
+            "line2": 170,
+            "col2": 47,
+            "function": "decDivideOp",
+            "var": [
+                "pow",
+                "DECPOWERS",
+                "msu2",
+                "exponent"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 186,
+            "col": 17,
+            "line2": 186,
+            "col2": 29,
+            "function": "decDivideOp",
+            "var": [
+                "msu1",
+                "msu2",
+                "var2ulen",
+                "exponent"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 194,
+            "col": 9,
+            "line2": 194,
+            "col2": 11,
+            "function": "decDivideOp",
+            "var": [
+                "thisunit",
+                "msu1",
+                "var1",
+                "var1units",
+                "var2ulen",
+                "pv2",
+                "msu2",
+                "pv1",
+                "v2",
+                "var2",
+                "mult",
+                "msu2pair",
+                "msu2plus",
+                "shift",
+                "var2units",
+                "decUnitAddSub",
+                "accunits",
+                "accnext",
+                "accdigits",
+                "pow",
+                "DECPOWERS",
+                "reqdigits",
+                "op",
+                "exponent",
+                "maxexponent"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 196,
+            "col": 13,
+            "line2": 196,
+            "col2": 15,
+            "function": "decDivideOp",
+            "var": [
+                "msu1",
+                "var1",
+                "var1units",
+                "var2ulen",
+                "pv2",
+                "msu2",
+                "pv1",
+                "v2",
+                "var2",
+                "thisunit",
+                "mult",
+                "msu2pair",
+                "msu2plus",
+                "shift",
+                "var2units",
+                "decUnitAddSub"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 197,
+            "col": 24,
+            "line2": 197,
+            "col2": 33,
+            "function": "decDivideOp",
+            "var": [
+                "msu1",
+                "var1",
+                "var1units"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 199,
+            "col": 21,
+            "line2": 199,
+            "col2": 40,
+            "function": "decDivideOp",
+            "var": [
+                "var1units",
+                "var2ulen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c",
+            "line": 245,
+            "col": 17,
+            "line2": 245,
+            "col2": 21,
+            "function": "decDivideOp",
+            "var": [
+                "var1",
+                "var1units",
+                "op",
+                "exponent",
+                "maxexponent"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/defect_info.json",
+    "files": [
+        "decNumber_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件decNumber_end.c  缺陷代码片段===\n------------------------------------------------------------\n  26              | static decNumber * decDivideOp (decNumber *res, const decNumber *lhs, const decNumber *rhs, decContext *set, uint8_t op, uint32_t *status){\n  27              | uint16_t accbuff[17];\n  28              | uint16_t *acc = accbuff;\n  29              | uint16_t *allocacc = ((void *)0);\n  30              | uint16_t *accnext;\n  31              | int32_t acclength;\n  32              | int32_t accunits;\n  33              | int32_t accdigits;\n  34              | uint16_t varbuff[25];\n  35              | uint16_t *var1 = varbuff;\n  36              | uint16_t *varalloc = ((void *)0);\n  37              | uint16_t *msu1;\n  38              | const uint16_t *var2;\n  39              | const uint16_t *msu2;\n  40              | int32_t msu2plus;\n  41              | int32_t msu2pair;\n  42              | int32_t var1units, var2units;\n  43              | int32_t var2ulen;\n  44              | int32_t var1initpad = 0;\n  45              | int32_t maxdigits;\n  46              | int32_t mult;\n  47              | uint16_t thisunit;\n  48              | int32_t residue;\n  49              | int32_t reqdigits = set->digits;\n  50              | int32_t exponent;\n  51              | int32_t maxexponent = 0;\n  52              | uint8_t bits;\n  53              | uint16_t *target;\n  54              | const uint16_t *source;\n  55              | const uint32_t *pow;\n  56              | int32_t shift, cut;\n  58              | bits = (lhs->bits ^ rhs->bits) & 128;\n---→ 函数: decDivideOp\n  59 [TRACE-1]    | if (((lhs->bits | rhs->bits) & (64 | 32 | 16))) {\n  87 [TRACE-2]    | if ((*(rhs)->lsu == 0 && (rhs)->digits == 1 && (((rhs)->bits & (64 | 32 | 16)) == 0))) {\n  95 [TRACE-3]    | if ((*(lhs)->lsu == 0 && (lhs)->digits == 1 && (((lhs)->bits & (64 | 32 | 16)) == 0))) {\n 111              | exponent = (lhs->exponent + lhs->digits) - (rhs->exponent + rhs->digits);\n 112 [TRACE-4]    | if (exponent < 0 && !(op == 128)) {\n 126 [TRACE-5]    | acclength = ((reqdigits + 3) <= 49 ? d2utable[reqdigits + 3] : ((reqdigits + 3) + 3 - 1) / 3);\n 127 [TRACE-6]    | if (acclength * sizeof(uint16_t) > sizeof (accbuff)) {\n 135              | maxdigits = rhs->digits + reqdigits - 1;\n 136 [TRACE-7]    | if (lhs->digits > maxdigits)\n 138 [TRACE-8]    | var1units = ((maxdigits) <= 49 ? d2utable[maxdigits] : ((maxdigits) + 3 - 1) / 3) + 2;\n 139 [TRACE-9]    | if (!(op & 128))\n 141 [TRACE-10]   | if ((var1units + 1) * sizeof(uint16_t) > sizeof (varbuff)) {\n 149              | msu1 = var1 + var1units - 1;\n 150 [TRACE-11]   | source = lhs->lsu + ((lhs->digits) <= 49 ? d2utable[lhs->digits] : ((lhs->digits) + 3 - 1) / 3) - 1;\n 151 [TRACE-12,13] | for (target = msu1; source >= lhs->lsu; source-- , target--)\n 153 [TRACE-14,15] | for (; target >= var1; target--)\n 155              | var2ulen = var1units;\n 156 [TRACE-16]   | var2units = ((rhs->digits) <= 49 ? d2utable[rhs->digits] : ((rhs->digits) + 3 - 1) / 3);\n 157              | var2 = rhs->lsu;\n 158              | msu2 = var2 + var2units - 1;\n 159              | msu2plus = *msu2;\n 160 [TRACE-17]   | if (var2units > 1)\n 162              | msu2pair = (int32_t)*msu2 * (999 + 1);\n 163              | if (var2units > 1) {\n 168 [TRACE-18]   | for (pow = &DECPOWERS[1]; *msu1 >= *pow; pow++)\n 170 [TRACE-19]   | for (pow = &DECPOWERS[1]; *msu2 >= *pow; pow++)\n 172              | if (!(op & 128)) {\n 185              | maxexponent = lhs->exponent - rhs->exponent;\n 186 [TRACE-20]   | if (*msu1 < *msu2) {\n 187              | var2ulen--;\n 188              | exponent -= 3;\n 191              | accunits = 0;\n 192              | accdigits = 0;\n 193              | accnext = acc + acclength - 1;\n 194 [TRACE-21]   | for (;;) {\n 195              | thisunit = 0;\n 196 [TRACE-22]   | for (;;) {\n 197 [TRACE-23]   | for (; *msu1 == 0 && msu1 > var1; msu1--)\n 199 [TRACE-24]   | if (var1units < var2ulen)\n 200              | break;\n 232              | if (accunits != 0 || thisunit != 0) {\n 245 [TRACE-25]   | if (*var1 == 0 && var1units == 1) {\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/jq-1.8.1/report-XFOjym1/decNumber_end.c": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            58,
+            59,
+            87,
+            95,
+            111,
+            112,
+            126,
+            127,
+            135,
+            136,
+            138,
+            139,
+            141,
+            149,
+            150,
+            151,
+            153,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            162,
+            163,
+            168,
+            170,
+            172,
+            185,
+            186,
+            187,
+            188,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            199,
+            200,
+            232,
+            245
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "循环次数/递归深度受限",
+        "流敏感度不足",
+        "路径可行性判定失效"
+    ]
+}

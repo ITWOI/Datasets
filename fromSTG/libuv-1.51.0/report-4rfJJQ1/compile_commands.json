@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/libuv-1.51.0/report-4rfJJQ1",
+        "arguments": [
+            "clang",
+            "-c",
+            "udp_end.c"
+        ],
+        "file": "udp_end.c"
+    }
+]

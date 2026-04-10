@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/itc-cases/report-FLsD344",
+        "arguments": [
+            "clang",
+            "-c",
+            "invalid_memory_access_end.c"
+        ],
+        "file": "invalid_memory_access_end.c"
+    }
+]
