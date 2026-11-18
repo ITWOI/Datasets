@@ -1,0 +1,40 @@
+[
+    {
+        "arguments": [
+            "clang-18",
+            "-c",
+            "-emit-llvm",
+            "-DHAVE_CONFIG_H",
+            "-Ipath/tests/libevent-2.1.12-stable/.",
+            "-Ipath/tests/libevent-2.1.12-stable/./compat",
+            "-Ipath/tests/libevent-2.1.12-stable/./include",
+            "-Ipath/tests/libevent-2.1.12-stable/./include",
+            "-Ipath/tests/libevent-2.1.12-stable/test",
+            "-g",
+            "-Wall",
+            "-W",
+            "-Wfloat-equal",
+            "-Wundef",
+            "-Wpointer-arith",
+            "-Wstrict-prototypes",
+            "-Wmissing-prototypes",
+            "-Wwrite-strings",
+            "-Wredundant-decls",
+            "-Wmissing-declarations",
+            "-Wnested-externs",
+            "-Wbad-function-cast",
+            "-Wno-unused-parameter",
+            "-Wstrict-aliasing",
+            "-Winit-self",
+            "-Wmissing-field-initializers",
+            "-Wdeclaration-after-statement",
+            "-Waddress",
+            "-Wno-unused-function",
+            "-o",
+            "test/regress-regress_listener.o",
+            "test/regress_listener_InstSlice.c"
+        ],
+        "directory": "path/tests/libevent-2.1.12-stable",
+        "file": "test/regress_listener_InstSlice.c"
+    }
+]

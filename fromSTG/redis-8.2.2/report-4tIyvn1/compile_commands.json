@@ -1,0 +1,20 @@
+[
+    {
+        "directory": "Datasets/fromDGS/redis-8.2.2/report-4tIyvn1",
+        "arguments": [
+            "clang",
+            "-c",
+            "./sds.h"
+        ],
+        "file": "./sds.h"
+    },
+    {
+        "directory": "Datasets/fromDGS/redis-8.2.2/report-4tIyvn1",
+        "arguments": [
+            "clang",
+            "-c",
+            "object_end.c"
+        ],
+        "file": "object_end.c"
+    }
+]

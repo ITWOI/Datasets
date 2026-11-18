@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/redis-8.2.2/report-i0ADKK1",
+        "arguments": [
+            "clang",
+            "-c",
+            "t_hash_end.c"
+        ],
+        "file": "t_hash_end.c"
+    }
+]

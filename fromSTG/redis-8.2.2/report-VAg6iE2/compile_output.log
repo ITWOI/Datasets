@@ -1,0 +1,23 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from bitops_end.c:1:
+./header_func.h:12:22: warning: function 'sdslen' has internal linkage but is not defined [-Wundefined-internal]
+   12 | static inline size_t sdslen(const sds s) ;
+      |                      ^
+bitops_end.c:12:20: note: used here
+   12 |             *len = sdslen(o->ptr);
+      |                    ^
+1 warning generated.
+bitops_end.c:66:17: warning: The left operand of '<' is a garbage value [core.UndefinedBinaryOperatorResult]
+   66 |         if (end < 0)
+      |             ~~~ ^
+bitops_end.c:66:17: warning: The left operand of '<' is a garbage value [core.UndefinedBinaryOperatorResult]
+   66 |         if (end < 0)
+      |             ~~~ ^
+bitops_end.c:66:17: warning: The left operand of '<' is a garbage value [core.UndefinedBinaryOperatorResult]
+   66 |         if (end < 0)
+      |             ~~~ ^
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-VAg6iE2/2026-03-12-193948-85493-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-VAg6iE2/2026-03-12-193948-85493-1' to examine bug reports.

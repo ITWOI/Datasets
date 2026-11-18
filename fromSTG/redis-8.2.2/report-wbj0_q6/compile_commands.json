@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q6",
+        "arguments": [
+            "clang",
+            "-c",
+            "redis-cli_end.c"
+        ],
+        "file": "redis-cli_end.c"
+    }
+]

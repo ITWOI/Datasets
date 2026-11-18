@@ -1,0 +1,533 @@
+{
+    "bug_type": "Assigned value is garbage or undefined",
+    "checker": "Clang Static Analyzer",
+    "description": "The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage",
+    "warning_func": "",
+    "line_number": 82,
+    "directory": "path/tests/jq-1.8.1",
+    "entry_function": "",
+    "functions": [
+        "decMultiplyOp"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 34,
+            "col": 10,
+            "line2": 34,
+            "col2": 49,
+            "function": "decMultiplyOp",
+            "var": [
+                "bits",
+                "lhs",
+                "rhs",
+                "res"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 38,
+            "col": 9,
+            "line2": 38,
+            "col2": 33,
+            "function": "decMultiplyOp",
+            "var": [
+                "digits",
+                "lhs",
+                "rhs",
+                "hold"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 44,
+            "col": 13,
+            "line2": 44,
+            "col2": 33,
+            "function": "decMultiplyOp",
+            "var": [
+                "digits",
+                "rhs",
+                "ilhs",
+                "lhs",
+                "irhs",
+                "iacc",
+                "needbytes",
+                "zlhibuff",
+                "alloclhi",
+                "malloc",
+                "zlhi",
+                "zrhibuff",
+                "allocrhi",
+                "zrhi",
+                "zaccbuff",
+                "allocacc",
+                "zacc",
+                "acc",
+                "count",
+                "cup",
+                "lsu",
+                "lip",
+                "p",
+                "DECPOWERS",
+                "lmsi",
+                "rip",
+                "rmsi",
+                "lp",
+                "lazy",
+                "lcarry",
+                "carry",
+                "carry2"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 49,
+            "col": 17,
+            "line2": 49,
+            "col2": 54,
+            "function": "decMultiplyOp",
+            "var": [
+                "needbytes",
+                "zlhibuff",
+                "alloclhi",
+                "malloc",
+                "zlhi"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 54,
+            "col": 17,
+            "line2": 54,
+            "col2": 54,
+            "function": "decMultiplyOp",
+            "var": [
+                "needbytes",
+                "zrhibuff",
+                "allocrhi",
+                "malloc",
+                "zrhi"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 59,
+            "col": 17,
+            "line2": 59,
+            "col2": 54,
+            "function": "decMultiplyOp",
+            "var": [
+                "needbytes",
+                "zaccbuff",
+                "allocacc",
+                "malloc",
+                "zacc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 68,
+            "col": 69,
+            "line2": 68,
+            "col2": 77,
+            "function": "decMultiplyOp",
+            "var": [
+                "count",
+                "digits",
+                "lhs",
+                "cup",
+                "lsu",
+                "lip",
+                "zlhi",
+                "p",
+                "DECPOWERS"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 68,
+            "col": 69,
+            "line2": 68,
+            "col2": 77,
+            "function": "decMultiplyOp",
+            "var": [
+                "count",
+                "digits",
+                "lhs",
+                "cup",
+                "lsu",
+                "lip",
+                "zlhi",
+                "p",
+                "DECPOWERS"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 69,
+            "col": 40,
+            "line2": 69,
+            "col2": 57,
+            "function": "decMultiplyOp",
+            "var": [
+                "p",
+                "lip",
+                "count",
+                "cup",
+                "DECPOWERS"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 69,
+            "col": 17,
+            "line2": 69,
+            "col2": 19,
+            "function": "decMultiplyOp",
+            "var": [
+                "p",
+                "lip",
+                "count",
+                "cup",
+                "DECPOWERS"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 69,
+            "col": 49,
+            "line2": 69,
+            "col2": 57,
+            "function": "decMultiplyOp",
+            "var": [
+                "p",
+                "lip",
+                "count",
+                "cup",
+                "DECPOWERS"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 68,
+            "col": 13,
+            "line2": 68,
+            "col2": 15,
+            "function": "decMultiplyOp",
+            "var": [
+                "count",
+                "digits",
+                "lhs",
+                "cup",
+                "lsu",
+                "lip",
+                "zlhi",
+                "p",
+                "DECPOWERS"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 72,
+            "col": 69,
+            "line2": 72,
+            "col2": 77,
+            "function": "decMultiplyOp",
+            "var": [
+                "count",
+                "digits",
+                "rhs",
+                "cup",
+                "lsu",
+                "rip",
+                "zrhi",
+                "p",
+                "DECPOWERS"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 73,
+            "col": 40,
+            "line2": 73,
+            "col2": 57,
+            "function": "decMultiplyOp",
+            "var": [
+                "p",
+                "rip",
+                "count",
+                "cup",
+                "DECPOWERS"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 73,
+            "col": 17,
+            "line2": 73,
+            "col2": 19,
+            "function": "decMultiplyOp",
+            "var": [
+                "p",
+                "rip",
+                "count",
+                "cup",
+                "DECPOWERS"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 73,
+            "col": 40,
+            "line2": 73,
+            "col2": 57,
+            "function": "decMultiplyOp",
+            "var": [
+                "p",
+                "rip",
+                "count",
+                "cup",
+                "DECPOWERS"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 73,
+            "col": 17,
+            "line2": 73,
+            "col2": 19,
+            "function": "decMultiplyOp",
+            "var": [
+                "p",
+                "rip",
+                "count",
+                "cup",
+                "DECPOWERS"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 73,
+            "col": 40,
+            "line2": 73,
+            "col2": 57,
+            "function": "decMultiplyOp",
+            "var": [
+                "p",
+                "rip",
+                "count",
+                "cup",
+                "DECPOWERS"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 73,
+            "col": 17,
+            "line2": 73,
+            "col2": 19,
+            "function": "decMultiplyOp",
+            "var": [
+                "p",
+                "rip",
+                "count",
+                "cup",
+                "DECPOWERS"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 72,
+            "col": 13,
+            "line2": 72,
+            "col2": 15,
+            "function": "decMultiplyOp",
+            "var": [
+                "count",
+                "digits",
+                "rhs",
+                "cup",
+                "lsu",
+                "rip",
+                "zrhi",
+                "p",
+                "DECPOWERS"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 72,
+            "col": 69,
+            "line2": 72,
+            "col2": 77,
+            "function": "decMultiplyOp",
+            "var": [
+                "count",
+                "digits",
+                "rhs",
+                "cup",
+                "lsu",
+                "rip",
+                "zrhi",
+                "p",
+                "DECPOWERS"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 76,
+            "col": 29,
+            "line2": 76,
+            "col2": 44,
+            "function": "decMultiplyOp",
+            "var": [
+                "lp",
+                "zacc",
+                "iacc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 76,
+            "col": 29,
+            "line2": 76,
+            "col2": 44,
+            "function": "decMultiplyOp",
+            "var": [
+                "lp",
+                "zacc",
+                "iacc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 79,
+            "col": 30,
+            "line2": 79,
+            "col2": 40,
+            "function": "decMultiplyOp",
+            "var": [
+                "rip",
+                "zrhi",
+                "rmsi",
+                "lp",
+                "zacc",
+                "lip",
+                "zlhi",
+                "lmsi",
+                "lazy",
+                "iacc",
+                "lcarry",
+                "carry",
+                "carry2"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 81,
+            "col": 34,
+            "line2": 81,
+            "col2": 44,
+            "function": "decMultiplyOp",
+            "var": [
+                "lip",
+                "zlhi",
+                "lmsi",
+                "lp",
+                "rip"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c",
+            "line": 82,
+            "col": 21,
+            "line2": 82,
+            "col2": 23,
+            "function": "decMultiplyOp",
+            "var": [
+                "lp",
+                "lip",
+                "rip"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/defect_info.json",
+    "files": [
+        "decNumber_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件decNumber_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | static decNumber * decMultiplyOp (decNumber *res, const decNumber *lhs, const decNumber *rhs, decContext *set, uint32_t *status){\n   3              | int32_t accunits;\n   4              | int32_t exponent;\n   5              | int32_t residue = 0;\n   6              | uint8_t bits;\n   7              | uint16_t *acc;\n   8              | int32_t needbytes;\n   9              | void *allocacc = ((void *)0);\n  10              | uint16_t accbuff[49];\n  11              | const uint16_t *mer, *mermsup;\n  12              | int32_t madlength;\n  13              | int32_t shift;\n  14              | uint32_t zlhibuff[10];\n  15              | uint32_t *zlhi = zlhibuff;\n  16              | uint32_t *alloclhi = ((void *)0);\n  17              | uint32_t zrhibuff[10];\n  18              | uint32_t *zrhi = zrhibuff;\n  19              | uint32_t *allocrhi = ((void *)0);\n  20              | uint64_t zaccbuff[20];\n  21              | uint64_t *zacc = zaccbuff;\n  22              | uint32_t *lip, *rip;\n  23              | uint32_t *lmsi, *rmsi;\n  24              | int32_t ilhs, irhs, iacc;\n  25              | int32_t lazy;\n  26              | uint64_t lcarry;\n  27              | uint32_t carry;\n  28              | int32_t count;\n  29              | const uint16_t *cup;\n  30              | uint16_t *up;\n  31              | uint64_t *lp;\n  32              | int32_t p;\n  33              | bits = (uint8_t)((lhs->bits ^ rhs->bits) & 128);\n---→ 函数: decMultiplyOp\n  34 [TRACE-1]    | if (((lhs->bits | rhs->bits) & (64 | 32 | 16))) {\n  38 [TRACE-2]    | if (lhs->digits < rhs->digits) {\n  44 [TRACE-3]    | if (rhs->digits > (3 * 2)) {\n  45              | ilhs = (lhs->digits + 9 - 1) / 9;\n  46              | irhs = (rhs->digits + 9 - 1) / 9;\n  47              | iacc = ilhs + irhs;\n  48              | needbytes = ilhs * sizeof(uint32_t);\n  49 [TRACE-4]    | if (needbytes > (int32_t)sizeof (zlhibuff)) {\n  53              | needbytes = irhs * sizeof(uint32_t);\n  54 [TRACE-5]    | if (needbytes > (int32_t)sizeof (zrhibuff)) {\n  58              | needbytes = iacc * sizeof(uint64_t);\n  59 [TRACE-6]    | if (needbytes > (int32_t)sizeof (zaccbuff)) {\n  63              | if (zlhi == ((void *)0) || zrhi == ((void *)0) || zacc == ((void *)0)) {\n  67              | acc = (uint16_t *)zacc;\n  68 [TRACE-7,8,12] | for (count = lhs->digits , cup = lhs->lsu , lip = zlhi; count > 0; lip++)\n  69 [TRACE-9,10,11] | for (p = 0 , *lip = 0; p < 9 && count > 0; p += 3 , cup++ , count -= 3)\n  70              | *lip += *cup * DECPOWERS[p];\n  71              | lmsi = lip - 1;\n  72 [TRACE-13,20,21] | for (count = rhs->digits , cup = rhs->lsu , rip = zrhi; count > 0; rip++)\n  73 [TRACE-14,15,16,17,18,19] | for (p = 0 , *rip = 0; p < 9 && count > 0; p += 3 , cup++ , count -= 3)\n  74              | *rip += *cup * DECPOWERS[p];\n  75              | rmsi = rip - 1;\n  76 [TRACE-22,23] | for (lp = zacc; lp < zacc + iacc; lp++)\n  78              | lazy = 18;\n  79 [TRACE-24]   | for (rip = zrhi; rip <= rmsi; rip++) {\n  80              | lp = zacc + (rip - zrhi);\n  81 [TRACE-25]   | for (lip = zlhi; lip <= lmsi; lip++ , lp++) {\n  82 [TRACE-26]   | *lp += (uint64_t)(*lip) * (*rip);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/jq-1.8.1/report-pSaoOg4/decNumber_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            38,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            53,
+            54,
+            58,
+            59,
+            63,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            78,
+            79,
+            80,
+            81,
+            82
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "流敏感度不足",
+        "指针分析能力不足",
+        "路径可行性判定失效"
+    ]
+}

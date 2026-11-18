@@ -1,0 +1,48 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from main_end.c:1:
+./header_func.h:14:13: warning: function 'write_neutral_s32' has internal linkage but is not defined [-Wundefined-internal]
+   14 | static void write_neutral_s32(u8 *data, s32 value) ;
+      |             ^
+main_end.c:63:9: note: used here
+   63 |         write_neutral_s32(byteswap_buf, block_size);
+      |         ^
+In file included from main_end.c:1:
+./header_func.h:18:12: warning: function 'read_neutral_s32' has internal linkage but is not defined [-Wundefined-internal]
+   18 | static s32 read_neutral_s32(const u8 *data) ;
+      |            ^
+main_end.c:77:26: note: used here
+   77 |             block_size = read_neutral_s32(byteswap_buf);
+      |                          ^
+2 warnings generated.
+main_end.c:195:13: warning: Potential leak of memory pointed to by 'buffer' [unix.Malloc]
+  195 |             fprintf(stderr, "Failed to read data: %s\n", bz3_strerror(state));
+      |             ^~~~~~~
+main_end.c:208:17: warning: Potential memory leak [unix.Malloc]
+  208 |                 fprintf(stderr, "Failed to create a block encoder state.\n");
+      |                 ^~~~~~~
+main_end.c:507:29: warning: Potential leak of memory pointed to by 'output_name' [unix.Malloc]
+  507 |                             fprintf(stderr, "Warning: file %s has an unknown extension, skipping.\n", arg);
+      |                             ^~~~~~~
+main_end.c:195:13: warning: Potential leak of memory pointed to by 'buffer' [unix.Malloc]
+  195 |             fprintf(stderr, "Failed to read data: %s\n", bz3_strerror(state));
+      |             ^~~~~~~
+main_end.c:208:17: warning: Potential memory leak [unix.Malloc]
+  208 |                 fprintf(stderr, "Failed to create a block encoder state.\n");
+      |                 ^~~~~~~
+main_end.c:507:29: warning: Potential leak of memory pointed to by 'output_name' [unix.Malloc]
+  507 |                             fprintf(stderr, "Warning: file %s has an unknown extension, skipping.\n", arg);
+      |                             ^~~~~~~
+main_end.c:195:13: warning: Potential leak of memory pointed to by 'buffer' [unix.Malloc]
+  195 |             fprintf(stderr, "Failed to read data: %s\n", bz3_strerror(state));
+      |             ^~~~~~~
+main_end.c:208:17: warning: Potential memory leak [unix.Malloc]
+  208 |                 fprintf(stderr, "Failed to create a block encoder state.\n");
+      |                 ^~~~~~~
+main_end.c:507:29: warning: Potential leak of memory pointed to by 'output_name' [unix.Malloc]
+  507 |                             fprintf(stderr, "Warning: file %s has an unknown extension, skipping.\n", arg);
+      |                             ^~~~~~~
+9 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP3/2026-03-12-204346-124139-1'
+scan-build: 3 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP3/2026-03-12-204346-124139-1' to examine bug reports.

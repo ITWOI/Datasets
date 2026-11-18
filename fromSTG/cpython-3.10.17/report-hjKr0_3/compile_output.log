@@ -1,0 +1,24 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+basearith_end.c:21:26: warning: The right operand of '*' is a garbage value [core.UndefinedBinaryOperatorResult]
+   21 |             dest[j] = ph * l + hprev;
+      |                          ^ ~
+basearith_end.c:21:30: warning: The right operand of '+' is a garbage value [core.UndefinedBinaryOperatorResult]
+   21 |             dest[j] = ph * l + hprev;
+      |                              ^ ~~~~~
+basearith_end.c:21:26: warning: The right operand of '*' is a garbage value [core.UndefinedBinaryOperatorResult]
+   21 |             dest[j] = ph * l + hprev;
+      |                          ^ ~
+basearith_end.c:21:30: warning: The right operand of '+' is a garbage value [core.UndefinedBinaryOperatorResult]
+   21 |             dest[j] = ph * l + hprev;
+      |                              ^ ~~~~~
+basearith_end.c:21:26: warning: The right operand of '*' is a garbage value [core.UndefinedBinaryOperatorResult]
+   21 |             dest[j] = ph * l + hprev;
+      |                          ^ ~
+basearith_end.c:21:30: warning: The right operand of '+' is a garbage value [core.UndefinedBinaryOperatorResult]
+   21 |             dest[j] = ph * l + hprev;
+      |                              ^ ~~~~~
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-hjKr0_3/2026-03-12-195824-97838-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-hjKr0_3/2026-03-12-195824-97838-1' to examine bug reports.

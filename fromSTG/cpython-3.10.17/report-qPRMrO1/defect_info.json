@@ -1,0 +1,309 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Array access (from variable 'expected') results in a null pointer dereference",
+    "warning_func": "",
+    "line_number": 12,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "convertsimple",
+        "converterr",
+        "getbuffer",
+        "convertbuffer"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 158,
+            "col": 17,
+            "line2": 158,
+            "col2": 30,
+            "function": "convertsimple",
+            "var": [
+                "format",
+                "getbuffer",
+                "arg",
+                "p",
+                "buf",
+                "converterr",
+                "msgbuf",
+                "bufsize",
+                "addcleanup",
+                "freelist",
+                "cleanup_buffer"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 166,
+            "col": 21,
+            "line2": 166,
+            "col2": 62,
+            "function": "convertsimple",
+            "var": [
+                "count",
+                "convertbuffer",
+                "arg",
+                "p",
+                "buf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 437,
+            "col": 1,
+            "line2": 437,
+            "col2": 1,
+            "function": "convertbuffer",
+            "var": [
+                "tp_as_buffer",
+                "ob_type",
+                "arg",
+                "errmsg",
+                "p",
+                "pb",
+                "bf_releasebuffer",
+                "getbuffer",
+                "view",
+                "count",
+                "len",
+                "buf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 441,
+            "col": 5,
+            "line2": 441,
+            "col2": 25,
+            "function": "convertbuffer",
+            "var": [
+                "errmsg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 443,
+            "col": 9,
+            "line2": 443,
+            "col2": 25,
+            "function": "convertbuffer",
+            "var": [
+                "pb",
+                "bf_releasebuffer",
+                "errmsg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 447,
+            "col": 9,
+            "line2": 447,
+            "col2": 37,
+            "function": "convertbuffer",
+            "var": [
+                "getbuffer",
+                "arg",
+                "view",
+                "errmsg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 453,
+            "col": 1,
+            "line2": 453,
+            "col2": 1,
+            "function": "getbuffer",
+            "var": [
+                "PyObject_GetBuffer",
+                "arg",
+                "view",
+                "errmsg",
+                "PyBuffer_IsContiguous"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 454,
+            "col": 9,
+            "line2": 454,
+            "col2": 45,
+            "function": "getbuffer",
+            "var": [
+                "PyObject_GetBuffer",
+                "arg",
+                "view",
+                "errmsg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 458,
+            "col": 9,
+            "line2": 458,
+            "col2": 41,
+            "function": "getbuffer",
+            "var": [
+                "PyBuffer_IsContiguous",
+                "view",
+                "errmsg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 463,
+            "col": 5,
+            "line2": 463,
+            "col2": 5,
+            "function": "getbuffer",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 447,
+            "col": 9,
+            "line2": 447,
+            "col2": 37,
+            "function": "convertbuffer",
+            "var": [
+                "getbuffer",
+                "arg",
+                "view",
+                "errmsg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 166,
+            "col": 21,
+            "line2": 166,
+            "col2": 62,
+            "function": "convertsimple",
+            "var": [
+                "count",
+                "convertbuffer",
+                "arg",
+                "p",
+                "buf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 167,
+            "col": 17,
+            "line2": 167,
+            "col2": 25,
+            "function": "convertsimple",
+            "var": [
+                "count",
+                "converterr",
+                "buf",
+                "arg",
+                "msgbuf",
+                "bufsize"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 168,
+            "col": 35,
+            "line2": 168,
+            "col2": 37,
+            "function": "convertsimple",
+            "var": [
+                "converterr",
+                "buf",
+                "arg",
+                "msgbuf",
+                "bufsize"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 168,
+            "col": 24,
+            "line2": 168,
+            "col2": 60,
+            "function": "convertsimple",
+            "var": [
+                "converterr",
+                "buf",
+                "arg",
+                "msgbuf",
+                "bufsize"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 10,
+            "col": 1,
+            "line2": 10,
+            "col2": 1,
+            "function": "converterr",
+            "var": [
+                "expected",
+                "msgbuf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c",
+            "line": 12,
+            "col": 9,
+            "line2": 12,
+            "col2": 16,
+            "function": "converterr",
+            "var": [
+                "expected"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/defect_info.json",
+    "files": [
+        "getargs_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件getargs_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: converterr\n  10 [TRACE-16]   | static const char * converterr (const char *expected, PyObject *arg, char *msgbuf, size_t bufsize){\n  12 [TRACE-17]   | if (expected[0] == '(') {\n  19              | static const char * convertsimple (PyObject *arg, const char **p_format, va_list *p_va, int flags, char *msgbuf, size_t bufsize, freelist_t *freelist){\n  20              | const char *format = *p_format;\n  21              | char c = *format++;\n  22              | const char *sarg;\n  23              | switch (c) {\n 155              | void **p = (void **)__builtin_va_arg(*p_va, char **);\n 156              | const char *buf;\n 157              | Py_ssize_t count;\n---→ 函数: convertsimple\n 158 [TRACE-1]    | if (*format == '*') {\n 166 [TRACE-2,12] | count = convertbuffer(arg, (const void **)p, &buf);\n 167 [TRACE-13]   | if (count < 0)\n 168 [TRACE-14,15] | return converterr(buf, arg, msgbuf, bufsize);\n---→ 函数: convertbuffer\n 437 [TRACE-3]    | static Py_ssize_t convertbuffer (PyObject *arg, const void **p, const char **errmsg){\n 438              | PyBufferProcs *pb = (((PyObject *)(arg))->ob_type)->tp_as_buffer;\n 439              | Py_ssize_t count;\n 440              | Py_buffer view;\n 441 [TRACE-4]    | *errmsg = ((void *)0);\n 442              | *p = ((void *)0);\n 443 [TRACE-5]    | if (pb != ((void *)0) && pb->bf_releasebuffer != ((void *)0)) {\n 447 [TRACE-6,11] | if (getbuffer(arg, &view, errmsg) < 0)\n 449              | count = view.len;\n 450              | *p = view.buf;\n 451              | return count;\n---→ 函数: getbuffer\n 453 [TRACE-7]    | static int getbuffer (PyObject *arg, Py_buffer *view, const char **errmsg){\n 454 [TRACE-8]    | if (PyObject_GetBuffer(arg, view, 0) != 0) {\n 458 [TRACE-9]    | if (!PyBuffer_IsContiguous(view, 'C')) {\n 463 [TRACE-10]   | return 0;\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO1/getargs_end.c": [
+            10,
+            12,
+            19,
+            20,
+            21,
+            22,
+            23,
+            155,
+            156,
+            157,
+            158,
+            166,
+            167,
+            168,
+            437,
+            438,
+            439,
+            440,
+            441,
+            442,
+            443,
+            447,
+            449,
+            450,
+            451,
+            453,
+            454,
+            458,
+            463
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "过程间数据流断裂",
+        "路径可行性判定失效"
+    ]
+}

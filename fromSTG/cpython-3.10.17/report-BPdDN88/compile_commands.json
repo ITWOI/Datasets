@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-BPdDN88",
+        "arguments": [
+            "clang",
+            "-c",
+            "posixmodule_end.c"
+        ],
+        "file": "posixmodule_end.c"
+    }
+]

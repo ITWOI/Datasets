@@ -1,0 +1,264 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from weakrefobject_end.c:1:
+./header_func.h:125:18: warning: function 'proxy_add' has internal linkage but is not defined [-Wundefined-internal]
+  125 | static PyObject *proxy_add(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:43: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                           ^
+./header_func.h:127:18: warning: function 'proxy_sub' has internal linkage but is not defined [-Wundefined-internal]
+  127 | static PyObject *proxy_sub(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:54: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                      ^
+./header_func.h:129:18: warning: function 'proxy_mul' has internal linkage but is not defined [-Wundefined-internal]
+  129 | static PyObject *proxy_mul(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:65: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                 ^
+./header_func.h:131:18: warning: function 'proxy_mod' has internal linkage but is not defined [-Wundefined-internal]
+  131 | static PyObject *proxy_mod(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:76: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                            ^
+./header_func.h:133:18: warning: function 'proxy_divmod' has internal linkage but is not defined [-Wundefined-internal]
+  133 | static PyObject *proxy_divmod(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:87: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                       ^
+./header_func.h:135:18: warning: function 'proxy_pow' has internal linkage but is not defined [-Wundefined-internal]
+  135 | static PyObject *proxy_pow(PyObject *proxy, PyObject *v, PyObject *w) ;
+      |                  ^
+./header_func.h:195:101: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                     ^
+./header_func.h:137:18: warning: function 'proxy_neg' has internal linkage but is not defined [-Wundefined-internal]
+  137 | static PyObject *proxy_neg(PyObject *proxy) ;
+      |                  ^
+./header_func.h:195:112: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                ^
+./header_func.h:139:18: warning: function 'proxy_pos' has internal linkage but is not defined [-Wundefined-internal]
+  139 | static PyObject *proxy_pos(PyObject *proxy) ;
+      |                  ^
+./header_func.h:195:123: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                           ^
+./header_func.h:141:18: warning: function 'proxy_abs' has internal linkage but is not defined [-Wundefined-internal]
+  141 | static PyObject *proxy_abs(PyObject *proxy) ;
+      |                  ^
+./header_func.h:195:134: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                      ^
+./header_func.h:145:18: warning: function 'proxy_invert' has internal linkage but is not defined [-Wundefined-internal]
+  145 | static PyObject *proxy_invert(PyObject *proxy) ;
+      |                  ^
+./header_func.h:195:166: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                      ^
+./header_func.h:147:18: warning: function 'proxy_lshift' has internal linkage but is not defined [-Wundefined-internal]
+  147 | static PyObject *proxy_lshift(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:180: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                    ^
+./header_func.h:149:18: warning: function 'proxy_rshift' has internal linkage but is not defined [-Wundefined-internal]
+  149 | static PyObject *proxy_rshift(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:194: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                  ^
+./header_func.h:151:18: warning: function 'proxy_and' has internal linkage but is not defined [-Wundefined-internal]
+  151 | static PyObject *proxy_and(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:208: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                ^
+./header_func.h:153:18: warning: function 'proxy_xor' has internal linkage but is not defined [-Wundefined-internal]
+  153 | static PyObject *proxy_xor(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:219: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                           ^
+./header_func.h:155:18: warning: function 'proxy_or' has internal linkage but is not defined [-Wundefined-internal]
+  155 | static PyObject *proxy_or(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:230: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                      ^
+./header_func.h:157:18: warning: function 'proxy_int' has internal linkage but is not defined [-Wundefined-internal]
+  157 | static PyObject *proxy_int(PyObject *proxy) ;
+      |                  ^
+./header_func.h:195:240: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                ^
+./header_func.h:159:18: warning: function 'proxy_float' has internal linkage but is not defined [-Wundefined-internal]
+  159 | static PyObject *proxy_float(PyObject *proxy) ;
+      |                  ^
+./header_func.h:195:254: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                              ^
+./header_func.h:161:18: warning: function 'proxy_iadd' has internal linkage but is not defined [-Wundefined-internal]
+  161 | static PyObject *proxy_iadd(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:267: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                           ^
+./header_func.h:163:18: warning: function 'proxy_isub' has internal linkage but is not defined [-Wundefined-internal]
+  163 | static PyObject *proxy_isub(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:279: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                                       ^
+./header_func.h:165:18: warning: function 'proxy_imul' has internal linkage but is not defined [-Wundefined-internal]
+  165 | static PyObject *proxy_imul(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:291: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                                                   ^
+./header_func.h:167:18: warning: function 'proxy_imod' has internal linkage but is not defined [-Wundefined-internal]
+  167 | static PyObject *proxy_imod(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:303: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                                                               ^
+./header_func.h:169:18: warning: function 'proxy_ipow' has internal linkage but is not defined [-Wundefined-internal]
+  169 | static PyObject *proxy_ipow(PyObject *proxy, PyObject *v, PyObject *w) ;
+      |                  ^
+./header_func.h:195:315: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                                                                           ^
+./header_func.h:171:18: warning: function 'proxy_ilshift' has internal linkage but is not defined [-Wundefined-internal]
+  171 | static PyObject *proxy_ilshift(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:327: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                                                                                       ^
+./header_func.h:173:18: warning: function 'proxy_irshift' has internal linkage but is not defined [-Wundefined-internal]
+  173 | static PyObject *proxy_irshift(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:342: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                                                                                                      ^
+./header_func.h:175:18: warning: function 'proxy_iand' has internal linkage but is not defined [-Wundefined-internal]
+  175 | static PyObject *proxy_iand(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:357: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                                                                                                                     ^
+./header_func.h:177:18: warning: function 'proxy_ixor' has internal linkage but is not defined [-Wundefined-internal]
+  177 | static PyObject *proxy_ixor(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:369: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                                                                                                                                 ^
+./header_func.h:179:18: warning: function 'proxy_ior' has internal linkage but is not defined [-Wundefined-internal]
+  179 | static PyObject *proxy_ior(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:381: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                                                                                                                                             ^
+./header_func.h:181:18: warning: function 'proxy_floor_div' has internal linkage but is not defined [-Wundefined-internal]
+  181 | static PyObject *proxy_floor_div(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:392: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                                                                                                                                                        ^
+./header_func.h:183:18: warning: function 'proxy_true_div' has internal linkage but is not defined [-Wundefined-internal]
+  183 | static PyObject *proxy_true_div(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:409: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+./header_func.h:185:18: warning: function 'proxy_ifloor_div' has internal linkage but is not defined [-Wundefined-internal]
+  185 | static PyObject *proxy_ifloor_div(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:425: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+./header_func.h:187:18: warning: function 'proxy_itrue_div' has internal linkage but is not defined [-Wundefined-internal]
+  187 | static PyObject *proxy_itrue_div(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:443: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                           ^
+./header_func.h:189:18: warning: function 'proxy_index' has internal linkage but is not defined [-Wundefined-internal]
+  189 | static PyObject *proxy_index(PyObject *proxy) ;
+      |                  ^
+./header_func.h:195:460: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ^
+./header_func.h:191:18: warning: function 'proxy_matmul' has internal linkage but is not defined [-Wundefined-internal]
+  191 | static PyObject *proxy_matmul(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:473: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+./header_func.h:193:18: warning: function 'proxy_imatmul' has internal linkage but is not defined [-Wundefined-internal]
+  193 | static PyObject *proxy_imatmul(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:195:487: note: used here
+  195 | static PyNumberMethods proxy_as_number = {proxy_add, proxy_sub, proxy_mul, proxy_mod, proxy_divmod, proxy_pow, proxy_neg, proxy_pos, proxy_abs, (inquiry)proxy_bool, proxy_invert, proxy_lshift, proxy_rshift, proxy_and, proxy_xor, proxy_or, proxy_int, 0, proxy_float, proxy_iadd, proxy_isub, proxy_imul, proxy_imod, proxy_ipow, proxy_ilshift, proxy_irshift, proxy_iand, proxy_ixor, proxy_ior, proxy_floor_div, proxy_true_div, proxy_ifloor_div, proxy_itrue_div, proxy_index, proxy_matmul, proxy_imatmul};
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ^
+./header_func.h:201:18: warning: function 'proxy_getitem' has internal linkage but is not defined [-Wundefined-internal]
+  201 | static PyObject *proxy_getitem(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:205:68: note: used here
+  205 | static PyMappingMethods proxy_as_mapping = {(lenfunc)proxy_length, proxy_getitem, (objobjargproc)proxy_setitem};
+      |                                                                    ^
+./header_func.h:206:18: warning: function 'proxy_bytes' has internal linkage but is not defined [-Wundefined-internal]
+  206 | static PyObject *proxy_bytes(PyObject *proxy, PyObject *_unused_ignored) ;
+      |                  ^
+./header_func.h:210:53: note: used here
+  210 | static PyMethodDef proxy_methods[] = {{"__bytes__", proxy_bytes, 4}, {"__reversed__", proxy_reversed, 4}, {((void *)0), ((void *)0)}};
+      |                                                     ^
+./header_func.h:208:18: warning: function 'proxy_reversed' has internal linkage but is not defined [-Wundefined-internal]
+  208 | static PyObject *proxy_reversed(PyObject *proxy, PyObject *_unused_ignored) ;
+      |                  ^
+./header_func.h:210:87: note: used here
+  210 | static PyMethodDef proxy_methods[] = {{"__bytes__", proxy_bytes, 4}, {"__reversed__", proxy_reversed, 4}, {((void *)0), ((void *)0)}};
+      |                                                                                       ^
+./header_func.h:113:18: warning: function 'proxy_str' has internal linkage but is not defined [-Wundefined-internal]
+  113 | static PyObject *proxy_str(PyObject *proxy) ;
+      |                  ^
+./header_func.h:211:235: note: used here
+  211 | PyTypeObject _PyWeakref_ProxyType = {{{1, &PyType_Type}, 0}, "weakref.ProxyType", sizeof(PyWeakReference), 0, (destructor)proxy_dealloc, 0, 0, 0, 0, (reprfunc)proxy_repr, &proxy_as_number, &proxy_as_sequence, &proxy_as_mapping, 0, 0, proxy_str, proxy_getattr, (setattrofunc)proxy_setattr, 0, (0 | 0) | (1UL << 14), 0, (traverseproc)gc_traverse, (inquiry)gc_clear, proxy_richcompare, 0, (getiterfunc)proxy_iter, (iternextfunc)proxy_iternext, proxy_methods};
+      |                                                                                                                                                                                                                                           ^
+./header_func.h:115:18: warning: function 'proxy_getattr' has internal linkage but is not defined [-Wundefined-internal]
+  115 | static PyObject *proxy_getattr(PyObject *x, PyObject *y) ;
+      |                  ^
+./header_func.h:211:246: note: used here
+  211 | PyTypeObject _PyWeakref_ProxyType = {{{1, &PyType_Type}, 0}, "weakref.ProxyType", sizeof(PyWeakReference), 0, (destructor)proxy_dealloc, 0, 0, 0, 0, (reprfunc)proxy_repr, &proxy_as_number, &proxy_as_sequence, &proxy_as_mapping, 0, 0, proxy_str, proxy_getattr, (setattrofunc)proxy_setattr, 0, (0 | 0) | (1UL << 14), 0, (traverseproc)gc_traverse, (inquiry)gc_clear, proxy_richcompare, 0, (getiterfunc)proxy_iter, (iternextfunc)proxy_iternext, proxy_methods};
+      |                                                                                                                                                                                                                                                      ^
+./header_func.h:213:18: warning: function 'proxy_call' has internal linkage but is not defined [-Wundefined-internal]
+  213 | static PyObject *proxy_call(PyObject *proxy, PyObject *v, PyObject *w) ;
+      |                  ^
+./header_func.h:215:249: note: used here
+  215 | PyTypeObject _PyWeakref_CallableProxyType = {{{1, &PyType_Type}, 0}, "weakref.CallableProxyType", sizeof(PyWeakReference), 0, (destructor)proxy_dealloc, 0, 0, 0, 0, (unaryfunc)proxy_repr, &proxy_as_number, &proxy_as_sequence, &proxy_as_mapping, 0, proxy_call, proxy_str, proxy_getattr, (setattrofunc)proxy_setattr, 0, (0 | 0) | (1UL << 14), 0, (traverseproc)gc_traverse, (inquiry)gc_clear, proxy_richcompare, 0, (getiterfunc)proxy_iter, (iternextfunc)proxy_iternext};
+      |                                                                                                                                                                                                                                                         ^
+./header_func.h:276:25: warning: function 'PyObject_CallOneArg' has internal linkage but is not defined [-Wundefined-internal]
+  276 | static inline PyObject *PyObject_CallOneArg(PyObject *func, PyObject *arg) ;
+      |                         ^
+weakrefobject_end.c:307:26: note: used here
+  307 |     PyObject *cbresult = PyObject_CallOneArg(callback, (PyObject *)ref);
+      |                          ^
+41 warnings generated.
+In file included from weakrefobject_end.c:3:
+./object.h:15:9: warning: Access to field 'ob_refcnt' results in a dereference of a null pointer (loaded from variable 'op') [core.NullDereference]
+   15 |     if (--op->ob_refcnt != 0) {
+      |         ^~~~~~~~~~~~~~~
+./object.h:15:9: warning: Access to field 'ob_refcnt' results in a dereference of a null pointer (loaded from variable 'op') [core.NullDereference]
+   15 |     if (--op->ob_refcnt != 0) {
+      |         ^~~~~~~~~~~~~~~
+./object.h:15:9: warning: Access to field 'ob_refcnt' results in a dereference of a null pointer (loaded from variable 'op') [core.NullDereference]
+   15 |     if (--op->ob_refcnt != 0) {
+      |         ^~~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/2026-03-12-200412-101725-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-G22Zp61/2026-03-12-200412-101725-1' to examine bug reports.

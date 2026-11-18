@@ -1,0 +1,156 @@
+{
+    "bug_type": "Argument with 'nonnull' attribute passed null",
+    "checker": "Clang Static Analyzer",
+    "description": "Null pointer passed to 2nd parameter expecting 'nonnull'",
+    "warning_func": "",
+    "line_number": 22,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "os_symlink_impl"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BPdDN88/posixmodule_end.c",
+            "line": 5,
+            "col": 68,
+            "line2": 5,
+            "col2": 86,
+            "function": "os_symlink_impl",
+            "var": [
+                "PySys_Audit",
+                "object",
+                "src",
+                "dst",
+                "dir_fd"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BPdDN88/posixmodule_end.c",
+            "line": 5,
+            "col": 9,
+            "line2": 5,
+            "col2": 105,
+            "function": "os_symlink_impl",
+            "var": [
+                "PySys_Audit",
+                "object",
+                "src",
+                "dst",
+                "dir_fd"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BPdDN88/posixmodule_end.c",
+            "line": 8,
+            "col": 10,
+            "line2": 8,
+            "col2": 20,
+            "function": "os_symlink_impl",
+            "var": [
+                "narrow",
+                "src",
+                "wide",
+                "dst"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BPdDN88/posixmodule_end.c",
+            "line": 8,
+            "col": 25,
+            "line2": 8,
+            "col2": 33,
+            "function": "os_symlink_impl",
+            "var": [
+                "narrow",
+                "src",
+                "wide",
+                "dst"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BPdDN88/posixmodule_end.c",
+            "line": 8,
+            "col": 40,
+            "line2": 8,
+            "col2": 48,
+            "function": "os_symlink_impl",
+            "var": [
+                "narrow",
+                "src",
+                "wide",
+                "dst"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BPdDN88/posixmodule_end.c",
+            "line": 8,
+            "col": 53,
+            "line2": 8,
+            "col2": 63,
+            "function": "os_symlink_impl",
+            "var": [
+                "narrow",
+                "src",
+                "wide",
+                "dst"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BPdDN88/posixmodule_end.c",
+            "line": 8,
+            "col": 9,
+            "line2": 8,
+            "col2": 64,
+            "function": "os_symlink_impl",
+            "var": [
+                "narrow",
+                "src",
+                "wide",
+                "dst"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-BPdDN88/posixmodule_end.c",
+            "line": 22,
+            "col": 43,
+            "line2": 22,
+            "col2": 53,
+            "function": "os_symlink_impl",
+            "var": [
+                "result",
+                "symlink",
+                "narrow",
+                "src",
+                "dst"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-BPdDN88/defect_info.json",
+    "files": [
+        "posixmodule_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件posixmodule_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | static PyObject * os_symlink_impl (PyObject *module, path_t *src, path_t *dst, int target_is_directory, int dir_fd){\n   3              | int result;\n   4              | int symlinkat_unavailable = 0;\n---→ 函数: os_symlink_impl\n   5 [TRACE-1,2]  | if (PySys_Audit(\"os.symlink\", \"OOi\", src->object, dst->object, dir_fd == (int)-100 ? -1 : dir_fd) < 0) {\n   8 [TRACE-3,4,5,6,7] | if ((src->narrow && dst->wide) || (src->wide && dst->narrow)) {\n  13              | PyThreadState *_save;\n  14              | _save = PyEval_SaveThread();\n  15              | if (dir_fd != (int)-100) {\n  22 [TRACE-8]    | result = symlink(src->narrow, dst->narrow);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-BPdDN88/posixmodule_end.c": [
+            2,
+            3,
+            4,
+            5,
+            8,
+            13,
+            14,
+            15,
+            22
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "外部库/API 逻辑建模缺失",
+        "域敏感度缺失",
+        "指针分析能力不足"
+    ]
+}

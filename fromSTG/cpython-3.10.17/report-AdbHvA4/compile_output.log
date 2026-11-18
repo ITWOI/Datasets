@@ -1,0 +1,42 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+listobject_end.c:24:26: warning: Dereference of null pointer [core.NullDereference]
+   24 |         *dst->values++ = *src->values++;
+      |                          ^~~~~~~~~~~~~~
+listobject_end.c:29:26: warning: Dereference of null pointer [core.NullDereference]
+   29 |         *dst->values-- = *src->values--;
+      |                          ^~~~~~~~~~~~~~
+listobject_end.c:34:9: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   34 |         memcpy(&s1->values[i], &s2->values[j], sizeof(PyObject *) * n);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+listobject_end.c:39:9: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   39 |         memmove(&s1->values[i], &s2->values[j], sizeof(PyObject *) * n);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+listobject_end.c:24:26: warning: Dereference of null pointer [core.NullDereference]
+   24 |         *dst->values++ = *src->values++;
+      |                          ^~~~~~~~~~~~~~
+listobject_end.c:29:26: warning: Dereference of null pointer [core.NullDereference]
+   29 |         *dst->values-- = *src->values--;
+      |                          ^~~~~~~~~~~~~~
+listobject_end.c:34:9: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   34 |         memcpy(&s1->values[i], &s2->values[j], sizeof(PyObject *) * n);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+listobject_end.c:39:9: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   39 |         memmove(&s1->values[i], &s2->values[j], sizeof(PyObject *) * n);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+listobject_end.c:24:26: warning: Dereference of null pointer [core.NullDereference]
+   24 |         *dst->values++ = *src->values++;
+      |                          ^~~~~~~~~~~~~~
+listobject_end.c:29:26: warning: Dereference of null pointer [core.NullDereference]
+   29 |         *dst->values-- = *src->values--;
+      |                          ^~~~~~~~~~~~~~
+listobject_end.c:34:9: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   34 |         memcpy(&s1->values[i], &s2->values[j], sizeof(PyObject *) * n);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+listobject_end.c:39:9: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   39 |         memmove(&s1->values[i], &s2->values[j], sizeof(PyObject *) * n);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+12 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-AdbHvA4/2026-03-12-195510-95524-1'
+scan-build: 4 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-AdbHvA4/2026-03-12-195510-95524-1' to examine bug reports.

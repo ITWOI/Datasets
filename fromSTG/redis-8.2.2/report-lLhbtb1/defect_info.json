@@ -1,0 +1,413 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Dereference of null pointer",
+    "warning_func": "",
+    "line_number": 237,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "",
+    "functions": [
+        "dictFindLinkForInsert",
+        "dictReplace",
+        "dictAddRaw",
+        "dictGetVal"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 214,
+            "col": 13,
+            "line2": 214,
+            "col2": 41,
+            "function": "dictReplace",
+            "var": [
+                "entry",
+                "dictAddRaw",
+                "d",
+                "key",
+                "existing"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 178,
+            "col": 1,
+            "line2": 178,
+            "col2": 1,
+            "function": "dictAddRaw",
+            "var": [
+                "dictFindLinkForInsert",
+                "d",
+                "key",
+                "existing",
+                "position",
+                "keyDup",
+                "type",
+                "dictInsertKeyAtLink"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 179,
+            "col": 22,
+            "line2": 179,
+            "col2": 60,
+            "function": "dictAddRaw",
+            "var": [
+                "dictFindLinkForInsert",
+                "d",
+                "key",
+                "existing"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 295,
+            "col": 1,
+            "line2": 295,
+            "col2": 1,
+            "function": "dictFindLinkForInsert",
+            "var": [
+                "dictHashKey",
+                "d",
+                "key",
+                "useStoredKeyApi",
+                "existing",
+                "idx",
+                "hash",
+                "ht_size_exp",
+                "_dictRehashStepIfNeeded",
+                "_dictExpandIfNeeded",
+                "dictGetCmpFunc",
+                "table",
+                "rehashidx",
+                "he",
+                "ht_table",
+                "dictGetKey",
+                "he_key",
+                "cmpFunc",
+                "cmpCache",
+                "dictGetNext",
+                "bucket"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 301,
+            "col": 9,
+            "line2": 301,
+            "col2": 31,
+            "function": "dictFindLinkForInsert",
+            "var": [
+                "existing"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 302,
+            "col": 19,
+            "line2": 302,
+            "col2": 43,
+            "function": "dictFindLinkForInsert",
+            "var": [
+                "idx",
+                "hash",
+                "ht_size_exp",
+                "d"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 302,
+            "col": 85,
+            "line2": 302,
+            "col2": 123,
+            "function": "dictFindLinkForInsert",
+            "var": [
+                "idx",
+                "hash",
+                "ht_size_exp",
+                "d"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 306,
+            "col": 21,
+            "line2": 306,
+            "col2": 30,
+            "function": "dictFindLinkForInsert",
+            "var": [
+                "table",
+                "idx",
+                "rehashidx",
+                "d",
+                "hash",
+                "ht_size_exp",
+                "he",
+                "ht_table",
+                "dictGetKey",
+                "key",
+                "he_key",
+                "cmpFunc",
+                "cmpCache",
+                "existing",
+                "dictGetNext"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 307,
+            "col": 27,
+            "line2": 307,
+            "col2": 50,
+            "function": "dictFindLinkForInsert",
+            "var": [
+                "table",
+                "idx",
+                "rehashidx",
+                "d"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 311,
+            "col": 16,
+            "line2": 311,
+            "col2": 17,
+            "function": "dictFindLinkForInsert",
+            "var": [
+                "he",
+                "dictGetKey",
+                "key",
+                "he_key",
+                "cmpFunc",
+                "cmpCache",
+                "existing",
+                "dictGetNext"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 311,
+            "col": 16,
+            "line2": 311,
+            "col2": 17,
+            "function": "dictFindLinkForInsert",
+            "var": [
+                "he",
+                "dictGetKey",
+                "key",
+                "he_key",
+                "cmpFunc",
+                "cmpCache",
+                "existing",
+                "dictGetNext"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 325,
+            "col": 5,
+            "line2": 325,
+            "col2": 17,
+            "function": "dictFindLinkForInsert",
+            "var": [
+                "bucket"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 179,
+            "col": 22,
+            "line2": 179,
+            "col2": 60,
+            "function": "dictAddRaw",
+            "var": [
+                "dictFindLinkForInsert",
+                "d",
+                "key",
+                "existing"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 182,
+            "col": 9,
+            "line2": 182,
+            "col2": 23,
+            "function": "dictAddRaw",
+            "var": [
+                "keyDup",
+                "type",
+                "d",
+                "key"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 184,
+            "col": 5,
+            "line2": 184,
+            "col2": 48,
+            "function": "dictAddRaw",
+            "var": [
+                "dictInsertKeyAtLink",
+                "d",
+                "key",
+                "position"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 214,
+            "col": 13,
+            "line2": 214,
+            "col2": 41,
+            "function": "dictReplace",
+            "var": [
+                "entry",
+                "dictAddRaw",
+                "d",
+                "key",
+                "existing"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 215,
+            "col": 9,
+            "line2": 215,
+            "col2": 13,
+            "function": "dictReplace",
+            "var": [
+                "entry",
+                "dictSetVal",
+                "d",
+                "val"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 219,
+            "col": 31,
+            "line2": 219,
+            "col2": 38,
+            "function": "dictReplace",
+            "var": [
+                "dictGetVal",
+                "existing"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 219,
+            "col": 20,
+            "line2": 219,
+            "col2": 39,
+            "function": "dictReplace",
+            "var": [
+                "dictGetVal",
+                "existing"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 235,
+            "col": 1,
+            "line2": 235,
+            "col2": 1,
+            "function": "dictGetVal",
+            "var": [
+                "__builtin_expect",
+                "entryHasValue",
+                "de",
+                "_serverAssert",
+                "abort",
+                "val",
+                "v"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c",
+            "line": 237,
+            "col": 12,
+            "line2": 237,
+            "col2": 20,
+            "function": "dictGetVal",
+            "var": [
+                "val",
+                "v",
+                "de"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/defect_info.json",
+    "files": [
+        "dict_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件dict_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | static inline keyCmpFunc dictGetCmpFunc (dict *d){\n   3              | if (d->useStoredKeyApi && d->type->storedKeyCompare)\n   5              | if (d->type->keyCompare)\n   7              | return dictDefaultCompare;\n   9              | static inline uint64_t dictHashKey (dict *d, const void *key, int isStoredKey){\n  10              | if (isStoredKey && d->type->storedHashFunction) {\n  13              | return d->type->hashFunction(key);\n  18              | static inline int entryIsNormal (const dictEntry *de){\n  19              | return ((uintptr_t)(void *)de & 7) == 0;\n  40              | static inline int entryHasValue (const dictEntry *de){\n  41              | return entryIsNormal(de);\n---→ 函数: dictAddRaw\n 178 [TRACE-2]    | extern dictEntry * dictAddRaw (dict *d, void *key, dictEntry **existing){\n 179 [TRACE-3,13] | void *position = dictFindLinkForInsert(d, key, existing);\n 180              | if (!position)\n 182 [TRACE-14]   | if (d->type->keyDup)\n 184 [TRACE-15]   | return dictInsertKeyAtLink(d, key, position);\n 212              | extern int dictReplace (dict *d, void *key, void *val){\n 213              | dictEntry *entry, *existing;\n---→ 函数: dictReplace\n 214 [TRACE-1,16] | entry = dictAddRaw(d, key, &existing);\n 215 [TRACE-17]   | if (entry) {\n 219 [TRACE-18,19] | void *oldval = dictGetVal(existing);\n---→ 函数: dictGetVal\n 235 [TRACE-20]   | extern void * dictGetVal (const dictEntry *de){\n 236              | (__builtin_expect(!!((entryHasValue(de))), 1) ? (void)0 : (_serverAssert(\"entryHasValue(de)\", \"dict_InstSlice.c\", 696) , abort()));\n 237 [TRACE-21]   | return de->v.val;\n 274              | static int _dictExpandIfNeeded (dict *d){\n 275              | if (d->pauseAutoResize > 0)\n 276              | return 1;\n 279              | static void _dictRehashStepIfNeeded (dict *d, uint64_t visitedIdx){\n 280              | if ((!((d)->rehashidx != -1)) || (d->pauserehash != 0))\n 281              | return;\n---→ 函数: dictFindLinkForInsert\n 295 [TRACE-4]    | extern dictEntryLink dictFindLinkForInsert (dict *d, const void *key, dictEntry **existing){\n 296              | unsigned long idx, table;\n 297              | dictCmpCache cmpCache = {0};\n 298              | dictEntry *he;\n 299              | uint64_t hash = dictHashKey(d, key, d->useStoredKeyApi);\n 300              | if (existing)\n 301 [TRACE-5]    | *existing = ((void *)0);\n 302 [TRACE-6,7]  | idx = hash & ((d->ht_size_exp[0]) == -1 ? 0 : (((d->ht_size_exp[0]) == -1 ? 0 : (unsigned long)1 << (d->ht_size_exp[0]))) - 1);\n 303              | _dictRehashStepIfNeeded(d, idx);\n 304              | _dictExpandIfNeeded(d);\n 305              | keyCmpFunc cmpFunc = dictGetCmpFunc(d);\n 306 [TRACE-8]    | for (table = 0; table <= 1; table++) {\n 307 [TRACE-9]    | if (table == 0 && (long)idx < d->rehashidx)\n 309              | idx = hash & ((d->ht_size_exp[table]) == -1 ? 0 : (((d->ht_size_exp[table]) == -1 ? 0 : (unsigned long)1 << (d->ht_size_exp[table]))) - 1);\n 310              | he = d->ht_table[table][idx];\n 311 [TRACE-10,11] | while (he)\n 321              | if (!((d)->rehashidx != -1))\n 322              | break;\n 324              | dictEntry **bucket = &d->ht_table[((d)->rehashidx != -1) ? 1 : 0][idx];\n 325 [TRACE-12]   | return bucket;\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-lLhbtb1/dict_end.c": [
+            2,
+            3,
+            5,
+            7,
+            9,
+            10,
+            13,
+            18,
+            19,
+            40,
+            41,
+            178,
+            179,
+            180,
+            182,
+            184,
+            212,
+            213,
+            214,
+            215,
+            219,
+            235,
+            236,
+            237,
+            274,
+            275,
+            276,
+            279,
+            280,
+            281,
+            295,
+            296,
+            297,
+            298,
+            299,
+            300,
+            301,
+            302,
+            303,
+            304,
+            305,
+            306,
+            307,
+            309,
+            310,
+            311,
+            321,
+            322,
+            324,
+            325
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "指针分析能力不足",
+        "路径可行性判定失效"
+    ]
+}

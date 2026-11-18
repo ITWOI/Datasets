@@ -1,0 +1,72 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from _struct_end.c:1:
+./header_func.h:343:18: warning: function '_clearcache' has internal linkage but is not defined [-Wundefined-internal]
+  343 | static PyObject *_clearcache(PyObject *module, PyObject *_unused_ignored) ;
+      |                  ^
+./header_func.h:364:78: note: used here
+  364 | static struct PyMethodDef module_functions[] = {{"_clearcache", (PyCFunction)_clearcache, 4, _clearcache__doc__}, {"calcsize", (PyCFunction)calcsize, 8, calcsize__doc__}, {"iter_unpack", (PyCFunction)(void (*)(void))iter_unpack, 128, iter_unpack__doc__}, {"pack", (PyCFunction)(void (*)(void))pack, 128, pack_doc}, {"pack_into", (PyCFunction)(void (*)(void))pack_into, 128, pack_into_doc}, {"unpack", (PyCFunction)(void (*)(void))unpack, 128, unpack__doc__}, {"unpack_from", (PyCFunction)(void (*)(void))unpack_from, 128 | 2, unpack_from__doc__}, {((void *)0), ((void *)0)}};
+      |                                                                              ^
+./header_func.h:346:18: warning: function 'calcsize' has internal linkage but is not defined [-Wundefined-internal]
+  346 | static PyObject *calcsize(PyObject *module, PyObject *arg) ;
+      |                  ^
+./header_func.h:364:141: note: used here
+  364 | static struct PyMethodDef module_functions[] = {{"_clearcache", (PyCFunction)_clearcache, 4, _clearcache__doc__}, {"calcsize", (PyCFunction)calcsize, 8, calcsize__doc__}, {"iter_unpack", (PyCFunction)(void (*)(void))iter_unpack, 128, iter_unpack__doc__}, {"pack", (PyCFunction)(void (*)(void))pack, 128, pack_doc}, {"pack_into", (PyCFunction)(void (*)(void))pack_into, 128, pack_into_doc}, {"unpack", (PyCFunction)(void (*)(void))unpack, 128, unpack__doc__}, {"unpack_from", (PyCFunction)(void (*)(void))unpack_from, 128 | 2, unpack_from__doc__}, {((void *)0), ((void *)0)}};
+      |                                                                                                                                             ^
+./header_func.h:349:18: warning: function 'iter_unpack' has internal linkage but is not defined [-Wundefined-internal]
+  349 | static PyObject *iter_unpack(PyObject *module, PyObject *const *args, Py_ssize_t nargs) ;
+      |                  ^
+./header_func.h:364:217: note: used here
+  364 | static struct PyMethodDef module_functions[] = {{"_clearcache", (PyCFunction)_clearcache, 4, _clearcache__doc__}, {"calcsize", (PyCFunction)calcsize, 8, calcsize__doc__}, {"iter_unpack", (PyCFunction)(void (*)(void))iter_unpack, 128, iter_unpack__doc__}, {"pack", (PyCFunction)(void (*)(void))pack, 128, pack_doc}, {"pack_into", (PyCFunction)(void (*)(void))pack_into, 128, pack_into_doc}, {"unpack", (PyCFunction)(void (*)(void))unpack, 128, unpack__doc__}, {"unpack_from", (PyCFunction)(void (*)(void))unpack_from, 128 | 2, unpack_from__doc__}, {((void *)0), ((void *)0)}};
+      |                                                                                                                                                                                                                         ^
+./header_func.h:358:18: warning: function 'unpack' has internal linkage but is not defined [-Wundefined-internal]
+  358 | static PyObject *unpack(PyObject *module, PyObject *const *args, Py_ssize_t nargs) ;
+      |                  ^
+./header_func.h:364:431: note: used here
+  364 | static struct PyMethodDef module_functions[] = {{"_clearcache", (PyCFunction)_clearcache, 4, _clearcache__doc__}, {"calcsize", (PyCFunction)calcsize, 8, calcsize__doc__}, {"iter_unpack", (PyCFunction)(void (*)(void))iter_unpack, 128, iter_unpack__doc__}, {"pack", (PyCFunction)(void (*)(void))pack, 128, pack_doc}, {"pack_into", (PyCFunction)(void (*)(void))pack_into, 128, pack_into_doc}, {"unpack", (PyCFunction)(void (*)(void))unpack, 128, unpack__doc__}, {"unpack_from", (PyCFunction)(void (*)(void))unpack_from, 128 | 2, unpack_from__doc__}, {((void *)0), ((void *)0)}};
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                               ^
+./header_func.h:361:18: warning: function 'unpack_from' has internal linkage but is not defined [-Wundefined-internal]
+  361 | static PyObject *unpack_from(PyObject *module, PyObject *const *args, Py_ssize_t nargs, PyObject *kwnames) ;
+      |                  ^
+./header_func.h:364:505: note: used here
+  364 | static struct PyMethodDef module_functions[] = {{"_clearcache", (PyCFunction)_clearcache, 4, _clearcache__doc__}, {"calcsize", (PyCFunction)calcsize, 8, calcsize__doc__}, {"iter_unpack", (PyCFunction)(void (*)(void))iter_unpack, 128, iter_unpack__doc__}, {"pack", (PyCFunction)(void (*)(void))pack, 128, pack_doc}, {"pack_into", (PyCFunction)(void (*)(void))pack_into, 128, pack_into_doc}, {"unpack", (PyCFunction)(void (*)(void))unpack, 128, unpack__doc__}, {"unpack_from", (PyCFunction)(void (*)(void))unpack_from, 128 | 2, unpack_from__doc__}, {((void *)0), ((void *)0)}};
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+./header_func.h:487:18: warning: function 'Struct_unpack' has internal linkage but is not defined [-Wundefined-internal]
+  487 | static PyObject *Struct_unpack(PyStructObject *self, PyObject *arg) ;
+      |                  ^
+./header_func.h:499:295: note: used here
+  499 | static struct PyMethodDef s_methods[] = {{"iter_unpack", (PyCFunction)Struct_iter_unpack, 8, Struct_iter_unpack__doc__}, {"pack", (PyCFunction)(void (*)(void))s_pack, 128, s_pack__doc__}, {"pack_into", (PyCFunction)(void (*)(void))s_pack_into, 128, s_pack_into__doc__}, {"unpack", (PyCFunction)Struct_unpack, 8, Struct_unpack__doc__}, {"unpack_from", (PyCFunction)(void (*)(void))Struct_unpack_from, 128 | 2, Struct_unpack_from__doc__}, {"__sizeof__", (PyCFunction)s_sizeof, 4, s_sizeof__doc__}, {((void *)0), ((void *)0)}};
+      |                                                                                                                                                                                                                                                                                                       ^
+./header_func.h:489:18: warning: function 'Struct_unpack_from' has internal linkage but is not defined [-Wundefined-internal]
+  489 | static PyObject *Struct_unpack_from(PyStructObject *self, PyObject *const *args, Py_ssize_t nargs, PyObject *kwnames) ;
+      |                  ^
+./header_func.h:499:381: note: used here
+  499 | static struct PyMethodDef s_methods[] = {{"iter_unpack", (PyCFunction)Struct_iter_unpack, 8, Struct_iter_unpack__doc__}, {"pack", (PyCFunction)(void (*)(void))s_pack, 128, s_pack__doc__}, {"pack_into", (PyCFunction)(void (*)(void))s_pack_into, 128, s_pack_into__doc__}, {"unpack", (PyCFunction)Struct_unpack, 8, Struct_unpack__doc__}, {"unpack_from", (PyCFunction)(void (*)(void))Struct_unpack_from, 128 | 2, Struct_unpack_from__doc__}, {"__sizeof__", (PyCFunction)s_sizeof, 4, s_sizeof__doc__}, {((void *)0), ((void *)0)}};
+      |                                                                                                                                                                                                                                                                                                                                                                                             ^
+./header_func.h:521:12: warning: function 'Struct___init__' has internal linkage but is not defined [-Wundefined-internal]
+  521 | static int Struct___init__(PyObject *self, PyObject *args, PyObject *kwargs) ;
+      |            ^
+./header_func.h:525:239: note: used here
+  525 | static PyType_Slot PyStructType_slots[] = {{52, s_dealloc}, {58, PyObject_GenericGetAttr}, {69, PyObject_GenericSetAttr}, {56, (void *)s__doc__}, {71, s_traverse}, {51, s_clear}, {64, s_methods}, {72, s_members}, {73, s_getsetlist}, {60, Struct___init__}, {47, PyType_GenericAlloc}, {65, s_new}, {74, PyObject_GC_Del}, {0, 0}};
+      |                                                                                                                                                                                                                                               ^
+./header_func.h:466:25: warning: function 'PyObject_CallOneArg' has internal linkage but is not defined [-Wundefined-internal]
+  466 | static inline PyObject *PyObject_CallOneArg(PyObject *func, PyObject *arg) ;
+      |                         ^
+_struct_end.c:1212:16: note: used here
+ 1212 |     s_object = PyObject_CallOneArg(state->PyStructType, fmt);
+      |                ^
+9 warnings generated.
+In file included from _struct_end.c:3:
+./object.h:12:9: warning: Access to field 'ob_refcnt' results in a dereference of a null pointer (loaded from variable 'op') [core.NullDereference]
+   12 |     if (--op->ob_refcnt != 0) {
+      |         ^~~~~~~~~~~~~~~
+./object.h:12:9: warning: Access to field 'ob_refcnt' results in a dereference of a null pointer (loaded from variable 'op') [core.NullDereference]
+   12 |     if (--op->ob_refcnt != 0) {
+      |         ^~~~~~~~~~~~~~~
+./object.h:12:9: warning: Access to field 'ob_refcnt' results in a dereference of a null pointer (loaded from variable 'op') [core.NullDereference]
+   12 |     if (--op->ob_refcnt != 0) {
+      |         ^~~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-HSDtjv1/2026-03-12-195932-98941-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-HSDtjv1/2026-03-12-195932-98941-1' to examine bug reports.

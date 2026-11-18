@@ -1,0 +1,377 @@
+{
+    "bug_type": "Uninitialized argument value",
+    "checker": "Clang Static Analyzer",
+    "description": "3rd function call argument is an uninitialized value",
+    "warning_func": "",
+    "line_number": 66,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "parse_args_finds_byte",
+        "stringlib_parse_args_finds",
+        "_Py_bytes_rindex",
+        "find_internal"
+    ],
+    "is_single_file": false,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/bytes_methods_end.c",
+            "line": 77,
+            "col": 25,
+            "line2": 77,
+            "col2": 67,
+            "function": "_Py_bytes_rindex",
+            "var": [
+                "find_internal",
+                "str",
+                "len",
+                "args"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/bytes_methods_end.c",
+            "line": 28,
+            "col": 1,
+            "line2": 28,
+            "col2": 1,
+            "function": "find_internal",
+            "var": [
+                "parse_args_finds_byte",
+                "function_name",
+                "args",
+                "subobj",
+                "byte",
+                "start",
+                "end",
+                "PyObject_GetBuffer",
+                "subbuf",
+                "sub",
+                "buf",
+                "sub_len",
+                "len",
+                "dir",
+                "res",
+                "stringlib_rfind_char",
+                "str",
+                "stringlib_find_slice",
+                "stringlib_rfind_slice"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/bytes_methods_end.c",
+            "line": 30,
+            "col": 5,
+            "line2": 30,
+            "col2": 13,
+            "function": "find_internal",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/bytes_methods_end.c",
+            "line": 36,
+            "col": 10,
+            "line2": 36,
+            "col2": 81,
+            "function": "find_internal",
+            "var": [
+                "parse_args_finds_byte",
+                "function_name",
+                "args",
+                "subobj",
+                "byte",
+                "start",
+                "end"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/bytes_methods_end.c",
+            "line": 3,
+            "col": 1,
+            "line2": 3,
+            "col2": 1,
+            "function": "parse_args_finds_byte",
+            "var": [
+                "stringlib_parse_args_finds",
+                "function_name",
+                "args",
+                "tmp_subobj",
+                "start",
+                "end",
+                "PyObject_CheckBuffer",
+                "subobj",
+                "_PyIndex_Check",
+                "ival",
+                "PyNumber_AsSsize_t",
+                "PyErr_Occurred",
+                "byte"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/bytes_methods_end.c",
+            "line": 6,
+            "col": 10,
+            "line2": 6,
+            "col2": 81,
+            "function": "parse_args_finds_byte",
+            "var": [
+                "stringlib_parse_args_finds",
+                "function_name",
+                "args",
+                "tmp_subobj",
+                "start",
+                "end"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/./find.h",
+            "line": 22,
+            "col": 1,
+            "line2": 22,
+            "col2": 1,
+            "function": "stringlib_parse_args_finds",
+            "var": [
+                "_Py_NoneStruct",
+                "strlen",
+                "format",
+                "strncpy",
+                "len",
+                "function_name",
+                "_PyArg_ParseTuple_SizeT",
+                "args",
+                "tmp_subobj",
+                "obj_start",
+                "obj_end",
+                "_PyEval_SliceIndex",
+                "tmp_start",
+                "tmp_end",
+                "start",
+                "end",
+                "subobj"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/./find.h",
+            "line": 31,
+            "col": 9,
+            "line2": 31,
+            "col2": 81,
+            "function": "stringlib_parse_args_finds",
+            "var": [
+                "_PyArg_ParseTuple_SizeT",
+                "args",
+                "format",
+                "tmp_subobj",
+                "obj_start",
+                "obj_end"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/./find.h",
+            "line": 33,
+            "col": 9,
+            "line2": 33,
+            "col2": 38,
+            "function": "stringlib_parse_args_finds",
+            "var": [
+                "obj_start",
+                "_Py_NoneStruct",
+                "_PyEval_SliceIndex",
+                "tmp_start"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/./find.h",
+            "line": 36,
+            "col": 9,
+            "line2": 36,
+            "col2": 36,
+            "function": "stringlib_parse_args_finds",
+            "var": [
+                "obj_end",
+                "_Py_NoneStruct",
+                "_PyEval_SliceIndex",
+                "tmp_end"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/./find.h",
+            "line": 41,
+            "col": 5,
+            "line2": 41,
+            "col2": 24,
+            "function": "stringlib_parse_args_finds",
+            "var": [
+                "subobj",
+                "tmp_subobj"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/bytes_methods_end.c",
+            "line": 6,
+            "col": 10,
+            "line2": 6,
+            "col2": 81,
+            "function": "parse_args_finds_byte",
+            "var": [
+                "stringlib_parse_args_finds",
+                "function_name",
+                "args",
+                "tmp_subobj",
+                "start",
+                "end"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/bytes_methods_end.c",
+            "line": 8,
+            "col": 9,
+            "line2": 8,
+            "col2": 40,
+            "function": "parse_args_finds_byte",
+            "var": [
+                "PyObject_CheckBuffer",
+                "tmp_subobj",
+                "subobj"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/bytes_methods_end.c",
+            "line": 9,
+            "col": 9,
+            "line2": 9,
+            "col2": 28,
+            "function": "parse_args_finds_byte",
+            "var": [
+                "subobj",
+                "tmp_subobj"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/bytes_methods_end.c",
+            "line": 36,
+            "col": 10,
+            "line2": 36,
+            "col2": 81,
+            "function": "find_internal",
+            "var": [
+                "parse_args_finds_byte",
+                "function_name",
+                "args",
+                "subobj",
+                "byte",
+                "start",
+                "end"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/bytes_methods_end.c",
+            "line": 38,
+            "col": 9,
+            "line2": 38,
+            "col2": 14,
+            "function": "find_internal",
+            "var": [
+                "subobj",
+                "PyObject_GetBuffer",
+                "subbuf",
+                "sub",
+                "buf",
+                "sub_len",
+                "len",
+                "byte"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/bytes_methods_end.c",
+            "line": 47,
+            "col": 9,
+            "line2": 47,
+            "col2": 17,
+            "function": "find_internal",
+            "var": [
+                "end",
+                "len"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/bytes_methods_end.c",
+            "line": 66,
+            "col": 66,
+            "line2": 66,
+            "col2": 69,
+            "function": "find_internal",
+            "var": [
+                "res",
+                "stringlib_rfind_char",
+                "str",
+                "start",
+                "end",
+                "sub"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/defect_info.json",
+    "files": [
+        "./find.h",
+        "bytes_methods_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件bytes_methods_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: parse_args_finds_byte\n   3 [TRACE-5]    | static inline int parse_args_finds_byte (const char *function_name, PyObject *args, PyObject **subobj, char *byte, Py_ssize_t *start, Py_ssize_t *end){\n   4              | PyObject *tmp_subobj;\n   5              | Py_ssize_t ival;\n   6 [TRACE-6,12] | if (!stringlib_parse_args_finds(function_name, args, &tmp_subobj, start, end))\n   8 [TRACE-13]   | if (PyObject_CheckBuffer(tmp_subobj)) {\n   9 [TRACE-14]   | *subobj = tmp_subobj;\n  10              | return 1;\n---→ 函数: find_internal\n  28 [TRACE-2]    | static inline Py_ssize_t find_internal (const char *str, Py_ssize_t len, const char *function_name, PyObject *args, int dir){\n  29              | PyObject *subobj;\n  30 [TRACE-3]    | char byte;\n  31              | Py_buffer subbuf;\n  32              | const char *sub;\n  33              | Py_ssize_t sub_len;\n  34              | Py_ssize_t start = 0, end = ((Py_ssize_t)(((size_t)-1) >> 1));\n  35              | Py_ssize_t res;\n  36 [TRACE-4,15] | if (!parse_args_finds_byte(function_name, args, &subobj, &byte, &start, &end))\n  38 [TRACE-16]   | if (subobj) {\n  44              | sub = &byte;\n  45              | sub_len = 1;\n  47 [TRACE-17]   | if (end > len)\n  49              | else if (end < 0) {\n  54              | if (start < 0) {\n  60              | if (end - start < sub_len) {\n  62              | } else if (sub_len == 1) {\n  63              | if (dir > 0) {\n  66 [TRACE-18]   | res = stringlib_rfind_char(str + start, end - start, *sub);\n  76              | extern PyObject * _Py_bytes_rindex (const char *str, Py_ssize_t len, PyObject *args){\n---→ 函数: _Py_bytes_rindex\n  77 [TRACE-1]    | Py_ssize_t result = find_internal(str, len, \"rindex\", args, -1);\n------------------------------------------------------------\n\n=== 文件find.h  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: stringlib_parse_args_finds\n  22 [TRACE-7]    | static inline int stringlib_parse_args_finds (const char *function_name, PyObject *args, PyObject **subobj, Py_ssize_t *start, Py_ssize_t *end){\n  23              | PyObject *tmp_subobj;\n  24              | Py_ssize_t tmp_start = 0;\n  25              | Py_ssize_t tmp_end = ((Py_ssize_t)(((size_t)-1) >> 1));\n  26              | PyObject *obj_start = (&_Py_NoneStruct), *obj_end = (&_Py_NoneStruct);\n  27              | char format[50] = \"O|OO:\";\n  28              | size_t len = strlen(format);\n  29              | strncpy(format + len, function_name, 50 - len - 1);\n  30              | format[50 - 1] = '\\x00';\n  31 [TRACE-8]    | if (!_PyArg_ParseTuple_SizeT(args, format, &tmp_subobj, &obj_start, &obj_end))\n  33 [TRACE-9]    | if (obj_start != (&_Py_NoneStruct))\n  36 [TRACE-10]   | if (obj_end != (&_Py_NoneStruct))\n  39              | *start = tmp_start;\n  40              | *end = tmp_end;\n  41 [TRACE-11]   | *subobj = tmp_subobj;\n  42              | return 1;\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/bytes_methods_end.c": [
+            3,
+            4,
+            5,
+            6,
+            8,
+            9,
+            10,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            38,
+            44,
+            45,
+            47,
+            49,
+            54,
+            60,
+            62,
+            63,
+            66,
+            76,
+            77
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-B79ukL2/./find.h": [
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            33,
+            36,
+            39,
+            40,
+            41,
+            42
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "外部库/API 逻辑建模缺失",
+        "指针分析能力不足"
+    ]
+}

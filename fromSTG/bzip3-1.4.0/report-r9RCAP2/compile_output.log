@@ -1,0 +1,39 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from main_end.c:1:
+./header_func.h:10:13: warning: function 'write_neutral_s32' has internal linkage but is not defined [-Wundefined-internal]
+   10 | static void write_neutral_s32(u8 *data, s32 value) ;
+      |             ^
+main_end.c:41:9: note: used here
+   41 |         write_neutral_s32(byteswap_buf, block_size);
+      |         ^
+In file included from main_end.c:1:
+./header_func.h:14:12: warning: function 'read_neutral_s32' has internal linkage but is not defined [-Wundefined-internal]
+   14 | static s32 read_neutral_s32(const u8 *data) ;
+      |            ^
+main_end.c:55:26: note: used here
+   55 |             block_size = read_neutral_s32(byteswap_buf);
+      |                          ^
+2 warnings generated.
+main_end.c:181:17: warning: Potential memory leak [unix.Malloc]
+  181 |                 fprintf(stderr, "Failed to create a block encoder state.\n");
+      |                 ^~~~~~~
+main_end.c:307:12: warning: Potential leak of memory pointed to by 'buffer' [unix.Malloc]
+  307 |     return 0;
+      |            ^
+main_end.c:181:17: warning: Potential memory leak [unix.Malloc]
+  181 |                 fprintf(stderr, "Failed to create a block encoder state.\n");
+      |                 ^~~~~~~
+main_end.c:307:12: warning: Potential leak of memory pointed to by 'buffer' [unix.Malloc]
+  307 |     return 0;
+      |            ^
+main_end.c:181:17: warning: Potential memory leak [unix.Malloc]
+  181 |                 fprintf(stderr, "Failed to create a block encoder state.\n");
+      |                 ^~~~~~~
+main_end.c:307:12: warning: Potential leak of memory pointed to by 'buffer' [unix.Malloc]
+  307 |     return 0;
+      |            ^
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/2026-03-12-204335-123951-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/2026-03-12-204335-123951-1' to examine bug reports.

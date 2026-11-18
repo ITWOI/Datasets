@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1",
+        "arguments": [
+            "clang",
+            "-c",
+            "path/tests/cpython-3.10.17/Objects/obmalloc.c"
+        ],
+        "file": "path/tests/cpython-3.10.17/Objects/obmalloc.c"
+    }
+]

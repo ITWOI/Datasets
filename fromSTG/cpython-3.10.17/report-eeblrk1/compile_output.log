@@ -1,0 +1,221 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from longobject_end.c:1:
+./header_func.h:72:18: warning: function 'long_mod' has internal linkage but is not defined [-Wundefined-internal]
+   72 | static PyObject *long_mod(PyObject *a, PyObject *b) ;
+      |                  ^
+./header_func.h:104:108: note: used here
+  104 | static PyNumberMethods long_as_number = {(binaryfunc)long_add, (binaryfunc)long_sub, (binaryfunc)long_mul, long_mod, long_divmod, long_pow, (unaryfunc)long_neg, long_long, (unaryfunc)long_abs, (inquiry)long_bool, (unaryfunc)long_invert, long_lshift, long_rshift, long_and, long_xor, long_or, long_long, 0, long_float, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, long_div, long_true_divide, 0, 0, long_long};
+      |                                                                                                            ^
+./header_func.h:74:18: warning: function 'long_divmod' has internal linkage but is not defined [-Wundefined-internal]
+   74 | static PyObject *long_divmod(PyObject *a, PyObject *b) ;
+      |                  ^
+./header_func.h:104:118: note: used here
+  104 | static PyNumberMethods long_as_number = {(binaryfunc)long_add, (binaryfunc)long_sub, (binaryfunc)long_mul, long_mod, long_divmod, long_pow, (unaryfunc)long_neg, long_long, (unaryfunc)long_abs, (inquiry)long_bool, (unaryfunc)long_invert, long_lshift, long_rshift, long_and, long_xor, long_or, long_long, 0, long_float, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, long_div, long_true_divide, 0, 0, long_long};
+      |                                                                                                                      ^
+./header_func.h:78:18: warning: function 'long_neg' has internal linkage but is not defined [-Wundefined-internal]
+   78 | static PyObject *long_neg(PyLongObject *v) ;
+      |                  ^
+./header_func.h:104:152: note: used here
+  104 | static PyNumberMethods long_as_number = {(binaryfunc)long_add, (binaryfunc)long_sub, (binaryfunc)long_mul, long_mod, long_divmod, long_pow, (unaryfunc)long_neg, long_long, (unaryfunc)long_abs, (inquiry)long_bool, (unaryfunc)long_invert, long_lshift, long_rshift, long_and, long_xor, long_or, long_long, 0, long_float, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, long_div, long_true_divide, 0, 0, long_long};
+      |                                                                                                                                                        ^
+./header_func.h:82:18: warning: function 'long_abs' has internal linkage but is not defined [-Wundefined-internal]
+   82 | static PyObject *long_abs(PyLongObject *v) ;
+      |                  ^
+./header_func.h:104:184: note: used here
+  104 | static PyNumberMethods long_as_number = {(binaryfunc)long_add, (binaryfunc)long_sub, (binaryfunc)long_mul, long_mod, long_divmod, long_pow, (unaryfunc)long_neg, long_long, (unaryfunc)long_abs, (inquiry)long_bool, (unaryfunc)long_invert, long_lshift, long_rshift, long_and, long_xor, long_or, long_long, 0, long_float, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, long_div, long_true_divide, 0, 0, long_long};
+      |                                                                                                                                                                                        ^
+./header_func.h:84:12: warning: function 'long_bool' has internal linkage but is not defined [-Wundefined-internal]
+   84 | static int long_bool(PyLongObject *v) ;
+      |            ^
+./header_func.h:104:203: note: used here
+  104 | static PyNumberMethods long_as_number = {(binaryfunc)long_add, (binaryfunc)long_sub, (binaryfunc)long_mul, long_mod, long_divmod, long_pow, (unaryfunc)long_neg, long_long, (unaryfunc)long_abs, (inquiry)long_bool, (unaryfunc)long_invert, long_lshift, long_rshift, long_and, long_xor, long_or, long_long, 0, long_float, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, long_div, long_true_divide, 0, 0, long_long};
+      |                                                                                                                                                                                                           ^
+./header_func.h:86:18: warning: function 'long_invert' has internal linkage but is not defined [-Wundefined-internal]
+   86 | static PyObject *long_invert(PyLongObject *v) ;
+      |                  ^
+./header_func.h:104:225: note: used here
+  104 | static PyNumberMethods long_as_number = {(binaryfunc)long_add, (binaryfunc)long_sub, (binaryfunc)long_mul, long_mod, long_divmod, long_pow, (unaryfunc)long_neg, long_long, (unaryfunc)long_abs, (inquiry)long_bool, (unaryfunc)long_invert, long_lshift, long_rshift, long_and, long_xor, long_or, long_long, 0, long_float, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, long_div, long_true_divide, 0, 0, long_long};
+      |                                                                                                                                                                                                                                 ^
+./header_func.h:88:18: warning: function 'long_lshift' has internal linkage but is not defined [-Wundefined-internal]
+   88 | static PyObject *long_lshift(PyObject *a, PyObject *b) ;
+      |                  ^
+./header_func.h:104:238: note: used here
+  104 | static PyNumberMethods long_as_number = {(binaryfunc)long_add, (binaryfunc)long_sub, (binaryfunc)long_mul, long_mod, long_divmod, long_pow, (unaryfunc)long_neg, long_long, (unaryfunc)long_abs, (inquiry)long_bool, (unaryfunc)long_invert, long_lshift, long_rshift, long_and, long_xor, long_or, long_long, 0, long_float, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, long_div, long_true_divide, 0, 0, long_long};
+      |                                                                                                                                                                                                                                              ^
+./header_func.h:90:18: warning: function 'long_rshift' has internal linkage but is not defined [-Wundefined-internal]
+   90 | static PyObject *long_rshift(PyObject *a, PyObject *b) ;
+      |                  ^
+./header_func.h:104:251: note: used here
+  104 | static PyNumberMethods long_as_number = {(binaryfunc)long_add, (binaryfunc)long_sub, (binaryfunc)long_mul, long_mod, long_divmod, long_pow, (unaryfunc)long_neg, long_long, (unaryfunc)long_abs, (inquiry)long_bool, (unaryfunc)long_invert, long_lshift, long_rshift, long_and, long_xor, long_or, long_long, 0, long_float, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, long_div, long_true_divide, 0, 0, long_long};
+      |                                                                                                                                                                                                                                                           ^
+./header_func.h:92:18: warning: function 'long_and' has internal linkage but is not defined [-Wundefined-internal]
+   92 | static PyObject *long_and(PyObject *a, PyObject *b) ;
+      |                  ^
+./header_func.h:104:264: note: used here
+  104 | static PyNumberMethods long_as_number = {(binaryfunc)long_add, (binaryfunc)long_sub, (binaryfunc)long_mul, long_mod, long_divmod, long_pow, (unaryfunc)long_neg, long_long, (unaryfunc)long_abs, (inquiry)long_bool, (unaryfunc)long_invert, long_lshift, long_rshift, long_and, long_xor, long_or, long_long, 0, long_float, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, long_div, long_true_divide, 0, 0, long_long};
+      |                                                                                                                                                                                                                                                                        ^
+./header_func.h:94:18: warning: function 'long_xor' has internal linkage but is not defined [-Wundefined-internal]
+   94 | static PyObject *long_xor(PyObject *a, PyObject *b) ;
+      |                  ^
+./header_func.h:104:274: note: used here
+  104 | static PyNumberMethods long_as_number = {(binaryfunc)long_add, (binaryfunc)long_sub, (binaryfunc)long_mul, long_mod, long_divmod, long_pow, (unaryfunc)long_neg, long_long, (unaryfunc)long_abs, (inquiry)long_bool, (unaryfunc)long_invert, long_lshift, long_rshift, long_and, long_xor, long_or, long_long, 0, long_float, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, long_div, long_true_divide, 0, 0, long_long};
+      |                                                                                                                                                                                                                                                                                  ^
+./header_func.h:96:18: warning: function 'long_or' has internal linkage but is not defined [-Wundefined-internal]
+   96 | static PyObject *long_or(PyObject *a, PyObject *b) ;
+      |                  ^
+./header_func.h:104:284: note: used here
+  104 | static PyNumberMethods long_as_number = {(binaryfunc)long_add, (binaryfunc)long_sub, (binaryfunc)long_mul, long_mod, long_divmod, long_pow, (unaryfunc)long_neg, long_long, (unaryfunc)long_abs, (inquiry)long_bool, (unaryfunc)long_invert, long_lshift, long_rshift, long_and, long_xor, long_or, long_long, 0, long_float, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, long_div, long_true_divide, 0, 0, long_long};
+      |                                                                                                                                                                                                                                                                                            ^
+./header_func.h:98:18: warning: function 'long_float' has internal linkage but is not defined [-Wundefined-internal]
+   98 | static PyObject *long_float(PyObject *v) ;
+      |                  ^
+./header_func.h:104:307: note: used here
+  104 | static PyNumberMethods long_as_number = {(binaryfunc)long_add, (binaryfunc)long_sub, (binaryfunc)long_mul, long_mod, long_divmod, long_pow, (unaryfunc)long_neg, long_long, (unaryfunc)long_abs, (inquiry)long_bool, (unaryfunc)long_invert, long_lshift, long_rshift, long_and, long_xor, long_or, long_long, 0, long_float, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, long_div, long_true_divide, 0, 0, long_long};
+      |                                                                                                                                                                                                                                                                                                                   ^
+./header_func.h:100:18: warning: function 'long_div' has internal linkage but is not defined [-Wundefined-internal]
+  100 | static PyObject *long_div(PyObject *a, PyObject *b) ;
+      |                  ^
+./header_func.h:104:349: note: used here
+  104 | static PyNumberMethods long_as_number = {(binaryfunc)long_add, (binaryfunc)long_sub, (binaryfunc)long_mul, long_mod, long_divmod, long_pow, (unaryfunc)long_neg, long_long, (unaryfunc)long_abs, (inquiry)long_bool, (unaryfunc)long_invert, long_lshift, long_rshift, long_and, long_xor, long_or, long_long, 0, long_float, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, long_div, long_true_divide, 0, 0, long_long};
+      |                                                                                                                                                                                                                                                                                                                                                             ^
+./header_func.h:102:18: warning: function 'long_true_divide' has internal linkage but is not defined [-Wundefined-internal]
+  102 | static PyObject *long_true_divide(PyObject *v, PyObject *w) ;
+      |                  ^
+./header_func.h:104:359: note: used here
+  104 | static PyNumberMethods long_as_number = {(binaryfunc)long_add, (binaryfunc)long_sub, (binaryfunc)long_mul, long_mod, long_divmod, long_pow, (unaryfunc)long_neg, long_long, (unaryfunc)long_abs, (inquiry)long_bool, (unaryfunc)long_invert, long_lshift, long_rshift, long_and, long_xor, long_or, long_long, 0, long_float, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, long_div, long_true_divide, 0, 0, long_long};
+      |                                                                                                                                                                                                                                                                                                                                                                       ^
+./header_func.h:106:18: warning: function 'long_long_meth' has internal linkage but is not defined [-Wundefined-internal]
+  106 | static PyObject *long_long_meth(PyObject *self, PyObject *_unused_ignored) ;
+      |                  ^
+./header_func.h:135:52: note: used here
+  135 | static PyMethodDef long_methods[] = {{"conjugate", long_long_meth, 4, "Returns self, the complex conjugate of any int."}, {"bit_length", (PyCFunction)int_bit_length, 4, int_bit_length__doc__}, {"bit_count", (PyCFunction)int_bit_count, 4, int_bit_count__doc__}, {"to_bytes", (PyCFunction)(void (*)(void))int_to_bytes, 128 | 2, int_to_bytes__doc__}, {"from_bytes", (PyCFunction)(void (*)(void))int_from_bytes, 128 | 2 | 16, int_from_bytes__doc__}, {"as_integer_ratio", (PyCFunction)int_as_integer_ratio, 4, int_as_integer_ratio__doc__}, {"__trunc__", long_long_meth, 4, "Truncating an Integral returns itself."}, {"__floor__", long_long_meth, 4, "Flooring an Integral returns itself."}, {"__ceil__", long_long_meth, 4, "Ceiling of an Integral returns itself."}, {"__round__", (PyCFunction)(void (*)(void))int___round__, 128, int___round____doc__}, {"__getnewargs__", (PyCFunction)int___getnewargs__, 4, int___getnewargs____doc__}, {"__format__", (PyCFunction)int___format__, 8, int___format____doc__}, {"__sizeof__", (PyCFunction)int___sizeof__, 4, int___sizeof____doc__}, {((void *)0), ((void *)0)}};
+      |                                                    ^
+./header_func.h:108:18: warning: function 'int_bit_length' has internal linkage but is not defined [-Wundefined-internal]
+  108 | static PyObject *int_bit_length(PyObject *self, PyObject *_unused_ignored) ;
+      |                  ^
+./header_func.h:135:151: note: used here
+  135 | static PyMethodDef long_methods[] = {{"conjugate", long_long_meth, 4, "Returns self, the complex conjugate of any int."}, {"bit_length", (PyCFunction)int_bit_length, 4, int_bit_length__doc__}, {"bit_count", (PyCFunction)int_bit_count, 4, int_bit_count__doc__}, {"to_bytes", (PyCFunction)(void (*)(void))int_to_bytes, 128 | 2, int_to_bytes__doc__}, {"from_bytes", (PyCFunction)(void (*)(void))int_from_bytes, 128 | 2 | 16, int_from_bytes__doc__}, {"as_integer_ratio", (PyCFunction)int_as_integer_ratio, 4, int_as_integer_ratio__doc__}, {"__trunc__", long_long_meth, 4, "Truncating an Integral returns itself."}, {"__floor__", long_long_meth, 4, "Flooring an Integral returns itself."}, {"__ceil__", long_long_meth, 4, "Ceiling of an Integral returns itself."}, {"__round__", (PyCFunction)(void (*)(void))int___round__, 128, int___round____doc__}, {"__getnewargs__", (PyCFunction)int___getnewargs__, 4, int___getnewargs____doc__}, {"__format__", (PyCFunction)int___format__, 8, int___format____doc__}, {"__sizeof__", (PyCFunction)int___sizeof__, 4, int___sizeof____doc__}, {((void *)0), ((void *)0)}};
+      |                                                                                                                                                       ^
+./header_func.h:111:18: warning: function 'int_bit_count' has internal linkage but is not defined [-Wundefined-internal]
+  111 | static PyObject *int_bit_count(PyObject *self, PyObject *_unused_ignored) ;
+      |                  ^
+./header_func.h:135:221: note: used here
+  135 | static PyMethodDef long_methods[] = {{"conjugate", long_long_meth, 4, "Returns self, the complex conjugate of any int."}, {"bit_length", (PyCFunction)int_bit_length, 4, int_bit_length__doc__}, {"bit_count", (PyCFunction)int_bit_count, 4, int_bit_count__doc__}, {"to_bytes", (PyCFunction)(void (*)(void))int_to_bytes, 128 | 2, int_to_bytes__doc__}, {"from_bytes", (PyCFunction)(void (*)(void))int_from_bytes, 128 | 2 | 16, int_from_bytes__doc__}, {"as_integer_ratio", (PyCFunction)int_as_integer_ratio, 4, int_as_integer_ratio__doc__}, {"__trunc__", long_long_meth, 4, "Truncating an Integral returns itself."}, {"__floor__", long_long_meth, 4, "Flooring an Integral returns itself."}, {"__ceil__", long_long_meth, 4, "Ceiling of an Integral returns itself."}, {"__round__", (PyCFunction)(void (*)(void))int___round__, 128, int___round____doc__}, {"__getnewargs__", (PyCFunction)int___getnewargs__, 4, int___getnewargs____doc__}, {"__format__", (PyCFunction)int___format__, 8, int___format____doc__}, {"__sizeof__", (PyCFunction)int___sizeof__, 4, int___sizeof____doc__}, {((void *)0), ((void *)0)}};
+      |                                                                                                                                                                                                                             ^
+./header_func.h:114:18: warning: function 'int_to_bytes' has internal linkage but is not defined [-Wundefined-internal]
+  114 | static PyObject *int_to_bytes(PyObject *self, PyObject *const *args, Py_ssize_t nargs, PyObject *kwnames) ;
+      |                  ^
+./header_func.h:135:304: note: used here
+  135 | static PyMethodDef long_methods[] = {{"conjugate", long_long_meth, 4, "Returns self, the complex conjugate of any int."}, {"bit_length", (PyCFunction)int_bit_length, 4, int_bit_length__doc__}, {"bit_count", (PyCFunction)int_bit_count, 4, int_bit_count__doc__}, {"to_bytes", (PyCFunction)(void (*)(void))int_to_bytes, 128 | 2, int_to_bytes__doc__}, {"from_bytes", (PyCFunction)(void (*)(void))int_from_bytes, 128 | 2 | 16, int_from_bytes__doc__}, {"as_integer_ratio", (PyCFunction)int_as_integer_ratio, 4, int_as_integer_ratio__doc__}, {"__trunc__", long_long_meth, 4, "Truncating an Integral returns itself."}, {"__floor__", long_long_meth, 4, "Flooring an Integral returns itself."}, {"__ceil__", long_long_meth, 4, "Ceiling of an Integral returns itself."}, {"__round__", (PyCFunction)(void (*)(void))int___round__, 128, int___round____doc__}, {"__getnewargs__", (PyCFunction)int___getnewargs__, 4, int___getnewargs____doc__}, {"__format__", (PyCFunction)int___format__, 8, int___format____doc__}, {"__sizeof__", (PyCFunction)int___sizeof__, 4, int___sizeof____doc__}, {((void *)0), ((void *)0)}};
+      |                                                                                                                                                                                                                                                                                                                ^
+./header_func.h:117:18: warning: function 'int_from_bytes' has internal linkage but is not defined [-Wundefined-internal]
+  117 | static PyObject *int_from_bytes(PyTypeObject *type, PyObject *const *args, Py_ssize_t nargs, PyObject *kwnames) ;
+      |                  ^
+./header_func.h:135:393: note: used here
+  135 | static PyMethodDef long_methods[] = {{"conjugate", long_long_meth, 4, "Returns self, the complex conjugate of any int."}, {"bit_length", (PyCFunction)int_bit_length, 4, int_bit_length__doc__}, {"bit_count", (PyCFunction)int_bit_count, 4, int_bit_count__doc__}, {"to_bytes", (PyCFunction)(void (*)(void))int_to_bytes, 128 | 2, int_to_bytes__doc__}, {"from_bytes", (PyCFunction)(void (*)(void))int_from_bytes, 128 | 2 | 16, int_from_bytes__doc__}, {"as_integer_ratio", (PyCFunction)int_as_integer_ratio, 4, int_as_integer_ratio__doc__}, {"__trunc__", long_long_meth, 4, "Truncating an Integral returns itself."}, {"__floor__", long_long_meth, 4, "Flooring an Integral returns itself."}, {"__ceil__", long_long_meth, 4, "Ceiling of an Integral returns itself."}, {"__round__", (PyCFunction)(void (*)(void))int___round__, 128, int___round____doc__}, {"__getnewargs__", (PyCFunction)int___getnewargs__, 4, int___getnewargs____doc__}, {"__format__", (PyCFunction)int___format__, 8, int___format____doc__}, {"__sizeof__", (PyCFunction)int___sizeof__, 4, int___sizeof____doc__}, {((void *)0), ((void *)0)}};
+      |                                                                                                                                                                                                                                                                                                                                                                                                         ^
+./header_func.h:120:18: warning: function 'int_as_integer_ratio' has internal linkage but is not defined [-Wundefined-internal]
+  120 | static PyObject *int_as_integer_ratio(PyObject *self, PyObject *_unused_ignored) ;
+      |                  ^
+./header_func.h:135:481: note: used here
+  135 | static PyMethodDef long_methods[] = {{"conjugate", long_long_meth, 4, "Returns self, the complex conjugate of any int."}, {"bit_length", (PyCFunction)int_bit_length, 4, int_bit_length__doc__}, {"bit_count", (PyCFunction)int_bit_count, 4, int_bit_count__doc__}, {"to_bytes", (PyCFunction)(void (*)(void))int_to_bytes, 128 | 2, int_to_bytes__doc__}, {"from_bytes", (PyCFunction)(void (*)(void))int_from_bytes, 128 | 2 | 16, int_from_bytes__doc__}, {"as_integer_ratio", (PyCFunction)int_as_integer_ratio, 4, int_as_integer_ratio__doc__}, {"__trunc__", long_long_meth, 4, "Truncating an Integral returns itself."}, {"__floor__", long_long_meth, 4, "Flooring an Integral returns itself."}, {"__ceil__", long_long_meth, 4, "Ceiling of an Integral returns itself."}, {"__round__", (PyCFunction)(void (*)(void))int___round__, 128, int___round____doc__}, {"__getnewargs__", (PyCFunction)int___getnewargs__, 4, int___getnewargs____doc__}, {"__format__", (PyCFunction)int___format__, 8, int___format____doc__}, {"__sizeof__", (PyCFunction)int___sizeof__, 4, int___sizeof____doc__}, {((void *)0), ((void *)0)}};
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ^
+./header_func.h:123:18: warning: function 'int___round__' has internal linkage but is not defined [-Wundefined-internal]
+  123 | static PyObject *int___round__(PyObject *self, PyObject *const *args, Py_ssize_t nargs) ;
+      |                  ^
+./header_func.h:135:804: note: used here
+  135 | static PyMethodDef long_methods[] = {{"conjugate", long_long_meth, 4, "Returns self, the complex conjugate of any int."}, {"bit_length", (PyCFunction)int_bit_length, 4, int_bit_length__doc__}, {"bit_count", (PyCFunction)int_bit_count, 4, int_bit_count__doc__}, {"to_bytes", (PyCFunction)(void (*)(void))int_to_bytes, 128 | 2, int_to_bytes__doc__}, {"from_bytes", (PyCFunction)(void (*)(void))int_from_bytes, 128 | 2 | 16, int_from_bytes__doc__}, {"as_integer_ratio", (PyCFunction)int_as_integer_ratio, 4, int_as_integer_ratio__doc__}, {"__trunc__", long_long_meth, 4, "Truncating an Integral returns itself."}, {"__floor__", long_long_meth, 4, "Flooring an Integral returns itself."}, {"__ceil__", long_long_meth, 4, "Ceiling of an Integral returns itself."}, {"__round__", (PyCFunction)(void (*)(void))int___round__, 128, int___round____doc__}, {"__getnewargs__", (PyCFunction)int___getnewargs__, 4, int___getnewargs____doc__}, {"__format__", (PyCFunction)int___format__, 8, int___format____doc__}, {"__sizeof__", (PyCFunction)int___sizeof__, 4, int___sizeof____doc__}, {((void *)0), ((void *)0)}};
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ^
+./header_func.h:126:18: warning: function 'int___getnewargs__' has internal linkage but is not defined [-Wundefined-internal]
+  126 | static PyObject *int___getnewargs__(PyObject *self, PyObject *_unused_ignored) ;
+      |                  ^
+./header_func.h:135:879: note: used here
+  135 | static PyMethodDef long_methods[] = {{"conjugate", long_long_meth, 4, "Returns self, the complex conjugate of any int."}, {"bit_length", (PyCFunction)int_bit_length, 4, int_bit_length__doc__}, {"bit_count", (PyCFunction)int_bit_count, 4, int_bit_count__doc__}, {"to_bytes", (PyCFunction)(void (*)(void))int_to_bytes, 128 | 2, int_to_bytes__doc__}, {"from_bytes", (PyCFunction)(void (*)(void))int_from_bytes, 128 | 2 | 16, int_from_bytes__doc__}, {"as_integer_ratio", (PyCFunction)int_as_integer_ratio, 4, int_as_integer_ratio__doc__}, {"__trunc__", long_long_meth, 4, "Truncating an Integral returns itself."}, {"__floor__", long_long_meth, 4, "Flooring an Integral returns itself."}, {"__ceil__", long_long_meth, 4, "Ceiling of an Integral returns itself."}, {"__round__", (PyCFunction)(void (*)(void))int___round__, 128, int___round____doc__}, {"__getnewargs__", (PyCFunction)int___getnewargs__, 4, int___getnewargs____doc__}, {"__format__", (PyCFunction)int___format__, 8, int___format____doc__}, {"__sizeof__", (PyCFunction)int___sizeof__, 4, int___sizeof____doc__}, {((void *)0), ((void *)0)}};
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^
+./header_func.h:129:18: warning: function 'int___format__' has internal linkage but is not defined [-Wundefined-internal]
+  129 | static PyObject *int___format__(PyObject *self, PyObject *arg) ;
+      |                  ^
+./header_func.h:135:958: note: used here
+  135 | static PyMethodDef long_methods[] = {{"conjugate", long_long_meth, 4, "Returns self, the complex conjugate of any int."}, {"bit_length", (PyCFunction)int_bit_length, 4, int_bit_length__doc__}, {"bit_count", (PyCFunction)int_bit_count, 4, int_bit_count__doc__}, {"to_bytes", (PyCFunction)(void (*)(void))int_to_bytes, 128 | 2, int_to_bytes__doc__}, {"from_bytes", (PyCFunction)(void (*)(void))int_from_bytes, 128 | 2 | 16, int_from_bytes__doc__}, {"as_integer_ratio", (PyCFunction)int_as_integer_ratio, 4, int_as_integer_ratio__doc__}, {"__trunc__", long_long_meth, 4, "Truncating an Integral returns itself."}, {"__floor__", long_long_meth, 4, "Flooring an Integral returns itself."}, {"__ceil__", long_long_meth, 4, "Ceiling of an Integral returns itself."}, {"__round__", (PyCFunction)(void (*)(void))int___round__, 128, int___round____doc__}, {"__getnewargs__", (PyCFunction)int___getnewargs__, 4, int___getnewargs____doc__}, {"__format__", (PyCFunction)int___format__, 8, int___format____doc__}, {"__sizeof__", (PyCFunction)int___sizeof__, 4, int___sizeof____doc__}, {((void *)0), ((void *)0)}};
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^
+./header_func.h:132:18: warning: function 'int___sizeof__' has internal linkage but is not defined [-Wundefined-internal]
+  132 | static PyObject *int___sizeof__(PyObject *self, PyObject *_unused_ignored) ;
+      |                  ^
+./header_func.h:135:1029: note: used here
+  135 | static PyMethodDef long_methods[] = {{"conjugate", long_long_meth, 4, "Returns self, the complex conjugate of any int."}, {"bit_length", (PyCFunction)int_bit_length, 4, int_bit_length__doc__}, {"bit_count", (PyCFunction)int_bit_count, 4, int_bit_count__doc__}, {"to_bytes", (PyCFunction)(void (*)(void))int_to_bytes, 128 | 2, int_to_bytes__doc__}, {"from_bytes", (PyCFunction)(void (*)(void))int_from_bytes, 128 | 2 | 16, int_from_bytes__doc__}, {"as_integer_ratio", (PyCFunction)int_as_integer_ratio, 4, int_as_integer_ratio__doc__}, {"__trunc__", long_long_meth, 4, "Truncating an Integral returns itself."}, {"__floor__", long_long_meth, 4, "Flooring an Integral returns itself."}, {"__ceil__", long_long_meth, 4, "Ceiling of an Integral returns itself."}, {"__round__", (PyCFunction)(void (*)(void))int___round__, 128, int___round____doc__}, {"__getnewargs__", (PyCFunction)int___getnewargs__, 4, int___getnewargs____doc__}, {"__format__", (PyCFunction)int___format__, 8, int___format____doc__}, {"__sizeof__", (PyCFunction)int___sizeof__, 4, int___sizeof____doc__}, {((void *)0), ((void *)0)}};
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ^
+./header_func.h:136:18: warning: function 'long_get0' has internal linkage but is not defined [-Wundefined-internal]
+  136 | static PyObject *long_get0(PyObject *_unused_self, void *_unused_context) ;
+      |                  ^
+./header_func.h:140:151: note: used here
+  140 | static PyGetSetDef long_getset[] = {{"real", (getter)long_long_meth, (setter)((void *)0), "the real part of a complex number", ((void *)0)}, {"imag", long_get0, (setter)((void *)0), "the imaginary part of a complex number", ((void *)0)}, {"numerator", (getter)long_long_meth, (setter)((void *)0), "the numerator of a rational number in lowest terms", ((void *)0)}, {"denominator", long_get1, (setter)((void *)0), "the denominator of a rational number in lowest terms", ((void *)0)}, {((void *)0)}};
+      |                                                                                                                                                       ^
+./header_func.h:138:18: warning: function 'long_get1' has internal linkage but is not defined [-Wundefined-internal]
+  138 | static PyObject *long_get1(PyObject *_unused_self, void *_unused_ignored) ;
+      |                  ^
+./header_func.h:140:382: note: used here
+  140 | static PyGetSetDef long_getset[] = {{"real", (getter)long_long_meth, (setter)((void *)0), "the real part of a complex number", ((void *)0)}, {"imag", long_get0, (setter)((void *)0), "the imaginary part of a complex number", ((void *)0)}, {"numerator", (getter)long_long_meth, (setter)((void *)0), "the numerator of a rational number in lowest terms", ((void *)0)}, {"denominator", long_get1, (setter)((void *)0), "the denominator of a rational number in lowest terms", ((void *)0)}, {((void *)0)}};
+      |                                                                                                                                                                                                                                                                                                                                                                                              ^
+./header_func.h:51:18: warning: function 'long_to_decimal_string' has internal linkage but is not defined [-Wundefined-internal]
+   51 | static PyObject *long_to_decimal_string(PyObject *aa) ;
+      |                  ^
+./header_func.h:141:134: note: used here
+  141 | PyTypeObject PyLong_Type = {{{1, &PyType_Type}, 0}, "int", __builtin_offsetof(PyLongObject, ob_digit), sizeof(digit), 0, 0, 0, 0, 0, long_to_decimal_string, &long_as_number, 0, 0, (hashfunc)long_hash, 0, 0, PyObject_GenericGetAttr, 0, 0, (0 | 0) | (1UL << 10) | (1UL << 24) | (1UL << 22), long_doc, 0, 0, long_richcompare, 0, 0, 0, long_methods, 0, long_getset, 0, 0, 0, 0, 0, 0, 0, long_new, PyObject_Free};
+      |                                                                                                                                      ^
+./header_func.h:53:18: warning: function 'long_hash' has internal linkage but is not defined [-Wundefined-internal]
+   53 | static Py_hash_t long_hash(PyLongObject *v) ;
+      |                  ^
+./header_func.h:141:191: note: used here
+  141 | PyTypeObject PyLong_Type = {{{1, &PyType_Type}, 0}, "int", __builtin_offsetof(PyLongObject, ob_digit), sizeof(digit), 0, 0, 0, 0, 0, long_to_decimal_string, &long_as_number, 0, 0, (hashfunc)long_hash, 0, 0, PyObject_GenericGetAttr, 0, 0, (0 | 0) | (1UL << 10) | (1UL << 24) | (1UL << 22), long_doc, 0, 0, long_richcompare, 0, 0, 0, long_methods, 0, long_getset, 0, 0, 0, 0, 0, 0, 0, long_new, PyObject_Free};
+      |                                                                                                                                                                                               ^
+./header_func.h:58:18: warning: function 'long_richcompare' has internal linkage but is not defined [-Wundefined-internal]
+   58 | static PyObject *long_richcompare(PyObject *self, PyObject *other, int op) ;
+      |                  ^
+./header_func.h:141:306: note: used here
+  141 | PyTypeObject PyLong_Type = {{{1, &PyType_Type}, 0}, "int", __builtin_offsetof(PyLongObject, ob_digit), sizeof(digit), 0, 0, 0, 0, 0, long_to_decimal_string, &long_as_number, 0, 0, (hashfunc)long_hash, 0, 0, PyObject_GenericGetAttr, 0, 0, (0 | 0) | (1UL << 10) | (1UL << 24) | (1UL << 22), long_doc, 0, 0, long_richcompare, 0, 0, 0, long_methods, 0, long_getset, 0, 0, 0, 0, 0, 0, 0, long_new, PyObject_Free};
+      |                                                                                                                                                                                                                                                                                                                  ^
+./header_func.h:60:18: warning: function 'long_new' has internal linkage but is not defined [-Wundefined-internal]
+   60 | static PyObject *long_new(PyTypeObject *type, PyObject *args, PyObject *kwargs) ;
+      |                  ^
+./header_func.h:141:384: note: used here
+  141 | PyTypeObject PyLong_Type = {{{1, &PyType_Type}, 0}, "int", __builtin_offsetof(PyLongObject, ob_digit), sizeof(digit), 0, 0, 0, 0, 0, long_to_decimal_string, &long_as_number, 0, 0, (hashfunc)long_hash, 0, 0, PyObject_GenericGetAttr, 0, 0, (0 | 0) | (1UL << 10) | (1UL << 24) | (1UL << 22), long_doc, 0, 0, long_richcompare, 0, 0, 0, long_methods, 0, long_getset, 0, 0, 0, 0, 0, 0, 0, long_new, PyObject_Free};
+      |                                                                                                                                                                                                                                                                                                                                                                                                ^
+./header_func.h:19:25: warning: function '__PyLong_GetSmallInt_internal' has internal linkage but is not defined [-Wundefined-internal]
+   19 | static inline PyObject *__PyLong_GetSmallInt_internal(int value) ;
+      |                         ^
+longobject_end.c:5:19: note: used here
+    5 |     PyObject *v = __PyLong_GetSmallInt_internal(ival);
+      |                   ^
+In file included from longobject_end.c:1:
+./header_func.h:49:20: warning: function '_PyObject_InitVar' has internal linkage but is not defined [-Wundefined-internal]
+   49 | static inline void _PyObject_InitVar(PyVarObject *op, PyTypeObject *typeobj, Py_ssize_t size) ;
+      |                    ^
+longobject_end.c:50:5: note: used here
+   50 |     _PyObject_InitVar((PyVarObject *)result, &PyLong_Type, size);
+      |     ^
+In file included from longobject_end.c:1:
+./header_func.h:145:19: warning: function '_Py_bit_length' has internal linkage but is not defined [-Wundefined-internal]
+  145 | static inline int _Py_bit_length(unsigned long x) ;
+      |                   ^
+longobject_end.c:120:12: note: used here
+  120 |     return _Py_bit_length((unsigned long)x);
+      |            ^
+In file included from longobject_end.c:1:
+./header_func.h:153:25: warning: function '_PyLong_GetZero' has internal linkage but is not defined [-Wundefined-internal]
+  153 | static inline PyObject *_PyLong_GetZero(void) ;
+      |                         ^
+longobject_end.c:243:26: note: used here
+  243 |         PyObject *zero = _PyLong_GetZero();
+      |                          ^
+In file included from longobject_end.c:1:
+./header_func.h:204:25: warning: function '_PyLong_GetOne' has internal linkage but is not defined [-Wundefined-internal]
+  204 | static inline PyObject *_PyLong_GetOne(void) ;
+      |                         ^
+longobject_end.c:820:62: note: used here
+  820 |         temp = (PyLongObject *)long_sub(div, (PyLongObject *)_PyLong_GetOne());
+      |                                                              ^
+35 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-eeblrk1/2026-03-12-195922-98800-1'
+scan-build: Removing directory 'Datasets/fromDGS/cpython-3.10.17/report-eeblrk1/2026-03-12-195922-98800-1' because it contains no reports.
+scan-build: No bugs found.

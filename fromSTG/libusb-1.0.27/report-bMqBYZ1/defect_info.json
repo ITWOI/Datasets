@@ -1,0 +1,525 @@
+{
+    "bug_type": "Use-after-free",
+    "checker": "Clang Static Analyzer",
+    "description": "Use of memory after it is freed",
+    "warning_func": "",
+    "line_number": 177,
+    "directory": "path/tests/libusb-1.0.27/libusb",
+    "entry_function": "",
+    "functions": [
+        "libusb_open_device_with_vid_pid",
+        "libusb_unref_device",
+        "discovered_devs_free",
+        "libusb_get_device_list"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 172,
+            "col": 9,
+            "line2": 172,
+            "col2": 42,
+            "function": "libusb_open_device_with_vid_pid",
+            "var": [
+                "libusb_get_device_list",
+                "ctx",
+                "devs"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 48,
+            "col": 1,
+            "line2": 48,
+            "col2": 1,
+            "function": "libusb_get_device_list",
+            "var": [
+                "discovered_devs_alloc",
+                "usbi_log",
+                "ctx",
+                "LIBUSB_LOG_LEVEL_DEBUG",
+                "discdevs",
+                "LIBUSB_ERROR_NO_MEM",
+                "usbi_get_context",
+                "libusb_has_capability",
+                "LIBUSB_CAP_HAS_HOTPLUG",
+                "hotplug_poll",
+                "usbi_backend",
+                "usbi_mutex_lock",
+                "usb_devs_lock",
+                "dev",
+                "next",
+                "usb_devs",
+                "list",
+                "discovered_devs_append",
+                "r",
+                "usbi_mutex_unlock",
+                "get_device_list",
+                "len",
+                "ret",
+                "calloc",
+                "i",
+                "devices",
+                "libusb_ref_device",
+                "discovered_devs_free"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 73,
+            "col": 9,
+            "line2": 73,
+            "col2": 13,
+            "function": "libusb_get_device_list",
+            "var": [
+                "r",
+                "len"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 79,
+            "col": 9,
+            "line2": 79,
+            "col2": 12,
+            "function": "libusb_get_device_list",
+            "var": [
+                "ret",
+                "len",
+                "LIBUSB_ERROR_NO_MEM"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 84,
+            "col": 17,
+            "line2": 84,
+            "col2": 23,
+            "function": "libusb_get_device_list",
+            "var": [
+                "i",
+                "len",
+                "devices",
+                "discdevs",
+                "ret",
+                "libusb_ref_device",
+                "dev"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 84,
+            "col": 17,
+            "line2": 84,
+            "col2": 23,
+            "function": "libusb_get_device_list",
+            "var": [
+                "i",
+                "len",
+                "devices",
+                "discdevs",
+                "ret",
+                "libusb_ref_device",
+                "dev"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 84,
+            "col": 5,
+            "line2": 84,
+            "col2": 7,
+            "function": "libusb_get_device_list",
+            "var": [
+                "i",
+                "len",
+                "devices",
+                "discdevs",
+                "ret",
+                "libusb_ref_device",
+                "dev"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 84,
+            "col": 17,
+            "line2": 84,
+            "col2": 23,
+            "function": "libusb_get_device_list",
+            "var": [
+                "i",
+                "len",
+                "devices",
+                "discdevs",
+                "ret",
+                "libusb_ref_device",
+                "dev"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 91,
+            "col": 9,
+            "line2": 91,
+            "col2": 38,
+            "function": "libusb_get_device_list",
+            "var": [
+                "discovered_devs_free()",
+                "discovered_devs_free",
+                "discdevs"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 12,
+            "col": 1,
+            "line2": 12,
+            "col2": 1,
+            "function": "discovered_devs_free",
+            "var": [
+                "i",
+                "len",
+                "discdevs",
+                "libusb_unref_device",
+                "devices",
+                "free"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 14,
+            "col": 17,
+            "line2": 14,
+            "col2": 33,
+            "function": "discovered_devs_free",
+            "var": [
+                "i",
+                "len",
+                "discdevs",
+                "libusb_unref_device",
+                "devices"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 15,
+            "col": 9,
+            "line2": 15,
+            "col2": 49,
+            "function": "discovered_devs_free",
+            "var": [
+                "libusb_unref_device()",
+                "libusb_unref_device",
+                "devices",
+                "discdevs",
+                "i"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 116,
+            "col": 1,
+            "line2": 116,
+            "col2": 1,
+            "function": "libusb_unref_device",
+            "var": [
+                "dev",
+                "refcnt",
+                "__assert_fail",
+                "usbi_log",
+                "ctx",
+                "LIBUSB_LOG_LEVEL_DEBUG",
+                "bus_number",
+                "device_address",
+                "libusb_unref_device",
+                "parent_dev",
+                "destroy_device",
+                "usbi_backend",
+                "libusb_has_capability",
+                "LIBUSB_CAP_HAS_HOTPLUG",
+                "usbi_disconnect_device",
+                "free"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 118,
+            "col": 9,
+            "line2": 118,
+            "col2": 12,
+            "function": "libusb_unref_device",
+            "var": [
+                "dev"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 122,
+            "col": 13,
+            "line2": 122,
+            "col2": 23,
+            "function": "libusb_unref_device",
+            "var": [
+                "refcnt",
+                "__assert_fail"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 127,
+            "col": 9,
+            "line2": 127,
+            "col2": 19,
+            "function": "libusb_unref_device",
+            "var": [
+                "refcnt",
+                "usbi_log",
+                "ctx",
+                "dev",
+                "LIBUSB_LOG_LEVEL_DEBUG",
+                "bus_number",
+                "device_address",
+                "libusb_unref_device",
+                "parent_dev",
+                "destroy_device",
+                "usbi_backend",
+                "libusb_has_capability",
+                "LIBUSB_CAP_HAS_HOTPLUG",
+                "usbi_disconnect_device",
+                "free"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 130,
+            "col": 13,
+            "line2": 130,
+            "col2": 39,
+            "function": "libusb_unref_device",
+            "var": [
+                "destroy_device",
+                "usbi_backend",
+                "dev"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 135,
+            "col": 9,
+            "line2": 135,
+            "col2": 17,
+            "function": "libusb_unref_device",
+            "var": [
+                "free()",
+                "free",
+                "dev"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 15,
+            "col": 9,
+            "line2": 15,
+            "col2": 49,
+            "function": "discovered_devs_free",
+            "var": [
+                "libusb_unref_device()",
+                "libusb_unref_device",
+                "devices",
+                "discdevs",
+                "i"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 14,
+            "col": 5,
+            "line2": 14,
+            "col2": 7,
+            "function": "discovered_devs_free",
+            "var": [
+                "i",
+                "len",
+                "discdevs",
+                "libusb_unref_device",
+                "devices"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 91,
+            "col": 9,
+            "line2": 91,
+            "col2": 38,
+            "function": "libusb_get_device_list",
+            "var": [
+                "discovered_devs_free()",
+                "discovered_devs_free",
+                "discdevs"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 172,
+            "col": 9,
+            "line2": 172,
+            "col2": 42,
+            "function": "libusb_open_device_with_vid_pid",
+            "var": [
+                "libusb_get_device_list",
+                "ctx",
+                "devs"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 174,
+            "col": 12,
+            "line2": 174,
+            "col2": 43,
+            "function": "libusb_open_device_with_vid_pid",
+            "var": [
+                "dev",
+                "devs",
+                "i",
+                "r",
+                "libusb_get_device_descriptor",
+                "desc",
+                "idVendor",
+                "vendor_id",
+                "idProduct",
+                "product_id",
+                "found"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c",
+            "line": 177,
+            "col": 46,
+            "line2": 177,
+            "col2": 48,
+            "function": "libusb_open_device_with_vid_pid",
+            "var": [
+                "r",
+                "libusb_get_device_descriptor",
+                "dev",
+                "desc"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/defect_info.json",
+    "files": [
+        "core_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件core_end.c  缺陷代码片段===\n------------------------------------------------------------\n   4              | static struct discovered_devs * discovered_devs_alloc (){\n   5              | struct discovered_devs *ret = malloc(sizeof (*ret) + (sizeof(void *) * 16));\n   6              | if (ret) {\n   7              | ret->len = 0;\n   8              | ret->capacity = 16;\n  10              | return ret;\n---→ 函数: discovered_devs_free\n  12 [TRACE-10]   | static void discovered_devs_free (struct discovered_devs *discdevs){\n  13              | size_t i;\n  14 [TRACE-11,20] | for (i = 0; i < discdevs->len; i++)\n  15 [TRACE-12,19] | libusb_unref_device(discdevs->devices[i]);\n  16              | free(discdevs);\n  40              | extern void usbi_disconnect_device (struct libusb_device *dev){\n  41              | struct libusb_context *ctx = ((dev)->ctx);\n  42              | __c11_atomic_store((&dev->attached), (0), 5);\n  43              | usbi_mutex_lock(&ctx->usb_devs_lock);\n  44              | list_del(&dev->list);\n  45              | usbi_mutex_unlock(&ctx->usb_devs_lock);\n  46              | usbi_hotplug_notification(ctx, dev, LIBUSB_HOTPLUG_EVENT_DEVICE_LEFT);\n---→ 函数: libusb_get_device_list\n  48 [TRACE-2]    | extern  __attribute__((visibility(\"default\"))) ssize_t libusb_get_device_list (libusb_context *ctx, libusb_device ***list){\n  49              | struct discovered_devs *discdevs = discovered_devs_alloc();\n  50              | struct libusb_device **ret;\n  51              | int r = 0;\n  52              | ssize_t i, len;\n  53              | usbi_log(ctx, LIBUSB_LOG_LEVEL_DEBUG, __func__, \" \");\n  54              | if (!discdevs)\n  56              | ctx = usbi_get_context(ctx);\n  57              | if (libusb_has_capability(LIBUSB_CAP_HAS_HOTPLUG)) {\n  71              | r = usbi_backend.get_device_list(ctx, &discdevs);\n  73 [TRACE-3]    | if (r < 0) {\n  77              | len = (ssize_t)discdevs->len;\n  78              | ret = calloc((size_t)len + 1, sizeof(struct libusb_device *));\n  79 [TRACE-4]    | if (!ret) {\n  83              | ret[len] = ((void *)0);\n  84 [TRACE-5,6,7,8] | for (i = 0; i < len; i++) {\n  85              | struct libusb_device *dev = discdevs->devices[i];\n  86              | ret[i] = libusb_ref_device(dev);\n  87              | }\n  88              | *list = ret;\n  89              | out:\n  90              | if (discdevs)\n  91 [TRACE-9,21] | discovered_devs_free(discdevs);\n  92              | return len;\n 105              | extern  __attribute__((visibility(\"default\"))) libusb_device * libusb_ref_device (libusb_device *dev){\n 106              | long refcnt;\n 107              | refcnt = (__c11_atomic_fetch_add((&dev->refcnt), 1, 5) + 1);\n 108              | ((void)sizeof ((refcnt >= 2) ? 1 : 0) , __extension__ ({\n 109              | if (refcnt >= 2)\n 114              | return dev;\n---→ 函数: libusb_unref_device\n 116 [TRACE-13]   | extern  __attribute__((visibility(\"default\"))) void libusb_unref_device (libusb_device *dev){\n 117              | long refcnt;\n 118 [TRACE-14]   | if (!dev)\n 119              | return;\n 120              | refcnt = (__c11_atomic_fetch_add((&dev->refcnt), -1, 5) - 1);\n 121              | ((void)sizeof ((refcnt >= 0) ? 1 : 0) , __extension__ ({\n 122 [TRACE-15]   | if (refcnt >= 0)\n 127 [TRACE-16]   | if (refcnt == 0) {\n 128              | usbi_log(((dev)->ctx), LIBUSB_LOG_LEVEL_DEBUG, __func__, \"destroy device %d.%d\", dev->bus_number, dev->device_address);\n 129              | libusb_unref_device(dev->parent_dev);\n 130 [TRACE-17]   | if (usbi_backend.destroy_device)\n 132              | if (!libusb_has_capability(LIBUSB_CAP_HAS_HOTPLUG)) {\n 133              | usbi_disconnect_device(dev);\n 135 [TRACE-18]   | free(dev);\n 165              | extern  __attribute__((visibility(\"default\"))) libusb_device_handle * libusb_open_device_with_vid_pid (libusb_context *ctx, uint16_t vendor_id, uint16_t product_id){\n 166              | struct libusb_device **devs;\n 167              | struct libusb_device *found = ((void *)0);\n 168              | struct libusb_device *dev;\n 169              | struct libusb_device_handle *dev_handle = ((void *)0);\n 170              | size_t i = 0;\n 171              | int r;\n---→ 函数: libusb_open_device_with_vid_pid\n 172 [TRACE-1,22] | if (libusb_get_device_list(ctx, &devs) < 0)\n 174 [TRACE-23]   | while ((dev = devs[i++]) != ((void *)0))\n 176              | struct libusb_device_descriptor desc;\n 177 [TRACE-24]   | r = libusb_get_device_descriptor(dev, &desc);\n 206              | extern  __attribute__((visibility(\"default\"))) int libusb_has_capability (uint32_t capability){\n 207              | switch (capability) {\n 210              | case LIBUSB_CAP_HAS_HOTPLUG:\n 211              | return !(usbi_backend.get_device_list);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/core_end.c": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            10,
+            12,
+            13,
+            14,
+            15,
+            16,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            56,
+            57,
+            71,
+            73,
+            77,
+            78,
+            79,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            105,
+            106,
+            107,
+            108,
+            109,
+            114,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            127,
+            128,
+            129,
+            130,
+            132,
+            133,
+            135,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            174,
+            176,
+            177,
+            206,
+            207,
+            210,
+            211
+        ],
+        "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/./threads_posix.h": [
+            10,
+            11,
+            12,
+            18,
+            19,
+            20
+        ],
+        "Datasets/fromDGS/libusb-1.0.27/report-bMqBYZ1/./libusbi.h": [
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15,
+            18,
+            25
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "过程间数据流断裂",
+        "域敏感度缺失"
+    ]
+}

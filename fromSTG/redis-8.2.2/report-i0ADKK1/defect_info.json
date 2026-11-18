@@ -1,0 +1,240 @@
+{
+    "bug_type": "Uninitialized argument value",
+    "checker": "Clang Static Analyzer",
+    "description": "2nd function call argument is an uninitialized value",
+    "warning_func": "",
+    "line_number": 402,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "hrandfieldCommand",
+    "functions": [
+        "hrandfieldCommand",
+        "hashTypeRandomElement"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-i0ADKK1/t_hash_end.c",
+            "line": 375,
+            "col": 9,
+            "line2": 375,
+            "col2": 20,
+            "function": "hrandfieldCommand",
+            "var": [
+                "argc",
+                "c",
+                "getRangeLongFromObjectOrReply",
+                "argv",
+                "l",
+                "strcasecmp",
+                "ptr",
+                "withvalues",
+                "hrandfieldWithCountCommand"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-i0ADKK1/t_hash_end.c",
+            "line": 391,
+            "col": 9,
+            "line2": 391,
+            "col2": 89,
+            "function": "hrandfieldCommand",
+            "var": [
+                "hash",
+                "lookupKeyReadOrReply",
+                "c",
+                "argv",
+                "null",
+                "shared",
+                "resp",
+                "checkType"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-i0ADKK1/t_hash_end.c",
+            "line": 391,
+            "col": 94,
+            "line2": 391,
+            "col2": 114,
+            "function": "hrandfieldCommand",
+            "var": [
+                "hash",
+                "lookupKeyReadOrReply",
+                "c",
+                "argv",
+                "null",
+                "shared",
+                "resp",
+                "checkType"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-i0ADKK1/t_hash_end.c",
+            "line": 398,
+            "col": 5,
+            "line2": 398,
+            "col2": 75,
+            "function": "hrandfieldCommand",
+            "var": [
+                "hashTypeRandomElement()",
+                "hashTypeRandomElement",
+                "hash",
+                "hashTypeLength",
+                "ele"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-i0ADKK1/t_hash_end.c",
+            "line": 180,
+            "col": 1,
+            "line2": 180,
+            "col2": 1,
+            "function": "hashTypeRandomElement",
+            "var": [
+                "encoding",
+                "hashobj",
+                "dictGetFairRandomKey",
+                "ptr",
+                "dictGetKey",
+                "de",
+                "sval",
+                "key",
+                "field",
+                "val",
+                "dictGetVal",
+                "lpRandomPair",
+                "hashTypeListpackGetLp",
+                "hashsize"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-i0ADKK1/t_hash_end.c",
+            "line": 184,
+            "col": 9,
+            "line2": 184,
+            "col2": 42,
+            "function": "hashTypeRandomElement",
+            "var": [
+                "sval",
+                "key",
+                "field"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-i0ADKK1/t_hash_end.c",
+            "line": 195,
+            "col": 1,
+            "line2": 195,
+            "col2": 1,
+            "function": "hashTypeRandomElement",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-i0ADKK1/t_hash_end.c",
+            "line": 398,
+            "col": 5,
+            "line2": 398,
+            "col2": 75,
+            "function": "hrandfieldCommand",
+            "var": [
+                "hashTypeRandomElement()",
+                "hashTypeRandomElement",
+                "hash",
+                "hashTypeLength",
+                "ele"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-i0ADKK1/t_hash_end.c",
+            "line": 399,
+            "col": 9,
+            "line2": 399,
+            "col2": 16,
+            "function": "hrandfieldCommand",
+            "var": [
+                "sval",
+                "ele",
+                "addReplyBulkLongLong",
+                "c",
+                "lval"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-i0ADKK1/t_hash_end.c",
+            "line": 402,
+            "col": 33,
+            "line2": 402,
+            "col2": 40,
+            "function": "hrandfieldCommand",
+            "var": [
+                "addReplyBulkLongLong()",
+                "addReplyBulkLongLong",
+                "c",
+                "lval",
+                "ele"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-i0ADKK1/defect_info.json",
+    "files": [
+        "t_hash_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件t_hash_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | static inline int isDictWithMetaHFE (dict *d){\n   3              | return d->type == &mstrHashDictTypeWithHFE;\n  74              | extern unsigned long hashTypeLength (const robj *o, int subtractExpiredFields){\n  75              | unsigned long length = (9223372036854775807L * 2UL + 1UL);\n  76              | if (o->encoding == 11) {\n  78              | } else if (o->encoding == 12) {\n  83              | } else if (o->encoding == 2) {\n  84              | uint64_t expiredItems = 0;\n  85              | dict *d = (dict *)o->ptr;\n  86              | if (subtractExpiredFields && isDictWithMetaHFE(d)) {\n  91              | length = ((d)->ht_used[0] + (d)->ht_used[1]) - expiredItems;\n  95              | return length;\n---→ 函数: hashTypeRandomElement\n 180 [TRACE-5]    | extern void hashTypeRandomElement (robj *hashobj, unsigned long hashsize, CommonEntry *key, CommonEntry *val){\n 181              | if (hashobj->encoding == 2) {\n 182              | dictEntry *de = dictGetFairRandomKey(hashobj->ptr);\n 183              | hfield field = dictGetKey(de);\n 184 [TRACE-6]    | key->sval = (unsigned char *)field;\n 185              | if (val) {\n 195 [TRACE-7]    | }\n 224              | static int hashTypeExpireIfNeeded (redisDb *db, kvobj *o){\n 225              | uint64_t nextExpireTime;\n 226              | uint64_t minExpire = hashTypeGetMinExpire(o, 1);\n 227              | if ((mstime_t)minExpire >= commandTimeSnapshot())\n 229              | if ((server.loading) || (server.allow_access_expired) || (server.masterhost) || (isPausedActionsWithUpdate((1 << 2))))\n 230              | return 0;\n 235              | extern uint64_t hashTypeGetMinExpire (robj *o, int accurate){\n 236              | ExpireMeta *expireMeta = ((void *)0);\n 237              | if (!accurate) {\n 254              | if (o->encoding == 11) {\n 256              | } else if (o->encoding == 12) {\n 259              | (__builtin_expect(!!(o->encoding == 2), 1) ? (void)0 : (_serverAssert(\"o->encoding == OBJ_ENCODING_HT\", \"t_hash_InstSlice.c\", 904) , abort()));\n 260              | dict *d = o->ptr;\n 261              | if (!isDictWithMetaHFE(d))\n 263              | dictExpireMetadata *expireMeta = (dictExpireMetadata *)(&(d)->metadata);\n 264              | return ebGetNextTimeToExpire(expireMeta->hfe, &hashFieldExpireBucketsType);\n 370              | extern void hrandfieldCommand (client *c){\n 371              | long l;\n 372              | int withvalues = 0;\n 373              | kvobj *hash;\n 374              | CommonEntry ele;\n---→ 函数: hrandfieldCommand\n 375 [TRACE-1]    | if (c->argc >= 3) {\n 391 [TRACE-2,3]  | if ((hash = lookupKeyReadOrReply(c, c->argv[1], shared.null[c->resp])) == ((void *)0) || checkType(c, hash, 4)) {\n 394              | if (hashTypeExpireIfNeeded(c->db, hash)) {\n 398 [TRACE-4,8]  | hashTypeRandomElement(hash, hashTypeLength(hash, 0), &ele, ((void *)0));\n 399 [TRACE-9]    | if (ele.sval) {\n 402 [TRACE-10]   | addReplyBulkLongLong(c, ele.lval);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-i0ADKK1/t_hash_end.c": [
+            2,
+            3,
+            74,
+            75,
+            76,
+            78,
+            83,
+            84,
+            85,
+            86,
+            91,
+            95,
+            180,
+            181,
+            182,
+            183,
+            184,
+            185,
+            195,
+            224,
+            225,
+            226,
+            227,
+            229,
+            230,
+            235,
+            236,
+            237,
+            254,
+            256,
+            259,
+            260,
+            261,
+            263,
+            264,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375,
+            391,
+            394,
+            398,
+            399,
+            402
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "路径可行性判定失效",
+        "域敏感度缺失"
+    ]
+}

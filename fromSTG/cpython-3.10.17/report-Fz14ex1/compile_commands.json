@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex1",
+        "arguments": [
+            "clang",
+            "-c",
+            "_posixsubprocess_end.c"
+        ],
+        "file": "_posixsubprocess_end.c"
+    }
+]

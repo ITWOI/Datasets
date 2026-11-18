@@ -1,0 +1,229 @@
+{
+    "bug_type": "Memory leak",
+    "checker": "Clang Static Analyzer",
+    "description": "Potential leak of memory pointed to by 'compression_buf'",
+    "warning_func": "",
+    "line_number": 352,
+    "directory": "path/tests/bzip3-1.4.0",
+    "entry_function": "",
+    "functions": [
+        "bz3_decompress"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1/libbz3_end.c",
+            "line": 297,
+            "col": 9,
+            "line2": 297,
+            "col2": 20,
+            "function": "bz3_decompress",
+            "var": [
+                "in_size"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1/libbz3_end.c",
+            "line": 299,
+            "col": 9,
+            "line2": 299,
+            "col2": 20,
+            "function": "bz3_decompress",
+            "var": [
+                "in"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1/libbz3_end.c",
+            "line": 299,
+            "col": 25,
+            "line2": 299,
+            "col2": 36,
+            "function": "bz3_decompress",
+            "var": [
+                "in"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1/libbz3_end.c",
+            "line": 299,
+            "col": 41,
+            "line2": 299,
+            "col2": 52,
+            "function": "bz3_decompress",
+            "var": [
+                "in"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1/libbz3_end.c",
+            "line": 299,
+            "col": 57,
+            "line2": 299,
+            "col2": 68,
+            "function": "bz3_decompress",
+            "var": [
+                "in"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1/libbz3_end.c",
+            "line": 299,
+            "col": 73,
+            "line2": 299,
+            "col2": 84,
+            "function": "bz3_decompress",
+            "var": [
+                "in"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1/libbz3_end.c",
+            "line": 309,
+            "col": 27,
+            "line2": 309,
+            "col2": 55,
+            "function": "bz3_decompress",
+            "var": [
+                "malloc",
+                "bz3_bound",
+                "block_size"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1/libbz3_end.c",
+            "line": 310,
+            "col": 9,
+            "line2": 310,
+            "col2": 24,
+            "function": "bz3_decompress",
+            "var": [
+                "compression_buf",
+                "bz3_free",
+                "state"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1/libbz3_end.c",
+            "line": 316,
+            "col": 21,
+            "line2": 316,
+            "col2": 32,
+            "function": "bz3_decompress",
+            "var": [
+                "i",
+                "n_blocks",
+                "in_size",
+                "bz3_free",
+                "state",
+                "free",
+                "compression_buf",
+                "read_neutral_s32",
+                "in",
+                "size",
+                "block_size",
+                "orig_size",
+                "buf_max",
+                "out_size",
+                "memcpy",
+                "bz3_decode_block",
+                "bz3_last_error",
+                "last_error",
+                "out"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1/libbz3_end.c",
+            "line": 316,
+            "col": 21,
+            "line2": 316,
+            "col2": 32,
+            "function": "bz3_decompress",
+            "var": [
+                "i",
+                "n_blocks",
+                "in_size",
+                "bz3_free",
+                "state",
+                "free",
+                "compression_buf",
+                "read_neutral_s32",
+                "in",
+                "size",
+                "block_size",
+                "orig_size",
+                "buf_max",
+                "out_size",
+                "memcpy",
+                "bz3_decode_block",
+                "bz3_last_error",
+                "last_error",
+                "out"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1/libbz3_end.c",
+            "line": 352,
+            "col": 5,
+            "line2": 352,
+            "col2": 5,
+            "function": "bz3_decompress",
+            "var": [
+                "bz3_free()",
+                "bz3_free",
+                "state"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1/defect_info.json",
+    "files": [
+        "libbz3_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件libbz3_end.c  缺陷代码片段===\n------------------------------------------------------------\n 147              | extern  __attribute__((visibility(\"default\"))) size_t bz3_bound (size_t input_size){\n 148              | return input_size + input_size / 50 + 32;\n 150              | extern  __attribute__((visibility(\"default\"))) struct bz3_state * bz3_new (s32 block_size){\n 151              | if (block_size < ((65) * 1024) || block_size > ((511) * 1024 * 1024)) {\n 154              | struct bz3_state *bz3_state = malloc(sizeof(struct bz3_state));\n 155              | if (!bz3_state) {\n 158              | bz3_state->cm_state = malloc(sizeof(state));\n 159              | bz3_state->swap_buffer = malloc(bz3_bound(block_size));\n 160              | bz3_state->sais_array = malloc((bz3_bound(block_size) + 128) * sizeof(s32));\n 161              | memset(bz3_state->sais_array, 0, sizeof(s32) * (bz3_bound(block_size) + 128));\n 162              | bz3_state->lzp_lut = calloc(1 << 18, sizeof(s32));\n 163              | if (!bz3_state->cm_state || !bz3_state->swap_buffer || !bz3_state->sais_array || !bz3_state->lzp_lut) {\n 175              | bz3_state->block_size = block_size;\n 176              | bz3_state->last_error = 0;\n 177              | return bz3_state;\n 296              | extern  __attribute__((visibility(\"default\"))) int bz3_decompress (const uint8_t *in, uint8_t *out, size_t in_size, size_t *out_size){\n---→ 函数: bz3_decompress\n 297 [TRACE-1]    | if (in_size < 13)\n 299 [TRACE-2,3,4,5,6] | if (in[0] != 'B' || in[1] != 'Z' || in[2] != '3' || in[3] != 'v' || in[4] != '1') {\n 302              | u32 block_size = read_neutral_s32(in + 5);\n 303              | u32 n_blocks = read_neutral_s32(in + 9);\n 304              | in_size -= 13;\n 305              | in += 13;\n 306              | struct bz3_state *state = bz3_new(block_size);\n 307              | if (!state)\n 309 [TRACE-7]    | u8 *compression_buf = malloc(bz3_bound(block_size));\n 310 [TRACE-8]    | if (!compression_buf) {\n 314              | size_t buf_max = *out_size;\n 315              | *out_size = 0;\n 316 [TRACE-9,10] | for (u32 i = 0; i < n_blocks; i++) {\n 352 [TRACE-11]   | bz3_free(state);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1/libbz3_end.c": [
+            147,
+            148,
+            150,
+            151,
+            154,
+            155,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            175,
+            176,
+            177,
+            296,
+            297,
+            299,
+            302,
+            303,
+            304,
+            305,
+            306,
+            307,
+            309,
+            310,
+            314,
+            315,
+            316,
+            352
+        ],
+        "Datasets/fromDGS/bzip3-1.4.0/report-yIy5da1/./common.h": [
+            2,
+            3
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "堆对象抽象过粗",
+        "循环次数/递归深度受限"
+    ]
+}

@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/libusb-1.0.27/report-ekhHQZ1",
+        "arguments": [
+            "clang",
+            "-c",
+            "events_posix_end.c"
+        ],
+        "file": "events_posix_end.c"
+    }
+]

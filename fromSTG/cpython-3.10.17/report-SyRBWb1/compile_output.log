@@ -1,0 +1,31 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from errors_end.c:1:
+./header_func.h:40:25: warning: function '_PyObject_CallNoArg' has internal linkage but is not defined [-Wundefined-internal]
+   40 | static inline PyObject *_PyObject_CallNoArg(PyObject *func) ;
+      |                         ^
+errors_end.c:31:15: note: used here
+   31 |         exc = _PyObject_CallNoArg(exception_type);
+      |               ^
+In file included from errors_end.c:1:
+./header_func.h:45:25: warning: function 'PyObject_CallOneArg' has internal linkage but is not defined [-Wundefined-internal]
+   45 | static inline PyObject *PyObject_CallOneArg(PyObject *func, PyObject *arg) ;
+      |                         ^
+errors_end.c:35:15: note: used here
+   35 |         exc = PyObject_CallOneArg(exception_type, value);
+      |               ^
+2 warnings generated.
+In file included from errors_end.c:3:
+./object.h:9:9: warning: Access to field 'ob_refcnt' results in a dereference of a null pointer (loaded from variable 'op') [core.NullDereference]
+    9 |     if (--op->ob_refcnt != 0) {
+      |         ^~~~~~~~~~~~~~~
+./object.h:9:9: warning: Access to field 'ob_refcnt' results in a dereference of a null pointer (loaded from variable 'op') [core.NullDereference]
+    9 |     if (--op->ob_refcnt != 0) {
+      |         ^~~~~~~~~~~~~~~
+./object.h:9:9: warning: Access to field 'ob_refcnt' results in a dereference of a null pointer (loaded from variable 'op') [core.NullDereference]
+    9 |     if (--op->ob_refcnt != 0) {
+      |         ^~~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/2026-03-12-200354-101493-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/2026-03-12-200354-101493-1' to examine bug reports.

@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2",
+        "arguments": [
+            "clang",
+            "-c",
+            "listobject_end.c"
+        ],
+        "file": "listobject_end.c"
+    }
+]

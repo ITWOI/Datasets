@@ -1,0 +1,126 @@
+{
+    "bug_type": "Return of address to stack-allocated memory",
+    "checker": "Clang Static Analyzer",
+    "description": "Address of stack memory associated with local variable 'buffer' returned to caller",
+    "warning_func": "",
+    "line_number": 6,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "stack_overflow",
+        "faulthandler_stack_overflow"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF3/faulthandler_end.c",
+            "line": 13,
+            "col": 9,
+            "line2": 13,
+            "col2": 33,
+            "function": "faulthandler_stack_overflow",
+            "var": [
+                "sp",
+                "lower_limit"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF3/faulthandler_end.c",
+            "line": 18,
+            "col": 9,
+            "line2": 18,
+            "col2": 60,
+            "function": "faulthandler_stack_overflow",
+            "var": [
+                "sp",
+                "upper_limit"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF3/faulthandler_end.c",
+            "line": 23,
+            "col": 12,
+            "line2": 23,
+            "col2": 59,
+            "function": "faulthandler_stack_overflow",
+            "var": [
+                "stop",
+                "stack_overflow",
+                "lower_limit",
+                "upper_limit",
+                "depth"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF3/faulthandler_end.c",
+            "line": 2,
+            "col": 1,
+            "line2": 2,
+            "col2": 1,
+            "function": "stack_overflow",
+            "var": [
+                "buffer",
+                "sp",
+                "min_sp",
+                "max_sp",
+                "stack_overflow",
+                "depth"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF3/faulthandler_end.c",
+            "line": 5,
+            "col": 9,
+            "line2": 5,
+            "col2": 19,
+            "function": "stack_overflow",
+            "var": [
+                "sp",
+                "min_sp",
+                "max_sp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF3/faulthandler_end.c",
+            "line": 6,
+            "col": 16,
+            "line2": 6,
+            "col2": 17,
+            "function": "stack_overflow",
+            "var": [
+                "sp"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF3/defect_info.json",
+    "files": [
+        "faulthandler_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件faulthandler_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: stack_overflow\n   2 [TRACE-4]    | static uintptr_t stack_overflow (uintptr_t min_sp, uintptr_t max_sp, size_t *depth){\n   3              | volatile unsigned char buffer[4096];\n   4              | uintptr_t sp = (uintptr_t)&buffer;\n   5 [TRACE-5]    | if (sp < min_sp || max_sp < sp)\n   6 [TRACE-6]    | return sp;\n   9              | static PyObject * faulthandler_stack_overflow (PyObject *self, PyObject *_unused_ignored __attribute__((unused))){\n  10              | size_t depth, size;\n  11              | uintptr_t sp = (uintptr_t)&depth;\n  12              | uintptr_t stop, lower_limit, upper_limit;\n---→ 函数: faulthandler_stack_overflow\n  13 [TRACE-1]    | if ((100 * 1024 * 1024) <= sp) {\n  14              | lower_limit = sp - (100 * 1024 * 1024);\n  18 [TRACE-2]    | if ((18446744073709551615UL) - (100 * 1024 * 1024) >= sp) {\n  21              | upper_limit = (18446744073709551615UL);\n  23 [TRACE-3]    | stop = stack_overflow(lower_limit, upper_limit, &depth);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF3/faulthandler_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            18,
+            21,
+            23
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "基础类型建模不准确",
+        "过程间数据流断裂"
+    ]
+}

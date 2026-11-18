@@ -1,0 +1,257 @@
+{
+    "bug_type": "Result of operation is garbage or undefined",
+    "checker": "Clang Static Analyzer",
+    "description": "The left operand of '==' is a garbage value",
+    "warning_func": "",
+    "line_number": 44,
+    "directory": "path/tests/libuv-1.51.0",
+    "entry_function": "",
+    "functions": [
+        "uv_guess_handle",
+        "uv_tty_init"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2/tty_end.c",
+            "line": 11,
+            "col": 12,
+            "line2": 11,
+            "col2": 30,
+            "function": "uv_tty_init",
+            "var": [
+                "type",
+                "uv_guess_handle",
+                "fd"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2/tty_end.c",
+            "line": 16,
+            "col": 1,
+            "line2": 16,
+            "col2": 1,
+            "function": "uv_guess_handle",
+            "var": [
+                "file",
+                "UV_UNKNOWN_HANDLE",
+                "isatty",
+                "UV_TTY",
+                "uv__fstat",
+                "s",
+                "st_mode",
+                "UV_FILE",
+                "UV_NAMED_PIPE",
+                "len",
+                "ss",
+                "getsockname",
+                "type",
+                "getsockopt",
+                "SOCK_DGRAM",
+                "ss_family",
+                "UV_UDP",
+                "SOCK_STREAM",
+                "UV_TCP"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2/tty_end.c",
+            "line": 21,
+            "col": 9,
+            "line2": 21,
+            "col2": 16,
+            "function": "uv_guess_handle",
+            "var": [
+                "file",
+                "UV_UNKNOWN_HANDLE"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2/tty_end.c",
+            "line": 23,
+            "col": 9,
+            "line2": 23,
+            "col2": 20,
+            "function": "uv_guess_handle",
+            "var": [
+                "isatty",
+                "file",
+                "UV_TTY"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2/tty_end.c",
+            "line": 25,
+            "col": 9,
+            "line2": 25,
+            "col2": 27,
+            "function": "uv_guess_handle",
+            "var": [
+                "uv__fstat",
+                "file",
+                "s",
+                "UV_UNKNOWN_HANDLE"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2/tty_end.c",
+            "line": 28,
+            "col": 10,
+            "line2": 28,
+            "col2": 43,
+            "function": "uv_guess_handle",
+            "var": [
+                "st_mode",
+                "s",
+                "UV_FILE"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2/tty_end.c",
+            "line": 30,
+            "col": 10,
+            "line2": 30,
+            "col2": 42,
+            "function": "uv_guess_handle",
+            "var": [
+                "st_mode",
+                "s",
+                "UV_FILE"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2/tty_end.c",
+            "line": 32,
+            "col": 10,
+            "line2": 32,
+            "col2": 42,
+            "function": "uv_guess_handle",
+            "var": [
+                "st_mode",
+                "s",
+                "UV_NAMED_PIPE"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2/tty_end.c",
+            "line": 34,
+            "col": 11,
+            "line2": 34,
+            "col2": 44,
+            "function": "uv_guess_handle",
+            "var": [
+                "st_mode",
+                "s",
+                "UV_UNKNOWN_HANDLE"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2/tty_end.c",
+            "line": 37,
+            "col": 9,
+            "line2": 37,
+            "col2": 73,
+            "function": "uv_guess_handle",
+            "var": [
+                "getsockname",
+                "file",
+                "ss",
+                "len",
+                "UV_UNKNOWN_HANDLE"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2/tty_end.c",
+            "line": 41,
+            "col": 9,
+            "line2": 41,
+            "col2": 43,
+            "function": "uv_guess_handle",
+            "var": [
+                "getsockopt",
+                "file",
+                "type",
+                "len",
+                "UV_UNKNOWN_HANDLE"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2/tty_end.c",
+            "line": 43,
+            "col": 9,
+            "line2": 43,
+            "col2": 26,
+            "function": "uv_guess_handle",
+            "var": [
+                "type",
+                "SOCK_DGRAM",
+                "ss_family",
+                "ss",
+                "UV_UDP"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2/tty_end.c",
+            "line": 44,
+            "col": 13,
+            "line2": 44,
+            "col2": 24,
+            "function": "uv_guess_handle",
+            "var": [
+                "ss_family",
+                "ss",
+                "UV_UDP"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2/defect_info.json",
+    "files": [
+        "tty_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件tty_end.c  缺陷代码片段===\n------------------------------------------------------------\n   3              | extern  __attribute__((visibility(\"default\"))) int uv_tty_init (uv_loop_t *loop, uv_tty_t *tty, int fd, int unused){\n   4              | uv_handle_type type;\n   5              | int flags;\n   6              | int newfd;\n   7              | int r;\n   8              | int saved_flags;\n   9              | int mode;\n  10              | char path[256];\n---→ 函数: uv_tty_init\n  11 [TRACE-1]    | type = uv_guess_handle(fd);\n---→ 函数: uv_guess_handle\n  16 [TRACE-2]    | extern  __attribute__((visibility(\"default\"))) uv_handle_type uv_guess_handle (uv_file file){\n  17              | struct sockaddr_storage ss;\n  18              | struct stat s;\n  19              | socklen_t len;\n  20              | int type;\n  21 [TRACE-3]    | if (file < 0)\n  23 [TRACE-4]    | if (isatty(file))\n  25 [TRACE-5]    | if (uv__fstat(file, &s)) {\n  28 [TRACE-6]    | if (((((s.st_mode)) & 61440) == (32768)))\n  30 [TRACE-7]    | if (((((s.st_mode)) & 61440) == (8192)))\n  32 [TRACE-8]    | if (((((s.st_mode)) & 61440) == (4096)))\n  34 [TRACE-9]    | if (!((((s.st_mode)) & 61440) == (49152)))\n  36              | len = sizeof (ss);\n  37 [TRACE-10]   | if (getsockname(file, (__SOCKADDR_ARG){(struct sockaddr *)&ss}, &len)) {\n  40              | len = sizeof (type);\n  41 [TRACE-11]   | if (getsockopt(file, 1, 3, &type, &len))\n  43 [TRACE-12]   | if (type == SOCK_DGRAM)\n  44 [TRACE-13]   | if (ss.ss_family == 2 || ss.ss_family == 10)\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2/tty_end.c": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            23,
+            25,
+            28,
+            30,
+            32,
+            34,
+            36,
+            37,
+            40,
+            41,
+            43,
+            44
+        ],
+        "Datasets/fromDGS/libuv-1.51.0/report-c1zlYn2/./internal.h": [
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "外部库/API 逻辑建模缺失",
+        "路径可行性判定失效",
+        "流敏感度不足"
+    ]
+}

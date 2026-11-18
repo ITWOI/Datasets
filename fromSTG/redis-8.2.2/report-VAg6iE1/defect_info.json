@@ -1,0 +1,137 @@
+{
+    "bug_type": "Bitwise shift",
+    "checker": "Clang Static Analyzer",
+    "description": "Left shift by '64' overflows the capacity of 'uint64_t'",
+    "warning_func": "",
+    "line_number": 28,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "",
+    "functions": [
+        "checkUnsignedBitfieldOverflow"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE1/bitops_end.c",
+            "line": 3,
+            "col": 21,
+            "line2": 3,
+            "col2": 30,
+            "function": "checkUnsignedBitfieldOverflow",
+            "var": [
+                "bits"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE1/bitops_end.c",
+            "line": 6,
+            "col": 9,
+            "line2": 6,
+            "col2": 19,
+            "function": "checkUnsignedBitfieldOverflow",
+            "var": [
+                "value",
+                "max",
+                "incr",
+                "maxincr",
+                "limit",
+                "owtype",
+                "minincr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE1/bitops_end.c",
+            "line": 6,
+            "col": 25,
+            "line2": 6,
+            "col2": 32,
+            "function": "checkUnsignedBitfieldOverflow",
+            "var": [
+                "value",
+                "max",
+                "incr",
+                "maxincr",
+                "limit",
+                "owtype",
+                "minincr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE1/bitops_end.c",
+            "line": 6,
+            "col": 37,
+            "line2": 6,
+            "col2": 50,
+            "function": "checkUnsignedBitfieldOverflow",
+            "var": [
+                "value",
+                "max",
+                "incr",
+                "maxincr",
+                "limit",
+                "owtype",
+                "minincr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE1/bitops_end.c",
+            "line": 7,
+            "col": 13,
+            "line2": 7,
+            "col2": 17,
+            "function": "checkUnsignedBitfieldOverflow",
+            "var": [
+                "limit",
+                "owtype"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE1/bitops_end.c",
+            "line": 8,
+            "col": 17,
+            "line2": 8,
+            "col2": 27,
+            "function": "checkUnsignedBitfieldOverflow",
+            "var": [
+                "owtype"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE1/bitops_end.c",
+            "line": 28,
+            "col": 25,
+            "line2": 28,
+            "col2": 46,
+            "function": "checkUnsignedBitfieldOverflow",
+            "var": [
+                "bits"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE1/defect_info.json",
+    "files": [
+        "bitops_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件bitops_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | extern int checkUnsignedBitfieldOverflow (uint64_t value, int64_t incr, uint64_t bits, int owtype, uint64_t *limit){\n---→ 函数: checkUnsignedBitfieldOverflow\n   3 [TRACE-1]    | uint64_t max = (bits == 64) ? (18446744073709551615UL) : (((uint64_t)1 << bits) - 1);\n   4              | int64_t maxincr = max - value;\n   5              | int64_t minincr = -value;\n   6 [TRACE-2,3,4] | if (value > max || (incr > 0 && incr > maxincr)) {\n   7 [TRACE-5]    | if (limit) {\n   8 [TRACE-6]    | if (owtype == 0) {\n   9              | goto handle_wrap;\n  28 [TRACE-7]    | uint64_t mask = ((uint64_t)-1) << bits;\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-VAg6iE1/bitops_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            28
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "未定义行为",
+    "qwen3.5-122b-a10b_labels": [
+        "基础类型建模不准确",
+        "符号表达式求解失效",
+        "路径可行性判定失效"
+    ]
+}

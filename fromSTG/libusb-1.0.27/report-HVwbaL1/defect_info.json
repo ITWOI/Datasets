@@ -1,0 +1,135 @@
+{
+    "bug_type": "Use of zero allocated",
+    "checker": "Clang Static Analyzer",
+    "description": "Use of memory allocated with size zero",
+    "warning_func": "",
+    "line_number": 17,
+    "directory": "path/tests/libusb-1.0.27/libusb",
+    "entry_function": "",
+    "functions": [
+        "usbi_alloc_event_data"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-HVwbaL1/events_posix_end.c",
+            "line": 6,
+            "col": 9,
+            "line2": 6,
+            "col2": 23,
+            "function": "usbi_alloc_event_data",
+            "var": [
+                "event_data",
+                "ctx"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-HVwbaL1/events_posix_end.c",
+            "line": 11,
+            "col": 166,
+            "line2": 11,
+            "col2": 212,
+            "function": "usbi_alloc_event_data",
+            "var": [
+                "ievent_source",
+                "next",
+                "event_sources",
+                "ctx",
+                "list",
+                "event_data_cnt"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-HVwbaL1/events_posix_end.c",
+            "line": 13,
+            "col": 11,
+            "line2": 13,
+            "col2": 52,
+            "function": "usbi_alloc_event_data",
+            "var": [
+                "fds",
+                "calloc",
+                "event_data_cnt",
+                "ctx"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-HVwbaL1/events_posix_end.c",
+            "line": 14,
+            "col": 9,
+            "line2": 14,
+            "col2": 12,
+            "function": "usbi_alloc_event_data",
+            "var": [
+                "fds",
+                "LIBUSB_ERROR_NO_MEM"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-HVwbaL1/events_posix_end.c",
+            "line": 16,
+            "col": 166,
+            "line2": 16,
+            "col2": 212,
+            "function": "usbi_alloc_event_data",
+            "var": [
+                "ievent_source",
+                "next",
+                "event_sources",
+                "ctx",
+                "list",
+                "fd",
+                "fds",
+                "i",
+                "os_handle",
+                "data",
+                "events",
+                "poll_events"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-HVwbaL1/events_posix_end.c",
+            "line": 13,
+            "col": 11,
+            "line2": 13,
+            "col2": 52,
+            "function": "usbi_alloc_event_data",
+            "var": [
+                "fd",
+                "fds",
+                "i",
+                "os_handle",
+                "data",
+                "ievent_source"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/libusb-1.0.27/report-HVwbaL1/defect_info.json",
+    "files": [
+        "events_posix_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件events_posix_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | extern int usbi_alloc_event_data (struct libusb_context *ctx){\n   3              | struct usbi_event_source *ievent_source;\n   4              | struct pollfd *fds;\n   5              | size_t i = 0;\n---→ 函数: usbi_alloc_event_data\n   6 [TRACE-1]    | if (ctx->event_data) {\n  10              | ctx->event_data_cnt = 0;\n  11 [TRACE-2]    | for (ievent_source = ((struct usbi_event_source *)((uintptr_t)((&(ctx)->event_sources)->next) - (uintptr_t)__builtin_offsetof(struct usbi_event_source, list))); &ievent_source->list != (&(ctx)->event_sources); ievent_source = ((struct usbi_event_source *)((uintptr_t)((ievent_source)->list.next) - (uintptr_t)__builtin_offsetof(struct usbi_event_source, list))))\n  13 [TRACE-3,6]  | fds = calloc(ctx->event_data_cnt, sizeof (*fds));\n  14 [TRACE-4]    | if (!fds)\n  16 [TRACE-5]    | for (ievent_source = ((struct usbi_event_source *)((uintptr_t)((&(ctx)->event_sources)->next) - (uintptr_t)__builtin_offsetof(struct usbi_event_source, list))); &ievent_source->list != (&(ctx)->event_sources); ievent_source = ((struct usbi_event_source *)((uintptr_t)((ievent_source)->list.next) - (uintptr_t)__builtin_offsetof(struct usbi_event_source, list)))) {\n  17              | fds[i].fd = ievent_source->data.os_handle;\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/libusb-1.0.27/report-HVwbaL1/events_posix_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            10,
+            11,
+            13,
+            14,
+            16,
+            17
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "域敏感度缺失",
+        "常量识别和传播失效"
+    ]
+}

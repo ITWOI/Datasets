@@ -1,0 +1,58 @@
+{
+    "bug_type": "Bitwise shift",
+    "checker": "Clang Static Analyzer",
+    "description": "Left shift by '32' overflows the capacity of 'int'",
+    "warning_func": "",
+    "line_number": 6,
+    "directory": "path/tests/itc-cases",
+    "entry_function": "",
+    "functions": [
+        "bit_shift_007"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-PVm7C35/bit_shift_end.c",
+            "line": 3,
+            "col": 5,
+            "line2": 3,
+            "col2": 9,
+            "function": "bit_shift_007",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-PVm7C35/bit_shift_end.c",
+            "line": 6,
+            "col": 11,
+            "line2": 6,
+            "col2": 32,
+            "function": "bit_shift_007",
+            "var": [
+                "ret",
+                "a",
+                "shift"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/itc-cases/report-PVm7C35/defect_info.json",
+    "files": [
+        "bit_shift_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件bit_shift_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | extern void bit_shift_007 (){\n---→ 函数: bit_shift_007\n   3 [TRACE-1]    | int a = 1;\n   4              | int shift = 6;\n   5              | int ret;\n   6 [TRACE-2]    | ret = a << ((5 * shift) + 2);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/itc-cases/report-PVm7C35/bit_shift_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "未定义行为",
+    "qwen3.5-122b-a10b_labels": [
+        "常量识别和传播失效",
+        "基础类型建模不准确"
+    ]
+}

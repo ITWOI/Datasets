@@ -1,0 +1,594 @@
+{
+    "bug_type": "Result of operation is garbage or undefined",
+    "checker": "Clang Static Analyzer",
+    "description": "The left operand of '==' is a garbage value",
+    "warning_func": "",
+    "line_number": 99,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "capi_getcode",
+        "_getucname",
+        "_cmpname",
+        "_getcode",
+        "_gethash"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 157,
+            "col": 40,
+            "line2": 157,
+            "col2": 46,
+            "function": "capi_getcode",
+            "var": [
+                "_getcode",
+                "name",
+                "namelen",
+                "code",
+                "with_named_seq"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 157,
+            "col": 12,
+            "line2": 157,
+            "col2": 69,
+            "function": "capi_getcode",
+            "var": [
+                "_getcode",
+                "name",
+                "namelen",
+                "code",
+                "with_named_seq"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 101,
+            "col": 1,
+            "line2": 101,
+            "col2": 1,
+            "function": "_getcode",
+            "var": [
+                "strncmp",
+                "name",
+                "v",
+                "namelen",
+                "is_unified_ideograph",
+                "h",
+                "_gethash",
+                "i",
+                "mask",
+                "code_hash",
+                "_cmpname",
+                "self",
+                "_check_alias_and_seq",
+                "code",
+                "with_named_seq",
+                "incr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 105,
+            "col": 9,
+            "line2": 105,
+            "col2": 50,
+            "function": "_getcode",
+            "var": [
+                "strncmp",
+                "name"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 110,
+            "col": 9,
+            "line2": 110,
+            "col2": 56,
+            "function": "_getcode",
+            "var": [
+                "strncmp",
+                "name",
+                "v",
+                "namelen",
+                "is_unified_ideograph"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 132,
+            "col": 23,
+            "line2": 132,
+            "col2": 49,
+            "function": "_getcode",
+            "var": [
+                "h",
+                "_gethash",
+                "name",
+                "namelen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 2,
+            "col": 1,
+            "line2": 2,
+            "col2": 1,
+            "function": "_gethash",
+            "var": [
+                "i",
+                "len",
+                "h",
+                "scale",
+                "_Py_ctype_toupper",
+                "s",
+                "ix"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 6,
+            "col": 17,
+            "line2": 6,
+            "col2": 23,
+            "function": "_gethash",
+            "var": [
+                "i",
+                "len",
+                "h",
+                "scale",
+                "_Py_ctype_toupper",
+                "s",
+                "ix"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 6,
+            "col": 17,
+            "line2": 6,
+            "col2": 23,
+            "function": "_gethash",
+            "var": [
+                "i",
+                "len",
+                "h",
+                "scale",
+                "_Py_ctype_toupper",
+                "s",
+                "ix"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 9,
+            "col": 13,
+            "line2": 9,
+            "col2": 14,
+            "function": "_gethash",
+            "var": [
+                "ix",
+                "h"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 6,
+            "col": 5,
+            "line2": 6,
+            "col2": 7,
+            "function": "_gethash",
+            "var": [
+                "i",
+                "len",
+                "h",
+                "scale",
+                "_Py_ctype_toupper",
+                "s",
+                "ix"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 6,
+            "col": 17,
+            "line2": 6,
+            "col2": 23,
+            "function": "_gethash",
+            "var": [
+                "i",
+                "len",
+                "h",
+                "scale",
+                "_Py_ctype_toupper",
+                "s",
+                "ix"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 132,
+            "col": 23,
+            "line2": 132,
+            "col2": 49,
+            "function": "_getcode",
+            "var": [
+                "h",
+                "_gethash",
+                "name",
+                "namelen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 135,
+            "col": 9,
+            "line2": 135,
+            "col2": 10,
+            "function": "_getcode",
+            "var": [
+                "v"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 137,
+            "col": 33,
+            "line2": 137,
+            "col2": 39,
+            "function": "_getcode",
+            "var": [
+                "_cmpname",
+                "self",
+                "v",
+                "name",
+                "namelen",
+                "_check_alias_and_seq",
+                "code",
+                "with_named_seq"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 137,
+            "col": 9,
+            "line2": 137,
+            "col2": 40,
+            "function": "_getcode",
+            "var": [
+                "_cmpname",
+                "self",
+                "v",
+                "name",
+                "namelen",
+                "_check_alias_and_seq",
+                "code",
+                "with_named_seq"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 90,
+            "col": 1,
+            "line2": 90,
+            "col2": 1,
+            "function": "_cmpname",
+            "var": [
+                "_getucname",
+                "self",
+                "code",
+                "buffer",
+                "i",
+                "namelen",
+                "_Py_ctype_toupper",
+                "name"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 93,
+            "col": 10,
+            "line2": 93,
+            "col2": 47,
+            "function": "_cmpname",
+            "var": [
+                "_getucname",
+                "self",
+                "code",
+                "buffer"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 17,
+            "col": 1,
+            "line2": 17,
+            "col2": 1,
+            "function": "_getucname",
+            "var": [
+                "code",
+                "with_alias_and_seq",
+                "aliases_start",
+                "aliases_end",
+                "named_sequences_start",
+                "named_sequences_end",
+                "self",
+                "_PyObject_TypeCheck",
+                "PyModule_Type",
+                "old",
+                "getrecord",
+                "category_changed",
+                "SIndex",
+                "buflen",
+                "strcpy",
+                "buffer",
+                "hangul_syllables",
+                "L",
+                "strlen",
+                "V",
+                "T",
+                "is_unified_ideograph",
+                "offset",
+                "phrasebook_offset1",
+                "phrasebook_offset2",
+                "i",
+                "word",
+                "phrasebook",
+                "w",
+                "lexicon",
+                "lexicon_offset"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 22,
+            "col": 9,
+            "line2": 22,
+            "col2": 23,
+            "function": "_getucname",
+            "var": [
+                "code"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 35,
+            "col": 9,
+            "line2": 35,
+            "col2": 21,
+            "function": "_getucname",
+            "var": [
+                "code",
+                "SIndex",
+                "buflen",
+                "strcpy",
+                "buffer",
+                "hangul_syllables",
+                "L",
+                "strlen",
+                "V",
+                "T"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 60,
+            "col": 9,
+            "line2": 60,
+            "col2": 15,
+            "function": "_getucname",
+            "var": [
+                "offset"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 63,
+            "col": 5,
+            "line2": 63,
+            "col2": 7,
+            "function": "_getucname",
+            "var": [
+                "word",
+                "phrasebook",
+                "offset",
+                "i",
+                "buflen",
+                "buffer",
+                "w",
+                "lexicon",
+                "lexicon_offset"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 65,
+            "col": 13,
+            "line2": 65,
+            "col2": 21,
+            "function": "_getucname",
+            "var": [
+                "word",
+                "phrasebook",
+                "offset"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 76,
+            "col": 16,
+            "line2": 76,
+            "col2": 23,
+            "function": "_getucname",
+            "var": [
+                "w",
+                "i",
+                "buflen",
+                "buffer"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 85,
+            "col": 13,
+            "line2": 85,
+            "col2": 21,
+            "function": "_getucname",
+            "var": [
+                "w"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 93,
+            "col": 10,
+            "line2": 93,
+            "col2": 47,
+            "function": "_cmpname",
+            "var": [
+                "_getucname",
+                "self",
+                "code",
+                "buffer"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 95,
+            "col": 17,
+            "line2": 95,
+            "col2": 27,
+            "function": "_cmpname",
+            "var": [
+                "i",
+                "namelen",
+                "_Py_ctype_toupper",
+                "name",
+                "buffer"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 96,
+            "col": 13,
+            "line2": 96,
+            "col2": 80,
+            "function": "_cmpname",
+            "var": [
+                "_Py_ctype_toupper",
+                "name",
+                "i",
+                "buffer"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 95,
+            "col": 5,
+            "line2": 95,
+            "col2": 7,
+            "function": "_cmpname",
+            "var": [
+                "i",
+                "namelen",
+                "_Py_ctype_toupper",
+                "name",
+                "buffer"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c",
+            "line": 99,
+            "col": 12,
+            "line2": 99,
+            "col2": 26,
+            "function": "_cmpname",
+            "var": [
+                "buffer",
+                "namelen"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/defect_info.json",
+    "files": [
+        "unicodedata_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件unicodedata_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: _gethash\n   2 [TRACE-7]    | static unsigned long _gethash (const char *s, int len, int scale){\n   3              | int i;\n   4              | unsigned long h = 0;\n   5              | unsigned long ix;\n   6 [TRACE-8,9,11,12] | for (i = 0; i < len; i++) {\n   7              | h = (h * scale) + (unsigned char)(_Py_ctype_toupper[((unsigned char)((s[i]) & 255))]);\n   8              | ix = h & 4278190080U;\n   9 [TRACE-10]   | if (ix)\n  11              | }\n  12              | return h;\n  14              | static int is_unified_ideograph (Py_UCS4 code){\n  15              | return (13312 <= code && code <= 19903) || (19968 <= code && code <= 40956) || (131072 <= code && code <= 173789) || (173824 <= code && code <= 177972) || (177984 <= code && code <= 178205) || (178208 <= code && code <= 183969) || (183984 <= code && code <= 191456) || (196608 <= code && code <= 201546);\n---→ 函数: _getucname\n  17 [TRACE-19]   | static int _getucname (PyObject *self, Py_UCS4 code, char *buffer, int buflen, int with_alias_and_seq){\n  18              | int offset;\n  19              | int i;\n  20              | int word;\n  21              | const unsigned char *w;\n  22 [TRACE-20]   | if (code >= 1114112)\n  24              | if (!with_alias_and_seq && (((code >= aliases_start) && (code < aliases_end)) || ((code >= named_sequences_start) && (code < named_sequences_end))))\n  26              | if ((self != ((void *)0) && !_PyObject_TypeCheck(((PyObject *)(self)), &PyModule_Type))) {\n  35 [TRACE-21]   | if (44032 <= code && code < 44032 + (19 * (21 * 28))) {\n  53              | if (is_unified_ideograph(code)) {\n  58              | offset = phrasebook_offset1[(code >> 8)];\n  59              | offset = phrasebook_offset2[(offset << 8) + (code & ((1 << 8) - 1))];\n  60 [TRACE-22]   | if (!offset)\n  62              | i = 0;\n  63 [TRACE-23]   | for (;;) {\n  64              | word = phrasebook[offset] - 191;\n  65 [TRACE-24]   | if (word >= 0) {\n  66              | word = (word << 8) + phrasebook[offset + 1];\n  67              | offset += 2;\n  69              | word = phrasebook[offset++];\n  70              | if (i) {\n  75              | w = lexicon + lexicon_offset[word];\n  76 [TRACE-25]   | while (*w < 128)\n  82              | if (i >= buflen)\n  84              | buffer[i++] = *w & 127;\n  85 [TRACE-26]   | if (*w == 128)\n  86              | break;\n  88              | return 1;\n---→ 函数: _cmpname\n  90 [TRACE-17]   | static int _cmpname (PyObject *self, int code, const char *name, int namelen){\n  91              | int i;\n  92              | char buffer[257];\n  93 [TRACE-18,27] | if (!_getucname(self, code, buffer, 256, 1))\n  95 [TRACE-28,30] | for (i = 0; i < namelen; i++) {\n  96 [TRACE-29]   | if ((_Py_ctype_toupper[((unsigned char)((name[i]) & 255))]) != buffer[i])\n  98              | }\n  99 [TRACE-31]   | return buffer[namelen] == '\\x00';\n---→ 函数: _getcode\n 101 [TRACE-3]    | static int _getcode (PyObject *self, const char *name, int namelen, Py_UCS4 *code, int with_named_seq){\n 102              | unsigned int h, v;\n 103              | unsigned int mask = 65536 - 1;\n 104              | unsigned int i, incr;\n 105 [TRACE-4]    | if (strncmp(name, \"HANGUL SYLLABLE \", 16) == 0) {\n 110 [TRACE-5]    | if (strncmp(name, \"CJK UNIFIED IDEOGRAPH-\", 22) == 0) {\n 132 [TRACE-6,13] | h = (unsigned int)_gethash(name, namelen, 47);\n 133              | i = (~h) & mask;\n 134              | v = code_hash[i];\n 135 [TRACE-14]   | if (!v)\n 137 [TRACE-15,16] | if (_cmpname(self, v, name, namelen)) {\n 156              | static int capi_getcode (const char *name, int namelen, Py_UCS4 *code, int with_named_seq){\n---→ 函数: capi_getcode\n 157 [TRACE-1,2]  | return _getcode(((void *)0), name, namelen, code, with_named_seq);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-1pEbTa2/unicodedata_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11,
+            12,
+            14,
+            15,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            24,
+            26,
+            35,
+            53,
+            58,
+            59,
+            60,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            69,
+            70,
+            75,
+            76,
+            82,
+            84,
+            85,
+            86,
+            88,
+            90,
+            91,
+            92,
+            93,
+            95,
+            96,
+            98,
+            99,
+            101,
+            102,
+            103,
+            104,
+            105,
+            110,
+            132,
+            133,
+            134,
+            135,
+            137,
+            156,
+            157
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "域敏感度缺失",
+        "符号表达式求解失效"
+    ]
+}

@@ -1,0 +1,23 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from aof_end.c:1:
+./header_func.h:27:22: warning: function 'sdslen' has internal linkage but is not defined [-Wundefined-internal]
+   27 | static inline size_t sdslen(const sds s) ;
+      |                      ^
+aof_end.c:17:63: note: used here
+   17 |         filename_repr = sdscatrepr(sdsempty(), ai->file_name, sdslen(ai->file_name));
+      |                                                               ^
+1 warning generated.
+aof_end.c:480:16: warning: The left operand of '!=' is a garbage value [core.UndefinedBinaryOperatorResult]
+  480 |     if (status != 0) {
+      |         ~~~~~~ ^
+aof_end.c:480:16: warning: The left operand of '!=' is a garbage value [core.UndefinedBinaryOperatorResult]
+  480 |     if (status != 0) {
+      |         ~~~~~~ ^
+aof_end.c:480:16: warning: The left operand of '!=' is a garbage value [core.UndefinedBinaryOperatorResult]
+  480 |     if (status != 0) {
+      |         ~~~~~~ ^
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-fpnJNP1/2026-03-12-191305-73464-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-fpnJNP1/2026-03-12-191305-73464-1' to examine bug reports.

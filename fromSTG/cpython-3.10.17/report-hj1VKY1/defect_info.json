@@ -1,0 +1,183 @@
+{
+    "bug_type": "Bitwise shift",
+    "checker": "Clang Static Analyzer",
+    "description": "Right shift by '32' overflows the capacity of 'ULong'",
+    "warning_func": "",
+    "line_number": 494,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "_Py_dg_dtoa"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hj1VKY1/dtoa_end.c",
+            "line": 468,
+            "col": 9,
+            "line2": 468,
+            "col2": 32,
+            "function": "_Py_dg_dtoa",
+            "var": [
+                "L",
+                "u",
+                "sign"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hj1VKY1/dtoa_end.c",
+            "line": 473,
+            "col": 9,
+            "line2": 473,
+            "col2": 47,
+            "function": "_Py_dg_dtoa",
+            "var": [
+                "L",
+                "u",
+                "decpt",
+                "nrv_alloc",
+                "rve"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hj1VKY1/dtoa_end.c",
+            "line": 479,
+            "col": 9,
+            "line2": 479,
+            "col2": 16,
+            "function": "_Py_dg_dtoa",
+            "var": [
+                "d",
+                "u",
+                "decpt",
+                "nrv_alloc",
+                "rve"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hj1VKY1/dtoa_end.c",
+            "line": 486,
+            "col": 10,
+            "line2": 486,
+            "col2": 10,
+            "function": "_Py_dg_dtoa",
+            "var": [
+                "i",
+                "L",
+                "u",
+                "d",
+                "d2",
+                "denorm",
+                "bbits",
+                "be",
+                "x"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hj1VKY1/dtoa_end.c",
+            "line": 494,
+            "col": 47,
+            "line2": 494,
+            "col2": 68,
+            "function": "_Py_dg_dtoa",
+            "var": [
+                "x",
+                "i",
+                "L",
+                "u"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-hj1VKY1/defect_info.json",
+    "files": [
+        "dtoa_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件dtoa_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | static Bigint * Balloc (int k){\n   3              | int x;\n   4              | Bigint *rv;\n   5              | unsigned int len;\n   6              | if (k <= 7 && (rv = freelist[k])) {\n   9              | x = 1 << k;\n  10              | len = (sizeof(Bigint) + (x - 1) * sizeof(ULong) + sizeof(double) - 1) / sizeof(double);\n  11              | if (k <= 7 && pmem_next - private_mem + len <= (Py_ssize_t)((2304 + sizeof(double) - 1) / sizeof(double))) {\n  15              | rv = (Bigint *)PyMem_Malloc(len * sizeof(double));\n  16              | if (rv == ((void *)0))\n  19              | rv->k = k;\n  20              | rv->maxwds = x;\n  22              | rv->sign = rv->wds = 0;\n  23              | return rv;\n  65              | static int hi0bits (ULong x){\n  66              | int k = 0;\n  67              | if (!(x & 4294901760U)) {\n  71              | if (!(x & 4278190080U)) {\n  75              | if (!(x & 4026531840U)) {\n  79              | if (!(x & 3221225472U)) {\n  83              | if (!(x & 2147483648U)) {\n  88              | return k;\n  90              | static int lo0bits (ULong *y){\n  91              | int k;\n  92              | ULong x = *y;\n  93              | if (x & 7) {\n 103              | k = 0;\n 104              | if (!(x & 65535)) {\n 108              | if (!(x & 255)) {\n 112              | if (!(x & 15)) {\n 116              | if (!(x & 3)) {\n 120              | if (!(x & 1)) {\n 126              | *y = x;\n 127              | return k;\n 342              | static Bigint * d2b (U *d, int *e, int *bits){\n 343              | Bigint *b;\n 344              | int de, k;\n 345              | ULong *x, y, z;\n 346              | int i;\n 347              | b = Balloc(1);\n 348              | if (b == ((void *)0))\n 350              | x = b->x;\n 351              | z = (d)->L[1] & 1048575;\n 352              | (d)->L[1] &= 2147483647;\n 353              | if ((de = (int)((d)->L[1] >> 20)))\n 355              | if ((y = (d)->L[0])) {\n 363              | k = lo0bits(&z);\n 364              | x[0] = z;\n 365              | i = b->wds = 1;\n 366              | k += 32;\n 368              | if (de) {\n 372              | *e = de - 1023 - (53 - 1) + 1 + k;\n 373              | *bits = 32 * i - hi0bits(x[i - 1]);\n 375              | return b;\n 456              | extern  __attribute__((visibility(\"default\"))) char * _Py_dg_dtoa (double dd, int mode, int ndigits, int *decpt, int *sign, char **rve){\n 457              | int bbits, b2, b5, be, dig, i, ieps, ilim, ilim0, ilim1, j, j1, k, k0, k_check, leftright, m2, m5, s2, s5, spec_case, try_quick;\n 458              | Long L;\n 459              | int denorm;\n 460              | ULong x;\n 461              | Bigint *b, *b1, *delta, *mlo, *mhi, *S;\n 462              | U d2, eps, u;\n 463              | double ds;\n 464              | char *s, *s0;\n 465              | mlo = mhi = S = 0;\n 466              | s0 = 0;\n 467              | u.d = dd;\n---→ 函数: _Py_dg_dtoa\n 468 [TRACE-1]    | if ((&u)->L[1] & 2147483648U) {\n 472              | *sign = 0;\n 473 [TRACE-2]    | if (((&u)->L[1] & 2146435072) == 2146435072) {\n 479 [TRACE-3]    | if (!(&u)->d) {\n 483              | b = d2b(&u, &be, &bbits);\n 484              | if (b == ((void *)0))\n 486 [TRACE-4]    | if ((i = (int)((&u)->L[1] >> 20 & (2146435072 >> 20)))) {\n 493              | i = bbits + be + (1023 + (53 - 1) - 1);\n 494 [TRACE-5]    | x = i > 32 ? (&u)->L[1] << (64 - i) | (&u)->L[0] >> (i - 32) : (&u)->L[0] << (32 - i);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-hj1VKY1/dtoa_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            9,
+            10,
+            11,
+            15,
+            16,
+            19,
+            20,
+            22,
+            23,
+            65,
+            66,
+            67,
+            71,
+            75,
+            79,
+            83,
+            88,
+            90,
+            91,
+            92,
+            93,
+            103,
+            104,
+            108,
+            112,
+            116,
+            120,
+            126,
+            127,
+            342,
+            343,
+            344,
+            345,
+            346,
+            347,
+            348,
+            350,
+            351,
+            352,
+            353,
+            355,
+            363,
+            364,
+            365,
+            366,
+            368,
+            372,
+            373,
+            375,
+            456,
+            457,
+            458,
+            459,
+            460,
+            461,
+            462,
+            463,
+            464,
+            465,
+            466,
+            467,
+            468,
+            472,
+            473,
+            479,
+            483,
+            484,
+            486,
+            493,
+            494
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "未定义行为",
+    "qwen3.5-122b-a10b_labels": [
+        "基础类型建模不准确",
+        "符号表达式求解失效",
+        "过程间数据流断裂"
+    ]
+}

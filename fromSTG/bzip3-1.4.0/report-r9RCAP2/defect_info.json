@@ -1,0 +1,304 @@
+{
+    "bug_type": "Memory leak",
+    "checker": "Clang Static Analyzer",
+    "description": "Potential memory leak",
+    "warning_func": "",
+    "line_number": 181,
+    "directory": "path/tests/bzip3-1.4.0",
+    "entry_function": "",
+    "functions": [
+        "process"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/main_end.c",
+            "line": 32,
+            "col": 10,
+            "line2": 32,
+            "col2": 18,
+            "function": "process",
+            "var": [
+                "mode",
+                "isatty",
+                "fileno",
+                "output_des",
+                "input_des"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/main_end.c",
+            "line": 32,
+            "col": 56,
+            "line2": 32,
+            "col2": 64,
+            "function": "process",
+            "var": [
+                "mode",
+                "isatty",
+                "fileno",
+                "output_des",
+                "input_des"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/main_end.c",
+            "line": 32,
+            "col": 69,
+            "line2": 32,
+            "col2": 77,
+            "function": "process",
+            "var": [
+                "mode",
+                "isatty",
+                "fileno",
+                "output_des",
+                "input_des"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/main_end.c",
+            "line": 32,
+            "col": 82,
+            "line2": 32,
+            "col2": 90,
+            "function": "process",
+            "var": [
+                "mode",
+                "isatty",
+                "fileno",
+                "output_des",
+                "input_des"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/main_end.c",
+            "line": 69,
+            "col": 9,
+            "line2": 69,
+            "col2": 20,
+            "function": "process",
+            "var": [
+                "workers"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/main_end.c",
+            "line": 69,
+            "col": 25,
+            "line2": 69,
+            "col2": 35,
+            "function": "process",
+            "var": [
+                "workers"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/main_end.c",
+            "line": 73,
+            "col": 9,
+            "line2": 73,
+            "col2": 20,
+            "function": "process",
+            "var": [
+                "workers",
+                "bz3_new",
+                "block_size",
+                "state",
+                "malloc",
+                "bz3_bound",
+                "buffer",
+                "mode",
+                "feof",
+                "input_des",
+                "read_count",
+                "xread",
+                "bytes_read",
+                "bz3_encode_block",
+                "new_size",
+                "write_neutral_s32",
+                "byteswap_buf",
+                "xwrite",
+                "output_des",
+                "bytes_written",
+                "xread_eofcheck",
+                "read_neutral_s32",
+                "xread_noeof",
+                "old_size",
+                "bz3_decode_block",
+                "fprintf",
+                "stderr",
+                "bz3_strerror",
+                "i",
+                "states",
+                "buffers",
+                "sizes",
+                "old_sizes",
+                "bz3_encode_blocks",
+                "j",
+                "bz3_last_error",
+                "bz3_decode_blocks"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/main_end.c",
+            "line": 178,
+            "col": 25,
+            "line2": 178,
+            "col2": 35,
+            "function": "process",
+            "var": [
+                "i",
+                "workers",
+                "states",
+                "bz3_new",
+                "block_size",
+                "fprintf",
+                "stderr",
+                "buffers",
+                "malloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/main_end.c",
+            "line": 180,
+            "col": 17,
+            "line2": 180,
+            "col2": 40,
+            "function": "process",
+            "var": [
+                "states",
+                "i",
+                "fprintf",
+                "stderr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/main_end.c",
+            "line": 184,
+            "col": 26,
+            "line2": 184,
+            "col2": 66,
+            "function": "process",
+            "var": [
+                "buffers",
+                "i",
+                "malloc",
+                "block_size"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/main_end.c",
+            "line": 185,
+            "col": 17,
+            "line2": 185,
+            "col2": 27,
+            "function": "process",
+            "var": [
+                "buffers",
+                "i"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/main_end.c",
+            "line": 178,
+            "col": 9,
+            "line2": 178,
+            "col2": 11,
+            "function": "process",
+            "var": [
+                "i",
+                "workers",
+                "states",
+                "bz3_new",
+                "block_size",
+                "fprintf",
+                "stderr",
+                "buffers",
+                "malloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/main_end.c",
+            "line": 178,
+            "col": 25,
+            "line2": 178,
+            "col2": 35,
+            "function": "process",
+            "var": [
+                "i",
+                "workers",
+                "states",
+                "bz3_new",
+                "block_size",
+                "fprintf",
+                "stderr",
+                "buffers",
+                "malloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/main_end.c",
+            "line": 180,
+            "col": 17,
+            "line2": 180,
+            "col2": 40,
+            "function": "process",
+            "var": [
+                "states",
+                "i",
+                "fprintf",
+                "stderr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/main_end.c",
+            "line": 181,
+            "col": 17,
+            "line2": 181,
+            "col2": 17,
+            "function": "process",
+            "var": [
+                "fprintf()",
+                "fprintf",
+                "stderr"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/defect_info.json",
+    "files": [
+        "main_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件main_end.c  缺陷代码片段===\n------------------------------------------------------------\n  30              | static int process (FILE *input_des, FILE *output_des, int mode, int block_size, int workers, int verbose, char *file_name){\n  31              | uint64_t bytes_read = 0, bytes_written = 0;\n---→ 函数: process\n  32 [TRACE-1,2,3,4] | if ((mode == 1 && isatty(fileno(output_des))) || ((mode == 0 || mode == 2 || mode == 3) && isatty(fileno(input_des)))) {\n  36              | (*__errno_location()) = 0;\n  37              | u8 byteswap_buf[4];\n  38              | switch (mode) {\n  69 [TRACE-5,6]  | if (workers > 64 || workers < 0) {\n  73 [TRACE-7]    | if (workers <= 1) {\n 174              | struct bz3_state *states[workers];\n 175              | u8 *buffers[workers];\n 176              | s32 sizes[workers];\n 177              | s32 old_sizes[workers];\n 178 [TRACE-8,12,13] | for (s32 i = 0; i < workers; i++) {\n 179              | states[i] = bz3_new(block_size);\n 180 [TRACE-9,14] | if (states[i] == ((void *)0)) {\n 181 [TRACE-15]   | fprintf(stderr, \"Failed to create a block encoder state.\\n\");\n 184 [TRACE-10]   | buffers[i] = malloc(block_size + block_size / 50 + 32);\n 185 [TRACE-11]   | if (!buffers[i]) {\n 189              | }\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP2/main_end.c": [
+            30,
+            31,
+            32,
+            36,
+            37,
+            38,
+            69,
+            73,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            184,
+            185,
+            189
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "堆对象抽象过粗",
+        "指针分析能力不足",
+        "外部库/API 逻辑建模缺失"
+    ]
+}

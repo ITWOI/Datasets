@@ -1,0 +1,115 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Access to field 'event_handling_key' results in a dereference of a null pointer (loaded from variable 'ctx')",
+    "warning_func": "",
+    "line_number": 3,
+    "directory": "path/tests/libusb-1.0.27/libusb",
+    "entry_function": "",
+    "functions": [
+        "usbi_handling_events",
+        "libusb_control_transfer"
+    ],
+    "is_single_file": false,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-LiJ9OP1/sync_end.c",
+            "line": 8,
+            "col": 31,
+            "line2": 8,
+            "col2": 42,
+            "function": "libusb_control_transfer",
+            "var": [
+                "usbi_handling_events",
+                "dev_handle",
+                "ctx",
+                "dev",
+                "LIBUSB_ERROR_BUSY"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-LiJ9OP1/sync_end.c",
+            "line": 8,
+            "col": 30,
+            "line2": 8,
+            "col2": 86,
+            "function": "libusb_control_transfer",
+            "var": [
+                "usbi_handling_events",
+                "dev_handle",
+                "ctx",
+                "dev",
+                "LIBUSB_ERROR_BUSY"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-LiJ9OP1/sync_end.c",
+            "line": 8,
+            "col": 9,
+            "line2": 8,
+            "col2": 87,
+            "function": "libusb_control_transfer",
+            "var": [
+                "usbi_handling_events",
+                "dev_handle",
+                "ctx",
+                "dev",
+                "LIBUSB_ERROR_BUSY"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-LiJ9OP1/./libusbi.h",
+            "line": 2,
+            "col": 1,
+            "line2": 2,
+            "col2": 1,
+            "function": "usbi_handling_events",
+            "var": [
+                "usbi_tls_key_get",
+                "event_handling_key",
+                "ctx"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libusb-1.0.27/report-LiJ9OP1/./libusbi.h",
+            "line": 3,
+            "col": 29,
+            "line2": 3,
+            "col2": 31,
+            "function": "usbi_handling_events",
+            "var": [
+                "usbi_tls_key_get",
+                "event_handling_key",
+                "ctx"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/libusb-1.0.27/report-LiJ9OP1/defect_info.json",
+    "files": [
+        "sync_end.c",
+        "./libusbi.h"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件sync_end.c  缺陷代码片段===\n------------------------------------------------------------\n   3              | extern  __attribute__((visibility(\"default\"))) int libusb_control_transfer (libusb_device_handle *dev_handle, uint8_t bmRequestType, uint8_t bRequest, uint16_t wValue, uint16_t wIndex, unsigned char *data, uint16_t wLength, unsigned int timeout){\n   4              | struct libusb_transfer *transfer;\n   5              | unsigned char *buffer;\n   6              | int completed = 0;\n   7              | int r;\n---→ 函数: libusb_control_transfer\n   8 [TRACE-1,2,3] | if (usbi_handling_events(((dev_handle) ? (((dev_handle)->dev)->ctx) : ((void *)0))))\n------------------------------------------------------------\n\n=== 文件libusbi.h  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: usbi_handling_events\n   2 [TRACE-4]    | static inline int usbi_handling_events (struct libusb_context *ctx){\n   3 [TRACE-5]    | return usbi_tls_key_get(ctx->event_handling_key) != ((void *)0);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/libusb-1.0.27/report-LiJ9OP1/sync_end.c": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ],
+        "Datasets/fromDGS/libusb-1.0.27/report-LiJ9OP1/./libusbi.h": [
+            2,
+            3
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "过程间数据流断裂",
+        "路径可行性判定失效"
+    ]
+}

@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/itc-cases/report-PVm7C31",
+        "arguments": [
+            "clang",
+            "-c",
+            "bit_shift_end.c"
+        ],
+        "file": "bit_shift_end.c"
+    }
+]

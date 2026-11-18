@@ -1,0 +1,144 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Dereference of null pointer (loaded from variable 'err')",
+    "warning_func": "",
+    "line_number": 13,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "",
+    "functions": [
+        "clusterManagerFlushNodeConfig",
+        "clusterManagerAddSlots"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q6/redis-cli_end.c",
+            "line": 20,
+            "col": 9,
+            "line2": 20,
+            "col2": 20,
+            "function": "clusterManagerFlushNodeConfig",
+            "var": [
+                "dirty",
+                "node"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q6/redis-cli_end.c",
+            "line": 24,
+            "col": 9,
+            "line2": 24,
+            "col2": 26,
+            "function": "clusterManagerFlushNodeConfig",
+            "var": [
+                "err"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q6/redis-cli_end.c",
+            "line": 26,
+            "col": 9,
+            "line2": 26,
+            "col2": 38,
+            "function": "clusterManagerFlushNodeConfig",
+            "var": [
+                "replicate",
+                "node",
+                "clusterManagerAddSlots",
+                "err"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q6/redis-cli_end.c",
+            "line": 29,
+            "col": 50,
+            "line2": 29,
+            "col2": 52,
+            "function": "clusterManagerFlushNodeConfig",
+            "var": [
+                "clusterManagerAddSlots",
+                "node",
+                "err"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q6/redis-cli_end.c",
+            "line": 29,
+            "col": 21,
+            "line2": 29,
+            "col2": 53,
+            "function": "clusterManagerFlushNodeConfig",
+            "var": [
+                "clusterManagerAddSlots",
+                "node",
+                "err"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q6/redis-cli_end.c",
+            "line": 2,
+            "col": 1,
+            "line2": 2,
+            "col2": 1,
+            "function": "clusterManagerAddSlots",
+            "var": [
+                "slots_count",
+                "node",
+                "zmalloc",
+                "argc",
+                "argv",
+                "argvlen",
+                "err",
+                "success"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q6/redis-cli_end.c",
+            "line": 13,
+            "col": 6,
+            "line2": 13,
+            "col2": 8,
+            "function": "clusterManagerAddSlots",
+            "var": [
+                "err"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q6/defect_info.json",
+    "files": [
+        "redis-cli_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件redis-cli_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: clusterManagerAddSlots\n   2 [TRACE-6]    | static int clusterManagerAddSlots (clusterManagerNode *node, char **err){\n   3              | redisReply *reply = ((void *)0);\n   4              | void *_reply = ((void *)0);\n   5              | int success = 1;\n   6              | int argc = node->slots_count + 2;\n   7              | hisds *argv = zmalloc(argc * sizeof (*argv));\n   8              | size_t *argvlen = zmalloc(argc * sizeof (*argvlen));\n   9              | argv[0] = \"CLUSTER\";\n  10              | argv[1] = \"ADDSLOTS\";\n  11              | argvlen[0] = 7;\n  12              | argvlen[1] = 8;\n  13 [TRACE-7]    | *err = ((void *)0);\n  19              | static int clusterManagerFlushNodeConfig (clusterManagerNode *node, char **err){\n---→ 函数: clusterManagerFlushNodeConfig\n  20 [TRACE-1]    | if (!node->dirty)\n  22              | redisReply *reply = ((void *)0);\n  23              | int is_err = 0, success = 1;\n  24 [TRACE-2]    | if (err != ((void *)0))\n  26 [TRACE-3]    | if (node->replicate != ((void *)0)) {\n  29 [TRACE-4,5]  | int added = clusterManagerAddSlots(node, err);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-wbj0_q6/redis-cli_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            19,
+            20,
+            22,
+            23,
+            24,
+            26,
+            29
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "指针分析能力不足",
+        "路径可行性判定失效"
+    ]
+}

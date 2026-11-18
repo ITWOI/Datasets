@@ -1,0 +1,262 @@
+{
+    "bug_type": "Result of operation is garbage or undefined",
+    "checker": "Clang Static Analyzer",
+    "description": "The left operand of '!=' is a garbage value",
+    "warning_func": "",
+    "line_number": 480,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "loadAppendOnlyFiles",
+    "functions": [
+        "getBaseAndIncrAppendOnlyFilesSize",
+        "loadAppendOnlyFiles"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-fpnJNP1/aof_end.c",
+            "line": 463,
+            "col": 26,
+            "line2": 463,
+            "col2": 42,
+            "function": "loadAppendOnlyFiles",
+            "var": [
+                "__builtin_expect",
+                "am",
+                "_serverAssert",
+                "abort"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-fpnJNP1/aof_end.c",
+            "line": 464,
+            "col": 9,
+            "line2": 464,
+            "col2": 14,
+            "function": "loadAppendOnlyFiles",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-fpnJNP1/aof_end.c",
+            "line": 469,
+            "col": 9,
+            "line2": 469,
+            "col2": 38,
+            "function": "loadAppendOnlyFiles",
+            "var": [
+                "fileExist",
+                "aof_filename",
+                "server",
+                "dirExists",
+                "aof_dirname",
+                "base_aof_info",
+                "am",
+                "len",
+                "incr_aof_list",
+                "strcmp",
+                "file_name",
+                "aofFileExist",
+                "aofUpgradePrepare"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-fpnJNP1/aof_end.c",
+            "line": 474,
+            "col": 9,
+            "line2": 474,
+            "col2": 40,
+            "function": "loadAppendOnlyFiles",
+            "var": [
+                "base_aof_info",
+                "am",
+                "len",
+                "incr_aof_list"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-fpnJNP1/aof_end.c",
+            "line": 474,
+            "col": 45,
+            "line2": 474,
+            "col2": 75,
+            "function": "loadAppendOnlyFiles",
+            "var": [
+                "base_aof_info",
+                "am",
+                "len",
+                "incr_aof_list"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-fpnJNP1/aof_end.c",
+            "line": 479,
+            "col": 18,
+            "line2": 479,
+            "col2": 63,
+            "function": "loadAppendOnlyFiles",
+            "var": [
+                "total_size",
+                "getBaseAndIncrAppendOnlyFilesSize",
+                "am",
+                "status"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-fpnJNP1/aof_end.c",
+            "line": 590,
+            "col": 1,
+            "line2": 590,
+            "col2": 1,
+            "function": "getBaseAndIncrAppendOnlyFilesSize",
+            "var": [
+                "base_aof_info",
+                "am",
+                "__builtin_expect",
+                "file_type",
+                "AOF_FILE_TYPE_BASE",
+                "_serverAssert",
+                "abort",
+                "size",
+                "getAppendOnlyFileSize",
+                "file_name",
+                "status",
+                "listRewind",
+                "incr_aof_list",
+                "li",
+                "ln",
+                "listNext",
+                "value",
+                "ai",
+                "AOF_FILE_TYPE_INCR"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-fpnJNP1/aof_end.c",
+            "line": 601,
+            "col": 12,
+            "line2": 601,
+            "col2": 46,
+            "function": "getBaseAndIncrAppendOnlyFilesSize",
+            "var": [
+                "ln",
+                "listNext",
+                "li",
+                "value",
+                "__builtin_expect",
+                "file_type",
+                "ai",
+                "AOF_FILE_TYPE_INCR",
+                "_serverAssert",
+                "abort",
+                "size",
+                "getAppendOnlyFileSize",
+                "file_name",
+                "status"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-fpnJNP1/aof_end.c",
+            "line": 601,
+            "col": 12,
+            "line2": 601,
+            "col2": 46,
+            "function": "getBaseAndIncrAppendOnlyFilesSize",
+            "var": [
+                "ln",
+                "listNext",
+                "li",
+                "value",
+                "__builtin_expect",
+                "file_type",
+                "ai",
+                "AOF_FILE_TYPE_INCR",
+                "_serverAssert",
+                "abort",
+                "size",
+                "getAppendOnlyFileSize",
+                "file_name",
+                "status"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-fpnJNP1/aof_end.c",
+            "line": 609,
+            "col": 5,
+            "line2": 609,
+            "col2": 5,
+            "function": "getBaseAndIncrAppendOnlyFilesSize",
+            "var": [
+                "size"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-fpnJNP1/aof_end.c",
+            "line": 479,
+            "col": 18,
+            "line2": 479,
+            "col2": 63,
+            "function": "loadAppendOnlyFiles",
+            "var": [
+                "total_size",
+                "getBaseAndIncrAppendOnlyFilesSize",
+                "am",
+                "status"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-fpnJNP1/aof_end.c",
+            "line": 480,
+            "col": 9,
+            "line2": 480,
+            "col2": 14,
+            "function": "loadAppendOnlyFiles",
+            "var": [
+                "status",
+                "total_size"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-fpnJNP1/defect_info.json",
+    "files": [
+        "aof_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件aof_end.c  缺陷代码片段===\n------------------------------------------------------------\n 462              | extern int loadAppendOnlyFiles (aofManifest *am){\n---→ 函数: loadAppendOnlyFiles\n 463 [TRACE-1]    | (__builtin_expect(!!(am != ((void *)0)), 1) ? (void)0 : (_serverAssert(\"am != NULL\", \"aof_InstSlice.c\", 873) , abort()));\n 464 [TRACE-2]    | int status, ret = 0;\n 465              | long long start;\n 466              | off_t total_size = 0, base_size = 0;\n 467              | sds aof_name;\n 468              | int total_num, aof_num = 0, last_file;\n 469 [TRACE-3]    | if (fileExist(server.aof_filename)) {\n 474 [TRACE-4,5]  | if (am->base_aof_info == ((void *)0) && ((am->incr_aof_list)->len) == 0) {\n 477              | total_num = getBaseAndIncrAppendOnlyFilesNum(am);\n 478              | (__builtin_expect(!!(total_num > 0), 1) ? (void)0 : (_serverAssert(\"total_num > 0\", \"aof_InstSlice.c\", 901) , abort()));\n 479 [TRACE-6,11] | total_size = getBaseAndIncrAppendOnlyFilesSize(am, &status);\n 480 [TRACE-12]   | if (status != 0) {\n---→ 函数: getBaseAndIncrAppendOnlyFilesSize\n 590 [TRACE-7]    | extern off_t getBaseAndIncrAppendOnlyFilesSize (aofManifest *am, int *status){\n 591              | off_t size = 0;\n 592              | listNode *ln;\n 593              | listIter li;\n 594              | if (am->base_aof_info) {\n 600              | listRewind(am->incr_aof_list, &li);\n 601 [TRACE-8,9]  | while ((ln = listNext(&li)) != ((void *)0))\n 609 [TRACE-10]   | return size;\n 611              | extern int getBaseAndIncrAppendOnlyFilesNum (aofManifest *am){\n 612              | int num = 0;\n 613              | if (am->base_aof_info)\n 615              | if (am->incr_aof_list)\n 616              | num += ((am->incr_aof_list)->len);\n 617              | return num;\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-fpnJNP1/aof_end.c": [
+            462,
+            463,
+            464,
+            465,
+            466,
+            467,
+            468,
+            469,
+            474,
+            477,
+            478,
+            479,
+            480,
+            590,
+            591,
+            592,
+            593,
+            594,
+            600,
+            601,
+            609,
+            611,
+            612,
+            613,
+            615,
+            616,
+            617
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "指针分析能力不足",
+        "上下文敏感度不足"
+    ]
+}

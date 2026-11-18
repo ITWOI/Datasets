@@ -1,0 +1,795 @@
+{
+    "bug_type": "Assigned value is garbage or undefined",
+    "checker": "Clang Static Analyzer",
+    "description": "Assigned value is garbage or undefined",
+    "warning_func": "",
+    "line_number": 560,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "_mpd_copy_utf8",
+        "_mpd_add_pad",
+        "mpd_qformat",
+        "mpd_parse_fmt_str",
+        "mpd_qformat_spec"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 688,
+            "col": 10,
+            "line2": 688,
+            "col2": 41,
+            "function": "mpd_qformat",
+            "var": [
+                "mpd_parse_fmt_str",
+                "spec",
+                "fmt"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 319,
+            "col": 1,
+            "line2": 319,
+            "col2": 1,
+            "function": "mpd_parse_fmt_str",
+            "var": [
+                "fmt",
+                "min_width",
+                "spec",
+                "prec",
+                "type",
+                "caps",
+                "align",
+                "sign",
+                "dot",
+                "sep",
+                "grouping",
+                "n",
+                "_mpd_copy_utf8",
+                "fill",
+                "cp",
+                "have_align",
+                "__ctype_b_loc",
+                "_ISdigit",
+                "__errno_location",
+                "strtoll",
+                "lc",
+                "localeconv",
+                "decimal_point",
+                "thousands_sep",
+                "mpd_validate_lconv"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 330,
+            "col": 14,
+            "line2": 330,
+            "col2": 43,
+            "function": "mpd_parse_fmt_str",
+            "var": [
+                "n",
+                "_mpd_copy_utf8",
+                "fill",
+                "spec",
+                "cp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 238,
+            "col": 1,
+            "line2": 238,
+            "col2": 1,
+            "function": "_mpd_copy_utf8",
+            "var": [
+                "s",
+                "cp",
+                "dest",
+                "lb",
+                "ub",
+                "count",
+                "i"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 242,
+            "col": 9,
+            "line2": 242,
+            "col2": 16,
+            "function": "_mpd_copy_utf8",
+            "var": [
+                "cp",
+                "dest",
+                "lb",
+                "ub",
+                "count"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 245,
+            "col": 16,
+            "line2": 245,
+            "col2": 25,
+            "function": "_mpd_copy_utf8",
+            "var": [
+                "cp",
+                "dest",
+                "lb",
+                "ub",
+                "count"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 330,
+            "col": 14,
+            "line2": 330,
+            "col2": 43,
+            "function": "mpd_parse_fmt_str",
+            "var": [
+                "n",
+                "_mpd_copy_utf8",
+                "fill",
+                "spec",
+                "cp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 333,
+            "col": 9,
+            "line2": 333,
+            "col2": 11,
+            "function": "mpd_parse_fmt_str",
+            "var": [
+                "cp",
+                "n",
+                "align",
+                "spec",
+                "have_align",
+                "fill"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 356,
+            "col": 10,
+            "line2": 356,
+            "col2": 83,
+            "function": "mpd_parse_fmt_str",
+            "var": [
+                "__ctype_b_loc",
+                "cp",
+                "_ISdigit",
+                "__errno_location",
+                "min_width",
+                "spec",
+                "strtoll"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 362,
+            "col": 13,
+            "line2": 362,
+            "col2": 39,
+            "function": "mpd_parse_fmt_str",
+            "var": [
+                "__errno_location"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 362,
+            "col": 44,
+            "line2": 362,
+            "col2": 70,
+            "function": "mpd_parse_fmt_str",
+            "var": [
+                "__errno_location"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 366,
+            "col": 9,
+            "line2": 366,
+            "col2": 18,
+            "function": "mpd_parse_fmt_str",
+            "var": [
+                "cp",
+                "dot",
+                "spec",
+                "sep",
+                "grouping"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 372,
+            "col": 9,
+            "line2": 372,
+            "col2": 18,
+            "function": "mpd_parse_fmt_str",
+            "var": [
+                "cp",
+                "__ctype_b_loc",
+                "_ISdigit",
+                "__errno_location",
+                "prec",
+                "spec",
+                "strtoll"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 383,
+            "col": 9,
+            "line2": 383,
+            "col2": 18,
+            "function": "mpd_parse_fmt_str",
+            "var": [
+                "cp",
+                "type",
+                "spec",
+                "sep",
+                "lc",
+                "localeconv",
+                "dot",
+                "decimal_point",
+                "thousands_sep",
+                "grouping",
+                "mpd_validate_lconv"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 400,
+            "col": 9,
+            "line2": 400,
+            "col2": 21,
+            "function": "mpd_parse_fmt_str",
+            "var": [
+                "cp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 688,
+            "col": 10,
+            "line2": 688,
+            "col2": 41,
+            "function": "mpd_qformat",
+            "var": [
+                "mpd_parse_fmt_str",
+                "spec",
+                "fmt"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 692,
+            "col": 12,
+            "line2": 692,
+            "col2": 52,
+            "function": "mpd_qformat",
+            "var": [
+                "mpd_qformat_spec",
+                "dec",
+                "spec",
+                "ctx",
+                "status"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 567,
+            "col": 1,
+            "line2": 567,
+            "col2": 1,
+            "function": "mpd_qformat_spec",
+            "var": [
+                "dt",
+                "type",
+                "spec",
+                "min_width",
+                "__ctype_b_loc",
+                "_ISupper",
+                "tolower",
+                "flags",
+                "sign",
+                "mpd_isspecial",
+                "dec",
+                "align",
+                "stackspec",
+                "fill",
+                "mpd_qcopy",
+                "tmp",
+                "status",
+                "exp",
+                "prec",
+                "digits",
+                "mpd_iszero",
+                "dplace",
+                "workstatus",
+                "nbytes",
+                "result",
+                "_mpd_to_string",
+                "data",
+                "nchars",
+                "dot",
+                "_mpd_apply_lconv",
+                "_mpd_add_pad"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 575,
+            "col": 9,
+            "line2": 575,
+            "col2": 46,
+            "function": "mpd_qformat_spec",
+            "var": [
+                "min_width",
+                "spec"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 579,
+            "col": 10,
+            "line2": 579,
+            "col2": 84,
+            "function": "mpd_qformat_spec",
+            "var": [
+                "__ctype_b_loc",
+                "type",
+                "_ISupper",
+                "tolower",
+                "flags"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 588,
+            "col": 9,
+            "line2": 588,
+            "col2": 26,
+            "function": "mpd_qformat_spec",
+            "var": [
+                "mpd_isspecial",
+                "dec",
+                "align",
+                "spec",
+                "stackspec",
+                "fill",
+                "type",
+                "flags",
+                "mpd_qcopy",
+                "tmp",
+                "status",
+                "exp",
+                "prec",
+                "digits",
+                "mpd_iszero",
+                "dplace",
+                "workstatus"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 662,
+            "col": 9,
+            "line2": 662,
+            "col2": 25,
+            "function": "mpd_qformat_spec",
+            "var": [
+                "nbytes",
+                "result"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 675,
+            "col": 9,
+            "line2": 675,
+            "col2": 23,
+            "function": "mpd_qformat_spec",
+            "var": [
+                "min_width",
+                "spec",
+                "_mpd_add_pad",
+                "result",
+                "status"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 676,
+            "col": 14,
+            "line2": 676,
+            "col2": 48,
+            "function": "mpd_qformat_spec",
+            "var": [
+                "_mpd_add_pad",
+                "result",
+                "spec",
+                "status"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 525,
+            "col": 1,
+            "line2": 525,
+            "col2": 1,
+            "function": "_mpd_add_pad",
+            "var": [
+                "nchars",
+                "result",
+                "min_width",
+                "spec",
+                "align",
+                "n_fill",
+                "strlen",
+                "fill",
+                "add_chars",
+                "add_bytes",
+                "cp",
+                "data",
+                "mpd_realloc",
+                "nbytes",
+                "err",
+                "rpad",
+                "lpad",
+                "len",
+                "i",
+                "j"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 526,
+            "col": 9,
+            "line2": 526,
+            "col2": 40,
+            "function": "_mpd_add_pad",
+            "var": [
+                "nchars",
+                "result",
+                "min_width",
+                "spec",
+                "align",
+                "n_fill",
+                "strlen",
+                "fill",
+                "add_chars",
+                "add_bytes",
+                "cp",
+                "data",
+                "mpd_realloc",
+                "nbytes",
+                "err",
+                "rpad",
+                "lpad",
+                "len",
+                "i",
+                "j"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 537,
+            "col": 13,
+            "line2": 537,
+            "col2": 15,
+            "function": "_mpd_add_pad",
+            "var": [
+                "err"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 558,
+            "col": 21,
+            "line2": 558,
+            "col2": 28,
+            "function": "_mpd_add_pad",
+            "var": [
+                "i",
+                "lpad",
+                "j",
+                "n_fill",
+                "cp",
+                "fill",
+                "spec"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 558,
+            "col": 21,
+            "line2": 558,
+            "col2": 28,
+            "function": "_mpd_add_pad",
+            "var": [
+                "i",
+                "lpad",
+                "j",
+                "n_fill",
+                "cp",
+                "fill",
+                "spec"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 559,
+            "col": 25,
+            "line2": 559,
+            "col2": 34,
+            "function": "_mpd_add_pad",
+            "var": [
+                "j",
+                "n_fill",
+                "cp",
+                "i",
+                "fill",
+                "spec"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 559,
+            "col": 25,
+            "line2": 559,
+            "col2": 34,
+            "function": "_mpd_add_pad",
+            "var": [
+                "j",
+                "n_fill",
+                "cp",
+                "i",
+                "fill",
+                "spec"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 559,
+            "col": 13,
+            "line2": 559,
+            "col2": 15,
+            "function": "_mpd_add_pad",
+            "var": [
+                "j",
+                "n_fill",
+                "cp",
+                "i",
+                "fill",
+                "spec"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 559,
+            "col": 25,
+            "line2": 559,
+            "col2": 34,
+            "function": "_mpd_add_pad",
+            "var": [
+                "j",
+                "n_fill",
+                "cp",
+                "i",
+                "fill",
+                "spec"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 559,
+            "col": 25,
+            "line2": 559,
+            "col2": 34,
+            "function": "_mpd_add_pad",
+            "var": [
+                "j",
+                "n_fill",
+                "cp",
+                "i",
+                "fill",
+                "spec"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 559,
+            "col": 37,
+            "line2": 559,
+            "col2": 39,
+            "function": "_mpd_add_pad",
+            "var": [
+                "j",
+                "n_fill",
+                "cp",
+                "i",
+                "fill",
+                "spec"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 559,
+            "col": 13,
+            "line2": 559,
+            "col2": 15,
+            "function": "_mpd_add_pad",
+            "var": [
+                "j",
+                "n_fill",
+                "cp",
+                "i",
+                "fill",
+                "spec"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 559,
+            "col": 25,
+            "line2": 559,
+            "col2": 34,
+            "function": "_mpd_add_pad",
+            "var": [
+                "j",
+                "n_fill",
+                "cp",
+                "i",
+                "fill",
+                "spec"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 559,
+            "col": 25,
+            "line2": 559,
+            "col2": 34,
+            "function": "_mpd_add_pad",
+            "var": [
+                "j",
+                "n_fill",
+                "cp",
+                "i",
+                "fill",
+                "spec"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c",
+            "line": 560,
+            "col": 38,
+            "line2": 560,
+            "col2": 50,
+            "function": "_mpd_add_pad",
+            "var": [
+                "cp",
+                "i",
+                "n_fill",
+                "j",
+                "fill",
+                "spec"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/defect_info.json",
+    "files": [
+        "io_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件io_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: _mpd_copy_utf8\n 238 [TRACE-4]    | static int _mpd_copy_utf8 (char dest[5], const char *s){\n 239              | const unsigned char *cp = (const unsigned char *)s;\n 240              | unsigned char lb, ub;\n 241              | int count, i;\n 242 [TRACE-5]    | if (*cp == 0) {\n 245 [TRACE-6]    | } else if (*cp <= 127) {\n 246              | dest[0] = *cp;\n 247              | dest[1] = '\\x00';\n 248              | return 1;\n---→ 函数: mpd_parse_fmt_str\n 319 [TRACE-2]    | extern  __attribute__((visibility(\"hidden\"))) int mpd_parse_fmt_str (mpd_spec_t *spec, const char *fmt, int caps){\n 320              | char *cp = (char *)fmt;\n 321              | int have_align = 0, n;\n 322              | spec->min_width = 0;\n 323              | spec->prec = -1;\n 324              | spec->type = caps ? 'G' : 'g';\n 325              | spec->align = '>';\n 326              | spec->sign = '-';\n 327              | spec->dot = \"\";\n 328              | spec->sep = \"\";\n 329              | spec->grouping = \"\";\n 330 [TRACE-3,7]  | if ((n = _mpd_copy_utf8(spec->fill, cp)) < 0) {\n 333 [TRACE-8]    | if (*cp && (*(cp + n) == '<' || *(cp + n) == '>' || *(cp + n) == '=' || *(cp + n) == '^')) {\n 338              | spec->fill[0] = ' ';\n 339              | spec->fill[1] = '\\x00';\n 340              | if (*cp == '<' || *cp == '>' || *cp == '=' || *cp == '^') {\n 345              | if (*cp == '+' || *cp == '-' || *cp == ' ') {\n 348              | if (*cp == '0') {\n 356 [TRACE-9]    | if (((*__ctype_b_loc())[(int)(((unsigned char)*cp))] & (unsigned short)_ISdigit)) {\n 357              | if (*cp == '0') {\n 360              | (*__errno_location()) = 0;\n 361              | spec->min_width = strtoll(cp, &cp, 10);\n 362 [TRACE-10,11] | if ((*__errno_location()) == 34 || (*__errno_location()) == 22) {\n 366 [TRACE-12]   | if (*cp == ',') {\n 372 [TRACE-13]   | if (*cp == '.') {\n 383 [TRACE-14]   | if (*cp == 'E' || *cp == 'e' || *cp == 'F' || *cp == 'f' || *cp == 'G' || *cp == 'g' || *cp == '%') {\n 384              | spec->type = *cp++;\n 400 [TRACE-15]   | if (*cp != '\\x00') {\n 403              | return 1;\n---→ 函数: _mpd_add_pad\n 525 [TRACE-25]   | static int _mpd_add_pad (mpd_mbstr_t *result, const mpd_spec_t *spec, uint32_t *status){\n 526 [TRACE-26]   | if (result->nchars < spec->min_width) {\n 527              | mpd_ssize_t add_chars, add_bytes;\n 528              | size_t lpad = 0, rpad = 0;\n 529              | size_t n_fill, len, i, j;\n 530              | char align = spec->align;\n 531              | uint8_t err = 0;\n 532              | char *cp;\n 533              | n_fill = strlen(spec->fill);\n 534              | add_chars = (spec->min_width - result->nchars);\n 535              | add_bytes = add_chars * (mpd_ssize_t)n_fill;\n 536              | cp = result->data = mpd_realloc(result->data, result->nbytes + add_bytes + 1, sizeof *result->data, &err);\n 537 [TRACE-27]   | if (err) {\n 541              | if (align == 'z') {\n 544              | if (align == '<') {\n 546              | } else if (align == '>' || align == '=') {\n 547              | lpad = add_chars;\n 552              | len = result->nbytes;\n 553              | if (align == '=' && (*cp == '-' || *cp == '+' || *cp == ' ')) {\n 558 [TRACE-28,29] | for (i = 0; i < lpad; i++) {\n 559 [TRACE-30,31,32,33,34,35,36,37,38] | for (j = 0; j < n_fill; j++) {\n 560 [TRACE-39]   | cp[i * n_fill + j] = spec->fill[j];\n 561              | }\n---→ 函数: mpd_qformat_spec\n 567 [TRACE-18]   | extern  __attribute__((visibility(\"hidden\"))) char * mpd_qformat_spec (const mpd_t *dec, const mpd_spec_t *spec, const mpd_context_t *ctx, uint32_t *status){\n 568              | mpd_uint_t dt[64];\n 569              | mpd_t tmp = {((uint8_t)16) | ((uint8_t)32), 0, 0, 0, 64, dt};\n 570              | mpd_ssize_t dplace = 1;\n 571              | mpd_mbstr_t result;\n 572              | mpd_spec_t stackspec;\n 573              | char type = spec->type;\n 574              | int flags = 0;\n 575 [TRACE-19]   | if (spec->min_width > 999999999999999999LL) {\n 579 [TRACE-20]   | if (((*__ctype_b_loc())[(int)(((unsigned char)type))] & (unsigned short)_ISupper)) {\n 583              | if (spec->sign == ' ') {\n 585              | } else if (spec->sign == '+') {\n 588 [TRACE-21]   | if (mpd_isspecial(dec)) {\n 589              | if (spec->align == 'z') {\n 597              | if (type == '%') {\n 660              | result.nbytes = _mpd_to_string(&result.data, dec, flags, dplace);\n 661              | result.nchars = result.nbytes;\n 662 [TRACE-22]   | if (result.nbytes < 0) {\n 666              | if (*spec->dot != '\\x00' && !mpd_isspecial(dec)) {\n 675 [TRACE-23]   | if (spec->min_width) {\n 676 [TRACE-24]   | if (!_mpd_add_pad(&result, spec, status)) {\n 686              | extern  __attribute__((visibility(\"hidden\"))) char * mpd_qformat (const mpd_t *dec, const char *fmt, const mpd_context_t *ctx, uint32_t *status){\n 687              | mpd_spec_t spec;\n---→ 函数: mpd_qformat\n 688 [TRACE-1,16] | if (!mpd_parse_fmt_str(&spec, fmt, 1)) {\n 692 [TRACE-17]   | return mpd_qformat_spec(dec, &spec, ctx, status);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-hGVRCz1/io_end.c": [
+            238,
+            239,
+            240,
+            241,
+            242,
+            245,
+            246,
+            247,
+            248,
+            319,
+            320,
+            321,
+            322,
+            323,
+            324,
+            325,
+            326,
+            327,
+            328,
+            329,
+            330,
+            333,
+            338,
+            339,
+            340,
+            345,
+            348,
+            356,
+            357,
+            360,
+            361,
+            362,
+            366,
+            372,
+            383,
+            384,
+            400,
+            403,
+            525,
+            526,
+            527,
+            528,
+            529,
+            530,
+            531,
+            532,
+            533,
+            534,
+            535,
+            536,
+            537,
+            541,
+            544,
+            546,
+            547,
+            552,
+            553,
+            558,
+            559,
+            560,
+            561,
+            567,
+            568,
+            569,
+            570,
+            571,
+            572,
+            573,
+            574,
+            575,
+            579,
+            583,
+            585,
+            588,
+            589,
+            597,
+            660,
+            661,
+            662,
+            666,
+            675,
+            676,
+            686,
+            687,
+            688,
+            692
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "域敏感度缺失",
+        "路径可行性判定失效"
+    ]
+}

@@ -1,0 +1,877 @@
+{
+    "bug_type": "Argument with 'nonnull' attribute passed null",
+    "checker": "Clang Static Analyzer",
+    "description": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "warning_func": "",
+    "line_number": 525,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "cliLegacyInitHelp",
+    "functions": [
+        "noninteractive",
+        "issueCommand",
+        "cliInitHelp",
+        "main",
+        "issueCommandRepeat",
+        "cliOutputHelp",
+        "cliLegacyInitHelp"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 6992,
+            "col": 9,
+            "line2": 6992,
+            "col2": 31,
+            "function": "main",
+            "var": [
+                "isatty",
+                "fileno",
+                "stdout",
+                "getenv",
+                "output",
+                "config",
+                "push_output"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7005,
+            "col": 9,
+            "line2": 7005,
+            "col2": 22,
+            "function": "main",
+            "var": [
+                "askpass",
+                "config",
+                "auth",
+                "conn_info",
+                "askPassword"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7008,
+            "col": 9,
+            "line2": 7008,
+            "col2": 51,
+            "function": "main",
+            "var": [
+                "from_askpass",
+                "cluster_manager_command",
+                "config",
+                "from_pass",
+                "askPassword"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7012,
+            "col": 10,
+            "line2": 7012,
+            "col2": 59,
+            "function": "main",
+            "var": [
+                "name",
+                "cluster_manager_command",
+                "config",
+                "validateClusterManagerCommand",
+                "proc",
+                "clusterManagerMode"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7019,
+            "col": 9,
+            "line2": 7019,
+            "col2": 27,
+            "function": "main",
+            "var": [
+                "latency_mode",
+                "config",
+                "cliConnect",
+                "exit",
+                "latencyMode"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7024,
+            "col": 9,
+            "line2": 7024,
+            "col2": 32,
+            "function": "main",
+            "var": [
+                "latency_dist_mode",
+                "config",
+                "cliConnect",
+                "exit",
+                "latencyDistMode"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7029,
+            "col": 9,
+            "line2": 7029,
+            "col2": 25,
+            "function": "main",
+            "var": [
+                "slave_mode",
+                "config",
+                "cliConnect",
+                "exit",
+                "sendCapa",
+                "sendReplconf",
+                "slaveMode"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7036,
+            "col": 9,
+            "line2": 7036,
+            "col2": 26,
+            "function": "main",
+            "var": [
+                "getrdb_mode",
+                "config",
+                "get_functions_rdb_mode",
+                "cliConnect",
+                "exit",
+                "sendCapa",
+                "sendRdbOnly",
+                "sendReplconf",
+                "getRDB"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7036,
+            "col": 31,
+            "line2": 7036,
+            "col2": 59,
+            "function": "main",
+            "var": [
+                "getrdb_mode",
+                "config",
+                "get_functions_rdb_mode",
+                "cliConnect",
+                "exit",
+                "sendCapa",
+                "sendRdbOnly",
+                "sendReplconf",
+                "getRDB"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7046,
+            "col": 9,
+            "line2": 7046,
+            "col2": 24,
+            "function": "main",
+            "var": [
+                "pipe_mode",
+                "config",
+                "cliConnect",
+                "exit"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7050,
+            "col": 9,
+            "line2": 7050,
+            "col2": 22,
+            "function": "main",
+            "var": [
+                "bigkeys",
+                "config",
+                "cliConnect",
+                "exit",
+                "findBigKeys"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7055,
+            "col": 9,
+            "line2": 7055,
+            "col2": 22,
+            "function": "main",
+            "var": [
+                "memkeys",
+                "config",
+                "cliConnect",
+                "exit",
+                "findBigKeys",
+                "memkeys_samples"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7060,
+            "col": 9,
+            "line2": 7060,
+            "col2": 23,
+            "function": "main",
+            "var": [
+                "keystats",
+                "config",
+                "cliConnect",
+                "exit",
+                "keyStats",
+                "memkeys_samples",
+                "cursor",
+                "top_sizes_limit"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7065,
+            "col": 9,
+            "line2": 7065,
+            "col2": 22,
+            "function": "main",
+            "var": [
+                "hotkeys",
+                "config",
+                "cliConnect",
+                "exit",
+                "findHotKeys"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7070,
+            "col": 9,
+            "line2": 7070,
+            "col2": 24,
+            "function": "main",
+            "var": [
+                "stat_mode",
+                "config",
+                "cliConnect",
+                "exit",
+                "interval",
+                "statMode"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7077,
+            "col": 9,
+            "line2": 7077,
+            "col2": 24,
+            "function": "main",
+            "var": [
+                "scan_mode",
+                "config",
+                "cliConnect",
+                "exit",
+                "scanMode"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7082,
+            "col": 9,
+            "line2": 7082,
+            "col2": 28,
+            "function": "main",
+            "var": [
+                "lru_test_mode",
+                "config",
+                "cliConnect",
+                "exit",
+                "LRUTestMode"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7087,
+            "col": 9,
+            "line2": 7087,
+            "col2": 37,
+            "function": "main",
+            "var": [
+                "intrinsic_latency_mode",
+                "config",
+                "intrinsicLatencyMode"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7089,
+            "col": 9,
+            "line2": 7089,
+            "col2": 24,
+            "function": "main",
+            "var": [
+                "test_hint",
+                "config",
+                "testHint"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7092,
+            "col": 9,
+            "line2": 7092,
+            "col2": 29,
+            "function": "main",
+            "var": [
+                "test_hint_file",
+                "config",
+                "testHintSuite"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7095,
+            "col": 9,
+            "line2": 7095,
+            "col2": 17,
+            "function": "main",
+            "var": [
+                "argc",
+                "eval",
+                "config",
+                "cliConnect",
+                "repl"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7100,
+            "col": 9,
+            "line2": 7100,
+            "col2": 19,
+            "function": "main",
+            "var": [
+                "eval",
+                "config",
+                "cliConnect",
+                "exit",
+                "evalMode",
+                "argc",
+                "argv",
+                "noninteractive"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 7106,
+            "col": 16,
+            "line2": 7106,
+            "col2": 41,
+            "function": "main",
+            "var": [
+                "noninteractive",
+                "argc",
+                "argv"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 2272,
+            "col": 1,
+            "line2": 2272,
+            "col2": 1,
+            "function": "noninteractive",
+            "var": [
+                "getSdsArrayFromArgv",
+                "argc",
+                "argv",
+                "quoted_input",
+                "config",
+                "sds_args",
+                "stdin_lastarg",
+                "hi_sds_realloc",
+                "readArgFromStdin",
+                "stdin_tag_arg",
+                "i",
+                "strcmp",
+                "stdin_tag_name",
+                "tag_match",
+                "retval",
+                "issueCommand",
+                "pubsub_mode",
+                "cliReadReply"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 2275,
+            "col": 9,
+            "line2": 2275,
+            "col2": 17,
+            "function": "noninteractive",
+            "var": [
+                "sds_args"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 2279,
+            "col": 9,
+            "line2": 2279,
+            "col2": 28,
+            "function": "noninteractive",
+            "var": [
+                "stdin_lastarg",
+                "config",
+                "sds_args",
+                "hi_sds_realloc",
+                "argc",
+                "readArgFromStdin",
+                "stdin_tag_arg",
+                "i",
+                "strcmp",
+                "stdin_tag_name",
+                "tag_match"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 2283,
+            "col": 16,
+            "line2": 2283,
+            "col2": 35,
+            "function": "noninteractive",
+            "var": [
+                "stdin_tag_arg",
+                "config",
+                "i",
+                "argc",
+                "strcmp",
+                "stdin_tag_name",
+                "sds_args",
+                "tag_match",
+                "readArgFromStdin"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 2297,
+            "col": 14,
+            "line2": 2297,
+            "col2": 41,
+            "function": "noninteractive",
+            "var": [
+                "retval",
+                "issueCommand",
+                "argc",
+                "sds_args"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 2091,
+            "col": 1,
+            "line2": 2091,
+            "col2": 1,
+            "function": "issueCommand",
+            "var": [
+                "issueCommandRepeat",
+                "argc",
+                "argv",
+                "repeat",
+                "config"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 2092,
+            "col": 12,
+            "line2": 2092,
+            "col2": 56,
+            "function": "issueCommand",
+            "var": [
+                "issueCommandRepeat",
+                "argc",
+                "argv",
+                "repeat",
+                "config"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 2056,
+            "col": 1,
+            "line2": 2056,
+            "col2": 1,
+            "function": "issueCommandRepeat",
+            "var": [
+                "eval_ldb",
+                "config",
+                "strcasecmp",
+                "argv",
+                "cliOutputHelp",
+                "argc",
+                "cluster_reissue_command",
+                "context",
+                "err",
+                "cliConnect",
+                "dbnum",
+                "cliSelect",
+                "cluster_send_asking",
+                "cliSendAsking",
+                "cliSendCommand",
+                "repeat",
+                "cluster_mode"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 2057,
+            "col": 9,
+            "line2": 2057,
+            "col2": 24,
+            "function": "issueCommandRepeat",
+            "var": [
+                "eval_ldb",
+                "config",
+                "strcasecmp",
+                "argv",
+                "cliOutputHelp",
+                "argc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 2058,
+            "col": 9,
+            "line2": 2058,
+            "col2": 37,
+            "function": "issueCommandRepeat",
+            "var": [
+                "cliOutputHelp()",
+                "cliOutputHelp",
+                "argc",
+                "argv"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 555,
+            "col": 1,
+            "line2": 555,
+            "col2": 1,
+            "function": "cliOutputHelp",
+            "var": [
+                "argc",
+                "helpEntries",
+                "cliInitHelp",
+                "__assert_fail"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 560,
+            "col": 9,
+            "line2": 560,
+            "col2": 17,
+            "function": "cliOutputHelp",
+            "var": [
+                "argc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 567,
+            "col": 9,
+            "line2": 567,
+            "col2": 21,
+            "function": "cliOutputHelp",
+            "var": [
+                "cliInitHelp()",
+                "cliInitHelp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 527,
+            "col": 1,
+            "line2": 527,
+            "col2": 1,
+            "function": "cliInitHelp",
+            "var": [
+                "dictSdsHash",
+                "dictSdsKeyCompare",
+                "dictSdsDestructor",
+                "cliConnect",
+                "groups",
+                "dictCreate",
+                "groupsdt",
+                "cliLegacyInitHelp",
+                "commandTable",
+                "redisCommand",
+                "context",
+                "type",
+                "cliLegacyIntegrateHelp",
+                "helpEntriesLen",
+                "cliCountCommands",
+                "helpEntries",
+                "zmalloc",
+                "cliInitCommandHelpEntries",
+                "cliInitGroupHelpEntries"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 531,
+            "col": 9,
+            "line2": 531,
+            "col2": 34,
+            "function": "cliInitHelp",
+            "var": [
+                "cliConnect",
+                "groups",
+                "dictCreate",
+                "groupsdt",
+                "cliLegacyInitHelp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 533,
+            "col": 9,
+            "line2": 533,
+            "col2": 33,
+            "function": "cliInitHelp",
+            "var": [
+                "cliLegacyInitHelp()",
+                "cliLegacyInitHelp",
+                "groups"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 519,
+            "col": 1,
+            "line2": 519,
+            "col2": 1,
+            "function": "cliLegacyInitHelp",
+            "var": [
+                "cliGetServerVersion",
+                "helpEntriesLen",
+                "cliLegacyCountCommands",
+                "redisCommandTable",
+                "serverVersion",
+                "helpEntries",
+                "zmalloc",
+                "cliLegacyInitCommandHelpEntries",
+                "groups",
+                "cliInitGroupHelpEntries",
+                "qsort",
+                "helpEntryCompare"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 523,
+            "col": 22,
+            "line2": 523,
+            "col2": 94,
+            "function": "cliLegacyInitHelp",
+            "var": [
+                "helpEntriesLen",
+                "cliLegacyInitCommandHelpEntries",
+                "redisCommandTable",
+                "groups",
+                "serverVersion"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c",
+            "line": 525,
+            "col": 11,
+            "line2": 525,
+            "col2": 21,
+            "function": "cliLegacyInitHelp",
+            "var": [
+                "qsort()",
+                "qsort",
+                "helpEntries",
+                "helpEntriesLen",
+                "helpEntryCompare"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/defect_info.json",
+    "files": [
+        "redis-cli_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件redis-cli_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: cliLegacyInitHelp\n 519 [TRACE-40]   | static void cliLegacyInitHelp (dict *groups){\n 520              | hisds serverVersion = cliGetServerVersion();\n 521              | helpEntriesLen = cliLegacyCountCommands(redisCommandTable, serverVersion);\n 522              | helpEntries = zmalloc(sizeof(helpEntry) * helpEntriesLen);\n 523 [TRACE-41]   | helpEntriesLen = cliLegacyInitCommandHelpEntries(redisCommandTable, groups, serverVersion);\n 524              | cliInitGroupHelpEntries(groups);\n 525 [TRACE-42]   | qsort(helpEntries, helpEntriesLen, sizeof(helpEntry), helpEntryCompare);\n---→ 函数: cliInitHelp\n 527 [TRACE-37]   | static void cliInitHelp (){\n 528              | dictType groupsdt = {dictSdsHash, ((void *)0), ((void *)0), dictSdsKeyCompare, dictSdsDestructor, ((void *)0), ((void *)0)};\n 529              | redisReply *commandTable;\n 530              | dict *groups;\n 531 [TRACE-38]   | if (cliConnect((1 << 1)) == -1) {\n 532              | groups = dictCreate(&groupsdt);\n 533 [TRACE-39]   | cliLegacyInitHelp(groups);\n---→ 函数: cliOutputHelp\n 555 [TRACE-34]   | static void cliOutputHelp (int argc, char **argv){\n 556              | int i, j;\n 557              | char *group;\n 558              | helpEntry *entry;\n 559              | struct commandDocs *help;\n 560 [TRACE-35]   | if (argc == 0) {\n 566              | if (helpEntries == ((void *)0)) {\n 567 [TRACE-36]   | cliInitHelp();\n1000              | static int cliConnect (int flags){\n1001              | if (context == ((void *)0) || flags & (1 << 0)) {\n1035              | return 0;\n2036              | static void parseEnv (){\n2037              | char *auth = getenv(\"REDISCLI_AUTH\");\n2038              | if (auth != ((void *)0) && config.conn_info.auth == ((void *)0)) {\n2041              | char *cluster_yes = getenv(\"REDISCLI_CLUSTER_YES\");\n2042              | if (cluster_yes != ((void *)0) && !strcmp(cluster_yes, \"1\")) {\n---→ 函数: issueCommandRepeat\n2056 [TRACE-31]   | static int issueCommandRepeat (int argc, char **argv, long repeat){\n2057 [TRACE-32]   | if (!config.eval_ldb && (!strcasecmp(argv[0], \"help\") || !strcasecmp(argv[0], \"?\"))) {\n2058 [TRACE-33]   | cliOutputHelp(--argc, ++argv);\n---→ 函数: issueCommand\n2091 [TRACE-29]   | static int issueCommand (int argc, char **argv){\n2092 [TRACE-30]   | return issueCommandRepeat(argc, argv, config.repeat);\n---→ 函数: noninteractive\n2272 [TRACE-24]   | static int noninteractive (int argc, char **argv){\n2273              | int retval = 0;\n2274              | hisds *sds_args = getSdsArrayFromArgv(argc, argv, config.quoted_input);\n2275 [TRACE-25]   | if (!sds_args) {\n2279 [TRACE-26]   | if (config.stdin_lastarg) {\n2283 [TRACE-27]   | } else if (config.stdin_tag_arg) {\n2297 [TRACE-28]   | retval = issueCommand(argc, sds_args);\n6909              | extern int main (int argc, char **argv){\n6910              | int firstarg;\n6911              | struct timeval tv;\n6912              | memset(&config.sslconfig, 0, sizeof (config.sslconfig));\n6913              | config.conn_info.hostip = hi_sdsnew(\"127.0.0.1\");\n6914              | config.conn_info.hostport = 6379;\n6915              | config.connect_timeout.tv_sec = 0;\n6916              | config.connect_timeout.tv_usec = 0;\n6917              | config.hostsocket = ((void *)0);\n6918              | config.repeat = 1;\n6919              | config.interval = 0;\n6920              | config.dbnum = 0;\n6921              | config.conn_info.input_dbnum = 0;\n6922              | config.interactive = 0;\n6923              | config.shutdown = 0;\n6924              | config.monitor_mode = 0;\n6925              | config.pubsub_mode = 0;\n6926              | config.blocking_state_aborted = 0;\n6927              | config.latency_mode = 0;\n6928              | config.latency_dist_mode = 0;\n6929              | config.latency_history = 0;\n6930              | config.lru_test_mode = 0;\n6931              | config.lru_test_sample_size = 0;\n6932              | config.cluster_mode = 0;\n6933              | config.cluster_send_asking = 0;\n6934              | config.slave_mode = 0;\n6935              | config.getrdb_mode = 0;\n6936              | config.get_functions_rdb_mode = 0;\n6937              | config.stat_mode = 0;\n6938              | config.scan_mode = 0;\n6939              | config.count = 10;\n6940              | config.intrinsic_latency_mode = 0;\n6941              | config.pattern = ((void *)0);\n6942              | config.rdb_filename = ((void *)0);\n6943              | config.pipe_mode = 0;\n6944              | config.pipe_timeout = 30;\n6945              | config.bigkeys = 0;\n6946              | config.memkeys = 0;\n6947              | config.keystats = 0;\n6948              | config.cursor = 0;\n6949              | config.top_sizes_limit = 10;\n6950              | config.hotkeys = 0;\n6951              | config.stdin_lastarg = 0;\n6952              | config.stdin_tag_arg = 0;\n6953              | config.stdin_tag_name = ((void *)0);\n6954              | config.conn_info.auth = ((void *)0);\n6955              | config.askpass = 0;\n6956              | config.conn_info.user = ((void *)0);\n6957              | config.eval = ((void *)0);\n6958              | config.eval_ldb = 0;\n6959              | config.eval_ldb_end = 0;\n6960              | config.eval_ldb_sync = 0;\n6961              | config.enable_ldb_on_eval = 0;\n6962              | config.last_cmd_type = -1;\n6963              | config.last_reply = ((void *)0);\n6964              | config.verbose = 0;\n6965              | config.set_errcode = 0;\n6966              | config.no_auth_warning = 0;\n6967              | config.in_multi = 0;\n6968              | config.server_version = ((void *)0);\n6969              | config.prefer_ipv4 = 0;\n6970              | config.prefer_ipv6 = 0;\n6971              | config.cluster_manager_command.name = ((void *)0);\n6972              | config.cluster_manager_command.argc = 0;\n6973              | config.cluster_manager_command.argv = ((void *)0);\n6974              | config.cluster_manager_command.stdin_arg = ((void *)0);\n6975              | config.cluster_manager_command.flags = 0;\n6976              | config.cluster_manager_command.replicas = 0;\n6977              | config.cluster_manager_command.from = ((void *)0);\n6978              | config.cluster_manager_command.to = ((void *)0);\n6979              | config.cluster_manager_command.from_user = ((void *)0);\n6980              | config.cluster_manager_command.from_pass = ((void *)0);\n6981              | config.cluster_manager_command.from_askpass = 0;\n6982              | config.cluster_manager_command.weight = ((void *)0);\n6983              | config.cluster_manager_command.weight_argc = 0;\n6984              | config.cluster_manager_command.slots = 0;\n6985              | config.cluster_manager_command.timeout = 60000;\n6986              | config.cluster_manager_command.pipeline = 10;\n6987              | config.cluster_manager_command.threshold = 2;\n6988              | config.cluster_manager_command.backup_dir = ((void *)0);\n6989              | pref.hints = 1;\n6990              | spectrum_palette = spectrum_palette_color;\n6991              | spectrum_palette_size = spectrum_palette_color_size;\n---→ 函数: main\n6992 [TRACE-1]    | if (!isatty(fileno(stdout)) && (getenv(\"FAKETTY\") == ((void *)0))) {\n6996              | config.output = 0;\n6997              | config.push_output = 1;\n6999              | config.mb_delim = hi_sdsnew(\"\\n\");\n7000              | config.cmd_delim = hi_sdsnew(\"\\n\");\n7001              | firstarg = parseOptions(argc, argv);\n7002              | argc -= firstarg;\n7003              | argv += firstarg;\n7004              | parseEnv();\n7005 [TRACE-2]    | if (config.askpass) {\n7008 [TRACE-3]    | if (config.cluster_manager_command.from_askpass) {\n7012 [TRACE-4]    | if ((config.cluster_manager_command.name != ((void *)0))) {\n7019 [TRACE-5]    | if (config.latency_mode) {\n7024 [TRACE-6]    | if (config.latency_dist_mode) {\n7029 [TRACE-7]    | if (config.slave_mode) {\n7036 [TRACE-8,9]  | if (config.getrdb_mode || config.get_functions_rdb_mode) {\n7046 [TRACE-10]   | if (config.pipe_mode) {\n7050 [TRACE-11]   | if (config.bigkeys) {\n7055 [TRACE-12]   | if (config.memkeys) {\n7060 [TRACE-13]   | if (config.keystats) {\n7065 [TRACE-14]   | if (config.hotkeys) {\n7070 [TRACE-15]   | if (config.stat_mode) {\n7077 [TRACE-16]   | if (config.scan_mode) {\n7082 [TRACE-17]   | if (config.lru_test_mode) {\n7087 [TRACE-18]   | if (config.intrinsic_latency_mode)\n7089 [TRACE-19]   | if (config.test_hint) {\n7092 [TRACE-20]   | if (config.test_hint_file) {\n7095 [TRACE-21]   | if (argc == 0 && !config.eval) {\n7100 [TRACE-22]   | if (config.eval) {\n7105              | cliConnect((1 << 1));\n7106 [TRACE-23]   | return noninteractive(argc, argv);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-wbj0_q3/redis-cli_end.c": [
+            519,
+            520,
+            521,
+            522,
+            523,
+            524,
+            525,
+            527,
+            528,
+            529,
+            530,
+            531,
+            532,
+            533,
+            555,
+            556,
+            557,
+            558,
+            559,
+            560,
+            566,
+            567,
+            1000,
+            1001,
+            1035,
+            2036,
+            2037,
+            2038,
+            2041,
+            2042,
+            2056,
+            2057,
+            2058,
+            2091,
+            2092,
+            2272,
+            2273,
+            2274,
+            2275,
+            2279,
+            2283,
+            2297,
+            6909,
+            6910,
+            6911,
+            6912,
+            6913,
+            6914,
+            6915,
+            6916,
+            6917,
+            6918,
+            6919,
+            6920,
+            6921,
+            6922,
+            6923,
+            6924,
+            6925,
+            6926,
+            6927,
+            6928,
+            6929,
+            6930,
+            6931,
+            6932,
+            6933,
+            6934,
+            6935,
+            6936,
+            6937,
+            6938,
+            6939,
+            6940,
+            6941,
+            6942,
+            6943,
+            6944,
+            6945,
+            6946,
+            6947,
+            6948,
+            6949,
+            6950,
+            6951,
+            6952,
+            6953,
+            6954,
+            6955,
+            6956,
+            6957,
+            6958,
+            6959,
+            6960,
+            6961,
+            6962,
+            6963,
+            6964,
+            6965,
+            6966,
+            6967,
+            6968,
+            6969,
+            6970,
+            6971,
+            6972,
+            6973,
+            6974,
+            6975,
+            6976,
+            6977,
+            6978,
+            6979,
+            6980,
+            6981,
+            6982,
+            6983,
+            6984,
+            6985,
+            6986,
+            6987,
+            6988,
+            6989,
+            6990,
+            6991,
+            6992,
+            6996,
+            6997,
+            6999,
+            7000,
+            7001,
+            7002,
+            7003,
+            7004,
+            7005,
+            7008,
+            7012,
+            7019,
+            7024,
+            7029,
+            7036,
+            7046,
+            7050,
+            7055,
+            7060,
+            7065,
+            7070,
+            7077,
+            7082,
+            7087,
+            7089,
+            7092,
+            7095,
+            7100,
+            7105,
+            7106
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "过程间数据流断裂",
+        "路径可行性判定失效"
+    ]
+}

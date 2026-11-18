@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/redis-8.2.2/report-xdkY1m8",
+        "arguments": [
+            "clang",
+            "-c",
+            "module_end.c"
+        ],
+        "file": "module_end.c"
+    }
+]

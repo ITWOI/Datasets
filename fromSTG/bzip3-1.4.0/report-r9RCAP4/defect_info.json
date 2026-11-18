@@ -1,0 +1,305 @@
+{
+    "bug_type": "Memory leak",
+    "checker": "Clang Static Analyzer",
+    "description": "Potential leak of memory pointed to by 'output'",
+    "warning_func": "",
+    "line_number": 112,
+    "directory": "path/tests/bzip3-1.4.0",
+    "entry_function": "",
+    "functions": [
+        "main"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/main_end.c",
+            "line": 17,
+            "col": 12,
+            "line2": 17,
+            "col2": 12,
+            "function": "main",
+            "var": [
+                "getopt_long",
+                "argc",
+                "argv",
+                "short_options",
+                "long_options",
+                "option_index",
+                "c",
+                "mode",
+                "force_stdstreams",
+                "force",
+                "batch",
+                "verbose",
+                "is_numeric",
+                "optarg",
+                "block_size",
+                "atoi",
+                "workers"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/main_end.c",
+            "line": 21,
+            "col": 17,
+            "line2": 21,
+            "col2": 23,
+            "function": "main",
+            "var": [
+                "c"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/main_end.c",
+            "line": 17,
+            "col": 5,
+            "line2": 17,
+            "col2": 9,
+            "function": "main",
+            "var": [
+                "getopt_long",
+                "argc",
+                "argv",
+                "short_options",
+                "long_options",
+                "option_index",
+                "c",
+                "mode",
+                "force_stdstreams",
+                "force",
+                "batch",
+                "verbose",
+                "is_numeric",
+                "optarg",
+                "block_size",
+                "atoi",
+                "workers"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/main_end.c",
+            "line": 17,
+            "col": 12,
+            "line2": 17,
+            "col2": 12,
+            "function": "main",
+            "var": [
+                "getopt_long",
+                "argc",
+                "argv",
+                "short_options",
+                "long_options",
+                "option_index",
+                "c",
+                "mode",
+                "force_stdstreams",
+                "force",
+                "batch",
+                "verbose",
+                "is_numeric",
+                "optarg",
+                "block_size",
+                "atoi",
+                "workers"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/main_end.c",
+            "line": 21,
+            "col": 17,
+            "line2": 21,
+            "col2": 23,
+            "function": "main",
+            "var": [
+                "c"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/main_end.c",
+            "line": 83,
+            "col": 12,
+            "line2": 83,
+            "col2": 24,
+            "function": "main",
+            "var": [
+                "optind",
+                "argc",
+                "argv",
+                "f1",
+                "f2",
+                "arg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/main_end.c",
+            "line": 83,
+            "col": 12,
+            "line2": 83,
+            "col2": 24,
+            "function": "main",
+            "var": [
+                "optind",
+                "argc",
+                "argv",
+                "f1",
+                "f2",
+                "arg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/main_end.c",
+            "line": 83,
+            "col": 5,
+            "line2": 83,
+            "col2": 9,
+            "function": "main",
+            "var": [
+                "optind",
+                "argc",
+                "argv",
+                "f1",
+                "f2",
+                "arg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/main_end.c",
+            "line": 83,
+            "col": 12,
+            "line2": 83,
+            "col2": 24,
+            "function": "main",
+            "var": [
+                "optind",
+                "argc",
+                "argv",
+                "f1",
+                "f2",
+                "arg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/main_end.c",
+            "line": 95,
+            "col": 9,
+            "line2": 95,
+            "col2": 25,
+            "function": "main",
+            "var": [
+                "f1",
+                "f2",
+                "mode",
+                "input",
+                "force_stdstreams",
+                "output",
+                "malloc",
+                "strlen",
+                "strcpy",
+                "strcmp",
+                "fprintf",
+                "stderr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/main_end.c",
+            "line": 107,
+            "col": 30,
+            "line2": 107,
+            "col2": 51,
+            "function": "main",
+            "var": [
+                "output",
+                "malloc",
+                "strlen",
+                "f1"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/main_end.c",
+            "line": 109,
+            "col": 25,
+            "line2": 109,
+            "col2": 42,
+            "function": "main",
+            "var": [
+                "strlen",
+                "output",
+                "strcmp",
+                "fprintf",
+                "stderr",
+                "f1"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/main_end.c",
+            "line": 112,
+            "col": 25,
+            "line2": 112,
+            "col2": 25,
+            "function": "main",
+            "var": [
+                "fprintf()",
+                "fprintf",
+                "stderr",
+                "f1"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/defect_info.json",
+    "files": [
+        "main_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件main_end.c  缺陷代码片段===\n------------------------------------------------------------\n   8              | extern int main (int argc, char *argv[]){\n   9              | int mode = 1;\n  10              | char *input = ((void *)0), *output = ((void *)0);\n  11              | char *f1 = ((void *)0), *f2 = ((void *)0);\n  12              | int force = 0;\n  13              | int force_stdstreams = 0, workers = 0, batch = 0, verbose = 0;\n  14              | u32 block_size = ((16) * 1024 * 1024);\n  15              | const char *short_options = \"Bb:cdefhj:krtvVz\";\n  16              | static struct option long_options[] = {{\"encode\", 0, 0, 'e'}, {\"decode\", 0, 0, 'd'}, {\"test\", 0, 0, 't'}, {\"stdout\", 0, 0, 'c'}, {\"force\", 0, 0, 'f'}, {\"recover\", 0, 0, 'r'}, {\"help\", 0, 0, 'h'}, {\"keep\", 0, 0, 'k'}, {\"version\", 0, 0, 'V'}, {\"verbose\", 0, 0, 'v'}, {\"block\", 1, 0, 'b'}, {\"batch\", 0, 0, 'B'}, {\"jobs\", 1, 0, 'j'}, {0, 0, 0, 0}};\n---→ 函数: main\n  17 [TRACE-1,3,4] | while (1)\n  19              | int option_index = 0;\n  20              | int c = getopt_long(argc, argv, short_options, long_options, &option_index);\n  21 [TRACE-2,5]  | if (c == -1)\n  22              | break;\n  23              | switch (c) {\n  32              | mode = 0;\n  33              | break;\n  34              | case 'r':\n  35              | mode = 3;\n  36              | break;\n  75              | }\n  76              | if (block_size < ((65) * 1024) || block_size > ((511) * 1024 * 1024)) {\n  80              | if (batch) {\n  83 [TRACE-6,7,8,9] | while (optind < argc)\n  85              | char *arg = argv[optind++];\n  86              | if (f1 != ((void *)0) && f2 != ((void *)0)) {\n  90              | if (f1 == ((void *)0)) {\n  91              | f1 = arg;\n  94              | }\n  95 [TRACE-10]   | if (f1 == ((void *)0) && f2 == ((void *)0)) {\n  97              | } else if (mode == 2) {\n 100              | if (mode == 1) {\n 101              | } else if (mode == 0 || mode == 3) {\n 102              | if (f2 == ((void *)0)) {\n 103              | input = f1;\n 104              | if (force_stdstreams) {\n 107 [TRACE-11]   | output = malloc(strlen(f1) + 1);\n 108              | strcpy(output, f1);\n 109 [TRACE-12]   | if (strlen(output) > 4 && !strcmp(output + strlen(output) - 4, \".bz3\")) {\n 112 [TRACE-13]   | fprintf(stderr, \"Warning: file %s has an unknown extension, skipping.\\n\", f1);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/bzip3-1.4.0/report-r9RCAP4/main_end.c": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            19,
+            20,
+            21,
+            22,
+            23,
+            32,
+            33,
+            34,
+            35,
+            36,
+            75,
+            76,
+            80,
+            83,
+            85,
+            86,
+            90,
+            91,
+            94,
+            95,
+            97,
+            100,
+            101,
+            102,
+            103,
+            104,
+            107,
+            108,
+            109,
+            112
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "路径可行性判定失效",
+        "循环次数/递归深度受限",
+        "流敏感度不足"
+    ]
+}

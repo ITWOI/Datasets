@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+traceback_end.c:37:29: warning: Access to field 'thread_id' results in a dereference of a null pointer (loaded from variable 'tstate') [core.NullDereference]
+   37 |     _Py_DumpHexadecimal(fd, tstate->thread_id, sizeof(unsigned long) * 2);
+      |                             ^~~~~~~~~~~~~~~~~
+traceback_end.c:37:29: warning: Access to field 'thread_id' results in a dereference of a null pointer (loaded from variable 'tstate') [core.NullDereference]
+   37 |     _Py_DumpHexadecimal(fd, tstate->thread_id, sizeof(unsigned long) * 2);
+      |                             ^~~~~~~~~~~~~~~~~
+traceback_end.c:37:29: warning: Access to field 'thread_id' results in a dereference of a null pointer (loaded from variable 'tstate') [core.NullDereference]
+   37 |     _Py_DumpHexadecimal(fd, tstate->thread_id, sizeof(unsigned long) * 2);
+      |                             ^~~~~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-UGCMxL2/2026-03-12-195327-94206-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-UGCMxL2/2026-03-12-195327-94206-1' to examine bug reports.

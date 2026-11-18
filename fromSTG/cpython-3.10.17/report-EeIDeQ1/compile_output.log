@@ -1,0 +1,32 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from _elementtree_end.c:1:
+./header_func.h:7:20: warning: function '_Py_INCREF' has internal linkage but is not defined [-Wundefined-internal]
+    7 | static inline void _Py_INCREF(PyObject *op) ;
+      |                    ^
+_elementtree_end.c:10:9: note: used here
+   10 |         _Py_INCREF(((PyObject *)(child)));
+      |         ^
+1 warning generated.
+_elementtree_end.c:9:27: warning: Access to field 'children' results in a dereference of a null pointer (loaded from field 'extra') [core.NullDereference]
+    9 |         PyObject *child = self->extra->children[i];
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+_elementtree_end.c:19:12: warning: 7th function call argument is an uninitialized value [core.CallAndMessage]
+   19 |     return _Py_BuildValue_SizeT("{sOsNsNsOsO}", "tag", self->tag, "_children", children, "attrib", attrib, "text", ((PyObject *)((uintptr_t)(self->text) & ~(uintptr_t)1)), "tail", ((PyObject *)((uintptr_t)(self->tail) & ~(uintptr_t)1)));
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_elementtree_end.c:9:27: warning: Access to field 'children' results in a dereference of a null pointer (loaded from field 'extra') [core.NullDereference]
+    9 |         PyObject *child = self->extra->children[i];
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+_elementtree_end.c:19:12: warning: 7th function call argument is an uninitialized value [core.CallAndMessage]
+   19 |     return _Py_BuildValue_SizeT("{sOsNsNsOsO}", "tag", self->tag, "_children", children, "attrib", attrib, "text", ((PyObject *)((uintptr_t)(self->text) & ~(uintptr_t)1)), "tail", ((PyObject *)((uintptr_t)(self->tail) & ~(uintptr_t)1)));
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_elementtree_end.c:9:27: warning: Access to field 'children' results in a dereference of a null pointer (loaded from field 'extra') [core.NullDereference]
+    9 |         PyObject *child = self->extra->children[i];
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+_elementtree_end.c:19:12: warning: 7th function call argument is an uninitialized value [core.CallAndMessage]
+   19 |     return _Py_BuildValue_SizeT("{sOsNsNsOsO}", "tag", self->tag, "_children", children, "attrib", attrib, "text", ((PyObject *)((uintptr_t)(self->text) & ~(uintptr_t)1)), "tail", ((PyObject *)((uintptr_t)(self->tail) & ~(uintptr_t)1)));
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-EeIDeQ1/2026-03-12-200343-101282-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-EeIDeQ1/2026-03-12-200343-101282-1' to examine bug reports.

@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+wrong_arguments_func_pointer_end.c:7:5: warning: Function taking 2 arguments is called with fewer (1) [core.CallAndMessage]
+    7 |     fptr(str1);
+      |     ^~~~~~~~~~
+wrong_arguments_func_pointer_end.c:7:5: warning: Function taking 2 arguments is called with fewer (1) [core.CallAndMessage]
+    7 |     fptr(str1);
+      |     ^~~~~~~~~~
+wrong_arguments_func_pointer_end.c:7:5: warning: Function taking 2 arguments is called with fewer (1) [core.CallAndMessage]
+    7 |     fptr(str1);
+      |     ^~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/itc-cases/report-v5WCRe2/2026-03-15-181610-871898-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/itc-cases/report-v5WCRe2/2026-03-15-181610-871898-1' to examine bug reports.

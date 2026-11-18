@@ -1,0 +1,87 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+decNumber_end.c:82:25: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+   82 |                     *lp += (uint64_t)(*lip) * (*rip);
+      |                     ~~~ ^
+decNumber_end.c:96:35: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+   96 |                         *(lp + 2) += carry2;
+      |                         ~~~~~~~~~ ^
+decNumber_end.c:100:31: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+  100 |                     *(lp + 1) += carry;
+      |                     ~~~~~~~~~ ^
+decNumber_end.c:109:14: warning: Potential leak of memory pointed to by 'lip' [unix.Malloc]
+  109 |     } while (0);
+      |              ^
+decNumber_end.c:109:14: warning: Potential leak of memory pointed to by 'rip' [unix.Malloc]
+  109 |     } while (0);
+      |              ^
+decNumber_end.c:109:14: warning: Potential leak of memory pointed to by 'lp' [unix.Malloc]
+  109 |     } while (0);
+      |              ^
+decNumber_end.c:110:12: warning: Potential leak of memory pointed to by 'zlhi' [unix.Malloc]
+  110 |     return res;
+      |            ^~~
+decNumber_end.c:110:12: warning: Potential leak of memory pointed to by 'zrhi' [unix.Malloc]
+  110 |     return res;
+      |            ^~~
+decNumber_end.c:110:12: warning: Potential leak of memory pointed to by 'zacc' [unix.Malloc]
+  110 |     return res;
+      |            ^~~
+decNumber_end.c:82:25: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+   82 |                     *lp += (uint64_t)(*lip) * (*rip);
+      |                     ~~~ ^
+decNumber_end.c:96:35: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+   96 |                         *(lp + 2) += carry2;
+      |                         ~~~~~~~~~ ^
+decNumber_end.c:100:31: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+  100 |                     *(lp + 1) += carry;
+      |                     ~~~~~~~~~ ^
+decNumber_end.c:109:14: warning: Potential leak of memory pointed to by 'lip' [unix.Malloc]
+  109 |     } while (0);
+      |              ^
+decNumber_end.c:109:14: warning: Potential leak of memory pointed to by 'rip' [unix.Malloc]
+  109 |     } while (0);
+      |              ^
+decNumber_end.c:109:14: warning: Potential leak of memory pointed to by 'lp' [unix.Malloc]
+  109 |     } while (0);
+      |              ^
+decNumber_end.c:110:12: warning: Potential leak of memory pointed to by 'zlhi' [unix.Malloc]
+  110 |     return res;
+      |            ^~~
+decNumber_end.c:110:12: warning: Potential leak of memory pointed to by 'zrhi' [unix.Malloc]
+  110 |     return res;
+      |            ^~~
+decNumber_end.c:110:12: warning: Potential leak of memory pointed to by 'zacc' [unix.Malloc]
+  110 |     return res;
+      |            ^~~
+decNumber_end.c:82:25: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+   82 |                     *lp += (uint64_t)(*lip) * (*rip);
+      |                     ~~~ ^
+decNumber_end.c:96:35: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+   96 |                         *(lp + 2) += carry2;
+      |                         ~~~~~~~~~ ^
+decNumber_end.c:100:31: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+  100 |                     *(lp + 1) += carry;
+      |                     ~~~~~~~~~ ^
+decNumber_end.c:109:14: warning: Potential leak of memory pointed to by 'lip' [unix.Malloc]
+  109 |     } while (0);
+      |              ^
+decNumber_end.c:109:14: warning: Potential leak of memory pointed to by 'rip' [unix.Malloc]
+  109 |     } while (0);
+      |              ^
+decNumber_end.c:109:14: warning: Potential leak of memory pointed to by 'lp' [unix.Malloc]
+  109 |     } while (0);
+      |              ^
+decNumber_end.c:110:12: warning: Potential leak of memory pointed to by 'zlhi' [unix.Malloc]
+  110 |     return res;
+      |            ^~~
+decNumber_end.c:110:12: warning: Potential leak of memory pointed to by 'zrhi' [unix.Malloc]
+  110 |     return res;
+      |            ^~~
+decNumber_end.c:110:12: warning: Potential leak of memory pointed to by 'zacc' [unix.Malloc]
+  110 |     return res;
+      |            ^~~
+27 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/jq-1.8.1/report-pSaoOg3/2026-03-12-203052-115948-1'
+scan-build: 6 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/jq-1.8.1/report-pSaoOg3/2026-03-12-203052-115948-1' to examine bug reports.

@@ -1,0 +1,24 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+mpdecimal_end.c:6:17: warning: Array access (from variable 'dest') results in a null pointer dereference [core.NullDereference]
+    6 |         dest[i] = 0;
+      |         ~~~~    ^
+mpdecimal_end.c:48:5: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+   48 |     memcpy(w, a, m * sizeof *w);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+mpdecimal_end.c:6:17: warning: Array access (from variable 'dest') results in a null pointer dereference [core.NullDereference]
+    6 |         dest[i] = 0;
+      |         ~~~~    ^
+mpdecimal_end.c:48:5: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+   48 |     memcpy(w, a, m * sizeof *w);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+mpdecimal_end.c:6:17: warning: Array access (from variable 'dest') results in a null pointer dereference [core.NullDereference]
+    6 |         dest[i] = 0;
+      |         ~~~~    ^
+mpdecimal_end.c:48:5: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+   48 |     memcpy(w, a, m * sizeof *w);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE2/2026-03-12-195129-92785-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE2/2026-03-12-195129-92785-1' to examine bug reports.

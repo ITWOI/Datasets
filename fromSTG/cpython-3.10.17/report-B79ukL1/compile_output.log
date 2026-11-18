@@ -1,0 +1,46 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from bytes_methods_end.c:1:
+./header_func.h:8:26: warning: function 'fastsearch' has internal linkage but is not defined [-Wundefined-internal]
+    8 | static inline Py_ssize_t fastsearch(const char *s, Py_ssize_t n, const char *p, Py_ssize_t m, Py_ssize_t maxcount, int mode) ;
+      |                          ^
+./find.h:6:11: note: used here
+    6 |     pos = fastsearch(str, str_len, sub, sub_len, -1, 1);
+      |           ^
+In file included from bytes_methods_end.c:1:
+./header_func.h:27:19: warning: function '_PyIndex_Check' has internal linkage but is not defined [-Wundefined-internal]
+   27 | static inline int _PyIndex_Check(PyObject *obj) ;
+      |                   ^
+bytes_methods_end.c:12:10: note: used here
+   12 |     if (!_PyIndex_Check(tmp_subobj)) {
+      |          ^
+In file included from bytes_methods_end.c:1:
+./header_func.h:4:26: warning: function 'stringlib_find_char' has internal linkage but is not defined [-Wundefined-internal]
+    4 | static inline Py_ssize_t stringlib_find_char(const char *s, Py_ssize_t n, char ch) ;
+      |                          ^
+bytes_methods_end.c:64:19: note: used here
+   64 |             res = stringlib_find_char(str + start, end - start, *sub);
+      |                   ^
+3 warnings generated.
+bytes_methods_end.c:64:19: warning: 3rd function call argument is an uninitialized value [core.CallAndMessage]
+   64 |             res = stringlib_find_char(str + start, end - start, *sub);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bytes_methods_end.c:76:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+   76 |     return res;
+      |     ^~~~~~~~~~
+bytes_methods_end.c:64:19: warning: 3rd function call argument is an uninitialized value [core.CallAndMessage]
+   64 |             res = stringlib_find_char(str + start, end - start, *sub);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bytes_methods_end.c:76:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+   76 |     return res;
+      |     ^~~~~~~~~~
+bytes_methods_end.c:64:19: warning: 3rd function call argument is an uninitialized value [core.CallAndMessage]
+   64 |             res = stringlib_find_char(str + start, end - start, *sub);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bytes_methods_end.c:76:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+   76 |     return res;
+      |     ^~~~~~~~~~
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-B79ukL1/2026-03-12-201538-106966-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-B79ukL1/2026-03-12-201538-106966-1' to examine bug reports.

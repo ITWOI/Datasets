@@ -1,0 +1,227 @@
+{
+    "bug_type": "Result of operation is garbage or undefined",
+    "checker": "Clang Static Analyzer",
+    "description": "The left operand of '<' is a garbage value",
+    "warning_func": "",
+    "line_number": 66,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "bitposCommand",
+    "functions": [
+        "bitposCommand"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE2/bitops_end.c",
+            "line": 21,
+            "col": 22,
+            "line2": 21,
+            "col2": 24,
+            "function": "bitposCommand",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE2/bitops_end.c",
+            "line": 27,
+            "col": 9,
+            "line2": 27,
+            "col2": 71,
+            "function": "bitposCommand",
+            "var": [
+                "getLongFromObjectOrReply",
+                "c",
+                "argv",
+                "bit"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE2/bitops_end.c",
+            "line": 29,
+            "col": 9,
+            "line2": 29,
+            "col2": 16,
+            "function": "bitposCommand",
+            "var": [
+                "bit"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE2/bitops_end.c",
+            "line": 33,
+            "col": 9,
+            "line2": 33,
+            "col2": 20,
+            "function": "bitposCommand",
+            "var": [
+                "argc",
+                "c",
+                "getLongLongFromObjectOrReply",
+                "argv",
+                "start",
+                "strcasecmp",
+                "ptr",
+                "isbit",
+                "end",
+                "end_given",
+                "o",
+                "lookupKeyRead",
+                "db",
+                "checkType",
+                "p",
+                "getObjectReadOnlyString",
+                "strlen",
+                "llbuf",
+                "__builtin_expect",
+                "totlen",
+                "_serverAssert",
+                "abort"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE2/bitops_end.c",
+            "line": 34,
+            "col": 13,
+            "line2": 34,
+            "col2": 81,
+            "function": "bitposCommand",
+            "var": [
+                "getLongLongFromObjectOrReply",
+                "c",
+                "argv",
+                "start"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE2/bitops_end.c",
+            "line": 36,
+            "col": 13,
+            "line2": 36,
+            "col2": 24,
+            "function": "bitposCommand",
+            "var": [
+                "argc",
+                "c",
+                "strcasecmp",
+                "ptr",
+                "argv",
+                "isbit"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE2/bitops_end.c",
+            "line": 45,
+            "col": 13,
+            "line2": 45,
+            "col2": 24,
+            "function": "bitposCommand",
+            "var": [
+                "argc",
+                "c",
+                "getLongLongFromObjectOrReply",
+                "argv",
+                "end",
+                "end_given"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE2/bitops_end.c",
+            "line": 51,
+            "col": 13,
+            "line2": 51,
+            "col2": 30,
+            "function": "bitposCommand",
+            "var": [
+                "checkType",
+                "c",
+                "o"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE2/bitops_end.c",
+            "line": 56,
+            "col": 13,
+            "line2": 56,
+            "col2": 23,
+            "function": "bitposCommand",
+            "var": [
+                "argc",
+                "c",
+                "isbit",
+                "end",
+                "totlen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE2/bitops_end.c",
+            "line": 64,
+            "col": 13,
+            "line2": 64,
+            "col2": 21,
+            "function": "bitposCommand",
+            "var": [
+                "start",
+                "totlen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE2/bitops_end.c",
+            "line": 66,
+            "col": 13,
+            "line2": 66,
+            "col2": 15,
+            "function": "bitposCommand",
+            "var": [
+                "end",
+                "totlen"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE2/defect_info.json",
+    "files": [
+        "bitops_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件bitops_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | extern unsigned char * getObjectReadOnlyString (robj *o, long *len, char *llbuf){\n   3              | (__builtin_expect(!!(!o || o->type == 0), 1) ? (void)0 : (_serverAssert(\"!o || o->type == OBJ_STRING\", \"bitops_InstSlice.c\", 172) , abort()));\n   4              | unsigned char *p = ((void *)0);\n   5              | if (o && o->encoding == 1) {\n   9              | } else if (o) {\n  14              | if (len)\n  15              | *len = 0;\n  17              | return p;\n  19              | extern void bitposCommand (client *c){\n  20              | kvobj *o;\n---→ 函数: bitposCommand\n  21 [TRACE-1]    | long long start, end;\n  22              | long bit, strlen;\n  23              | unsigned char *p;\n  24              | char llbuf[21];\n  25              | int isbit = 0, end_given = 0;\n  26              | unsigned char first_byte_neg_mask = 0, last_byte_neg_mask = 0;\n  27 [TRACE-2]    | if (getLongFromObjectOrReply(c, c->argv[2], &bit, ((void *)0)) != 0)\n  29 [TRACE-3]    | if (bit != 0 && bit != 1) {\n  33 [TRACE-4]    | if (c->argc == 4 || c->argc == 5 || c->argc == 6) {\n  34 [TRACE-5]    | if (getLongLongFromObjectOrReply(c, c->argv[3], &start, ((void *)0)) != 0)\n  36 [TRACE-6]    | if (c->argc == 6) {\n  45 [TRACE-7]    | if (c->argc >= 5) {\n  50              | o = lookupKeyRead(c->db, c->argv[1]);\n  51 [TRACE-8]    | if (checkType(c, o, 0))\n  53              | p = getObjectReadOnlyString(o, &strlen, llbuf);\n  54              | long long totlen = strlen;\n  55              | (__builtin_expect(!!(totlen <= 9223372036854775807LL >> 3), 1) ? (void)0 : (_serverAssert(\"totlen <= LLONG_MAX >> 3\", \"bitops_InstSlice.c\", 258) , abort()));\n  56 [TRACE-9]    | if (c->argc < 5) {\n  62              | if (isbit)\n  64 [TRACE-10]   | if (start < 0)\n  66 [TRACE-11]   | if (end < 0)\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-VAg6iE2/bitops_end.c": [
+            2,
+            3,
+            4,
+            5,
+            9,
+            14,
+            15,
+            17,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            29,
+            33,
+            34,
+            36,
+            45,
+            50,
+            51,
+            53,
+            54,
+            55,
+            56,
+            62,
+            64,
+            66
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "流敏感度不足",
+        "路径可行性判定失效"
+    ]
+}

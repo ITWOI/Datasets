@@ -1,0 +1,61 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+pngcp_end.c:741:19: warning: expression with side effects has no effect in an unevaluated context [-Wunevaluated-expression]
+  741 |     ((void)sizeof ((vl_windowBits_IDAT[--i].name == range_lo) ? 1 : 0) , __extension__ ({
+      |                   ^
+pngcp_end.c:761:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+  761 | }
+      | ^
+In file included from pngcp_end.c:1:
+./header_func.h:62:13: warning: function 'display_error' has internal linkage but is not defined [-Wundefined-internal]
+   62 | static void display_error(png_structp pp, png_const_charp error) ;
+      |             ^
+pngcp_end.c:598:60: note: used here
+  598 |     dp->read_pp = png_create_read_struct("1.6.45.git", dp, display_error, display_warning);
+      |                                                            ^
+In file included from pngcp_end.c:1:
+./header_func.h:64:13: warning: function 'display_warning' has internal linkage but is not defined [-Wundefined-internal]
+   64 | static void display_warning(png_structp pp, png_const_charp warning) ;
+      |             ^
+pngcp_end.c:598:75: note: used here
+  598 |     dp->read_pp = png_create_read_struct("1.6.45.git", dp, display_error, display_warning);
+      |                                                                           ^
+In file included from pngcp_end.c:1:
+./header_func.h:175:20: warning: function 'cts' has internal linkage but is not defined [-Wundefined-internal]
+  175 | static const char *cts(int ct) ;
+      |                    ^
+pngcp_end.c:891:139: note: used here
+  891 |                 printf("%s [%ld x %ld %d bpp %s, %lu bytes] %lu -> %lu [0x%lx]\n", infile, (unsigned long)d.w, (unsigned long)d.h, d.bpp, cts(d.ct), (unsigned long)d.size, (unsigned long)d.read_size, (unsigned long)d.write_size, (unsigned long)d.results);
+      |                                                                                                                                           ^
+5 warnings generated.
+pngcp_end.c:371:9: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+  371 |         return ret;
+      |         ^~~~~~~~~~
+pngcp_end.c:616:48: warning: Division by zero [core.DivideZero]
+  616 |         if ((((png_alloc_size_t)(-1)) - dp->h) / rb < dp->h)
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+pngcp_end.c:630:29: warning: Array access (from variable 'palette') results in a null pointer dereference [core.NullDereference]
+  630 |                 newpal[i] = palette[i];
+      |                             ^~~~~~~~~~
+pngcp_end.c:371:9: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+  371 |         return ret;
+      |         ^~~~~~~~~~
+pngcp_end.c:616:48: warning: Division by zero [core.DivideZero]
+  616 |         if ((((png_alloc_size_t)(-1)) - dp->h) / rb < dp->h)
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+pngcp_end.c:630:29: warning: Array access (from variable 'palette') results in a null pointer dereference [core.NullDereference]
+  630 |                 newpal[i] = palette[i];
+      |                             ^~~~~~~~~~
+pngcp_end.c:371:9: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+  371 |         return ret;
+      |         ^~~~~~~~~~
+pngcp_end.c:616:48: warning: Division by zero [core.DivideZero]
+  616 |         if ((((png_alloc_size_t)(-1)) - dp->h) / rb < dp->h)
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+pngcp_end.c:630:29: warning: Array access (from variable 'palette') results in a null pointer dereference [core.NullDereference]
+  630 |                 newpal[i] = palette[i];
+      |                             ^~~~~~~~~~
+9 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/2026-03-15-125937-812889-1'
+scan-build: 3 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/libpng-libpng16/report-CfuRPd1/2026-03-15-125937-812889-1' to examine bug reports.

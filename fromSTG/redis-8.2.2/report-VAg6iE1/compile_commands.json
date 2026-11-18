@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/redis-8.2.2/report-VAg6iE1",
+        "arguments": [
+            "clang",
+            "-c",
+            "bitops_end.c"
+        ],
+        "file": "bitops_end.c"
+    }
+]

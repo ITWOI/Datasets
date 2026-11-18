@@ -1,0 +1,351 @@
+{
+    "bug_type": "Argument with 'nonnull' attribute passed null",
+    "checker": "Clang Static Analyzer",
+    "description": "Null pointer passed to 2nd parameter expecting 'nonnull'",
+    "warning_func": "",
+    "line_number": 77,
+    "directory": "path/tests/libpng-libpng16",
+    "entry_function": "png_set_text_2",
+    "functions": [
+        "png_set_text_2",
+        "png_set_text"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 4,
+            "col": 11,
+            "line2": 4,
+            "col2": 63,
+            "function": "png_set_text",
+            "var": [
+                "ret",
+                "png_set_text_2",
+                "png_ptr",
+                "info_ptr",
+                "text_ptr",
+                "num_text"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 6,
+            "col": 1,
+            "line2": 6,
+            "col2": 1,
+            "function": "png_set_text_2",
+            "var": [
+                "png_ptr",
+                "info_ptr",
+                "num_text",
+                "text_ptr",
+                "max_text",
+                "old_num_text",
+                "new_text",
+                "png_realloc_array",
+                "text",
+                "free_me",
+                "i",
+                "key",
+                "compression",
+                "key_len",
+                "strlen",
+                "lang_len",
+                "lang_key_len",
+                "lang",
+                "lang_key",
+                "text_length",
+                "textp",
+                "png_malloc_base",
+                "memcpy",
+                "itxt_length"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 8,
+            "col": 9,
+            "line2": 8,
+            "col2": 30,
+            "function": "png_set_text_2",
+            "var": [
+                "png_ptr",
+                "info_ptr",
+                "num_text",
+                "text_ptr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 8,
+            "col": 35,
+            "line2": 8,
+            "col2": 57,
+            "function": "png_set_text_2",
+            "var": [
+                "png_ptr",
+                "info_ptr",
+                "num_text",
+                "text_ptr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 8,
+            "col": 62,
+            "line2": 8,
+            "col2": 74,
+            "function": "png_set_text_2",
+            "var": [
+                "png_ptr",
+                "info_ptr",
+                "num_text",
+                "text_ptr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 8,
+            "col": 79,
+            "line2": 8,
+            "col2": 101,
+            "function": "png_set_text_2",
+            "var": [
+                "png_ptr",
+                "info_ptr",
+                "num_text",
+                "text_ptr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 10,
+            "col": 9,
+            "line2": 10,
+            "col2": 58,
+            "function": "png_set_text_2",
+            "var": [
+                "num_text",
+                "max_text",
+                "info_ptr",
+                "old_num_text",
+                "new_text",
+                "png_realloc_array",
+                "png_ptr",
+                "text",
+                "free_me"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 32,
+            "col": 17,
+            "line2": 32,
+            "col2": 28,
+            "function": "png_set_text_2",
+            "var": [
+                "i",
+                "num_text",
+                "text",
+                "info_ptr",
+                "key",
+                "text_ptr",
+                "compression",
+                "key_len",
+                "strlen",
+                "lang_len",
+                "lang_key_len",
+                "lang",
+                "lang_key",
+                "text_length",
+                "textp",
+                "png_malloc_base",
+                "png_ptr",
+                "memcpy",
+                "itxt_length"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 36,
+            "col": 13,
+            "line2": 36,
+            "col2": 42,
+            "function": "png_set_text_2",
+            "var": [
+                "key",
+                "text_ptr",
+                "i"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 38,
+            "col": 13,
+            "line2": 38,
+            "col2": 40,
+            "function": "png_set_text_2",
+            "var": [
+                "compression",
+                "text_ptr",
+                "i"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 38,
+            "col": 45,
+            "line2": 38,
+            "col2": 72,
+            "function": "png_set_text_2",
+            "var": [
+                "compression",
+                "text_ptr",
+                "i"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 43,
+            "col": 13,
+            "line2": 43,
+            "col2": 40,
+            "function": "png_set_text_2",
+            "var": [
+                "compression",
+                "text_ptr",
+                "i",
+                "lang_len",
+                "lang_key_len",
+                "lang",
+                "strlen",
+                "lang_key"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 47,
+            "col": 17,
+            "line2": 47,
+            "col2": 47,
+            "function": "png_set_text_2",
+            "var": [
+                "lang",
+                "text_ptr",
+                "i",
+                "lang_len",
+                "strlen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 51,
+            "col": 17,
+            "line2": 51,
+            "col2": 51,
+            "function": "png_set_text_2",
+            "var": [
+                "lang_key",
+                "text_ptr",
+                "i",
+                "lang_key_len",
+                "strlen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 56,
+            "col": 13,
+            "line2": 56,
+            "col2": 43,
+            "function": "png_set_text_2",
+            "var": [
+                "text",
+                "text_ptr",
+                "i",
+                "text_length",
+                "compression",
+                "textp",
+                "strlen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 67,
+            "col": 13,
+            "line2": 67,
+            "col2": 37,
+            "function": "png_set_text_2",
+            "var": [
+                "key",
+                "textp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c",
+            "line": 77,
+            "col": 37,
+            "line2": 77,
+            "col2": 56,
+            "function": "png_set_text_2",
+            "var": [
+                "memcpy()",
+                "memcpy",
+                "lang_key",
+                "textp",
+                "text_ptr",
+                "i",
+                "lang_key_len"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/defect_info.json",
+    "files": [
+        "pngset_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件pngset_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | extern void png_set_text (png_const_structrp png_ptr, png_inforp info_ptr, png_const_textp text_ptr, int num_text){\n   3              | int ret;\n---→ 函数: png_set_text\n   4 [TRACE-1]    | ret = png_set_text_2(png_ptr, info_ptr, text_ptr, num_text);\n---→ 函数: png_set_text_2\n   6 [TRACE-2]    | extern int png_set_text_2 (png_const_structrp png_ptr, png_inforp info_ptr, png_const_textp text_ptr, int num_text){\n   7              | int i;\n   8 [TRACE-3,4,5,6] | if (png_ptr == ((void *)0) || info_ptr == ((void *)0) || num_text <= 0 || text_ptr == ((void *)0))\n  10 [TRACE-7]    | if (num_text > info_ptr->max_text - info_ptr->num_text) {\n  32 [TRACE-8]    | for (i = 0; i < num_text; i++) {\n  33              | size_t text_length, key_len;\n  34              | size_t lang_len, lang_key_len;\n  35              | png_textp textp = &(info_ptr->text[info_ptr->num_text]);\n  36 [TRACE-9]    | if (text_ptr[i].key == ((void *)0))\n  38 [TRACE-10,11] | if (text_ptr[i].compression < -1 || text_ptr[i].compression >= 3) {\n  42              | key_len = strlen(text_ptr[i].key);\n  43 [TRACE-12]   | if (text_ptr[i].compression <= 0) {\n  47 [TRACE-13]   | if (text_ptr[i].lang != ((void *)0)) {\n  50              | lang_len = 0;\n  51 [TRACE-14]   | if (text_ptr[i].lang_key != ((void *)0)) {\n  54              | lang_key_len = 0;\n  56 [TRACE-15]   | if (text_ptr[i].text == ((void *)0) || text_ptr[i].text[0] == '\\x00') {\n  57              | text_length = 0;\n  58              | if (text_ptr[i].compression > 0)\n  59              | textp->compression = 1;\n  66              | textp->key = (png_malloc_base(png_ptr, key_len + text_length + lang_len + lang_key_len + 4));\n  67 [TRACE-16]   | if (textp->key == ((void *)0)) {\n  72              | *(textp->key + key_len) = '\\x00';\n  73              | if (text_ptr[i].compression > 0) {\n  74              | textp->lang = textp->key + key_len + 1;\n  75              | *(textp->lang + lang_len) = '\\x00';\n  76              | textp->lang_key = textp->lang + lang_len + 1;\n  77 [TRACE-17]   | memcpy(textp->lang_key, text_ptr[i].lang_key, lang_key_len);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/libpng-libpng16/report-2cveVI2/pngset_end.c": [
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            10,
+            32,
+            33,
+            34,
+            35,
+            36,
+            38,
+            42,
+            43,
+            47,
+            50,
+            51,
+            54,
+            56,
+            57,
+            58,
+            59,
+            66,
+            67,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "域敏感度缺失",
+        "循环次数/递归深度受限"
+    ]
+}

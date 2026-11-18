@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+pngset_end.c:75:13: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   75 |             memcpy(textp->lang, text_ptr[i].lang, lang_len);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pngset_end.c:75:13: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   75 |             memcpy(textp->lang, text_ptr[i].lang, lang_len);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pngset_end.c:75:13: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+   75 |             memcpy(textp->lang, text_ptr[i].lang, lang_len);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/libpng-libpng16/report-7OuORp1/2026-03-12-204433-124784-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/libpng-libpng16/report-7OuORp1/2026-03-12-204433-124784-1' to examine bug reports.

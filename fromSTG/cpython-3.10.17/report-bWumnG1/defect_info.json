@@ -1,0 +1,521 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Array access (via field 'items') results in a null pointer dereference",
+    "warning_func": "",
+    "line_number": 853,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "_PyWideStringList_Clear",
+        "PyConfig_Read",
+        "_PyConfig_Read",
+        "config_update_argv",
+        "config_read_cmdline",
+        "_PyWideStringList_Copy"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 991,
+            "col": 12,
+            "line2": 991,
+            "col2": 36,
+            "function": "PyConfig_Read",
+            "var": [
+                "_PyConfig_Read",
+                "config"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 955,
+            "col": 1,
+            "line2": 955,
+            "col2": 1,
+            "function": "_PyConfig_Read",
+            "var": [
+                "status",
+                "_Py_PreInitializeFromConfig",
+                "config",
+                "_type",
+                "_PyStatus_TYPE_OK",
+                "config_get_global_vars",
+                "length",
+                "orig_argv",
+                "argv",
+                "wcscmp",
+                "items",
+                "_PyWideStringList_Copy",
+                "_PyStatus_TYPE_ERROR",
+                "core_read_precmdline",
+                "precmdline",
+                "isolated",
+                "use_environment",
+                "user_site_directory",
+                "config_read_cmdline",
+                "_PySys_ReadPreinitXOptions",
+                "config_read",
+                "compute_path_config"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 958,
+            "col": 10,
+            "line2": 958,
+            "col2": 42,
+            "function": "_PyConfig_Read",
+            "var": [
+                "_type",
+                "status",
+                "_PyStatus_TYPE_OK"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 962,
+            "col": 9,
+            "line2": 962,
+            "col2": 37,
+            "function": "_PyConfig_Read",
+            "var": [
+                "length",
+                "orig_argv",
+                "config",
+                "argv",
+                "wcscmp",
+                "items",
+                "_PyWideStringList_Copy",
+                "_PyStatus_TYPE_ERROR"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 973,
+            "col": 9,
+            "line2": 973,
+            "col2": 24,
+            "function": "_PyConfig_Read",
+            "var": [
+                "isolated",
+                "config",
+                "use_environment",
+                "user_site_directory"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 977,
+            "col": 14,
+            "line2": 977,
+            "col2": 40,
+            "function": "_PyConfig_Read",
+            "var": [
+                "status",
+                "config_read_cmdline",
+                "config"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 900,
+            "col": 1,
+            "line2": 900,
+            "col2": 1,
+            "function": "config_read_cmdline",
+            "var": [
+                "parse_argv",
+                "config",
+                "program_name",
+                "status",
+                "config_init_program_name",
+                "_type",
+                "_PyStatus_TYPE_OK",
+                "config_parse_cmdline",
+                "cmdline_warnoptions",
+                "opt_index",
+                "config_run_filename_abspath",
+                "config_update_argv",
+                "use_environment",
+                "config_init_env_warnoptions",
+                "env_warnoptions",
+                "_PySys_ReadPreinitWarnOptions",
+                "sys_warnoptions",
+                "config_init_warnoptions",
+                "_PyWideStringList_Clear"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 905,
+            "col": 9,
+            "line2": 905,
+            "col2": 30,
+            "function": "config_read_cmdline",
+            "var": [
+                "parse_argv",
+                "config"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 908,
+            "col": 9,
+            "line2": 908,
+            "col2": 43,
+            "function": "config_read_cmdline",
+            "var": [
+                "program_name",
+                "config",
+                "status",
+                "config_init_program_name",
+                "_type",
+                "_PyStatus_TYPE_OK"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 914,
+            "col": 9,
+            "line2": 914,
+            "col2": 31,
+            "function": "config_read_cmdline",
+            "var": [
+                "parse_argv",
+                "config",
+                "status",
+                "config_parse_cmdline",
+                "cmdline_warnoptions",
+                "opt_index",
+                "_type",
+                "_PyStatus_TYPE_OK",
+                "config_run_filename_abspath",
+                "config_update_argv"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 924,
+            "col": 18,
+            "line2": 924,
+            "col2": 54,
+            "function": "config_read_cmdline",
+            "var": [
+                "status",
+                "config_update_argv",
+                "config",
+                "opt_index"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 824,
+            "col": 1,
+            "line2": 824,
+            "col2": 1,
+            "function": "config_update_argv",
+            "var": [
+                "argv",
+                "config",
+                "length",
+                "cmdline_argv",
+                "opt_index",
+                "PyWideStringList_Append",
+                "config_argv",
+                "_type",
+                "status",
+                "_PyStatus_TYPE_OK",
+                "slice",
+                "items",
+                "_PyWideStringList_Copy",
+                "_PyStatus_TYPE_ERROR",
+                "run_command",
+                "arg0",
+                "run_module",
+                "_PyMem_RawWcsdup",
+                "_PyWideStringList_Clear",
+                "PyMem_RawFree"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 827,
+            "col": 9,
+            "line2": 827,
+            "col2": 41,
+            "function": "config_update_argv",
+            "var": [
+                "length",
+                "cmdline_argv",
+                "opt_index",
+                "PyWideStringList_Append",
+                "config_argv",
+                "_type",
+                "status",
+                "_PyStatus_TYPE_OK",
+                "slice",
+                "items",
+                "_PyWideStringList_Copy",
+                "_PyStatus_TYPE_ERROR"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 836,
+            "col": 13,
+            "line2": 836,
+            "col2": 56,
+            "function": "config_update_argv",
+            "var": [
+                "_PyWideStringList_Copy",
+                "config_argv",
+                "slice",
+                "_PyStatus_TYPE_ERROR"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 7,
+            "col": 1,
+            "line2": 7,
+            "col2": 1,
+            "function": "_PyWideStringList_Copy",
+            "var": [
+                "length",
+                "list2",
+                "_PyWideStringList_Clear",
+                "list",
+                "items",
+                "copy",
+                "PyMem_RawMalloc",
+                "size",
+                "i",
+                "_PyMem_RawWcsdup",
+                "item"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 9,
+            "col": 9,
+            "line2": 9,
+            "col2": 26,
+            "function": "_PyWideStringList_Copy",
+            "var": [
+                "length",
+                "list2",
+                "_PyWideStringList_Clear",
+                "list"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 10,
+            "col": 9,
+            "line2": 10,
+            "col2": 37,
+            "function": "_PyWideStringList_Copy",
+            "var": [
+                "_PyWideStringList_Clear()",
+                "_PyWideStringList_Clear",
+                "list"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 2,
+            "col": 1,
+            "line2": 2,
+            "col2": 1,
+            "function": "_PyWideStringList_Clear",
+            "var": [
+                "length",
+                "list",
+                "items"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 5,
+            "col": 5,
+            "line2": 5,
+            "col2": 29,
+            "function": "_PyWideStringList_Clear",
+            "var": [
+                "items",
+                "list"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 10,
+            "col": 9,
+            "line2": 10,
+            "col2": 37,
+            "function": "_PyWideStringList_Copy",
+            "var": [
+                "_PyWideStringList_Clear()",
+                "_PyWideStringList_Clear",
+                "list"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 836,
+            "col": 13,
+            "line2": 836,
+            "col2": 56,
+            "function": "config_update_argv",
+            "var": [
+                "_PyWideStringList_Copy",
+                "config_argv",
+                "slice",
+                "_PyStatus_TYPE_ERROR"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 849,
+            "col": 13,
+            "line2": 849,
+            "col2": 31,
+            "function": "config_update_argv",
+            "var": [
+                "arg0",
+                "_PyWideStringList_Clear",
+                "config_argv",
+                "_PyStatus_TYPE_ERROR"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c",
+            "line": 853,
+            "col": 35,
+            "line2": 853,
+            "col2": 39,
+            "function": "config_update_argv",
+            "var": [
+                "PyMem_RawFree()",
+                "PyMem_RawFree",
+                "items",
+                "config_argv"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/defect_info.json",
+    "files": [
+        "initconfig_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件initconfig_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: _PyWideStringList_Clear\n   2 [TRACE-18]   | extern  __attribute__((visibility(\"default\"))) void _PyWideStringList_Clear (PyWideStringList *list){\n   4              | list->length = 0;\n   5 [TRACE-19]   | list->items = ((void *)0);\n---→ 函数: _PyWideStringList_Copy\n   7 [TRACE-15]   | extern  __attribute__((visibility(\"default\"))) int _PyWideStringList_Copy (PyWideStringList *list, const PyWideStringList *list2){\n   9 [TRACE-16]   | if (list2->length == 0) {\n  10 [TRACE-17,20] | _PyWideStringList_Clear(list);\n  11              | return 0;\n 135              | static void config_get_global_vars (PyConfig *config){\n 136              | if (config->_config_init != _PyConfig_INIT_COMPAT) {\n 139              | if (config->isolated == -1) {\n 143              | if (config->use_environment == -1) {\n 147              | if (config->bytes_warning == -1) {\n 151              | if (config->inspect == -1) {\n 155              | if (config->interactive == -1) {\n 159              | if (config->optimization_level == -1) {\n 163              | if (config->parser_debug == -1) {\n 167              | if (config->verbose == -1) {\n 171              | if (config->quiet == -1) {\n 175              | if (config->pathconfig_warnings == -1) {\n 179              | if (config->buffered_stdio == -1) {\n 183              | if (config->site_import == -1) {\n 187              | if (config->write_bytecode == -1) {\n 191              | if (config->user_site_directory == -1) {\n 623              | static PyStatus config_parse_cmdline (PyConfig *config, PyWideStringList *warnoptions, Py_ssize_t *opt_index){\n 624              | PyStatus status;\n 625              | const PyWideStringList *argv = &config->argv;\n 626              | int print_version = 0;\n 627              | const wchar_t *program = config->program_name;\n 629              | int longindex = -1;\n 630              | int c = _PyOS_GetOpt(argv->length, argv->items, &longindex);\n 631              | if (c == (-1)) {\n 634              | if (c == 'c') {\n 648              | if (c == 'm') {\n 649              | if (config->run_module == ((void *)0)) {\n 655              | break;\n 724              | if (print_version) {\n 728              | if (config->run_command == ((void *)0) && config->run_module == ((void *)0) && _PyOS_optind < argv->length && wcscmp(argv->items[_PyOS_optind], L\"-\") != 0 && config->run_filename == ((void *)0)) {\n 734              | if (config->run_command != ((void *)0) || config->run_module != ((void *)0)) {\n 735              | _PyOS_optind--;\n 737              | *opt_index = _PyOS_optind;\n 738              | return (PyStatus){._type = _PyStatus_TYPE_OK};\n---→ 函数: config_update_argv\n 824 [TRACE-12]   | static PyStatus config_update_argv (PyConfig *config, Py_ssize_t opt_index){\n 825              | const PyWideStringList *cmdline_argv = &config->argv;\n 826              | PyWideStringList config_argv = (PyWideStringList){.length = 0, .items = ((void *)0)};\n 827 [TRACE-13]   | if (cmdline_argv->length <= opt_index) {\n 833              | PyWideStringList slice;\n 834              | slice.length = cmdline_argv->length - opt_index;\n 835              | slice.items = &cmdline_argv->items[opt_index];\n 836 [TRACE-14,21] | if (_PyWideStringList_Copy(&config_argv, &slice) < 0) {\n 841              | wchar_t *arg0 = ((void *)0);\n 842              | if (config->run_command != ((void *)0)) {\n 843              | arg0 = L\"-c\";\n 847              | if (arg0 != ((void *)0)) {\n 848              | arg0 = _PyMem_RawWcsdup(arg0);\n 849 [TRACE-22]   | if (arg0 == ((void *)0)) {\n 853 [TRACE-23]   | PyMem_RawFree(config_argv.items[0]);\n 859              | static PyStatus core_read_precmdline (PyConfig *config, _PyPreCmdline *precmdline){\n 860              | PyStatus status;\n 861              | if (config->parse_argv == 1) {\n 866              | PyPreConfig preconfig;\n 867              | status = _PyPreConfig_InitFromPreConfig(&preconfig, &_PyRuntime.preconfig);\n 868              | if ((status._type != _PyStatus_TYPE_OK)) {\n 872              | status = _PyPreCmdline_Read(precmdline, &preconfig);\n 873              | if ((status._type != _PyStatus_TYPE_OK)) {\n 876              | status = _PyPreCmdline_SetConfig(precmdline, config);\n 877              | if ((status._type != _PyStatus_TYPE_OK)) {\n 880              | return (PyStatus){._type = _PyStatus_TYPE_OK};\n 882              | static PyStatus config_run_filename_abspath (PyConfig *config){\n 883              | if (!config->run_filename) {\n 884              | return (PyStatus){._type = _PyStatus_TYPE_OK};\n---→ 函数: config_read_cmdline\n 900 [TRACE-7]    | static PyStatus config_read_cmdline (PyConfig *config){\n 901              | PyStatus status;\n 902              | PyWideStringList cmdline_warnoptions = (PyWideStringList){.length = 0, .items = ((void *)0)};\n 903              | PyWideStringList env_warnoptions = (PyWideStringList){.length = 0, .items = ((void *)0)};\n 904              | PyWideStringList sys_warnoptions = (PyWideStringList){.length = 0, .items = ((void *)0)};\n 905 [TRACE-8]    | if (config->parse_argv < 0) {\n 908 [TRACE-9]    | if (config->program_name == ((void *)0)) {\n 914 [TRACE-10]   | if (config->parse_argv == 1) {\n 915              | Py_ssize_t opt_index;\n 916              | status = config_parse_cmdline(config, &cmdline_warnoptions, &opt_index);\n 917              | if ((status._type != _PyStatus_TYPE_OK)) {\n 920              | status = config_run_filename_abspath(config);\n 921              | if ((status._type != _PyStatus_TYPE_OK)) {\n 924 [TRACE-11]   | status = config_update_argv(config, opt_index);\n---→ 函数: _PyConfig_Read\n 955 [TRACE-2]    | extern PyStatus _PyConfig_Read (PyConfig *config, int compute_path_config){\n 956              | PyStatus status;\n 957              | status = _Py_PreInitializeFromConfig(config, ((void *)0));\n 958 [TRACE-3]    | if ((status._type != _PyStatus_TYPE_OK)) {\n 961              | config_get_global_vars(config);\n 962 [TRACE-4]    | if (config->orig_argv.length == 0 && !(config->argv.length == 1 && wcscmp(config->argv.items[0], L\"\") == 0)) {\n 967              | _PyPreCmdline precmdline = (_PyPreCmdline){.use_environment = -1, .isolated = -1, .dev_mode = -1};\n 968              | status = core_read_precmdline(config, &precmdline);\n 969              | if ((status._type != _PyStatus_TYPE_OK)) {\n 973 [TRACE-5]    | if (config->isolated) {\n 977 [TRACE-6]    | status = config_read_cmdline(config);\n 990              | extern  __attribute__((visibility(\"default\"))) PyStatus PyConfig_Read (PyConfig *config){\n---→ 函数: PyConfig_Read\n 991 [TRACE-1]    | return _PyConfig_Read(config, 1);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-bWumnG1/initconfig_end.c": [
+            2,
+            4,
+            5,
+            7,
+            9,
+            10,
+            11,
+            135,
+            136,
+            139,
+            143,
+            147,
+            151,
+            155,
+            159,
+            163,
+            167,
+            171,
+            175,
+            179,
+            183,
+            187,
+            191,
+            623,
+            624,
+            625,
+            626,
+            627,
+            629,
+            630,
+            631,
+            634,
+            648,
+            649,
+            655,
+            724,
+            728,
+            734,
+            735,
+            737,
+            738,
+            824,
+            825,
+            826,
+            827,
+            833,
+            834,
+            835,
+            836,
+            841,
+            842,
+            843,
+            847,
+            848,
+            849,
+            853,
+            859,
+            860,
+            861,
+            866,
+            867,
+            868,
+            872,
+            873,
+            876,
+            877,
+            880,
+            882,
+            883,
+            884,
+            900,
+            901,
+            902,
+            903,
+            904,
+            905,
+            908,
+            914,
+            915,
+            916,
+            917,
+            920,
+            921,
+            924,
+            955,
+            956,
+            957,
+            958,
+            961,
+            962,
+            967,
+            968,
+            969,
+            973,
+            977,
+            990,
+            991
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "域敏感度缺失",
+        "过程间数据流断裂"
+    ]
+}

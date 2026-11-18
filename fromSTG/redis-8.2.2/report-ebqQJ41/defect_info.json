@@ -1,0 +1,561 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Access to field 'type' results in a dereference of a null pointer (loaded from variable 'conn')",
+    "warning_func": "",
+    "line_number": 6,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "",
+    "functions": [
+        "undoConnectWithMaster",
+        "replicationSetMaster",
+        "replicationCron",
+        "cancelReplicationHandshake",
+        "connectWithMaster",
+        "connClose",
+        "updateFailoverStatus"
+    ],
+    "is_single_file": false,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 495,
+            "col": 5,
+            "line2": 495,
+            "col2": 26,
+            "function": "replicationCron",
+            "var": [
+                "updateFailoverStatus()",
+                "updateFailoverStatus"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 643,
+            "col": 1,
+            "line2": 643,
+            "col2": 1,
+            "function": "updateFailoverStatus",
+            "var": [
+                "failover_state",
+                "server",
+                "FAILOVER_WAIT_FOR_SYNC",
+                "mstime",
+                "failover_end_time",
+                "now",
+                "force_failover",
+                "FAILOVER_IN_PROGRESS",
+                "replicationSetMaster",
+                "target_replica_host",
+                "target_replica_port",
+                "abortFailover",
+                "replica",
+                "findReplica",
+                "ln",
+                "listNext",
+                "li",
+                "value",
+                "repl_ack_off",
+                "master_repl_offset",
+                "slave_addr",
+                "replicaaddr",
+                "connAddrPeerName",
+                "conn",
+                "ip",
+                "zstrdup",
+                "slave_listening_port"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 644,
+            "col": 9,
+            "line2": 644,
+            "col2": 55,
+            "function": "updateFailoverStatus",
+            "var": [
+                "failover_state",
+                "server",
+                "FAILOVER_WAIT_FOR_SYNC"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 647,
+            "col": 9,
+            "line2": 647,
+            "col2": 32,
+            "function": "updateFailoverStatus",
+            "var": [
+                "failover_end_time",
+                "server",
+                "now",
+                "force_failover",
+                "failover_state",
+                "FAILOVER_IN_PROGRESS",
+                "replicationSetMaster",
+                "target_replica_host",
+                "target_replica_port",
+                "abortFailover"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 647,
+            "col": 37,
+            "line2": 647,
+            "col2": 67,
+            "function": "updateFailoverStatus",
+            "var": [
+                "failover_end_time",
+                "server",
+                "now",
+                "force_failover",
+                "failover_state",
+                "FAILOVER_IN_PROGRESS",
+                "replicationSetMaster",
+                "target_replica_host",
+                "target_replica_port",
+                "abortFailover"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 648,
+            "col": 13,
+            "line2": 648,
+            "col2": 33,
+            "function": "updateFailoverStatus",
+            "var": [
+                "force_failover",
+                "server",
+                "failover_state",
+                "FAILOVER_IN_PROGRESS",
+                "replicationSetMaster",
+                "target_replica_host",
+                "target_replica_port",
+                "abortFailover"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 651,
+            "col": 13,
+            "line2": 651,
+            "col2": 88,
+            "function": "updateFailoverStatus",
+            "var": [
+                "replicationSetMaster()",
+                "replicationSetMaster",
+                "target_replica_host",
+                "server",
+                "target_replica_port"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 404,
+            "col": 1,
+            "line2": 404,
+            "col2": 1,
+            "function": "replicationSetMaster",
+            "var": [
+                "masterhost",
+                "server",
+                "sdsnew",
+                "ip",
+                "masterport",
+                "port",
+                "cancelReplicationHandshake",
+                "was_master",
+                "replicationDiscardCachedMaster",
+                "replicationCacheMasterUsingMyself",
+                "repl_state",
+                "REPL_STATE_CONNECT",
+                "repl_current_sync_attempts",
+                "repl_total_sync_attempts",
+                "connectWithMaster"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 405,
+            "col": 22,
+            "line2": 405,
+            "col2": 53,
+            "function": "replicationSetMaster",
+            "var": [
+                "masterhost",
+                "server"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 417,
+            "col": 5,
+            "line2": 417,
+            "col2": 23,
+            "function": "replicationSetMaster",
+            "var": [
+                "connectWithMaster()",
+                "connectWithMaster"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 357,
+            "col": 1,
+            "line2": 357,
+            "col2": 1,
+            "function": "connectWithMaster",
+            "var": [
+                "repl_current_sync_attempts",
+                "server",
+                "repl_total_sync_attempts",
+                "repl_transfer_s",
+                "connCreate",
+                "el",
+                "connTypeOfReplication",
+                "connConnect",
+                "masterhost",
+                "masterport",
+                "bind_source_addr",
+                "syncWithMaster",
+                "connClose",
+                "repl_transfer_lastio",
+                "unixtime",
+                "repl_state",
+                "REPL_STATE_CONNECTING"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 361,
+            "col": 9,
+            "line2": 361,
+            "col2": 128,
+            "function": "connectWithMaster",
+            "var": [
+                "connConnect",
+                "repl_transfer_s",
+                "server",
+                "masterhost",
+                "masterport",
+                "bind_source_addr",
+                "syncWithMaster",
+                "connClose"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 364,
+            "col": 9,
+            "line2": 364,
+            "col2": 44,
+            "function": "connectWithMaster",
+            "var": [
+                "repl_transfer_s",
+                "server"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 417,
+            "col": 5,
+            "line2": 417,
+            "col2": 23,
+            "function": "replicationSetMaster",
+            "var": [
+                "connectWithMaster()",
+                "connectWithMaster"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 651,
+            "col": 13,
+            "line2": 651,
+            "col2": 88,
+            "function": "updateFailoverStatus",
+            "var": [
+                "replicationSetMaster()",
+                "replicationSetMaster",
+                "target_replica_host",
+                "server",
+                "target_replica_port"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 495,
+            "col": 5,
+            "line2": 495,
+            "col2": 26,
+            "function": "replicationCron",
+            "var": [
+                "updateFailoverStatus()",
+                "updateFailoverStatus"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 496,
+            "col": 9,
+            "line2": 496,
+            "col2": 25,
+            "function": "replicationCron",
+            "var": [
+                "masterhost",
+                "server",
+                "repl_state",
+                "REPL_STATE_CONNECTING",
+                "slaveIsInHandshakeState",
+                "time",
+                "repl_transfer_lastio",
+                "repl_timeout",
+                "cancelReplicationHandshake"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 496,
+            "col": 31,
+            "line2": 496,
+            "col2": 72,
+            "function": "replicationCron",
+            "var": [
+                "masterhost",
+                "server",
+                "repl_state",
+                "REPL_STATE_CONNECTING",
+                "slaveIsInHandshakeState",
+                "time",
+                "repl_transfer_lastio",
+                "repl_timeout",
+                "cancelReplicationHandshake"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 496,
+            "col": 107,
+            "line2": 496,
+            "col2": 177,
+            "function": "replicationCron",
+            "var": [
+                "masterhost",
+                "server",
+                "repl_state",
+                "REPL_STATE_CONNECTING",
+                "slaveIsInHandshakeState",
+                "time",
+                "repl_transfer_lastio",
+                "repl_timeout",
+                "cancelReplicationHandshake"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 498,
+            "col": 9,
+            "line2": 498,
+            "col2": 37,
+            "function": "replicationCron",
+            "var": [
+                "cancelReplicationHandshake()",
+                "cancelReplicationHandshake"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 387,
+            "col": 1,
+            "line2": 387,
+            "col2": 1,
+            "function": "cancelReplicationHandshake",
+            "var": [
+                "rdbChannelAbort",
+                "repl_state",
+                "server",
+                "REPL_STATE_TRANSFER",
+                "replicationAbortSyncTransfer",
+                "REPL_STATE_CONNECT",
+                "REPL_STATE_CONNECTING",
+                "slaveIsInHandshakeState",
+                "undoConnectWithMaster",
+                "reconnect",
+                "connectWithMaster"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 394,
+            "col": 9,
+            "line2": 394,
+            "col2": 31,
+            "function": "cancelReplicationHandshake",
+            "var": [
+                "undoConnectWithMaster()",
+                "undoConnectWithMaster"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 371,
+            "col": 1,
+            "line2": 371,
+            "col2": 1,
+            "function": "undoConnectWithMaster",
+            "var": [
+                "connClose",
+                "repl_transfer_s",
+                "server"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 372,
+            "col": 15,
+            "line2": 372,
+            "col2": 36,
+            "function": "undoConnectWithMaster",
+            "var": [
+                "connClose()",
+                "connClose",
+                "repl_transfer_s",
+                "server"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c",
+            "line": 372,
+            "col": 5,
+            "line2": 372,
+            "col2": 37,
+            "function": "undoConnectWithMaster",
+            "var": [
+                "connClose()",
+                "connClose",
+                "repl_transfer_s",
+                "server"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/./connection.h",
+            "line": 5,
+            "col": 1,
+            "line2": 5,
+            "col2": 1,
+            "function": "connClose",
+            "var": [
+                "close",
+                "type",
+                "conn"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/./connection.h",
+            "line": 6,
+            "col": 5,
+            "line2": 6,
+            "col2": 8,
+            "function": "connClose",
+            "var": [
+                "close()",
+                "close",
+                "type",
+                "conn"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/defect_info.json",
+    "files": [
+        "./connection.h",
+        "replication_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件replication_end.c  缺陷代码片段===\n------------------------------------------------------------\n   3              | static ConnectionType * connTypeOfReplication (){\n   4              | if (server.tls_replication) {\n   7              | return connectionTypeTcp();\n 343              | extern int slaveIsInHandshakeState (){\n 344              | return server.repl_state >= REPL_STATE_RECEIVE_PING_REPLY && server.repl_state <= REPL_STATE_RECEIVE_PSYNC_REPLY;\n---→ 函数: connectWithMaster\n 357 [TRACE-11]   | extern int connectWithMaster (){\n 358              | server.repl_current_sync_attempts++;\n 359              | server.repl_total_sync_attempts++;\n 360              | server.repl_transfer_s = connCreate(server.el, connTypeOfReplication());\n 361 [TRACE-12]   | if (connConnect(server.repl_transfer_s, server.masterhost, server.masterport, server.bind_source_addr, syncWithMaster) == -1) {\n 363              | connClose(server.repl_transfer_s);\n 364 [TRACE-13]   | server.repl_transfer_s = ((void *)0);\n 365              | return -1;\n---→ 函数: undoConnectWithMaster\n 371 [TRACE-23]   | extern void undoConnectWithMaster (){\n 372 [TRACE-24,25] | connClose(server.repl_transfer_s);\n---→ 函数: cancelReplicationHandshake\n 387 [TRACE-21]   | extern int cancelReplicationHandshake (int reconnect){\n 388              | if (rdbChannelAbort() != 0)\n 390              | if (server.repl_state == REPL_STATE_TRANSFER) {\n 393              | } else if (server.repl_state == REPL_STATE_CONNECTING || slaveIsInHandshakeState()) {\n 394 [TRACE-22]   | undoConnectWithMaster();\n 399              | if (!reconnect)\n 400              | return 1;\n---→ 函数: replicationSetMaster\n 404 [TRACE-8]    | extern void replicationSetMaster (char *ip, int port){\n 405 [TRACE-9]    | int was_master = server.masterhost == ((void *)0);\n 406              | server.masterhost = sdsnew(ip);\n 407              | server.masterport = port;\n 408              | cancelReplicationHandshake(0);\n 409              | if (was_master) {\n 414              | server.repl_state = REPL_STATE_CONNECT;\n 415              | server.repl_current_sync_attempts = 0;\n 416              | server.repl_total_sync_attempts = 0;\n 417 [TRACE-10,14] | connectWithMaster();\n 434              | static void rdbChannelReplDataBufFree (){\n 436              | server.repl_full_sync_buffer.blocks = ((void *)0);\n 437              | server.repl_full_sync_buffer.size = 0;\n 438              | server.repl_full_sync_buffer.used = 0;\n 439              | server.repl_full_sync_buffer.last_num_blocks = 0;\n 440              | server.repl_full_sync_buffer.mem_used = 0;\n 442              | static void rdbChannelCleanup (){\n 443              | server.repl_rdb_ch_state = REPL_RDB_CH_STATE_NONE;\n 444              | server.repl_main_ch_state = (1 << 0);\n 445              | rdbChannelReplDataBufFree();\n 447              | static int rdbChannelAbort (){\n 448              | if (server.repl_rdb_ch_state == REPL_RDB_CH_STATE_NONE)\n 449              | return 0;\n 450              | int async_cleanup = (server.repl_rdb_transfer_s && server.loading) || (server.repl_main_ch_state & (1 << 2));\n 451              | if (async_cleanup) {\n 457              | if (server.repl_rdb_transfer_s) {\n 461              | if (server.repl_transfer_fd != -1) {\n 465              | if (server.repl_transfer_tmpfile) {\n 469              | rdbChannelCleanup();\n 470              | return 0;\n 494              | extern void replicationCron (){\n---→ 函数: replicationCron\n 495 [TRACE-1,16] | updateFailoverStatus();\n 496 [TRACE-17,18,19] | if (server.masterhost && (server.repl_state == REPL_STATE_CONNECTING || slaveIsInHandshakeState()) && (time(((void *)0)) - server.repl_transfer_lastio) > server.repl_timeout) {\n 498 [TRACE-20]   | cancelReplicationHandshake(1);\n---→ 函数: updateFailoverStatus\n 643 [TRACE-2]    | extern void updateFailoverStatus (){\n 644 [TRACE-3]    | if (server.failover_state != FAILOVER_WAIT_FOR_SYNC)\n 646              | mstime_t now = server.mstime;\n 647 [TRACE-4,5]  | if (server.failover_end_time && server.failover_end_time <= now) {\n 648 [TRACE-6]    | if (server.force_failover) {\n 650              | server.failover_state = FAILOVER_IN_PROGRESS;\n 651 [TRACE-7,15] | replicationSetMaster(server.target_replica_host, server.target_replica_port);\n 652              | return;\n------------------------------------------------------------\n\n=== 文件connection.h  缺陷代码片段===\n------------------------------------------------------------\n   2              | static inline int connConnect (connection *conn, const char *addr, int port, const char *src_addr, ConnectionCallbackFunc connect_handler){\n   3              | return conn->type->connect(conn, addr, port, src_addr, connect_handler);\n---→ 函数: connClose\n   5 [TRACE-26]   | static inline void connClose (connection *conn){\n   6 [TRACE-27]   | conn->type->close(conn);\n  17              | static inline connection * connCreate (struct aeEventLoop *el, ConnectionType *ct){\n  18              | return ct->conn_create(el);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/replication_end.c": [
+            3,
+            4,
+            7,
+            343,
+            344,
+            357,
+            358,
+            359,
+            360,
+            361,
+            363,
+            364,
+            365,
+            371,
+            372,
+            387,
+            388,
+            390,
+            393,
+            394,
+            399,
+            400,
+            404,
+            405,
+            406,
+            407,
+            408,
+            409,
+            414,
+            415,
+            416,
+            417,
+            434,
+            436,
+            437,
+            438,
+            439,
+            440,
+            442,
+            443,
+            444,
+            445,
+            447,
+            448,
+            449,
+            450,
+            451,
+            457,
+            461,
+            465,
+            469,
+            470,
+            494,
+            495,
+            496,
+            498,
+            643,
+            644,
+            646,
+            647,
+            648,
+            650,
+            651,
+            652
+        ],
+        "Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/./connection.h": [
+            2,
+            3,
+            5,
+            6,
+            17,
+            18
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "指针分析能力不足",
+        "域敏感度缺失"
+    ]
+}

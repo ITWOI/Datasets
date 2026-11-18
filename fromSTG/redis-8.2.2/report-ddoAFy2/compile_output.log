@@ -1,0 +1,37 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+quicklist_end.c:174:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+  174 | }
+      | ^
+1 warning generated.
+quicklist_end.c:48:27: warning: Access to field 'recompress' results in a dereference of a null pointer (loaded from field 'head') [core.NullDereference]
+   48 |     (__builtin_expect(!!((quicklist->head->recompress == 0 && quicklist->tail->recompress == 0)), 1) ? (void)0 : (_serverAssert("quicklist->head->recompress == 0 && quicklist->tail->recompress == 0", "quicklist_InstSlice.c", 248) , abort()));
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+quicklist_end.c:48:63: warning: Access to field 'recompress' results in a dereference of a null pointer (loaded from field 'tail') [core.NullDereference]
+   48 |     (__builtin_expect(!!((quicklist->head->recompress == 0 && quicklist->tail->recompress == 0)), 1) ? (void)0 : (_serverAssert("quicklist->head->recompress == 0 && quicklist->tail->recompress == 0", "quicklist_InstSlice.c", 248) , abort()));
+      |                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+quicklist_end.c:69:39: warning: Access to field 'next' results in a dereference of a null pointer (loaded from variable 'forward') [core.NullDereference]
+   69 |             if (forward == reverse || forward->next == reverse)
+      |                                       ^~~~~~~~~~~~~
+quicklist_end.c:48:27: warning: Access to field 'recompress' results in a dereference of a null pointer (loaded from field 'head') [core.NullDereference]
+   48 |     (__builtin_expect(!!((quicklist->head->recompress == 0 && quicklist->tail->recompress == 0)), 1) ? (void)0 : (_serverAssert("quicklist->head->recompress == 0 && quicklist->tail->recompress == 0", "quicklist_InstSlice.c", 248) , abort()));
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+quicklist_end.c:48:63: warning: Access to field 'recompress' results in a dereference of a null pointer (loaded from field 'tail') [core.NullDereference]
+   48 |     (__builtin_expect(!!((quicklist->head->recompress == 0 && quicklist->tail->recompress == 0)), 1) ? (void)0 : (_serverAssert("quicklist->head->recompress == 0 && quicklist->tail->recompress == 0", "quicklist_InstSlice.c", 248) , abort()));
+      |                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+quicklist_end.c:69:39: warning: Access to field 'next' results in a dereference of a null pointer (loaded from variable 'forward') [core.NullDereference]
+   69 |             if (forward == reverse || forward->next == reverse)
+      |                                       ^~~~~~~~~~~~~
+quicklist_end.c:48:27: warning: Access to field 'recompress' results in a dereference of a null pointer (loaded from field 'head') [core.NullDereference]
+   48 |     (__builtin_expect(!!((quicklist->head->recompress == 0 && quicklist->tail->recompress == 0)), 1) ? (void)0 : (_serverAssert("quicklist->head->recompress == 0 && quicklist->tail->recompress == 0", "quicklist_InstSlice.c", 248) , abort()));
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+quicklist_end.c:48:63: warning: Access to field 'recompress' results in a dereference of a null pointer (loaded from field 'tail') [core.NullDereference]
+   48 |     (__builtin_expect(!!((quicklist->head->recompress == 0 && quicklist->tail->recompress == 0)), 1) ? (void)0 : (_serverAssert("quicklist->head->recompress == 0 && quicklist->tail->recompress == 0", "quicklist_InstSlice.c", 248) , abort()));
+      |                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+quicklist_end.c:69:39: warning: Access to field 'next' results in a dereference of a null pointer (loaded from variable 'forward') [core.NullDereference]
+   69 |             if (forward == reverse || forward->next == reverse)
+      |                                       ^~~~~~~~~~~~~
+9 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-ddoAFy2/2026-03-12-194608-88887-1'
+scan-build: 3 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-ddoAFy2/2026-03-12-194608-88887-1' to examine bug reports.

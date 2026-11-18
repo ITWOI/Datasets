@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+faulthandler_end.c:5:11: warning: Division by zero [core.DivideZero]
+    5 |     z = x / y;
+      |         ~~^~~
+faulthandler_end.c:5:11: warning: Division by zero [core.DivideZero]
+    5 |     z = x / y;
+      |         ~~^~~
+faulthandler_end.c:5:11: warning: Division by zero [core.DivideZero]
+    5 |     z = x / y;
+      |         ~~^~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-uTpsEF2/2026-03-12-195949-99150-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-uTpsEF2/2026-03-12-195949-99150-1' to examine bug reports.

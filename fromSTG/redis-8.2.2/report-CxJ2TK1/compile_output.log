@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+anet_end.c:12:22: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   12 |     if (sa.ss_family == 2) {
+      |         ~~~~~~~~~~~~ ^
+anet_end.c:12:22: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   12 |     if (sa.ss_family == 2) {
+      |         ~~~~~~~~~~~~ ^
+anet_end.c:12:22: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   12 |     if (sa.ss_family == 2) {
+      |         ~~~~~~~~~~~~ ^
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-CxJ2TK1/2026-03-12-191751-76114-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-CxJ2TK1/2026-03-12-191751-76114-1' to examine bug reports.

@@ -1,0 +1,102 @@
+{
+    "bug_type": "Division by zero",
+    "checker": "Clang Static Analyzer",
+    "description": "Division by zero",
+    "warning_func": "",
+    "line_number": 9,
+    "directory": "path/tests/itc-cases",
+    "entry_function": "",
+    "functions": [
+        "zero_division_004_func_001",
+        "zero_division_004"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-OPIrLo4/zero_division_end.c",
+            "line": 8,
+            "col": 5,
+            "line2": 8,
+            "col2": 32,
+            "function": "zero_division_004",
+            "var": [
+                "zero_division_004_func_001()",
+                "zero_division_004_func_001"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-OPIrLo4/zero_division_end.c",
+            "line": 2,
+            "col": 1,
+            "line2": 2,
+            "col2": 1,
+            "function": "zero_division_004_func_001",
+            "var": [
+                "divisor",
+                "zero_division_004_s_gbl"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-OPIrLo4/zero_division_end.c",
+            "line": 3,
+            "col": 5,
+            "line2": 3,
+            "col2": 39,
+            "function": "zero_division_004_func_001",
+            "var": [
+                "divisor",
+                "zero_division_004_s_gbl"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-OPIrLo4/zero_division_end.c",
+            "line": 8,
+            "col": 5,
+            "line2": 8,
+            "col2": 32,
+            "function": "zero_division_004",
+            "var": [
+                "zero_division_004_func_001()",
+                "zero_division_004_func_001"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-OPIrLo4/zero_division_end.c",
+            "line": 9,
+            "col": 11,
+            "line2": 9,
+            "col2": 52,
+            "function": "zero_division_004",
+            "var": [
+                "ret",
+                "dividend",
+                "divisor",
+                "zero_division_004_s_gbl"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/itc-cases/report-OPIrLo4/defect_info.json",
+    "files": [
+        "zero_division_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件zero_division_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: zero_division_004_func_001\n   2 [TRACE-2]    | extern void zero_division_004_func_001 (){\n   3 [TRACE-3]    | zero_division_004_s_gbl.divisor = 0;\n   5              | extern void zero_division_004 (){\n   6              | int dividend = 1000;\n   7              | int ret;\n---→ 函数: zero_division_004\n   8 [TRACE-1,4]  | zero_division_004_func_001();\n   9 [TRACE-5]    | ret = dividend / zero_division_004_s_gbl.divisor;\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/itc-cases/report-OPIrLo4/zero_division_end.c": [
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "计算逻辑",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "域敏感度缺失",
+        "流敏感度不足"
+    ]
+}

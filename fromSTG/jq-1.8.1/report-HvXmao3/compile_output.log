@@ -1,0 +1,66 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from execute_end.c:1:
+./header_func.h:40:12: warning: function 'jv_is_valid' has internal linkage but is not defined [-Wundefined-internal]
+   40 | static int jv_is_valid(jv x) ;
+      |            ^
+execute_end.c:125:13: note: used here
+  125 |         if (jv_is_valid(val))
+      |             ^
+In file included from execute_end.c:1:
+./header_func.h:72:13: warning: function 'set_error' has internal linkage but is not defined [-Wundefined-internal]
+   72 | static void set_error(jq_state *jq, jv value) ;
+      |             ^
+execute_end.c:304:21: note: used here
+  304 |                     set_error(jq, jv_invalid_with_msg(v));
+      |                     ^
+2 warnings generated.
+execute_end.c:767:31: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  767 |                         top = function->fptr.a1(jq, in[0]);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+execute_end.c:770:31: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  770 |                         top = function->fptr.a2(jq, in[0], in[1]);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+execute_end.c:773:31: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  773 |                         top = function->fptr.a3(jq, in[0], in[1], in[2]);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+execute_end.c:776:31: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  776 |                         top = function->fptr.a4(jq, in[0], in[1], in[2], in[3]);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+execute_end.c:779:26: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  779 |                     if (!jv_is_valid(top)) {
+      |                          ^~~~~~~~~~~~~~~~
+execute_end.c:767:31: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  767 |                         top = function->fptr.a1(jq, in[0]);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+execute_end.c:770:31: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  770 |                         top = function->fptr.a2(jq, in[0], in[1]);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+execute_end.c:773:31: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  773 |                         top = function->fptr.a3(jq, in[0], in[1], in[2]);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+execute_end.c:776:31: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  776 |                         top = function->fptr.a4(jq, in[0], in[1], in[2], in[3]);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+execute_end.c:779:26: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  779 |                     if (!jv_is_valid(top)) {
+      |                          ^~~~~~~~~~~~~~~~
+execute_end.c:767:31: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  767 |                         top = function->fptr.a1(jq, in[0]);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+execute_end.c:770:31: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  770 |                         top = function->fptr.a2(jq, in[0], in[1]);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+execute_end.c:773:31: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  773 |                         top = function->fptr.a3(jq, in[0], in[1], in[2]);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+execute_end.c:776:31: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  776 |                         top = function->fptr.a4(jq, in[0], in[1], in[2], in[3]);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+execute_end.c:779:26: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  779 |                     if (!jv_is_valid(top)) {
+      |                          ^~~~~~~~~~~~~~~~
+15 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/jq-1.8.1/report-HvXmao3/2026-03-12-202808-114538-1'
+scan-build: 5 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/jq-1.8.1/report-HvXmao3/2026-03-12-202808-114538-1' to examine bug reports.

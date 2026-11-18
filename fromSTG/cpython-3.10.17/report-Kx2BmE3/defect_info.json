@@ -1,0 +1,487 @@
+{
+    "bug_type": "Argument with 'nonnull' attribute passed null",
+    "checker": "Clang Static Analyzer",
+    "description": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "warning_func": "",
+    "line_number": 111,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "_mpd_kmul_fnt",
+        "_kmul_worksize",
+        "_karatsuba_rec_fnt",
+        "add_size_t"
+    ],
+    "is_single_file": false,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 160,
+            "col": 40,
+            "line2": 160,
+            "col2": 40,
+            "function": "_mpd_kmul_fnt",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 163,
+            "col": 9,
+            "line2": 163,
+            "col2": 68,
+            "function": "_mpd_kmul_fnt",
+            "var": [
+                "result",
+                "mpd_calloc",
+                "rsize"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 166,
+            "col": 9,
+            "line2": 166,
+            "col2": 53,
+            "function": "_mpd_kmul_fnt",
+            "var": [
+                "m",
+                "_kmul_worksize",
+                "ulen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 17,
+            "col": 1,
+            "line2": 17,
+            "col2": 1,
+            "function": "_kmul_worksize",
+            "var": [
+                "n",
+                "lim",
+                "m",
+                "add_size_t",
+                "mul_size_t",
+                "_kmul_worksize"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 19,
+            "col": 9,
+            "line2": 19,
+            "col2": 16,
+            "function": "_kmul_worksize",
+            "var": [
+                "n",
+                "lim"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 23,
+            "col": 12,
+            "line2": 23,
+            "col2": 63,
+            "function": "_kmul_worksize",
+            "var": [
+                "add_size_t",
+                "mul_size_t",
+                "m",
+                "_kmul_worksize",
+                "lim"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/./typearith.h",
+            "line": 8,
+            "col": 1,
+            "line2": 8,
+            "col2": 1,
+            "function": "add_size_t",
+            "var": [
+                "a",
+                "b"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/./typearith.h",
+            "line": 9,
+            "col": 9,
+            "line2": 9,
+            "col2": 40,
+            "function": "add_size_t",
+            "var": [
+                "a",
+                "b"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/./typearith.h",
+            "line": 12,
+            "col": 5,
+            "line2": 12,
+            "col2": 16,
+            "function": "add_size_t",
+            "var": [
+                "a",
+                "b"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 23,
+            "col": 12,
+            "line2": 23,
+            "col2": 63,
+            "function": "_kmul_worksize",
+            "var": [
+                "add_size_t",
+                "mul_size_t",
+                "m",
+                "_kmul_worksize",
+                "lim"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 23,
+            "col": 5,
+            "line2": 23,
+            "col2": 63,
+            "function": "_kmul_worksize",
+            "var": [
+                "add_size_t",
+                "mul_size_t",
+                "m",
+                "_kmul_worksize",
+                "lim"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 166,
+            "col": 9,
+            "line2": 166,
+            "col2": 53,
+            "function": "_mpd_kmul_fnt",
+            "var": [
+                "m",
+                "_kmul_worksize",
+                "ulen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 167,
+            "col": 9,
+            "line2": 167,
+            "col2": 9,
+            "function": "_mpd_kmul_fnt",
+            "var": [
+                "m",
+                "w",
+                "mpd_calloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 171,
+            "col": 43,
+            "line2": 171,
+            "col2": 43,
+            "function": "_mpd_kmul_fnt",
+            "var": [
+                "_karatsuba_rec_fnt",
+                "result",
+                "u",
+                "v",
+                "w",
+                "ulen",
+                "vlen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 171,
+            "col": 10,
+            "line2": 171,
+            "col2": 56,
+            "function": "_mpd_kmul_fnt",
+            "var": [
+                "_karatsuba_rec_fnt",
+                "result",
+                "u",
+                "v",
+                "w",
+                "ulen",
+                "vlen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 100,
+            "col": 1,
+            "line2": 100,
+            "col2": 1,
+            "function": "_karatsuba_rec_fnt",
+            "var": [
+                "la",
+                "lb",
+                "result",
+                "_mpd_fntmul",
+                "a",
+                "b",
+                "dummy",
+                "memcpy",
+                "c",
+                "m",
+                "lt",
+                "mpd_uint_zero",
+                "w",
+                "_karatsuba_rec_fnt"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 116,
+            "col": 9,
+            "line2": 116,
+            "col2": 15,
+            "function": "_karatsuba_rec_fnt",
+            "var": [
+                "lb",
+                "m",
+                "la",
+                "lt",
+                "mpd_uint_zero",
+                "w",
+                "_karatsuba_rec_fnt",
+                "b",
+                "a"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 117,
+            "col": 13,
+            "line2": 117,
+            "col2": 23,
+            "function": "_karatsuba_rec_fnt",
+            "var": [
+                "lb",
+                "la",
+                "m",
+                "lt",
+                "mpd_uint_zero",
+                "w",
+                "_karatsuba_rec_fnt",
+                "b",
+                "a"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 120,
+            "col": 37,
+            "line2": 120,
+            "col2": 37,
+            "function": "_karatsuba_rec_fnt",
+            "var": [
+                "_karatsuba_rec_fnt",
+                "w",
+                "b",
+                "a",
+                "m",
+                "lt",
+                "lb",
+                "la"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 120,
+            "col": 18,
+            "line2": 120,
+            "col2": 68,
+            "function": "_karatsuba_rec_fnt",
+            "var": [
+                "_karatsuba_rec_fnt",
+                "w",
+                "b",
+                "a",
+                "m",
+                "lt",
+                "lb",
+                "la"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 100,
+            "col": 1,
+            "line2": 100,
+            "col2": 1,
+            "function": "_karatsuba_rec_fnt",
+            "var": [
+                "la",
+                "lb",
+                "result",
+                "_mpd_fntmul",
+                "a",
+                "b",
+                "dummy",
+                "memcpy",
+                "c",
+                "m",
+                "lt",
+                "mpd_uint_zero",
+                "w",
+                "_karatsuba_rec_fnt"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 102,
+            "col": 9,
+            "line2": 102,
+            "col2": 37,
+            "function": "_karatsuba_rec_fnt",
+            "var": [
+                "la",
+                "lb",
+                "result",
+                "_mpd_fntmul",
+                "a",
+                "b",
+                "dummy",
+                "memcpy",
+                "c"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 103,
+            "col": 13,
+            "line2": 103,
+            "col2": 21,
+            "function": "_karatsuba_rec_fnt",
+            "var": [
+                "lb",
+                "result",
+                "_mpd_fntmul",
+                "a",
+                "b",
+                "la",
+                "dummy",
+                "memcpy",
+                "c"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c",
+            "line": 111,
+            "col": 20,
+            "line2": 111,
+            "col2": 20,
+            "function": "_karatsuba_rec_fnt",
+            "var": [
+                "memcpy()",
+                "memcpy",
+                "c",
+                "result",
+                "la",
+                "lb"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/defect_info.json",
+    "files": [
+        "mpdecimal_end.c",
+        "./typearith.h"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件mpdecimal_end.c  缺陷代码片段===\n------------------------------------------------------------\n   3              | inline extern  __attribute__((visibility(\"hidden\")))  __attribute__((always_inline)) void mpd_uint_zero (mpd_uint_t *dest, mpd_size_t len){\n   4              | mpd_size_t i;\n   5              | for (i = 0; i < len; i++) {\n   9              | static inline mpd_size_t _kmul_resultsize (mpd_size_t la, mpd_size_t lb){\n  10              | mpd_size_t n, m;\n  11              | n = add_size_t(la, lb);\n  12              | n = add_size_t(n, 1);\n  13              | m = (la + 1) / 2 + 1;\n  14              | m = mul_size_t(m, 3);\n  15              | return (m > n) ? m : n;\n---→ 函数: _kmul_worksize\n  17 [TRACE-4]    | static inline mpd_size_t _kmul_worksize (mpd_size_t n, mpd_size_t lim){\n  18              | mpd_size_t m;\n  19 [TRACE-5]    | if (n <= lim) {\n  22              | m = (n + 1) / 2 + 1;\n  23 [TRACE-6,10,11] | return add_size_t(mul_size_t(m, 2), _kmul_worksize(m, lim));\n  25              | static inline mpd_size_t _mpd_get_transform_len (mpd_size_t rsize){\n  26              | mpd_size_t log2rsize;\n  27              | mpd_size_t x, step;\n  28              | log2rsize = mpd_bsr(rsize);\n  29              | if (rsize <= 1024) {\n  32              | } else if (rsize <= 4294967296ULL) {\n  39              | } else if (rsize <= 4294967296ULL + 4294967296ULL / 2) {\n  40              | return 4294967296ULL + 4294967296ULL / 2;\n  47              | static mpd_uint_t * _mpd_fntmul (const mpd_uint_t *u, const mpd_uint_t *v, mpd_size_t ulen, mpd_size_t vlen, mpd_size_t *rsize){\n  48              | mpd_uint_t *c1 = ((void *)0), *c2 = ((void *)0), *c3 = ((void *)0), *vtmp = ((void *)0);\n  49              | mpd_size_t n;\n  50              | *rsize = add_size_t(ulen, vlen);\n  51              | if ((n = _mpd_get_transform_len(*rsize)) == (18446744073709551615UL)) {\n  54              | if ((c1 = mpd_calloc(n, sizeof *c1)) == ((void *)0)) {\n  57              | if ((c2 = mpd_calloc(n, sizeof *c2)) == ((void *)0)) {\n  60              | if ((c3 = mpd_calloc(n, sizeof *c3)) == ((void *)0)) {\n  64              | if (u == v) {\n  65              | if (!fnt_autoconvolute(c1, n, P1) || !fnt_autoconvolute(c2, n, P2) || !fnt_autoconvolute(c3, n, P3)) {\n  94              | return c1;\n---→ 函数: _karatsuba_rec_fnt\n 100 [TRACE-16,21] | static int _karatsuba_rec_fnt (mpd_uint_t *c, const mpd_uint_t *a, const mpd_uint_t *b, mpd_uint_t *w, mpd_size_t la, mpd_size_t lb){\n 101              | mpd_size_t m, lt;\n 102 [TRACE-22]   | if (la <= 3 * (4294967296ULL / 2)) {\n 103 [TRACE-23]   | if (lb <= 192) {\n 106              | mpd_uint_t *result;\n 107              | mpd_size_t dummy;\n 108              | if ((result = _mpd_fntmul(a, b, la, lb, &dummy)) == ((void *)0)) {\n 111 [TRACE-24]   | memcpy(c, result, (la + lb) * (sizeof *result));\n 115              | m = (la + 1) / 2;\n 116 [TRACE-17]   | if (lb <= m) {\n 117 [TRACE-18]   | if (lb > la - m) {\n 118              | lt = lb + lb + 1;\n 119              | mpd_uint_zero(w, lt);\n 120 [TRACE-19,20] | if (!_karatsuba_rec_fnt(w, b, a + m, w + lt, lb, la - m)) {\n 159              | static mpd_uint_t * _mpd_kmul_fnt (const mpd_uint_t *u, const mpd_uint_t *v, mpd_size_t ulen, mpd_size_t vlen, mpd_size_t *rsize){\n---→ 函数: _mpd_kmul_fnt\n 160 [TRACE-1]    | mpd_uint_t *result = ((void *)0), *w = ((void *)0);\n 161              | mpd_size_t m;\n 162              | *rsize = _kmul_resultsize(ulen, vlen);\n 163 [TRACE-2]    | if ((result = mpd_calloc(*rsize, sizeof *result)) == ((void *)0)) {\n 166 [TRACE-3,12] | m = _kmul_worksize(ulen, 3 * (4294967296ULL / 2));\n 167 [TRACE-13]   | if (m && ((w = mpd_calloc(m, sizeof *w)) == ((void *)0))) {\n 171 [TRACE-14,15] | if (!_karatsuba_rec_fnt(result, u, v, w, ulen, vlen)) {\n------------------------------------------------------------\n\n=== 文件typearith.h  缺陷代码片段===\n------------------------------------------------------------\n   2              | static inline void _mpd_mul_words (mpd_uint_t *hi, mpd_uint_t *lo, mpd_uint_t a, mpd_uint_t b){\n   3              | mpd_uint_t h, l;\n   4              | asm (\"mulq %3\\n\\t\" : \"=d\" (h), \"=a\" (l) : \"%a\" (a), \"rm\" (b) : \"cc\");\n   5              | *hi = h;\n   6              | *lo = l;\n---→ 函数: add_size_t\n   8 [TRACE-7]    | static inline mpd_size_t add_size_t (mpd_size_t a, mpd_size_t b){\n   9 [TRACE-8]    | if (a > (18446744073709551615UL) - b) {\n  12 [TRACE-9]    | return a + b;\n  14              | static inline mpd_size_t mul_size_t (mpd_size_t a, mpd_size_t b){\n  15              | mpd_uint_t hi, lo;\n  16              | _mpd_mul_words(&hi, &lo, (mpd_uint_t)a, (mpd_uint_t)b);\n  17              | if (hi) {\n  20              | return lo;\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/mpdecimal_end.c": [
+            3,
+            4,
+            5,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            17,
+            18,
+            19,
+            22,
+            23,
+            25,
+            26,
+            27,
+            28,
+            29,
+            32,
+            39,
+            40,
+            47,
+            48,
+            49,
+            50,
+            51,
+            54,
+            57,
+            60,
+            64,
+            65,
+            94,
+            100,
+            101,
+            102,
+            103,
+            106,
+            107,
+            108,
+            111,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            159,
+            160,
+            161,
+            162,
+            163,
+            166,
+            167,
+            171
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3/./typearith.h": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9,
+            12,
+            14,
+            15,
+            16,
+            17,
+            20
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "过程间数据流断裂",
+        "循环次数/递归深度受限"
+    ]
+}

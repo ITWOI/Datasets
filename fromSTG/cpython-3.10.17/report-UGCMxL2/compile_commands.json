@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL2",
+        "arguments": [
+            "clang",
+            "-c",
+            "traceback_end.c"
+        ],
+        "file": "traceback_end.c"
+    }
+]

@@ -1,0 +1,587 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Access to field 'ms' results in a dereference of a null pointer (loaded from variable 'a')",
+    "warning_func": "",
+    "line_number": 4,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "",
+    "functions": [
+        "streamCompareID",
+        "xgroupCommand",
+        "streamUpdateCGroupLastId",
+        "streamLookupCG"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 113,
+            "col": 9,
+            "line2": 113,
+            "col2": 20,
+            "function": "xgroupCommand",
+            "var": [
+                "argc",
+                "c",
+                "strcasecmp",
+                "opt",
+                "i",
+                "create_subcmd",
+                "ptr",
+                "argv",
+                "mkstream",
+                "setid_subcmd",
+                "getLongLongFromObjectOrReply",
+                "entries_read",
+                "o",
+                "lookupKeyWrite",
+                "db",
+                "checkType",
+                "s",
+                "grpname"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 117,
+            "col": 16,
+            "line2": 117,
+            "col2": 26,
+            "function": "xgroupCommand",
+            "var": [
+                "i",
+                "argc",
+                "c",
+                "create_subcmd",
+                "strcasecmp",
+                "ptr",
+                "argv",
+                "mkstream",
+                "setid_subcmd",
+                "getLongLongFromObjectOrReply",
+                "entries_read"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 117,
+            "col": 16,
+            "line2": 117,
+            "col2": 26,
+            "function": "xgroupCommand",
+            "var": [
+                "i",
+                "argc",
+                "c",
+                "create_subcmd",
+                "strcasecmp",
+                "ptr",
+                "argv",
+                "mkstream",
+                "setid_subcmd",
+                "getLongLongFromObjectOrReply",
+                "entries_read"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 135,
+            "col": 13,
+            "line2": 135,
+            "col2": 13,
+            "function": "xgroupCommand",
+            "var": [
+                "o",
+                "checkType",
+                "c",
+                "s",
+                "ptr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 136,
+            "col": 17,
+            "line2": 136,
+            "col2": 34,
+            "function": "xgroupCommand",
+            "var": [
+                "checkType",
+                "c",
+                "o"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 142,
+            "col": 9,
+            "line2": 142,
+            "col2": 20,
+            "function": "xgroupCommand",
+            "var": [
+                "argc",
+                "c",
+                "mkstream",
+                "s",
+                "cg",
+                "streamLookupCG",
+                "grpname",
+                "strcasecmp",
+                "opt"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 143,
+            "col": 13,
+            "line2": 143,
+            "col2": 28,
+            "function": "xgroupCommand",
+            "var": [
+                "s"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 147,
+            "col": 19,
+            "line2": 147,
+            "col2": 44,
+            "function": "xgroupCommand",
+            "var": [
+                "cg",
+                "streamLookupCG",
+                "s",
+                "grpname",
+                "strcasecmp",
+                "opt"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 78,
+            "col": 1,
+            "line2": 78,
+            "col2": 1,
+            "function": "streamLookupCG",
+            "var": [
+                "cgroups",
+                "s",
+                "raxFind",
+                "groupname",
+                "sdslen",
+                "cg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 79,
+            "col": 9,
+            "line2": 79,
+            "col2": 33,
+            "function": "streamLookupCG",
+            "var": [
+                "cgroups",
+                "s"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 82,
+            "col": 5,
+            "line2": 82,
+            "col2": 75,
+            "function": "streamLookupCG",
+            "var": [
+                "raxFind()",
+                "raxFind",
+                "cgroups",
+                "s",
+                "groupname",
+                "sdslen",
+                "cg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 83,
+            "col": 5,
+            "line2": 83,
+            "col2": 5,
+            "function": "streamLookupCG",
+            "var": [
+                "cg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 83,
+            "col": 5,
+            "line2": 83,
+            "col2": 13,
+            "function": "streamLookupCG",
+            "var": [
+                "cg"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 147,
+            "col": 19,
+            "line2": 147,
+            "col2": 44,
+            "function": "xgroupCommand",
+            "var": [
+                "cg",
+                "streamLookupCG",
+                "s",
+                "grpname",
+                "strcasecmp",
+                "opt"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 147,
+            "col": 14,
+            "line2": 147,
+            "col2": 44,
+            "function": "xgroupCommand",
+            "var": [
+                "cg",
+                "streamLookupCG",
+                "s",
+                "grpname",
+                "strcasecmp",
+                "opt"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 147,
+            "col": 13,
+            "line2": 147,
+            "col2": 60,
+            "function": "xgroupCommand",
+            "var": [
+                "cg",
+                "streamLookupCG",
+                "s",
+                "grpname",
+                "strcasecmp",
+                "opt"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 147,
+            "col": 66,
+            "line2": 147,
+            "col2": 90,
+            "function": "xgroupCommand",
+            "var": [
+                "cg",
+                "streamLookupCG",
+                "s",
+                "grpname",
+                "strcasecmp",
+                "opt"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 147,
+            "col": 95,
+            "line2": 147,
+            "col2": 128,
+            "function": "xgroupCommand",
+            "var": [
+                "cg",
+                "streamLookupCG",
+                "s",
+                "grpname",
+                "strcasecmp",
+                "opt"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 147,
+            "col": 133,
+            "line2": 147,
+            "col2": 163,
+            "function": "xgroupCommand",
+            "var": [
+                "cg",
+                "streamLookupCG",
+                "s",
+                "grpname",
+                "strcasecmp",
+                "opt"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 154,
+            "col": 16,
+            "line2": 154,
+            "col2": 41,
+            "function": "xgroupCommand",
+            "var": [
+                "strcasecmp",
+                "opt",
+                "argc",
+                "c",
+                "strcmp",
+                "ptr",
+                "argv",
+                "s",
+                "id",
+                "last_id",
+                "ms",
+                "seq",
+                "streamParseStrictIDOrReply",
+                "__builtin_expect",
+                "mkstream",
+                "_serverAssert",
+                "abort",
+                "o",
+                "createStreamObject",
+                "entries_read",
+                "entries_added",
+                "streamCreateCG",
+                "grpname",
+                "sdslen",
+                "streamParseIDOrReply",
+                "streamUpdateCGroupLastId",
+                "cg",
+                "raxRemove",
+                "cgroups",
+                "streamCreateConsumer",
+                "db",
+                "streamLookupConsumer",
+                "consumer",
+                "streamDelConsumer"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 175,
+            "col": 46,
+            "line2": 175,
+            "col2": 57,
+            "function": "xgroupCommand",
+            "var": [
+                "strcasecmp",
+                "opt",
+                "argc",
+                "c",
+                "strcmp",
+                "ptr",
+                "argv",
+                "streamParseIDOrReply",
+                "id",
+                "streamUpdateCGroupLastId",
+                "s",
+                "cg",
+                "raxRemove",
+                "cgroups",
+                "grpname",
+                "sdslen",
+                "streamCreateConsumer",
+                "db",
+                "streamLookupConsumer",
+                "consumer",
+                "streamDelConsumer"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 182,
+            "col": 37,
+            "line2": 182,
+            "col2": 38,
+            "function": "xgroupCommand",
+            "var": [
+                "streamUpdateCGroupLastId()",
+                "streamUpdateCGroupLastId",
+                "s",
+                "cg",
+                "id"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 182,
+            "col": 9,
+            "line2": 182,
+            "col2": 44,
+            "function": "xgroupCommand",
+            "var": [
+                "streamUpdateCGroupLastId()",
+                "streamUpdateCGroupLastId",
+                "s",
+                "cg",
+                "id"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 59,
+            "col": 1,
+            "line2": 59,
+            "col2": 1,
+            "function": "streamUpdateCGroupLastId",
+            "var": [
+                "min_cgroup_last_id_valid",
+                "s",
+                "streamCompareID",
+                "last_id",
+                "cg",
+                "min_cgroup_last_id",
+                "id"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 60,
+            "col": 9,
+            "line2": 60,
+            "col2": 35,
+            "function": "streamUpdateCGroupLastId",
+            "var": [
+                "min_cgroup_last_id_valid",
+                "s",
+                "streamCompareID",
+                "last_id",
+                "cg",
+                "min_cgroup_last_id",
+                "id"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 60,
+            "col": 57,
+            "line2": 60,
+            "col2": 68,
+            "function": "streamUpdateCGroupLastId",
+            "var": [
+                "min_cgroup_last_id_valid",
+                "s",
+                "streamCompareID",
+                "last_id",
+                "cg",
+                "min_cgroup_last_id",
+                "id"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 60,
+            "col": 41,
+            "line2": 60,
+            "col2": 93,
+            "function": "streamUpdateCGroupLastId",
+            "var": [
+                "min_cgroup_last_id_valid",
+                "s",
+                "streamCompareID",
+                "last_id",
+                "cg",
+                "min_cgroup_last_id",
+                "id"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 3,
+            "col": 1,
+            "line2": 3,
+            "col2": 1,
+            "function": "streamCompareID",
+            "var": [
+                "ms",
+                "a",
+                "b",
+                "seq"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c",
+            "line": 4,
+            "col": 9,
+            "line2": 4,
+            "col2": 9,
+            "function": "streamCompareID",
+            "var": [
+                "ms",
+                "a",
+                "b",
+                "seq"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/defect_info.json",
+    "files": [
+        "t_stream_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件t_stream_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: streamCompareID\n   3 [TRACE-28]   | extern int streamCompareID (streamID *a, streamID *b){\n   4 [TRACE-29]   | if (a->ms > b->ms) {\n---→ 函数: streamUpdateCGroupLastId\n  59 [TRACE-24]   | extern void streamUpdateCGroupLastId (stream *s, streamCG *cg, streamID *id){\n  60 [TRACE-25,26,27] | if (s->min_cgroup_last_id_valid && (streamCompareID(&cg->last_id, &s->min_cgroup_last_id) == 0 || streamCompareID(id, &s->min_cgroup_last_id) < 0)) {\n---→ 函数: streamLookupCG\n  78 [TRACE-9]    | extern streamCG * streamLookupCG (stream *s, sds groupname){\n  79 [TRACE-10]   | if (s->cgroups == ((void *)0))\n  81              | void *cg = ((void *)0);\n  82 [TRACE-11]   | raxFind(s->cgroups, (unsigned char *)groupname, sdslen(groupname), &cg);\n  83 [TRACE-12,13] | return cg;\n 105              | extern void xgroupCommand (client *c){\n 106              | stream *s = ((void *)0);\n 107              | sds grpname = ((void *)0);\n 108              | streamCG *cg = ((void *)0);\n 109              | char *opt = c->argv[1]->ptr;\n 110              | int mkstream = 0;\n 111              | long long entries_read = -1;\n 112              | robj *o;\n---→ 函数: xgroupCommand\n 113 [TRACE-1]    | if (c->argc >= 4) {\n 114              | int i = 5;\n 115              | int create_subcmd = !strcasecmp(opt, \"CREATE\");\n 116              | int setid_subcmd = !strcasecmp(opt, \"SETID\");\n 117 [TRACE-2,3]  | while (i < c->argc)\n 134              | o = lookupKeyWrite(c->db, c->argv[2]);\n 135 [TRACE-4]    | if (o) {\n 136 [TRACE-5]    | if (checkType(c, o, 6))\n 138              | s = o->ptr;\n 140              | grpname = c->argv[3]->ptr;\n 142 [TRACE-6]    | if (c->argc >= 4 && !mkstream) {\n 143 [TRACE-7]    | if (s == ((void *)0)) {\n 147 [TRACE-8,14,15,16,17,18,19] | if ((cg = streamLookupCG(s, grpname)) == ((void *)0) && (!strcasecmp(opt, \"SETID\") || !strcasecmp(opt, \"CREATECONSUMER\") || !strcasecmp(opt, \"DELCONSUMER\"))) {\n 152              | if (c->argc == 2 && !strcasecmp(opt, \"HELP\")) {\n 154 [TRACE-20]   | } else if (!strcasecmp(opt, \"CREATE\") && (c->argc >= 5 && c->argc <= 8)) {\n 175 [TRACE-21]   | } else if (!strcasecmp(opt, \"SETID\") && (c->argc == 5 || c->argc == 7)) {\n 176              | streamID id;\n 177              | if (!strcmp(c->argv[4]->ptr, \"$\")) {\n 182 [TRACE-22,23] | streamUpdateCGroupLastId(s, cg, &id);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/t_stream_end.c": [
+            3,
+            4,
+            59,
+            60,
+            78,
+            79,
+            81,
+            82,
+            83,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            134,
+            135,
+            136,
+            138,
+            140,
+            142,
+            143,
+            147,
+            152,
+            154,
+            175,
+            176,
+            177,
+            182
+        ],
+        "Datasets/fromDGS/redis-8.2.2/report-tfZyB71/./sds.h": [
+            2,
+            3,
+            4,
+            6,
+            7,
+            19
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "路径可行性判定失效",
+        "过程间数据流断裂",
+        "指针分析能力不足"
+    ]
+}

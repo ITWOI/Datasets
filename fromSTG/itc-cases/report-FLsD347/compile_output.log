@@ -1,0 +1,24 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+invalid_memory_access_end.c:27:12: warning: Access to field 'a' results in a dereference of a null pointer (loaded from variable 'invalid_memory_access_004_s_001_s_gbl') [core.NullDereference]
+   27 |     return invalid_memory_access_004_s_001_s_gbl->a;
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+invalid_memory_access_end.c:27:12: warning: Use of memory after it is freed [unix.Malloc]
+   27 |     return invalid_memory_access_004_s_001_s_gbl->a;
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+invalid_memory_access_end.c:27:12: warning: Access to field 'a' results in a dereference of a null pointer (loaded from variable 'invalid_memory_access_004_s_001_s_gbl') [core.NullDereference]
+   27 |     return invalid_memory_access_004_s_001_s_gbl->a;
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+invalid_memory_access_end.c:27:12: warning: Use of memory after it is freed [unix.Malloc]
+   27 |     return invalid_memory_access_004_s_001_s_gbl->a;
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+invalid_memory_access_end.c:27:12: warning: Access to field 'a' results in a dereference of a null pointer (loaded from variable 'invalid_memory_access_004_s_001_s_gbl') [core.NullDereference]
+   27 |     return invalid_memory_access_004_s_001_s_gbl->a;
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+invalid_memory_access_end.c:27:12: warning: Use of memory after it is freed [unix.Malloc]
+   27 |     return invalid_memory_access_004_s_001_s_gbl->a;
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/itc-cases/report-FLsD347/2026-03-15-181657-873119-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/itc-cases/report-FLsD347/2026-03-15-181657-873119-1' to examine bug reports.

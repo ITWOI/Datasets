@@ -1,0 +1,436 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Access to field 'ob_refcnt' results in a dereference of a null pointer (loaded from variable 'op')",
+    "warning_func": "",
+    "line_number": 9,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "_PyErr_Fetch",
+        "_PyErr_FormatFromCause",
+        "_Py_DECREF",
+        "_PyErr_FormatVFromCause",
+        "_PyErr_NormalizeException"
+    ],
+    "is_single_file": false,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 227,
+            "col": 5,
+            "line2": 227,
+            "col2": 61,
+            "function": "_PyErr_FormatFromCause",
+            "var": [
+                "_PyErr_FormatVFromCause()",
+                "_PyErr_FormatVFromCause",
+                "tstate",
+                "exception",
+                "format",
+                "vargs"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 205,
+            "col": 1,
+            "line2": 205,
+            "col2": 1,
+            "function": "_PyErr_FormatVFromCause",
+            "var": [
+                "_PyErr_Fetch",
+                "tstate",
+                "exc",
+                "val",
+                "tb",
+                "_PyErr_NormalizeException",
+                "PyException_SetTraceback",
+                "_Py_DECREF",
+                "_PyErr_FormatV",
+                "exception",
+                "format",
+                "vargs",
+                "val2",
+                "_Py_INCREF",
+                "PyException_SetCause",
+                "PyException_SetContext",
+                "_PyErr_Restore"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 207,
+            "col": 5,
+            "line2": 207,
+            "col2": 41,
+            "function": "_PyErr_FormatVFromCause",
+            "var": [
+                "_PyErr_Fetch()",
+                "_PyErr_Fetch",
+                "tstate",
+                "exc",
+                "val",
+                "tb"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 194,
+            "col": 1,
+            "line2": 194,
+            "col2": 1,
+            "function": "_PyErr_Fetch",
+            "var": [
+                "p_type",
+                "curexc_type",
+                "tstate",
+                "p_value",
+                "curexc_value",
+                "p_traceback",
+                "curexc_traceback"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 198,
+            "col": 5,
+            "line2": 198,
+            "col2": 37,
+            "function": "_PyErr_Fetch",
+            "var": [
+                "curexc_type",
+                "tstate"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 207,
+            "col": 5,
+            "line2": 207,
+            "col2": 41,
+            "function": "_PyErr_FormatVFromCause",
+            "var": [
+                "_PyErr_Fetch()",
+                "_PyErr_Fetch",
+                "tstate",
+                "exc",
+                "val",
+                "tb"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 208,
+            "col": 5,
+            "line2": 208,
+            "col2": 54,
+            "function": "_PyErr_FormatVFromCause",
+            "var": [
+                "_PyErr_NormalizeException()",
+                "_PyErr_NormalizeException",
+                "tstate",
+                "exc",
+                "val",
+                "tb"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 128,
+            "col": 1,
+            "line2": 128,
+            "col2": 1,
+            "function": "_PyErr_NormalizeException",
+            "var": [
+                "recursion_headroom",
+                "tstate",
+                "type",
+                "exc",
+                "value",
+                "val",
+                "_Py_NoneStruct",
+                "_Py_INCREF",
+                "_PyType_Check",
+                "PyType_HasFeature",
+                "ob_type",
+                "inclass",
+                "is_subclass",
+                "PyObject_IsSubclass",
+                "_PyErr_CreateException",
+                "fixed_value",
+                "_Py_DECREF",
+                "recursion_depth",
+                "_PyErr_SetString",
+                "PyExc_RecursionError",
+                "initial_tb",
+                "tb",
+                "_PyErr_Fetch",
+                "PyErr_GivenExceptionMatches",
+                "PyExc_MemoryError",
+                "_Py_FatalErrorFunc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 134,
+            "col": 9,
+            "line2": 134,
+            "col2": 27,
+            "function": "_PyErr_NormalizeException",
+            "var": [
+                "type",
+                "recursion_headroom",
+                "tstate"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 139,
+            "col": 9,
+            "line2": 139,
+            "col2": 14,
+            "function": "_PyErr_NormalizeException",
+            "var": [
+                "value",
+                "_Py_NoneStruct",
+                "_Py_INCREF"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 149,
+            "col": 17,
+            "line2": 149,
+            "col2": 31,
+            "function": "_PyErr_NormalizeException",
+            "var": [
+                "is_subclass"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 178,
+            "col": 5,
+            "line2": 178,
+            "col2": 38,
+            "function": "_PyErr_NormalizeException",
+            "var": [
+                "_PyErr_Fetch()",
+                "_PyErr_Fetch",
+                "tstate",
+                "exc",
+                "val",
+                "tb"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 194,
+            "col": 1,
+            "line2": 194,
+            "col2": 1,
+            "function": "_PyErr_Fetch",
+            "var": [
+                "p_type",
+                "curexc_type",
+                "tstate",
+                "p_value",
+                "curexc_value",
+                "p_traceback",
+                "curexc_traceback"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 195,
+            "col": 5,
+            "line2": 195,
+            "col2": 33,
+            "function": "_PyErr_Fetch",
+            "var": [
+                "p_type",
+                "curexc_type",
+                "tstate"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 178,
+            "col": 5,
+            "line2": 178,
+            "col2": 38,
+            "function": "_PyErr_NormalizeException",
+            "var": [
+                "_PyErr_Fetch()",
+                "_PyErr_Fetch",
+                "tstate",
+                "exc",
+                "val",
+                "tb"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 179,
+            "col": 9,
+            "line2": 179,
+            "col2": 33,
+            "function": "_PyErr_NormalizeException",
+            "var": [
+                "initial_tb",
+                "tb",
+                "_Py_DECREF"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 208,
+            "col": 5,
+            "line2": 208,
+            "col2": 54,
+            "function": "_PyErr_FormatVFromCause",
+            "var": [
+                "_PyErr_NormalizeException()",
+                "_PyErr_NormalizeException",
+                "tstate",
+                "exc",
+                "val",
+                "tb"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 213,
+            "col": 16,
+            "line2": 213,
+            "col2": 34,
+            "function": "_PyErr_FormatVFromCause",
+            "var": [
+                "_Py_DECREF()",
+                "_Py_DECREF",
+                "exc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c",
+            "line": 213,
+            "col": 5,
+            "line2": 213,
+            "col2": 35,
+            "function": "_PyErr_FormatVFromCause",
+            "var": [
+                "_Py_DECREF()",
+                "_Py_DECREF",
+                "exc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/./object.h",
+            "line": 8,
+            "col": 1,
+            "line2": 8,
+            "col2": 1,
+            "function": "_Py_DECREF",
+            "var": [
+                "ob_refcnt",
+                "op",
+                "_Py_Dealloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/./object.h",
+            "line": 9,
+            "col": 11,
+            "line2": 9,
+            "col2": 12,
+            "function": "_Py_DECREF",
+            "var": [
+                "ob_refcnt",
+                "op",
+                "_Py_Dealloc"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/defect_info.json",
+    "files": [
+        "./object.h",
+        "errors_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件errors_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: _PyErr_NormalizeException\n 128 [TRACE-8]    | extern  __attribute__((visibility(\"default\"))) void _PyErr_NormalizeException (PyThreadState *tstate, PyObject **exc, PyObject **val, PyObject **tb){\n 129              | int recursion_depth = 0;\n 130              | tstate->recursion_headroom++;\n 131              | PyObject *type, *value, *initial_tb;\n 132              | restart:\n 133              | type = *exc;\n 134 [TRACE-9]    | if (type == ((void *)0)) {\n 135              | tstate->recursion_headroom--;\n 136              | return;\n 138              | value = *val;\n 139 [TRACE-10]   | if (!value) {\n 143              | if ((_PyType_Check(((PyObject *)((type)))) && PyType_HasFeature((PyTypeObject *)(type), (1UL << 30)))) {\n 144              | PyObject *inclass = ((void *)0);\n 145              | int is_subclass = 0;\n 146              | if (PyType_HasFeature((((PyObject *)(value))->ob_type), (1UL << 30))) {\n 147              | inclass = ((PyObject *)(((PyObject *)(value))->ob_type));\n 148              | is_subclass = PyObject_IsSubclass(inclass, type);\n 149 [TRACE-11]   | if (is_subclass < 0) {\n 150              | goto error;\n 170              | error:\n 171              | _Py_DECREF(((PyObject *)(type)));\n 172              | _Py_DECREF(((PyObject *)(value)));\n 173              | recursion_depth++;\n 174              | if (recursion_depth == 32) {\n 177              | initial_tb = *tb;\n 178 [TRACE-12,15] | _PyErr_Fetch(tstate, exc, val, tb);\n 179 [TRACE-16]   | if (initial_tb != ((void *)0)) {\n 185              | if (recursion_depth >= 32 + 2) {\n 192              | goto restart;\n---→ 函数: _PyErr_Fetch\n 194 [TRACE-4,13] | extern  __attribute__((visibility(\"default\"))) void _PyErr_Fetch (PyThreadState *tstate, PyObject **p_type, PyObject **p_value, PyObject **p_traceback){\n 195 [TRACE-14]   | *p_type = tstate->curexc_type;\n 196              | *p_value = tstate->curexc_value;\n 197              | *p_traceback = tstate->curexc_traceback;\n 198 [TRACE-5]    | tstate->curexc_type = ((void *)0);\n 199              | tstate->curexc_value = ((void *)0);\n 200              | tstate->curexc_traceback = ((void *)0);\n---→ 函数: _PyErr_FormatVFromCause\n 205 [TRACE-2]    | static PyObject * _PyErr_FormatVFromCause (PyThreadState *tstate, PyObject *exception, const char *format, va_list vargs){\n 206              | PyObject *exc, *val, *val2, *tb;\n 207 [TRACE-3,6]  | _PyErr_Fetch(tstate, &exc, &val, &tb);\n 208 [TRACE-7,17] | _PyErr_NormalizeException(tstate, &exc, &val, &tb);\n 209              | if (tb != ((void *)0)) {\n 213 [TRACE-18,19] | _Py_DECREF(((PyObject *)(exc)));\n 223              | extern  __attribute__((visibility(\"default\"))) PyObject * _PyErr_FormatFromCause (PyObject *exception, const char *format, ...){\n 224              | PyThreadState *tstate = _PyThreadState_GET();\n 225              | va_list vargs;\n 226              | __builtin_va_start(vargs, format);\n---→ 函数: _PyErr_FormatFromCause\n 227 [TRACE-1]    | _PyErr_FormatVFromCause(tstate, exception, format, vargs);\n------------------------------------------------------------\n\n=== 文件object.h  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: _Py_DECREF\n   8 [TRACE-20]   | static inline void _Py_DECREF (PyObject *op){\n   9 [TRACE-21]   | if (--op->ob_refcnt != 0) {\n  24              | static inline int PyType_HasFeature (PyTypeObject *type, unsigned long feature){\n  25              | unsigned long flags;\n  26              | flags = type->tp_flags;\n  27              | return ((flags & feature) != 0);\n  29              | static inline int _PyType_Check (PyObject *op){\n  30              | return PyType_HasFeature((((PyObject *)(op))->ob_type), (1UL << 31));\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/errors_end.c": [
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            138,
+            139,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            170,
+            171,
+            172,
+            173,
+            174,
+            177,
+            178,
+            179,
+            185,
+            192,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            205,
+            206,
+            207,
+            208,
+            209,
+            213,
+            223,
+            224,
+            225,
+            226,
+            227
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/./pycore_pystate.h": [
+            2,
+            3,
+            5,
+            6
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-SyRBWb1/./object.h": [
+            8,
+            9,
+            24,
+            25,
+            26,
+            27,
+            29,
+            30
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "过程间数据流断裂",
+        "外部库/API 逻辑建模缺失"
+    ]
+}

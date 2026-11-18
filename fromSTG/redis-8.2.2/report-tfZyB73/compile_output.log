@@ -1,0 +1,42 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+t_stream_end.c:4:9: warning: Access to field 'ms' results in a dereference of a null pointer (loaded from variable 'a') [core.NullDereference]
+    4 |     if (a->ms > b->ms) {
+      |         ^~~~~
+t_stream_end.c:4:15: warning: The left operand of '>' is a garbage value [core.UndefinedBinaryOperatorResult]
+    4 |     if (a->ms > b->ms) {
+      |         ~~~~~ ^
+t_stream_end.c:63:17: warning: Access to field 'last_id' results in a dereference of a null pointer (loaded from variable 'cg') [core.NullDereference]
+   63 |     cg->last_id = *id;
+      |     ~~          ^
+t_stream_end.c:91:19: warning: 4th function call argument is an uninitialized value [core.CallAndMessage]
+   91 |     int success = raxTryInsert(cg->consumers, (unsigned char *)name, sdslen(name), consumer, ((void *)0));
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+t_stream_end.c:4:9: warning: Access to field 'ms' results in a dereference of a null pointer (loaded from variable 'a') [core.NullDereference]
+    4 |     if (a->ms > b->ms) {
+      |         ^~~~~
+t_stream_end.c:4:15: warning: The left operand of '>' is a garbage value [core.UndefinedBinaryOperatorResult]
+    4 |     if (a->ms > b->ms) {
+      |         ~~~~~ ^
+t_stream_end.c:63:17: warning: Access to field 'last_id' results in a dereference of a null pointer (loaded from variable 'cg') [core.NullDereference]
+   63 |     cg->last_id = *id;
+      |     ~~          ^
+t_stream_end.c:91:19: warning: 4th function call argument is an uninitialized value [core.CallAndMessage]
+   91 |     int success = raxTryInsert(cg->consumers, (unsigned char *)name, sdslen(name), consumer, ((void *)0));
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+t_stream_end.c:4:9: warning: Access to field 'ms' results in a dereference of a null pointer (loaded from variable 'a') [core.NullDereference]
+    4 |     if (a->ms > b->ms) {
+      |         ^~~~~
+t_stream_end.c:4:15: warning: The left operand of '>' is a garbage value [core.UndefinedBinaryOperatorResult]
+    4 |     if (a->ms > b->ms) {
+      |         ~~~~~ ^
+t_stream_end.c:63:17: warning: Access to field 'last_id' results in a dereference of a null pointer (loaded from variable 'cg') [core.NullDereference]
+   63 |     cg->last_id = *id;
+      |     ~~          ^
+t_stream_end.c:91:19: warning: 4th function call argument is an uninitialized value [core.CallAndMessage]
+   91 |     int success = raxTryInsert(cg->consumers, (unsigned char *)name, sdslen(name), consumer, ((void *)0));
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+12 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-tfZyB73/2026-03-12-191429-74340-1'
+scan-build: 4 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-tfZyB73/2026-03-12-191429-74340-1' to examine bug reports.

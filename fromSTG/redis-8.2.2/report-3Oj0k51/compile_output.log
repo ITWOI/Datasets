@@ -1,0 +1,47 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+db_end.c:202:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+  202 | }
+      | ^
+In file included from db_end.c:1:
+./header_func.h:27:19: warning: function 'log2ceil' has internal linkage but is not defined [-Wundefined-internal]
+   27 | static inline int log2ceil(size_t x) ;
+      |                   ^
+db_end.c:13:23: note: used here
+   13 |         int old_bin = log2ceil(oldLen) + 1;
+      |                       ^
+In file included from db_end.c:1:
+./header_func.h:65:28: warning: function 'keyHashSlot' has internal linkage but is not defined [-Wundefined-internal]
+   65 | static inline unsigned int keyHashSlot(char *key, int keylen) ;
+      |                            ^
+db_end.c:101:16: note: used here
+  101 |     int slot = keyHashSlot(key, (int)sdslen(key));
+      |                ^
+In file included from db_end.c:1:
+./header_func.h:67:22: warning: function 'sdslen' has internal linkage but is not defined [-Wundefined-internal]
+   67 | static inline size_t sdslen(const sds s) ;
+      |                      ^
+db_end.c:101:38: note: used here
+  101 |     int slot = keyHashSlot(key, (int)sdslen(key));
+      |                                      ^
+In file included from db_end.c:1:
+./header_func.h:75:22: warning: function 'dictGetKV' has internal linkage but is not defined [-Wundefined-internal]
+   75 | static inline kvobj *dictGetKV(const dictEntry *de) ;
+      |                      ^
+db_end.c:114:18: note: used here
+  114 |     kvobj *old = dictGetKV(*link);
+      |                  ^
+5 warnings generated.
+db_end.c:169:28: warning: Dereference of null pointer [core.NullDereference]
+  169 |         oldval = dictGetKV(**link);
+      |                            ^~~~~~
+db_end.c:169:28: warning: Dereference of null pointer [core.NullDereference]
+  169 |         oldval = dictGetKV(**link);
+      |                            ^~~~~~
+db_end.c:169:28: warning: Dereference of null pointer [core.NullDereference]
+  169 |         oldval = dictGetKV(**link);
+      |                            ^~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-3Oj0k51/2026-03-12-192022-78107-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-3Oj0k51/2026-03-12-192022-78107-1' to examine bug reports.

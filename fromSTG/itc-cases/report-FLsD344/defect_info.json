@@ -1,0 +1,95 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Access to field 'a' results in a dereference of a null pointer (loaded from field 's1')",
+    "warning_func": "",
+    "line_number": 10,
+    "directory": "path/tests/itc-cases",
+    "entry_function": "",
+    "functions": [
+        "invalid_memory_access_003"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD344/invalid_memory_access_end.c",
+            "line": 5,
+            "col": 9,
+            "line2": 5,
+            "col2": 24,
+            "function": "invalid_memory_access_003",
+            "var": [
+                "u",
+                "s1",
+                "malloc",
+                "a",
+                "p"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD344/invalid_memory_access_end.c",
+            "line": 6,
+            "col": 9,
+            "line2": 6,
+            "col2": 98,
+            "function": "invalid_memory_access_003",
+            "var": [
+                "s1",
+                "u",
+                "malloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD344/invalid_memory_access_end.c",
+            "line": 7,
+            "col": 13,
+            "line2": 7,
+            "col2": 32,
+            "function": "invalid_memory_access_003",
+            "var": [
+                "s1",
+                "u",
+                "a",
+                "malloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD344/invalid_memory_access_end.c",
+            "line": 10,
+            "col": 12,
+            "line2": 10,
+            "col2": 13,
+            "function": "invalid_memory_access_003",
+            "var": [
+                "a",
+                "s1",
+                "p"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/itc-cases/report-FLsD344/defect_info.json",
+    "files": [
+        "invalid_memory_access_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件invalid_memory_access_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | extern void invalid_memory_access_003 (){\n   3              | invalid_memory_access_003_uni_001 *u = (invalid_memory_access_003_uni_001 *)malloc(5 * sizeof(invalid_memory_access_003_uni_001));\n   4              | invalid_memory_access_003_uni_001 *p = ((void *)0);\n---→ 函数: invalid_memory_access_003\n   5 [TRACE-1]    | if (u != ((void *)0)) {\n   6 [TRACE-2]    | u->s1 = (invalid_memory_access_003_s_001 *)malloc(sizeof(invalid_memory_access_003_s_001));\n   7 [TRACE-3]    | if (u->s1 != ((void *)0))\n   9              | p = u;\n  10 [TRACE-4]    | p->s1->a[0] = 1;\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/itc-cases/report-FLsD344/invalid_memory_access_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            9,
+            10
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "域敏感度缺失",
+        "流敏感度不足"
+    ]
+}

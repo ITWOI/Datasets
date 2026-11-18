@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/libpng-libpng16/report-CfuRPd1",
+        "arguments": [
+            "clang",
+            "-c",
+            "pngcp_end.c"
+        ],
+        "file": "pngcp_end.c"
+    }
+]

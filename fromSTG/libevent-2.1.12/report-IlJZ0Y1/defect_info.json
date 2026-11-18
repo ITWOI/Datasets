@@ -1,0 +1,126 @@
+{
+    "bug_type": "Branch condition evaluates to a garbage value",
+    "checker": "Clang Static Analyzer",
+    "description": "Branch condition evaluates to a garbage value",
+    "warning_func": "",
+    "line_number": 917,
+    "directory": "path/tests/libevent-2.1.12-stable",
+    "entry_function": "test_bufferevent_connect_hostname",
+    "functions": [
+        "test_bufferevent_connect_hostname"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-IlJZ0Y1/regress_dns_end.c",
+            "line": 15,
+            "col": 18,
+            "line2": 15,
+            "col2": 33,
+            "function": "test_bufferevent_connect_hostname",
+            "var": [
+                "setup_data",
+                "data",
+                "strcmp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-IlJZ0Y1/regress_dns_end.c",
+            "line": 25,
+            "col": 13,
+            "line2": 25,
+            "col2": 25,
+            "function": "test_bufferevent_connect_hostname",
+            "var": [
+                "listener",
+                "tinytest_set_test_failed_",
+                "printf",
+                "tinytest_get_verbosity_"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-IlJZ0Y1/regress_dns_end.c",
+            "line": 916,
+            "col": 10,
+            "line2": 916,
+            "col2": 14,
+            "function": "test_bufferevent_connect_hostname",
+            "var": [
+                "i",
+                "be"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-IlJZ0Y1/regress_dns_end.c",
+            "line": 916,
+            "col": 17,
+            "line2": 916,
+            "col2": 50,
+            "function": "test_bufferevent_connect_hostname",
+            "var": [
+                "i",
+                "be"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-IlJZ0Y1/regress_dns_end.c",
+            "line": 917,
+            "col": 13,
+            "line2": 917,
+            "col2": 17,
+            "function": "test_bufferevent_connect_hostname",
+            "var": [
+                "be",
+                "i"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/libevent-2.1.12/report-IlJZ0Y1/defect_info.json",
+    "files": [
+        "regress_dns_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件regress_dns_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | static void test_bufferevent_connect_hostname (void *arg){\n   3              | struct basic_test_data *data = arg;\n   4              | struct evconnlistener *listener = ((void *)0);\n   5              | struct bufferevent *be[5];\n   6              | struct be_conn_hostname_result be_outcome[5];\n   7              | int expect_err;\n   8              | struct evdns_base *dns = ((void *)0);\n   9              | struct evdns_server_port *port = ((void *)0);\n  10              | struct sockaddr_in sin;\n  11              | int listener_port = -1;\n  12              | uint16_t dns_port = 0;\n  13              | int n_accept = 0, n_dns = 0;\n  14              | char buf[128];\n---→ 函数: test_bufferevent_connect_hostname\n  15 [TRACE-1]    | int emfile = data->setup_data && !strcmp(data->setup_data, \"emfile\");\n  16              | unsigned int i;\n  17              | int ret;\n  18              | be_connect_hostname_base = data->base;\n  19              | memset(&sin, 0, sizeof (sin));\n  20              | sin.sin_family = 2;\n  21              | sin.sin_addr.s_addr = htonl(2130706433);\n  22              | sin.sin_port = 0;\n  23              | listener = evconnlistener_new_bind(data->base, nil_accept_cb, &n_accept, (1U << 3) | (1U << 2), -1, (struct sockaddr *)&sin, sizeof (sin));\n  25 [TRACE-2]    | if (!((listener))) {\n  26              | tinytest_set_test_failed_();\n  27              | do {\n  28              | printf(\"\\n  %s %s:%d: \", \"FAIL\", \"test/regress_dns_InstSlice.c\", 313);\n  29              | printf(\"%s\", \"assert(listener)\");\n  30              | } while (0);\n  32              | goto end;\n 916 [TRACE-3,4]  | for (i = 0; i < (sizeof (be) / sizeof (be[0])); ++i) {\n 917 [TRACE-5]    | if (be[i]) {\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/libevent-2.1.12/report-IlJZ0Y1/regress_dns_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            32,
+            916,
+            917
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "数据流与类型语义",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "流敏感度不足",
+        "指针分析能力不足"
+    ]
+}

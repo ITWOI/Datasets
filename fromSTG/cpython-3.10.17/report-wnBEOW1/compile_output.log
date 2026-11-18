@@ -1,0 +1,47 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from arraymodule_end.c:1:
+./header_func.h:34:18: warning: function 'array__array_reconstructor' has internal linkage but is not defined [-Wundefined-internal]
+   34 | static PyObject *array__array_reconstructor(PyObject *module, PyObject *const *args, Py_ssize_t nargs) ;
+      |                  ^
+./header_func.h:37:89: note: used here
+   37 | static PyMethodDef a_methods[] = {{"_array_reconstructor", (PyCFunction)(void (*)(void))array__array_reconstructor, 128, array__array_reconstructor__doc__}, {((void *)0), ((void *)0), 0, ((void *)0)}};
+      |                                                                                         ^
+./header_func.h:38:12: warning: function 'array_modexec' has internal linkage but is not defined [-Wundefined-internal]
+   38 | static int array_modexec(PyObject *m) ;
+      |            ^
+./header_func.h:40:45: note: used here
+   40 | static PyModuleDef_Slot arrayslots[] = {{2, array_modexec}, {0, ((void *)0)}};
+      |                                             ^
+./header_func.h:27:12: warning: function 'array_traverse' has internal linkage but is not defined [-Wundefined-internal]
+   27 | static int array_traverse(PyObject *module, visitproc visit, void *arg) ;
+      |            ^
+./header_func.h:41:233: note: used here
+   41 | static struct PyModuleDef arraymodule = {.m_base = {{1, ((void *)0)}, ((void *)0), 0, ((void *)0)}, .m_name = "array", .m_size = sizeof(array_state), .m_doc = module_doc, .m_methods = a_methods, .m_slots = arrayslots, .m_traverse = array_traverse, .m_clear = array_clear, .m_free = array_free};
+      |                                                                                                                                                                                                                                         ^
+./header_func.h:29:12: warning: function 'array_clear' has internal linkage but is not defined [-Wundefined-internal]
+   29 | static int array_clear(PyObject *module) ;
+      |            ^
+./header_func.h:41:260: note: used here
+   41 | static struct PyModuleDef arraymodule = {.m_base = {{1, ((void *)0)}, ((void *)0), 0, ((void *)0)}, .m_name = "array", .m_size = sizeof(array_state), .m_doc = module_doc, .m_methods = a_methods, .m_slots = arrayslots, .m_traverse = array_traverse, .m_clear = array_clear, .m_free = array_free};
+      |                                                                                                                                                                                                                                                                    ^
+./header_func.h:31:13: warning: function 'array_free' has internal linkage but is not defined [-Wundefined-internal]
+   31 | static void array_free(void *module) ;
+      |             ^
+./header_func.h:41:283: note: used here
+   41 | static struct PyModuleDef arraymodule = {.m_base = {{1, ((void *)0)}, ((void *)0), 0, ((void *)0)}, .m_name = "array", .m_size = sizeof(array_state), .m_doc = module_doc, .m_methods = a_methods, .m_slots = arrayslots, .m_traverse = array_traverse, .m_clear = array_clear, .m_free = array_free};
+      |                                                                                                                                                                                                                                                                                           ^
+5 warnings generated.
+arraymodule_end.c:59:9: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+   59 |         memcpy(np->ob_item, a->ob_item, (((PyVarObject *)(a))->ob_size) * a->ob_descr->itemsize);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arraymodule_end.c:59:9: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+   59 |         memcpy(np->ob_item, a->ob_item, (((PyVarObject *)(a))->ob_size) * a->ob_descr->itemsize);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arraymodule_end.c:59:9: warning: Null pointer passed to 1st parameter expecting 'nonnull' [core.NonNullParamChecker]
+   59 |         memcpy(np->ob_item, a->ob_item, (((PyVarObject *)(a))->ob_size) * a->ob_descr->itemsize);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/2026-03-12-194917-91031-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/2026-03-12-194917-91031-1' to examine bug reports.

@@ -1,0 +1,177 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Access to field 'ob_refcnt' results in a dereference of a null pointer (loaded from variable 'op')",
+    "warning_func": "",
+    "line_number": 12,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "cache_struct_converter",
+        "_Py_DECREF",
+        "pack_into"
+    ],
+    "is_single_file": false,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-HSDtjv1/_struct_end.c",
+            "line": 1254,
+            "col": 9,
+            "line2": 1254,
+            "col2": 18,
+            "function": "pack_into",
+            "var": [
+                "nargs",
+                "PyErr_SetString",
+                "PyExc_TypeError"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-HSDtjv1/_struct_end.c",
+            "line": 1259,
+            "col": 10,
+            "line2": 1259,
+            "col2": 77,
+            "function": "pack_into",
+            "var": [
+                "cache_struct_converter",
+                "module",
+                "format",
+                "s_object"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-HSDtjv1/_struct_end.c",
+            "line": 1191,
+            "col": 1,
+            "line2": 1191,
+            "col2": 1,
+            "function": "cache_struct_converter",
+            "var": [
+                "get_struct_state",
+                "module",
+                "fmt",
+                "_Py_DECREF",
+                "ptr",
+                "cache",
+                "state",
+                "PyDict_New",
+                "s_object",
+                "PyDict_GetItemWithError",
+                "_Py_INCREF",
+                "PyErr_Occurred",
+                "PyObject_CallOneArg",
+                "PyStructType",
+                "ma_used",
+                "PyDict_Clear",
+                "PyDict_SetItem",
+                "PyErr_Clear"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-HSDtjv1/_struct_end.c",
+            "line": 1194,
+            "col": 9,
+            "line2": 1194,
+            "col2": 26,
+            "function": "cache_struct_converter",
+            "var": [
+                "fmt",
+                "_Py_DECREF",
+                "ptr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-HSDtjv1/_struct_end.c",
+            "line": 1195,
+            "col": 20,
+            "line2": 1195,
+            "col2": 39,
+            "function": "cache_struct_converter",
+            "var": [
+                "_Py_DECREF()",
+                "_Py_DECREF",
+                "ptr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-HSDtjv1/_struct_end.c",
+            "line": 1195,
+            "col": 9,
+            "line2": 1195,
+            "col2": 40,
+            "function": "cache_struct_converter",
+            "var": [
+                "_Py_DECREF()",
+                "_Py_DECREF",
+                "ptr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-HSDtjv1/./object.h",
+            "line": 11,
+            "col": 1,
+            "line2": 11,
+            "col2": 1,
+            "function": "_Py_DECREF",
+            "var": [
+                "ob_refcnt",
+                "op",
+                "_Py_Dealloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-HSDtjv1/./object.h",
+            "line": 12,
+            "col": 11,
+            "line2": 12,
+            "col2": 12,
+            "function": "_Py_DECREF",
+            "var": [
+                "ob_refcnt",
+                "op",
+                "_Py_Dealloc"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-HSDtjv1/defect_info.json",
+    "files": [
+        "./object.h",
+        "_struct_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件_struct_end.c  缺陷代码片段===\n------------------------------------------------------------\n   4              | static inline _structmodulestate * get_struct_state (PyObject *module){\n   5              | void *state = _PyModule_GetState(module);\n   6              | return (_structmodulestate *)state;\n---→ 函数: cache_struct_converter\n1191 [TRACE-3]    | static int cache_struct_converter (PyObject *module, PyObject *fmt, PyStructObject **ptr){\n1192              | PyObject *s_object;\n1193              | _structmodulestate *state = get_struct_state(module);\n1194 [TRACE-4]    | if (fmt == ((void *)0)) {\n1195 [TRACE-5,6]  | _Py_DECREF(((PyObject *)(*ptr)));\n1251              | static PyObject * pack_into (PyObject *module, PyObject *const *args, Py_ssize_t nargs){\n1252              | PyObject *s_object = ((void *)0);\n1253              | PyObject *format, *result;\n---→ 函数: pack_into\n1254 [TRACE-1]    | if (nargs == 0) {\n1258              | format = args[0];\n1259 [TRACE-2]    | if (!cache_struct_converter(module, format, (PyStructObject **)&s_object)) {\n------------------------------------------------------------\n\n=== 文件object.h  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: _Py_DECREF\n  11 [TRACE-7]    | static inline void _Py_DECREF (PyObject *op){\n  12 [TRACE-8]    | if (--op->ob_refcnt != 0) {\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-HSDtjv1/_struct_end.c": [
+            4,
+            5,
+            6,
+            1191,
+            1192,
+            1193,
+            1194,
+            1195,
+            1251,
+            1252,
+            1253,
+            1254,
+            1258,
+            1259
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-HSDtjv1/./pycore_moduleobject.h": [
+            2,
+            4
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-HSDtjv1/./object.h": [
+            11,
+            12
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "指针分析能力不足",
+        "路径可行性判定失效"
+    ]
+}

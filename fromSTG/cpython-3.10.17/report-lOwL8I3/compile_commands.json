@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-lOwL8I3",
+        "arguments": [
+            "clang",
+            "-c",
+            "_decimal_end.c"
+        ],
+        "file": "_decimal_end.c"
+    }
+]

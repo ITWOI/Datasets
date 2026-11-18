@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy5",
+        "arguments": [
+            "clang",
+            "-c",
+            "quicklist_end.c"
+        ],
+        "file": "quicklist_end.c"
+    }
+]

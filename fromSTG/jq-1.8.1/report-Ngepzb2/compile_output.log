@@ -1,0 +1,132 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+jv_aux_end.c:81:21: warning: 2nd function call argument is an uninitialized value [core.CallAndMessage]
+   81 |                 v = jv_array_get(t, idx);
+      |                     ^~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:93:17: warning: 2nd function call argument is an uninitialized value [core.CallAndMessage]
+   93 |             v = jv_array_slice(t, start, end);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:102:17: warning: 2nd function call argument is an uninitialized value [core.CallAndMessage]
+  102 |             v = jv_string_slice(t, start, end);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:140:27: warning: The right operand of '<=' is a garbage value [core.UndefinedBinaryOperatorResult]
+  140 |                     if (0 <= start && start <= end && end <= array_len)
+      |                           ^  ~~~~~
+jv_aux_end.c:150:47: warning: The right operand of '+' is a garbage value [core.UndefinedBinaryOperatorResult]
+  150 |                         t = jv_array_set(t, i + shift, jv_array_get(jv_copy(t), i));
+      |                                               ^ ~~~~~
+jv_aux_end.c:155:47: warning: The right operand of '-' is a garbage value [core.UndefinedBinaryOperatorResult]
+  155 |                         t = jv_array_set(t, i - shift, jv_array_get(jv_copy(t), i));
+      |                                               ^ ~~~~~
+jv_aux_end.c:158:60: warning: The right operand of '-' is a garbage value [core.UndefinedBinaryOperatorResult]
+  158 |                         t = jv_array_slice(t, 0, array_len - shift);
+      |                                                            ^ ~~~~~
+jv_aux_end.c:198:36: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  198 |                         neg_keys = jv_array_append(neg_keys, key);
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:200:39: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  200 |                         nonneg_keys = jv_array_append(nonneg_keys, key);
+      |                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:206:34: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  206 |                         starts = jv_array_append(starts, jv_number(start));
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:206:58: warning: 1st function call argument is an uninitialized value [core.CallAndMessage]
+  206 |                         starts = jv_array_append(starts, jv_number(start));
+      |                                                          ^~~~~~~~~~~~~~~~
+jv_aux_end.c:209:25: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  209 |                         jv_free(new_array);
+      |                         ^~~~~~~~~~~~~~~~~~
+jv_aux_end.c:215:21: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  215 |                     jv_free(new_array);
+      |                     ^~~~~~~~~~~~~~~~~~
+jv_aux_end.c:295:41: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  295 |     for (int jv_len__ = jv_array_length(jv_copy(paths)), i = 0, jv_j__ = 1; jv_j__; jv_j__ = 0)
+      |                                         ^~~~~~~~~~~~~~
+jv_aux_end.c:81:21: warning: 2nd function call argument is an uninitialized value [core.CallAndMessage]
+   81 |                 v = jv_array_get(t, idx);
+      |                     ^~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:93:17: warning: 2nd function call argument is an uninitialized value [core.CallAndMessage]
+   93 |             v = jv_array_slice(t, start, end);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:102:17: warning: 2nd function call argument is an uninitialized value [core.CallAndMessage]
+  102 |             v = jv_string_slice(t, start, end);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:140:27: warning: The right operand of '<=' is a garbage value [core.UndefinedBinaryOperatorResult]
+  140 |                     if (0 <= start && start <= end && end <= array_len)
+      |                           ^  ~~~~~
+jv_aux_end.c:150:47: warning: The right operand of '+' is a garbage value [core.UndefinedBinaryOperatorResult]
+  150 |                         t = jv_array_set(t, i + shift, jv_array_get(jv_copy(t), i));
+      |                                               ^ ~~~~~
+jv_aux_end.c:155:47: warning: The right operand of '-' is a garbage value [core.UndefinedBinaryOperatorResult]
+  155 |                         t = jv_array_set(t, i - shift, jv_array_get(jv_copy(t), i));
+      |                                               ^ ~~~~~
+jv_aux_end.c:158:60: warning: The right operand of '-' is a garbage value [core.UndefinedBinaryOperatorResult]
+  158 |                         t = jv_array_slice(t, 0, array_len - shift);
+      |                                                            ^ ~~~~~
+jv_aux_end.c:198:36: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  198 |                         neg_keys = jv_array_append(neg_keys, key);
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:200:39: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  200 |                         nonneg_keys = jv_array_append(nonneg_keys, key);
+      |                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:206:34: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  206 |                         starts = jv_array_append(starts, jv_number(start));
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:206:58: warning: 1st function call argument is an uninitialized value [core.CallAndMessage]
+  206 |                         starts = jv_array_append(starts, jv_number(start));
+      |                                                          ^~~~~~~~~~~~~~~~
+jv_aux_end.c:209:25: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  209 |                         jv_free(new_array);
+      |                         ^~~~~~~~~~~~~~~~~~
+jv_aux_end.c:215:21: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  215 |                     jv_free(new_array);
+      |                     ^~~~~~~~~~~~~~~~~~
+jv_aux_end.c:295:41: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  295 |     for (int jv_len__ = jv_array_length(jv_copy(paths)), i = 0, jv_j__ = 1; jv_j__; jv_j__ = 0)
+      |                                         ^~~~~~~~~~~~~~
+jv_aux_end.c:81:21: warning: 2nd function call argument is an uninitialized value [core.CallAndMessage]
+   81 |                 v = jv_array_get(t, idx);
+      |                     ^~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:93:17: warning: 2nd function call argument is an uninitialized value [core.CallAndMessage]
+   93 |             v = jv_array_slice(t, start, end);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:102:17: warning: 2nd function call argument is an uninitialized value [core.CallAndMessage]
+  102 |             v = jv_string_slice(t, start, end);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:140:27: warning: The right operand of '<=' is a garbage value [core.UndefinedBinaryOperatorResult]
+  140 |                     if (0 <= start && start <= end && end <= array_len)
+      |                           ^  ~~~~~
+jv_aux_end.c:150:47: warning: The right operand of '+' is a garbage value [core.UndefinedBinaryOperatorResult]
+  150 |                         t = jv_array_set(t, i + shift, jv_array_get(jv_copy(t), i));
+      |                                               ^ ~~~~~
+jv_aux_end.c:155:47: warning: The right operand of '-' is a garbage value [core.UndefinedBinaryOperatorResult]
+  155 |                         t = jv_array_set(t, i - shift, jv_array_get(jv_copy(t), i));
+      |                                               ^ ~~~~~
+jv_aux_end.c:158:60: warning: The right operand of '-' is a garbage value [core.UndefinedBinaryOperatorResult]
+  158 |                         t = jv_array_slice(t, 0, array_len - shift);
+      |                                                            ^ ~~~~~
+jv_aux_end.c:198:36: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  198 |                         neg_keys = jv_array_append(neg_keys, key);
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:200:39: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  200 |                         nonneg_keys = jv_array_append(nonneg_keys, key);
+      |                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:206:34: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  206 |                         starts = jv_array_append(starts, jv_number(start));
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jv_aux_end.c:206:58: warning: 1st function call argument is an uninitialized value [core.CallAndMessage]
+  206 |                         starts = jv_array_append(starts, jv_number(start));
+      |                                                          ^~~~~~~~~~~~~~~~
+jv_aux_end.c:209:25: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  209 |                         jv_free(new_array);
+      |                         ^~~~~~~~~~~~~~~~~~
+jv_aux_end.c:215:21: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  215 |                     jv_free(new_array);
+      |                     ^~~~~~~~~~~~~~~~~~
+jv_aux_end.c:295:41: warning: Passed-by-value struct argument contains uninitialized data (e.g., field: 'kind_flags') [core.CallAndMessage]
+  295 |     for (int jv_len__ = jv_array_length(jv_copy(paths)), i = 0, jv_j__ = 1; jv_j__; jv_j__ = 0)
+      |                                         ^~~~~~~~~~~~~~
+42 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/jq-1.8.1/report-Ngepzb2/2026-03-12-202649-113340-1'
+scan-build: 14 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/jq-1.8.1/report-Ngepzb2/2026-03-12-202649-113340-1' to examine bug reports.

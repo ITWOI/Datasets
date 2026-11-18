@@ -1,0 +1,20 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_3",
+        "arguments": [
+            "clang",
+            "-c",
+            "basearith_end.c"
+        ],
+        "file": "basearith_end.c"
+    },
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_3",
+        "arguments": [
+            "clang",
+            "-c",
+            "./typearith.h"
+        ],
+        "file": "./typearith.h"
+    }
+]

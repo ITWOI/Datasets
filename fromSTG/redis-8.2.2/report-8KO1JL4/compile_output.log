@@ -1,0 +1,101 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+t_zset_end.c:376:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+  376 | }
+      | ^
+t_zset_end.c:488:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+  488 | }
+      | ^
+In file included from t_zset_end.c:1:
+./header_func.h:46:22: warning: function 'sdslen' has internal linkage but is not defined [-Wundefined-internal]
+   46 | static inline size_t sdslen(const sds s) ;
+      |                      ^
+t_zset_end.c:164:51: note: used here
+  164 |     eptr = lpFind(lp, eptr, (unsigned char *)ele, sdslen(ele), 1);
+      |                                                   ^
+3 warnings generated.
+t_zset_end.c:56:31: warning: Dereference of undefined pointer value [core.NullDereference]
+   56 |         x->level[i].forward = update[i]->level[i].forward;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+t_zset_end.c:64:30: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   64 |     x->backward = (update[0] == zsl->header) ? ((void *)0) : update[0];
+      |                    ~~~~~~~~~ ^
+t_zset_end.c:353:20: warning: The left operand of '&' is a garbage value [core.UndefinedBinaryOperatorResult]
+  353 |     if (val->flags & 1) {
+      |         ~~~~~~~~~~ ^
+t_zset_end.c:535:35: warning: Access to field 'zsl' results in a dereference of a null pointer (loaded from variable 'dstzset') [core.NullDereference]
+  535 |                 znode = zslInsert(dstzset->zsl, zval.score, tmp);
+      |                                   ^~~~~~~~~~~~
+t_zset_end.c:557:39: warning: Access to field 'zsl' results in a dereference of a null pointer (loaded from variable 'dstzset') [core.NullDereference]
+  557 |                     znode = zslInsert(dstzset->zsl, zval.score, tmp);
+      |                                       ^~~~~~~~~~~~
+t_zset_end.c:575:46: warning: Access to field 'dict' results in a dereference of a null pointer (loaded from variable 'dstzset') [core.NullDereference]
+  575 |     *maxelelen = zsetDictGetMaxElementLength(dstzset->dict, totelelen);
+      |                                              ^~~~~~~~~~~~~
+t_zset_end.c:711:35: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+  711 |                             value *= src[j].weight;
+      |                             ~~~~~ ^
+t_zset_end.c:738:24: warning: Access to field 'dict' results in a dereference of a null pointer (loaded from variable 'dstzset') [core.NullDereference]
+  738 |             dictExpand(dstzset->dict, zuiLength(&src[setnum - 1]));
+      |                        ^~~~~~~~~~~~~
+t_zset_end.c:776:13: warning: Access to field 'zsl' results in a dereference of a null pointer (loaded from variable 'dstzset') [core.NullDereference]
+  776 |         if (dstzset->zsl->length) {
+      |             ^~~~~~~~~~~~
+t_zset_end.c:56:31: warning: Dereference of undefined pointer value [core.NullDereference]
+   56 |         x->level[i].forward = update[i]->level[i].forward;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+t_zset_end.c:64:30: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   64 |     x->backward = (update[0] == zsl->header) ? ((void *)0) : update[0];
+      |                    ~~~~~~~~~ ^
+t_zset_end.c:353:20: warning: The left operand of '&' is a garbage value [core.UndefinedBinaryOperatorResult]
+  353 |     if (val->flags & 1) {
+      |         ~~~~~~~~~~ ^
+t_zset_end.c:535:35: warning: Access to field 'zsl' results in a dereference of a null pointer (loaded from variable 'dstzset') [core.NullDereference]
+  535 |                 znode = zslInsert(dstzset->zsl, zval.score, tmp);
+      |                                   ^~~~~~~~~~~~
+t_zset_end.c:557:39: warning: Access to field 'zsl' results in a dereference of a null pointer (loaded from variable 'dstzset') [core.NullDereference]
+  557 |                     znode = zslInsert(dstzset->zsl, zval.score, tmp);
+      |                                       ^~~~~~~~~~~~
+t_zset_end.c:575:46: warning: Access to field 'dict' results in a dereference of a null pointer (loaded from variable 'dstzset') [core.NullDereference]
+  575 |     *maxelelen = zsetDictGetMaxElementLength(dstzset->dict, totelelen);
+      |                                              ^~~~~~~~~~~~~
+t_zset_end.c:711:35: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+  711 |                             value *= src[j].weight;
+      |                             ~~~~~ ^
+t_zset_end.c:738:24: warning: Access to field 'dict' results in a dereference of a null pointer (loaded from variable 'dstzset') [core.NullDereference]
+  738 |             dictExpand(dstzset->dict, zuiLength(&src[setnum - 1]));
+      |                        ^~~~~~~~~~~~~
+t_zset_end.c:776:13: warning: Access to field 'zsl' results in a dereference of a null pointer (loaded from variable 'dstzset') [core.NullDereference]
+  776 |         if (dstzset->zsl->length) {
+      |             ^~~~~~~~~~~~
+t_zset_end.c:56:31: warning: Dereference of undefined pointer value [core.NullDereference]
+   56 |         x->level[i].forward = update[i]->level[i].forward;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+t_zset_end.c:64:30: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+   64 |     x->backward = (update[0] == zsl->header) ? ((void *)0) : update[0];
+      |                    ~~~~~~~~~ ^
+t_zset_end.c:353:20: warning: The left operand of '&' is a garbage value [core.UndefinedBinaryOperatorResult]
+  353 |     if (val->flags & 1) {
+      |         ~~~~~~~~~~ ^
+t_zset_end.c:535:35: warning: Access to field 'zsl' results in a dereference of a null pointer (loaded from variable 'dstzset') [core.NullDereference]
+  535 |                 znode = zslInsert(dstzset->zsl, zval.score, tmp);
+      |                                   ^~~~~~~~~~~~
+t_zset_end.c:557:39: warning: Access to field 'zsl' results in a dereference of a null pointer (loaded from variable 'dstzset') [core.NullDereference]
+  557 |                     znode = zslInsert(dstzset->zsl, zval.score, tmp);
+      |                                       ^~~~~~~~~~~~
+t_zset_end.c:575:46: warning: Access to field 'dict' results in a dereference of a null pointer (loaded from variable 'dstzset') [core.NullDereference]
+  575 |     *maxelelen = zsetDictGetMaxElementLength(dstzset->dict, totelelen);
+      |                                              ^~~~~~~~~~~~~
+t_zset_end.c:711:35: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+  711 |                             value *= src[j].weight;
+      |                             ~~~~~ ^
+t_zset_end.c:738:24: warning: Access to field 'dict' results in a dereference of a null pointer (loaded from variable 'dstzset') [core.NullDereference]
+  738 |             dictExpand(dstzset->dict, zuiLength(&src[setnum - 1]));
+      |                        ^~~~~~~~~~~~~
+t_zset_end.c:776:13: warning: Access to field 'zsl' results in a dereference of a null pointer (loaded from variable 'dstzset') [core.NullDereference]
+  776 |         if (dstzset->zsl->length) {
+      |             ^~~~~~~~~~~~
+27 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-8KO1JL4/2026-03-12-194249-87044-1'
+scan-build: 9 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-8KO1JL4/2026-03-12-194249-87044-1' to examine bug reports.

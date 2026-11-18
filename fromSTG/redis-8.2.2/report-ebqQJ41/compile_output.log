@@ -1,0 +1,35 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from replication_end.c:1:
+./header_func.h:45:22: warning: function 'sdslen' has internal linkage but is not defined [-Wundefined-internal]
+   45 | static inline size_t sdslen(const sds s) ;
+      |                      ^
+replication_end.c:86:15: note: used here
+   86 |         len = sdslen(o->ptr);
+      |               ^
+1 warning generated.
+In file included from replication_end.c:2:
+./connection.h:6:5: warning: Access to field 'type' results in a dereference of a null pointer (loaded from variable 'conn') [core.NullDereference]
+    6 |     conn->type->close(conn);
+      |     ^~~~~~~~~~
+replication_end.c:100:32: warning: Access to field 'value' results in a dereference of a null pointer (loaded from variable 'first') [core.NullDereference]
+  100 |             replBufBlock *fo = ((first)->value);
+      |                                ^~~~~~~~~~~~~~~~
+In file included from replication_end.c:2:
+./connection.h:6:5: warning: Access to field 'type' results in a dereference of a null pointer (loaded from variable 'conn') [core.NullDereference]
+    6 |     conn->type->close(conn);
+      |     ^~~~~~~~~~
+replication_end.c:100:32: warning: Access to field 'value' results in a dereference of a null pointer (loaded from variable 'first') [core.NullDereference]
+  100 |             replBufBlock *fo = ((first)->value);
+      |                                ^~~~~~~~~~~~~~~~
+In file included from replication_end.c:2:
+./connection.h:6:5: warning: Access to field 'type' results in a dereference of a null pointer (loaded from variable 'conn') [core.NullDereference]
+    6 |     conn->type->close(conn);
+      |     ^~~~~~~~~~
+replication_end.c:100:32: warning: Access to field 'value' results in a dereference of a null pointer (loaded from variable 'first') [core.NullDereference]
+  100 |             replBufBlock *fo = ((first)->value);
+      |                                ^~~~~~~~~~~~~~~~
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/2026-03-12-191211-72690-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-ebqQJ41/2026-03-12-191211-72690-1' to examine bug reports.

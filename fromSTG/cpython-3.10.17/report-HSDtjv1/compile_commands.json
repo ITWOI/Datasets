@@ -1,0 +1,20 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-HSDtjv1",
+        "arguments": [
+            "clang",
+            "-c",
+            "_struct_end.c"
+        ],
+        "file": "_struct_end.c"
+    },
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-HSDtjv1",
+        "arguments": [
+            "clang",
+            "-c",
+            "./object.h"
+        ],
+        "file": "./object.h"
+    }
+]

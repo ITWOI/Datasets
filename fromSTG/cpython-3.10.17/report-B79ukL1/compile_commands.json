@@ -1,0 +1,20 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL1",
+        "arguments": [
+            "clang",
+            "-c",
+            "./find.h"
+        ],
+        "file": "./find.h"
+    },
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-B79ukL1",
+        "arguments": [
+            "clang",
+            "-c",
+            "bytes_methods_end.c"
+        ],
+        "file": "bytes_methods_end.c"
+    }
+]

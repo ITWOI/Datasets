@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+rax_end.c:340:9: warning: Access to field 'size' results in a dereference of a null pointer (loaded from variable 'h') [core.NullDereference]
+  340 |     if (h->size == 0) {
+      |         ^~~~~~~
+rax_end.c:340:9: warning: Access to field 'size' results in a dereference of a null pointer (loaded from variable 'h') [core.NullDereference]
+  340 |     if (h->size == 0) {
+      |         ^~~~~~~
+rax_end.c:340:9: warning: Access to field 'size' results in a dereference of a null pointer (loaded from variable 'h') [core.NullDereference]
+  340 |     if (h->size == 0) {
+      |         ^~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/2026-03-12-191239-73094-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-g7bhwh1/2026-03-12-191239-73094-1' to examine bug reports.

@@ -1,0 +1,248 @@
+{
+    "bug_type": "Result of operation is garbage or undefined",
+    "checker": "Clang Static Analyzer",
+    "description": "The left operand of '!=' is a garbage value",
+    "warning_func": "",
+    "line_number": 24,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "_mpd_divmod_pow10",
+        "_mpd_baseshiftr"
+    ],
+    "is_single_file": false,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_5/basearith_end.c",
+            "line": 5,
+            "col": 22,
+            "line2": 5,
+            "col2": 26,
+            "function": "_mpd_baseshiftr",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_5/basearith_end.c",
+            "line": 12,
+            "col": 9,
+            "line2": 12,
+            "col2": 14,
+            "function": "_mpd_baseshiftr",
+            "var": [
+                "r",
+                "ph",
+                "mpd_pow10",
+                "_mpd_divmod_pow10",
+                "hprev",
+                "rest",
+                "src",
+                "q",
+                "rnd",
+                "_mpd_isallzero",
+                "j",
+                "i",
+                "slen",
+                "h",
+                "l",
+                "dest"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_5/basearith_end.c",
+            "line": 14,
+            "col": 9,
+            "line2": 14,
+            "col2": 51,
+            "function": "_mpd_baseshiftr",
+            "var": [
+                "_mpd_divmod_pow10()",
+                "_mpd_divmod_pow10",
+                "hprev",
+                "rest",
+                "src",
+                "q",
+                "r"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_5/./typearith.h",
+            "line": 2,
+            "col": 1,
+            "line2": 2,
+            "col2": 1,
+            "function": "_mpd_divmod_pow10",
+            "var": [
+                "exp",
+                "q",
+                "v",
+                "r"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_5/./typearith.h",
+            "line": 4,
+            "col": 9,
+            "line2": 4,
+            "col2": 16,
+            "function": "_mpd_divmod_pow10",
+            "var": [
+                "exp",
+                "q",
+                "v",
+                "r"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_5/./typearith.h",
+            "line": 53,
+            "col": 13,
+            "line2": 53,
+            "col2": 21,
+            "function": "_mpd_divmod_pow10",
+            "var": [
+                "exp",
+                "q",
+                "v",
+                "r"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_5/./typearith.h",
+            "line": 101,
+            "col": 1,
+            "line2": 101,
+            "col2": 1,
+            "function": "_mpd_divmod_pow10",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_5/basearith_end.c",
+            "line": 14,
+            "col": 9,
+            "line2": 14,
+            "col2": 51,
+            "function": "_mpd_baseshiftr",
+            "var": [
+                "_mpd_divmod_pow10()",
+                "_mpd_divmod_pow10",
+                "hprev",
+                "rest",
+                "src",
+                "q",
+                "r"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_5/basearith_end.c",
+            "line": 16,
+            "col": 26,
+            "line2": 16,
+            "col2": 30,
+            "function": "_mpd_baseshiftr",
+            "var": [
+                "rest",
+                "q",
+                "_mpd_isallzero",
+                "src"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_5/basearith_end.c",
+            "line": 19,
+            "col": 33,
+            "line2": 19,
+            "col2": 40,
+            "function": "_mpd_baseshiftr",
+            "var": [
+                "j",
+                "i",
+                "q",
+                "slen",
+                "_mpd_divmod_pow10",
+                "h",
+                "l",
+                "src",
+                "r",
+                "dest",
+                "ph",
+                "hprev"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_5/basearith_end.c",
+            "line": 19,
+            "col": 33,
+            "line2": 19,
+            "col2": 40,
+            "function": "_mpd_baseshiftr",
+            "var": [
+                "j",
+                "i",
+                "q",
+                "slen",
+                "_mpd_divmod_pow10",
+                "h",
+                "l",
+                "src",
+                "r",
+                "dest",
+                "ph",
+                "hprev"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_5/basearith_end.c",
+            "line": 24,
+            "col": 13,
+            "line2": 24,
+            "col2": 17,
+            "function": "_mpd_baseshiftr",
+            "var": [
+                "hprev"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_5/defect_info.json",
+    "files": [
+        "basearith_end.c",
+        "./typearith.h"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件basearith_end.c  缺陷代码片段===\n------------------------------------------------------------\n   4              | extern  __attribute__((visibility(\"hidden\"))) mpd_uint_t _mpd_baseshiftr (mpd_uint_t *dest, mpd_uint_t *src, mpd_size_t slen, mpd_size_t shift){\n---→ 函数: _mpd_baseshiftr\n   5 [TRACE-1]    | mpd_uint_t l, h, hprev;\n   6              | mpd_uint_t rnd, rest;\n   7              | mpd_uint_t q, r;\n   8              | mpd_size_t i, j;\n   9              | mpd_uint_t ph;\n  10              | _mpd_div_word(&q, &r, (mpd_uint_t)shift, 19);\n  11              | rnd = rest = 0;\n  12 [TRACE-2]    | if (r != 0) {\n  13              | ph = mpd_pow10[19 - r];\n  14 [TRACE-3,8]  | _mpd_divmod_pow10(&hprev, &rest, src[q], r);\n  15              | _mpd_divmod_pow10(&rnd, &rest, rest, r - 1);\n  16 [TRACE-9]    | if (rest == 0 && q > 0) {\n  19 [TRACE-10,11] | for (j = 0 , i = q + 1; i < slen; i++ , j++) {\n  24 [TRACE-12]   | if (hprev != 0) {\n------------------------------------------------------------\n\n=== 文件typearith.h  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: _mpd_divmod_pow10\n   2 [TRACE-4]    | static inline void _mpd_divmod_pow10 (mpd_uint_t *q, mpd_uint_t *r, mpd_uint_t v, mpd_uint_t exp){\n   4 [TRACE-5]    | if (exp <= 9) {\n  53 [TRACE-6]    | if (exp <= 14) {\n  77              | switch (exp) {\n 101 [TRACE-7]    | }\n 102              | static inline void _mpd_div_word (mpd_uint_t *q, mpd_uint_t *r, mpd_uint_t v, mpd_uint_t d){\n 103              | *q = v / d;\n 104              | *r = v - *q * d;\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_5/basearith_end.c": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            19,
+            24
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_5/./typearith.h": [
+            2,
+            4,
+            53,
+            77,
+            101,
+            102,
+            103,
+            104
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "流敏感度不足",
+        "过程间数据流断裂",
+        "路径可行性判定失效"
+    ]
+}

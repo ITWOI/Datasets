@@ -1,0 +1,56 @@
+{
+    "bug_type": "Division by zero",
+    "checker": "Clang Static Analyzer",
+    "description": "Division by zero",
+    "warning_func": "",
+    "line_number": 5,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "faulthandler_sigfpe"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF2/faulthandler_end.c",
+            "line": 4,
+            "col": 25,
+            "line2": 4,
+            "col2": 25,
+            "function": "faulthandler_sigfpe",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF2/faulthandler_end.c",
+            "line": 5,
+            "col": 9,
+            "line2": 5,
+            "col2": 13,
+            "function": "faulthandler_sigfpe",
+            "var": [
+                "z",
+                "x",
+                "y"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF2/defect_info.json",
+    "files": [
+        "faulthandler_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件faulthandler_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | static PyObject * faulthandler_sigfpe (PyObject *self, PyObject *args){\n---→ 函数: faulthandler_sigfpe\n   4 [TRACE-1]    | volatile int x = 1, y = 0, z;\n   5 [TRACE-2]    | z = x / y;\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF2/faulthandler_end.c": [
+            2,
+            4,
+            5
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "未定义行为",
+    "qwen3.5-122b-a10b_labels": [
+        "常量识别和传播失效",
+        "符号表达式求解失效"
+    ]
+}

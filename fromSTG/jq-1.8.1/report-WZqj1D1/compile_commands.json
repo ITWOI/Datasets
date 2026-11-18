@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/jq-1.8.1/report-WZqj1D1",
+        "arguments": [
+            "clang",
+            "-c",
+            "compile_end.c"
+        ],
+        "file": "compile_end.c"
+    }
+]

@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/jq-1.8.1/report-pSaoOg3",
+        "arguments": [
+            "clang",
+            "-c",
+            "decNumber_end.c"
+        ],
+        "file": "decNumber_end.c"
+    }
+]

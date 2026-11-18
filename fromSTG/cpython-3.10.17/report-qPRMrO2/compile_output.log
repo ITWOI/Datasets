@@ -1,0 +1,30 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from getargs_end.c:1:
+./header_func.h:10:19: warning: function 'PyType_HasFeature' has internal linkage but is not defined [-Wundefined-internal]
+   10 | static inline int PyType_HasFeature(PyTypeObject *type, unsigned long feature) ;
+      |                   ^
+getargs_end.c:16:18: note: used here
+   16 |             if (!PyType_HasFeature((((PyObject *)(keyword))->ob_type), (1UL << 28))) {
+      |                  ^
+In file included from getargs_end.c:1:
+./header_func.h:26:20: warning: function '_Py_DECREF' has internal linkage but is not defined [-Wundefined-internal]
+   26 | static inline void _Py_DECREF(PyObject *op) ;
+      |                    ^
+getargs_end.c:109:13: note: used here
+  109 |             _Py_DECREF(((PyObject *)(kwtuple)));
+      |             ^
+2 warnings generated.
+getargs_end.c:186:18: warning: Array access (from variable 'args') results in a null pointer dereference [core.NullDereference]
+  186 |         buf[i] = args[i];
+      |                  ^~~~~~~
+getargs_end.c:186:18: warning: Array access (from variable 'args') results in a null pointer dereference [core.NullDereference]
+  186 |         buf[i] = args[i];
+      |                  ^~~~~~~
+getargs_end.c:186:18: warning: Array access (from variable 'args') results in a null pointer dereference [core.NullDereference]
+  186 |         buf[i] = args[i];
+      |                  ^~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/2026-03-12-201441-106147-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/2026-03-12-201441-106147-1' to examine bug reports.

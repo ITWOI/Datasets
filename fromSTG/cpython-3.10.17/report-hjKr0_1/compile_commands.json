@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-hjKr0_1",
+        "arguments": [
+            "clang",
+            "-c",
+            "basearith_end.c"
+        ],
+        "file": "basearith_end.c"
+    }
+]

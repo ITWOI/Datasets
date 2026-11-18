@@ -1,0 +1,277 @@
+{
+    "bug_type": "Argument with 'nonnull' attribute passed null",
+    "checker": "Clang Static Analyzer",
+    "description": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "warning_func": "",
+    "line_number": 59,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "newarrayobject",
+        "array_concat"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/arraymodule_end.c",
+            "line": 42,
+            "col": 9,
+            "line2": 42,
+            "col2": 66,
+            "function": "array_concat",
+            "var": [
+                "_PyObject_TypeCheck",
+                "bb",
+                "ArrayType",
+                "state"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/arraymodule_end.c",
+            "line": 46,
+            "col": 9,
+            "line2": 46,
+            "col2": 52,
+            "function": "array_concat",
+            "var": [
+                "ob_descr",
+                "a",
+                "bb"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/arraymodule_end.c",
+            "line": 50,
+            "col": 9,
+            "line2": 50,
+            "col2": 127,
+            "function": "array_concat",
+            "var": [
+                "ob_size",
+                "a",
+                "bb",
+                "PyErr_NoMemory"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/arraymodule_end.c",
+            "line": 54,
+            "col": 25,
+            "line2": 54,
+            "col2": 75,
+            "function": "array_concat",
+            "var": [
+                "np",
+                "newarrayobject",
+                "ArrayType",
+                "state",
+                "size",
+                "ob_descr",
+                "a"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/arraymodule_end.c",
+            "line": 7,
+            "col": 1,
+            "line2": 7,
+            "col2": 1,
+            "function": "newarrayobject",
+            "var": [
+                "size",
+                "itemsize",
+                "descr",
+                "PyErr_NoMemory",
+                "nbytes",
+                "op",
+                "tp_alloc",
+                "type",
+                "ob_descr",
+                "allocated",
+                "weakreflist",
+                "_Py_SET_SIZE",
+                "ob_item",
+                "PyMem_Malloc",
+                "_Py_DECREF",
+                "ob_exports"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/arraymodule_end.c",
+            "line": 10,
+            "col": 9,
+            "line2": 10,
+            "col2": 16,
+            "function": "newarrayobject",
+            "var": [
+                "size"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/arraymodule_end.c",
+            "line": 14,
+            "col": 9,
+            "line2": 14,
+            "col2": 66,
+            "function": "newarrayobject",
+            "var": [
+                "size",
+                "itemsize",
+                "descr",
+                "PyErr_NoMemory"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/arraymodule_end.c",
+            "line": 19,
+            "col": 9,
+            "line2": 19,
+            "col2": 25,
+            "function": "newarrayobject",
+            "var": [
+                "op"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/arraymodule_end.c",
+            "line": 26,
+            "col": 9,
+            "line2": 26,
+            "col2": 17,
+            "function": "newarrayobject",
+            "var": [
+                "size",
+                "ob_item",
+                "op",
+                "nbytes",
+                "PyMem_Malloc",
+                "_Py_DECREF",
+                "PyErr_NoMemory"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/arraymodule_end.c",
+            "line": 27,
+            "col": 9,
+            "line2": 27,
+            "col2": 33,
+            "function": "newarrayobject",
+            "var": [
+                "ob_item",
+                "op"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/arraymodule_end.c",
+            "line": 54,
+            "col": 25,
+            "line2": 54,
+            "col2": 75,
+            "function": "array_concat",
+            "var": [
+                "np",
+                "newarrayobject",
+                "ArrayType",
+                "state",
+                "size",
+                "ob_descr",
+                "a"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/arraymodule_end.c",
+            "line": 58,
+            "col": 9,
+            "line2": 58,
+            "col2": 43,
+            "function": "array_concat",
+            "var": [
+                "ob_size",
+                "a",
+                "memcpy",
+                "ob_item",
+                "np",
+                "itemsize",
+                "ob_descr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/arraymodule_end.c",
+            "line": 59,
+            "col": 16,
+            "line2": 59,
+            "col2": 26,
+            "function": "array_concat",
+            "var": [
+                "memcpy()",
+                "memcpy",
+                "ob_item",
+                "np",
+                "a",
+                "ob_size",
+                "itemsize",
+                "ob_descr"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/defect_info.json",
+    "files": [
+        "arraymodule_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件arraymodule_end.c  缺陷代码片段===\n------------------------------------------------------------\n   4              | static array_state * get_array_state (PyObject *module){\n   5              | return (array_state *)_PyModule_GetState(module);\n---→ 函数: newarrayobject\n   7 [TRACE-5]    | static PyObject * newarrayobject (PyTypeObject *type, Py_ssize_t size, const struct arraydescr *descr){\n   8              | arrayobject *op;\n   9              | size_t nbytes;\n  10 [TRACE-6]    | if (size < 0) {\n  14 [TRACE-7]    | if (size > ((Py_ssize_t)(((size_t)-1) >> 1)) / descr->itemsize) {\n  17              | nbytes = size * descr->itemsize;\n  18              | op = (arrayobject *)type->tp_alloc(type, 0);\n  19 [TRACE-8]    | if (op == ((void *)0)) {\n  22              | op->ob_descr = descr;\n  23              | op->allocated = size;\n  24              | op->weakreflist = ((void *)0);\n  25              | _Py_SET_SIZE(((PyVarObject *)(op)), size);\n  26 [TRACE-9]    | if (size <= 0) {\n  27 [TRACE-10]   | op->ob_item = ((void *)0);\n  35              | op->ob_exports = 0;\n  36              | return (PyObject *)op;\n  38              | static PyObject * array_concat (arrayobject *a, PyObject *bb){\n  39              | array_state *state = (get_array_state(_PyType_GetModuleByDef((((PyObject *)(a))->ob_type), &arraymodule)));\n  40              | Py_ssize_t size;\n  41              | arrayobject *np;\n---→ 函数: array_concat\n  42 [TRACE-1]    | if (!_PyObject_TypeCheck(((PyObject *)(bb)), state->ArrayType)) {\n  46 [TRACE-2]    | if (a->ob_descr != ((arrayobject *)bb)->ob_descr) {\n  50 [TRACE-3]    | if ((((PyVarObject *)(a))->ob_size) > ((Py_ssize_t)(((size_t)-1) >> 1)) - (((PyVarObject *)(((arrayobject *)bb)))->ob_size)) {\n  53              | size = (((PyVarObject *)(a))->ob_size) + (((PyVarObject *)(((arrayobject *)bb)))->ob_size);\n  54 [TRACE-4,11] | np = (arrayobject *)newarrayobject(state->ArrayType, size, a->ob_descr);\n  55              | if (np == ((void *)0)) {\n  58 [TRACE-12]   | if ((((PyVarObject *)(a))->ob_size) > 0) {\n  59 [TRACE-13]   | memcpy(np->ob_item, a->ob_item, (((PyVarObject *)(a))->ob_size) * a->ob_descr->itemsize);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/arraymodule_end.c": [
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            14,
+            17,
+            18,
+            19,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            35,
+            36,
+            38,
+            39,
+            40,
+            41,
+            42,
+            46,
+            50,
+            53,
+            54,
+            55,
+            58,
+            59
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/./pycore_moduleobject.h": [
+            2,
+            4
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-wnBEOW1/./object.h": [
+            2,
+            3,
+            5,
+            6,
+            8,
+            9
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "流敏感度不足",
+        "域敏感度缺失",
+        "路径可行性判定失效",
+        "指针分析能力不足"
+    ]
+}

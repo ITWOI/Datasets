@@ -1,0 +1,43 @@
+{
+    "bug_type": "Function call with too few arguments",
+    "checker": "Clang Static Analyzer",
+    "description": "Function taking 2 arguments is called with fewer (1)",
+    "warning_func": "wrong_arguments_func_pointer_001",
+    "line_number": 6,
+    "directory": "path/tests/itc-cases",
+    "entry_function": "wrong_arguments_func_pointer_001",
+    "functions": [
+        "wrong_arguments_func_pointer_001"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-v5WCRe1/wrong_arguments_func_pointer_end.c",
+            "line": 6,
+            "col": 11,
+            "line2": 6,
+            "col2": 17,
+            "function": "wrong_arguments_func_pointer_001",
+            "var": [
+                "ret",
+                "func"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/itc-cases/report-v5WCRe1/defect_info.json",
+    "files": [
+        "wrong_arguments_func_pointer_end.c"
+    ],
+    "labels": [],
+    "codes": "",
+    "executed_lines": {
+        "Datasets/fromDGS/itc-cases/report-v5WCRe1/wrong_arguments_func_pointer_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6
+        ]
+    }
+}

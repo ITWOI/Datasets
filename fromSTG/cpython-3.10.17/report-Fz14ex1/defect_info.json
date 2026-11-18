@@ -1,0 +1,43 @@
+{
+    "bug_type": "Potential insecure implementation-specific behavior in call 'vfork'",
+    "checker": "Clang Static Analyzer",
+    "description": "Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function",
+    "warning_func": "",
+    "line_number": 6,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "do_fork_exec"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex1/_posixsubprocess_end.c",
+            "line": 6,
+            "col": 15,
+            "line2": 6,
+            "col2": 19,
+            "function": "do_fork_exec",
+            "var": [
+                "pid",
+                "vfork"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex1/defect_info.json",
+    "files": [
+        "_posixsubprocess_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件_posixsubprocess_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: do_fork_exec\n   6 [TRACE-1]    | pid = vfork();\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-Fz14ex1/_posixsubprocess_end.c": [
+            6
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "安全编码",
+    "qwen3.5-122b-a10b_labels": [
+        "外部库/API逻辑建模缺失"
+    ]
+}

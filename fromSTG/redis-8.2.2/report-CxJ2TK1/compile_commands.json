@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/redis-8.2.2/report-CxJ2TK1",
+        "arguments": [
+            "clang",
+            "-c",
+            "anet_end.c"
+        ],
+        "file": "anet_end.c"
+    }
+]

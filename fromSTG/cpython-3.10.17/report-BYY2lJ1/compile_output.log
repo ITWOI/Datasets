@@ -1,0 +1,53 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from callbacks_end.c:1:
+./header_func.h:12:20: warning: function '_Py_DECREF' has internal linkage but is not defined [-Wundefined-internal]
+   12 | static inline void _Py_DECREF(PyObject *op) ;
+      |                    ^
+callbacks_end.c:32:17: note: used here
+   32 |                 _Py_DECREF(((PyObject *)(cnv)));
+      |                 ^
+In file included from callbacks_end.c:1:
+./header_func.h:56:25: warning: function '_PyObject_CallNoArg' has internal linkage but is not defined [-Wundefined-internal]
+   56 | static inline PyObject *_PyObject_CallNoArg(PyObject *func) ;
+      |                         ^
+callbacks_end.c:37:47: note: used here
+   37 |             CDataObject *obj = (CDataObject *)_PyObject_CallNoArg(cnv);
+      |                                               ^
+In file included from callbacks_end.c:1:
+./header_func.h:48:19: warning: function '_PyObject_TypeCheck' has internal linkage but is not defined [-Wundefined-internal]
+   48 | static inline int _PyObject_TypeCheck(PyObject *ob, PyTypeObject *type) ;
+      |                   ^
+callbacks_end.c:43:18: note: used here
+   43 |             if (!_PyObject_TypeCheck(((PyObject *)(obj)), &PyCData_Type)) {
+      |                  ^
+In file included from callbacks_end.c:1:
+./header_func.h:69:20: warning: function '_Py_XDECREF' has internal linkage but is not defined [-Wundefined-internal]
+   69 | static inline void _Py_XDECREF(PyObject *op) ;
+      |                    ^
+callbacks_end.c:77:5: note: used here
+   77 |     _Py_XDECREF(((PyObject *)(error_object)));
+      |     ^
+4 warnings generated.
+callbacks_end.c:28:13: warning: Branch condition evaluates to a garbage value [core.uninitialized.Branch]
+   28 |         if (dict && dict->getfunc && !_ctypes_simple_instance(cnv)) {
+      |             ^~~~
+callbacks_end.c:73:20: warning: Array access (from variable 'space') results in an undefined pointer dereference [core.NullDereference]
+   73 |         int temp = space[0];
+      |                    ^~~~~~~~
+callbacks_end.c:28:13: warning: Branch condition evaluates to a garbage value [core.uninitialized.Branch]
+   28 |         if (dict && dict->getfunc && !_ctypes_simple_instance(cnv)) {
+      |             ^~~~
+callbacks_end.c:73:20: warning: Array access (from variable 'space') results in an undefined pointer dereference [core.NullDereference]
+   73 |         int temp = space[0];
+      |                    ^~~~~~~~
+callbacks_end.c:28:13: warning: Branch condition evaluates to a garbage value [core.uninitialized.Branch]
+   28 |         if (dict && dict->getfunc && !_ctypes_simple_instance(cnv)) {
+      |             ^~~~
+callbacks_end.c:73:20: warning: Array access (from variable 'space') results in an undefined pointer dereference [core.NullDereference]
+   73 |         int temp = space[0];
+      |                    ^~~~~~~~
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-BYY2lJ1/2026-03-12-200006-99399-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-BYY2lJ1/2026-03-12-200006-99399-1' to examine bug reports.

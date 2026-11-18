@@ -1,0 +1,256 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Array access (from variable 'args') results in a null pointer dereference",
+    "warning_func": "",
+    "line_number": 186,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "_PyArg_UnpackKeywords"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/getargs_end.c",
+            "line": 141,
+            "col": 20,
+            "line2": 141,
+            "col2": 24,
+            "function": "_PyArg_UnpackKeywords",
+            "var": [
+                "minkw",
+                "maxpos",
+                "minpos"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/getargs_end.c",
+            "line": 145,
+            "col": 9,
+            "line2": 145,
+            "col2": 29,
+            "function": "_PyArg_UnpackKeywords",
+            "var": [
+                "parser"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/getargs_end.c",
+            "line": 149,
+            "col": 9,
+            "line2": 149,
+            "col2": 30,
+            "function": "_PyArg_UnpackKeywords",
+            "var": [
+                "kwnames",
+                "PyType_HasFeature",
+                "ob_type"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/getargs_end.c",
+            "line": 153,
+            "col": 9,
+            "line2": 153,
+            "col2": 27,
+            "function": "_PyArg_UnpackKeywords",
+            "var": [
+                "args",
+                "nargs",
+                "buf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/getargs_end.c",
+            "line": 153,
+            "col": 32,
+            "line2": 153,
+            "col2": 41,
+            "function": "_PyArg_UnpackKeywords",
+            "var": [
+                "args",
+                "nargs",
+                "buf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/getargs_end.c",
+            "line": 156,
+            "col": 9,
+            "line2": 156,
+            "col2": 28,
+            "function": "_PyArg_UnpackKeywords",
+            "var": [
+                "parser_init",
+                "parser"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/getargs_end.c",
+            "line": 161,
+            "col": 20,
+            "line2": 161,
+            "col2": 39,
+            "function": "_PyArg_UnpackKeywords",
+            "var": [
+                "minposonly",
+                "posonly",
+                "minpos"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/getargs_end.c",
+            "line": 163,
+            "col": 9,
+            "line2": 163,
+            "col2": 29,
+            "function": "_PyArg_UnpackKeywords",
+            "var": [
+                "kwargs",
+                "nkwargs",
+                "ma_used",
+                "kwnames",
+                "ob_size",
+                "kwstack",
+                "args",
+                "nargs"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/getargs_end.c",
+            "line": 171,
+            "col": 9,
+            "line2": 171,
+            "col2": 20,
+            "function": "_PyArg_UnpackKeywords",
+            "var": [
+                "nkwargs",
+                "minkw",
+                "minpos",
+                "nargs",
+                "maxpos",
+                "args"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/getargs_end.c",
+            "line": 174,
+            "col": 9,
+            "line2": 174,
+            "col2": 33,
+            "function": "_PyArg_UnpackKeywords",
+            "var": [
+                "nargs",
+                "nkwargs",
+                "maxargs"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/getargs_end.c",
+            "line": 178,
+            "col": 9,
+            "line2": 178,
+            "col2": 22,
+            "function": "_PyArg_UnpackKeywords",
+            "var": [
+                "nargs",
+                "maxpos"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/getargs_end.c",
+            "line": 181,
+            "col": 9,
+            "line2": 181,
+            "col2": 26,
+            "function": "_PyArg_UnpackKeywords",
+            "var": [
+                "nargs",
+                "minposonly"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/getargs_end.c",
+            "line": 185,
+            "col": 17,
+            "line2": 185,
+            "col2": 25,
+            "function": "_PyArg_UnpackKeywords",
+            "var": [
+                "i",
+                "nargs",
+                "buf",
+                "args"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/getargs_end.c",
+            "line": 185,
+            "col": 17,
+            "line2": 185,
+            "col2": 25,
+            "function": "_PyArg_UnpackKeywords",
+            "var": [
+                "i",
+                "nargs",
+                "buf",
+                "args"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/getargs_end.c",
+            "line": 186,
+            "col": 18,
+            "line2": 186,
+            "col2": 21,
+            "function": "_PyArg_UnpackKeywords",
+            "var": [
+                "buf",
+                "i",
+                "args"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/defect_info.json",
+    "files": [
+        "getargs_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件getargs_end.c  缺陷代码片段===\n------------------------------------------------------------\n 137              | extern  __attribute__((visibility(\"default\"))) PyObject *const * _PyArg_UnpackKeywords (PyObject *const *args, Py_ssize_t nargs, PyObject *kwargs, PyObject *kwnames, struct _PyArg_Parser *parser, int minpos, int maxpos, int minkw, PyObject **buf){\n 138              | PyObject *kwtuple;\n 139              | PyObject *keyword;\n 140              | int i, posonly, minposonly, maxargs;\n---→ 函数: _PyArg_UnpackKeywords\n 141 [TRACE-1]    | int reqlimit = minkw ? maxpos + minkw : minpos;\n 142              | Py_ssize_t nkwargs;\n 143              | PyObject *current_arg;\n 144              | PyObject *const *kwstack = ((void *)0);\n 145 [TRACE-2]    | if (parser == ((void *)0)) {\n 149 [TRACE-3]    | if (kwnames != ((void *)0) && !PyType_HasFeature((((PyObject *)(kwnames))->ob_type), (1UL << 26))) {\n 153 [TRACE-4,5]  | if (args == ((void *)0) && nargs == 0) {\n 156 [TRACE-6]    | if (!parser_init(parser)) {\n 159              | kwtuple = parser->kwtuple;\n 160              | posonly = parser->pos;\n 161 [TRACE-7]    | minposonly = (((posonly) > (minpos)) ? (minpos) : (posonly));\n 162              | maxargs = posonly + (int)(((PyVarObject *)((((void)(0)) , (PyTupleObject *)(kwtuple))))->ob_size);\n 163 [TRACE-8]    | if (kwargs != ((void *)0)) {\n 164              | nkwargs = (((void)(0)) , ((PyDictObject *)kwargs)->ma_used);\n 171 [TRACE-9]    | if (nkwargs == 0 && minkw == 0 && minpos <= nargs && nargs <= maxpos) {\n 174 [TRACE-10]   | if (nargs + nkwargs > maxargs) {\n 178 [TRACE-11]   | if (nargs > maxpos) {\n 181 [TRACE-12]   | if (nargs < minposonly) {\n 185 [TRACE-13,14] | for (i = 0; i < nargs; i++) {\n 186 [TRACE-15]   | buf[i] = args[i];\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-qPRMrO2/getargs_end.c": [
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            149,
+            153,
+            156,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            171,
+            174,
+            178,
+            181,
+            185,
+            186
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "外部库/API 逻辑建模缺失",
+        "符号表达式求解失效",
+        "指针分析能力不足"
+    ]
+}

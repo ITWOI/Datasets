@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF2",
+        "arguments": [
+            "clang",
+            "-c",
+            "faulthandler_end.c"
+        ],
+        "file": "faulthandler_end.c"
+    }
+]

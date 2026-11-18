@@ -1,0 +1,266 @@
+{
+    "bug_type": "Called function pointer is null (null dereference)",
+    "checker": "Clang Static Analyzer",
+    "description": "Called function pointer is null (null dereference)",
+    "warning_func": "",
+    "line_number": 764,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "quicklistNext",
+    "functions": [
+        "quicklistGetIteratorEntryAtIdx",
+        "quicklistReplaceAtIndex",
+        "quicklistNext"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy5/quicklist_end.c",
+            "line": 349,
+            "col": 27,
+            "line2": 349,
+            "col2": 82,
+            "function": "quicklistReplaceAtIndex",
+            "var": [
+                "quicklistGetIteratorEntryAtIdx",
+                "quicklist",
+                "index",
+                "entry"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy5/quicklist_end.c",
+            "line": 803,
+            "col": 1,
+            "line2": 803,
+            "col2": 1,
+            "function": "quicklistGetIteratorEntryAtIdx",
+            "var": [
+                "quicklistGetIteratorAtIdx",
+                "quicklist",
+                "idx",
+                "iter",
+                "__builtin_expect",
+                "quicklistNext",
+                "entry",
+                "_serverAssert",
+                "abort"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy5/quicklist_end.c",
+            "line": 805,
+            "col": 9,
+            "line2": 805,
+            "col2": 13,
+            "function": "quicklistGetIteratorEntryAtIdx",
+            "var": [
+                "iter"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy5/quicklist_end.c",
+            "line": 807,
+            "col": 27,
+            "line2": 807,
+            "col2": 52,
+            "function": "quicklistGetIteratorEntryAtIdx",
+            "var": [
+                "__builtin_expect",
+                "quicklistNext",
+                "iter",
+                "entry",
+                "_serverAssert",
+                "abort"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy5/quicklist_end.c",
+            "line": 721,
+            "col": 1,
+            "line2": 721,
+            "col2": 1,
+            "function": "quicklistNext",
+            "var": [
+                "zi",
+                "entry",
+                "value",
+                "longval",
+                "quicklist",
+                "node",
+                "offset",
+                "sz",
+                "iter",
+                "current",
+                "container",
+                "encoding",
+                "__quicklistDecompressNode",
+                "recompress",
+                "__builtin_expect",
+                "plain",
+                "lpSeek",
+                "direction",
+                "nextFn",
+                "lpNext",
+                "offset_update",
+                "lpPrev",
+                "lpGetValue",
+                "__quicklistCompressNode",
+                "__quicklistCompress",
+                "next",
+                "prev",
+                "quicklistNext"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy5/quicklist_end.c",
+            "line": 736,
+            "col": 9,
+            "line2": 736,
+            "col2": 22,
+            "function": "quicklistNext",
+            "var": [
+                "current",
+                "iter"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy5/quicklist_end.c",
+            "line": 740,
+            "col": 5,
+            "line2": 740,
+            "col2": 27,
+            "function": "quicklistNext",
+            "var": []
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy5/quicklist_end.c",
+            "line": 742,
+            "col": 18,
+            "line2": 742,
+            "col2": 48,
+            "function": "quicklistNext",
+            "var": [
+                "container",
+                "current",
+                "iter"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy5/quicklist_end.c",
+            "line": 743,
+            "col": 9,
+            "line2": 743,
+            "col2": 17,
+            "function": "quicklistNext",
+            "var": [
+                "zi",
+                "iter",
+                "current",
+                "encoding",
+                "__quicklistDecompressNode",
+                "recompress",
+                "__builtin_expect",
+                "plain",
+                "entry",
+                "lpSeek",
+                "offset",
+                "direction",
+                "nextFn",
+                "lpNext",
+                "offset_update",
+                "lpPrev"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy5/quicklist_end.c",
+            "line": 757,
+            "col": 13,
+            "line2": 757,
+            "col2": 32,
+            "function": "quicklistNext",
+            "var": [
+                "direction",
+                "iter",
+                "nextFn",
+                "lpNext",
+                "offset_update",
+                "lpPrev"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy5/quicklist_end.c",
+            "line": 760,
+            "col": 20,
+            "line2": 760,
+            "col2": 39,
+            "function": "quicklistNext",
+            "var": [
+                "direction",
+                "iter",
+                "nextFn",
+                "lpPrev",
+                "offset_update"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy5/quicklist_end.c",
+            "line": 764,
+            "col": 20,
+            "line2": 764,
+            "col2": 25,
+            "function": "quicklistNext",
+            "var": [
+                "zi",
+                "iter",
+                "nextFn",
+                "entry",
+                "current"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-ddoAFy5/defect_info.json",
+    "files": [
+        "quicklist_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件quicklist_end.c  缺陷代码片段===\n------------------------------------------------------------\n 347              | extern int quicklistReplaceAtIndex (quicklist *quicklist, long index, void *data, size_t sz){\n 348              | quicklistEntry entry;\n---→ 函数: quicklistReplaceAtIndex\n 349 [TRACE-1]    | quicklistIter *iter = quicklistGetIteratorEntryAtIdx(quicklist, index, &entry);\n---→ 函数: quicklistNext\n 721 [TRACE-5]    | extern int quicklistNext (quicklistIter *iter, quicklistEntry *entry){\n 722              | do {\n 723              | (entry)->zi = (entry)->value = ((void *)0);\n 724              | (entry)->longval = -123456789;\n 725              | (entry)->quicklist = ((void *)0);\n 726              | (entry)->node = ((void *)0);\n 727              | (entry)->offset = 123456789;\n 728              | (entry)->sz = 0;\n 729              | } while (0);\n 730              | if (!iter) {\n 734              | entry->quicklist = iter->quicklist;\n 735              | entry->node = iter->current;\n 736 [TRACE-6]    | if (!iter->current) {\n 740 [TRACE-7]    | unsigned char *(*nextFn)(unsigned char *, unsigned char *) = ((void *)0);\n 741              | int offset_update = 0;\n 742 [TRACE-8]    | int plain = ((iter->current)->container == 1);\n 743 [TRACE-9]    | if (!iter->zi) {\n 754              | } else if (__builtin_expect(!!(plain), 0)) {\n 757 [TRACE-10]   | if (iter->direction == 0) {\n 760 [TRACE-11]   | } else if (iter->direction == 1) {\n 764 [TRACE-12]   | iter->zi = nextFn(iter->current->entry, iter->zi);\n---→ 函数: quicklistGetIteratorEntryAtIdx\n 803 [TRACE-2]    | extern quicklistIter * quicklistGetIteratorEntryAtIdx (quicklist *quicklist, const long long idx, quicklistEntry *entry){\n 804              | quicklistIter *iter = quicklistGetIteratorAtIdx(quicklist, 1, idx);\n 805 [TRACE-3]    | if (!iter)\n 807 [TRACE-4]    | (__builtin_expect(!!((quicklistNext(iter, entry))), 1) ? (void)0 : (_serverAssert(\"quicklistNext(iter, entry)\", \"quicklist_InstSlice.c\", 1231) , abort()));\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-ddoAFy5/quicklist_end.c": [
+            347,
+            348,
+            349,
+            721,
+            722,
+            723,
+            724,
+            725,
+            726,
+            727,
+            728,
+            729,
+            730,
+            734,
+            735,
+            736,
+            740,
+            741,
+            742,
+            743,
+            754,
+            757,
+            760,
+            764,
+            803,
+            804,
+            805,
+            807
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "函数指针类型建模失效",
+        "路径可行性判定失效",
+        "域敏感度缺失"
+    ]
+}

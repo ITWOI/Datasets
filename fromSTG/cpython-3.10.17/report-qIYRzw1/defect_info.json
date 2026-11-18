@@ -1,0 +1,433 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Access to field 'prevarena' results in a dereference of a null pointer (loaded from field 'nextarena')",
+    "warning_func": "",
+    "line_number": 348,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "pymalloc_realloc",
+        "_PyObject_Realloc",
+        "insert_to_freepool",
+        "pymalloc_free",
+        "_PyObject_Free"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 412,
+            "col": 9,
+            "line2": 412,
+            "col2": 26,
+            "function": "_PyObject_Realloc",
+            "var": [
+                "ptr",
+                "_PyObject_Malloc",
+                "ctx",
+                "nbytes"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 415,
+            "col": 9,
+            "line2": 415,
+            "col2": 49,
+            "function": "_PyObject_Realloc",
+            "var": [
+                "pymalloc_realloc",
+                "ctx",
+                "ptr2",
+                "ptr",
+                "nbytes"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 386,
+            "col": 1,
+            "line2": 386,
+            "col2": 1,
+            "function": "pymalloc_realloc",
+            "var": [
+                "pool",
+                "p",
+                "address_in_range",
+                "size",
+                "szidx",
+                "nbytes",
+                "bp",
+                "_PyObject_Malloc",
+                "ctx",
+                "memcpy",
+                "_PyObject_Free"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 395,
+            "col": 9,
+            "line2": 395,
+            "col2": 22,
+            "function": "pymalloc_realloc",
+            "var": [
+                "nbytes",
+                "size"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 405,
+            "col": 9,
+            "line2": 405,
+            "col2": 30,
+            "function": "pymalloc_realloc",
+            "var": [
+                "_PyObject_Free()",
+                "_PyObject_Free",
+                "ctx",
+                "p"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 377,
+            "col": 1,
+            "line2": 377,
+            "col2": 1,
+            "function": "_PyObject_Free",
+            "var": [
+                "p",
+                "pymalloc_free",
+                "ctx",
+                "raw_allocated_blocks"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 381,
+            "col": 11,
+            "line2": 381,
+            "col2": 31,
+            "function": "_PyObject_Free",
+            "var": [
+                "pymalloc_free",
+                "ctx",
+                "p",
+                "raw_allocated_blocks"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 356,
+            "col": 1,
+            "line2": 356,
+            "col2": 1,
+            "function": "pymalloc_free",
+            "var": [
+                "p",
+                "address_in_range",
+                "pool",
+                "freeblock",
+                "lastfree",
+                "count",
+                "ref",
+                "insert_to_usedpool",
+                "insert_to_freepool"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 367,
+            "col": 10,
+            "line2": 367,
+            "col2": 32,
+            "function": "pymalloc_free",
+            "var": [
+                "lastfree",
+                "insert_to_usedpool",
+                "pool"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 371,
+            "col": 10,
+            "line2": 371,
+            "col2": 29,
+            "function": "pymalloc_free",
+            "var": [
+                "count",
+                "ref",
+                "pool"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 374,
+            "col": 5,
+            "line2": 374,
+            "col2": 28,
+            "function": "pymalloc_free",
+            "var": [
+                "insert_to_freepool()",
+                "insert_to_freepool",
+                "pool"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 289,
+            "col": 1,
+            "line2": 289,
+            "col2": 1,
+            "function": "insert_to_freepool",
+            "var": [
+                "nextpool",
+                "pool",
+                "prevpool",
+                "next",
+                "prev",
+                "arenas",
+                "arenaindex",
+                "freepools",
+                "ao",
+                "nfreepools",
+                "nfp2lasta",
+                "nf",
+                "lastnf",
+                "prevarena",
+                "p",
+                "ntotalpools",
+                "nextarena",
+                "usable_arenas",
+                "unused_arena_objects",
+                "arena_map_mark_used",
+                "address",
+                "narenas_currently_allocated"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 299,
+            "col": 9,
+            "line2": 299,
+            "col2": 20,
+            "function": "insert_to_freepool",
+            "var": [
+                "lastnf",
+                "ao",
+                "prevarena",
+                "nfp2lasta",
+                "nf",
+                "p",
+                "nfreepools"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 304,
+            "col": 9,
+            "line2": 304,
+            "col2": 29,
+            "function": "insert_to_freepool",
+            "var": [
+                "nf",
+                "ntotalpools",
+                "ao",
+                "nextarena",
+                "prevarena",
+                "usable_arenas",
+                "unused_arena_objects",
+                "arena_map_mark_used",
+                "address",
+                "narenas_currently_allocated"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 304,
+            "col": 34,
+            "line2": 304,
+            "col2": 61,
+            "function": "insert_to_freepool",
+            "var": [
+                "nf",
+                "ntotalpools",
+                "ao",
+                "nextarena",
+                "prevarena",
+                "usable_arenas",
+                "unused_arena_objects",
+                "arena_map_mark_used",
+                "address",
+                "narenas_currently_allocated"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 323,
+            "col": 9,
+            "line2": 323,
+            "col2": 15,
+            "function": "insert_to_freepool",
+            "var": [
+                "nf",
+                "nextarena",
+                "ao",
+                "usable_arenas",
+                "prevarena",
+                "nfp2lasta"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 334,
+            "col": 9,
+            "line2": 334,
+            "col2": 36,
+            "function": "insert_to_freepool",
+            "var": [
+                "nfp2lasta",
+                "nf",
+                "ao"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 337,
+            "col": 9,
+            "line2": 337,
+            "col2": 20,
+            "function": "insert_to_freepool",
+            "var": [
+                "ao",
+                "lastnf"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 341,
+            "col": 9,
+            "line2": 341,
+            "col2": 36,
+            "function": "insert_to_freepool",
+            "var": [
+                "prevarena",
+                "ao",
+                "nextarena",
+                "usable_arenas"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c",
+            "line": 348,
+            "col": 9,
+            "line2": 348,
+            "col2": 17,
+            "function": "insert_to_freepool",
+            "var": [
+                "prevarena",
+                "nextarena",
+                "ao"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/defect_info.json",
+    "files": [
+        "obmalloc_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件obmalloc_end.c  缺陷代码片段===\n------------------------------------------------------------\n  26              | extern  __attribute__((visibility(\"default\"))) void * PyMem_RawMalloc (size_t size){\n  27              | if (size > (size_t)((Py_ssize_t)(((size_t)-1) >> 1)))\n  29              | return _PyMem_Raw.malloc(_PyMem_Raw.ctx, size);\n  41              | static  __attribute__((always_inline)) arena_map_bot_t * arena_map_get (block *p, int create){\n  43              | int i1 = ((((uintptr_t)(p)) >> (((48 - 20 + 2) / 3) + ((48 - 20 - 2 * ((48 - 20 + 2) / 3)) + 20))) & ((1 << ((48 - 20 + 2) / 3)) - 1));\n  44              | if (arena_map_root.ptrs[i1] == ((void *)0)) {\n  55              | int i2 = ((((uintptr_t)(p)) >> ((48 - 20 - 2 * ((48 - 20 + 2) / 3)) + 20)) & ((1 << ((48 - 20 + 2) / 3)) - 1));\n  56              | if (arena_map_root.ptrs[i1]->ptrs[i2] == ((void *)0)) {\n  67              | return arena_map_root.ptrs[i1]->ptrs[i2];\n  94              | static int arena_map_is_used (block *p){\n  95              | arena_map_bot_t *n = arena_map_get(p, 0);\n  96              | if (n == ((void *)0)) {\n  99              | int i3 = ((((uintptr_t)(p)) >> 20) & ((1 << (48 - 20 - 2 * ((48 - 20 + 2) / 3))) - 1));\n 100              | int32_t hi = n->arenas[i3].tail_hi;\n 101              | int32_t lo = n->arenas[i3].tail_lo;\n 102              | int32_t tail = (int32_t)(((uintptr_t)(p)) & ((1 << 20) - 1));\n 103              | return (tail < lo) || (tail >= hi && hi != 0);\n 165              | static _Bool address_in_range (void *p, poolp pool){\n 166              | return arena_map_is_used(p);\n 247              | static inline void * pymalloc_alloc (void *ctx, size_t nbytes){\n 248              | if ((nbytes == 0)) {\n 251              | if ((nbytes > 512)) {\n 252              | return ((void *)0);\n 268              | static void * _PyObject_Malloc (void *ctx, size_t nbytes){\n 269              | void *ptr = pymalloc_alloc(ctx, nbytes);\n 270              | if ((ptr != ((void *)0))) {\n 273              | ptr = PyMem_RawMalloc(nbytes);\n 274              | if (ptr != ((void *)0)) {\n 275              | raw_allocated_blocks++;\n 277              | return ptr;\n---→ 函数: insert_to_freepool\n 289 [TRACE-12]   | static void insert_to_freepool (poolp pool){\n 290              | poolp next = pool->nextpool;\n 291              | poolp prev = pool->prevpool;\n 292              | next->prevpool = prev;\n 293              | prev->nextpool = next;\n 294              | struct arena_object *ao = &arenas[pool->arenaindex];\n 295              | pool->nextpool = ao->freepools;\n 296              | ao->freepools = pool;\n 297              | unsigned int nf = ao->nfreepools;\n 298              | struct arena_object *lastnf = nfp2lasta[nf];\n 299 [TRACE-13]   | if (lastnf == ao) {\n 303              | ao->nfreepools = ++nf;\n 304 [TRACE-14,15] | if (nf == ao->ntotalpools && ao->nextarena != ((void *)0)) {\n 323 [TRACE-16]   | if (nf == 1) {\n 334 [TRACE-17]   | if (nfp2lasta[nf] == ((void *)0)) {\n 337 [TRACE-18]   | if (ao == lastnf) {\n 341 [TRACE-19]   | if (ao->prevarena != ((void *)0)) {\n 346              | usable_arenas = ao->nextarena;\n 348 [TRACE-20]   | ao->nextarena->prevarena = ao->prevarena;\n---→ 函数: pymalloc_free\n 356 [TRACE-8]    | static inline int pymalloc_free (void *ctx, void *p){\n 358              | poolp pool = ((poolp)((void *)((uintptr_t)((p)) & ~(uintptr_t)(((1 << 14)) - 1))));\n 359              | if ((!address_in_range(p, pool))) {\n 363              | block *lastfree = pool->freeblock;\n 364              | *(block **)p = lastfree;\n 365              | pool->freeblock = (block *)p;\n 366              | pool->ref.count--;\n 367 [TRACE-9]    | if ((lastfree == ((void *)0))) {\n 371 [TRACE-10]   | if ((pool->ref.count != 0)) {\n 374 [TRACE-11]   | insert_to_freepool(pool);\n---→ 函数: _PyObject_Free\n 377 [TRACE-6]    | static void _PyObject_Free (void *ctx, void *p){\n 378              | if (p == ((void *)0)) {\n 381 [TRACE-7]    | if ((!pymalloc_free(ctx, p))) {\n---→ 函数: pymalloc_realloc\n 386 [TRACE-3]    | static int pymalloc_realloc (void *ctx, void **newptr_p, void *p, size_t nbytes){\n 387              | void *bp;\n 388              | poolp pool;\n 389              | size_t size;\n 390              | pool = ((poolp)((void *)((uintptr_t)((p)) & ~(uintptr_t)(((1 << 14)) - 1))));\n 391              | if (!address_in_range(p, pool)) {\n 394              | size = (((unsigned int)(pool->szidx) + 1) << 4);\n 395 [TRACE-4]    | if (nbytes <= size) {\n 402              | bp = _PyObject_Malloc(ctx, nbytes);\n 403              | if (bp != ((void *)0)) {\n 404              | memcpy(bp, p, size);\n 405 [TRACE-5]    | _PyObject_Free(ctx, p);\n 410              | static void * _PyObject_Realloc (void *ctx, void *ptr, size_t nbytes){\n 411              | void *ptr2;\n---→ 函数: _PyObject_Realloc\n 412 [TRACE-1]    | if (ptr == ((void *)0)) {\n 415 [TRACE-2]    | if (pymalloc_realloc(ctx, &ptr2, ptr, nbytes)) {\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-qIYRzw1/obmalloc_end.c": [
+            26,
+            27,
+            29,
+            41,
+            43,
+            44,
+            55,
+            56,
+            67,
+            94,
+            95,
+            96,
+            99,
+            100,
+            101,
+            102,
+            103,
+            165,
+            166,
+            247,
+            248,
+            251,
+            252,
+            268,
+            269,
+            270,
+            273,
+            274,
+            275,
+            277,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            297,
+            298,
+            299,
+            303,
+            304,
+            323,
+            334,
+            337,
+            341,
+            346,
+            348,
+            356,
+            358,
+            359,
+            363,
+            364,
+            365,
+            366,
+            367,
+            371,
+            374,
+            377,
+            378,
+            381,
+            386,
+            387,
+            388,
+            389,
+            390,
+            391,
+            394,
+            395,
+            402,
+            403,
+            404,
+            405,
+            410,
+            411,
+            412,
+            415
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "域敏感度缺失",
+        "流敏感度不足"
+    ]
+}

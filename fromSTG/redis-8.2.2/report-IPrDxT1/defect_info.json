@@ -1,0 +1,287 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Access to field 'len' results in a dereference of a null pointer (loaded from field 'incr_aof_list')",
+    "warning_func": "",
+    "line_number": 278,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "",
+    "functions": [
+        "checkMultiPartAof",
+        "redis_check_aof_main"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-IPrDxT1/redis-check-aof_end.c",
+            "line": 301,
+            "col": 9,
+            "line2": 301,
+            "col2": 16,
+            "function": "redis_check_aof_main",
+            "var": [
+                "argc",
+                "strcmp",
+                "argv",
+                "filepath",
+                "fix",
+                "__errno_location",
+                "to_timestamp",
+                "strtol",
+                "endptr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-IPrDxT1/redis-check-aof_end.c",
+            "line": 303,
+            "col": 16,
+            "line2": 303,
+            "col2": 24,
+            "function": "redis_check_aof_main",
+            "var": [
+                "argc",
+                "strcmp",
+                "argv",
+                "filepath",
+                "fix",
+                "__errno_location",
+                "to_timestamp",
+                "strtol",
+                "endptr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-IPrDxT1/redis-check-aof_end.c",
+            "line": 308,
+            "col": 16,
+            "line2": 308,
+            "col2": 24,
+            "function": "redis_check_aof_main",
+            "var": [
+                "argc",
+                "strcmp",
+                "argv",
+                "filepath",
+                "fix",
+                "__errno_location",
+                "to_timestamp",
+                "strtol",
+                "endptr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-IPrDxT1/redis-check-aof_end.c",
+            "line": 315,
+            "col": 16,
+            "line2": 315,
+            "col2": 24,
+            "function": "redis_check_aof_main",
+            "var": [
+                "argc",
+                "strcmp",
+                "argv",
+                "__errno_location",
+                "to_timestamp",
+                "strtol",
+                "endptr",
+                "filepath"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-IPrDxT1/redis-check-aof_end.c",
+            "line": 320,
+            "col": 17,
+            "line2": 320,
+            "col2": 42,
+            "function": "redis_check_aof_main",
+            "var": [
+                "__errno_location",
+                "endptr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-IPrDxT1/redis-check-aof_end.c",
+            "line": 330,
+            "col": 9,
+            "line2": 330,
+            "col2": 31,
+            "function": "redis_check_aof_main",
+            "var": [
+                "strlen",
+                "filepath"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-IPrDxT1/redis-check-aof_end.c",
+            "line": 339,
+            "col": 9,
+            "line2": 339,
+            "col2": 49,
+            "function": "redis_check_aof_main",
+            "var": [
+                "checkMultiPartAof()",
+                "checkMultiPartAof",
+                "dirpath",
+                "filepath",
+                "fix"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-IPrDxT1/redis-check-aof_end.c",
+            "line": 263,
+            "col": 1,
+            "line2": 263,
+            "col2": 1,
+            "function": "checkMultiPartAof",
+            "var": [
+                "aofLoadManifestFromFile",
+                "manifest_filepath",
+                "base_aof_info",
+                "am",
+                "total_num",
+                "incr_aof_list",
+                "len",
+                "file_name",
+                "makePath",
+                "dirpath",
+                "aof_filename",
+                "last_file",
+                "aof_num",
+                "fileIsRDB",
+                "aof_filepath",
+                "ret",
+                "checkSingleAof",
+                "fix",
+                "aof_preable",
+                "ln",
+                "listNext",
+                "li",
+                "value",
+                "ai"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-IPrDxT1/redis-check-aof_end.c",
+            "line": 267,
+            "col": 9,
+            "line2": 267,
+            "col2": 25,
+            "function": "checkMultiPartAof",
+            "var": [
+                "base_aof_info",
+                "am",
+                "total_num"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-IPrDxT1/redis-check-aof_end.c",
+            "line": 269,
+            "col": 9,
+            "line2": 269,
+            "col2": 25,
+            "function": "checkMultiPartAof",
+            "var": [
+                "incr_aof_list",
+                "am",
+                "total_num",
+                "len"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-IPrDxT1/redis-check-aof_end.c",
+            "line": 278,
+            "col": 15,
+            "line2": 278,
+            "col2": 27,
+            "function": "checkMultiPartAof",
+            "var": [
+                "len",
+                "incr_aof_list",
+                "am",
+                "ln",
+                "listNext",
+                "li",
+                "value",
+                "file_name",
+                "ai",
+                "makePath",
+                "dirpath",
+                "aof_filename",
+                "last_file",
+                "aof_num",
+                "total_num",
+                "ret",
+                "checkSingleAof",
+                "aof_filepath",
+                "fix"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-IPrDxT1/defect_info.json",
+    "files": [
+        "redis-check-aof_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件redis-check-aof_end.c  缺陷代码片段===\n------------------------------------------------------------\n 218              | extern int fileIsManifest (char *filepath){\n 219              | int is_manifest = 0;\n 220              | FILE *fp = fopen(filepath, \"r\");\n 221              | if (fp == ((void *)0)) {\n 224              | struct stat sb;\n 225              | if (fstat(fileno(fp), &sb) == -1) {\n 228              | off_t size = sb.st_size;\n 229              | if (size == 0) {\n 233              | char buf[1025];\n 234              | while (1)\n 236              | if (fgets(buf, 1024 + 1, fp) == ((void *)0)) {\n 237              | if (feof(fp)) {\n 238              | break;\n 243              | if (buf[0] == '#') {\n 245              | } else if (!memcmp(buf, \"file\", strlen(\"file\"))) {\n 246              | is_manifest = 1;\n 252              | return is_manifest;\n 254              | extern input_file_type getInputFileType (char *filepath){\n 255              | if (fileIsManifest(filepath)) {\n 256              | return AOF_MULTI_PART;\n---→ 函数: checkMultiPartAof\n 263 [TRACE-8]    | extern void checkMultiPartAof (char *dirpath, char *manifest_filepath, int fix){\n 264              | int total_num = 0, aof_num = 0, last_file;\n 265              | int ret;\n 266              | aofManifest *am = aofLoadManifestFromFile(manifest_filepath);\n 267 [TRACE-9]    | if (am->base_aof_info)\n 269 [TRACE-10]   | if (am->incr_aof_list)\n 271              | if (am->base_aof_info) {\n 278 [TRACE-11]   | if (((am->incr_aof_list)->len)) {\n 296              | extern int redis_check_aof_main (int argc, char **argv){\n 297              | char *filepath;\n 298              | char temp_filepath[4097];\n 299              | char *dirpath;\n 300              | int fix = 0;\n---→ 函数: redis_check_aof_main\n 301 [TRACE-1]    | if (argc < 2) {\n 303 [TRACE-2]    | } else if (argc == 2) {\n 308 [TRACE-3]    | } else if (argc == 3) {\n 315 [TRACE-4]    | } else if (argc == 4) {\n 316              | if (!strcmp(argv[1], \"--truncate-to-timestamp\")) {\n 317              | char *endptr;\n 318              | (*__errno_location()) = 0;\n 319              | to_timestamp = strtol(argv[2], &endptr, 10);\n 320 [TRACE-5]    | if ((*__errno_location()) != 0 || *endptr != '\\x00') {\n 323              | filepath = argv[3];\n 330 [TRACE-6]    | if (strlen(filepath) > 4096) {\n 334              | memcpy(temp_filepath, filepath, strlen(filepath) + 1);\n 335              | dirpath = dirname(temp_filepath);\n 336              | input_file_type type = getInputFileType(filepath);\n 337              | switch (type) {\n 338              | case AOF_MULTI_PART:\n 339 [TRACE-7]    | checkMultiPartAof(dirpath, filepath, fix);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-IPrDxT1/redis-check-aof_end.c": [
+            218,
+            219,
+            220,
+            221,
+            224,
+            225,
+            228,
+            229,
+            233,
+            234,
+            236,
+            237,
+            238,
+            243,
+            245,
+            246,
+            252,
+            254,
+            255,
+            256,
+            263,
+            264,
+            265,
+            266,
+            267,
+            269,
+            271,
+            278,
+            296,
+            297,
+            298,
+            299,
+            300,
+            301,
+            303,
+            308,
+            315,
+            316,
+            317,
+            318,
+            319,
+            320,
+            323,
+            330,
+            334,
+            335,
+            336,
+            337,
+            338,
+            339
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "域敏感度缺失",
+        "过程间数据流断裂",
+        "指针分析能力不足"
+    ]
+}

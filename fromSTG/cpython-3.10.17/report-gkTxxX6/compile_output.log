@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+compile_end.c:233:9: warning: Access to field 'b_startdepth' results in a dereference of a null pointer (loaded from variable 'b') [core.NullDereference]
+  233 |     if (b->b_startdepth < depth && b->b_startdepth < 100) {
+      |         ^~~~~~~~~~~~~~~
+compile_end.c:233:9: warning: Access to field 'b_startdepth' results in a dereference of a null pointer (loaded from variable 'b') [core.NullDereference]
+  233 |     if (b->b_startdepth < depth && b->b_startdepth < 100) {
+      |         ^~~~~~~~~~~~~~~
+compile_end.c:233:9: warning: Access to field 'b_startdepth' results in a dereference of a null pointer (loaded from variable 'b') [core.NullDereference]
+  233 |     if (b->b_startdepth < depth && b->b_startdepth < 100) {
+      |         ^~~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-gkTxxX6/2026-03-12-202133-109784-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-gkTxxX6/2026-03-12-202133-109784-1' to examine bug reports.

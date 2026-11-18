@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/itc-cases/report-HvdUBU2",
+        "arguments": [
+            "clang",
+            "-c",
+            "memory_leak_end.c"
+        ],
+        "file": "memory_leak_end.c"
+    }
+]

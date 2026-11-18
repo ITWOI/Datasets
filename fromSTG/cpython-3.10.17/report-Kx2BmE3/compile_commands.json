@@ -1,0 +1,20 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3",
+        "arguments": [
+            "clang",
+            "-c",
+            "./typearith.h"
+        ],
+        "file": "./typearith.h"
+    },
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-Kx2BmE3",
+        "arguments": [
+            "clang",
+            "-c",
+            "mpdecimal_end.c"
+        ],
+        "file": "mpdecimal_end.c"
+    }
+]

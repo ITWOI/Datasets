@@ -1,0 +1,26 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+module_end.c:14:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   14 | }
+      | ^
+In file included from module_end.c:1:
+./header_func.h:12:13: warning: function 'moduleFreeListIterator' has internal linkage but is not defined [-Wundefined-internal]
+   12 | static void moduleFreeListIterator(void *data) ;
+      |             ^
+module_end.c:13:56: note: used here
+   13 |     listTypeTryConversionAppend(key->kv, &value, 0, 0, moduleFreeListIterator, key);
+      |                                                        ^
+2 warnings generated.
+module_end.c:13:33: warning: Access to field 'kv' results in a dereference of a null pointer (loaded from variable 'key') [core.NullDereference]
+   13 |     listTypeTryConversionAppend(key->kv, &value, 0, 0, moduleFreeListIterator, key);
+      |                                 ^~~~~~~
+module_end.c:13:33: warning: Access to field 'kv' results in a dereference of a null pointer (loaded from variable 'key') [core.NullDereference]
+   13 |     listTypeTryConversionAppend(key->kv, &value, 0, 0, moduleFreeListIterator, key);
+      |                                 ^~~~~~~
+module_end.c:13:33: warning: Access to field 'kv' results in a dereference of a null pointer (loaded from variable 'key') [core.NullDereference]
+   13 |     listTypeTryConversionAppend(key->kv, &value, 0, 0, moduleFreeListIterator, key);
+      |                                 ^~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-xdkY1m3/2026-03-12-192234-79416-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-xdkY1m3/2026-03-12-192234-79416-1' to examine bug reports.

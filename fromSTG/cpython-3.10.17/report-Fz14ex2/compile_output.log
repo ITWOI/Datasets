@@ -1,0 +1,55 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+In file included from _posixsubprocess_end.c:1:
+./header_func.h:9:19: warning: function 'PyType_HasFeature' has internal linkage but is not defined [-Wundefined-internal]
+    9 | static inline int PyType_HasFeature(PyTypeObject *type, unsigned long feature) ;
+      |                   ^
+_posixsubprocess_end.c:8:14: note: used here
+    8 |         if (!PyType_HasFeature((((PyObject *)(py_fd))->ob_type), (1UL << 24))) {
+      |              ^
+In file included from _posixsubprocess_end.c:1:
+./header_func.h:7:20: warning: function '_Py_DECREF' has internal linkage but is not defined [-Wundefined-internal]
+    7 | static inline void _Py_DECREF(PyObject *op) ;
+      |                    ^
+_posixsubprocess_end.c:110:17: note: used here
+  110 |                 _Py_DECREF(((PyObject *)(_py_tmp)));
+      |                 ^
+In file included from _posixsubprocess_end.c:1:
+./header_func.h:88:20: warning: function '_Py_XDECREF' has internal linkage but is not defined [-Wundefined-internal]
+   88 | static inline void _Py_XDECREF(PyObject *op) ;
+      |                    ^
+_posixsubprocess_end.c:230:5: note: used here
+  230 |     _Py_XDECREF(((PyObject *)(preexec_fn_args_tuple)));
+      |     ^
+3 warnings generated.
+_posixsubprocess_end.c:23:15: warning: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function [security.insecureAPI.vfork]
+   23 |         pid = vfork();
+      |               ^~~~~
+_posixsubprocess_end.c:221:11: warning: 17th function call argument is an uninitialized value [core.CallAndMessage]
+  221 |     pid = do_fork_exec(exec_array, argv, envp, cwd, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, errpipe_read, errpipe_write, close_fds, restore_signals, call_setsid, call_setgid, gid, call_setgroups, num_groups, groups, call_setuid, uid, child_umask, old_sigmask, py_fds_to_keep, preexec_fn, preexec_fn_args_tuple);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_posixsubprocess_end.c:221:11: warning: 22nd function call argument is an uninitialized value [core.CallAndMessage]
+  221 |     pid = do_fork_exec(exec_array, argv, envp, cwd, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, errpipe_read, errpipe_write, close_fds, restore_signals, call_setsid, call_setgid, gid, call_setgroups, num_groups, groups, call_setuid, uid, child_umask, old_sigmask, py_fds_to_keep, preexec_fn, preexec_fn_args_tuple);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_posixsubprocess_end.c:23:15: warning: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function [security.insecureAPI.vfork]
+   23 |         pid = vfork();
+      |               ^~~~~
+_posixsubprocess_end.c:221:11: warning: 17th function call argument is an uninitialized value [core.CallAndMessage]
+  221 |     pid = do_fork_exec(exec_array, argv, envp, cwd, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, errpipe_read, errpipe_write, close_fds, restore_signals, call_setsid, call_setgid, gid, call_setgroups, num_groups, groups, call_setuid, uid, child_umask, old_sigmask, py_fds_to_keep, preexec_fn, preexec_fn_args_tuple);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_posixsubprocess_end.c:221:11: warning: 22nd function call argument is an uninitialized value [core.CallAndMessage]
+  221 |     pid = do_fork_exec(exec_array, argv, envp, cwd, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, errpipe_read, errpipe_write, close_fds, restore_signals, call_setsid, call_setgid, gid, call_setgroups, num_groups, groups, call_setuid, uid, child_umask, old_sigmask, py_fds_to_keep, preexec_fn, preexec_fn_args_tuple);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_posixsubprocess_end.c:23:15: warning: Call to function 'vfork' is insecure as it can lead to denial of service situations in the parent process. Replace calls to vfork with calls to the safer 'posix_spawn' function [security.insecureAPI.vfork]
+   23 |         pid = vfork();
+      |               ^~~~~
+_posixsubprocess_end.c:221:11: warning: 17th function call argument is an uninitialized value [core.CallAndMessage]
+  221 |     pid = do_fork_exec(exec_array, argv, envp, cwd, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, errpipe_read, errpipe_write, close_fds, restore_signals, call_setsid, call_setgid, gid, call_setgroups, num_groups, groups, call_setuid, uid, child_umask, old_sigmask, py_fds_to_keep, preexec_fn, preexec_fn_args_tuple);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_posixsubprocess_end.c:221:11: warning: 22nd function call argument is an uninitialized value [core.CallAndMessage]
+  221 |     pid = do_fork_exec(exec_array, argv, envp, cwd, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, errpipe_read, errpipe_write, close_fds, restore_signals, call_setsid, call_setgid, gid, call_setgroups, num_groups, groups, call_setuid, uid, child_umask, old_sigmask, py_fds_to_keep, preexec_fn, preexec_fn_args_tuple);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/2026-03-12-201504-106462-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/cpython-3.10.17/report-Fz14ex2/2026-03-12-201504-106462-1' to examine bug reports.

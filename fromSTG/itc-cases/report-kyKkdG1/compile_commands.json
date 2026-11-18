@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/itc-cases/report-kyKkdG1",
+        "arguments": [
+            "clang",
+            "-c",
+            "double_free_end.c"
+        ],
+        "file": "double_free_end.c"
+    }
+]

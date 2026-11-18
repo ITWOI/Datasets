@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/cpython-3.10.17/report-gkTxxX1",
+        "arguments": [
+            "clang",
+            "-c",
+            "compile_end.c"
+        ],
+        "file": "compile_end.c"
+    }
+]

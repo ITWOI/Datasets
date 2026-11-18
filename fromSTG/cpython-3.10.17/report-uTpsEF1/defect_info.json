@@ -1,0 +1,60 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Dereference of null pointer (loaded from variable 'x')",
+    "warning_func": "",
+    "line_number": 6,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "faulthandler_read_null"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF1/faulthandler_end.c",
+            "line": 5,
+            "col": 5,
+            "line2": 5,
+            "col2": 19,
+            "function": "faulthandler_read_null",
+            "var": [
+                "x"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF1/faulthandler_end.c",
+            "line": 6,
+            "col": 10,
+            "line2": 6,
+            "col2": 10,
+            "function": "faulthandler_read_null",
+            "var": [
+                "y",
+                "x"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF1/defect_info.json",
+    "files": [
+        "faulthandler_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件faulthandler_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | static PyObject * faulthandler_read_null (PyObject *self, PyObject *args){\n   3              | volatile int *x;\n   4              | volatile int y;\n---→ 函数: faulthandler_read_null\n   5 [TRACE-1]    | x = ((void *)0);\n   6 [TRACE-2]    | y = *x;\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-uTpsEF1/faulthandler_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "常量识别和传播失效",
+        "流敏感度不足",
+        "指针分析能力不足"
+    ]
+}

@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/libevent-2.1.12/report-kH079T1",
+        "arguments": [
+            "clang",
+            "-c",
+            "regress_main_end.c"
+        ],
+        "file": "regress_main_end.c"
+    }
+]

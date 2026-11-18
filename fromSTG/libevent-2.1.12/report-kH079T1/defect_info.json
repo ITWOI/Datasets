@@ -1,0 +1,257 @@
+{
+    "bug_type": "Memory leak",
+    "checker": "Clang Static Analyzer",
+    "description": "Potential leak of memory pointed to by 'data'",
+    "warning_func": "",
+    "line_number": 65,
+    "directory": "path/tests/libevent-2.1.12-stable",
+    "entry_function": "",
+    "functions": [
+        "legacy_test_setup",
+        "basic_test_setup"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-kH079T1/regress_main_end.c",
+            "line": 63,
+            "col": 36,
+            "line2": 63,
+            "col2": 61,
+            "function": "legacy_test_setup",
+            "var": [
+                "basic_test_setup",
+                "testcase"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-kH079T1/regress_main_end.c",
+            "line": 2,
+            "col": 1,
+            "line2": 2,
+            "col2": 1,
+            "function": "basic_test_setup",
+            "var": [
+                "flags",
+                "testcase",
+                "libevent_tests_running_in_debug_mode",
+                "event_enable_debug_mode",
+                "evthread_use_pthreads",
+                "evutil_socketpair",
+                "SOCK_STREAM",
+                "spair",
+                "evutil_make_socket_nonblocking",
+                "base",
+                "event_init",
+                "event_base_new",
+                "event_base_start_iocp_",
+                "event_base_free",
+                "evdns_set_log_fn",
+                "dnslogcb",
+                "evdns_init",
+                "event_set_log_callback",
+                "ignore_log_cb",
+                "data",
+                "calloc",
+                "pair",
+                "setup_data"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-kH079T1/regress_main_end.c",
+            "line": 6,
+            "col": 9,
+            "line2": 6,
+            "col2": 41,
+            "function": "basic_test_setup",
+            "var": [
+                "flags",
+                "testcase"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-kH079T1/regress_main_end.c",
+            "line": 8,
+            "col": 9,
+            "line2": 8,
+            "col2": 48,
+            "function": "basic_test_setup",
+            "var": [
+                "flags",
+                "testcase",
+                "libevent_tests_running_in_debug_mode",
+                "event_enable_debug_mode"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-kH079T1/regress_main_end.c",
+            "line": 12,
+            "col": 9,
+            "line2": 12,
+            "col2": 41,
+            "function": "basic_test_setup",
+            "var": [
+                "flags",
+                "testcase",
+                "evthread_use_pthreads"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-kH079T1/regress_main_end.c",
+            "line": 19,
+            "col": 9,
+            "line2": 19,
+            "col2": 34,
+            "function": "basic_test_setup",
+            "var": [
+                "flags",
+                "testcase",
+                "evutil_socketpair",
+                "SOCK_STREAM",
+                "spair",
+                "evutil_make_socket_nonblocking"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-kH079T1/regress_main_end.c",
+            "line": 30,
+            "col": 9,
+            "line2": 30,
+            "col2": 41,
+            "function": "basic_test_setup",
+            "var": [
+                "flags",
+                "testcase",
+                "base",
+                "event_init",
+                "event_base_new"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-kH079T1/regress_main_end.c",
+            "line": 45,
+            "col": 9,
+            "line2": 45,
+            "col2": 41,
+            "function": "basic_test_setup",
+            "var": [
+                "flags",
+                "testcase",
+                "evdns_set_log_fn",
+                "dnslogcb",
+                "evdns_init"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-kH079T1/regress_main_end.c",
+            "line": 50,
+            "col": 9,
+            "line2": 50,
+            "col2": 41,
+            "function": "basic_test_setup",
+            "var": [
+                "flags",
+                "testcase",
+                "event_set_log_callback",
+                "ignore_log_cb"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-kH079T1/regress_main_end.c",
+            "line": 52,
+            "col": 12,
+            "line2": 52,
+            "col2": 36,
+            "function": "basic_test_setup",
+            "var": [
+                "data",
+                "calloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-kH079T1/regress_main_end.c",
+            "line": 53,
+            "col": 9,
+            "line2": 53,
+            "col2": 13,
+            "function": "basic_test_setup",
+            "var": [
+                "data"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-kH079T1/regress_main_end.c",
+            "line": 63,
+            "col": 36,
+            "line2": 63,
+            "col2": 61,
+            "function": "legacy_test_setup",
+            "var": [
+                "basic_test_setup",
+                "testcase"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-kH079T1/regress_main_end.c",
+            "line": 64,
+            "col": 9,
+            "line2": 64,
+            "col2": 32,
+            "function": "legacy_test_setup",
+            "var": [
+                "data"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/libevent-2.1.12/report-kH079T1/regress_main_end.c",
+            "line": 65,
+            "col": 9,
+            "line2": 65,
+            "col2": 9,
+            "function": "legacy_test_setup",
+            "var": [
+                "data"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/libevent-2.1.12/report-kH079T1/defect_info.json",
+    "files": [
+        "regress_main_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件regress_main_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: basic_test_setup\n   2 [TRACE-2]    | extern void * basic_test_setup (const struct testcase_t *testcase){\n   3              | struct event_base *base = ((void *)0);\n   4              | int spair[2] = {-1, -1};\n   5              | struct basic_test_data *data = ((void *)0);\n   6 [TRACE-3]    | if (testcase->flags & ((1 << 5) << 6))\n   8 [TRACE-4]    | if (testcase->flags & (((1 << 5) << 6) << 7) && !libevent_tests_running_in_debug_mode) {\n  12 [TRACE-5]    | if (testcase->flags & ((1 << 5) << 4)) {\n  19 [TRACE-6]    | if (testcase->flags & (1 << 5)) {\n  30 [TRACE-7]    | if (testcase->flags & ((1 << 5) << 1)) {\n  39              | if (testcase->flags & ((1 << 5) << 6)) {\n  45 [TRACE-8]    | if (testcase->flags & ((1 << 5) << 2)) {\n  50 [TRACE-9]    | if (testcase->flags & ((1 << 5) << 5))\n  52 [TRACE-10]   | data = calloc(1, sizeof (*data));\n  53 [TRACE-11]   | if (!data) {\n  56              | data->base = base;\n  57              | data->pair[0] = spair[0];\n  58              | data->pair[1] = spair[1];\n  59              | data->setup_data = testcase->setup_data;\n  60              | return data;\n  62              | static void * legacy_test_setup (const struct testcase_t *testcase){\n---→ 函数: legacy_test_setup\n  63 [TRACE-1,12] | struct basic_test_data *data = basic_test_setup(testcase);\n  64 [TRACE-13]   | if (data == (void *)(1 << 1) || data == ((void *)0))\n  65 [TRACE-14]   | return data;\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/libevent-2.1.12/report-kH079T1/regress_main_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            12,
+            19,
+            30,
+            39,
+            45,
+            50,
+            52,
+            53,
+            56,
+            57,
+            58,
+            59,
+            60,
+            62,
+            63,
+            64,
+            65
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "过程间数据流断裂",
+        "指针分析能力不足",
+        "路径可行性判定失效"
+    ]
+}

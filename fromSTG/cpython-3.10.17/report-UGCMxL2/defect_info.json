@@ -1,0 +1,197 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Access to field 'thread_id' results in a dereference of a null pointer (loaded from variable 'tstate')",
+    "warning_func": "",
+    "line_number": 37,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "_Py_DumpTracebackThreads",
+        "write_thread_id"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL2/traceback_end.c",
+            "line": 42,
+            "col": 9,
+            "line2": 42,
+            "col2": 37,
+            "function": "_Py_DumpTracebackThreads",
+            "var": [
+                "current_tstate",
+                "PyGILState_GetThisThreadState"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL2/traceback_end.c",
+            "line": 45,
+            "col": 9,
+            "line2": 45,
+            "col2": 29,
+            "function": "_Py_DumpTracebackThreads",
+            "var": [
+                "interp",
+                "current_tstate",
+                "_PyGILState_GetInterpreterStateUnsafe"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL2/traceback_end.c",
+            "line": 46,
+            "col": 13,
+            "line2": 46,
+            "col2": 41,
+            "function": "_Py_DumpTracebackThreads",
+            "var": [
+                "current_tstate",
+                "interp",
+                "_PyGILState_GetInterpreterStateUnsafe"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL2/traceback_end.c",
+            "line": 48,
+            "col": 17,
+            "line2": 48,
+            "col2": 37,
+            "function": "_Py_DumpTracebackThreads",
+            "var": [
+                "interp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL2/traceback_end.c",
+            "line": 57,
+            "col": 9,
+            "line2": 57,
+            "col2": 29,
+            "function": "_Py_DumpTracebackThreads",
+            "var": [
+                "tstate"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL2/traceback_end.c",
+            "line": 59,
+            "col": 5,
+            "line2": 59,
+            "col2": 50,
+            "function": "_Py_DumpTracebackThreads",
+            "var": [
+                "tstate",
+                "PyInterpreterState_ThreadHead",
+                "interp"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL2/traceback_end.c",
+            "line": 67,
+            "col": 37,
+            "line2": 67,
+            "col2": 60,
+            "function": "_Py_DumpTracebackThreads",
+            "var": [
+                "write_thread_id()",
+                "write_thread_id",
+                "fd",
+                "tstate",
+                "current_tstate"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL2/traceback_end.c",
+            "line": 67,
+            "col": 29,
+            "line2": 67,
+            "col2": 34,
+            "function": "_Py_DumpTracebackThreads",
+            "var": [
+                "write_thread_id()",
+                "write_thread_id",
+                "fd",
+                "tstate",
+                "current_tstate"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL2/traceback_end.c",
+            "line": 67,
+            "col": 9,
+            "line2": 67,
+            "col2": 61,
+            "function": "_Py_DumpTracebackThreads",
+            "var": [
+                "write_thread_id()",
+                "write_thread_id",
+                "fd",
+                "tstate",
+                "current_tstate"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL2/traceback_end.c",
+            "line": 35,
+            "col": 1,
+            "line2": 35,
+            "col2": 1,
+            "function": "write_thread_id",
+            "var": [
+                "_Py_DumpHexadecimal",
+                "fd",
+                "thread_id",
+                "tstate"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL2/traceback_end.c",
+            "line": 37,
+            "col": 29,
+            "line2": 37,
+            "col2": 34,
+            "function": "write_thread_id",
+            "var": [
+                "_Py_DumpHexadecimal()",
+                "_Py_DumpHexadecimal",
+                "fd",
+                "thread_id",
+                "tstate"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL2/defect_info.json",
+    "files": [
+        "traceback_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件traceback_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: write_thread_id\n  35 [TRACE-10]   | static void write_thread_id (int fd, PyThreadState *tstate, int is_current){\n  37 [TRACE-11]   | _Py_DumpHexadecimal(fd, tstate->thread_id, sizeof(unsigned long) * 2);\n  39              | extern const char * _Py_DumpTracebackThreads (int fd, PyInterpreterState *interp, PyThreadState *current_tstate){\n  40              | PyThreadState *tstate;\n  41              | unsigned int nthreads;\n---→ 函数: _Py_DumpTracebackThreads\n  42 [TRACE-1]    | if (current_tstate == ((void *)0)) {\n  43              | current_tstate = PyGILState_GetThisThreadState();\n  45 [TRACE-2]    | if (interp == ((void *)0)) {\n  46 [TRACE-3]    | if (current_tstate == ((void *)0)) {\n  47              | interp = _PyGILState_GetInterpreterStateUnsafe();\n  48 [TRACE-4]    | if (interp == ((void *)0)) {\n  56              | tstate = PyInterpreterState_ThreadHead(interp);\n  57 [TRACE-5]    | if (tstate == ((void *)0))\n  59 [TRACE-6]    | tstate = PyInterpreterState_ThreadHead(interp);\n  60              | nthreads = 0;\n  63              | if (nthreads >= 100) {\n  67 [TRACE-7,8,9] | write_thread_id(fd, tstate, tstate == current_tstate);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-UGCMxL2/traceback_end.c": [
+            35,
+            37,
+            39,
+            40,
+            41,
+            42,
+            43,
+            45,
+            46,
+            47,
+            48,
+            56,
+            57,
+            59,
+            60,
+            63,
+            67
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "外部库/API 逻辑建模缺失",
+        "指针分析能力不足",
+        "流敏感度不足"
+    ]
+}

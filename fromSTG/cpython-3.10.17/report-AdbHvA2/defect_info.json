@@ -1,0 +1,840 @@
+{
+    "bug_type": "Dereference of null pointer",
+    "checker": "Clang Static Analyzer",
+    "description": "Dereference of null pointer",
+    "warning_func": "",
+    "line_number": 24,
+    "directory": "path/tests/cpython-3.10.17",
+    "entry_function": "",
+    "functions": [
+        "merge_collapse",
+        "sortslice_copy_incr",
+        "list_sort_impl",
+        "merge_at",
+        "merge_lo"
+    ],
+    "is_single_file": true,
+    "is_single_function": false,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 645,
+            "col": 9,
+            "line2": 645,
+            "col2": 36,
+            "function": "list_sort_impl",
+            "var": [
+                "keyfunc",
+                "_Py_NoneStruct"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 653,
+            "col": 9,
+            "line2": 653,
+            "col2": 30,
+            "function": "list_sort_impl",
+            "var": [
+                "keyfunc",
+                "keys",
+                "lo",
+                "saved_ob_item",
+                "values",
+                "saved_ob_size",
+                "temparray",
+                "ms",
+                "PyMem_Malloc",
+                "i",
+                "PyObject_CallOneArg",
+                "_Py_DECREF"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 678,
+            "col": 9,
+            "line2": 678,
+            "col2": 25,
+            "function": "list_sort_impl",
+            "var": [
+                "saved_ob_size",
+                "_Py_IS_TYPE",
+                "keys",
+                "lo",
+                "PyTuple_Type",
+                "ob_size",
+                "keys_are_in_tuples",
+                "ob_type",
+                "ob_item",
+                "i",
+                "keys_are_all_same_type",
+                "key",
+                "key_type",
+                "PyLong_Type",
+                "ints_are_bounded",
+                "PyUnicode_Type",
+                "strings_are_latin",
+                "kind",
+                "state",
+                "PyUnicode_1BYTE_KIND",
+                "key_compare",
+                "ms",
+                "unsafe_latin_compare",
+                "unsafe_long_compare",
+                "PyFloat_Type",
+                "unsafe_float_compare",
+                "key_richcompare",
+                "tp_richcompare",
+                "unsafe_object_compare",
+                "safe_object_compare",
+                "tuple_elem_compare",
+                "unsafe_tuple_compare"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 679,
+            "col": 35,
+            "line2": 679,
+            "col2": 94,
+            "function": "list_sort_impl",
+            "var": [
+                "_Py_IS_TYPE",
+                "keys",
+                "lo",
+                "PyTuple_Type",
+                "ob_size"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 684,
+            "col": 21,
+            "line2": 684,
+            "col2": 37,
+            "function": "list_sort_impl",
+            "var": [
+                "i",
+                "saved_ob_size",
+                "keys_are_in_tuples",
+                "_Py_IS_TYPE",
+                "keys",
+                "lo",
+                "PyTuple_Type",
+                "ob_size",
+                "keys_are_all_same_type",
+                "ob_item",
+                "key",
+                "key_type",
+                "PyLong_Type",
+                "ints_are_bounded",
+                "PyUnicode_Type",
+                "strings_are_latin",
+                "kind",
+                "state",
+                "PyUnicode_1BYTE_KIND"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 698,
+            "col": 21,
+            "line2": 698,
+            "col2": 44,
+            "function": "list_sort_impl",
+            "var": [
+                "key_type",
+                "PyLong_Type",
+                "ints_are_bounded",
+                "ob_size",
+                "key",
+                "PyUnicode_Type",
+                "strings_are_latin",
+                "kind",
+                "state",
+                "PyUnicode_1BYTE_KIND"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 700,
+            "col": 28,
+            "line2": 700,
+            "col2": 54,
+            "function": "list_sort_impl",
+            "var": [
+                "key_type",
+                "PyUnicode_Type",
+                "strings_are_latin",
+                "kind",
+                "state",
+                "key",
+                "PyUnicode_1BYTE_KIND"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 684,
+            "col": 9,
+            "line2": 684,
+            "col2": 11,
+            "function": "list_sort_impl",
+            "var": [
+                "i",
+                "saved_ob_size",
+                "keys_are_in_tuples",
+                "_Py_IS_TYPE",
+                "keys",
+                "lo",
+                "PyTuple_Type",
+                "ob_size",
+                "keys_are_all_same_type",
+                "ob_item",
+                "key",
+                "key_type",
+                "PyLong_Type",
+                "ints_are_bounded",
+                "PyUnicode_Type",
+                "strings_are_latin",
+                "kind",
+                "state",
+                "PyUnicode_1BYTE_KIND"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 684,
+            "col": 21,
+            "line2": 684,
+            "col2": 37,
+            "function": "list_sort_impl",
+            "var": [
+                "i",
+                "saved_ob_size",
+                "keys_are_in_tuples",
+                "_Py_IS_TYPE",
+                "keys",
+                "lo",
+                "PyTuple_Type",
+                "ob_size",
+                "keys_are_all_same_type",
+                "ob_item",
+                "key",
+                "key_type",
+                "PyLong_Type",
+                "ints_are_bounded",
+                "PyUnicode_Type",
+                "strings_are_latin",
+                "kind",
+                "state",
+                "PyUnicode_1BYTE_KIND"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 733,
+            "col": 9,
+            "line2": 733,
+            "col2": 15,
+            "function": "list_sort_impl",
+            "var": [
+                "reverse",
+                "keys",
+                "reverse_slice",
+                "saved_ob_size",
+                "saved_ob_item"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 743,
+            "col": 13,
+            "line2": 743,
+            "col2": 17,
+            "function": "list_sort_impl",
+            "var": [
+                "n"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 745,
+            "col": 13,
+            "line2": 745,
+            "col2": 22,
+            "function": "list_sort_impl",
+            "var": [
+                "descending",
+                "reverse_sortslice",
+                "lo",
+                "n"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 747,
+            "col": 13,
+            "line2": 747,
+            "col2": 22,
+            "function": "list_sort_impl",
+            "var": [
+                "n",
+                "minrun",
+                "nremaining",
+                "binarysort",
+                "ms",
+                "lo",
+                "keys",
+                "force"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 739,
+            "col": 5,
+            "line2": 739,
+            "col2": 6,
+            "function": "list_sort_impl",
+            "var": [
+                "n",
+                "count_run",
+                "ms",
+                "keys",
+                "lo",
+                "nremaining",
+                "descending",
+                "reverse_sortslice",
+                "minrun",
+                "binarysort",
+                "force",
+                "base",
+                "pending",
+                "len",
+                "merge_collapse",
+                "sortslice_advance"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 743,
+            "col": 13,
+            "line2": 743,
+            "col2": 17,
+            "function": "list_sort_impl",
+            "var": [
+                "n"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 745,
+            "col": 13,
+            "line2": 745,
+            "col2": 22,
+            "function": "list_sort_impl",
+            "var": [
+                "descending",
+                "reverse_sortslice",
+                "lo",
+                "n"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 747,
+            "col": 13,
+            "line2": 747,
+            "col2": 22,
+            "function": "list_sort_impl",
+            "var": [
+                "n",
+                "minrun",
+                "nremaining",
+                "binarysort",
+                "ms",
+                "lo",
+                "keys",
+                "force"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 757,
+            "col": 13,
+            "line2": 757,
+            "col2": 31,
+            "function": "list_sort_impl",
+            "var": [
+                "merge_collapse",
+                "ms"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 515,
+            "col": 1,
+            "line2": 515,
+            "col2": 1,
+            "function": "merge_collapse",
+            "var": [
+                "pending",
+                "ms",
+                "n",
+                "len",
+                "p",
+                "merge_at"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 517,
+            "col": 12,
+            "line2": 517,
+            "col2": 20,
+            "function": "merge_collapse",
+            "var": [
+                "n",
+                "ms",
+                "len",
+                "p",
+                "merge_at"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 517,
+            "col": 12,
+            "line2": 517,
+            "col2": 20,
+            "function": "merge_collapse",
+            "var": [
+                "n",
+                "ms",
+                "len",
+                "p",
+                "merge_at"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 520,
+            "col": 18,
+            "line2": 520,
+            "col2": 22,
+            "function": "merge_collapse",
+            "var": [
+                "n",
+                "len",
+                "p",
+                "merge_at",
+                "ms"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 520,
+            "col": 27,
+            "line2": 520,
+            "col2": 65,
+            "function": "merge_collapse",
+            "var": [
+                "n",
+                "len",
+                "p",
+                "merge_at",
+                "ms"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 521,
+            "col": 21,
+            "line2": 521,
+            "col2": 47,
+            "function": "merge_collapse",
+            "var": [
+                "len",
+                "p",
+                "n"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 523,
+            "col": 21,
+            "line2": 523,
+            "col2": 35,
+            "function": "merge_collapse",
+            "var": [
+                "merge_at",
+                "ms",
+                "n"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 488,
+            "col": 1,
+            "line2": 488,
+            "col2": 1,
+            "function": "merge_at",
+            "var": [
+                "ssa",
+                "base",
+                "pending",
+                "ms",
+                "i",
+                "na",
+                "len",
+                "ssb",
+                "nb",
+                "n",
+                "k",
+                "gallop_right",
+                "keys",
+                "sortslice_advance",
+                "gallop_left",
+                "merge_lo",
+                "merge_hi"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 497,
+            "col": 9,
+            "line2": 497,
+            "col2": 22,
+            "function": "merge_at",
+            "var": [
+                "i",
+                "n",
+                "ms",
+                "pending"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 501,
+            "col": 9,
+            "line2": 501,
+            "col2": 13,
+            "function": "merge_at",
+            "var": [
+                "k"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 505,
+            "col": 9,
+            "line2": 505,
+            "col2": 15,
+            "function": "merge_at",
+            "var": [
+                "na"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 508,
+            "col": 9,
+            "line2": 508,
+            "col2": 15,
+            "function": "merge_at",
+            "var": [
+                "nb"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 510,
+            "col": 9,
+            "line2": 510,
+            "col2": 16,
+            "function": "merge_at",
+            "var": [
+                "na",
+                "nb",
+                "merge_lo",
+                "ms",
+                "ssa",
+                "ssb",
+                "merge_hi"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 511,
+            "col": 16,
+            "line2": 511,
+            "col2": 45,
+            "function": "merge_at",
+            "var": [
+                "merge_lo",
+                "ms",
+                "ssa",
+                "na",
+                "ssb",
+                "nb"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 278,
+            "col": 1,
+            "line2": 278,
+            "col2": 1,
+            "function": "merge_lo",
+            "var": [
+                "na",
+                "alloced",
+                "ms",
+                "merge_getmem",
+                "sortslice_memcpy",
+                "a",
+                "ssa",
+                "dest",
+                "sortslice_copy_incr",
+                "ssb",
+                "nb",
+                "min_gallop",
+                "k",
+                "key_compare",
+                "keys",
+                "bcount",
+                "acount",
+                "gallop_right",
+                "sortslice_advance",
+                "gallop_left",
+                "sortslice_memmove",
+                "result",
+                "sortslice_copy"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 283,
+            "col": 10,
+            "line2": 283,
+            "col2": 30,
+            "function": "merge_lo",
+            "var": [
+                "na",
+                "alloced",
+                "ms",
+                "merge_getmem"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 288,
+            "col": 32,
+            "line2": 288,
+            "col2": 35,
+            "function": "merge_lo",
+            "var": [
+                "sortslice_copy_incr()",
+                "sortslice_copy_incr",
+                "dest",
+                "ssb"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 288,
+            "col": 5,
+            "line2": 288,
+            "col2": 36,
+            "function": "merge_lo",
+            "var": [
+                "sortslice_copy_incr()",
+                "sortslice_copy_incr",
+                "dest",
+                "ssb"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 21,
+            "col": 1,
+            "line2": 21,
+            "col2": 1,
+            "function": "sortslice_copy_incr",
+            "var": [
+                "keys",
+                "dst",
+                "src",
+                "values"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 23,
+            "col": 9,
+            "line2": 23,
+            "col2": 34,
+            "function": "sortslice_copy_incr",
+            "var": [
+                "values",
+                "dst",
+                "src"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c",
+            "line": 24,
+            "col": 26,
+            "line2": 24,
+            "col2": 39,
+            "function": "sortslice_copy_incr",
+            "var": [
+                "values",
+                "dst",
+                "src"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/defect_info.json",
+    "files": [
+        "listobject_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件listobject_end.c  缺陷代码片段===\n------------------------------------------------------------\n---→ 函数: sortslice_copy_incr\n  21 [TRACE-37]   | static inline void sortslice_copy_incr (sortslice *dst, sortslice *src){\n  22              | *dst->keys++ = *src->keys++;\n  23 [TRACE-38]   | if (dst->values != ((void *)0))\n  24 [TRACE-39]   | *dst->values++ = *src->values++;\n  31              | static inline void sortslice_memcpy (sortslice *s1, Py_ssize_t i, sortslice *s2, Py_ssize_t j, Py_ssize_t n){\n  32              | memcpy(&s1->keys[i], &s2->keys[j], sizeof(PyObject *) * n);\n  33              | if (s1->values != ((void *)0))\n  41              | static inline void sortslice_advance (sortslice *slice, Py_ssize_t n){\n  42              | slice->keys += n;\n  43              | if (slice->values != ((void *)0))\n 236              | static void merge_init (MergeState *ms, Py_ssize_t list_size, int has_keyfunc){\n 238              | if (has_keyfunc) {\n 244              | ms->alloced = 256;\n 245              | ms->a.values = ((void *)0);\n 247              | ms->a.keys = ms->temparray;\n 248              | ms->n = 0;\n 249              | ms->min_gallop = 7;\n---→ 函数: merge_lo\n 278 [TRACE-33]   | static Py_ssize_t merge_lo (MergeState *ms, sortslice ssa, Py_ssize_t na, sortslice ssb, Py_ssize_t nb){\n 279              | Py_ssize_t k;\n 280              | sortslice dest;\n 281              | int result = -1;\n 282              | Py_ssize_t min_gallop;\n 283 [TRACE-34]   | if (((na) <= (ms)->alloced ? 0 : merge_getmem(ms, na)) < 0)\n 285              | sortslice_memcpy(&ms->a, 0, &ssa, 0, na);\n 286              | dest = ssa;\n 287              | ssa = ms->a;\n 288 [TRACE-35,36] | sortslice_copy_incr(&dest, &ssb);\n---→ 函数: merge_at\n 488 [TRACE-26]   | static Py_ssize_t merge_at (MergeState *ms, Py_ssize_t i){\n 489              | sortslice ssa, ssb;\n 490              | Py_ssize_t na, nb;\n 491              | Py_ssize_t k;\n 492              | ssa = ms->pending[i].base;\n 493              | na = ms->pending[i].len;\n 494              | ssb = ms->pending[i + 1].base;\n 495              | nb = ms->pending[i + 1].len;\n 496              | ms->pending[i].len = na + nb;\n 497 [TRACE-27]   | if (i == ms->n - 3)\n 499              | --ms->n;\n 500              | k = gallop_right(ms, *ssb.keys, ssa.keys, na, 0);\n 501 [TRACE-28]   | if (k < 0)\n 503              | sortslice_advance(&ssa, k);\n 504              | na -= k;\n 505 [TRACE-29]   | if (na == 0)\n 507              | nb = gallop_left(ms, ssa.keys[na - 1], ssb.keys, nb, nb - 1);\n 508 [TRACE-30]   | if (nb <= 0)\n 510 [TRACE-31]   | if (na <= nb) {\n 511 [TRACE-32]   | return merge_lo(ms, ssa, na, ssb, nb);\n---→ 函数: merge_collapse\n 515 [TRACE-19]   | static int merge_collapse (MergeState *ms){\n 516              | struct s_slice *p = ms->pending;\n 517 [TRACE-20,21] | while (ms->n > 1)\n 519              | Py_ssize_t n = ms->n - 2;\n 520 [TRACE-22,23] | if ((n > 0 && p[n - 1].len <= p[n].len + p[n + 1].len) || (n > 1 && p[n - 2].len <= p[n - 1].len + p[n].len)) {\n 521 [TRACE-24]   | if (p[n - 1].len < p[n + 1].len)\n 523 [TRACE-25]   | if (merge_at(ms, n) < 0)\n 533              | return 0;\n 547              | static Py_ssize_t merge_compute_minrun (Py_ssize_t n){\n 548              | Py_ssize_t r = 0;\n 549              | while (n >= 64)\n 554              | return n + r;\n 634              | static PyObject * list_sort_impl (PyListObject *self, PyObject *keyfunc, int reverse){\n 635              | MergeState ms;\n 636              | Py_ssize_t nremaining;\n 637              | Py_ssize_t minrun;\n 638              | sortslice lo;\n 639              | Py_ssize_t saved_ob_size, saved_allocated;\n 640              | PyObject **saved_ob_item;\n 641              | PyObject **final_ob_item;\n 642              | PyObject *result = ((void *)0);\n 643              | Py_ssize_t i;\n 644              | PyObject **keys;\n---→ 函数: list_sort_impl\n 645 [TRACE-1]    | if (keyfunc == (&_Py_NoneStruct))\n 647              | saved_ob_size = (((PyVarObject *)(self))->ob_size);\n 648              | saved_ob_item = self->ob_item;\n 649              | saved_allocated = self->allocated;\n 650              | _Py_SET_SIZE(((PyVarObject *)(self)), 0);\n 651              | self->ob_item = ((void *)0);\n 652              | self->allocated = -1;\n 653 [TRACE-2]    | if (keyfunc == ((void *)0)) {\n 654              | keys = ((void *)0);\n 655              | lo.keys = saved_ob_item;\n 656              | lo.values = ((void *)0);\n 678 [TRACE-3]    | if (saved_ob_size > 1) {\n 679 [TRACE-4]    | int keys_are_in_tuples = (_Py_IS_TYPE(((const PyObject *)(lo.keys[0])), &PyTuple_Type) && (((PyVarObject *)(lo.keys[0]))->ob_size) > 0);\n 680              | PyTypeObject *key_type = (keys_are_in_tuples ? (((PyObject *)(((((void)(0)) , (PyTupleObject *)(lo.keys[0]))->ob_item[0])))->ob_type) : (((PyObject *)(lo.keys[0]))->ob_type));\n 681              | int keys_are_all_same_type = 1;\n 682              | int strings_are_latin = 1;\n 683              | int ints_are_bounded = 1;\n 684 [TRACE-5,8,9] | for (i = 0; i < saved_ob_size; i++) {\n 685              | if (keys_are_in_tuples && !(_Py_IS_TYPE(((const PyObject *)(lo.keys[i])), &PyTuple_Type) && (((PyVarObject *)(lo.keys[i]))->ob_size) != 0)) {\n 690              | PyObject *key = (keys_are_in_tuples ? ((((void)(0)) , (PyTupleObject *)(lo.keys[i]))->ob_item[0]) : lo.keys[i]);\n 691              | if (!_Py_IS_TYPE(((const PyObject *)(key)), key_type)) {\n 692              | keys_are_all_same_type = 0;\n 693              | if (!keys_are_in_tuples) {\n 694              | break;\n 697              | if (keys_are_all_same_type) {\n 698 [TRACE-6]    | if (key_type == &PyLong_Type && ints_are_bounded && (((((PyVarObject *)(key))->ob_size)) < 0 ? -((((PyVarObject *)(key))->ob_size)) : ((((PyVarObject *)(key))->ob_size))) > 1) {\n 700 [TRACE-7]    | } else if (key_type == &PyUnicode_Type && strings_are_latin && (((void)(0)) , ((void)(0)) , ((PyASCIIObject *)(key))->state.kind) != PyUnicode_1BYTE_KIND) {\n 704              | }\n 705              | if (keys_are_all_same_type) {\n 718              | ms.key_compare = safe_object_compare;\n 720              | if (keys_are_in_tuples) {\n 729              | merge_init(&ms, saved_ob_size, keys != ((void *)0));\n 730              | nremaining = saved_ob_size;\n 731              | if (nremaining < 2)\n 733 [TRACE-10]   | if (reverse) {\n 738              | minrun = merge_compute_minrun(nremaining);\n 739 [TRACE-14]   | do {\n 740              | int descending;\n 741              | Py_ssize_t n;\n 742              | n = count_run(&ms, lo.keys, lo.keys + nremaining, &descending);\n 743 [TRACE-11,15] | if (n < 0)\n 745 [TRACE-12,16] | if (descending)\n 747 [TRACE-13,17] | if (n < minrun) {\n 754              | ms.pending[ms.n].base = lo;\n 755              | ms.pending[ms.n].len = n;\n 756              | ++ms.n;\n 757 [TRACE-18]   | if (merge_collapse(&ms) < 0)\n 759              | sortslice_advance(&lo, n);\n 760              | nremaining -= n;\n 761              | } while (nremaining);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/listobject_end.c": [
+            21,
+            22,
+            23,
+            24,
+            31,
+            32,
+            33,
+            41,
+            42,
+            43,
+            236,
+            238,
+            244,
+            245,
+            247,
+            248,
+            249,
+            278,
+            279,
+            280,
+            281,
+            282,
+            283,
+            285,
+            286,
+            287,
+            288,
+            488,
+            489,
+            490,
+            491,
+            492,
+            493,
+            494,
+            495,
+            496,
+            497,
+            499,
+            500,
+            501,
+            503,
+            504,
+            505,
+            507,
+            508,
+            510,
+            511,
+            515,
+            516,
+            517,
+            519,
+            520,
+            521,
+            523,
+            533,
+            547,
+            548,
+            549,
+            554,
+            634,
+            635,
+            636,
+            637,
+            638,
+            639,
+            640,
+            641,
+            642,
+            643,
+            644,
+            645,
+            647,
+            648,
+            649,
+            650,
+            651,
+            652,
+            653,
+            654,
+            655,
+            656,
+            678,
+            679,
+            680,
+            681,
+            682,
+            683,
+            684,
+            685,
+            690,
+            691,
+            692,
+            693,
+            694,
+            697,
+            698,
+            700,
+            704,
+            705,
+            718,
+            720,
+            729,
+            730,
+            731,
+            733,
+            738,
+            739,
+            740,
+            741,
+            742,
+            743,
+            745,
+            747,
+            754,
+            755,
+            756,
+            757,
+            759,
+            760,
+            761
+        ],
+        "Datasets/fromDGS/cpython-3.10.17/report-AdbHvA2/./object.h": [
+            2,
+            3,
+            5,
+            6
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "域敏感度缺失",
+        "路径可行性判定失效"
+    ]
+}

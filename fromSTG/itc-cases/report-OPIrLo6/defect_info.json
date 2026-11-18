@@ -1,0 +1,49 @@
+{
+    "bug_type": "Division by zero",
+    "checker": "Clang Static Analyzer",
+    "description": "Division by zero",
+    "warning_func": "",
+    "line_number": 6,
+    "directory": "path/tests/itc-cases",
+    "entry_function": "",
+    "functions": [
+        "zero_division_006"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-OPIrLo6/zero_division_end.c",
+            "line": 6,
+            "col": 11,
+            "line2": 6,
+            "col2": 38,
+            "function": "zero_division_006",
+            "var": [
+                "ret",
+                "dividend",
+                "divisor"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/itc-cases/report-OPIrLo6/defect_info.json",
+    "files": [
+        "zero_division_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件zero_division_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | extern void zero_division_006 (){\n   3              | int dividend = 1000;\n   4              | int divisor = 2;\n   5              | int ret;\n---→ 函数: zero_division_006\n   6 [TRACE-1]    | ret = dividend / (2 * divisor - 4);\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/itc-cases/report-OPIrLo6/zero_division_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "计算逻辑",
+    "qwen3.5-122b-a10b_labels": [
+        "常量识别和传播失效",
+        "符号表达式求解失效"
+    ]
+}

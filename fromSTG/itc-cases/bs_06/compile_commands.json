@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "path/output/itc-cases/bs_06",
+        "arguments": [
+            "clang",
+            "-c",
+            "bit_shift_end.c"
+        ],
+        "file": "bit_shift_end.c"
+    }
+]

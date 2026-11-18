@@ -1,0 +1,200 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+redis-cli_end.c:1344:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+ 1344 | }
+      | ^
+redis-cli_end.c:5597:13: warning: label followed by a declaration is a C23 extension [-Wc23-extensions]
+ 5597 |             int need_free = 0;
+      |             ^
+In file included from redis-cli_end.c:1:
+./header_func.h:90:17: warning: function 'dictSdsHash' has internal linkage but is not defined [-Wundefined-internal]
+   90 | static uint64_t dictSdsHash(const void *key) ;
+      |                 ^
+./header_func.h:406:43: note: used here
+  406 | static dictType clusterManagerDictType = {dictSdsHash, ((void *)0), ((void *)0), dictSdsKeyCompare, ((void *)0), dictSdsDestructor, ((void *)0)};
+      |                                           ^
+./header_func.h:92:12: warning: function 'dictSdsKeyCompare' has internal linkage but is not defined [-Wundefined-internal]
+   92 | static int dictSdsKeyCompare(dictCmpCache *cache, const void *key1, const void *key2) ;
+      |            ^
+./header_func.h:406:82: note: used here
+  406 | static dictType clusterManagerDictType = {dictSdsHash, ((void *)0), ((void *)0), dictSdsKeyCompare, ((void *)0), dictSdsDestructor, ((void *)0)};
+      |                                                                                  ^
+./header_func.h:94:13: warning: function 'dictSdsDestructor' has internal linkage but is not defined [-Wundefined-internal]
+   94 | static void dictSdsDestructor(dict *d, void *val) ;
+      |             ^
+./header_func.h:406:114: note: used here
+  406 | static dictType clusterManagerDictType = {dictSdsHash, ((void *)0), ((void *)0), dictSdsKeyCompare, ((void *)0), dictSdsDestructor, ((void *)0)};
+      |                                                                                                                  ^
+./header_func.h:377:13: warning: function 'clusterManagerLog' has internal linkage but is not defined [-Wundefined-internal]
+  377 | static void clusterManagerLog(int level, const char *fmt, ...);
+      |             ^
+redis-cli_end.c:2542:17: note: used here
+ 2542 |                 clusterManagerLog(3, "Node %s:%d replied with error:\n%s\n", (n)->ip, (n)->port, (r->str));
+      |                 ^
+6 warnings generated.
+redis-cli_end.c:6:34: warning: The left operand of '*' is a garbage value [core.UndefinedBinaryOperatorResult]
+    6 |     ust = ((long long)tv.tv_sec) * 1000000;
+      |                       ~~~~~~~~~  ^
+redis-cli_end.c:96:9: warning: Array access (from variable 'value') results in a null pointer dereference [core.NullDereference]
+   96 |     if (value[0] == '\x00') {
+      |         ^~~~~~~~
+redis-cli_end.c:202:16: warning: Access to field 'argc' results in a dereference of a null pointer (loaded from variable 'help') [core.NullDereference]
+  202 |     help->argc = subcommandname ? 2 : 1;
+      |     ~~~~       ^
+redis-cli_end.c:252:32: warning: Dereference of null pointer [core.NullDereference]
+  252 |             help->docs.summary = hi_sdsnew(reply->str);
+      |             ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+redis-cli_end.c:261:30: warning: Dereference of null pointer [core.NullDereference]
+  261 |             help->docs.since = hi_sdsnew(reply->str);
+      |             ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+redis-cli_end.c:270:30: warning: Dereference of null pointer [core.NullDereference]
+  270 |             help->docs.group = hi_sdsnew(reply->str);
+      |             ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+redis-cli_end.c:280:29: warning: Dereference of null pointer [core.NullDereference]
+  280 |             help->docs.args = zcalloc(arguments->elements * sizeof(cliCommandArg));
+      |             ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+redis-cli_end.c:372:28: warning: Array access (from variable 'helpEntries') results in a null pointer dereference [core.NullDereference]
+  372 |         helpEntries[pos++] = tmp;
+      |         ~~~~~~~~~~~        ^
+redis-cli_end.c:1423:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+ 1423 |     return out;
+      |     ^~~~~~~~~~
+redis-cli_end.c:2324:29: warning: The 4th argument to 'fread' is NULL but should not be NULL [unix.StdCLibraryFunctions]
+ 2324 |             while ((nread = fread(buf, 1, sizeof (buf), fp)) != 0)
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+redis-cli_end.c:2753:61: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+ 2753 |                         if (!strcmp(n->replicate, name) && !strcmp(n->ip, ip)) {
+      |                                                             ^~~~~~~~~~~~~~~~~
+redis-cli_end.c:2976:10: warning: Dereference of null pointer (loaded from variable 'err') [core.NullDereference]
+ 2976 |     *err = ((void *)0);
+      |      ~~~ ^
+redis-cli_end.c:6140:13: warning: Access to field 'element' results in a dereference of a null pointer (loaded from variable 'reply') [core.NullDereference]
+ 6140 |         if (reply->element[0]->type == 1)
+      |             ^~~~~~~~~~~~~~
+redis-cli_end.c:6165:12: warning: Access to field 'integer' results in a dereference of a null pointer (loaded from variable 'reply') [core.NullDereference]
+ 6165 |     size = reply->integer;
+      |            ^~~~~~~~~~~~~~
+redis-cli_end.c:6192:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+ 6192 |     return dbnum;
+      |     ^~~~~~~~~~~~
+redis-cli_end.c:6479:38: warning: Access to field 'str' results in a dereference of a null pointer (loaded from variable 'reply') [core.NullDereference]
+ 6479 |                 k = getLongInfoField(reply->str, buf);
+      |                                      ^~~~~~~~~~
+redis-cli_end.c:6485:36: warning: Access to field 'str' results in a dereference of a null pointer (loaded from variable 'reply') [core.NullDereference]
+ 6485 |             aux = getLongInfoField(reply->str, "used_memory");
+      |                                    ^~~~~~~~~~
+redis-cli_end.c:6802:16: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+ 6802 |     line_count += displayKeyStatsProgressbar(sampled, total_keys);
+      |     ~~~~~~~~~~ ^
+redis-cli_end.c:6:34: warning: The left operand of '*' is a garbage value [core.UndefinedBinaryOperatorResult]
+    6 |     ust = ((long long)tv.tv_sec) * 1000000;
+      |                       ~~~~~~~~~  ^
+redis-cli_end.c:96:9: warning: Array access (from variable 'value') results in a null pointer dereference [core.NullDereference]
+   96 |     if (value[0] == '\x00') {
+      |         ^~~~~~~~
+redis-cli_end.c:202:16: warning: Access to field 'argc' results in a dereference of a null pointer (loaded from variable 'help') [core.NullDereference]
+  202 |     help->argc = subcommandname ? 2 : 1;
+      |     ~~~~       ^
+redis-cli_end.c:252:32: warning: Dereference of null pointer [core.NullDereference]
+  252 |             help->docs.summary = hi_sdsnew(reply->str);
+      |             ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+redis-cli_end.c:261:30: warning: Dereference of null pointer [core.NullDereference]
+  261 |             help->docs.since = hi_sdsnew(reply->str);
+      |             ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+redis-cli_end.c:270:30: warning: Dereference of null pointer [core.NullDereference]
+  270 |             help->docs.group = hi_sdsnew(reply->str);
+      |             ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+redis-cli_end.c:280:29: warning: Dereference of null pointer [core.NullDereference]
+  280 |             help->docs.args = zcalloc(arguments->elements * sizeof(cliCommandArg));
+      |             ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+redis-cli_end.c:372:28: warning: Array access (from variable 'helpEntries') results in a null pointer dereference [core.NullDereference]
+  372 |         helpEntries[pos++] = tmp;
+      |         ~~~~~~~~~~~        ^
+redis-cli_end.c:1423:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+ 1423 |     return out;
+      |     ^~~~~~~~~~
+redis-cli_end.c:2324:29: warning: The 4th argument to 'fread' is NULL but should not be NULL [unix.StdCLibraryFunctions]
+ 2324 |             while ((nread = fread(buf, 1, sizeof (buf), fp)) != 0)
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+redis-cli_end.c:2753:61: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+ 2753 |                         if (!strcmp(n->replicate, name) && !strcmp(n->ip, ip)) {
+      |                                                             ^~~~~~~~~~~~~~~~~
+redis-cli_end.c:2976:10: warning: Dereference of null pointer (loaded from variable 'err') [core.NullDereference]
+ 2976 |     *err = ((void *)0);
+      |      ~~~ ^
+redis-cli_end.c:6140:13: warning: Access to field 'element' results in a dereference of a null pointer (loaded from variable 'reply') [core.NullDereference]
+ 6140 |         if (reply->element[0]->type == 1)
+      |             ^~~~~~~~~~~~~~
+redis-cli_end.c:6165:12: warning: Access to field 'integer' results in a dereference of a null pointer (loaded from variable 'reply') [core.NullDereference]
+ 6165 |     size = reply->integer;
+      |            ^~~~~~~~~~~~~~
+redis-cli_end.c:6192:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+ 6192 |     return dbnum;
+      |     ^~~~~~~~~~~~
+redis-cli_end.c:6479:38: warning: Access to field 'str' results in a dereference of a null pointer (loaded from variable 'reply') [core.NullDereference]
+ 6479 |                 k = getLongInfoField(reply->str, buf);
+      |                                      ^~~~~~~~~~
+redis-cli_end.c:6485:36: warning: Access to field 'str' results in a dereference of a null pointer (loaded from variable 'reply') [core.NullDereference]
+ 6485 |             aux = getLongInfoField(reply->str, "used_memory");
+      |                                    ^~~~~~~~~~
+redis-cli_end.c:6802:16: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+ 6802 |     line_count += displayKeyStatsProgressbar(sampled, total_keys);
+      |     ~~~~~~~~~~ ^
+redis-cli_end.c:6:34: warning: The left operand of '*' is a garbage value [core.UndefinedBinaryOperatorResult]
+    6 |     ust = ((long long)tv.tv_sec) * 1000000;
+      |                       ~~~~~~~~~  ^
+redis-cli_end.c:96:9: warning: Array access (from variable 'value') results in a null pointer dereference [core.NullDereference]
+   96 |     if (value[0] == '\x00') {
+      |         ^~~~~~~~
+redis-cli_end.c:202:16: warning: Access to field 'argc' results in a dereference of a null pointer (loaded from variable 'help') [core.NullDereference]
+  202 |     help->argc = subcommandname ? 2 : 1;
+      |     ~~~~       ^
+redis-cli_end.c:252:32: warning: Dereference of null pointer [core.NullDereference]
+  252 |             help->docs.summary = hi_sdsnew(reply->str);
+      |             ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+redis-cli_end.c:261:30: warning: Dereference of null pointer [core.NullDereference]
+  261 |             help->docs.since = hi_sdsnew(reply->str);
+      |             ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+redis-cli_end.c:270:30: warning: Dereference of null pointer [core.NullDereference]
+  270 |             help->docs.group = hi_sdsnew(reply->str);
+      |             ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+redis-cli_end.c:280:29: warning: Dereference of null pointer [core.NullDereference]
+  280 |             help->docs.args = zcalloc(arguments->elements * sizeof(cliCommandArg));
+      |             ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+redis-cli_end.c:372:28: warning: Array access (from variable 'helpEntries') results in a null pointer dereference [core.NullDereference]
+  372 |         helpEntries[pos++] = tmp;
+      |         ~~~~~~~~~~~        ^
+redis-cli_end.c:1423:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+ 1423 |     return out;
+      |     ^~~~~~~~~~
+redis-cli_end.c:2324:29: warning: The 4th argument to 'fread' is NULL but should not be NULL [unix.StdCLibraryFunctions]
+ 2324 |             while ((nread = fread(buf, 1, sizeof (buf), fp)) != 0)
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+redis-cli_end.c:2753:61: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [core.NonNullParamChecker]
+ 2753 |                         if (!strcmp(n->replicate, name) && !strcmp(n->ip, ip)) {
+      |                                                             ^~~~~~~~~~~~~~~~~
+redis-cli_end.c:2976:10: warning: Dereference of null pointer (loaded from variable 'err') [core.NullDereference]
+ 2976 |     *err = ((void *)0);
+      |      ~~~ ^
+redis-cli_end.c:6140:13: warning: Access to field 'element' results in a dereference of a null pointer (loaded from variable 'reply') [core.NullDereference]
+ 6140 |         if (reply->element[0]->type == 1)
+      |             ^~~~~~~~~~~~~~
+redis-cli_end.c:6165:12: warning: Access to field 'integer' results in a dereference of a null pointer (loaded from variable 'reply') [core.NullDereference]
+ 6165 |     size = reply->integer;
+      |            ^~~~~~~~~~~~~~
+redis-cli_end.c:6192:5: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+ 6192 |     return dbnum;
+      |     ^~~~~~~~~~~~
+redis-cli_end.c:6479:38: warning: Access to field 'str' results in a dereference of a null pointer (loaded from variable 'reply') [core.NullDereference]
+ 6479 |                 k = getLongInfoField(reply->str, buf);
+      |                                      ^~~~~~~~~~
+redis-cli_end.c:6485:36: warning: Access to field 'str' results in a dereference of a null pointer (loaded from variable 'reply') [core.NullDereference]
+ 6485 |             aux = getLongInfoField(reply->str, "used_memory");
+      |                                    ^~~~~~~~~~
+redis-cli_end.c:6802:16: warning: The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage [core.uninitialized.Assign]
+ 6802 |     line_count += displayKeyStatsProgressbar(sampled, total_keys);
+      |     ~~~~~~~~~~ ^
+54 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-wbj0_q1/2026-03-12-192921-82048-1'
+scan-build: 18 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-wbj0_q1/2026-03-12-192921-82048-1' to examine bug reports.

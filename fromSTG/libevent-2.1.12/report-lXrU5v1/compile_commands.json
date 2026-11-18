@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/libevent-2.1.12/report-lXrU5v1",
+        "arguments": [
+            "clang",
+            "-c",
+            "path/tests/libevent-2.1.12-stable/test/regress_http.c"
+        ],
+        "file": "path/tests/libevent-2.1.12-stable/test/regress_http.c"
+    }
+]

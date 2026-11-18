@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+zero_division_end.c:9:20: warning: Division by zero [core.DivideZero]
+    9 |     ret = dividend / zero_division_004_s_gbl.divisor;
+      |           ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+zero_division_end.c:9:20: warning: Division by zero [core.DivideZero]
+    9 |     ret = dividend / zero_division_004_s_gbl.divisor;
+      |           ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+zero_division_end.c:9:20: warning: Division by zero [core.DivideZero]
+    9 |     ret = dividend / zero_division_004_s_gbl.divisor;
+      |           ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/itc-cases/report-OPIrLo4/2026-03-15-181717-873627-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/itc-cases/report-OPIrLo4/2026-03-15-181717-873627-1' to examine bug reports.

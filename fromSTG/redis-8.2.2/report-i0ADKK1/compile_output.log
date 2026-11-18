@@ -1,0 +1,99 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+t_hash_end.c:73:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+   73 | }
+      | ^
+In file included from t_hash_end.c:1:
+./header_func.h:13:13: warning: function 'dictHfieldDestructor' has internal linkage but is not defined [-Wundefined-internal]
+   13 | static void dictHfieldDestructor(dict *d, void *field);
+      |             ^
+./header_func.h:26:99: note: used here
+   26 | dictType mstrHashDictTypeWithHFE = {dictSdsHash, ((void *)0), ((void *)0), dictSdsMstrKeyCompare, dictHfieldDestructor, dictSdsDestructor, .storedHashFunction = dictMstrHash, .storedKeyCompare = dictHfieldKeyCompare, .dictMetadataBytes = hashDictWithExpireMetadataBytes, .onDictRelease = hashDictWithExpireOnRelease};
+      |                                                                                                   ^
+./header_func.h:20:17: warning: function 'dictMstrHash' has internal linkage but is not defined [-Wundefined-internal]
+   20 | static uint64_t dictMstrHash(const void *key);
+      |                 ^
+./header_func.h:26:162: note: used here
+   26 | dictType mstrHashDictTypeWithHFE = {dictSdsHash, ((void *)0), ((void *)0), dictSdsMstrKeyCompare, dictHfieldDestructor, dictSdsDestructor, .storedHashFunction = dictMstrHash, .storedKeyCompare = dictHfieldKeyCompare, .dictMetadataBytes = hashDictWithExpireMetadataBytes, .onDictRelease = hashDictWithExpireOnRelease};
+      |                                                                                                                                                                  ^
+./header_func.h:22:12: warning: function 'dictHfieldKeyCompare' has internal linkage but is not defined [-Wundefined-internal]
+   22 | static int dictHfieldKeyCompare(dictCmpCache *cache, const void *key1, const void *key2);
+      |            ^
+./header_func.h:26:196: note: used here
+   26 | dictType mstrHashDictTypeWithHFE = {dictSdsHash, ((void *)0), ((void *)0), dictSdsMstrKeyCompare, dictHfieldDestructor, dictSdsDestructor, .storedHashFunction = dictMstrHash, .storedKeyCompare = dictHfieldKeyCompare, .dictMetadataBytes = hashDictWithExpireMetadataBytes, .onDictRelease = hashDictWithExpireOnRelease};
+      |                                                                                                                                                                                                    ^
+./header_func.h:18:15: warning: function 'hashDictWithExpireMetadataBytes' has internal linkage but is not defined [-Wundefined-internal]
+   18 | static size_t hashDictWithExpireMetadataBytes(dict *d);
+      |               ^
+./header_func.h:26:239: note: used here
+   26 | dictType mstrHashDictTypeWithHFE = {dictSdsHash, ((void *)0), ((void *)0), dictSdsMstrKeyCompare, dictHfieldDestructor, dictSdsDestructor, .storedHashFunction = dictMstrHash, .storedKeyCompare = dictHfieldKeyCompare, .dictMetadataBytes = hashDictWithExpireMetadataBytes, .onDictRelease = hashDictWithExpireOnRelease};
+      |                                                                                                                                                                                                                                               ^
+./header_func.h:24:13: warning: function 'hashDictWithExpireOnRelease' has internal linkage but is not defined [-Wundefined-internal]
+   24 | static void hashDictWithExpireOnRelease(dict *d);
+      |             ^
+./header_func.h:26:289: note: used here
+   26 | dictType mstrHashDictTypeWithHFE = {dictSdsHash, ((void *)0), ((void *)0), dictSdsMstrKeyCompare, dictHfieldDestructor, dictSdsDestructor, .storedHashFunction = dictMstrHash, .storedKeyCompare = dictHfieldKeyCompare, .dictMetadataBytes = hashDictWithExpireMetadataBytes, .onDictRelease = hashDictWithExpireOnRelease};
+      |                                                                                                                                                                                                                                                                                                 ^
+./header_func.h:80:20: warning: function 'hfieldGetExpireMeta' has internal linkage but is not defined [-Wundefined-internal]
+   80 | static ExpireMeta *hfieldGetExpireMeta(const eItem field);
+      |                    ^
+./header_func.h:82:90: note: used here
+   82 | EbucketsType hashFieldExpireBucketsType = {.onDeleteItem = ((void *)0), .getExpireMeta = hfieldGetExpireMeta, .itemsAddrAreOdd = 1};
+      |                                                                                          ^
+./header_func.h:117:21: warning: function 'onFieldExpire' has internal linkage but is not defined [-Wundefined-internal]
+  117 | static ExpireAction onFieldExpire(eItem item, void *ctx);
+      |                     ^
+t_hash_end.c:208:92: note: used here
+  208 |         info = (ExpireInfo){.maxToExpire = expireCtx->fieldsToExpireQuota, .onExpireItem = onFieldExpire, .ctx = &onFieldExpireCtx, .now = commandTimeSnapshot()};
+      |                                                                                            ^
+In file included from t_hash_end.c:1:
+./header_func.h:104:22: warning: function 'sdslen' has internal linkage but is not defined [-Wundefined-internal]
+  104 | static inline size_t sdslen(const sds s) ;
+      |                      ^
+t_hash_end.c:213:48: note: used here
+  213 |         robj *key = createStringObject(keystr, sdslen(keystr));
+      |                                                ^
+In file included from t_hash_end.c:1:
+./header_func.h:150:24: warning: function 'ebGetMetaExpTime' has internal linkage but is not defined [-Wundefined-internal]
+  150 | static inline uint64_t ebGetMetaExpTime(ExpireMeta *expMeta) ;
+      |                        ^
+t_hash_end.c:252:16: note: used here
+  252 |         return ebGetMetaExpTime(expireMeta);
+      |                ^
+In file included from t_hash_end.c:1:
+./header_func.h:236:19: warning: function 'mstrIsMetaAttached' has internal linkage but is not defined [-Wundefined-internal]
+  236 | static inline int mstrIsMetaAttached(mstr s) ;
+      |                   ^
+t_hash_end.c:405:12: note: used here
+  405 |     return mstrIsMetaAttached(field) && mstrGetFlag(field, (int)HFIELD_META_EXPIRE);
+      |            ^
+In file included from t_hash_end.c:1:
+./header_func.h:238:19: warning: function 'mstrGetFlag' has internal linkage but is not defined [-Wundefined-internal]
+  238 | static inline int mstrGetFlag(mstr s, int flagIdx) ;
+      |                   ^
+t_hash_end.c:405:41: note: used here
+  405 |     return mstrIsMetaAttached(field) && mstrGetFlag(field, (int)HFIELD_META_EXPIRE);
+      |                                         ^
+12 warnings generated.
+t_hash_end.c:399:9: warning: Branch condition evaluates to a garbage value [core.uninitialized.Branch]
+  399 |     if (ele.sval) {
+      |         ^~~~~~~~
+t_hash_end.c:402:9: warning: 2nd function call argument is an uninitialized value [core.CallAndMessage]
+  402 |         addReplyBulkLongLong(c, ele.lval);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+t_hash_end.c:399:9: warning: Branch condition evaluates to a garbage value [core.uninitialized.Branch]
+  399 |     if (ele.sval) {
+      |         ^~~~~~~~
+t_hash_end.c:402:9: warning: 2nd function call argument is an uninitialized value [core.CallAndMessage]
+  402 |         addReplyBulkLongLong(c, ele.lval);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+t_hash_end.c:399:9: warning: Branch condition evaluates to a garbage value [core.uninitialized.Branch]
+  399 |     if (ele.sval) {
+      |         ^~~~~~~~
+t_hash_end.c:402:9: warning: 2nd function call argument is an uninitialized value [core.CallAndMessage]
+  402 |         addReplyBulkLongLong(c, ele.lval);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/redis-8.2.2/report-i0ADKK1/2026-03-12-191843-76687-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/redis-8.2.2/report-i0ADKK1/2026-03-12-191843-76687-1' to examine bug reports.

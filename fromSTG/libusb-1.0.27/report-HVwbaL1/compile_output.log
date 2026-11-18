@@ -1,0 +1,39 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+events_posix_end.c:17:19: warning: Use of memory allocated with size zero [unix.Malloc]
+   13 |     fds = calloc(ctx->event_data_cnt, sizeof (*fds));
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   14 |     if (!fds)
+   15 |         return LIBUSB_ERROR_NO_MEM;
+   16 |     for (ievent_source = ((struct usbi_event_source *)((uintptr_t)((&(ctx)->event_sources)->next) - (uintptr_t)__builtin_offsetof(struct usbi_event_source, list))); &ievent_source->list != (&(ctx)->event_sources); ievent_source = ((struct usbi_event_source *)((uintptr_t)((ievent_source)->list.next) - (uintptr_t)__builtin_offsetof(struct usbi_event_source, list)))) {
+   17 |         fds[i].fd = ievent_source->data.os_handle;
+      |                   ^
+events_posix_end.c:22:12: warning: Potential leak of memory pointed to by 'fds' [unix.Malloc]
+   22 |     return 0;
+      |            ^
+events_posix_end.c:17:19: warning: Use of memory allocated with size zero [unix.Malloc]
+   13 |     fds = calloc(ctx->event_data_cnt, sizeof (*fds));
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   14 |     if (!fds)
+   15 |         return LIBUSB_ERROR_NO_MEM;
+   16 |     for (ievent_source = ((struct usbi_event_source *)((uintptr_t)((&(ctx)->event_sources)->next) - (uintptr_t)__builtin_offsetof(struct usbi_event_source, list))); &ievent_source->list != (&(ctx)->event_sources); ievent_source = ((struct usbi_event_source *)((uintptr_t)((ievent_source)->list.next) - (uintptr_t)__builtin_offsetof(struct usbi_event_source, list)))) {
+   17 |         fds[i].fd = ievent_source->data.os_handle;
+      |                   ^
+events_posix_end.c:22:12: warning: Potential leak of memory pointed to by 'fds' [unix.Malloc]
+   22 |     return 0;
+      |            ^
+events_posix_end.c:17:19: warning: Use of memory allocated with size zero [unix.Malloc]
+   13 |     fds = calloc(ctx->event_data_cnt, sizeof (*fds));
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   14 |     if (!fds)
+   15 |         return LIBUSB_ERROR_NO_MEM;
+   16 |     for (ievent_source = ((struct usbi_event_source *)((uintptr_t)((&(ctx)->event_sources)->next) - (uintptr_t)__builtin_offsetof(struct usbi_event_source, list))); &ievent_source->list != (&(ctx)->event_sources); ievent_source = ((struct usbi_event_source *)((uintptr_t)((ievent_source)->list.next) - (uintptr_t)__builtin_offsetof(struct usbi_event_source, list)))) {
+   17 |         fds[i].fd = ievent_source->data.os_handle;
+      |                   ^
+events_posix_end.c:22:12: warning: Potential leak of memory pointed to by 'fds' [unix.Malloc]
+   22 |     return 0;
+      |            ^
+6 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/libusb-1.0.27/report-HVwbaL1/2026-03-12-204747-127594-1'
+scan-build: 2 bugs found.
+scan-build: Run 'scan-view Datasets/fromDGS/libusb-1.0.27/report-HVwbaL1/2026-03-12-204747-127594-1' to examine bug reports.

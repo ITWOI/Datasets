@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/redis-8.2.2/report-tfZyB72",
+        "arguments": [
+            "clang",
+            "-c",
+            "t_stream_end.c"
+        ],
+        "file": "t_stream_end.c"
+    }
+]

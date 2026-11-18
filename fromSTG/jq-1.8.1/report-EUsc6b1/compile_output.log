@@ -1,0 +1,15 @@
+scan-build: Using '/usr/lib/llvm-18/bin/clang' for static analysis
+jv_dtoa_end.c:427:58: warning: Right shift by '32' overflows the capacity of 'ULong' [core.BitwiseShift]
+  427 |         x = i > 32 ? (&u)->L[1] << (64 - i) | (&u)->L[0] >> (i - 32) : (&u)->L[0] << (32 - i);
+      |                                               ~~~~~~~~~~~^~~~~~~~~~~
+jv_dtoa_end.c:427:58: warning: Right shift by '32' overflows the capacity of 'ULong' [core.BitwiseShift]
+  427 |         x = i > 32 ? (&u)->L[1] << (64 - i) | (&u)->L[0] >> (i - 32) : (&u)->L[0] << (32 - i);
+      |                                               ~~~~~~~~~~~^~~~~~~~~~~
+jv_dtoa_end.c:427:58: warning: Right shift by '32' overflows the capacity of 'ULong' [core.BitwiseShift]
+  427 |         x = i > 32 ? (&u)->L[1] << (64 - i) | (&u)->L[0] >> (i - 32) : (&u)->L[0] << (32 - i);
+      |                                               ~~~~~~~~~~~^~~~~~~~~~~
+3 warnings generated.
+scan-build: Analysis run complete.
+scan-build: Analysis results (plist files) deposited in 'Datasets/fromDGS/jq-1.8.1/report-EUsc6b1/2026-03-12-203206-116584-1'
+scan-build: 1 bug found.
+scan-build: Run 'scan-view Datasets/fromDGS/jq-1.8.1/report-EUsc6b1/2026-03-12-203206-116584-1' to examine bug reports.

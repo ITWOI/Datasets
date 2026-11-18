@@ -1,0 +1,89 @@
+{
+    "bug_type": "Use-after-free",
+    "checker": "Clang Static Analyzer",
+    "description": "Use of memory after it is freed",
+    "warning_func": "invalid_memory_access_001",
+    "line_number": 13,
+    "directory": "path/tests/itc-cases",
+    "entry_function": "invalid_memory_access_001",
+    "functions": [
+        "invalid_memory_access_001"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD342/invalid_memory_access_end.c",
+            "line": 5,
+            "col": 34,
+            "line2": 5,
+            "col2": 57,
+            "function": "invalid_memory_access_001",
+            "var": [
+                "flag",
+                "ptr",
+                "malloc",
+                "a"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD342/invalid_memory_access_end.c",
+            "line": 6,
+            "col": 9,
+            "line2": 6,
+            "col2": 26,
+            "function": "invalid_memory_access_001",
+            "var": [
+                "ptr",
+                "flag",
+                "a",
+                "free"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD342/invalid_memory_access_end.c",
+            "line": 9,
+            "col": 13,
+            "line2": 9,
+            "col2": 21,
+            "function": "invalid_memory_access_001",
+            "var": [
+                "free()",
+                "free",
+                "ptr"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-FLsD342/invalid_memory_access_end.c",
+            "line": 13,
+            "col": 13,
+            "line2": 13,
+            "col2": 22,
+            "function": "invalid_memory_access_001",
+            "var": [
+                "a",
+                "ptr"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/itc-cases/report-FLsD342/defect_info.json",
+    "files": [
+        "invalid_memory_access_end.c"
+    ],
+    "labels": [],
+    "codes": "",
+    "executed_lines": {
+        "Datasets/fromDGS/itc-cases/report-FLsD342/invalid_memory_access_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            12,
+            13
+        ]
+    }
+}

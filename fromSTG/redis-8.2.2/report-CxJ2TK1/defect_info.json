@@ -1,0 +1,80 @@
+{
+    "bug_type": "Result of operation is garbage or undefined",
+    "checker": "Clang Static Analyzer",
+    "description": "The left operand of '==' is a garbage value",
+    "warning_func": "",
+    "line_number": 12,
+    "directory": "path/tests/redis-8.2.2/src",
+    "entry_function": "anetFdToString",
+    "functions": [
+        "anetFdToString"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-CxJ2TK1/anet_end.c",
+            "line": 5,
+            "col": 9,
+            "line2": 5,
+            "col2": 14,
+            "function": "anetFdToString",
+            "var": [
+                "remote",
+                "getpeername",
+                "fd",
+                "sa",
+                "salen",
+                "getsockname"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-CxJ2TK1/anet_end.c",
+            "line": 9,
+            "col": 13,
+            "line2": 9,
+            "col2": 83,
+            "function": "anetFdToString",
+            "var": [
+                "getsockname",
+                "fd",
+                "sa",
+                "salen"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/redis-8.2.2/report-CxJ2TK1/anet_end.c",
+            "line": 12,
+            "col": 9,
+            "line2": 12,
+            "col2": 20,
+            "function": "anetFdToString",
+            "var": [
+                "ss_family",
+                "sa"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/redis-8.2.2/report-CxJ2TK1/defect_info.json",
+    "files": [
+        "anet_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件anet_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | extern int anetFdToString (int fd, char *ip, size_t ip_len, int *port, int remote){\n   3              | struct sockaddr_storage sa;\n   4              | socklen_t salen = sizeof (sa);\n---→ 函数: anetFdToString\n   5 [TRACE-1]    | if (remote) {\n   9 [TRACE-2]    | if (getsockname(fd, (__SOCKADDR_ARG){(struct sockaddr *)&sa}, &salen) == -1)\n  12 [TRACE-3]    | if (sa.ss_family == 2) {\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/redis-8.2.2/report-CxJ2TK1/anet_end.c": [
+            2,
+            3,
+            4,
+            5,
+            9,
+            12
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "外部库/API逻辑建模缺失",
+        "流敏感度不足",
+        "域敏感度缺失"
+    ]
+}

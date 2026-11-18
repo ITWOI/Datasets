@@ -1,0 +1,61 @@
+{
+    "bug_type": "Memory leak",
+    "checker": "Clang Static Analyzer",
+    "description": "Potential leak of memory pointed to by 'p1'",
+    "warning_func": "",
+    "line_number": 7,
+    "directory": "path/tests/itc-cases",
+    "entry_function": "",
+    "functions": [
+        "memory_leak_004"
+    ],
+    "is_single_file": true,
+    "is_single_function": true,
+    "trace": [
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-HvdUBU4/memory_leak_end.c",
+            "line": 4,
+            "col": 22,
+            "line2": 4,
+            "col2": 43,
+            "function": "memory_leak_004",
+            "var": [
+                "calloc"
+            ]
+        },
+        {
+            "file_path": "Datasets/fromDGS/itc-cases/report-HvdUBU4/memory_leak_end.c",
+            "line": 7,
+            "col": 8,
+            "line2": 7,
+            "col2": 8,
+            "function": "memory_leak_004",
+            "var": [
+                "p2",
+                "p1"
+            ]
+        }
+    ],
+    "info_path": "Datasets/fromDGS/itc-cases/report-HvdUBU4/defect_info.json",
+    "files": [
+        "memory_leak_end.c"
+    ],
+    "labels": [],
+    "codes": "说明：[TRACE-N]表示第N个trace点（按执行顺序）\n\n=== 文件memory_leak_end.c  缺陷代码片段===\n------------------------------------------------------------\n   2              | extern void memory_leak_004 (){\n   3              | int *ptr = (int *)calloc(5, sizeof(int));\n---→ 函数: memory_leak_004\n   4 [TRACE-1]    | int *p1 = (int *)calloc(5, sizeof(int));\n   5              | int *p2 = ((void *)0);\n   6              | p1 = ptr;\n   7 [TRACE-2]    | p2 = p1;\n------------------------------------------------------------",
+    "executed_lines": {
+        "Datasets/fromDGS/itc-cases/report-HvdUBU4/memory_leak_end.c": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ]
+    },
+    "qwen3.5-122b-a10b_bug_type": "内存安全",
+    "qwen3.5-122b-a10b_labels": [
+        "指针分析能力不足",
+        "流敏感度不足",
+        "堆对象抽象过粗"
+    ]
+}

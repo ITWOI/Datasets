@@ -1,0 +1,11 @@
+[
+    {
+        "directory": "Datasets/fromDGS/itc-cases/report-v5WCRe3",
+        "arguments": [
+            "clang",
+            "-c",
+            "wrong_arguments_func_pointer_end.c"
+        ],
+        "file": "wrong_arguments_func_pointer_end.c"
+    }
+]
